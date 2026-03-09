@@ -1,0 +1,318 @@
+\documentclass{article}
+\usepackage{float}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+\usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\PDL}{\ensuremath{\mathrm{PDL}}}
+\newcommand{\LDP}{\mathrm{LDP}}
+
+\begin{document}
+
+\title{Existence as Pulsating Closure:\\[4pt]
+An Ontological Meditation on the Projective Dynamic Logo Framework}
+
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland.}\\[4pt]}
+
+\date{\small \today}
+
+\maketitle
+
+\begin{abstract}
+This article presents a philosophically oriented analysis of the Projective Dynamic Logo (\PDL) framework, understood not primarily as a physical theory, but as a systematic proposal concerning the conditions under which entities can be said to exist in a persistent manner.%
+\cite{PDL_Main_2026,PDL_Intro_2026,PDL_Position_2026}
+Instead of taking space, time, and matter as primitive, \PDL{} adopts as its starting point minimally reproducible distinctions on finite signed graphs and identifies closed, periodically evolving relational patterns as the fundamental bearers of existence.%
+\cite{PDL_Main_2026,PDL_TO_Dialogue_2026}
+Our objective is to elucidate the ontological and existential implications of this shift in a terminology accessible to researchers in the philosophy and foundations of physics: in particular, to clarify how notions such as ``nothingness'', ``closure'', ``leakage'', and ``coherence cost'' are intended to address both affective and rational dimensions, while maintaining strict adherence to mathematical formalism.
+We locate \PDL{} within realist and structuralist traditions, examine its points of contact with the Theory of Objectivity (TO), and indicate how the conception of reality as a hierarchy of pulsating closures may help to illuminate—without seeking to reduce—familiar aspects of human experience.
+\end{abstract}
+
+\section{Introduction: Why Reconsider Existence?}
+\label{sec:intro}
+
+Contemporary fundamental physics is frequently portrayed as a discipline that has been destabilised by its own empirical and theoretical achievements.
+Quantum field theory and general relativity yield predictions of remarkable precision over an extensive hierarchy of length, time, and energy scales.
+Yet, when these frameworks are extrapolated into extreme regimes—Planckian densities, spacetime singularities, or hypothetical cosmological origins—their foundational concepts begin to lose coherence: spacetime can no longer be modelled as a smooth differentiable manifold, particle notions become ill-defined, and energy ceases to admit its standard operational characterisation.%
+\cite{PDL_Main_2026,PDL_Intro_2026}
+In such domains, the obstacles are not merely experimental or computational; they are conceptual and, in a strict sense, ontological.
+
+The Projective Dynamic Logo (\PDL) framework is motivated by the thesis that this conceptual breakdown cannot be resolved through incremental or purely local modifications of existing theories.
+Instead of introducing additional fields on a pre-given spacetime background, or proposing further ad hoc alterations to dynamical equations, \PDL{} formulates a more basic question: under which minimal logical and structural conditions can one coherently ascribe \emph{persistent existence} to anything, once all metric and manifold-based notions have been bracketed?%
+\cite{PDL_Main_2026,PDL_Position_2026}
+The programme is thus situated conceptually “upstream” of space, time, and matter.
+Its primitives are neither particles nor spacetime points nor continuous manifolds, but reproducible \emph{distinctions}, formally organised on finite signed graphs.
+
+The technical development of \PDL{} has been presented in detail elsewhere, including: the derivation of a minimal \((4,6)\) stationary closure; the construction of a hierarchical architecture for the proton; the reinterpretation of quantities such as \(\hbar\) and \(\alpha\) as coherence ratios; and the emergence of effective fields together with Schr{\"o}dinger-type dynamics as higher-level descriptions.%
+\cite{PDL_Main_2026,PDL_Alpha_2026_v2,PDL_Proton_Architecture_2026_v2,PDL_Effective_Fields_2026,PDL_Schroedinger_Dynamics_2026_v2}
+The objective of the present article is different.
+It does not introduce new technical results; rather, it aims to clarify, in a manner accessible to philosophers of physics and researchers in the foundations of physics, what is at stake ontologically and existentially in the \PDL{} account of physical reality.
+
+In particular, we aim to elucidate four interrelated thematic axes.  
+First, we address how the transition from “nothingness” to minimal, pulsating closure is to be interpreted as a substantive ontological proposal rather than as a merely technical or formal device.%
+\cite{PDL_Main_2026,PDL_TO_Dialogue_2026}
+Second, we investigate how the notions of boundary, active surface, and coherence leakage are intended to articulate a disciplined concept of transcendence, according to which no closure is ever fully complete.%
+\cite{PDL_Topological_2026,PDL_Exponent18_2026_Refined,PDL_Position_2026}
+Third, we examine how coexistence and multi-observer stabilisation, central to the Theory of Objectivity (TO), can be reformulated within a graph-theoretic framework.%
+\cite{PDL_TO_Dialogue_2026,PDL_Global_Mapping_2026_v3}
+Fourth, we consider why the representation of reality as a hierarchy of pulsating closures may resonate with aspects of human experience, while explicitly refraining from claiming to exhaust, reduce, or fully capture such experience.
+
+Our objective is thus neither doctrinal nor mystical.  
+\PDL{} is proposed as a research programme rather than as a finished metaphysical system: it consists of a set of explicit mathematical constructions and conjectures, accompanied by clearly identified decision points at which the framework may be refined, constrained, or falsified.%
+\cite{PDL_Position_2026,PDL_Global_Mapping_2026_v3}
+To the extent that this article appeals to lived experience, it does so only by inviting a particular stance: to regard existence as an ongoing, structurally organised yet fragile process of coherence, rather than as a primitive and opaque given.
+
+\section{From Nothingness to Minimal Distinction}
+\label{sec:nothingness}
+
+The foundational premise of \PDL{} is intentionally minimalistic.  
+As a methodological stipulation, one suspends all standard ontological and kinematical assumptions of physics: there is no spacetime manifold, no metric structure, no energy or mass, and no antecedently specified inventory of entities.%
+\cite{PDL_Main_2026,PDL_Intro_2026}
+Within this deliberately rarefied framework, the question ``What exists?'' can no longer be addressed by reference to objects, since the very criteria by which objecthood is ordinarily articulated are absent.
+Instead, the inquiry must be reformulated as: what is the least amount of structure required for there to be a \emph{difference} between ``something'' and ``nothing'' that can endure?
+
+From this vantage point, instantaneous, nonrecurring events fail to qualify as existence in a robust ontological sense.
+An occurrence that admits no possibility of being encountered again, recognised, or re-instantiated is, both practically and in principle, indistinguishable from its non-occurrence.%
+\cite{PDL_Main_2026}
+By the same reasoning, a perfectly immutable and featureless state is empirically and conceptually indistinguishable from a homogeneous nothingness, because it permits no internal or external contrasts to be drawn.
+In this upstream sense, the only tenable candidate for existence is thus a \emph{reproducible distinction}: a pattern or differentiation that is capable of recurring.
+
+In \PDL{}, this conceptual insight is rigorously formalised as a minimal binary pulsation.
+Existence is modelled as an elementary alternation between two mutually exclusive states—abstractly, “agreement” and “disagreement”—such that there exists at least one logical 2-cycle generated by a discrete dynamical rule acting on sign assignments.%
+\cite{PDL_Main_2026,PDL_Minimal_Closures_2026}
+At this stage, no temporal parameter is specified, there is no physical frequency, and no spatial localisation is introduced.
+There is only the minimal requirement that a difference can recur to itself in a reproducible manner.
+
+However, this condition alone is insufficient.
+An isolated pulsating edge, so to speak, cannot robustly support reference.
+For a distinction to be both identifiable and maintainable, it must be embedded within a relational structure that does not implicitly rely on an undefined background.
+This requirement is fulfilled by relational multiplicity.
+In \PDL{}, a logical configuration is represented by a finite signed graph: vertices denote informational entities, edges carry \(\pm 1\) signs encoding binary attitudes (agreement/disagreement), and triangles constitute the elementary closure motifs.%
+\cite{PDL_Main_2026,PDL_Minimal_Closures_2026}
+
+The transition from single edges to triangular motifs is not arbitrary.
+A triangle is the shortest cycle capable of closing on itself without reference to any external element, and in the theory of signed graphs, triads already instantiate a non-trivial notion of balance or coherence.%
+\cite{PDL_Topological_2026}
+Within \PDL{}, a triangle is classified as coherent if the product of its three edge signs satisfies a prescribed closure condition; triangles that violate this condition contribute to a quantitative measure of incoherence.
+A configuration that can sustain existence is required to minimise such violations while remaining internally self-sufficient.
+
+“Nothingness,” in this framework, is not a metaphysically opaque substrate but the limiting case in which no reproducible distinction can be maintained.
+To cross the threshold from nothingness to something is, in \PDL{}, to realise a minimal, closed pattern of pulsating relations that is capable of carrying its own reference.%
+\cite{PDL_Main_2026}
+The remainder of the framework investigates the structure of the post-threshold regime: which minimal closures are admissible, how they compose into higher-order architectures, and how familiar physical quantities can be interpreted as measures of the coherence cost associated with these configurations.
+
+\section{Existence as Pulsating Closure}
+\label{sec:pulsating_closure}
+
+Once it is accepted that reproducible distinction must be both relational and internally anchored, the subsequent question is: what is the simplest configuration capable of realising such a regime?
+Within the \PDL{} framework, this question is formulated combinatorially.
+One examines all finite signed graphs subject to four qualitative constraints: (i) minimal binary pulsation, (ii) triangular coherence, (iii) minimal completeness (absence of an implicit background structure), and (iv) an optimisation preference for high coherence, sufficient connectivity, and structural minimality.%
+\cite{PDL_Main_2026,PDL_Minimal_Closures_2026}
+
+A detailed analysis demonstrates that no graph with fewer than four vertices can simultaneously satisfy these constraints.
+For graphs with one or two vertices, no triangles are present; with three vertices, a single triangle can be rendered coherent, but it cannot sustain a network of overlapping cycles capable of propagating reference without invoking an implicit hierarchy or dependence on an external support.%
+\cite{PDL_Minimal_Closures_2026}
+The first admissible configuration is the complete signed graph on four vertices with six edges, denoted \((4,6)\), for which there exists a sign assignment such that all triangles are satisfied and a global sign inversion yields a logical 2-cycle while preserving overall coherence.%
+\cite{PDL_Main_2026}
+
+In this sense, the \((4,6)\) structure is not introduced as a primitive “particle,” but is instead derived as the first minimal \emph{stationary closure}: a closed, pulsating relational configuration that can maintain its own existence without reference to any structure external to itself.
+The induced logical dynamics on its edge signs has period two; at each step of the pulsation, the internal distinctions are redistributed while the global pattern of coherence is preserved.
+At this level, existence is no longer treated as an unspecified attribute, but is identified with being a self-maintained cycle in the space of relational configurations.%
+\cite{PDL_Main_2026,PDL_Position_2026}
+
+The connection to physics arises only at the level of interpretation.
+Among all currently known empirical entities, the electron at rest is the first that exhibits the qualitative characteristics of this minimal stationary regime: it is strictly stable, appears structureless at presently accessible length scales, and is associated with an intrinsic Compton-frequency oscillation determined by its rest mass.%
+\cite{PDL_Main_2026}
+\PDL{} therefore advances a minimal correspondence principle: namely, that the electron at rest constitutes the first physical instantiation of the logically defined \((4,6)\) closure, and that the reduced Planck constant \(\hbar\) quantifies the coherence cost associated with one internal pulsation cycle.%
+\cite{PDL_Main_2026,PDL_Position_2026}
+
+This is not proposed as a metaphysical identity, nor as a completed derivation of quantum electrodynamics.
+Rather, it is formulated as a constrained conjecture: if existence is, at its most fundamental level, a matter of sustaining pulsating closures on finite signed graphs, then the simplest such closure should be empirically manifest, somewhere in the physical world, as the most elementary stable dynamical regime that can be isolated.
+The electron is the candidate that most naturally fulfills this role, and the familiar relation \(E = \hbar \omega\) becomes, under this interpretation, a statement concerning the coherence budget required to maintain the \((4,6)\) regime in existence.%
+\cite{PDL_Main_2026}
+
+\section{Boundaries, Surfaces, and the Heart of Structure}
+\label{sec:boundaries}
+
+If the \((4,6)\) closure represents the minimal organisational pattern compatible with existence, the proton exemplifies how more intricate ontic structures may emerge: not as featureless points, but as stratified architectures exhibiting both internal differentiation and well-defined external interfaces.
+Within \PDL{}, the proton is modelled as a hierarchically organised composite consisting of quasi-stationary valence cores, a dynamically active relational sea, and a finite active surface through which it couples to external \((4,6)\)-type closures and to its broader environment.%
+\cite{PDL_Main_2026,PDL_Proton_Architecture_2026_v2}
+
+This organisational scheme gives rise to a rigid configuration of integer-valued invariants—valence occupancies, total valence content, sea cardinality, and an overall relational budget—that jointly constrain both the proton’s internal coherence and its interaction capacities.%
+\cite{PDL_Proton_Architecture_2026_v2,PDL_Global_Mapping_2026_v3}
+Within this framework, the \emph{active surface} plays the central role in mediating coherent couplings.
+The fine-structure constant \(\alpha\), for instance, is reinterpreted as a surface-to-volume coherence ratio: the proportion of the proton’s total coherence budget that is effectively projected onto an active interface available for binding an electron.%
+\cite{PDL_Alpha_2026_v2}
+
+From an ontological standpoint, this focus on surfaces is consonant with the Theory of Objectivity’s assertion that genuine distinctness presupposes the existence of boundaries.
+In TO, boundaries are not merely geometric delimitations; they are constitutive of the very possibility of there being two entities rather than one.%
+\cite{PDL_TO_Dialogue_2026}
+\PDL{} instantiates this perspective in a concrete, graph-theoretic manner: an entity is characterised not solely by what is ``inside'' it, but by the finite, structured pattern of relations through which it becomes available to, and differentiated from, other entities.
+
+Metaphorically, one may regard the “core” of a structure as residing at its boundary.
+It is at this active interface that the most consequential determinations occur: which external closures can be maintained, which couplings are admissible, and which forms of coherence can be shared without inducing internal destabilization or breakdown.
+In this regard, \PDL{} provides a framework in which identity is intrinsically linked to a regulated mode of exposure; to exist as more than a trivial, fully insulated closure is to sustain a finite and inherently risky interface with what lies beyond.%
+\cite{PDL_Position_2026,PDL_Global_Mapping_2026_v3}
+
+\section{Leakage, Transcendence, and Incomplete Closure}
+\label{sec:leakage}
+
+No composite structure in \PDL{} attains exact closure across all organisational levels simultaneously.
+Even when the internal architecture is optimally configured, a small but irreducible subset of triangular constraints remains unsatisfied.
+This residual inconsistency is quantified by a leakage parameter \(\varepsilon\), defined as the fraction of violated triangular relations in the corresponding constraint graph.%
+\cite{PDL_Topological_2026,PDL_Exponent18_2026_Refined}
+At the proton scale, \(\varepsilon\) can be interpreted as an intrinsic coherence deficit that is not rectifiable within the composite itself and must therefore be offloaded into the surrounding relational network.
+
+Formally, this exported leakage constitutes the basis of \PDL{}’s account of an effective gravitational coupling: via a hierarchical cascade of coherence filters and an amplification exponent (typically chosen as \(18\)), an initially minute nucleonic leakage is transformed into a macroscopic, metric-level modulation of coherence cost.%
+\cite{PDL_Exponent18_2026_Refined,PDL_Effective_Fields_2026}
+At a more conceptual level, however, \(\varepsilon\) indicates a deeper structural feature.
+It implies that composite existence is \emph{intrinsically incomplete}: to instantiate a higher-level closure is, in part, to fail to be fully closed, thereby necessitating participation in a broader coherence field that transcends any individual system.%
+\cite{PDL_Topological_2026,PDL_Position_2026}
+
+Within the TO framework, this expanded domain is associated with a “transcendent substance,” understood as that which cannot be exhaustively captured by any finite quantum or structural totality.%
+\cite{PDL_TO_Dialogue_2026}
+\PDL{} does not merely adopt this notion, but proposes a candidate operational mechanism: logical leakage, conceived as exported coherence that is not simply dissipated, but re-emerges as a constraint on the compatibility relations and metric organisation of the encompassing network of closures.%
+\cite{PDL_Topological_2026}
+Whether \(\varepsilon\) should be interpreted as a genuine carrier of transcendence or instead as a more modest bookkeeping construct remains an unresolved ontological issue within the programme.%
+\cite{PDL_Position_2026}
+
+For the purposes of the present analysis, the relevant point is that \PDL{} formally rules out the idealisation of perfectly insulated wholes.
+Every composite regime, irrespective of its degree of optimisation, exhibits leakage.
+Its persistence is constitutively linked to a controlled failure of closure that couples it to what it is not.
+In this respect, transcendence is not an optional supplement but a structural necessity: higher-order existence is inherently referential beyond itself, manifesting in the form of constraints that it cannot fully internalise.
+
+\section{Plurality of Regimes: Coexistence, Observation, and Objectivity}
+\label{sec:coexistence}
+
+Up to this point, closures have been analysed predominantly in isolation.
+In empirical settings, however, multiple stationary and composite regimes typically coexist, overlap, and mutually constrain one another.
+\PDL{} formalises this interaction by introducing a coexistence topology together with a coherence-cost pseudometric on the space of closures: two regimes are considered ``close'' when they can coexist with low mutual coherence cost, and ``far'' when their simultaneous maintenance entails substantial compromise.%
+\cite{PDL_Topological_2026,PDL_Global_Mapping_2026_v3}
+
+This construction yields a natural connection to the TO axiom of multi-observer stabilisation, which posits that full existence requires validation by at least two distinct observers.%
+\cite{PDL_TO_Dialogue_2026}
+Within the \PDL{} framework, the analogue of an ``observer'' is not a conscious agent but rather another closure, or a family of closures, with which a given regime must remain compatible in order to persist.
+A closure that cannot be embedded into at least two independent compatibility neighbourhoods is, under this view, ontologically fragile: it may exist in a formal or technical sense, yet it lacks the robustness typically associated with fully-fledged reality.%
+\cite{PDL_Position_2026}
+
+Although this principle has not yet been promoted to an explicit axiom within \PDL{}, it motivates a refinement of the concept of existence.
+Internal closure and pulsation are sufficient for minimal existence, but not necessarily for objectivity.
+For a regime to qualify as objectively real, it may be required to withstand interaction with multiple, structurally distinct environments without incurring catastrophic coherence loss.
+On this account, the world is not adequately modelled as a collection of isolated entities, but rather as a network of mutually testing closures.
+
+This shift has substantive consequences for the interpretation of both observation and measurement.  
+Rather than being represented as exogenous interventions, observations are recast as particular instances of coexistence: interactions through which the (in)compatibility of closures is disclosed and, in some cases, reconfigured.%
+\cite{PDL_Topological_2026,PDL_Global_Mapping_2026_v3}
+Within this framework, the familiar quantum-theoretic tension between what exists and what is observed can be reformulated as a problem concerning which pulsating patterns are capable of mutually stabilising one another within a shared relational neighbourhood, and at what associated coherence cost.
+
+\section{Situating PDL: Realism, Structuralism, and Information}
+\label{sec:positioning}
+
+At first inspection, \PDL{} may appear to be yet another variant of “it-from-bit” approaches or ontic structural realism. It indeed exhibits substantial affinities with these frameworks. In particular, it accords ontological primacy to relations over relata, privileges patterns rather than intrinsic properties, and aims to reconstruct familiar physical magnitudes from the structural features of an underlying network.%
+\cite{PDL_Main_2026,PDL_Global_Mapping_2026_v3}
+Nonetheless, several aspects of \PDL{} differentiate it sharply from most extant structuralist or information-theoretic proposals.
+
+From the vantage point of contemporary philosophy of physics, \PDL{} can be interpreted as a concrete, technically elaborated instantiation of ontic structural realism, in the sense that what is ontologically fundamental are not individual objects endowed with intrinsic properties, but dynamically maintained relational structures.%
+%\cite{Ladyman_2007}
+In contrast to many abstract structuralist frameworks, however, \PDL{} is not formulated at the level of continuum field theories; instead, it is defined on finite signed graphs and focuses explicitly on the combinatorial processes through which closed structures, effective constants, and emergent dynamics are generated.%
+\cite{PDL_Main_2026,PDL_Minimal_Closures_2026}
+Moreover, although it shares with “it-from-bit” approaches the guiding intuition that informational and relational organisation is prior to familiar physical magnitudes, it stipulates that such organisation must be articulated in a mathematically rigorous manner, with explicit criteria for when a structure qualifies as existent and how its empirical adequacy can be systematically assessed.%
+\cite{PDL_Position_2026,PDL_Global_Mapping_2026_v3}
+
+First, \PDL{} is explicitly and non-negotiably \emph{finite}. Its primitive entities are finite signed graphs, rather than idealised infinite lattices or continuous fields.%
+\cite{PDL_Main_2026,PDL_Minimal_Closures_2026}
+This finiteness is not introduced as a mere computational expedient but as a substantive conceptual commitment: if existence is to be accounted for in terms of self-sustaining closure, then such closure must be realisable within a bounded configuration, without recourse to an actual infinity of supporting relations. This situates \PDL{} closer to research programmes that regard discrete structures as ontologically fundamental, while at the same time placing distinctive emphasis on logical, rather than primarily dynamical, constraints.
+
+Second, \PDL{} is not merely an informational or semantic framework.
+Although it employs the vocabulary of “informational entities’’ and “coherence,’’ it does not reduce reality to messages or to epistemic states.
+The signed graphs are not conceived as records maintained by an external subject, but as constitutive of the ontological fabric itself; the optimisation of coherence is thus not treated as a norm of rational belief, but as a structural condition for the persistence of being.%
+\cite{PDL_Main_2026,PDL_Position_2026}
+In this respect, \PDL{} is aligned with ontic, rather than epistemic, conceptions of information: structure is taken to be what exists, not merely what is known.
+
+Third, the framework is unusually explicit regarding physical constants.
+Rather than positing \(\hbar\), \(\alpha\), and effective gravitational couplings as primitive parameters, \PDL{} advances specific combinatorial constructions for these quantities in terms of proton architecture, active surfaces, and leakage hierarchies.%
+\cite{PDL_Alpha_2026_v2,PDL_Exponent18_2026_Refined,PDL_Effective_Fields_2026}
+These proposals are conjectural and empirically defeasible, yet they demonstrate that \PDL{} is not restricted to qualitative metaphor: it aspires to relate its ontological commitments to quantitatively precise structures observed in the empirical world.
+
+Finally, \PDL{} is explicit about the limits of its own scope.
+The global mapping and position papers delineate which results are rigorously established, which constitute tightly constrained conjectures, and which remain calibrated against available data.%
+\cite{PDL_Position_2026,PDL_Global_Mapping_2026_v3}
+In this sense, the framework functions less as a metaphysical doctrine than as a systematically articulated research hypothesis: it offers a candidate answer to the question “What must existence be like if physical reality is to appear as it does?’’, together with an explicit catalogue of the empirical and theoretical avenues through which that answer could be refuted.
+
+\section{Echoes in Human Experience}
+\label{sec:human_experience}
+
+The \PDL{} framework has been developed with a primary focus on microphysical processes rather than on psychology or phenomenology. Any attempt to derive features of human experience directly from signed graphs would therefore be premature and, in all likelihood, systematically misleading. Nonetheless, the ontological picture advanced by \PDL{}—of existence as pulsating closure, finite exposure at active surfaces, and inevitable leakage into a broader encompassing field—suggests a range of analogical correspondences that may bear on lived experience, provided such correspondences are formulated with appropriate methodological caution.%
+\cite{PDL_Position_2026}
+
+A first example concerns the notion of coherence cost. Within \PDL{}, energy is reconceptualised as the cost associated with sustaining a given stationary regime: each internal cycle of a closure expends a quantum of coherence budget, and distinct structural architectures require different coherence budgets in order to remain dynamically stable.%
+\cite{PDL_Main_2026}
+Without reducing mental phenomena to their physical underpinnings, one can discern an analogue of this principle in familiar aspects of human life: the effort required to maintain focused attention, the cumulative fatigue involved in upholding a complex and sometimes conflicting identity across heterogeneous social roles, or the experiential relief that accompanies the resolution of incompatible demands when a more integrated and coherent pattern of activity is established.
+
+Similarly, the focus on boundaries and active surfaces can elucidate, albeit in a metaphorical register, the processes through which persons delimit, maintain, and preserve themselves as identifiable unities.
+Human beings do not exist as isolated monads; rather, they are constituted through structured patterns of relation with others and with their surrounding environment.
+These relations, however, are not unrestricted.
+There is always a finite “surface” across which genuine engagement can occur without compromising internal integrity, and an important dimension of practical rationality consists in the regulation of this surface: determining when to open, when to close, and how to renegotiate one’s interfaces as contextual conditions evolve.
+
+The notion of leakage as an inevitable export of coherence further provides a conceptual framework for understanding the traces that agents leave behind.
+No temporally extended pattern of existence is perfectly self-contained; some aspect of its coherence necessarily propagates into its environment, whether in the form of memory, influence, or material effect.
+Within \PDL{}, this exported coherence becomes integrated into the broader relational field that constrains other closures and, at cosmological scales, contributes to an emergent metric structure.%
+\cite{PDL_Topological_2026,PDL_Exponent18_2026_Refined}
+In anthropological and ethical terms, this may be expressed by saying that no life is perfectly “closed” upon itself: our actions and omissions reshape the landscape within which others must pursue their own coherence.
+
+These analogies are not intended to identify the person with a \PDL{} closure in any strict ontological sense.
+They are proposed as heuristic devices and invitations to reflection rather than as reductive equivalences.
+To the extent that this framework has existential resonance, it lies in the suggestion that the effort to sustain coherence, to negotiate boundaries, and to inhabit one’s own structural incompleteness is not an anomaly superimposed on an otherwise static universe, but rather a specific manifestation of a more general logic governing existence.
+
+\section{Conclusion: A Programme Rather Than a Doctrine}
+\label{sec:conclusion}
+
+The Projective Dynamic Logo (PDL) framework advances a conceptually simple yet technically stringent proposal: that to exist is to instantiate a closed, temporally pulsatile pattern of relations on a finite signed graph, selected and sustained through the optimisation of coherence subject to constraint.%
+\cite{PDL_Main_2026,PDL_Minimal_Closures_2026}
+From this starting point, the framework reconstructs minimal stationary closures, such as the \((4,6)\) block, as well as hierarchical composite architectures exemplified by the proton, surface-encoded constants, and prospective candidates for effective fields and gravitational couplings.%
+\cite{PDL_Alpha_2026_v2,PDL_Proton_Architecture_2026_v2,PDL_Effective_Fields_2026,PDL_Cavity_Modes_2026}
+
+At the ontological level, this perspective reorients the focus from substance to pattern, from static being to dynamically maintained coherence, and from self-sufficiency to structured openness and systematic leakage.
+It provides a natural interlocutor for the Theory of Objectivity, which emphasises the role of boundaries, multi-observer stabilisation, and a transcendent substrate that exceeds any particular quantum instantiation.%
+\cite{PDL_TO_Dialogue_2026,PDL_Position_2026}
+Concurrently, the framework remains anchored in explicit combinatorial constructions and in a systematically articulated representation of its own domains of uncertainty.%
+\cite{PDL_Global_Mapping_2026_v3}
+
+For philosophers concerned with the foundations of physics, the significance of \PDL{} does not reside solely in its specific quantitative claims—important though these may be.
+Its primary value lies in the manner in which it reformulates longstanding conceptual questions.
+What if space, time, and energy are not fundamental ontological categories, but instead emergent bookkeeping devices for tracking the costs associated with maintaining particular relational regimes?
+What if physical constants are not arbitrary parameters introduced by hand, but invariants that encode the characteristics of specific structural architectures?
+What if what is often termed “transcendence” is nothing over and above the structural necessity of systematically incomplete closure?
+
+These questions do not call for immediate endorsement.
+They call for systematic scrutiny.
+The \PDL{} programme can and should be subjected to critical evaluation: its axioms may be refined, its combinatorial constructions questioned, and its proposed correspondences exposed to both empirical constraints and conceptual analysis.%
+\cite{PDL_Position_2026}
+If the framework proves durable, it will be because its pulsating closures can coexist, with minimal coherence cost, not only with the empirical data of microphysics, but also with the diverse closures—mathematical, philosophical, and human—that jointly constitute our collective attempt to determine what it is to exist.
+
+\bibliographystyle{plain}
+\bibliography{PDL_Ontology}
+
+\end{document}

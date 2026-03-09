@@ -1,0 +1,690 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{bm}
+
+\title{
+  A Structural Derivation of the Fine-Structure Constant \\
+  from the Projective Dynamic Logo (PDL)
+}
+
+\author{
+  C.~Laubscher\thanks{Independant researcher, cedric.laubscher@gmail.com.}
+}
+
+\date{\today}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{hypothesis}{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We propose a candidate structural derivation of the fine-structure constant
+\(\alpha\) within the relational framework of the Projective Dynamic Logo (PDL). Starting from the foundational PDL axioms and the combinatorial description of the proton architecture (valence block multiplicities \(n_u = 24\), \(n_d = 28\), total valence content \(r_{\mathrm{val}} = 930\), and relational sea \(R_{\mathrm{sea}} = 10\,087\)), we introduce a notion of \emph{active surface} \(R_{\mathrm{surf}}\) that mediates the coupling between the proton and the elementary \((4,6)\) block, the latter being identified with the electron in its rest state. Under a limited set of structured hypotheses—most notably the introduction of the golden ratio \(\varphi\) as a relational optimisation parameter—we obtain the expression
+\[
+\alpha_{\mathrm{PDL}}^{-1} = \mu\,\frac{9}{\varphi^2 r_{\mathrm{val}}^2},
+\]
+where \(\mu = m_p/m_e\) denotes the proton–electron mass ratio. Numerical evaluation of this expression yields \(\alpha_{\mathrm{PDL}}^{-1} \simeq 137.02\), in agreement with the experimental value \(\alpha^{-1} \simeq 137.036\) at the level of a few \(10^{-4}\) in relative terms, and obtained without the introduction of any additional continuous fitting parameter. We investigate the domain of validity, local robustness, and intrinsic limitations of this derivation, and analyse how it can be incorporated into the conventional Schrödinger description of the hydrogen atom.
+\end{abstract}
+
+\section{Introduction}
+
+The fine-structure constant \(\alpha\) plays a pivotal role in contemporary theoretical physics. It appears as the dimensionless coupling parameter governing the strength of the electromagnetic interaction and enters a wide range of physical phenomena, from atomic spectra to high-precision quantum electrodynamics (QED) computations. Despite its ubiquity and the remarkable accuracy with which its numerical value has been determined experimentally, there is currently no consensus as to whether \(\alpha\) can be deduced from more fundamental theoretical principles or whether it should instead be regarded as an irreducible empirical parameter.
+
+The Projective Dynamic Logo (PDL) framework proposes a radically different conceptual foundation for theoretical physics. In contrast to approaches that begin with a spacetime manifold, classical fields, or a continuum of degrees of freedom, PDL models physical reality as a network of minimal logical closures represented by finite signed graphs. Informational entities are associated with vertices, binary relations of agreement or disagreement are encoded as signed edges, and dynamical stability is characterised by a coherence-oriented optimisation functional defined on these graphs
+\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English,Laubscher2026LDP_French}. Within this setting, an elementary \((4,6)\) configuration is identified as the first minimal stationary closure and is interpreted as a prototype for an electron at rest, whereas a more elaborate hierarchical architecture is constructed to represent the proton.
+
+Previous work within the PDL framework has suggested that several fundamental constants—most notably Planck’s constant \(\hbar\), the fine-structure constant \(\alpha\), Boltzmann’s constant \(k_B\), and an effective gravitational coupling—can be reinterpreted as ratios of internal coherence associated with this relational architecture
+\cite{Laubscher2026PDL_English,Laubscher2026LDP_French}. In particular, a concrete proposal has been put forward to regard \(\alpha\) as a surface-to-volume coherence fraction, thereby relating the proton–electron mass ratio to the effective number of active surface relations of the proton. The resulting expression for \(\alpha^{-1}\) was shown to reproduce the empirical value to within a few parts in \(10^{-4}\), without the introduction of continuous fitting parameters.
+
+The objective of the present work is to isolate, formalise, and scrutinise this construction in a mathematically transparent manner. Rather than attempting a comprehensive re-exposition of the full PDL framework, we concentrate on the structural components that enter the proposed derivation of \(\alpha\): the minimal \((4,6)\) structure, the combinatorial architecture assigned to the proton, the definition of an active surface, and a small set of explicit hypotheses that connect these ingredients to the electromagnetic coupling.
+
+\subsection{Objectives and scope of the present work}
+
+The objectives of this paper are threefold:
+
+\begin{itemize}
+  \item[(i)] To delineate precisely which elements of the construction follow directly from the PDL axioms and which rely on additional structural assumptions. In particular, we distinguish between (a) the derivation of the minimal \((4,6)\) structure and of the proton architecture from the optimisation functional, and (b) the postulates that relate the active surface and the proton–electron mass ratio to \(\alpha\).
+
+  \item[(ii)] To obtain a closed-form expression for the inverse fine-structure constant in terms of the proton–electron mass ratio \(\mu\), the valence content \(r_{\mathrm{val}}\), and a single geometric factor \(\varphi\), and to perform a numerical evaluation of this expression. Under the stated hypotheses, the main result is that
+             \[
+               \alpha_{\mathrm{PDL}}^{-1}
+               = \mu\,\frac{9}{\varphi^2 r_{\mathrm{val}}^2}
+             \]
+             which yields \(\alpha_{\mathrm{PDL}}^{-1} \simeq 137.02\), in close quantitative agreement with the experimentally determined value \(\alpha^{-1} \simeq 137.036\).
+
+  \item[(iii)] To assess the local robustness and phenomenological consistency of this relation. This analysis comprises a sensitivity study with respect to variations in the active surface content, as well as an examination of how the substitution \(\alpha \to \alpha_{\mathrm{PDL}}\) modifies the hydrogenic energy spectrum and the Bohr radius within the conventional Schrödinger description of the hydrogen atom.
+\end{itemize}
+
+The scope of the present work is intentionally restricted. We do not attempt to derive Schrödinger dynamics from the PDL axioms, nor to address the full formal structure of QED or relativistic quantum field theory. The nonrelativistic Schrödinger equation is instead regarded as an effective dynamical framework into which structurally interpreted parameters are inserted. Similarly, we do not undertake a comprehensive combinatorial classification of all admissible proton architectures; the analysis concentrates on a specific PDL architecture that has previously been shown to be compatible with qualitative features of proton structure as described in QCD.
+
+Within these limitations, the contribution of this paper is to provide a self-contained and structurally explicit account of how the PDL architecture of the proton can generate a quantitatively non-trivial expression for the fine-structure constant, and to elucidate the extent to which this expression is constrained and robust.
+
+\section{PDL framework and structural results employed in this work}
+
+In this section, we concisely review those components of the Projective Dynamic Logo (PDL) framework that are directly required for the construction of the proton architecture and the associated active surface. Comprehensive treatments of the PDL formalism and its broader theoretical setting are provided in \cite{Laubscher2026IntroPDL,Laubscher2026PDL_English,Laubscher2026LDP_French}.
+
+\subsection{Relational axioms and signed graphs}
+
+Within the framework of PDL, physical reality is represented as a network of minimal logical closures, formally captured by finite signed graphs. A configuration is characterised by a finite set of vertices, each corresponding to an informational entity, together with signed edges that encode binary agreement/disagreement relations between pairs of such entities.
+
+\begin{definition}[Logical configuration]
+  A logical configuration is an ordered pair \(G = (V,E)\), where
+  \begin{itemize}
+    \item \(V\) denotes a finite set of vertices, interpreted as informational entities,
+    \item \(E \subseteq V \times V\) is a set of undirected edges,
+    \item each edge \((i,j) \in E\) is endowed with a sign \(s_{ij} \in \{+1,-1\}\).
+  \end{itemize}
+  A triangle is an unordered triple \(\{i,j,k\} \subset V\) such that
+  \((i,j),(j,k),(i,k) \in E\). Such a triangle is said to be \emph{coherent} if
+  \[
+    s_{ij}\,s_{jk}\,s_{ik} = +1,
+  \]
+  and \emph{violated} otherwise.
+\end{definition}
+
+Let \(n = |V|\) denote the cardinality of the vertex set. The total number of unordered vertex triples is \(\binom{n}{3}\). Denoting by \(N_{\mathrm{viol}}(G)\) the number of violated triangles in the graph \(G\), we define the fraction of violated triangles as
+\[
+  \varepsilon(G)
+  = \begin{cases}
+      \dfrac{N_{\mathrm{viol}}(G)}{\binom{n}{3}}, & n \ge 3, \\[0.5em]
+      0, & n < 3.
+    \end{cases}
+\]
+The relational density of \(G\) is defined by
+\[
+  \rho(G) = \frac{r}{r_{\max}(n)},
+  \qquad
+  r = |E|,
+  \quad
+  r_{\max}(n) = \frac{n(n-1)}{2},
+\]
+where \(r\) denotes the number of edges in \(G\), and \(r_{\max}(n)\) is the maximal number of edges in a simple undirected graph on \(n\) vertices.
+
+\begin{definition}[Logical optimisation functional]
+  The logical optimisation functional is a mapping
+  \[
+    F : [0,1] \times [0,1] \times \{0,1\} \to \mathbb{R},
+    \qquad
+    F(\varepsilon,\rho,m) = w_{\mathrm{coh}} f_{\mathrm{coh}}(\varepsilon)
+    + w_{\mathrm{conn}} f_{\mathrm{conn}}(\rho)
+    + w_{\mathrm{min}} m,
+  \]
+  where \(w_{\mathrm{coh}},w_{\mathrm{conn}},w_{\mathrm{min}} > 0\) are fixed weighting parameters,
+  \(f_{\mathrm{coh}}\) is a strictly decreasing function, \(f_{\mathrm{conn}}\) is a (weakly) increasing
+  function on the relevant domain, and \(m \in \{0,1\}\) is a minimality indicator
+  (with \(m = 1\) if the structure is minimally closed and \(m = 0\) otherwise).
+\end{definition}
+
+Intuitively, the functional \(F\) singles out dynamically sustainable configurations by preferentially selecting those with a low violation fraction \(\varepsilon\), a high relational density \(\rho\) up to the point of closure, and minimality with respect to set-theoretic inclusion. These components are integrated under four axiomatic principles: minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation \cite{Laubscher2026IntroPDL,Laubscher2026PDL_English}.
+
+\subsection{The minimal \texorpdfstring{\((4,6)\)}{(4,6)} structure as an electron prototype}
+
+Within this framework, an \emph{elementary stationary structure} is defined as a signed graph that realises a closed, non-hierarchical and dynamically stable pattern of coherence. The first instance of such a structure arises for four vertices.
+
+\begin{theorem}[Minimal stationary structure \texorpdfstring{\((4,6)\)}{(4,6)}]
+  \label{thm:46_minimal}
+  Within the class of finite signed graphs that satisfy the PDL axioms and maximise the logical optimisation functional \(F\) at the fundamental level, the first minimal stationary structure is the complete signed graph on four vertices and six edges, denoted \((4,6)\). There exists an assignment of edge signs such that all triangular subgraphs are coherent, \(\varepsilon = 0\), the coherent triangles form a connected network that exhaustively covers the graph, and a global inversion of all signs induces a binary pulsation that preserves triangular coherence.
+\end{theorem}
+
+In the PDL framework, this \((4,6)\) configuration is interpreted as the logical prototype of an electron at rest: it realises a minimal closed regime of existence endowed with an intrinsic pulsation, and the coherence cost per cycle is identified with the quantum of action \(\hbar\) \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}.
+
+\subsection{Combinatorial architecture of the proton}
+
+The proton necessitates a more elaborate composite organisation. Within the PDL description, it is represented as a two-level hierarchical structure composed of three local stationary domains (valence cores) immersed in a dynamical relational sea.
+
+\begin{proposition}[Combinatorial parameters of the PDL proton]
+  \label{prop:proton_params}
+  Under the PDL axioms and subject to the constraints of
+  \begin{itemize}
+    \item internal completeness of each valence core (multiplicity being an integer multiple of \(4\)),
+    \item minimal internal asymmetry sufficient to generate a net charge \(+1\),
+    \item the existence of a non-trivial relational sea,
+    \item maximisation of the optimisation functional \(F\) under these constraints,
+  \end{itemize}
+  The proton is modeled as being composed of three valence cores characterized by the occupation numbers
+\[
+  n_u = 24, \quad n_d = 28,
+\]
+for up- and down-type constituents, respectively. This specification yields the numbers of stationary pairwise valence relations
+\[
+  r_u = \frac{n_u(n_u - 1)}{2} = 276,
+  \qquad
+  r_d = \frac{n_d(n_d - 1)}{2} = 378,
+\]
+and hence a total number of stationary valence relations
+\[
+  r_{\mathrm{val}} = 2 r_u + r_d = 930.
+\]
+The relational sea further contributes
+\[
+  R_{\mathrm{sea}} = 10\,087
+\]
+dynamical relations, leading to a total number of internal relations
+\[
+  R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}} = 11\,017.
+\]
+\end{proposition}
+Thus, the stationary and dynamical contributions correspond to approximately \(9\%\) and \(91\%\) of the total internal relational content, respectively.
+
+These integers specify a minimal composite closure that is consistent with the PDL axioms and reproduces the qualitative characteristics of the QCD-based description of the proton, in which only a small fraction of the proton mass is ascribed to valence degrees of freedom. They will play a central role in the construction of the active surface and in the derivation of the corresponding expression for the fine-structure constant.
+
+\section{Active surface and relational formulation of \texorpdfstring{\(\alpha\)}{alpha}}
+
+Within the PDL framework, the proton does not couple to an external electron-type \((4,6)\) structure across its entire internal relational volume. Rather, the interaction is mediated by a finite subset of internal relations that collectively constitute an \emph{active surface}. This section provides a formalisation of this concept at the level of precision required for the subsequent derivation of the fine-structure constant.
+
+\subsection{Definition of the active surface}
+
+Within the signed‑graph formalism, the interaction between the protonic hierarchy and an external \((4,6)\) electron is mediated by \emph{mixed triangles}, that is, triangular subgraphs comprising both proton and electron vertices. Nevertheless, only a restricted subset of proton–proton relations can participate in such mixed triangles without generating additional violations of triangular coherence.
+
+\begin{definition}[Active surface of the proton]
+  Let \(G_p\) be a signed graph encoding the protonic structure and \(G_e\) a signed graph encoding an electron-type \((4,6)\) structure. Denote by \(G = G_p \cup G_e\) their union, including all potential edges between vertices of \(G_p\) and vertices of \(G_e\).
+
+  A protonic edge \(e_{ij}\) with \(i,j \in V(G_p)\) is said to be \emph{active} (with respect to \(G_e\)) if there exists at least one triangle \(\{i,j,k\}\) in \(G\) such that
+  \begin{itemize}
+    \item \(k \in V(G_e)\),
+    \item \((i,k)\) and \((j,k)\) are edges of \(G\),
+    \item the signs on \((i,j)\), \((i,k)\), and \((j,k)\) can be chosen (or are fixed) so that the mixed triangle \(\{i,j,k\}\) is coherent, i.e.\ \(s_{ij} s_{ik} s_{jk} = +1\),
+    \item the incorporation of this mixed triangle does not induce any additional violation of triangular coherence within the combined graph \(G\).
+  \end{itemize}
+  The \emph{active surface} of the proton is defined as the set of all active protonic edges, and its cardinality is denoted by \(R_{\mathrm{surf}}\).
+\end{definition}
+
+By construction, the active surface is defined as a strict subset of the full set of internal proton relations. It excludes those relations whose primary function is the maintenance of the internal coherence of the valence cores or of the relational sea and retains only those relations that can be consistently coupled to the electron without violating the conditions of global closure.
+
+\begin{proposition}[Order-of-magnitude estimate for the active surface]
+  \label{prop:Rsurf_order}
+  Let \(r_u = 276\) and \(r_d = 378\) denote the numbers of stationary relations associated with the up- and down-type valence cores, respectively, as introduced in Proposition~\ref{prop:proton_params}. A natural charge-weighted count of valence relations is given by
+  \[
+    R_{\mathrm{raw}} = 2 r_u + r_d = 930,
+  \]
+  which coincides with the total valence content \(r_{\mathrm{val}}\). When the internal hierarchical organisation of the proton is taken into account (namely, valence cores, relational sea, and global closure constraints), the subset of relations that remains effectively available for forming coherent mixed triangles with an external \((4,6)\) structure is reduced to a finite active surface whose cardinality is of the order
+  \[
+    R_{\mathrm{surf}} \sim \mathcal{O}(5 \times 10^2).
+  \]
+\end{proposition}
+
+\begin{remark}
+  Proposition~\ref{prop:Rsurf_order} is intentionally formulated in a qualitative fashion: it formalises the heuristic statement that approximately one half of the valence relations are effectively projected onto the electron–interface, while the remaining half is dedicated to the purely internal stabilisation of the protonic hierarchy. In the next subsection, this heuristic estimate will be rendered precise and reformulated as a parameter-free relation,
+  \(R_{\mathrm{surf}} = \varphi r_{\mathrm{val}}/3\).
+\end{remark}
+
+\subsection{Geometrical refinement: role of the golden ratio}
+
+The order-of-magnitude estimate of Proposition~\ref{prop:Rsurf_order} can be refined by observing that the total valence coherence content \(r_{\mathrm{val}}\) is distributed over three cores, and by introducing a simple optimisation factor to model the redistribution of coherence from the core to the surface.
+
+Define
+\[
+  r_{\mathrm{core}} = \frac{r_{\mathrm{val}}}{3}
+\]
+as the mean coherence core associated with each valence quark. We then assume that the effective number of active surface relations is obtained by multiplying this mean core content by a universal geometrical factor.
+
+\begin{hypothesis}[Relational optimisation factor]
+  \label{hyp:phi_recap}
+  There exists a dimensionless optimisation factor \(\varphi > 0\), identified
+  with the golden ratio
+  \[
+    \varphi = \frac{1 + \sqrt{5}}{2},
+  \]
+  such that the effective active surface of the proton is given by
+  \[
+    R_{\mathrm{surf}} = \varphi\, r_{\mathrm{core}}
+    = \varphi\,\frac{r_{\mathrm{val}}}{3}.
+  \]
+\end{hypothesis}
+
+From an operational perspective, \(\varphi\) is interpreted as a candidate relational invariant that encodes an optimal redistribution of coherence from a stationary core to its accessible surface, under the constraints of hierarchical closure and minimal leakage. It is not introduced as an externally adjusted numerical parameter, but rather as a natural geometrical factor whose relevance can be assessed empirically through the induced expression for \(\alpha\).
+
+The next proposition states the refined value of the active surface for the PDL proton.
+
+\begin{proposition}[Refined active surface of the PDL proton]
+  \label{prop:Rsurf_refined_recap}
+  Under Hypothesis~\ref{hyp:phi_recap}, the active surface of the PDL proton
+  has cardinality
+  \[
+    R_{\mathrm{surf}} = \varphi\,\frac{r_{\mathrm{val}}}{3}.
+  \]
+  For \(r_{\mathrm{val}} = 930\) and \(\varphi \approx 1.618\), this gives
+  \[
+    R_{\mathrm{surf}} \approx 1.618 \times 310 \approx 501.59.
+  \]
+\end{proposition}
+
+This refined value will subsequently be combined with the proton–electron mass ratio to construct the structural expression for the fine-structure constant in Section~\ref{thm:alpha_LDP}.
+
+\section{PDL expression for the fine-structure constant}
+
+In this section, a structural hypothesis for the fine-structure constant \(\alpha\) is formulated within the LDP framework, and a closed-form expression \(\alpha_{\mathrm{LDP}}^{-1}\) is derived in terms of the proton–electron mass ratio \(\mu\), the valence content \(r_{\mathrm{val}}\), and a single geometric factor \(\varphi\). Throughout this analysis, the combinatorial architecture of the proton is regarded as fixed, with
+\[
+  n_u = 24, \quad n_d = 28, \quad
+  r_u = \frac{n_u(n_u-1)}{2} = 276, \quad
+  r_d = \frac{n_d(n_d-1)}{2} = 378,
+\]
+\[
+  r_{\mathrm{val}} = 2 r_u + r_d = 930,
+\]
+as obtained in the LDP construction of the proton \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}. The dynamical sea contributes an additional \(R_{\mathrm{sea}} = 10\,087\) relations, yielding a total
+\[
+  R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}} = 11\,017,
+\]
+although these latter quantities do not appear explicitly in the final expression for \(\alpha\).
+
+\subsection{Structured hypothesis for \texorpdfstring{\(\alpha\)}{alpha}}
+
+We introduce the concept of an \emph{active surface} \(R_{\mathrm{surf}}\), defined as the effective number of protonic relational degrees of freedom that remain available—after all internal closure constraints have been satisfied—to form coherent mixed triangles with an external \((4,6)\) electron block. At this stage, a detailed combinatorial specification of this surface is not required; we only assume that \(R_{\mathrm{surf}}\) is constructed from the internal proton architecture in a manner that does not depend on the value of \(\alpha\).
+
+Let
+\[
+  \mu = \frac{m_p}{m_e}
+\]
+denote the proton-to-electron mass ratio. Within the LDP framework, \(\mu\) quantifies the relative coherence cost associated with maintaining the composite protonic hierarchy, measured against the minimal \((4,6)\) closure that characterizes the electron \cite{Laubscher2026PDL_English,Laubscher2026IntroPDL}.
+
+\begin{hypothesis}[Surface coherence ratio for the electromagnetic coupling]
+  \label{hyp:alpha_surface_ratio}
+  The inverse fine-structure constant is identified with a surface coherence ratio of the proton–electron system, given by
+  \[
+    \alpha^{-1} = \frac{\mu}{R_{\mathrm{surf}}^2},
+  \]
+  where \(R_{\mathrm{surf}}\) denotes the effective number of active surface relations of the proton that are accessible to an external \((4,6)\) electron structure.
+\end{hypothesis}
+
+This hypothesis formalizes the proposal that \(\alpha\) measures the fraction of the proton’s internal coherence budget—expressed in units set by the electron—that is effectively projected onto a finite relational boundary. It is not derived from the axioms of LDP, but is instead adopted as a structured, empirically testable postulate.
+
+\subsection{Geometrical refinement of the active surface}
+
+The bare valence content \(r_{\mathrm{val}} = 930\) overestimates the number of relations that can directly enter into mixed coherent triangles with an external electron, because a substantial subset of these valence relations is required to ensure the internal coherence of the valence cores themselves. A first-order reduction procedure therefore yields an effective surface of order a few \(10^2\) relations \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}.
+
+To refine this estimate into a parameter-free expression, we introduce the mean coherence core per valence quark,
+\[
+  r_{\mathrm{core}} = \frac{r_{\mathrm{val}}}{3} = \frac{930}{3} = 310,
+\]
+and posit that a fundamental geometrical optimisation factor governs the redistribution of this core coherence toward the active surface.
+
+\begin{hypothesis}[Relational optimisation factor]
+  \label{hyp:phi}
+  There exists a dimensionless optimisation factor \(\varphi > 0\), identified with the
+  golden ratio
+  \[
+    \varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618,
+  \]
+  such that the effective number of active surface relations of the proton is given by
+  \[
+    R_{\mathrm{surf}} = \varphi\, r_{\mathrm{core}}
+    = \varphi\, \frac{r_{\mathrm{val}}}{3}.
+  \]
+\end{hypothesis}
+
+In operational terms, Hypothesis~\ref{hyp:phi} asserts that \(\varphi\) functions as a relational optimisation invariant: it quantifies an optimal redistribution of coherence from a quasi-stationary core to its accessible surface under the combined constraints of hierarchical closure and minimal leakage, rather than appearing as an externally imposed numerical coincidence.
+
+\begin{proposition}[Refined expression for the active surface]
+  \label{prop:Rsurf_refined}
+  Under Hypothesis~\ref{hyp:phi}, the active surface of the LDP proton is given by
+  \[
+    R_{\mathrm{surf}} = \varphi\, \frac{r_{\mathrm{val}}}{3}.
+  \]
+  For \(r_{\mathrm{val}} = 930\) and \(\varphi \approx 1.618\), this yields
+  \[
+    R_{\mathrm{surf}} \approx 1.618 \times 310 \approx 501.59.
+  \]
+\end{proposition}
+
+\begin{proof}
+  The first statement follows directly from Hypothesis~\ref{hyp:phi}. Substituting \(r_{\mathrm{val}} = 930\) gives \(r_{\mathrm{core}} = 930/3 = 310\),
+  so that
+  \[
+    R_{\mathrm{surf}} = \varphi\, r_{\mathrm{core}}
+    = \varphi \times 310.
+  \]
+  With \(\varphi \approx 1.618\), one obtains
+  \[
+    R_{\mathrm{surf}} \approx 1.618 \times 310 \approx 501.59,
+  \]
+  as claimed.
+\end{proof}
+
+\subsection{Main theorem: structural expression for \texorpdfstring{\(\alpha_{\mathrm{LDP}}\)}{alpha\_LDP}}
+
+We now combine the surface-coherence hypothesis for \(\alpha\) (Hypothesis~\ref{hyp:alpha_surface_ratio}) with the refined expression for the active surface (Proposition~\ref{prop:Rsurf_refined}) to derive a closed-form expression for \(\alpha_{\mathrm{LDP}}\).
+
+\begin{theorem}[Structural expression for the fine-structure constant in the LDP]
+  \label{thm:alpha_LDP}
+  Let \(r_{\mathrm{val}} = 930\) denote the valence content of the proton, and \(\mu = m_p/m_e\) the proton--electron mass ratio.
+  Assume Hypotheses~\ref{hyp:alpha_surface_ratio} and \ref{hyp:phi}. Then the inverse fine-structure constant predicted by the LDP framework is
+  \[
+    \alpha_{\mathrm{LDP}}^{-1}
+    = \mu\, \frac{9}{\varphi^2 r_{\mathrm{val}}^2}.
+  \]
+  In particular, for \(\mu \simeq 1836.15\), \(r_{\mathrm{val}} = 930\) and
+  \(\varphi \simeq 1.618\), one obtains
+  \[
+    \alpha_{\mathrm{LDP}}^{-1} \simeq 137.02,
+  \]
+  which agrees with the experimental value \(\alpha^{-1} \simeq 137.036\) to within a relative deviation of a few \(10^{-4}\).
+\end{theorem}
+
+\begin{proof}
+  By Hypothesis~\ref{hyp:alpha_surface_ratio} we have
+  \[
+    \alpha^{-1} = \frac{\mu}{R_{\mathrm{surf}}^2}.
+  \]
+  Under Hypothesis~\ref{hyp:phi}, Proposition~\ref{prop:Rsurf_refined} implies
+  \[
+    R_{\mathrm{surf}} = \varphi\, \frac{r_{\mathrm{val}}}{3}.
+  \]
+  Substituting this expression into the relation for \(\alpha^{-1}\) gives
+  \[
+    \alpha^{-1}
+    = \frac{\mu}{\left(\varphi\, \dfrac{r_{\mathrm{val}}}{3}\right)^2}
+    = \frac{\mu}{\varphi^2}\, \left(\frac{3}{r_{\mathrm{val}}}\right)^2
+    = \mu\, \frac{9}{\varphi^2 r_{\mathrm{val}}^2}.
+  \]
+  We denote this structurally defined quantity by \(\alpha_{\mathrm{LDP}}^{-1}\),
+  thereby obtaining the claimed closed-form expression.
+
+  For the numerical evaluation, we use
+  \(\mu \simeq 1836.15\),
+  \(r_{\mathrm{val}} = 930\),
+  and \(\varphi \simeq 1.618\).
+  This yields
+  \[
+    R_{\mathrm{surf}} \simeq 1.618 \times 310 \simeq 501.59,
+  \]
+  and consequently
+  \[
+    \alpha_{\mathrm{LDP}}^{-1}
+    = \frac{\mu}{R_{\mathrm{surf}}^2}
+    \simeq \frac{1836.15}{(501.59)^2}
+    \simeq 137.02.
+  \]
+  The CODATA value of the fine-structure constant satisfies
+  \(\alpha^{-1} \simeq 137.036\), so that the relative deviation
+  \(|\alpha_{\mathrm{LDP}}^{-1} - \alpha^{-1}|/\alpha^{-1}\) is of order a few
+  \(10^{-4}\). This completes the proof.
+\end{proof}
+
+\subsection{Numerical comparison and interpretation}
+
+The expression in Theorem~\ref{thm:alpha_LDP} shows that, within the LDP framework, the fine-structure constant admits an interpretation as a surface-to-volume coherence fraction:
+\[
+  \alpha_{\mathrm{LDP}}^{-1}
+  = \mu\, \frac{9}{\varphi^2 r_{\mathrm{val}}^2}.
+\]
+The only continuous input parameter is the empirically determined mass ratio \(\mu\); the quantities \(r_{\mathrm{val}}\) and \(\varphi\) enter respectively as a discrete valence parameter determined by the proton architecture and as a purely geometric optimisation factor. No additional continuous fitting parameter is introduced.
+
+From a numerical perspective, the agreement with the observed value of \(\alpha^{-1}\) at the level of \(10^{-4}\) suggests that the LDP proton architecture, together with the surface-coherence hypothesis, captures a non-trivial subset of the combinatorial constraints underlying the electromagnetic coupling. In the remainder of the paper, we investigate the local robustness of this expression and its incorporation into the standard Schrödinger description of the hydrogen atom.
+
+\section{Local robustness of the derivation}
+
+The structural expression obtained in Theorem~\ref{thm:alpha_LDP} implies that, once the proton architecture and the optimisation factor \(\varphi\) are fixed, the fine-structure constant is determined by a simple algebraic function of \(\mu\), \(r_{\mathrm{val}}\) and \(\varphi\). In this section we analyse the sensitivity of \(\alpha_{\mathrm{LDP}}^{-1}\) to small variations of the effective surface \(R_{\mathrm{surf}}\) and of the parameters entering its definition. Our objective is not to perform a comprehensive statistical study, but rather to demonstrate that the observed numerical agreement at the \(10^{-4}\) level is compatible with plausible combinatorial uncertainties in the surface content.
+
+\subsection{Sensitivity analysis}
+
+For the purposes of this subsection, we adopt the surface-coherence hypothesis, Hypothesis~\ref{hyp:alpha_surface_ratio}, as the primary defining relation
+\[
+  \alpha^{-1} = \frac{\mu}{R_{\mathrm{surf}}^2},
+\]
+with \(\mu\) fixed at its empirical value. We then investigate how an infinitesimal perturbation of \(R_{\mathrm{surf}}\) propagates into a variation of \(\alpha^{-1}\).
+
+\begin{proposition}[Dependence of \texorpdfstring{\(\alpha^{-1}\)}{alpha^{-1}} on \texorpdfstring{\(R_{\mathrm{surf}}\)}{R\_surf}]
+  \label{prop:sensitivity_Rsurf}
+  Let \(\alpha^{-1}(R_{\mathrm{surf}}) = \mu / R_{\mathrm{surf}}^2\) with fixed \(\mu > 0\).
+  Then
+  \[
+    \frac{d\,\alpha^{-1}}{d R_{\mathrm{surf}}}
+    = -\,\frac{2\mu}{R_{\mathrm{surf}}^3}
+    = -\,2\,\frac{\alpha^{-1}}{R_{\mathrm{surf}}}.
+  \]
+  In particular, a small relative variation \(\delta R_{\mathrm{surf}} / R_{\mathrm{surf}}\)
+  induces, to first order, a relative variation of \(\alpha^{-1}\) given by
+  \[
+    \frac{\delta \alpha^{-1}}{\alpha^{-1}}
+    \simeq -\,2\,\frac{\delta R_{\mathrm{surf}}}{R_{\mathrm{surf}}}.
+  \]
+\end{proposition}
+
+\begin{proof}
+  Differentiating \(\alpha^{-1}(R_{\mathrm{surf}}) = \mu R_{\mathrm{surf}}^{-2}\) with respect
+  to \(R_{\mathrm{surf}}\) yields
+  \[
+    \frac{d\,\alpha^{-1}}{d R_{\mathrm{surf}}}
+    = \mu\,\frac{d}{d R_{\mathrm{surf}}} \left( R_{\mathrm{surf}}^{-2} \right)
+    = \mu\,(-2)\,R_{\mathrm{surf}}^{-3}
+    = -\,\frac{2\mu}{R_{\mathrm{surf}}^3}.
+  \]
+  Since \(\alpha^{-1} = \mu / R_{\mathrm{surf}}^2\), this can be rewritten as
+  \[
+    \frac{d\,\alpha^{-1}}{d R_{\mathrm{surf}}}
+    = -\,2\,\frac{\mu}{R_{\mathrm{surf}}^3}
+    = -\,2\,\frac{\alpha^{-1}}{R_{\mathrm{surf}}}.
+  \]
+  For a small perturbation \(\delta R_{\mathrm{surf}}\), the first-order variation of
+  \(\alpha^{-1}\) is
+  \[
+    \delta \alpha^{-1}
+    \simeq \frac{d\,\alpha^{-1}}{d R_{\mathrm{surf}}}\,\delta R_{\mathrm{surf}}
+    = -\,2\,\frac{\alpha^{-1}}{R_{\mathrm{surf}}}\,\delta R_{\mathrm{surf}}.
+  \]
+  Dividing both sides by \(\alpha^{-1}\) yields
+  \[
+    \frac{\delta \alpha^{-1}}{\alpha^{-1}}
+    \simeq -\,2\,\frac{\delta R_{\mathrm{surf}}}{R_{\mathrm{surf}}},
+  \]
+  as claimed.
+\end{proof}
+
+Proposition~\ref{prop:sensitivity_Rsurf} admits a straightforward interpretation: the mapping
+\(R_{\mathrm{surf}} \mapsto \alpha^{-1}\) is locally Lipschitz continuous, and relative perturbations in
+\(R_{\mathrm{surf}}\) are amplified by a factor of approximately \(2\) in
+\(\alpha^{-1}\). Consequently, for example, a relative uncertainty of \(0.1\%\) in
+\(R_{\mathrm{surf}}\) induces a relative uncertainty of approximately \(0.2\%\) in
+\(\alpha^{-1}\).
+
+\subsection{Bounds for small variations of the active surface}
+
+We now specialise to the LDP proton and to the reference value
+\(R_{\mathrm{surf}}^{(0)} \approx 501.59\) obtained in Proposition~\ref{prop:Rsurf_refined}.
+
+\begin{corollary}[Local robustness around the LDP surface]
+  \label{cor:local_robustness}
+  Let \(R_{\mathrm{surf}}^{(0)} \approx 501.59\) denote the LDP surface value and
+  \(\alpha^{-1}_{\mathrm{LDP}} = \mu / (R_{\mathrm{surf}}^{(0)})^2 \approx 137.02\) the
+  corresponding inverse fine-structure constant. Suppose that the true active surface satisfies
+  \[
+    R_{\mathrm{surf}} \in \bigl[ R_{\mathrm{surf}}^{(0)}(1 - \delta),
+                               R_{\mathrm{surf}}^{(0)}(1 + \delta) \bigr]
+  \]
+  for some \(\delta > 0\) with \(\delta \ll 1\). Then, to first order in \(\delta\), the relative deviation of \(\alpha^{-1}\) from \(\alpha^{-1}_{\mathrm{LDP}}\) satisfies
+  \[
+    \left| \frac{\alpha^{-1} - \alpha^{-1}_{\mathrm{LDP}}}{\alpha^{-1}_{\mathrm{LDP}}} \right|
+    \lesssim 2\delta.
+  \]
+\end{corollary}
+
+\begin{proof}
+  Writing \(R_{\mathrm{surf}} = R_{\mathrm{surf}}^{(0)} + \delta R_{\mathrm{surf}}\),
+  with \(|\delta R_{\mathrm{surf}}| \leq \delta\, R_{\mathrm{surf}}^{(0)}\),
+  Proposition~\ref{prop:sensitivity_Rsurf} implies, to first order,
+  \[
+    \frac{\delta \alpha^{-1}}{\alpha^{-1}}
+    \simeq -\,2\,\frac{\delta R_{\mathrm{surf}}}{R_{\mathrm{surf}}}.
+  \]
+  Evaluating at the reference point \(R_{\mathrm{surf}}^{(0)}\) and using
+  \(|\delta R_{\mathrm{surf}}| \leq \delta\, R_{\mathrm{surf}}^{(0)}\) yields
+  \[
+    \left| \frac{\delta \alpha^{-1}}{\alpha^{-1}} \right|
+    \lesssim 2\,\delta,
+  \]
+  where \(\delta \alpha^{-1} = \alpha^{-1} - \alpha^{-1}_{\mathrm{LDP}}\) and
+  \(\alpha^{-1}\) is evaluated at the perturbed surface.
+  Since \(\alpha^{-1} \approx \alpha^{-1}_{\mathrm{LDP}}\) at leading order, we may
+  replace \(\alpha^{-1}\) by \(\alpha^{-1}_{\mathrm{LDP}}\) in the denominator of the
+  relative variation, which yields
+  \[
+    \left| \frac{\alpha^{-1} - \alpha^{-1}_{\mathrm{LDP}}}{\alpha^{-1}_{\mathrm{LDP}}} \right|
+    \lesssim 2\,\delta,
+  \]
+  as claimed.
+\end{proof}
+
+As a concrete example, if the combinatorial construction of the active surface were uncertain at the level \(\delta \sim 10^{-3}\) (that is, if the true value of \(R_{\mathrm{surf}}\) differed from \(R_{\mathrm{surf}}^{(0)}\) by up to \(0.1\%\)), Corollary~\ref{cor:local_robustness} implies that the resulting relative uncertainty in \(\alpha^{-1}\) would be at most of order \(2\times 10^{-3}\), i.e.\ of order \(10^{-3}\) rather than \(10^{-4}\). Conversely, achieving agreement at the level of a few \(10^{-4}\) necessitates controlling the effective surface content at the level of a few \(10^{-4}\) as well.
+
+This elementary stability analysis does not yet account for possible correlations between \(R_{\mathrm{surf}}\), \(r_{\mathrm{val}}\), and \(\varphi\), nor does it address the issue of global uniqueness of the proton architecture. It nevertheless demonstrates that the numerical agreement obtained in Theorem~\ref{thm:alpha_LDP} is not pathologically unstable: small relative perturbations in the surface content induce proportionally small relative variations in \(\alpha^{-1}\), with a quantitatively controlled amplification factor.
+
+In the following section, we briefly recall the standard nonrelativistic Schrödinger description of the hydrogen atom and analyse how the substitution \(\alpha \to \alpha_{\mathrm{PDL}}\), as defined in Theorem~\ref{thm:alpha_LDP}, modifies the Coulomb potential, the bound-state spectrum, and the Bohr radius. We limit ourselves to the leading-order hydrogenic expressions and do not include relativistic or QED corrections.
+
+\subsection{Effective Coulomb Potential and Schrödinger Equation}
+
+In standard nonrelativistic quantum mechanics, the hydrogen atom is described as an electron of mass \(m_e\) moving in the electrostatic Coulomb field generated by a point-like proton carrying charge \(+e\). The interaction potential is given by
+\[
+  V(r) = -\,\frac{e^2}{4\pi \varepsilon_0}\,\frac{1}{r}
+       = -\,\alpha\,\hbar c\,\frac{1}{r},
+\]
+where \(\alpha = e^2/(4\pi\varepsilon_0\hbar c)\) denotes the fine-structure constant. The corresponding time-dependent Schrödinger equation takes the form
+\[
+  i\hbar\,\frac{\partial \psi}{\partial t}(\vb{r},t)
+  =
+  \left[
+    -\,\frac{\hbar^2}{2m_e}\,\Delta
+    -\,\alpha\,\hbar c\,\frac{1}{r}
+  \right] \psi(\vb{r},t).
+\]
+
+The associated time-independent problem yields the familiar hydrogenic energy spectrum
+\[
+  E_n = -\,\frac{1}{2}\,m_e c^2\,\frac{\alpha^2}{n^2},
+  \qquad n = 1,2,\dots,
+\]
+as well as the Bohr radius
+\[
+  a_0 = \frac{\hbar}{m_e c\,\alpha}.
+\]
+
+Within the PDL framework, the radial dependence of the Coulomb potential is retained, whereas its coupling constant is reexpressed in terms of the proton’s active surface and the mass ratio \(\mu\). Employing the LDP representation of \(\alpha\) from Theorem~\ref{thm:alpha_LDP}, we define an effective potential
+\[
+  V_{\mathrm{eff}}(r)
+  = -\,\alpha_{\mathrm{PDL}}\,\hbar c\,\frac{1}{r},
+  \qquad
+  \alpha_{\mathrm{PDL}}^{-1}
+  = \mu\,\frac{9}{\varphi^2 r_{\mathrm{val}}^2},
+\]
+and obtain the corresponding time-dependent Schrödinger equation
+\[
+  i\hbar\,\frac{\partial \psi}{\partial t}(\vb{r},t)
+  =
+  \left[
+    -\,\frac{\hbar^2}{2m_e}\,\Delta
+    -\,\alpha_{\mathrm{PDL}}\,\hbar c\,\frac{1}{r}
+  \right] \psi(\vb{r},t).
+\]
+
+\subsection{Hydrogenic spectrum and Bohr radius with \texorpdfstring{\(\alpha_{\mathrm{PDL}}\)}{alpha\_PDL}}
+
+Since the radial Schrödinger equation for the hydrogen atom depends solely on the combination \(\alpha\,\hbar c\) entering the Coulomb potential, all standard derivations of the hydrogenic spectrum apply unchanged under the substitution \(\alpha \to \alpha_{\mathrm{PDL}}\). The bound-state energy levels therefore take the form
+\[
+  E_n^{\mathrm{PDL}}
+  = -\,\frac{1}{2}\,m_e c^2\,\frac{\alpha_{\mathrm{PDL}}^2}{n^2},
+  \qquad n = 1,2,\dots,
+\]
+and the corresponding Bohr radius is modified to
+\[
+  a_0^{\mathrm{PDL}}
+  = \frac{\hbar}{m_e c\,\alpha_{\mathrm{PDL}}}.
+\]
+
+To quantify the relative effect of the replacement \(\alpha \to \alpha_{\mathrm{PDL}}\),
+we parameterize the deviation as
+\[
+  \alpha_{\mathrm{PDL}} = \alpha\,(1 + \delta_\alpha),
+\]
+with \(|\delta_\alpha| \ll 1\). Expanding to leading order in \(\delta_\alpha\), we obtain
+\[
+  \frac{E_n^{\mathrm{PDL}} - E_n}{E_n}
+  = \frac{\alpha_{\mathrm{PDL}}^2 - \alpha^2}{\alpha^2}
+  = (1 + \delta_\alpha)^2 - 1
+  \simeq 2\,\delta_\alpha,
+\]
+and
+\[
+  \frac{a_0^{\mathrm{PDL}} - a_0}{a_0}
+  = \frac{\alpha - \alpha_{\mathrm{PDL}}}{\alpha_{\mathrm{PDL}}}
+  \simeq -\,\delta_\alpha.
+\]
+
+Numerically, Theorem~\ref{thm:alpha_LDP} yields \(\alpha_{\mathrm{PDL}}^{-1} \simeq 137.02\), while the empirical value satisfies \(\alpha^{-1} \simeq 137.036\). The resulting relative discrepancy in \(\alpha\) is of order a few \(10^{-4}\), which implies
+\[
+  \left| \frac{E_n^{\mathrm{PDL}} - E_n}{E_n} \right|
+  \sim \text{a few } 10^{-4},
+  \qquad
+  \left| \frac{a_0^{\mathrm{PDL}} - a_0}{a_0} \right|
+  \sim \text{a few } 10^{-4}.
+\]
+
+At this level of accuracy, the PDL-based coupling reproduces the standard hydrogenic phenomenology: both the ground-state energy and the Bohr radius are obtained with a relative precision comparable to the agreement between
+\(\alpha_{\mathrm{PDL}}\) and the experimentally determined fine-structure constant.
+
+From this viewpoint, the hydrogen atom plays a dual role. First, it serves as a nontrivial consistency check: inserting \(\alpha_{\mathrm{PDL}}\) into the Schrödinger equation must not compromise the well-verified predictions of nonrelativistic quantum mechanics at atomic length and energy scales. Second, it provides a setting in which the combinatorial interpretation of \(\alpha\) as a surface coherence fraction acquires a concrete physical realization: the characteristic binding energy and length scale of hydrogen are governed by the manner in which the composite proton distributes its finite coherence budget between internal hierarchical closure and the active surface through which it couples to an electron-type \((4,6)\) structure.
+
+\section{Discussion}
+
+The results obtained thus far demonstrate that, once the proton architecture and the surface-coherence hypothesis are specified, the PDL framework yields a quantitative expression for the fine-structure constant that is both algebraically compact and numerically accurate. In this section, we delineate what is, and what is not, accomplished by this construction, and we situate it within the broader PDL research programme.
+
+\subsection{Conceptual scope and limitations}
+
+First, it is essential to emphasise that Theorem~\ref{thm:alpha_LDP} does not constitute a derivation of \(\alpha\) from the PDL axioms in isolation. The axioms (minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation) play a crucial role in fixing the minimal \((4,6)\) structure and in selecting the proton’s combinatorial architecture, but the identification \(\alpha^{-1} = \mu / R_{\mathrm{surf}}^2\) remains a structured, model-level hypothesis that must be subjected to empirical scrutiny rather than regarded as a logical consequence of the axioms themselves \cite{Laubscher2026IntroPDL,Laubscher2026PDL_English,Laubscher2026LDP_French}.
+
+Second, the present analysis is restricted to a single composite system (the proton) and to a single coupling constant (\(\alpha\)). The same PDL architecture has been employed in other work to propose candidate expressions for Boltzmann’s constant and for an effective gravitational coupling, achieving the correct orders of magnitude but exhibiting larger residual discrepancies and requiring additional assumptions (e.g.\ a small coherence-leakage parameter) \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}. A thorough evaluation of PDL as a foundational framework must therefore address the combined performance of all such constructions, rather than considering the fine-structure constant in isolation.
+
+Third, the present work adopts the nonrelativistic Schrödinger equation as an effective dynamical law for the electronic degree of freedom. No attempt is made to derive Schrödinger dynamics from the PDL axioms or to reconstruct the full formalism of quantum field theory. Consequently, the role of PDL in this context is reinterpretative rather than substitutive: it ascribes a structural origin to the Coulomb coupling that appears in an otherwise standard quantum-mechanical description, rather than proposing an alternative microscopic dynamics.
+
+Finally, the combinatorial architecture of the proton used here, with \((n_u,n_d) = (24,28)\), \(r_{\mathrm{val}} = 930\) and \(R_{\mathrm{sea}} = 10\,087\), although motivated by an optimisation principle and by qualitative consistency with QCD, has not yet been demonstrated to be unique within the space of all admissible PDL structures. Alternative integer assignments could, in principle, reproduce similar phenomenology. A more exhaustive combinatorial analysis will be required to determine the extent to which the PDL proton is uniquely singled out by the axioms together with empirical constraints.
+
+\subsection{Relation to other constants and to the broader PDL programme}
+
+Within the broader PDL framework, the present derivation of \(\alpha\) is part of a coherence-oriented reformulation of several fundamental physical constants. The minimal \((4,6)\) structure associated with the electron is employed to reinterpret Planck’s reduced constant \(\hbar\) as the minimal action per coherence cycle, while the hierarchical proton architecture yields a finite coherence budget and a natural context for defining surface-to-volume fractions \cite{Laubscher2026IntroPDL,Laubscher2026PDL_English}. Boltzmann’s constant and an effective gravitational coupling are likewise represented in terms of the same discrete parameters and a small leakage fraction, albeit with weaker numerical accuracy and additional modelling assumptions \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}.
+
+From this standpoint, the fine-structure constant occupies a particularly distinguished position. Being dimensionless and extremely well constrained by high-precision experiments, it constitutes a highly sensitive diagnostic of any proposed structural reinterpretation. The observation that the PDL expression for \(\alpha^{-1}\) reproduces the empirical value to within a few parts in \(10^{-4}\), without the introduction of adjustable continuous parameters, indicates that the combination of proton valence content, proton–electron mass ratio, and optimisation factor encodes non-trivial information regarding the organisation of microscopic coherence.
+
+Nevertheless, the status of the golden ratio \(\varphi\) as a relational optimisation invariant, as well as the precise combinatorial interpretation of the active surface, remain to be further clarified. An important objective for future work is to replace the current working hypotheses with more elementary graph-theoretic postulates, for example by identifying invariants of the internal optimisation functional that asymptotically reduce to \(\varphi\) and to the effective surface content in suitable limits.
+
+In conclusion, the present derivation should be regarded as one component of a broader research programme. It shows that a purely relational, graph-based formalism can yield a quantitatively non-trivial expression for a central coupling constant of atomic physics, while remaining compatible with standard Schrödinger phenomenology. Whether PDL can ultimately offer a unified and uniquely constrained description of \(\hbar\), \(\alpha\), \(k_B\), gravitational couplings and emergent spacetime geometry is an open problem, but the results obtained here provide a concrete basis for pursuing such a programme.
+
+\section{Outlook}
+
+The structural expression for the fine-structure constant established in Theorem~\ref{thm:alpha_LDP}, together with the robustness analysis and hydrogenic compatibility results, indicates several directions for further investigation.
+
+A first priority is to refine the combinatorial characterisation of the proton architecture. The current assignment \((n_u,n_d) = (24,28)\), \(r_{\mathrm{val}} = 930\), \(R_{\mathrm{sea}} = 10\,087\) is motivated by the optimisation functional \(F\) and by qualitative consistency with QCD-inspired decompositions; however, a more systematic exploration of the admissible configuration space is required to assess issues of uniqueness and stability within the PDL framework \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}. Demonstrating that nearby integer configurations either substantially worsen the value of \(F\) or yield less accurate predictions for \(\alpha\) would significantly reinforce the interpretative significance of the present construction.
+
+A second line of research is to generalise the structural analysis to additional constants and physical systems. The same proton architecture has already been employed to propose candidate expressions for Boltzmann’s constant and for an effective gravitational coupling, albeit with weaker numerical agreement \cite{Laubscher2026PDL_English,Laubscher2026LDP_French}. A re-examination of these constructions in light of the present findings, combined with the imposition of analogous robustness criteria, may help to distinguish which features of the PDL architecture are genuinely constrained by empirical data and which remain underdetermined. Extending the methodology to other nuclei, hydrogen-like ions, or simple multi-electron systems would provide a further test of whether the notion of an active surface can be meaningfully generalised beyond the proton.
+
+A third direction concerns the theoretical status of the optimisation factor \(\varphi\). In the present formulation it is postulated as a plausible relational invariant, with its relevance supported a posteriori by the numerical success of \(\alpha_{\mathrm{PDL}}\). A more satisfactory treatment would derive \(\varphi\) from the internal dynamics induced by the optimisation functional, for instance by identifying a suitable class of local moves on signed graphs for which \(\varphi\) arises as an extremal ratio governing the redistribution of coherence between core and surface.
+
+Finally, the present work does not address the emergence of Schrödinger dynamics from the PDL axioms. Throughout this paper the nonrelativistic Schrödinger equation is treated as an effective dynamical law into which structurally interpreted constants are inserted. A long-term objective of the PDL programme is to recover, at least in an appropriate limiting regime, a linear wave equation governing coarse-grained degrees of freedom directly from the underlying axiomatic and combinatorial structure.
+
+\section*{Acknowledgements}
+
+This work was conducted independently, without institutional funding or a formal research group. The author gratefully acknowledges the practical help of advanced AI assistants for drafting, proofreading and structuring parts of the present manuscript, while retaining full responsibility for all scientific choices, interpretations and possible errors.
+
+\bibliographystyle{plain} % ou autre
+\bibliography{references}
+
+\end{document}

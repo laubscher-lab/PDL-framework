@@ -1,0 +1,143 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{A Minimal Relational Sketch for the Emergence of the Golden Ratio in PDL}
+\author{C\'edric Laubscher\\
+\small Independent researcher in theoretical and mathematical physics}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+
+In the PDL framework, composite structures such as the proton are described as hierarchical closures composed of:
+\begin{itemize}
+  \item an internal quasi-stationary core, characterised by $R_{\text{core}}$ relations (valence content),
+  \item a predominantly dynamical background or ``sea'',
+  \item an active surface, characterised by $R_{\text{surf}}$ relations, through which coherent coupling to external closures (e.g.\ an electron-type $(4,6)$) is established.
+\end{itemize}
+
+The total relational content of the composite is denoted
+\[
+R_{\text{tot}} = R_{\text{core}} + R_{\text{surf}} + R_{\text{sea}}.
+\]
+
+In the proton model used in PDL, the valence content is $r_{\text{valence}} = 930$, the total relational content is $R_{\text{tot}} \approx 11\,017$, and the effective surface is of order $R_{\text{surf}} \approx 5.0 \times 10^2$.
+
+The goal of this note is to sketch how a golden-ratio-like factor can naturally appear when one imposes a minimal optimisation principle relating internal closure and active surface, in a way compatible with the PDL axioms.
+
+\section{Core--Surface Partition and Optimisation}
+
+For present purposes, we focus on the partition between core and active surface and disregard the detailed role of the sea. We write
+\[
+R_{\text{tot}}' = R_{\text{core}} + R_{\text{surf}},
+\]
+where $R_{\text{tot}}'$ is the portion of the relational content directly involved in the stationary core and its active surface.
+
+Two antagonistic tendencies are at play:
+\begin{itemize}
+  \item Internal closure favours a large $R_{\text{core}}/R_{\text{surf}}$ ratio: too small a core weakens the stability of the hierarchical structure.
+  \item External coupling favours a large $R_{\text{surf}}/R_{\text{core}}$ ratio: too small a surface restricts the number of coherent interaction channels.
+\end{itemize}
+
+A simple way to encode this trade-off is to consider a quality functional of the form
+\[
+Q(R_{\text{core}},R_{\text{surf}}) = a \,\frac{R_{\text{core}}}{R_{\text{surf}}} + b \,\frac{R_{\text{surf}}}{R_{\text{core}}},
+\]
+with $a,b>0$. The first term rewards strong internal closure, the second term rewards sufficient external exposure. For fixed $R_{\text{tot}}'$, the ratio
+\[
+x = \frac{R_{\text{core}}}{R_{\text{surf}}}
+\]
+is optimised when
+\[
+\frac{dQ}{dx} = 0 \quad \Rightarrow \quad -a \frac{1}{x^2} + b = 0 \quad \Rightarrow \quad x^2 = \frac{a}{b}.
+\]
+At this level, the optimum is characterised by $x = \sqrt{a/b}$ and does not yet single out any particular numerical value.
+
+To go beyond this, we note that in PDL the proton is not an isolated object: it belongs to a hierarchy of closures. It is therefore natural to require an additional form of \emph{self-similarity} between the way the total relational budget is partitioned and the way the core and surface themselves relate to each other.
+
+\section{Self-Similar Partition and the Golden Ratio}
+
+We now impose a minimal self-similarity condition on the partition of $R_{\text{tot}}'$:
+\begin{equation}
+\frac{R_{\text{core}}}{R_{\text{tot}}'} = \frac{R_{\text{surf}}}{R_{\text{core}}}.
+\label{eq:self-similar}
+\end{equation}
+Intuitively, this expresses that:
+\begin{itemize}
+  \item the role of the core with respect to the whole composite mirrors
+  \item the role of the active surface with respect to the core.
+\end{itemize}
+This is a discrete counterpart of the classical ``part--whole'' characterisations of the golden ratio.
+
+Using $R_{\text{tot}}' = R_{\text{core}} + R_{\text{surf}}$, equation \eqref{eq:self-similar} becomes
+\[
+\frac{R_{\text{core}}}{R_{\text{core}} + R_{\text{surf}}} = \frac{R_{\text{surf}}}{R_{\text{core}}}.
+\]
+Let us define the ratio
+\[
+\lambda = \frac{R_{\text{core}}}{R_{\text{surf}}}.
+\]
+Then $R_{\text{core}} = \lambda R_{\text{surf}}$ and
+\[
+\frac{\lambda R_{\text{surf}}}{\lambda R_{\text{surf}} + R_{\text{surf}}} = \frac{R_{\text{surf}}}{\lambda R_{\text{surf}}}
+\quad\Rightarrow\quad
+\frac{\lambda}{\lambda + 1} = \frac{1}{\lambda}.
+\]
+This yields the quadratic equation
+\[
+\lambda^2 = \lambda + 1.
+\]
+Its positive solution is the golden ratio
+\[
+\lambda = \varphi = \frac{1 + \sqrt{5}}{2}.
+\]
+Consequently,
+\[
+\frac{R_{\text{core}}}{R_{\text{surf}}} = \varphi,\qquad
+\frac{R_{\text{core}}}{R_{\text{tot}}'} = \frac{1}{\varphi},\qquad
+\frac{R_{\text{surf}}}{R_{\text{tot}}'} = \frac{1}{\varphi^2}.
+\]
+
+In this sense, the golden ratio can be seen as the proportion that realises a minimal self-similar partition between core and surface under a simple closure-consistent condition.
+
+\section{Connection with PDL's Proton Architecture}
+
+In the proton model used in PDL, the valence content is $r_{\text{valence}} = 930$, distributed over three quasi-stationary cores (up and down types). A natural way to define an effective core size is
+\[
+R_{\text{core}} \sim r_{\text{valence}},
+\]
+while the active surface is taken to be
+\[
+R_{\text{surf}} \approx \varphi \,\frac{r_{\text{valence}}}{3},
+\]
+reflecting the fact that the effective surface contribution is distributed over the three valence regimes, modulated by a golden-ratio-like factor.
+
+The above self-similar partition suggests that the factor $\varphi$ should not be regarded as an arbitrary insertion, but as a candidate consequence of:
+\begin{itemize}
+  \item the requirement of minimal closure for a composite relational structure,
+  \item an optimisation mechanism balancing internal coherence and external coupling,
+  \item and a self-similarity condition linking the core/whole and surface/core ratios.
+\end{itemize}
+
+In the current formulation of PDL, this logic is implemented at the level of $R_{\text{surf}}$ as an informed hypothesis rather than as a fully derived theorem. A more complete treatment would:
+\begin{enumerate}
+  \item embed the self-similarity condition \eqref{eq:self-similar} into the optimisation functional $\Omega$ used in PDL,
+  \item and verify, in a combinatorial setting, that the resulting extremal configurations indeed select golden-ratio-like partitions as the first admissible solutions under the closure constraints.
+\end{enumerate}
+
+\section{Outlook}
+
+This note is not intended as a final derivation, but as a minimal sketch showing how the golden ratio can naturally emerge from a discrete optimisation mechanism consistent with the PDL axioms. In this perspective, the appearance of $\varphi$ in the expression
+\[
+R_{\text{surf}} \approx \varphi \,\frac{r_{\text{valence}}}{3}
+\]
+should be interpreted as the provisional trace of a deeper closure-oriented optimisation principle, rather than as a numerological insertion.
+
+\end{document}

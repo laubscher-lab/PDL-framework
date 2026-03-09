@@ -1,0 +1,610 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{esint}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+
+\title{%
+From Discrete Coherence Flux to Effective Fields:\\
+A Structured Programme within the PDL Framework
+}
+
+\author{C\'edric Laubscher\\
+\small Independent researcher, Switzerland}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Projective Dynamic Logo (PDL) reconstructs physical reality from relational axioms defined on finite signed graphs, within which a minimal $(4,6)$ closure provides a prototype model for the electron, and a hierarchical proton architecture with a finite active surface supports structural expressions for constants such as the fine-structure constant $\alpha$.\cite{Laubscher2026FullPDL,Laubscher2026Alpha}
+Building on this framework, the present article develops an intermediate descriptive layer between purely combinatorial constructions and continuum field or wave equations, without introducing additional axioms or modifying the existing PDL architecture.
+First, we formulate discrete Gauss- and Faraday-type relations in terms of mixed proton–electron triangle fluxes across logical surfaces and their variation under coherence-cycle counting, and we indicate how these relations coarse-grain into Maxwell-like equations with $\varepsilon_{0}$ and $\mu_{0}$ determined by the structural value $\alpha_{\mathrm{PDL}}$.\cite{Laubscher2026SchrodingerSketch}
+Second, we introduce a combinatorial scheme for counting mixed triangles $N_{\mathrm{mix}}(S(r))$ on positional shells around a proton, demonstrating that, under mild homogeneity assumptions, this count scales as $1/r^{2}$, thereby reproducing Coulomb-like radial field profiles and providing a natural origin for small phase increments $\gamma(r)=2\pi/N_{\mathrm{mix}}^{(0)}(S(r))$.\cite{Laubscher2026SchrodingerPDL}
+Third, we outline PDL-consistent toy graph models in which local reconfigurations of a reduced relational sea generate a discrete Laplacian on position classes, while the radial dependence of $N_{\mathrm{mix}}(S(r))$ induces a Coulomb-like effective potential; in an appropriate scaling limit, the resulting dynamics approximates a Schr\"odinger-type equation with kinetic and potential terms determined by the same coherence structure that underlies $\alpha_{\mathrm{PDL}}$.\cite{Laubscher2026SchrodingerSketch}
+These constructions do not yet constitute a complete derivation of electromagnetism or quantum mechanics from PDL, but they delineate a concrete programme of combinatorial analysis and numerical experimentation that can rigorously assess the framework’s capacity to support effective field and wave descriptions.
+\end{abstract}
+
+\section{Introduction and Aim}
+
+The Projective Dynamic Logo (PDL) constitutes a foundational framework designed to reconstruct physical reality from purely relational axioms defined on finite signed graphs, without invoking a pre-existing spacetime manifold, continuous fields, or primitive particle entities.\cite{Laubscher2026IntroPDL,Laubscher2026FullPDL}
+Within this framework, existence and persistence are reformulated as emergent properties of minimally closed, periodically pulsating relational configurations, selected by a coherence–optimisation principle rather than by externally imposed dynamical laws.\cite{Laubscher2026FullPDL}
+Subject to four basic axioms—minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation—the first non-trivial stationary closure is the complete signed graph on four vertices and six edges, denoted $(4,6)$, which is identified as a logical prototype of an electron at rest.\cite{Laubscher2026IntroPDL,Laubscher2026FullPDL}
+
+At a higher level of organisational complexity, a hierarchically structured proton architecture has been constructed within PDL, characterised by discrete valence occupancies $(n_{u},n_{d})=(24,28)$, a valence relational content $r_{\mathrm{val}}=930$, a dynamical sea with $R_{\mathrm{sea}}=10\,087$ relations, and a total internal relational budget $R_{\mathrm{tot}}=11\,017$.
+In this description, approximately $9\%$ of the relations reside in quasi-stationary core structures, while the remaining $91\%$ form a dynamical background.\cite{Laubscher2026FullPDL,Laubscher2026CombinatorialProton}
+A finite subset of protonic relations defines an \emph{active surface} $S_{\mathrm{act}}$ with cardinality $R_{\mathrm{surf}}\simeq 5.0\times 10^{2}$, which mediates coherent mixed-triangle configurations between the proton and external $(4,6)$ blocks.\cite{Laubscher2026Alpha}
+
+In prior investigations, several physical constants have been reinterpreted as internal coherence ratios emerging from this discrete relational architecture.
+The reduced Planck constant $\hbar$ has been associated with the minimal action per coherence cycle of the $(4,6)$ structure, whereas the fine-structure constant $\alpha$ has been modelled as a surface-to-volume coherence fraction that compares the proton’s global relational budget with its active surface.\cite{Laubscher2026FullPDL,Laubscher2026Alpha}
+A structural expression,
+\[
+\alpha^{-1}_{\mathrm{PDL}} = \mu / (9\varphi^{2} r_{\mathrm{val}}^{2}),
+\]
+where $\mu=m_{p}/m_{e}$ denotes the proton–electron mass ratio, $r_{\mathrm{val}}=930$ is the valence relational content, and $\varphi$ is the golden ratio, reproduces the empirical value of $\alpha$ with a relative accuracy on the order of $10^{-4}$, without the introduction of continuous fitting parameters.\cite{Laubscher2026Alpha,Laubscher2026GoldenRatioSurface}
+When inserted into the standard non-relativistic Schr\"odinger equation for the hydrogen atom, $\alpha_{\mathrm{PDL}}$ yields an energy spectrum and Bohr radius compatible with observed values to the same level of accuracy, thereby providing evidence for the consistency of PDL-derived coupling parameters with established atomic phenomenology.\cite{Laubscher2026SchrodingerPDL}
+
+The present article neither proposes novel axioms nor claims to provide a complete derivation of quantum or electromagnetic dynamics from PDL.
+Instead, it concentrates on an intermediate structural level that mediates between the purely combinatorial constructions and the conventional continuum formulations.
+Its specific objectives are threefold:
+\begin{enumerate}
+  \item to formulate discrete Gauss- and Faraday-type relations in terms of mixed proton–electron triangle fluxes and logical cycle counting, and to indicate how these relations coarse-grain into Maxwell-like equations for emergent electric and magnetic fields;
+  \item to introduce a combinatorial framework for counting mixed triangles $N_{\mathrm{mix}}(S)$ on discrete position shells surrounding a proton, thereby elucidating the origin of Coulomb-type $1/r^{2}$ field profiles and of small phase increments associated with minimal flux variations;
+  \item to sketch PDL-consistent toy graph models in which local reconfigurations of the relational sea induce an effective Laplacian on position classes and the proton’s active surface generates a Coulomb-like potential, thus providing a concrete route toward Schr\"odinger-type dynamics as an emergent description.
+\end{enumerate}
+
+Throughout, we remain strictly within the architectural and numerical specifications already established in earlier PDL studies, including the $(4,6)$ electron prototype, the proton integer tuple $(24,28,930,10\,087,11\,017)$, the active surface content $R_{\mathrm{surf}}$, and the structural expression for $\alpha_{\mathrm{PDL}}$.\cite{Laubscher2026FullPDL,Laubscher2026CombinatorialProton,Laubscher2026Alpha}
+We distinguish carefully between steps that follow directly from these established ingredients and steps that require additional, explicitly stated modelling assumptions (for example, homogeneity of the relational sea or linearity of effective update rules).
+Rather than presenting definitive conclusions, the goal is to articulate a research programme: to specify precisely the discrete objects that give rise to effective fields and wave equations in PDL, and to identify well-posed analytical and numerical problems whose solution would substantially corroborate or constrain the framework.
+
+\section{Background on PDL Structures}
+
+\subsection{Relational axioms and minimal \texorpdfstring{$(4,6)$}{(4,6)} closure}
+
+Within PDL, a \emph{logical configuration} is modelled as a finite signed graph $G=(V,E,s)$, where $V$ denotes a finite set of vertices (informational entities), $E\subseteq \{\{i,j\}\mid i,j\in V,\,i\neq j\}$ is a set of undirected edges (binary relations), and $s:E\to\{+1,-1\}$ is a sign function assigning to each edge a value that encodes agreement or disagreement.\cite{Laubscher2026IntroPDL,Laubscher2026FullPDL}
+Triangles, i.e.\ cycles of length three, are taken to be the elementary motifs of logical closure: a triangle $(i,j,k)$ is \emph{present} if all three edges $\{i,j\},\{j,k\},\{i,k\}$ are elements of $E$, and it is \emph{coherent} if the product of the corresponding signs satisfies $s_{ij}s_{jk}s_{ik}=+1$.
+Otherwise, it is treated as a violation, either because at least one edge is absent or because the sign product equals $-1$.\cite{Laubscher2026IntroPDL}
+
+Admissible configurations are constrained by four axioms.\cite{Laubscher2026IntroPDL,Laubscher2026FullPDL}
+\emph{Minimal binary pulsation} postulates that existence is realised as a repeatable two-state alternation in the space of sign assignments, without presupposing any underlying metric notion of time.
+\emph{Triangular coherence} states that stable configurations minimise the proportion of violated triangles, such that closed, sign-compatible cycles of length three function as primitive units of closure.
+\emph{Minimal completeness} requires that all relational references necessary to sustain persistence be internal to the configuration, thereby excluding reliance on an unspecified external background.
+\emph{Logical optimisation} introduces an optimisation functional $F(\epsilon,\rho,m)$ that preferentially selects configurations exhibiting a low fraction of violations $\epsilon$, sufficiently high relational density $\rho$, and a minimality indicator $m$ encoding that closure is attained without superfluous redundancy.\cite{Laubscher2026FullPDL}
+
+Subject to these axioms and the associated optimisation functional, the first non-trivial elementary stationary structure is realised by the complete signed graph on four vertices and six edges, denoted $(4,6)$.\cite{Laubscher2026IntroPDL,Laubscher2026FullPDL}
+For this graph, there exists at least one sign assignment such that all triangular subgraphs are coherent, the union of coherent triangles forms a connected subnetwork that covers the entire graph, and a global inversion of all edge signs implements a logical $2$-cycle that preserves coherence.
+This $(4,6)$ configuration is interpreted as a minimal self-sustaining regime of existence and is taken as the logical prototype of an electron at rest.
+Within this interpretation, the reduced Planck constant $\hbar$ quantifies the minimal action associated with a single complete internal coherence cycle of the $(4,6)$ structure.\cite{Laubscher2026FullPDL}
+
+\subsection{Proton architecture and active surface}
+
+Within PDL, the proton is not represented as an elementary point-like entity, but rather as a two-tier hierarchical structure comprising quasi-stationary valence cores embedded in a highly dynamical relational sea.\cite{Laubscher2026FullPDL,Laubscher2026CombinatorialProton}
+The valence sector is modelled by three local stationary regimes, two of ``up'' type and one of ``down'' type, with integer occupancies $n_{u}=24$ and $n_{d}=28$, respectively. 
+These values are selected to satisfy internal completeness conditions and to minimise residual asymmetries.
+
+The corresponding numbers of internal relations are given by
+\[
+r_{u} = \frac{n_{u}(n_{u}-1)}{2} = 276,
+\qquad
+r_{d} = \frac{n_{d}(n_{d}-1)}{2} = 378,
+\]
+so that the total valence relational content is
+\[
+r_{\mathrm{val}} = 2r_{u} + r_{d} = 930.\cite{Laubscher2026CombinatorialProton}
+\]
+The relational sea contributes an additional $R_{\mathrm{sea}} = 10\,087$ dynamical relations, leading to a total internal relational budget
+\[
+R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}} = 11\,017.
+\]
+This partition yields stationary and dynamical fractions of approximately $9\%$ and $91\%$, respectively, which is qualitatively compatible with QCD-based descriptions in which the dominant contribution to the proton mass arises from gluonic and sea-quark degrees of freedom.\cite{Laubscher2026FullPDL}
+
+In this framework, the coupling between the proton and an external $(4,6)$ electron prototype is not uniformly supported by all internal relations.
+Instead, PDL introduces the notion of an \emph{active surface} $S_{\mathrm{act}}$, defined as the subset of protonic edges that are able to participate in coherent mixed triangles with a $(4,6)$ block without increasing the global fraction of violated triangles.\cite{Laubscher2026Alpha}
+Formally, a proton edge is classified as active if there exists at least one vertex in the $(4,6)$ structure such that the resulting triangle is coherent and its inclusion preserves the global optimisation of relational coherence.
+The cardinality $R_{\mathrm{surf}} = |S_{\mathrm{act}}|$ then quantifies the number of relational channels effectively available for coherent proton–electron coupling.
+
+A combinatorial analysis, supplemented by an optimisation argument involving the golden ratio, indicates that the active surface can be approximated by
+\[
+R_{\mathrm{surf}} \approx \varphi\,\frac{r_{\mathrm{val}}}{3},
+\]
+with $r_{\mathrm{val}}=930$ and $\varphi$ denoting the golden ratio, which yields $R_{\mathrm{surf}}\simeq 5.0\times 10^{2}$.\cite{Laubscher2026Alpha,Laubscher2026GoldenRatioSurface}
+In the present work, $R_{\mathrm{surf}}$ is treated as a fixed structural parameter governing both discrete coherence fluxes and effective interaction strengths.
+
+\subsection{Constants as coherence ratios}
+
+Within this discrete relational framework, several fundamental physical constants are reinterpreted as ratios of coherence budgets rather than as primitive empirically fitted parameters.\cite{Laubscher2026FullPDL}
+The reduced Planck constant $\hbar$ is associated with the minimal coherence expenditure per internal cycle of the $(4,6)$ structure: the standard relation $E=\hbar\omega$ is understood as stating that each full logical pulsation is endowed with an irreducible quantum of action.\cite{Laubscher2026IntroPDL,Laubscher2026FullPDL}
+
+The fine-structure constant $\alpha$ is modelled as a surface-to-volume coherence fraction that compares the proton’s global relational content, weighted by the proton–electron mass ratio $\mu=m_{p}/m_{e}$, to its effective active surface.\cite{Laubscher2026Alpha}
+A structural expression for the inverse fine-structure constant is obtained as
+\[
+\alpha^{-1}_{\mathrm{PDL}} = \frac{\mu}{9\varphi^{2} r_{\mathrm{val}}^{2}},
+\]
+where $r_{\mathrm{val}}=930$ and $\varphi$ denotes the golden ratio.\cite{Laubscher2026Alpha,Laubscher2026GoldenRatioSurface}
+This relation reproduces the empirical value of $\alpha$ with a relative deviation of order $10^{-4}$ and depends only on the discrete valence content, the mass ratio, and the single geometric factor $\varphi$.
+In a complementary analysis, substituting $\alpha_{\mathrm{PDL}}$ into the standard Schr\"odinger equation for the hydrogen atom yields an energy spectrum and Bohr radius that agree with experimental data at a comparable level of accuracy.\cite{Laubscher2026SchrodingerPDL}
+
+Further developments extend this coherence-ratio scheme to Boltzmann’s constant $k_{B}$ and to an effective gravitational coupling by introducing a small coherence-leakage parameter $\varepsilon$ together with a hierarchical amplification exponent; however, these constructions remain more speculative and will not be employed explicitly in the present analysis.\cite{Laubscher2026FullPDL,Laubscher2026TopologicalReformulation,Laubscher2026Exponent18}
+Here, the primary role of these background results is to fix the structural parameters $(4,6)$, $(24,28,930,10\,087,11\,017)$, $R_{\mathrm{surf}}$, and $\alpha_{\mathrm{PDL}}$, which in turn constrain the discrete fluxes and effective dynamics investigated in the subsequent sections.
+
+\section{Discrete Gauss and Faraday Structure}
+
+\subsection{Mixed-triangle flux and logical cycle counting}
+
+Within the PDL formulation of a proton–electron system, coherent interaction between the proton architecture and an external $(4,6)$ block is mediated by \emph{mixed triangles}. These are defined as coherent triangles that contain at least one edge belonging to the proton’s active surface $S_{\mathrm{act}}$, together with vertices that lie in the $(4,6)$ structure; additional connectivity is supplied by the relational sea.\cite{Laubscher2026FullPDL,Laubscher2026Alpha,Laubscher2026SchrodingerSketch}
+Given a protonic configuration $G_{p}$, an electron-type $(4,6)$ block $G_{e}$, and their union $G$, a mixed triangle is any coherent triangle in $G$ that simultaneously contains protonic and electronic vertices and includes at least one edge in $S_{\mathrm{act}}$.
+
+To construct a discrete analogue of electric flux, we introduce a closed logical surface $S$ that encloses the proton.
+More precisely, $S$ is specified as an equivalence class of subgraphs—``shell'' configurations—that separate the proton’s internal architecture from its external environment.
+We then define $N_{\mathrm{mix}}(S)$ to be the number of coherent mixed proton–electron triangles that intersect $S$ in a prescribed way, for example by having one vertex inside, one vertex on, and one vertex outside the logical shell.\cite{Laubscher2026SchrodingerSketch}
+The integer $N_{\mathrm{mix}}(S)$ therefore functions as a discrete flux: it enumerates the coherently active triangular channels through which the proton can couple to an external $(4,6)$ block across the surface $S$.
+
+Logical time in PDL is represented by an integer-valued cycle count.
+The $(4,6)$ structure admits a global sign-flip pulsation, and successive applications of this pulsation define a discrete sequence of coherence cycles.\cite{Laubscher2026FullPDL}
+We introduce a cycle index $N_{\mathrm{cycle}}\in\mathbb{Z}$ that labels these internal cycles along the electron worldline and interpret increments $\Delta N_{\mathrm{cycle}}$ as elementary steps of logical proper time.
+In an emergent metric description, one may write $t = N_{\mathrm{cycle}} T_{0}$, where $T_{0}$ denotes the duration of a single coherence cycle in physical units.
+
+At this discrete level, two fundamental relations serve as PDL analogues of Gauss’s and Faraday’s laws:
+\begin{align}
+\Phi_{E}(S) &:= N_{\mathrm{mix}}(S), \label{eq:phiEDef}\\
+\oint_{C} E\cdot d\ell &:= -\,\frac{\Delta N_{\mathrm{mix}}(S)}{\Delta N_{\mathrm{cycle}}}, \label{eq:discreteFaradayDef}
+\end{align}
+where $\Phi_{E}(S)$ denotes the logical electric flux through $S$, $C$ is a closed logical loop that bounds $S$, and $E$ represents an effective edge-level quantity that encodes the local coherence cost along $C$.
+In the following subsections, we make these correspondences more explicit and indicate how they coarse-grain to the continuum Maxwell-type equations.
+
+\subsection{Discrete Gauss law on logical surfaces}
+
+We first consider a closed logical surface $S$ that encloses a single proton.
+For such an $S$, the mixed-triangle count $N_{\mathrm{mix}}(S)$ quantifies how many active surface edges in $S_{\mathrm{act}}$ can be coherently paired, via the relational sea, with the external $(4,6)$ block across the shell defined by $S$.\cite{Laubscher2026Alpha,Laubscher2026SchrodingerSketch}
+By construction, $N_{\mathrm{mix}}(S)$ depends on:
+\begin{itemize}
+  \item the active surface content $R_{\mathrm{surf}}$, which constrains the total number of potentially coherent channels;
+  \item the connectivity properties of the sea, which determine how many of these channels intersect the shell;
+  \item the relative configuration of the $(4,6)$ block with respect to the proton.
+\end{itemize}
+
+In the simplest setting, we assume that $S$ is chosen such that it tightly encloses the proton, for instance by following a minimal shell just outside the active surface.
+Under this assumption, $N_{\mathrm{mix}}(S)$ predominantly probes the internal structure of the proton and its active surface; corrections due to the external $(4,6)$ configuration are subleading.
+We then formulate a discrete Gauss-type relation:
+\begin{equation}
+\Phi_{E}(S) := N_{\mathrm{mix}}(S) = Q_{\mathrm{PDL}},
+\label{eq:discreteGauss}
+\end{equation}
+where $Q_{\mathrm{PDL}}$ is an integer-valued structural invariant associated with the proton and its coupling pattern to the electron prototype.
+In words, the logical electric flux through a surface that encloses the proton is equal to the number of coherently active mixed-triangle channels permitted by the proton’s internal architecture.
+
+Equation~\eqref{eq:discreteGauss} constitutes the discrete analogue of Gauss’s law for the electric field.
+Here, the role of the enclosed charge is assumed by a purely relational quantity $Q_{\mathrm{PDL}}$, which ultimately encodes the net proton–electron charge asymmetry within the PDL graph.\cite{Laubscher2026FullPDL,Laubscher2026Alpha}
+The essential feature is that $Q_{\mathrm{PDL}}$ is defined solely in terms of mixed-triangle coherence and the active surface; it does not rely on any prior, primitive notion of electric charge.
+
+\subsection{Discrete Faraday law on logical loops}
+
+We now turn to the discrete analogue of Faraday’s law.
+Consider a closed logical loop $C$ on the underlying graph, representing a finite sequence of edges along which the $(4,6)$ block can be coherently displaced under the allowed sea reconfigurations.
+The quantity
+\[
+\oint_{C} E\cdot d\ell
+\]
+is defined, at the discrete level, as a sum over the edges in $C$ of a local coherence–cost contribution. In particular, $E\cdot d\ell$ for a given edge quantifies the change in coherence cost incurred when the $(4,6)$ block is transported across that edge.\cite{Laubscher2026SchrodingerSketch}
+Although the explicit form of the effective field $E$ is model-dependent, the sign and magnitude of this circulation characterize the net coherence cost associated with implementing a closed transition around $C$.
+
+Concurrently, the number of coherent mixed triangles $N_{\mathrm{mix}}(S)$ intersecting the surface spanned by $C$ can vary as the system evolves from cycle $N_{\mathrm{cycle}}$ to $N_{\mathrm{cycle}} + \Delta N_{\mathrm{cycle}}$.
+We define the discrete rate of change of mixed-triangle flux by
+\[
+\frac{\Delta N_{\mathrm{mix}}(S)}{\Delta N_{\mathrm{cycle}}}.
+\]
+The corresponding discrete Faraday-type relation is then given by
+\begin{equation}
+\oint_{C} E\cdot d\ell = -\,\frac{\Delta N_{\mathrm{mix}}(S)}{\Delta N_{\mathrm{cycle}}},
+\label{eq:discreteFaraday}
+\end{equation}
+which asserts that the coherence–cost circulation around $C$ is proportional to the negative change in mixed–triangle flux through the surface $S$ bounded by $C$.\cite{Laubscher2026SchrodingerSketch}
+
+Equation~\eqref{eq:discreteFaraday} constitutes the PDL analogue of Faraday’s law of induction: the appearance of a non-vanishing circulation around $C$ is directly linked to temporal variations of the mixed–triangle flux.
+Within the purely relational framework under consideration, this variation is induced by reconfigurations of the sea and by the motion of the $(4,6)$ block relative to the proton and its active surface.
+
+\subsection{Coarse-graining towards continuum equations}
+
+To relate the discrete laws \eqref{eq:discreteGauss} and \eqref{eq:discreteFaraday} to the continuum Maxwell equations, we introduce a coarse-graining procedure. We assume that:
+\begin{itemize}
+  \item the logical surface $S$ can be partitioned into sufficiently small patches $S_{i}$, each associated with an emergent area element $\Delta S_{i}$;
+  \item the loop $C$ can be decomposed into short segments corresponding to emergent line elements $\Delta \ell_{j}$;
+  \item on scales large compared with the microscopic structures, mixed-triangle counts and coherence costs can be averaged over many microscopic configurations so as to define smooth effective fields.
+\end{itemize}
+
+On each patch $S_{i}$ we define an effective electric field component by
+\begin{equation}
+E_{i} := \kappa\,\frac{N_{\mathrm{mix}}(S_{i})}{\Delta S_{i}},
+\label{eq:EpatchDef}
+\end{equation}
+where $\kappa$ is a fixed conversion factor that maps the integer-valued flux counts to physical field units.
+Summing over $i$ yields
+\[
+\sum_{i} E_{i}\,\Delta S_{i}
+= \kappa \sum_{i} N_{\mathrm{mix}}(S_{i})
+= \kappa\,N_{\mathrm{mix}}(S)
+= \kappa\,Q_{\mathrm{PDL}}.
+\]
+In the continuum limit, this Riemann sum approaches a surface integral,
+\[
+\oiint_{S} \mathbf{E}\cdot d\mathbf{S} = \kappa\,Q_{\mathrm{PDL}}.
+\]
+Identifying $Q_{\mathrm{PDL}}$ with the proton charge $Q$ (up to a fixed normalisation determined by the PDL expression for $\alpha$) and using the standard relation
+\[
+\alpha = \frac{e^{2}}{4\pi\varepsilon_{0}\hbar c},
+\]
+we can choose $\kappa$ such that
+\[
+\oiint_{S} \mathbf{E}\cdot d\mathbf{S} = \frac{Q}{\varepsilon_{0}},
+\qquad
+\nabla\cdot\mathbf{E} = \frac{\rho}{\varepsilon_{0}}.
+\]
+In this formulation, the vacuum permittivity $\varepsilon_{0}$ emerges as a conversion factor between the discrete coherence flux $N_{\mathrm{mix}}(S)$ and the continuum electric field $\mathbf{E}$, fixed by the identification $\alpha=\alpha_{\mathrm{PDL}}$ rather than introduced as an independent phenomenological parameter.\cite{Laubscher2026Alpha}
+
+An analogous coarse-graining applies to the discrete Faraday relation.
+We set $t = N_{\mathrm{cycle}} T_{0}$, where $T_{0}$ denotes the physical time associated with a single coherence cycle, and define an effective magnetic flux by
+\[
+\Phi_{B}(S) := \lambda\,N_{\mathrm{mix}}(S),
+\]
+with $\lambda$ a constant that fixes the normalisation of the magnetic field.
+Then
+\[
+\frac{\Delta N_{\mathrm{mix}}(S)}{\Delta N_{\mathrm{cycle}}}
+= \frac{1}{\lambda}\,\frac{\Delta \Phi_{B}(S)}{\Delta N_{\mathrm{cycle}}}
+= \frac{T_{0}}{\lambda}\,\frac{\Delta \Phi_{B}(S)}{\Delta t},
+\]
+and Eq.~\eqref{eq:discreteFaraday} becomes
+\[
+\oint_{C} \mathbf{E}\cdot d\boldsymbol{\ell}
+= -\,\frac{T_{0}}{\lambda}\,\frac{d \Phi_{B}(S)}{dt}.
+\]
+By choosing $\lambda$ and $T_{0}$ consistently with the PDL normalisation of $\alpha_{\mathrm{PDL}}$, $\hbar$, and $c$, we can reproduce the conventional Faraday law,
+\[
+\oint_{C} \mathbf{E}\cdot d\boldsymbol{\ell}
+= -\,\frac{d \Phi_{B}(S)}{dt},
+\qquad
+\nabla\times\mathbf{E} = -\,\frac{\partial \mathbf{B}}{\partial t}.
+\]
+
+In summary, once the $(4,6)$ electron prototype, the proton architecture, and the structural value of $\alpha_{\mathrm{PDL}}$ are fixed, the discrete mixed-triangle flux $N_{\mathrm{mix}}(S)$ and its variation per coherence cycle provide natural PDL counterparts to electric flux and electromagnetic induction.
+Under mild coarse-graining assumptions, these quantities can be organised into Gauss- and Faraday-type relations that, in the continuum limit, reproduce the standard Maxwell equations for $\mathbf{E}$ and $\mathbf{B}$, with $\varepsilon_{0}$ and $\mu_{0}$ emerging as conversion constants determined by the same underlying structural coherence ratios.
+
+\section{Mixed-Triangle Counts on Position Shells}
+
+\subsection{Position shells and configuration classes}
+
+To connect discrete mixed-triangle fluxes with spatial profiles of an effective field, we introduce the concept of \emph{position shells} surrounding a proton within the PDL graph.  
+At the combinatorial level, a position shell $S(r)$ at logical distance $r$ is defined as an equivalence class of configurations in which a $(4,6)$ block (electron prototype) occupies one of a finite set of positions $\{\mathcal{C}_{n}\}_{n=1}^{K}$ arranged around the proton at an emergent radius $r$.\cite{Laubscher2026SchrodingerSketch}
+Each configuration $\mathcal{C}_{n}$ specifies a distinct embedding of the $(4,6)$ block into the global graph, characterized by the manner in which it couples both to the relational sea and to the active surface of the proton.
+
+For definiteness, one may consider a simple shell with $K$ positions distributed approximately uniformly on a ring or sphere surrounding the proton, with $r$ expressed in units of a minimal logical length scale (for instance, the radius associated with the Bohr scale in the effective description).\cite{Laubscher2026SchrodingerPDL}
+The relational sea connects each position $\mathcal{C}_{n}$ to the active surface via a finite number of sea edges.
+We denote by $d_{\mathrm{m}}^{(n)}(r)$ the number of sea-mediated connections between active-surface edges and the position $\mathcal{C}_{n}$ at radius $r$, and by $d_{\mathrm{m}}(r)$ the average of $d_{\mathrm{m}}^{(n)}(r)$ over all positions on the shell:
+\[
+d_{\mathrm{m}}(r) := \frac{1}{K}\sum_{n=1}^{K} d_{\mathrm{m}}^{(n)}(r).
+\]
+In a coarse-grained sense, this quantity quantifies the number of potential coherence channels that connect a given active-surface edge to the shell at distance $r$.
+
+\subsection{Mean mixed-triangle count \texorpdfstring{$N_{\mathrm{mix}}(S(r))$}{Nmix(S(r))}}
+
+We define $N_{\mathrm{mix}}(S(r))$ as the mean number of coherent proton–sea–electron triangles intersecting the positional shell $S(r)$.
+More precisely, $N_{\mathrm{mix}}(S(r))$ enumerates coherent triangles that satisfy the following conditions:
+\begin{itemize}
+  \item one edge lies on the proton’s active surface $S_{\mathrm{act}}$;
+  \item one or more edges traverse the relational sea;
+  \item one vertex is associated with a position $\mathcal{C}_{n}$ on the shell.\cite{Laubscher2026SchrodingerSketch}
+\end{itemize}
+By averaging over all positions $\mathcal{C}_{n}$ on the shell and over all microscopic configurations of the sea within the equivalence class $S(r)$, one obtains the mean flux $N_{\mathrm{mix}}(S(r))$.
+
+To leading order, the dependence on the underlying structural parameters can be factorised as
+\begin{equation}
+N_{\mathrm{mix}}(S(r)) \approx R_{\mathrm{surf}}\,n_{\triangle}(r),
+\label{eq:NmixFactorisation}
+\end{equation}
+where $R_{\mathrm{surf}}$ denotes the active surface content and $n_{\triangle}(r)$ represents the mean number of coherent mixed triangles per active surface edge at radius $r$.
+The latter quantity can be approximated by
+\begin{equation}
+n_{\triangle}(r) \sim p_{\mathrm{coh}}(r)\,d_{\mathrm{m}}(r),
+\label{eq:ntriangler}
+\end{equation}
+where $d_{\mathrm{m}}(r)$ is the average sea connectivity introduced above, and $p_{\mathrm{coh}}(r)$ is the probability that a given potential triangle channel at distance $r$ is coherent, i.e.\ it satisfies the sign constraints and does not increase the global violation fraction.\cite{Laubscher2026FullPDL,Laubscher2026SchrodingerSketch}
+
+The detailed functional dependence of $p_{\mathrm{coh}}(r)$ is determined by the distribution of signs and by the choice of optimisation functional.
+However, in the regime in which $r$ exceeds a minimal core radius yet remains smaller than the characteristic screening scales, it is reasonable to assume that $p_{\mathrm{coh}}(r)$ varies only weakly with $r$ compared to $d_{\mathrm{m}}(r)$.
+Under this assumption, the dominant radial dependence of $N_{\mathrm{mix}}(S(r))$ is governed by the connectivity factor $d_{\mathrm{m}}(r)$.
+
+\subsection{Coulomb-like \texorpdfstring{$1/r^{2}$}{Coulomb-like behaviour}}
+
+To isolate the radial dependence, we model the flux of coherence channels emanating from each active surface edge as spreading approximately isotropically into the surrounding environment.
+Within this description, each edge in $S_{\mathrm{act}}$ produces a bundle of potential connections that propagate into the relational sea and intersect position shells at increasing logical radius $r$.\cite{Laubscher2026SchrodingerSketch}
+The total number of such channels is constrained by the internal architecture and therefore does not increase with $r$.
+
+For shells that can be approximated as spheres of radius $r$, the number of distinct positions $\mathcal{C}_{n}$ scales with the surface area, i.e.\ $K(r)\propto 4\pi r^{2}$ in the emergent metric.
+If the total available coherence flux per active edge is approximately constant, then the mean number of connections per position $\mathcal{C}_{n}$ decreases as $1/K(r)\propto 1/r^{2}$.
+Since $d_{\mathrm{m}}(r)$ quantifies the average number of sea-mediated connections per active edge at radius $r$, this implies the scaling
+\begin{equation}
+d_{\mathrm{m}}(r) \propto \frac{1}{r^{2}},
+\qquad
+n_{\triangle}(r) \propto \frac{1}{r^{2}},
+\label{eq:densityScaling}
+\end{equation}
+under the assumption that $p_{\mathrm{coh}}(r)$ varies only slowly with $r$.
+Substituting these scalings into Eq.~\eqref{eq:NmixFactorisation} yields
+\begin{equation}
+N_{\mathrm{mix}}(S(r)) \approx \frac{R_{\mathrm{surf}}\,K_{0}}{r^{2}},
+\label{eq:NmixScaling}
+\end{equation}
+for some constant $K_{0}$ that encapsulates the overall sea connectivity and coherence probability.
+
+To relate this result to an effective field, we divide by the emergent area $A(r)$ of the shell.
+For approximately spherical shells, $A(r)\propto 4\pi r^{2}$, so the mean radial component of the electric field becomes
+\[
+\langle E_{r}(r)\rangle 
+\propto \frac{N_{\mathrm{mix}}(S(r))}{A(r)}
+\propto \frac{R_{\mathrm{surf}}\,K_{0}/r^{2}}{4\pi r^{2}}
+\propto \frac{1}{r^{2}}.
+\]
+This reproduces the Coulomb-like $1/r^{2}$ dependence expected for the radial electric field generated by a point-like proton in the continuum description.
+Within the PDL framework, this profile emerges from the interplay between a finite active surface and an approximately isotropic distribution of coherence channels traversing the relational sea.\cite{Laubscher2026SchrodingerPDL}
+
+\subsection{Minimal stable flux and phase increment}
+
+Beyond its mean behaviour, the discrete character of $N_{\mathrm{mix}}(S(r))$ has nontrivial consequences for the phase structure.
+For a given shell radius $r$, we define the \emph{minimal stable flux} $N_{\mathrm{mix}}^{(0)}(S(r))$ as the value of $N_{\mathrm{mix}}(S(r))$ corresponding to a configuration of sea and active surface that maximises the PDL optimisation functional, subject to the constraint that the $(4,6)$ block is maintained on $S(r)$.\cite{Laubscher2026SchrodingerSketch}
+Equivalently, $N_{\mathrm{mix}}^{(0)}(S(r))$ is the flux realised by a locally optimal arrangement of coherent mixed triangles at that radius.
+
+Invoking the scaling relation \eqref{eq:NmixScaling}, we anticipate
+\[
+N_{\mathrm{mix}}^{(0)}(S(r)) \sim \frac{R_{\mathrm{surf}}\,K_{0}}{r^{2}},
+\]
+with $R_{\mathrm{surf}}\simeq 5.0\times 10^{2}$ and $K_{0}$ determined by the mean connectivity.
+For radii associated with physically relevant length scales (for instance, the Bohr radius in the effective hydrogenic description), this yields characteristic flux values in the range
+\[
+N_{\mathrm{mix}}^{(0)}(S(r)) \sim 10^{3} \text{ to } 10^{4},
+\]
+depending on the precise microscopic parameters.\cite{Laubscher2026SchrodingerSketch}
+Such large integer values naturally induce a small phase increment
+\begin{equation}
+\gamma(r) := \frac{2\pi}{N_{\mathrm{mix}}^{(0)}(S(r))},
+\label{eq:gammaDef}
+\end{equation}
+which quantifies the change in an effective phase associated with an elementary variation of the mixed-triangle flux by one unit across the shell.
+
+Within the coarse-grained Schr\"odinger-type framework, phases are treated as continuous variables, and $\gamma(r)$ becomes effectively negligible at scales for which $N_{\mathrm{mix}}^{(0)}$ is large.
+By contrast, the PDL description indicates that these phases originate from discrete, integer-valued coherence fluxes.
+Accordingly, small but finite values of $\gamma(r)$ may generate subleading corrections to phase quantisation conditions and interference effects, thereby linking the structural magnitudes of $R_{\mathrm{surf}}$ and $r_{\mathrm{val}}$ to the apparent smoothness of effective phases.\cite{Laubscher2026Alpha,Laubscher2026SchrodingerSketch}
+
+In the subsequent section, we further develop this flux-based viewpoint by constructing simplified graph models in which transitions between discrete position classes $\mathcal{C}_{n}$ give rise to a Laplacian-like kinetic term, while the radial dependence of $N_{\mathrm{mix}}(S(r))$ induces a Coulomb-like effective potential, jointly producing a Schr\"odinger-type dynamics at the coarse-grained level.
+
+\section{Toy Graph Models for Effective Schr\"odinger Dynamics}
+
+\subsection{Reduced PDL graphs and position classes}
+
+We now introduce toy models in which the discrete structures described above generate, at an appropriately coarse-grained level, an effective Schr\"odinger-type dynamics for an electronic degree of freedom.
+The central objective is to construct reduced PDL graphs that preserve the essential hierarchical organization (proton core, relational sea, active surface, $(4,6)$ block), while substantially decreasing the total number of vertices and edges in order to render both analytical and numerical investigations tractable.\cite{Laubscher2026SchrodingerSketch}
+
+A minimal toy configuration is specified by:
+\begin{itemize}
+  \item a reduced proton-like graph $G_{p}^{\mathrm{toy}}$, containing a small number of valence vertices grouped into three quasi-stationary cores (two ``up'' and one ``down''), a moderately sized relational sea, and a distinguished active surface $S_{\mathrm{act}}^{\mathrm{toy}}$ consisting of a finite set of marked edges;
+  \item a single $(4,6)$ block $G_{e}$ modeling the electron prototype, with an internal sign assignment chosen to satisfy triangular coherence and global pulsation conditions, as in the full PDL construction;
+  \item a finite set of position classes $\{\mathcal{C}_{n}\}_{n\in\mathcal{I}}$, where the index set $\mathcal{I}$ parametrizes a one-dimensional chain or ring (for instance, $\mathcal{I} = \{1,\dots,K\}$ with periodic boundary conditions).
+\end{itemize}
+
+Each position class $\mathcal{C}_{n}$ is defined as an equivalence class of global PDL configurations in which the $(4,6)$ block is embedded in a neighbourhood of the proton corresponding to a logical position ``$n$'' (for example, a specific angular sector or shell segment), together with prescribed patterns of connectivity to the relational sea and to the active-surface edges.\cite{Laubscher2026SchrodingerSketch}
+
+To every class $\mathcal{C}_{n}$ we assign a complex amplitude $\psi_{n}(t)$, interpreted as the coarse-grained weight of all configurations in which the electron prototype is (effectively) localized at position $n$ at logical time $t$.
+The family $\{\psi_{n}(t)\}_{n\in\mathcal{I}}$ then provides a discrete position-space representation of an emergent electronic degree of freedom, in direct analogy with a lattice discretization of the wave function in conventional quantum mechanics, but now rooted in the underlying PDL graph configurations.\cite{Laubscher2026SchrodingerPDL}
+
+\subsection{Local reconfigurations and discrete update rules}
+
+The relational sea permits reconfigurations that modify the embedding of $G_{e}$ into the global graph while preserving, or potentially enhancing, global coherence as quantified by the optimisation functional $F$.\cite{Laubscher2026FullPDL}
+At the level of the toy model, we idealise these reconfigurations over a small logical time step $\Delta t$ as local moves that either:
+\begin{itemize}
+  \item keep the $(4,6)$ block within the same position class $\mathcal{C}_{n}$ (persistence), or
+  \item transfer it to an adjacent class $\mathcal{C}_{n\pm 1}$ (nearest-neighbour transitions along a chain or ring).
+\end{itemize}
+We assume that transitions beyond nearest neighbours are negligible on the time scale $\Delta t$.
+
+Under these assumptions, the coarse-grained evolution of amplitudes can be described by a linear discrete-time update rule
+\begin{equation}
+\psi_{n}(t+\Delta t)
+= a_{n}\,\psi_{n}(t) + b_{n,n+1}\,\psi_{n+1}(t) + b_{n,n-1}\,\psi_{n-1}(t),
+\label{eq:discreteUpdateGeneral}
+\end{equation}
+where $a_{n}$ encodes the net effect of persistence and local phase accumulation at position $n$, and $b_{n,n\pm 1}$ represent the effective transition amplitudes to neighbouring positions.\cite{Laubscher2026SchrodingerSketch}
+As a first approximation, one may assume homogeneous coefficients, $a_{n}\equiv a$ and $b_{n,n\pm 1}\equiv b$, with position dependence subsequently reintroduced via an effective potential.
+
+Subtracting $\psi_{n}(t)$ from both sides and rearranging yields
+\[
+\psi_{n}(t+\Delta t) - \psi_{n}(t)
+= (a-1)\,\psi_{n}(t)
++ b\,\psi_{n+1}(t) + b\,\psi_{n-1}(t).
+\]
+By adding and subtracting $2b\,\psi_{n}(t)$ on the right-hand side and dividing by $\Delta t$, we obtain
+\begin{equation}
+\frac{\psi_{n}(t+\Delta t) - \psi_{n}(t)}{\Delta t}
+= \frac{a-1+2b}{\Delta t}\,\psi_{n}(t)
++ \frac{b}{\Delta t}\,\bigl[\psi_{n+1}(t) - 2\psi_{n}(t) + \psi_{n-1}(t)\bigr].
+\label{eq:discreteTimeDerivative}
+\end{equation}
+The bracketed term corresponds to the standard discrete Laplacian on a one-dimensional lattice with spacing $\Delta x$, up to a factor of $(\Delta x)^{2}$:
+\begin{equation}
+\Delta_{\mathrm{disc}} \psi_{n}(t)
+:= \frac{\psi_{n+1}(t) - 2\psi_{n}(t) + \psi_{n-1}(t)}{(\Delta x)^{2}}.
+\label{eq:discreteLaplacian}
+\end{equation}
+Equation~\eqref{eq:discreteTimeDerivative} can therefore be recast as
+\begin{equation}
+\frac{\psi_{n}(t+\Delta t) - \psi_{n}(t)}{\Delta t}
+= \underbrace{\frac{a-1+2b}{\Delta t}}_{\text{local term}}\,\psi_{n}(t)
++ \underbrace{\frac{b(\Delta x)^{2}}{\Delta t}}_{\text{kinetic coefficient}}\,\Delta_{\mathrm{disc}} \psi_{n}(t).
+\label{eq:discreteEvolutionWithLaplacian}
+\end{equation}
+
+\subsection{Emergent Laplacian and kinetic term}
+
+In order to relate Eq.~\eqref{eq:discreteEvolutionWithLaplacian} to a Schr\"odinger-type evolution, we require that the coarse-grained dynamics, in the joint continuum limit $\Delta t\to 0$, $\Delta x\to 0$, assume the form
+\begin{equation}
+i\hbar\,\frac{\partial \psi(x,t)}{\partial t}
+= -\,\frac{\hbar^{2}}{2m_{\mathrm{eff}}}\,\frac{\partial^{2}\psi}{\partial x^{2}} + V_{\mathrm{eff}}(x)\,\psi(x,t),
+\label{eq:targetSchrodinger}
+\end{equation}
+where $m_{\mathrm{eff}}$ is an effective mass parameter and $V_{\mathrm{eff}}(x)$ denotes a position-dependent potential.
+Identifying $\psi_{n}(t)\approx \psi(x_{n},t)$ with $x_{n}=n\Delta x$, we match the discrete evolution to the continuum Schr\"odinger equation by imposing
+\begin{align}
+\frac{b(\Delta x)^{2}}{\Delta t} &= -\,\frac{i\hbar}{2m_{\mathrm{eff}}}, \label{eq:bConstraint}\\
+\frac{a-1+2b}{\Delta t} &= -\,\frac{i}{\hbar}\,V_{\mathrm{eff}}(x_{n}). \label{eq:aConstraint}
+\end{align}
+Within this parametrisation, the imaginary part of $b$ governs the emergent kinetic (Laplacian) term, while the imaginary part of $a$ encodes the local potential contribution.
+For spatially homogeneous $a$ and $b$, the resulting $V_{\mathrm{eff}}$ is constant; allowing $a_{n}$ to depend explicitly on $n$ yields a position-dependent effective potential.\cite{Laubscher2026SchrodingerSketch}
+
+From the perspective of the PDL construction, the coefficient $b$ is, in principle, fixed by the statistics of those sea reconfigurations that translate the $(4,6)$ block from $\mathcal{C}_{n}$ to $\mathcal{C}_{n\pm 1}$ while preserving or improving the optimisation functional $F$.
+The effective mass $m_{\mathrm{eff}}$ therefore quantifies the emergent inertia of the electron prototype with respect to displacements in the surrounding protonic configuration: larger coherence costs associated with such transitions lead to smaller transition amplitudes and hence to a larger value of $m_{\mathrm{eff}}$.\cite{Laubscher2026FullPDL,Laubscher2026SchrodingerSketch}
+
+\subsection{Active-surface-induced effective potential}
+
+We now incorporate the radial dependence of the mixed-triangle flux into the toy model in the form of an effective potential.
+For each position class $\mathcal{C}_{n}$ (equivalently, each shell segment at radius $r_{n}$), the coherent engagement of active-surface edges with the $(4,6)$ block via the sea induces a position-dependent coherence cost $E_{\mathrm{coh}}(r_{n})$.
+This cost depends on the mixed-triangle count $N_{\mathrm{mix}}(S(r_{n}))$ as well as on the available surface budget $R_{\mathrm{surf}}$.\cite{Laubscher2026Alpha,Laubscher2026SchrodingerPDL}
+We define the effective potential at $x_{n}$ by
+\begin{equation}
+V_{\mathrm{eff}}(x_{n}) := E_{\mathrm{coh}}(r_{n}) - E_{\mathrm{coh}}(\infty),
+\label{eq:VeffDef}
+\end{equation}
+where $E_{\mathrm{coh}}(\infty)$ serves as a reference value corresponding to infinite separation from the proton.
+
+Using the scaling relation
+\[
+N_{\mathrm{mix}}(S(r_{n})) \approx \frac{R_{\mathrm{surf}}\,K_{0}}{r_{n}^{2}},
+\]
+we model $E_{\mathrm{coh}}(r_{n})$ as a function of $N_{\mathrm{mix}}(S(r_{n}))$ that, to leading order, yields
+\begin{equation}
+V_{\mathrm{eff}}(r_{n}) \propto -\,\frac{1}{r_{n}},
+\label{eq:VeffCoulomb}
+\end{equation}
+in agreement with a Coulomb-like attractive potential for an electron in the field of a proton.\cite{Laubscher2026SchrodingerPDL}
+The proportionality constant is fixed by matching the structural parameter $\alpha_{\mathrm{PDL}}$ to the standard relation
+\[
+V(r) = -\,\frac{e^{2}}{4\pi\varepsilon_{0}}\,\frac{1}{r}
+= -\,\alpha\,\hbar c\,\frac{1}{r},
+\]
+with $\alpha$ replaced by $\alpha_{\mathrm{PDL}}$.
+In this manner, the discrete flux structure—governed by $R_{\mathrm{surf}}$ and $r_{\mathrm{val}}$—determines both the radial dependence and the overall magnitude of the effective potential.\cite{Laubscher2026Alpha}
+
+Within the combined toy model, the coefficients $a_{n}$ and $b$ in the update rule \eqref{eq:discreteUpdateGeneral} are thus constrained by two classes of PDL inputs:
+\begin{itemize}
+  \item the proton architecture together with sea reconfiguration statistics, which determine $b$ and hence the effective mass $m_{\mathrm{eff}}$;
+  \item the active-surface and mixed-triangle combinatorics on shells, which determine $a_{n}$ via Eq.~\eqref{eq:VeffDef} and thus the effective potential $V_{\mathrm{eff}}(x_{n})$.
+\end{itemize}
+Under appropriate coarse-graining, the resulting dynamics approximates the Schr\"odinger equation with a Laplacian kinetic term and a Coulomb-like potential, both emerging from the same underlying discrete coherence structure.
+
+From a practical perspective, such toy models provide a concrete framework for numerical investigation.
+One can instantiate reduced PDL graphs, implement local move rules that increase or preserve $F$, and monitor the empirical transition rates between position classes as well as the distribution of $N_{\mathrm{mix}}(S(r))$.
+By comparing the emergent dynamics with the predictions of Eq.~\eqref{eq:targetSchrodinger}, one can then evaluate whether PDL’s discrete coherence structure is compatible with a Schr\"odinger-type effective description beyond the purely static regime.\cite{Laubscher2026SchrodingerSketch}
+
+\section{Discussion and Open Problems}
+
+The constructions presented above remain fully embedded within the established PDL framework: no new axioms have been introduced, and all structural inputs—the $(4,6)$ electron prototype, the proton integer tuple $(24,28,930,10\,087,11\,017)$, the active surface content $R_{\mathrm{surf}}$, and the structural expression for $\alpha_{\mathrm{PDL}}$—are inherited from previous work.\cite{Laubscher2026FullPDL,Laubscher2026CombinatorialProton,Laubscher2026Alpha,Laubscher2026SchrodingerPDL}
+At the same time, several new intermediate constructions have been proposed: discrete Gauss- and Faraday-type relations formulated in terms of mixed-triangle fluxes and cycle counts, a combinatorial prescription for $N_{\mathrm{mix}}(S(r))$ on position shells, and explicit toy-model evolution rules intended to approximate Schr\"odinger dynamics.
+In this section we briefly distinguish those elements that follow directly from PDL’s structural commitments from those that rely on additional modelling hypotheses, and we outline open questions that delineate a concrete research agenda.
+
+\subsection*{Derived structure vs.\ modelling assumptions}
+
+On the “derived” side, the following features arise naturally from the PDL architecture:
+\begin{itemize}
+  \item The existence of an active surface $S_{\mathrm{act}}$ with finite cardinality $R_{\mathrm{surf}}$ that mediates coherent mixed triangles between the proton and an external $(4,6)$ block.
+  \item The interpretation of mixed proton–electron triangles as discrete carriers of coherence flux across logical surfaces, together with the definition of $N_{\mathrm{mix}}(S)$ as a flux-like count for any closed shell $S$ surrounding the proton.
+  \item The use of cycle counting $N_{\mathrm{cycle}}$ as a measure of logical time and the resulting possibility of formulating flux variations per coherence cycle as discrete dynamical laws.\cite{Laubscher2026FullPDL}
+  \item The structural relation $\alpha_{\mathrm{PDL}}^{-1} = \mu/(9\varphi^{2} r_{\mathrm{val}}^{2})$, which links the strength of Coulomb-like interactions to the proton’s valence content and its active surface, thereby constraining the normalisation of effective fields and potentials.\cite{Laubscher2026Alpha}
+\end{itemize}
+
+On the “modelling” side, several assumptions have been introduced explicitly:
+\begin{itemize}
+  \item The isotropy and homogeneity of sea connectivity at scales exceeding a minimal core radius, which is used to justify $d_{\mathrm{m}}(r) \propto 1/r^{2}$ and hence $N_{\mathrm{mix}}(S(r)) \propto 1/r^{2}$.\cite{Laubscher2026SchrodingerSketch}
+  \item The existence of well-defined coarse-grained fields $\mathbf{E}$ and $\mathbf{B}$ obtained by averaging mixed-triangle counts and coherence costs over ensembles of microscopic configurations.
+  \item The linearity of the effective update rule for amplitudes $\psi_{n}(t)$, together with the restriction to nearest-neighbour transitions between position classes in the toy models.
+  \item The specific identification of transition coefficients with kinetic and potential contributions via Eqs.~\eqref{eq:bConstraint}–\eqref{eq:aConstraint}, which embeds the discrete dynamics into a Schr\"odinger-type evolution equation.
+\end{itemize}
+These hypotheses are intended to be valid within a restricted regime (large shells, weak localisation, approximate homogeneity), but they do not follow as theorems from PDL itself.
+They therefore identify the precise points at which analytical investigation and numerical experimentation can either support or refute the proposed correspondence between discrete coherence structure and continuum quantum dynamics.
+
+\subsection*{Open analytical and numerical problems}
+
+The main open problems arising from the present analysis can be organized into three broad categories.
+
+\paragraph{(i) Combinatorial flux analysis.}
+The first group of problems concerns the explicit evaluation of $N_{\mathrm{mix}}(S)$ and $N_{\mathrm{mix}}(S(r))$ for specific shells and for reduced proton graphs. The associated tasks include:
+\begin{itemize}
+  \item obtaining exact values of $N_{\mathrm{mix}}(S)$ for small, idealized proton architectures and for simple shells that closely circumscribe the active surface;
+  \item determining $d_{\mathrm{m}}(r)$ and $p_{\mathrm{coh}}(r)$ on discrete shells and assessing whether the product $n_{\triangle}(r)\sim p_{\mathrm{coh}}(r)\,d_{\mathrm{m}}(r)$ indeed exhibits an approximate $1/r^{2}$ scaling over a nontrivial radial interval;
+  \item estimating $N_{\mathrm{mix}}^{(0)}(S(r))$ for radii associated with effective Bohr-scale shells, and verifying whether the corresponding phase increment $\gamma(r)=2\pi/N_{\mathrm{mix}}^{(0)}(S(r))$ lies within the anticipated range $10^{-3}$–$10^{-4}$.\cite{Laubscher2026SchrodingerSketch}
+\end{itemize}
+Such computations would either substantiate or challenge the qualitative arguments employed in the present work and in previous PDL analyses to support Coulomb-like behaviour and the emergence of small phase increments.
+
+\paragraph{(ii) Discrete-to-continuum field limits.}
+The second group of problems is concerned with rendering mathematically rigorous the coarse-graining procedure that connects discrete Gauss- and Faraday-type relations to the continuum Maxwell equations. Central questions include:
+\begin{itemize}
+  \item identifying conditions on the statistics of mixed triangles and on the connectivity properties of the sea under which $\Phi_{E}(S)=N_{\mathrm{mix}}(S)$ converges, under progressive refinement of the shell partition, to a surface integral of a sufficiently smooth vector field $\mathbf{E}$;
+  \item clarifying how the discrete Faraday-type relation $\oint E\cdot d\ell = -\,\Delta N_{\mathrm{mix}}(S)/\Delta N_{\mathrm{cycle}}$ gives rise, in a suitable scaling limit, to the continuum curl equation $\nabla\times\mathbf{E}=-\partial\mathbf{B}/\partial t$, together with a coherent definition of the magnetic field $\mathbf{B}$ and of the electromagnetic constants $\varepsilon_{0}$ and $\mu_{0}$;
+  \item determining whether higher-order corrections that naturally arise in the discrete framework can generate experimentally accessible deviations from standard Maxwell theory at ultrashort distance scales.\cite{Laubscher2026TopologicalReformulation}
+\end{itemize}
+
+\paragraph{(iii) Toy-model dynamics and Schr\"odinger emergence.}
+The third category of problems pertains to toy graph models intended to reproduce effective Schr\"odinger dynamics. The primary objectives are:
+\begin{itemize}
+  \item to implement reduced PDL graphs $G_{p}^{\mathrm{toy}}$ and $G_{e}$ numerically, with explicit sea-move rules specified as local update operations that tend to increase $F$;
+  \item to measure empirical transition rates between position classes $\mathcal{C}_{n}$ and thereby infer effective coefficients $a_{n}$ and $b$ entering the update rule \eqref{eq:discreteUpdateGeneral};
+  \item to reconstruct an emergent evolution equation for $\psi_{n}(t)$ and to compare it quantitatively with the Schr\"odinger form \eqref{eq:targetSchrodinger}, extracting an effective mass $m_{\mathrm{eff}}$ and an emergent potential $V_{\mathrm{eff}}(x_{n})$;
+  \item to analyse the radial dependence of $V_{\mathrm{eff}}(r)$ obtained from simulations, and to compare it with the $1/r$ profile predicted by the flux-based arguments and constrained by $\alpha_{\mathrm{PDL}}$, with the aim of identifying and characterizing any systematic deviations.\cite{Laubscher2026SchrodingerSketch,Laubscher2026SchrodingerPDL}
+\end{itemize}
+Such numerical investigations would constitute the first dynamic tests of the PDL framework, probing its capacity to reproduce not only static parameters but also effective wave-like behaviour consistent with quantum mechanical evolution.
+
+\subsection*{Outlook}
+
+Taken together, the discrete flux constructions, the mixed-triangle counting on shells, and the toy Schr\"odinger models developed here serve to refine the status of PDL as a foundational research programme. 
+They demonstrate that, under the current axiomatic framework and architectural assumptions, there exists a coherent and technically nontrivial route from signed-graph coherence constraints to emergent effective field and wave equations, while simultaneously delineating the precise stages at which new analytical results and additional numerical evidence are required.
+The ultimate success of this programme will depend on the resolution of the open problems identified above; regardless of the outcome, their resolution will yield substantive insights into both the viability and the limitations of PDL as a relational substrate for physical dynamics.
+
+\section{Conclusion}
+
+The analysis presented in this article has been conducted entirely within the established Projective Dynamic Logo (PDL) framework, relying exclusively on previously introduced structural components: the minimal $(4,6)$ closure as the electron prototype, the hierarchical proton architecture characterized by the integer invariants $(24,28,930,10\,087,11\,017)$, the finite active surface $R_{\mathrm{surf}}$, and the structural expression for the fine-structure constant $\alpha_{\mathrm{PDL}}$.\cite{Laubscher2026FullPDL,Laubscher2026CombinatorialProton,Laubscher2026Alpha,Laubscher2026SchrodingerPDL}
+Within this fixed architectural setting, we have developed three mutually consistent constructions designed to connect discrete coherence structures with continuum-like dynamical behavior.
+
+First, we formulated discrete analogues of Gauss’s and Faraday’s laws in terms of mixed proton–electron triangle fluxes and coherence-cycle counting.
+By defining a logical electric flux $\Phi_{E}(S)=N_{\mathrm{mix}}(S)$ through closed shells $S$ and expressing the circulation of an effective field $E$ around logical loops via the change of $N_{\mathrm{mix}}(S)$ per coherence cycle, we demonstrated how discrete flux-balance relations can be coarse-grained into Maxwell-type equations for emergent fields $\mathbf{E}$ and $\mathbf{B}$.
+In this coarse-grained description, the vacuum parameters $\varepsilon_{0}$ and $\mu_{0}$ arise as conversion factors determined by $\alpha_{\mathrm{PDL}}$, rather than as independent phenomenological constants.\cite{Laubscher2026Alpha,Laubscher2026SchrodingerSketch}
+
+Second, we introduced a combinatorial method for counting mixed triangles $N_{\mathrm{mix}}(S(r))$ on positional shells at radius $r$ around a proton and argued that, under mild homogeneity assumptions on the relational sea, this count exhibits an approximate $1/r^{2}$ scaling.
+Upon division by the shell area, this scaling yields a Coulomb-like $1/r^{2}$ radial profile for the effective field, while the magnitude of the minimal stable flux $N_{\mathrm{mix}}^{(0)}(S(r))$ furnishes a natural origin for small phase increments $\gamma(r)=2\pi/N_{\mathrm{mix}}^{(0)}(S(r))$.
+These properties establish a direct connection between the finite active surface $R_{\mathrm{surf}}$, the proton’s valence content $r_{\mathrm{val}}$, and the effective smoothness of fields and phases in the emergent continuum description.\cite{Laubscher2026Alpha,Laubscher2026SchrodingerPDL}
+
+Third, we have introduced prototypical PDL-consistent graph models in which local reconfigurations of a reduced relational sea induce a discrete Laplacian on equivalence classes of positional configurations, while the radial dependence of $N_{\mathrm{mix}}(S(r))$ gives rise to a Coulomb-like effective potential.
+By matching the resulting update rules to a Schr\"odinger-type equation in an appropriate scaling limit, we have demonstrated how an effective mass and potential can emerge from transition statistics and coherence costs that are jointly encoded in the same signed-graph structure underlying $\alpha_{\mathrm{PDL}}$.\cite{Laubscher2026SchrodingerSketch}
+These models thereby provide a concrete framework for numerical investigations of the dynamical predictions of PDL.
+
+The present work does not furnish a complete derivation of classical electromagnetism or quantum mechanics from PDL, nor does it obviate the need for additional modelling assumptions in the transition from discrete graph-based descriptions to continuum equations.
+Instead, it contributes a coherent intermediate layer: a set of explicit discrete objects and relations that mediate between the axioms and the standard continuum formalisms, together with a collection of well-posed analytical and numerical problems whose resolution would significantly clarify the status of PDL as a viable relational substrate for physical dynamics.
+In this respect, the constructions developed here are best understood as delineating a structured research programme, rather than presenting definitive results, and their principal value lies in specifying in a precise manner where and how PDL can be subjected to quantitative empirical and computational tests.
+
+\section*{Acknowledgements}
+
+The author wishes to express gratitude to the broader PDL and foundations-of-physics community for a series of critical discussions that have substantially contributed to refining both the combinatorial constructions and the dynamical problems investigated in this work.\cite{Laubscher2026FullPDL}
+In particular, informal exchanges concerning the interpretation of coherence fluxes, the conceptual and technical status of discrete-to-continuum limits, and the methodological role of numerical simulations in foundational research have been especially influential in shaping the present research programme.
+The author also acknowledges the practical assistance of advanced AI tools in the drafting and organisation of preliminary versions of the arguments; full responsibility for all scientific claims, conjectures, and any remaining inaccuracies rests solely with the author.
+
+\bibliographystyle{plain}
+\bibliography{biblio.bib}
+
+\end{document}
+

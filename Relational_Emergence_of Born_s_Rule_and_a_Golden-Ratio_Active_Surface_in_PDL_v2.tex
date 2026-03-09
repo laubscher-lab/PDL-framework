@@ -1,0 +1,705 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+
+\usepackage{csquotes}
+
+\numberwithin{equation}{section}
+
+\title{%
+Relational Emergence of Born's Rule\\
+and a Golden-Ratio Active Surface in PDL
+}
+
+\author{C\'edric Laubscher}
+\date{\today}
+
+\begin{document}
+\selectlanguage{english} % ou french si tu veux rédiger en français
+\maketitle
+
+\begin{abstract}
+We analyze how two fundamental quantum-theoretic ingredients—Born’s rule for spin-$1/2$ measurements and the fine-structure constant governing proton–electron interactions—can be reformulated within the Projective Dynamic Logo (PDL) framework as emergent properties of finite active surfaces embedded in a relational hierarchy. In PDL, physical entities are represented as finite signed graphs selected by coherence and minimality principles, with the minimal $(4,6)$ closure serving as a logical prototype for the electron, and a two-level hierarchy comprising valence cores and a relational sea modelling the proton. 
+
+Building on earlier work, in which the proton’s active surface $R_{\mathrm{surf}}=\varphi\,r_{\mathrm{val}}/3$ yields a structural relation $\alpha^{-1}\simeq\gamma^2/R_{\mathrm{surf}}^2$ that reproduces the empirical fine-structure constant without continuous fit parameters, we generalize the concept of active surface to a Stern–Gerlach-type spin measurement apparatus. In this construction, spin eigenstates correspond to two stationary sign configurations on the $(4,6)$ block, while quantum superpositions are encoded as weights on mixed triangles that couple the $(4,6)$ structure to two disjoint interface branches representing the apparatus. A weighted coherence cost assigned to these mixed triangles, together with an exponential selection over global graph configurations, induces effective probabilities for the two outcome basins that coincide with Born’s rule for spin-$1/2$ measurements. 
+
+We additionally introduce an instrumental coupling parameter $\alpha_{\mathrm{spin}}$ that links the apparatus’ internal coherence budget to the extent of its active surface, in direct analogy with the protonic interpretation of $\alpha$. This unified perspective interprets both proton structure and spin measurement as instances of coherence allocation between internal relational hierarchies and finite active surfaces, and it motivates a potential role for the golden ratio as a relational optimization factor. The status of these results is explicitly propositional: they demonstrate that the PDL framework can reproduce both the functional dependence of Born’s rule and the numerical value of $\alpha$, while leaving open the questions of uniqueness and of rigorously deriving the emergence of the golden ratio from the underlying axioms.
+\end{abstract}
+
+\section*{Version note}
+
+In this updated version, the structural expression of the fine-structure constant in PDL
+has been reformulated so that the primary quantity is \(\alpha_{\text{PDL}}\) itself, rather than
+its inverse.\@
+Concretely, we now use
+\[
+  \alpha_{\text{PDL}}
+  = \frac{\mu}{R_{\text{surf}}^2}
+  = \frac{\mu}{\varphi^2}\left(\frac{3}{r_{\text{val}}}\right)^2,
+\]
+with \(\mu = m_p/m_e\), \(r_{\text{val}} = 930\) and \(\varphi = (1+\sqrt{5})/2\), which yields
+\(\alpha_{\text{PDL}} \simeq 7.298\times 10^{-3}\), i.e. \(\alpha_{\text{PDL}}^{-1} \simeq 137.02\).\@
+All subsequent numerical estimates and interpretational remarks have been checked for
+consistency with this convention.
+
+\newpage
+
+\section{Introduction}
+\label{sec:introduction}
+
+Quantum theory and general relativity furnish highly accurate and extensively validated descriptions of physical phenomena across a broad range of length, time, and energy scales. However, when these theoretical frameworks are extrapolated to extreme regimes---such as Planck-scale processes, strong-gravity environments, or the earliest epochs of cosmic evolution---persistent conceptual tensions arise. In these domains, foundational notions including spacetime, energy, and even the characterisation of a physical state become increasingly difficult to formulate in a self-consistent and operationally well-defined manner. Incremental refinements of existing formalisms appear insufficient to fully resolve these issues; instead, a more radical re-examination of the structural assumptions underlying model construction appears necessary \cite{LaubscherCombinatorialProton2026,LaubscherLDP2026}.
+
+The Projective Dynamic Logo (PDL) programme addresses this challenge by adopting a fundamentally relational and ``upstream'' standpoint. Rather than postulating an \textit{a priori} spacetime manifold populated by fields and particles, PDL models physical reality as a network of minimal logical closures encoded by finite signed graphs. Edges in these graphs encode binary agreement/disagreement values, and admissible configurations are selected by an optimisation functional that favours triangular coherence, sufficient relational density, and minimal internal hierarchy \cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026}. Within this framework, four axioms---minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation---restrict the class of signed graphs in such a way that closed, reproducible dynamical cycles emerge. The first non-trivial elementary stationary configuration singled out by these axioms is the complete signed graph on four vertices and six edges, denoted $(4,6)$. This configuration admits a globally coherent sign assignment on all triangular subgraphs, together with a global binary pulsation that preserves this coherence throughout its evolution \cite{LaubscherPDLFull2026,LaubscherLDP2026}. In the PDL interpretation, this $(4,6)$ structure is regarded as a logical prototype of an electron at rest, while the reduced Planck constant $\hbar$ is reinterpreted as the minimal quantum of action associated with a single internal coherence cycle of this stationary regime \cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026}.
+
+At a higher organisational level, PDL postulates a specific hierarchical internal architecture for the proton. Instead of modelling the proton as an elementary, structureless degree of freedom, the framework treats it as a two-tier composite system consisting of three local stationary domains (valence cores) embedded in a dense relational sea and terminating on a finite logical ‘‘active surface’’ that mediates the coupling to an external $(4,6)$ electron block \cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026}. A concrete instantiation employs two up-type valence cores with multiplicity $n_u=24$ and one down-type core with multiplicity $n_d=28$, which yields a stationary valence content $r_{\mathrm{val}}=930$, a dynamical relational sea of cardinality $R_{\mathrm{sea}}=10\,087$, and a total internal relational content $R_{\mathrm{tot}}=11\,017$ \cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherCombinatorialProton2026}. This internal organisation implies a stationary-to-dynamical partition of approximately $9\%/91\%$, qualitatively consistent with the QCD paradigm, according to which only a small fraction of the proton mass is attributable to valence degrees of freedom, while the dominant contribution originates from gluonic and sea-quark dynamics \cite{LaubscherIMRadPDL2026, AmslerQCDProton}. Within this discrete relational configuration, several dimensionless constants acquire a unified structural interpretation: the fine-structure constant $\alpha$ is expressed as a surface-to-volume coherence ratio involving an active surface $R_{\mathrm{surf}}\sim \varphi\,r_{\mathrm{val}}/3$, Boltzmann’s constant $k_B$ is associated with the dynamical fraction in conjunction with a leakage parameter, and an effective gravitational coupling is linked to hierarchically amplified coherence leakage \cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherDerivationAlpha2026,LaubscherExponent18PDL2026}.
+
+In previous studies, a structural representation of the fine-structure constant has been proposed,
+\begin{equation}
+  \alpha^{-1} \;\simeq\; \frac{\gamma^2}{R_{\mathrm{surf}}^2},
+  \qquad
+  \gamma \equiv \frac{m_p}{m_e},
+\end{equation}
+where $R_{\mathrm{surf}}$ denotes the proton’s active surface and $\gamma$ is the proton–electron mass ratio \cite{LaubscherDerivationAlpha2026}. By modelling the protonic active surface as
+\begin{equation}
+  R_{\mathrm{surf}} \;=\; \varphi\,\frac{r_{\mathrm{val}}}{3},
+\end{equation}
+with $r_{\mathrm{val}}=930$ and $\varphi=(1+\sqrt{5})/2$ the golden ratio, one obtains $\alpha^{-1}\approx 137.022$, in agreement with the empirical value $137.036$ at the level of a few parts in $10^{-4}$, without the introduction of any additional continuous fit parameter \cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}. In this formulation, $\alpha$ is reinterpreted as the numerical manifestation of a balance between internal protonic closure and a finite, non-vanishing surface coherence budget.
+
+The present article generalises this relational perspective to the quantum measurement of spin and formulates an explicit combinatorial scheme for Born’s rule within the PDL framework. More precisely, we pursue three main objectives:
+\begin{enumerate}
+  \item We construct a minimal spin-$1/2$ model based on the $(4,6)$ structure and demonstrate how measurement along an arbitrary axis can be represented in terms of weighted mixed triangles linking the $(4,6)$ block to a spin-measuring apparatus.
+  \item We introduce and analyse the notion of an active surface for a Stern–Gerlach-type apparatus, in direct analogy with the protonic active surface employed in the structural representation of $\alpha$.
+  \item We elucidate the manner in which the golden ratio $\varphi$ enters the description of the protonic active surface and discuss, at a conceptual level, its putative role as a relational optimisation parameter governing core–surface partitions.
+\end{enumerate}
+
+The resulting framework is \emph{not} intended to yield a fully rigorous derivation of Born’s rule in the sense of a Gleason-type theorem, nor does it claim to establish that the golden ratio is uniquely determined by the axioms of PDL. Rather, it organises a collection of structurally coherent hypotheses into a unified relational picture in which: (i) spin measurement probabilities emerge from a combinatorial selection over weighted mixed triangles, (ii) the effective strengths of couplings are regulated by finite active surfaces at both the protonic and instrumental levels, and (iii) the numerical proximity between the structural fine-structure constant $\alpha$ and its empirical value is traced back to a specific golden-ratio partition of the proton’s valence coherence into an active surface.
+
+The article is structured as follows. Section~\ref{sec:PDL_minimal} reviews the minimal elements of the PDL framework required for the subsequent analysis, including the $(4,6)$ structure, the proton architecture, and the definitions of an active surface and of the structural fine-structure constant. Section~\ref{sec:spin_on_46} formulates a spin-$1/2$ model on the $(4,6)$ block and interprets superposed spin states as biases in the selection of mixed-triangle configurations. Section~\ref{sec:Born_scheme} develops a combinatorial implementation of Born’s rule based on weighted mixed triangles and a partition into two outcome basins. Section~\ref{sec:active_surface_spin} introduces the active surface of a spin-measuring apparatus and proposes an instrumental coupling parameter $\alpha_{\text{spin}}$ quantifying the ratio between internal coherence cost and active surface size. Section~\ref{sec:golden_ratio} examines the emergence of the golden ratio in the protonic active surface and conjectures its role as a relational optimisation invariant. We conclude with a discussion of the limitations of the present approach and perspectives for achieving more rigorous combinatorial results.
+
+\section{Minimal PDL framework employed}
+\label{sec:PDL_minimal}
+
+The present study relies only on a restricted subset of the full PDL framework. In this section, we briefly summarise the relational axioms, the role of the $(4,6)$ structure as a minimal stationary regime, the combinatorial proton architecture, and the notion of an active surface, together with the structural expression for the fine-structure constant. Comprehensive technical expositions are provided in Refs.~\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026,LaubscherCombinatorialProton2026,LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}.
+
+\subsection{Relational axioms and the \texorpdfstring{$(4,6)$}{(4,6)} structure}
+
+Within PDL, a relational configuration is modelled by a finite signed graph $G=(V,E,s)$, where $V$ is a finite set of entities (vertices), $E\subseteq V\times V$ denotes the set of undirected edges, and $s:E\to\{-1,+1\}$ assigns a binary agreement/disagreement sign to each edge. The fundamental units of relational coherence are triangular subgraphs: for any three distinct vertices $(i,j,k)$ with edges $(i,j)$, $(j,k)$, and $(i,k)$, one defines the triangle sign
+\begin{equation}
+  \sigma_{ijk} \;=\; s_{ij}\,s_{jk}\,s_{ik} \in \{-1,+1\},
+\end{equation}
+and classifies the triangle as \emph{coherent} if $\sigma_{ijk}=+1$ and as \emph{violated} otherwise. The fraction of violated triangles in a configuration $G$,
+\begin{equation}
+  \epsilon(G) \;=\; \frac{\#\{\text{triangles with }\sigma_{ijk}=-1\}}{\#\{\text{all triangles}\}},
+\end{equation}
+quantifies its coherence defect. The relational density $\rho(G)$ is defined as the ratio between the actual number of edges and the maximal possible number of edges on $|V|$ vertices; hence, $\rho(G)=1$ for complete graphs and $\rho(G)<1$ for sparse graphs \cite{LaubscherPDLFull2026,LaubscherLDP2026}.
+
+The PDL axioms impose four interdependent conditions on admissible stationary regimes:
+\begin{itemize}
+  \item[(i)] \textbf{Minimal binary pulsation:} a stationary regime must admit a non-trivial two-step update rule $F$ acting on the edge signs, $s\mapsto F(s)$, such that the configuration is restored after two iterations, $F^2(s)=s$, while maintaining triangular coherence throughout the evolution.
+  \item[(ii)] \textbf{Triangular coherence:} admissible stationary configurations must minimise the coherence defect $\epsilon(G)$ for fixed $|V|$ and $\rho(G)$, thereby maximising the number of triangles with $\sigma_{ijk}=+1$.
+  \item[(iii)] \textbf{Minimal completeness:} among graphs satisfying conditions (i)–(ii), one retains those that achieve the maximal relational density compatible with triangular coherence, thereby excluding internal hierarchical substructure at the elementary level.
+  \item[(iv)] \textbf{Logical optimisation:} an optimisation functional $\Phi(G)$—typically constructed from a decreasing function of $\epsilon(G)$, an increasing function of $\rho(G)$, and a penalty term for non-minimal vertex cardinality—is maximised. Local and global maxima of $\Phi$ under the above constraints are considered candidates for stable stationary regimes \cite{LaubscherPDLFull2026,LaubscherLDP2026}.
+\end{itemize}
+
+Under these axioms, the first non-trivial stationary regime that is not ruled out by the minimality requirement is realized by the complete graph on four vertices with all six possible edges present, denoted by $(4,6)$. For an appropriate assignment of edge signs $s_{ij}$ and a suitable binary update rule $F$, the $(4,6)$ configuration supports a period-two orbit $s \to \bar{s} \to s$ such that all triangular subgraphs remain coherent at each time step. No configuration involving a smaller number of vertices or edges simultaneously satisfies reproducibility, triangular coherence, and minimality; moreover, any local increase in structural complexity at the same scale destroys this minimal character without generating additional coherence \cite{LaubscherPDLFull2026,LaubscherLDP2026}. Within the PDL framework, the $(4,6)$ configuration therefore functions as a logically minimal stationary regime, and its intrinsic two-step pulsation can be identified with the rest-frame Compton oscillation of an electron, thereby furnishing a relational interpretation of the reduced Planck constant as the elementary quantum of action associated with a single coherence cycle \cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026}.
+
+\subsection{Proton architecture and active surface}
+\label{subsec:proton_architecture}
+
+Composite structures in PDL arise when multiple elementary closures coexist and are interconnected via dynamical relations of comparatively lower density. Within this framework, the proton is represented as a minimal two-tier hierarchical configuration comprising three local stationary domains—referred to as valence cores—embedded in a dense background of dynamical relations, the \emph{relational sea} \cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherCombinatorialProton2026}. Each valence core is modelled as a complete graph of order $n$, corresponding to a superposition of logical tetrads constructed from $(4,6)$ blocks, constrained such that triangular coherence is saturated internally while the emergence of further internal hierarchical stratification is suppressed. Under these structural constraints, and imposing a net electric charge $+1$ consistent with the $(4,6)$ electron prototype, the optimisation functional singles out a unique pair of valence multiplicities: two up-type cores with $n_u = 24$ and one down-type core with $n_d = 28$ \cite{LaubscherPDLFull2026,LaubscherLDP2026}.
+
+For a valence core comprising $n$ entities and represented by a complete graph $K_n$, the number of stationary internal relations is given by
+\begin{equation}
+  r(n) \;=\; \frac{n(n-1)}{2}.
+\end{equation}
+For the up-type and down-type cores with $n_u = 24$ and $n_d = 28$, respectively, this yields
+\begin{equation}
+  r_u \;=\; r(24) \;=\; \frac{24\times 23}{2} \;=\; 276,
+  \qquad
+  r_d \;=\; r(28) \;=\; \frac{28\times 27}{2} \;=\; 378,
+\end{equation}
+so that the total stationary valence content is
+\begin{equation}
+  r_{\mathrm{val}} \;=\; 2\,r_u + r_d \;=\; 2\times 276 + 378 \;=\; 930.
+\end{equation}
+
+This stationary sector is supplemented by a large set of dynamical relations forming the relational sea, of cardinality
+\begin{equation}
+  R_{\mathrm{sea}} \;=\; 10\,087,
+\end{equation}
+such that the total number of internal relations in the proton is
+\begin{equation}
+  R_{\mathrm{tot}} \;=\; r_{\mathrm{val}} + R_{\mathrm{sea}} \;=\; 930 + 10\,087 \;=\; 11\,017.
+\end{equation}
+The associated stationary and dynamical fractions,
+\begin{equation}
+  f_{\mathrm{stat}} \;=\; \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}} \approx 0.09,
+  \qquad
+  f_{\mathrm{dyn}} \;=\; \frac{R_{\mathrm{sea}}}{R_{\mathrm{tot}}} \approx 0.91,
+\end{equation}
+are qualitatively compatible with the QCD expectation that only a subleading portion of the proton mass is attributable to valence degrees of freedom, with the dominant contribution arising from non-perturbative gluonic and sea-quark dynamics \cite{AmslerQCDProton,LaubscherIMRadPDL2026}. In this relational formulation, the valence cores constitute a quasi-rigid structural backbone that carries a substantial fraction of the internal coherence budget, whereas the relational sea realises a highly dynamical environment that ensures global closure and supports coherence propagation under the optimisation functional \cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherCombinatorialProton2026}.
+
+The interaction between a given protonic hierarchy and an external $(4,6)$ electron prototype does not involve all internal proton relations in a homogeneous manner. Rather, it is mediated by a restricted subset of proton edges that are capable of forming coherent mixed triangles with the $(4,6)$ block without increasing the global fraction of violated triangles \cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}. This observation motivates the introduction of an \emph{active surface}, defined as the minimal relational envelope through which the proton can coherently couple to an electron-type closure while preserving global coherence.
+
+More formally, an internal proton edge $(i,j)$ is called \emph{active} if there exists at least one vertex $e$ of an external $(4,6)$ structure such that the three edges $(e,i)$, $(e,j)$, and $(i,j)$ form a coherent triangle and the inclusion of this triangle in the combined proton–electron graph does not increase the overall coherence defect $\epsilon$ \cite{LaubscherDerivationAlpha2026}. The set of all such edges constitutes the active surface $S_{\mathrm{act}}$, and its cardinality
+\begin{equation}
+  R_{\mathrm{surf}} \;=\; |S_{\mathrm{act}}|
+\end{equation}
+provides a quantitative measure of the number of protonic relations that remain available for coherent coupling once internal closure constraints have been imposed.
+
+\subsection{Structural fine-structure constant and golden-ratio surface}
+\label{subsec:alpha_structural}
+
+Under a set of structured hypotheses specifying how coherence is redistributed from the valence sector to the active surface—most prominently the introduction of the golden ratio as a relational optimisation factor—the active surface can be parametrised in terms of the valence content as \cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}
+\begin{equation}
+  R_{\mathrm{surf}} \;=\; \varphi\,\frac{r_{\mathrm{val}}}{3},
+  \qquad
+  \varphi \;=\; \frac{1+\sqrt{5}}{2}.
+\end{equation}
+For $r_{\mathrm{val}} = 930$ this gives
+\begin{equation}
+  \frac{r_{\mathrm{val}}}{3} \;=\; 310,
+  \qquad
+  R_{\mathrm{surf}} \;\approx\; \varphi \times 310 \;\approx\; 501.6,
+\end{equation}
+thus replacing the earlier heuristic estimate $R_{\mathrm{surf}}\sim 500$ with a value determined entirely by the internal protonic integer $r_{\mathrm{val}}$ and the purely geometric factor $\varphi$ \cite{LaubscherGoldenRatioPDL2026}.
+
+Within this framework, the proton–electron mass ratio
+\begin{equation}
+  \gamma \;=\; \frac{m_p}{m_e} \;\approx\; 1836.15
+\end{equation}
+is reinterpreted in PDL as the ratio of coherence costs between the composite protonic regime and the minimal $(4,6)$ stationary regime. When this mass ratio is combined with the active-surface scale, one obtains a structural representation of the fine-structure constant,
+\begin{equation}
+  \alpha_{\text{PDL}}
+    = \frac{\mu}{R_{\text{surf}}^2}
+    = \frac{\mu}{\varphi^2}\left(\frac{3}{r_{\text{val}}}\right)^2,
+\end{equation}
+which numerically yields \(\alpha_{\text{PDL}} \simeq 7.298\times 10^{-3}\),
+i.e.
+\begin{equation}
+  \alpha^{-1}_{\mathrm{PDL}} \;\approx\; 137.022,
+\end{equation}
+in very good agreement with the empirical value $\alpha^{-1}_{\mathrm{exp}}\approx 137.036$, corresponding to a relative deviation of order $10^{-4}$ and achieved without introducing any additional continuous fitting parameter \cite{LaubscherDerivationAlpha2026}. In this structural interpretation, $\alpha$ quantifies the fraction of internal protonic coherence that remains accessible at the logical surface for coupling to an electron, with the golden ratio $\varphi$ specifying a particular core–surface partition.
+
+In the remainder of this article we do not recapitulate the detailed derivation of the above result, which is presented comprehensively in Refs.~\cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}. Instead, we treat $r_{\mathrm{val}}$, $R_{\mathrm{sea}}$, $R_{\mathrm{tot}}$, $R_{\mathrm{surf}}$ and $\gamma$ as structural invariants of the PDL proton model and systematically develop the associated notion of an active surface. In subsequent sections, we will demonstrate how an analogous active surface can be assigned to a Stern–Gerlach-type spin-measurement apparatus, and how spin measurement probabilities can then be constructed combinatorially from weighted mixed triangles linking the $(4,6)$ block to this instrumental active surface.
+
+\section{Spin-1/2 on the (4,6) block}
+\label{sec:spin_on_46}
+
+Within the PDL framework, the $(4,6)$ structure fulfills a dual function. First, it constitutes the simplest non-trivial elementary stationary regime singled out by the relational axioms. Second, it furnishes a natural logical prototype of a two-level system, insofar as it supports at least two distinct stationary sign configurations with identical internal coherence cost. In this section, we construct a minimal spin-$1/2$ model on the $(4,6)$ block and reinterpret superposed spin states as biases in the selection of mixed-triangle configurations, rather than as superpositions of sign patterns on the graph itself.
+
+\subsection{Two stationary motifs as spin eigenstates}
+
+Let $G_{4,6}=(V_{e},E_{e},s)$ denote the $(4,6)$ structure, where $V_{e}=\{e_1,e_2,e_3,e_4\}$ are the electron-type vertices, $E_{e}$ comprises all $\binom{4}{2}=6$ edges between them, and $s:E_{e}\to\{-1,+1\}$ assigns a sign to each edge. As recalled in Sec.~\ref{sec:PDL_minimal}, there exist sign configurations $s$ and a binary update rule $F$ such that $F^2(s)=s$ and all triangular subgraphs remain coherent at each step. Among the admissible stationary regimes of this kind, one can identify at least two distinct sign assignments,
+\begin{equation}
+  s^{(+)} \;:\; E_{e}\to\{-1,+1\},
+  \qquad
+  s^{(-)} \;:\; E_{e}\to\{-1,+1\},
+\end{equation}
+which satisfy the following conditions:
+\begin{itemize}
+  \item[(i)] Both $s^{(+)}$ and $s^{(-)}$ are compatible with the same binary pulsation $F$, i.e.\ $\{s^{(+)},\overline{s^{(+)}}\}$ and $\{s^{(-)},\overline{s^{(-)}}\}$ each constitute a two-cycle under $F$.
+  \item[(ii)] All triangular subgraphs of $G_{4,6}$ remain coherent under both $s^{(+)}$ and $s^{(-)}$, such that the coherence defect $\epsilon(G_{4,6})$ vanishes in either case.
+  \item[(iii)] The two motifs $s^{(+)}$ and $s^{(-)}$ are not related by a global sign flip or by a vertex relabelling that leaves all mixed-triangle couplings to external structures invariant.
+\end{itemize}
+The last requirement is essential: it guarantees that the two motifs induce distinct interaction patterns with an external apparatus and are therefore operationally distinguishable.
+
+In this setting, we \emph{define} the abstract spin eigenstates along a reference axis (conventionally denoted $z$) as
+\begin{equation}
+  \ket{+}_z \;\hat{=}\; s^{(+)},
+  \qquad
+  \ket{-}_z \;\hat{=}\; s^{(-)},
+\end{equation}
+where the hat denotes a logical correspondence between quantum kets and stationary sign patterns on $G_{4,6}$. This identification is not meant as a literal ontological assertion that the electron ``is'' the $(4,6)$ graph, but rather as a minimal logical representation of a spin-$1/2$ doublet consistent with the PDL axioms. The equality of the internal coherence costs of $s^{(+)}$ and $s^{(-)}$ encodes the degeneracy of $\ket{+}_z$ and $\ket{-}_z$ as pure spin states in the absence of external couplings.
+
+\subsection{Superpositions as bias in mixed-triangle selection}
+
+Within standard quantum mechanics, a general spin state along the $z$-axis is represented as a superposition
+\begin{equation}
+  \ket{\psi} \;=\; a\,\ket{+}_z + b\,\ket{-}_z,
+  \qquad
+  a,b\in\mathbb{C},
+  \qquad
+  |a|^2+|b|^2=1.
+\end{equation}
+In PDL, there is no direct analogue of the superposition principle at the level of individual sign assignments: at any given logical instant, the $(4,6)$ block realises either $s^{(+)}$ or $s^{(-)}$, but not a linear combination in the usual linear-algebraic sense. Consequently, the superposition $\ket{\psi}$ must be reinterpreted at the level of \emph{couplings} between the $(4,6)$ structure and an external measurement apparatus.
+
+The central idea is that the amplitudes $(a,b)$ and the measurement direction enter the description as weights in a mixed-triangle coherence cost, rather than as coefficients of a state vector defined intrinsically on the $(4,6)$ graph. Concretely, consider a measurement of spin along an axis that forms an angle $\theta$ with the reference $z$-axis, restricted to a fixed azimuthal plane for definiteness. In standard quantum mechanics, the corresponding eigenstates are
+\begin{equation}
+  \ket{+}_\theta \;=\; \cos\!\left(\tfrac{\theta}{2}\right)\ket{+}_z + \sin\!\left(\tfrac{\theta}{2}\right)\ket{-}_z,
+  \qquad
+  \ket{-}_\theta \;=\; \sin\!\left(\tfrac{\theta}{2}\right)\ket{+}_z - \cos\!\left(\tfrac{\theta}{2}\right)\ket{-}_z.
+\end{equation}
+The Born probabilities of obtaining outcomes $+$ and $-$ when measuring $\ket{\psi}$ along the $\theta$-axis are then given by
+\begin{align}
+  P(+;\theta,a,b) &= |\braket{+_\theta}{\psi}|^2
+  = \left|a\cos\!\left(\tfrac{\theta}{2}\right) + b\sin\!\left(\tfrac{\theta}{2}\right)\right|^2,
+  \label{eq:Born_plus_standard}\\[0.5em]
+  P(-;\theta,a,b) &= |\braket{-_\theta}{\psi}|^2
+  = \left|a\sin\!\left(\tfrac{\theta}{2}\right) - b\cos\!\left(\tfrac{\theta}{2}\right)\right|^2.
+  \label{eq:Born_minus_standard}
+\end{align}
+
+In the PDL framework, Eqs.~\eqref{eq:Born_plus_standard}--\eqref{eq:Born_minus_standard} are interpreted as prescriptions for constructing \emph{weights} assigned to mixed triangles connecting the $(4,6)$ block to a spin-measurement apparatus, rather than as probabilities arising from an abstract Hilbert-space inner product. More precisely, we introduce an apparatus graph $G_{\mathrm{app}}$ containing (at least) two distinguished interface regions associated with the two possible measurement outcomes, denoted by $+$ and $-$. The detailed structure of $G_{\mathrm{app}}$ will be specified in Sec.~\ref{sec:Born_scheme}; for the purposes of the present discussion, it suffices to assume that:
+\begin{itemize}
+  \item[(i)] The $(4,6)$ block is connected to $G_{\mathrm{app}}$ via a finite set of edges, such that one can form mixed triangles involving two vertices in $V_{e}$ and one vertex in $G_{\mathrm{app}}$.
+  \item[(ii)] These mixed triangles can be partitioned into two disjoint families, $\mathcal{T}_+$ and $\mathcal{T}_-$, corresponding to the two macroscopic outcome branches of the apparatus (for example, two spatially separated beams in a Stern--Gerlach experiment).
+\end{itemize}
+
+Consider a prepared spin state $\ket{\psi} = a\ket{+}_z + b\ket{-}_z$ and a measurement direction specified by the polar angle $\theta$. To each mixed triangle $\tau$ we assign a non-negative weight $\alpha_\tau(\theta,a,b)$, whose functional form depends on whether $\tau$ belongs to the $+$ or $-$ family. Anticipating the combinatorial construction introduced in Sec.~\ref{sec:Born_scheme}, we define
+\begin{align}
+  \alpha_{\tau\in \mathcal{T}_+}(\theta,a,b)
+  &\;\propto\;
+  \left|a\cos\left(\tfrac{\theta}{2}\right) + b\sin\left(\tfrac{\theta}{2}\right)\right|^2,
+  \label{eq:alpha_plus_def}\\[0.5em]
+  \alpha_{\tau\in \mathcal{T}_-}(\theta,a,b)
+  &\;\propto\;
+  \left|a\sin\left(\tfrac{\theta}{2}\right) - b\cos\left(\tfrac{\theta}{2}\right)\right|^2,
+  \label{eq:alpha_minus_def}
+\end{align}
+where the proportionality constants are absorbed into an overall normalisation factor. At this stage, these weights should not be interpreted as physical probabilities. Instead, they quantify the extent to which the configuration of the $(4,6)$ block, together with the chosen spin state $\ket{\psi}$, supports mixed-triangle coherence in each measurement outcome branch. Equivalently, the amplitudes $(a,b)$ and the measurement angle $\theta$ induce an effective directional bias in the \emph{coherence cost} associated with mixed triangles, while the $(4,6)$ block itself remains in a definite sign configuration $s^{(+)}$ or $s^{(-)}$ at every logical instant.
+
+In the subsequent section, we will integrate the weights~\eqref{eq:alpha_plus_def}--\eqref{eq:alpha_minus_def} with a global optimisation procedure defined on the full signed graph $G_{4,6}\cup G_{\mathrm{app}}$. The induced combinatorial selection among configurations that preferentially promote coherence within $\mathcal{T}_+$ and those that preferentially promote coherence within $\mathcal{T}_-$ will give rise to effective probabilities $P(+;\theta,a,b)$ and $P(-;\theta,a,b)$. We will demonstrate that, under appropriate constraints on the apparatus and on the coherence cost, these probabilities reproduce the standard Born expressions~\eqref{eq:Born_plus_standard}--\eqref{eq:Born_minus_standard}. In this framework, superposition and measurement are represented not by superposed graphs, but rather by a weighted competition between families of mixed triangles embedded in a single, globally coherent signed graph.
+
+\section{Combinatorial scheme for Born's rule}
+\label{sec:Born_scheme}
+
+In this section, we render the preceding concepts explicit by constructing a minimal logical analogue of a Stern--Gerlach apparatus, specifying the families of mixed triangles that effect its coupling to the $(4,6)$ spin block, and introducing a weighted coherence cost functional that depends on the amplitudes $(a,b)$ and the measurement direction $\theta$. We then demonstrate how an appropriate partition of configuration space into two outcome basins gives rise to effective probabilities that reproduce the standard Born-rule expressions for a spin-$1/2$ system.
+
+\subsection{Minimal logical Stern--Gerlach apparatus}
+\label{subsec:min_app}
+
+We consider a minimal apparatus graph $G_{\mathrm{app}}$ that is just sufficiently structured to represent two macroscopically distinguishable outcome branches, conventionally associated with ``spin up'' and ``spin down'' along a chosen quantization axis. The microscopic details of the apparatus can be refined without altering the essential logical structure of the argument; accordingly, we restrict attention to a schematic yet adequate configuration.
+
+Let $G_{\mathrm{app}}$ contain:
+\begin{itemize}
+  \item two distinguished interface vertices $I_+$ and $I_-$, which mediate the coupling between the $(4,6)$ block and the remainder of the apparatus;
+  \item two outcome vertices $D_+$ and $D_-$, representing macroscopic detection regions associated with the two spin outcomes (for example, two spatially separated spots on a detection screen in a Stern--Gerlach experiment);
+  \item additional internal vertices and edges partitioned into three subgraphs: (i) a preparation subgraph $P$ feeding the $(4,6)$ block, (ii) a field subgraph $M$ that correlates the spin degree of freedom with spatial separation, and (iii) a detection subgraph $D$ that amplifies and records the measurement outcome.
+\end{itemize}
+
+We assume that the internal structures of the preparation and detection subgraphs can be abstracted away for the present analysis, in the sense that their internal relations contribute to overall graph-theoretic coherence but do not generate additional macroscopically distinct outcome branches beyond $+$ and $-$. Under this assumption, the physically relevant coupling between the spin system and the apparatus is mediated by mixed triangles involving vertices from $V_e$ and $\{I_+,I_-\}$, together with internal triangles that encode the propagation of this binary distinction toward $\{D_+,D_-\}$.
+
+More concretely, we introduce two disjoint families of mixed triangles:
+\begin{align}
+  \mathcal{T}_+ &\;=\; \big\{ (e_i,e_j,I_+) \,\big|\, e_i,e_j\in V_e,\; (e_i,e_j)\in E_e,\; (e_i,I_+),(e_j,I_+)\in E \big\},\\[0.3em]
+  \mathcal{T}_- &\;=\; \big\{ (e_i,e_j,I_-) \,\big|\, e_i,e_j\in V_e,\; (e_i,e_j)\in E_e,\; (e_i,I_-),(e_j,I_-)\in E \big\},
+\end{align}
+where $E$ denotes the edge set of the combined graph $G_{4,6}\cup G_{\mathrm{app}}$. Each triangle $\tau\in\mathcal{T}_+$ or $\mathcal{T}_-$ is endowed with:
+\begin{itemize}
+  \item a triangle sign $\sigma_\tau(\sigma)=s_{ij}\,s_{jI_\pm}\,s_{iI_\pm}$ determined by a configuration $\sigma$ of edge signs on $G_{4,6}\cup G_{\mathrm{app}}$;
+  \item a branch label $+/-$ specifying the family to which it belongs;
+  \item a weight $\alpha_\tau(\theta,a,b)$ that depends on the prepared spin state $\ket{\psi}=a\ket{+}_z+b\ket{-}_z$ and on the measurement direction $\theta$.
+\end{itemize}
+
+For conceptual clarity, one may envisage a minimal implementation in which only a small subset of edges from $V_e$ to $I_+$ and $I_-$ is present, leading to a finite number of mixed triangles (for instance, four triangles in $\mathcal{T}_+$ and four in $\mathcal{T}_-$). The ensuing construction, however, does not depend on the precise cardinalities of $\mathcal{T}_\pm$, as long as these sets are finite and mutually disjoint.
+
+\subsection{Weighted mixed-triangle coherence}
+\label{subsec:weighted_cost}
+
+For a prepared spin state $\ket{\psi}=a\ket{+}_z+b\ket{-}_z$ and a measurement direction $\theta$, we assign weights to mixed triangles as introduced in Eqs.~\eqref{eq:alpha_plus_def}--\eqref{eq:alpha_minus_def},
+\begin{align}
+  \alpha_{\tau\in \mathcal{T}_+}(\theta,a,b)
+  &\;=\;
+  C_+\,\bigg|a\cos\Big(\frac{\theta}{2}\Big)+b\sin\Big(\frac{\theta}{2}\Big)\bigg|^2,
+  \label{eq:alpha_plus}\\[0.4em]
+  \alpha_{\tau\in \mathcal{T}_-}(\theta,a,b)
+  &\;=\;
+  C_-\,\bigg|a\sin\Big(\frac{\theta}{2}\Big)-b\cos\Big(\frac{\theta}{2}\Big)\bigg|^2,
+  \label{eq:alpha_minus}
+\end{align}
+where $C_+$ and $C_-$ are positive normalisation constants that may depend on the details of the measurement apparatus but are independent of $(a,b,\theta)$. These constants will be absorbed into an overall multiplicative factor at a later stage. The weights $\alpha_\tau$ quantify, for a given spin state and measurement direction, the relative preference of the configuration for coherence of triangles in the $+$ versus the $-$ branch.
+
+To characterise the coherence properties of a global sign configuration $\sigma$ on $G_{4,6}\cup G_{\mathrm{app}}$, we associate with each mixed triangle $\tau$ an indicator variable
+\begin{equation}
+  \chi(\tau;\sigma) \;=\;
+  \begin{cases}
+    +1, & \text{if the triangle } \tau \text{ is coherent under } \sigma,\\
+    -1, & \text{if the triangle } \tau \text{ is violated under } \sigma.
+  \end{cases}
+\end{equation}
+Based on this, we define the mixed-triangle coherence cost
+\begin{equation}
+  \varepsilon_{\mathrm{mix}}(\sigma;\theta,a,b)
+  \;=\;
+  \frac{1}{Z(\theta,a,b)}
+  \sum_{\tau\in\mathcal{T}_+\cup\mathcal{T}_-}
+  \alpha_\tau(\theta,a,b)\,\frac{1-\chi(\tau;\sigma)}{2},
+  \label{eq:eps_mix_def}
+\end{equation}
+where
+\begin{equation}
+  Z(\theta,a,b)
+  \;=\;
+  \sum_{\tau\in\mathcal{T}_+\cup\mathcal{T}_-}
+  \alpha_\tau(\theta,a,b)
+\end{equation}
+serves as a normalisation factor. In this formulation, each violated triangle contributes a positive term to $\varepsilon_{\mathrm{mix}}$, weighted by its corresponding $\alpha_\tau$, whereas coherent triangles do not affect the cost. Furthermore, we impose a hard constraint that renders configurations inadmissible whenever \emph{any} internal triangle of the $(4,6)$ block is violated:
+\begin{equation}
+  \varepsilon_{\mathrm{mix}}(\sigma;\theta,a,b) \;=\; +\infty
+  \quad \text{if at least one internal triangle of } G_{4,6} \text{ is violated}.
+\end{equation}
+
+The mixed-triangle cost~\eqref{eq:eps_mix_def} is then employed to assign a weight to each global configuration $\sigma$:
+\begin{equation}
+  w(\sigma;\theta,a,b)
+  \;=\;
+  \exp\!\Big[-\lambda\,\varepsilon_{\mathrm{mix}}(\sigma;\theta,a,b)\Big],
+  \qquad
+  \lambda \gg 1,
+  \label{eq:weight_def}
+\end{equation}
+with the convention that $w(\sigma)=0$ whenever $\varepsilon_{\mathrm{mix}}(\sigma)=+\infty$. The parameter $\lambda$ regulates the sharpness of the selection over configurations: in the limit $\lambda\to\infty$, configurations that minimise $\varepsilon_{\mathrm{mix}}$ overwhelmingly dominate the ensemble, whereas those associated with larger mixed-triangle violation costs are exponentially suppressed.
+
+\subsection{Two outcome basins and Born probabilities}
+\label{subsec:basins_Born}
+
+The families $\mathcal{T}_+$ and $\mathcal{T}_-$ define two collections of mixed triangles whose respective coherences, evaluated for a given configuration $\sigma$, can be mutually competing. To connect this competition with measurement outcomes, we partition the set of admissible configurations into two outcome basins:
+\begin{itemize}
+  \item $A$ (\emph{plus branch}): the set of configurations for which the weighted coherence associated with $\mathcal{T}_+$ dominates that associated with $\mathcal{T}_-$;
+  \item $B$ (\emph{minus branch}): the set of configurations for which the weighted coherence associated with $\mathcal{T}_-$ dominates that associated with $\mathcal{T}_+$.
+\end{itemize}
+A variety of more specific partition rules can be formulated; for concreteness, we introduce the branch scores
+\begin{align}
+  S_+(\sigma;\theta,a,b)
+  &= \sum_{\tau\in\mathcal{T}_+} \alpha_\tau(\theta,a,b)\,\frac{1+\chi(\tau;\sigma)}{2},\\
+  S_-(\sigma;\theta,a,b)
+  &= \sum_{\tau\in\mathcal{T}_-} \alpha_\tau(\theta,a,b)\,\frac{1+\chi(\tau;\sigma)}{2},
+\end{align}
+which quantify the weighted sum of coherent triangles in each branch, and subsequently define
+\begin{equation}
+  A = \{\sigma \,\big|\, S_+(\sigma) > S_-(\sigma)\},
+  \qquad
+  B = \{\sigma \,\big|\, S_-(\sigma) > S_+(\sigma)\}.
+\end{equation}
+Configurations for which $S_+ = S_-$ may be assigned to either set without loss of generality, or regarded as negligible in the large-$\lambda$ limit.
+
+The total weights associated with each basin are then introduced as
+\begin{equation}
+  W(A;\theta,a,b)
+  \;=\;
+  \sum_{\sigma\in A} w(\sigma;\theta,a,b),
+  \qquad
+  W(B;\theta,a,b)
+  \;=\;
+  \sum_{\sigma\in B} w(\sigma;\theta,a,b),
+  \label{eq:WA_WB_def}
+\end{equation}
+where $w(\sigma)$ is specified by Eq.~\eqref{eq:weight_def}. The effective probabilities of obtaining the $+$ and $-$ outcomes upon measurement along the $\theta$-axis are then defined by normalising these basin weights:
+\begin{equation}
+  P(+;\theta,a,b) \;=\;
+  \frac{W(A;\theta,a,b)}{W(A;\theta,a,b)+W(B;\theta,a,b)},
+  \qquad
+  P(-;\theta,a,b) \;=\;
+  \frac{W(B;\theta,a,b)}{W(A;\theta,a,b)+W(B;\theta,a,b)}.
+  \label{eq:Pplus_Pminus_def}
+\end{equation}
+
+To relate Eqs.~\eqref{eq:Pplus_Pminus_def} to the standard Born expressions~\eqref{eq:Born_plus_standard}--\eqref{eq:Born_minus_standard}, we impose two structural assumptions on the measurement apparatus:
+\begin{itemize}
+  \item[(i)] The families $\mathcal{T}_+$ and $\mathcal{T}_-$ are symmetric both in cardinality and in geometric pattern. That is, up to a relabelling of $I_+$ and $I_-$, the apparatus can be treated as realizing two copies of an identical mixed-triangle interface, one associated with each outcome branch.
+  \item[(ii)] In the large-$\lambda$ limit, the dominant contribution to $\varepsilon_{\mathrm{mix}}$ arises from the mixed triangles in $\mathcal{T}_+\cup\mathcal{T}_-$, whereas purely internal triangles within the apparatus give rise only to a configuration-independent offset that cancels in the comparison between $A$ and $B$.
+\end{itemize}
+Under these assumptions, the ratio of basin weights is dictated predominantly by the relative facility of achieving coherence within $\mathcal{T}_+$ and $\mathcal{T}_-$ for fixed $(a,b,\theta)$. Since all triangles in a given branch share the same weight factor (up to branch-dependent constants $C_\pm$), the relative suppression of configurations that exhibit poor performance in $\mathcal{T}_+$ compared with those that exhibit poor performance in $\mathcal{T}_-$ is governed by the ratio
+\begin{equation}
+  R(\theta,a,b)
+  \;\equiv\;
+  \frac{\text{``typical'' exponential suppression in branch }+}
+       {\text{``typical'' exponential suppression in branch }-}
+  \;\approx\;
+  \frac{\left|a\cos\left(\tfrac{\theta}{2}\right) + b\sin\left(\tfrac{\theta}{2}\right)\right|^2}
+       {\left|a\sin\left(\tfrac{\theta}{2}\right) - b\cos\left(\tfrac{\theta}{2}\right)\right|^2},
+\end{equation}
+where the approximate equality expresses the fact that, in the limit of large $\lambda$, configurations with a single violated triangle in the more strongly weighted branch are exponentially more suppressed than configurations with the same violation pattern in the less strongly weighted branch. Consequently, we obtain
+\begin{equation}
+  \frac{W(A;\theta,a,b)}{W(B;\theta,a,b)}
+  \;\approx\;
+  \frac{\left|a\cos\left(\tfrac{\theta}{2}\right) + b\sin\left(\tfrac{\theta}{2}\right)\right|^2}
+       {\left|a\sin\left(\tfrac{\theta}{2}\right) - b\cos\left(\tfrac{\theta}{2}\right)\right|^2},
+  \label{eq:WA_over_WB}
+\end{equation}
+with corrections that vanish as $\lambda\to\infty$ and as the apparatus interface approaches perfect symmetry.
+
+Inserting Eq.~\eqref{eq:WA_over_WB} into Eq.~\eqref{eq:Pplus_Pminus_def} yields
+\begin{align}
+  P(+;\theta,a,b)
+  &= \frac{W(A)}{W(A)+W(B)}
+   = \frac{W(A)/W(B)}{1+W(A)/W(B)} \\
+   &\approx
+   \frac{ \left|a\cos\left(\tfrac{\theta}{2}\right) + b\sin\left(\tfrac{\theta}{2}\right)\right|^2 }
+        { \left|a\cos\left(\tfrac{\theta}{2}\right) + b\sin\left(\tfrac{\theta}{2}\right)\right|^2
+         +\left|a\sin\left(\tfrac{\theta}{2}\right) - b\cos\left(\tfrac{\theta}{2}\right)\right|^2 }
+  \nonumber\\[0.4em]
+  &=
+   \left|a\cos\left(\tfrac{\theta}{2}\right) + b\sin\left(\tfrac{\theta}{2}\right)\right|^2,
+  \label{eq:Pplus_final}
+\end{align}
+where the final equality is a consequence of the normalisation condition $|a|^2+|b|^2=1$ together with the orthonormality of the rotated basis $\{\ket{+}_\theta,\ket{-}_\theta\}$. An analogous calculation yields
+\begin{align}
+  P(-;\theta,a,b)
+  &= \frac{W(B)}{W(A)+W(B)}
+  \approx
+   \left|a\sin\left(\tfrac{\theta}{2}\right) - b\cos\left(\tfrac{\theta}{2}\right)\right|^2.
+  \label{eq:Pminus_final}
+\end{align}
+
+Equations~\eqref{eq:Pplus_final}--\eqref{eq:Pminus_final} are therefore identical to the standard Born-rule probabilities~\eqref{eq:Born_plus_standard}--\eqref{eq:Born_minus_standard} for spin-$1/2$ measurements performed along an axis that forms an angle $\theta$ with respect to the preparation basis. Within the PDL framework, these probabilities arise from a combinatorial selection mechanism defined over signed graphs: the amplitudes $(a,b)$ and the measurement angle $\theta$ are encoded as weights assigned to mixed triangles, and measurement outcomes are associated with the predominance of one of two distinct families of mixed triangles under an exponential suppression of configurations containing violated triangles.
+
+We emphasise that this construction does not furnish a complete Gleason-type derivation of Born’s rule. Instead, it demonstrates that Born probabilities arise naturally within PDL for spin-$1/2$ systems, under the following assumptions: (i) the $(4,6)$ block is adopted as the minimal spin doublet, (ii) the apparatus–system interface is constrained to be a symmetric two-branch configuration, and (iii) a large-$\lambda$ limit is taken, in which the optimisation of coherence strongly biases the dynamics toward configurations that maximise the weighted mixed-triangle coherence.
+
+\section{Active surface of a spin apparatus}
+\label{sec:active_surface_spin}
+
+The combinatorial derivation of Born’s rule in Sec.~\ref{sec:Born_scheme} relied on a finite set of mixed triangles connecting the $(4,6)$ block to an apparatus graph. In this section, we reinterpret these mixed triangles in terms of an \emph{active surface} of the apparatus, in direct analogy with the protonic active surface introduced in Sec.~\ref{subsec:proton_architecture}. We further introduce an instrumental coupling parameter $\alpha_{\text{spin}}$, which quantifies the ratio between the internal coherence cost of the apparatus and the cardinality of its active surface.
+
+\subsection{Definition of the spin–apparatus active surface}
+\label{subsec:active_surface_def}
+
+A physically realistic Stern–Gerlach apparatus consists of several functional subsystems: (i) a source and collimation stage that prepares a beam of atoms or electrons, (ii) a region with an inhomogeneous magnetic field that correlates the spin degree of freedom with a spatial separation of the trajectories, and (iii) a detection stage that amplifies and encodes this spatial separation into macroscopically distinguishable outcomes. Within the PDL framework, each of these subsystems is represented as a signed graph, and their composition yields a large composite graph with a rich internal relation structure. However, only a subset of these relations is directly relevant for the coupling to the $(4,6)$ spin block.
+
+To characterise the effective interface between the spin system and the apparatus, we introduce two distinct surface layers:
+\begin{itemize}
+  \item a \emph{spin–field surface}, consisting of edges that connect vertices in $V_e$ to interface vertices such as $I_+$ and $I_-$ and that occur in mixed triangles of the form $(e_i,e_j,I_\pm)$;
+  \item a \emph{field–detection surface}, consisting of edges that transmit the distinction between the $+$ and $-$ branches from the interface region to the outcome vertices $D_+$ and $D_-$, for example via triangles such as $(I_+,M_+,D_+)$ and $(I_-,M_-,D_-)$.
+\end{itemize}
+
+Formally, we define the spin–field active surface as
+\begin{equation}
+  S_{\mathrm{surf}}^{(1)} \;=\;
+  \big\{ (e_k,I_\pm) \in E \,\big|\,
+    \exists\, e_i,e_j\in V_e : (e_i,e_j,I_\pm)\in\mathcal{T}_\pm,\;
+    e_k\in\{e_i,e_j\}
+  \big\},
+\end{equation}
+that is, as the set of edges between the $(4,6)$ vertices and the interface vertices that participate in at least one mixed triangle. Its cardinality,
+\begin{equation}
+  R_{\mathrm{surf}}^{(1)} \;=\; \big| S_{\mathrm{surf}}^{(1)} \big|,
+\end{equation}
+counts the number of spin–field relations that are directly subject to mixed–triangle coherence optimisation.
+
+In an analogous manner, we define the field–detection active surface as the set $S_{\mathrm{surf}}^{(2)}$ of apparatus-internal edges whose sign configurations are relevant for discriminating between the two outcome branches at the detection stage. A minimal realisation of this structure comprises edges such as $(I_+,M_+)$, $(M_+,D_+)$ and their $-$ counterparts, supplemented by any additional edges required to form consistent internal triangles that support a stable propagation of the $+$ or $-$ label from the interface to the detection level. The associated cardinality
+\begin{equation}
+  R_{\mathrm{surf}}^{(2)} \;=\; \big| S_{\mathrm{surf}}^{(2)} \big|
+\end{equation}
+thus quantifies the number of apparatus-internal relations that remain logically exposed at the surface level of the spin measurement.
+
+We subsequently define the total spin–apparatus active surface as
+\begin{equation}
+  R_{\mathrm{surf}}^{(\mathrm{spin})}
+  \;=\;
+  R_{\mathrm{surf}}^{(1)} + R_{\mathrm{surf}}^{(2)}.
+  \label{eq:Rsurf_spin_def}
+\end{equation}
+By construction, $R_{\mathrm{surf}}^{(\mathrm{spin})}$ is finite and typically much smaller than the total number of internal relations in the apparatus. All remaining edges are assigned to deeper hierarchical layers, where they contribute to internal stabilisation, field generation, and amplification, but do not directly participate in mixed triangles that couple to the $(4,6)$ block or that transmit a branch label to the detection level.
+
+From this vantage point, the apparatus operates as a composite structure with a large internal coherence capacity and a comparatively thin active surface through which it couples to the spin. The mixed triangles employed in the Born construction of Sec.~\ref{sec:Born_scheme} are precisely those that interrogate this active surface.
+
+\subsection{Internal coherence cost and robustness}
+\label{subsec:internal_cost}
+
+Although the probabilities $P(+;\theta,a,b)$ and $P(-;\theta,a,b)$ derived in Sec.~\ref{sec:Born_scheme} depend solely on the relative weighting of $\mathcal{T}_+$ and $\mathcal{T}_-$, and are thus independent of the detailed internal architecture of the apparatus, the internal coherence budget does affect how reliably and how quickly the apparatus can realise these probabilities operationally. To characterise this dependence, we introduce coarse-grained measures of internal coherence cost for three subsystems:
+\begin{itemize}
+  \item $N_P$: the number of internal edges in the preparation block (encompassing source, collimation, and filtering stages);
+  \item $N_M$: the number of internal edges in the field block (including magnets, supporting structures, and current sources);
+  \item $N_D$: the number of internal edges in the detection block (sensitive region, amplification chain, and readout).
+\end{itemize}
+These integers do not appear explicitly in the Born-rule expressions for the outcome probabilities; instead, they parametrise the extent of relational structure that must be sustained in a coherent configuration for the apparatus to operate as designed. For instance, a large $N_M$ typically corresponds to a massive and mechanically stable magnetic assembly capable of maintaining a strongly inhomogeneous field with negligible temporal fluctuations, while a large $N_D$ indicates an intricate detection and amplification chain that can reliably transduce microscopic outcome distinctions into robust macroscopic records.
+
+Crucially, the probabilities derived from Eqs.~\eqref{eq:Pplus_final}--\eqref{eq:Pminus_final} are invariant under variations of $N_P$, $N_M$, and $N_D$, provided that the measurement apparatus satisfies the following structural conditions:
+\begin{itemize}
+  \item it maintains a two-branch topology at the active surface, i.e.\ two disjoint families $\mathcal{T}_+$ and $\mathcal{T}_-$ of mixed triangles;
+  \item it possesses a symmetric or approximately symmetric interface between the $(4,6)$ block and the apparatus, such that the relative weighting of $\mathcal{T}_+$ and $\mathcal{T}_-$ is determined by the amplitudes $(a,b)$ and the angle $\theta$, rather than by incidental asymmetries in $G_{\mathrm{app}}$.
+\end{itemize}
+In this sense, the apparatus may have arbitrarily high internal complexity without altering the functional dependence predicted by the Born rule. What does depend on $N_P$, $N_M$, and $N_D$ is the apparatus’ capacity to realise the idealised combinatorial scheme under realistic conditions, including noise, finite $\lambda$, and environmental couplings. An increased internal coherence cost typically entails enhanced robustness against local perturbations, at the expense of higher resource consumption.
+
+\subsection{Instrumental coupling parameter \texorpdfstring{$\alpha_{\text{spin}}$}{alpha\_spin}}
+\label{subsec:alpha_spin}
+
+The structural representation of the fine-structure constant introduced in Sec.~\ref{subsec:alpha_structural},
+\begin{equation}
+  \alpha^{-1} \;\simeq\; \frac{\gamma^2}{R_{\mathrm{surf}}^2},
+\end{equation}
+naturally motivates an interpretation of $\alpha$ as a dimensionless quantifier of the fraction of the proton’s available coherence budget that is effectively deployed at its active surface for coupling to an electron. By analogy, we define an \emph{instrumental coupling parameter} associated with a given spin-measurement apparatus,
+\begin{equation}
+  \alpha_{\mathrm{spin}}^{-1}
+  \;\sim\;
+  \frac{w_P N_P + w_M N_M + w_D N_D}
+       {\big(R_{\mathrm{surf}}^{(\mathrm{spin})}\big)^2},
+  \label{eq:alpha_spin_def}
+\end{equation}
+where $w_P$, $w_M$, and $w_D$ are positive, dimensionless coefficients of order unity that characterize the relative contributions of the respective subsystems to the effective coherence budget relevant for spin readout. The numerator thus provides a coarse-grained measure of the internal coherence cost of the apparatus, while the denominator encodes the squared extent of the active surface through which the apparatus couples to the $(4,6)$ block.
+
+Several remarks are in order:
+\begin{itemize}
+  \item The parameter $\alpha_{\mathrm{spin}}$ is not a universal constant. Its value is contingent on the specific architectural details of a given measurement apparatus, in contrast to the structural parameter $\alpha$ associated with the proton, which is treated as device-independent.
+  \item The definition~\eqref{eq:alpha_spin_def} is deliberately schematic and qualitative. In the absence of a fully specified PDL model of a concrete Stern--Gerlach apparatus, the integers $N_P$, $N_M$, $N_D$ and the corresponding weights $w_P$, $w_M$, $w_D$ cannot, at this stage, be derived from first principles.
+  \item Nonetheless, $\alpha_{\mathrm{spin}}$ encodes a well-defined relational property: for a fixed active surface size $R_{\mathrm{surf}}^{(\mathrm{spin})}$, an increased internal coherence cost indicates that a larger fraction of the apparatus’ relational structure is being deployed to sustain a high-fidelity spin measurement. Conversely, for fixed $(N_P,N_M,N_D)$, an increase in the active surface size indicates that the apparatus distributes its coherence resources over a more finely resolved or more redundantly realised interface with the $(4,6)$ block.
+\end{itemize}
+
+From this perspective, the primary function of $\alpha_{\mathrm{spin}}$ is to quantify the “finesse’’ of the coupling between the spin degree of freedom and the apparatus within the PDL framework, in direct analogy with the way in which $\alpha$ quantifies the finesse of the proton–electron coupling. A large value of $\alpha_{\mathrm{spin}}^{-1}$ corresponds to an apparatus that is massive, mechanically robust, and capable of sharply discriminating between the two outcome branches, whereas a small value of $\alpha_{\mathrm{spin}}^{-1}$ corresponds to an apparatus that is lighter, more fragile, or more weakly coupled. Crucially, this instrumental parameter affects only the practical realisation of the Born probabilities, and not their functional form, which is fixed by the mixed-triangle weighting scheme together with the two-branch topology of the active surface.
+
+In the next section, we return to the protonic active surface and the emergence of the golden ratio $\varphi$, and examine how the PDL framework motivates interpreting $\varphi$ as an optimisation factor governing core–surface partitions at the relational level.
+
+\section{Golden ratio and optimal active surfaces}
+\label{sec:golden_ratio}
+
+The representation of the structural fine-structure constant in terms of the protonic active surface involves the golden ratio $\varphi=(1+\sqrt{5})/2$. In this section, we briefly recapitulate the manner in which $\varphi$ arises within the proton model and propose an interpretation of the golden ratio as a candidate core–surface optimisation parameter in the PDL framework. We then formulate a conjecture concerning its potential status as a relational invariant.
+
+\subsection{Recap of \texorpdfstring{$\varphi$}{phi} emergence in the proton model}
+\label{subsec:phi_recap}
+
+As summarized in Sec.~\ref{subsec:proton_architecture}, the PDL proton model assigns to the valence sector a stationary relational content $r_{\mathrm{val}}=930$. This value is obtained from two up-type cores with $n_u=24$ entities and one down-type core with $n_d=28$ entities, each core being represented as a complete graph $K_{n_u}$ and $K_{n_d}$, respectively \cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherCombinatorialProton2026}. The relational sea contributes an additional $R_{\mathrm{sea}}=10\,087$ dynamical relations, yielding a total internal content $R_{\mathrm{tot}}=11\,017$. Within this framework, the \emph{active surface} is defined as the subset of protonic edges that can participate in coherent mixed triangles with an external $(4,6)$ electron block, under the constraint that the global coherence defect does not increase \cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}.
+
+A first, purely combinatorial estimate suggested that the cardinality of the active surface, $R_{\mathrm{surf}}$, is of order $500$ relations \cite{LaubscherPDLFull2026,LaubscherLDP2026}. A more refined analysis subsequently showed that $R_{\mathrm{surf}}$ can be written in closed form in terms of the valence content and the golden ratio \cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}:
+\begin{equation}
+  R_{\mathrm{surf}} \;=\; \varphi\,\frac{r_{\mathrm{val}}}{3},
+  \qquad
+  \varphi \;=\; \frac{1+\sqrt{5}}{2}.
+  \label{eq:Rsurf_phi_definition}
+\end{equation}
+For $r_{\mathrm{val}}=930$, one obtains an effective ``mean core'' content
+\begin{equation}
+  \frac{r_{\mathrm{val}}}{3} \;=\; 310,
+\end{equation}
+and consequently
+\begin{equation}
+  R_{\mathrm{surf}} \;\approx\; \varphi \times 310 \;\approx\; 501.6.
+\end{equation}
+This replaces the earlier rough estimate $R_{\mathrm{surf}}\sim 500$ with a value determined entirely by the internal integer $r_{\mathrm{val}}$ and the geometric factor $\varphi$. Substituting this refined $R_{\mathrm{surf}}$ into the structural relation for the fine-structure constant,
+\begin{equation}
+  \alpha^{-1} \;\simeq\; \frac{\gamma^2}{R_{\mathrm{surf}}^2},
+  \qquad
+  \gamma = \frac{m_p}{m_e},
+\end{equation}
+yields
+\begin{equation}
+  \alpha^{-1}_{\mathrm{PDL}} \;\approx\; 137.022,
+\end{equation}
+which agrees with the empirical value $\alpha^{-1}_{\mathrm{exp}}\approx 137.036$ at the level of a few parts in $10^{-4}$, without the introduction of any additional continuous parameter or numerical fitting procedure \cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026}. In this respect, the golden ratio emerges as a natural factor in the relational correspondence between the proton’s internal valence coherence and its active surface.
+
+\subsection{Interpretation as a core--surface optimisation factor}
+\label{subsec:phi_optimisation}
+
+The occurrence of $\varphi$ in Eq.~\eqref{eq:Rsurf_phi_definition} motivates an interpretation that goes beyond a purely numerical coincidence. In numerous geometric and optimisation frameworks, the golden ratio arises as the fixed point of self-similar partitions that extremise a given functional, for example by minimising a perimeter-to-area ratio under recursive subdivisions or by optimising packing efficiency subject to hierarchical constraints. Within the PDL framework, the relevant quantities are not geometric measures such as lengths and areas, but rather counts of relations and coherence defects.
+
+Equation~\eqref{eq:Rsurf_phi_definition} may therefore be construed as encoding a specific partition of the valence coherence into an internal ``core'' and an external ``surface'':
+\begin{itemize}
+  \item the effective mean core associated with a valence quark carries approximately $r_{\mathrm{val}}/3$ stationary relations, reflecting a local saturation of triangular coherence consistent with the PDL axioms;
+  \item the active surface $R_{\mathrm{surf}}$ is identified with the subset of these relations that can be made available at the proton boundary for coupling to an external $(4,6)$ block, without violating global closure or compromising hierarchical stability.
+\end{itemize}
+The factor $\varphi$ that relates $r_{\mathrm{val}}/3$ to $R_{\mathrm{surf}}$ then suggests that the partition between internal and surface coherence is not arbitrary, but instead arises from an internal optimisation principle: maximise internal closure and minimise coherence leakage, subject to the constraint of maintaining a finite and sufficient active surface for external couplings. Under this interpretation, the golden ratio quantifies a balance between:
+\begin{itemize}
+  \item retaining sufficient coherence in the core to ensure internal stability and hierarchical organisation within the proton;
+  \item allocating sufficient coherence to the surface to support electron--proton couplings compatible with the empirically observed value of $\alpha$.
+\end{itemize}
+
+In this perspective, $\varphi$ is not postulated as an extrinsic ``magic number'', but emerges as a candidate invariant characterising \emph{relational} optimisation under the PDL axioms. It functions as a scaling factor between the mean internal coherence budget and the size of the active surface that can be exposed without destabilising the composite structure.
+
+\subsection{Conjecture and possible extensions}
+\label{subsec:phi_conjecture}
+
+The present PDL-based derivation of Eq.~\eqref{eq:Rsurf_phi_definition} rests on structured, but not yet fully general, arguments concerning the redistribution of coherence between valence cores and the active surface. In particular, no proof has yet been established that the golden ratio is the \emph{unique} scaling factor compatible with all PDL constraints and with the empirical value of $\alpha$. The following conjecture therefore specifies the status of $\varphi$ within the current framework:
+
+\medskip
+\noindent\textbf{Conjecture.} \emph{Within the class of protonic architectures that satisfy the PDL axioms and admit the valence/sea decomposition $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$, the golden ratio $\varphi$ is the unique scaling factor that produces an active surface $R_{\mathrm{surf}}=\varphi\,r_{\mathrm{val}}/3$ such that:
+(i) the global coherence defect is minimised under the constraint of a finite electron-coupling surface, and
+(ii) the resulting structural fine-structure constant, $\alpha^{-1}\simeq\gamma^2/R_{\mathrm{surf}}^2$, agrees with the empirical value within its observational uncertainty, without the introduction of any additional continuous parameter.}
+\medskip
+
+A rigorous proof or disproof of this conjecture would require a more exhaustive combinatorial analysis of admissible core--surface partitions in the PDL proton model, encompassing:
+\begin{itemize}
+  \item a systematic exploration of alternative scaling factors relating $r_{\mathrm{val}}/3$ to $R_{\mathrm{surf}}$ and an assessment of their consequences for coherence defects and coupling properties;
+  \item a formal specification of the optimisation problem that balances internal closure, active-surface size, and leakage into the relational sea;
+  \item a demonstration that $\varphi$ extremises an appropriately defined functional over this space of partitions, and that no nearby rational or algebraic scaling factor yields comparably good or superior coherence properties and phenomenological agreement.
+\end{itemize}
+
+Beyond the specific case of the proton, it is natural to consider the possibility that analogous optimisation principles might govern the active surfaces of other composite structures in PDL, such as nucleons within different binding environments or, at the instrumental level, devices whose architectures are engineered to minimise decoherence given fixed resources. In such scenarios, golden-ratio-like scaling factors could emerge as relations between internal coherence budgets and the sizes of active surfaces mediating couplings to other structures.
+
+At the current stage, however, these extensions remain conjectural. The primary claim of this work is more limited in scope: the PDL proton model admits a golden-ratio partition between valence content and active surface, and this partition, when combined with the proton–electron mass ratio, produces a structural fine-structure constant in very good numerical agreement with experiment. In this respect, $\varphi$ emerges as a natural candidate for a relational optimisation invariant in PDL, whose deeper combinatorial underpinning is left as an open problem.
+
+In the following section, we synthesise the spin- and proton-level perspectives and examine the broader implications of interpreting Born’s rule and the fine-structure constant as emergent from finite active surfaces within a relational framework.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The constructions developed in this paper indicate that both Born’s rule for spin-$1/2$ systems and the fine-structure constant governing proton–electron couplings can be reformulated within a unified relational framework based on finite signed graphs. In both cases, the central structural feature is the presence of a finite active surface that separates a hierarchically organised internal region from an external interface mediating couplings to other structures. In this section, we examine the scope and limitations of this picture and outline connections to other foundational approaches.
+
+\subsection{Unifying spin measurement and proton structure via active surfaces}
+
+At the protonic level, the PDL framework associates to the internal hierarchy a valence sector of stationary relations and a dynamical relational sea, together with an active surface consisting of approximately $R_{\mathrm{surf}}\approx \varphi\,r_{\mathrm{val}}/3$ relations. These surface relations can participate in coherent mixed triangles with an external $(4,6)$ electron block without disrupting global closure. The structural relation
+\begin{equation}
+  \alpha^{-1} \;\simeq\; \frac{\gamma^2}{R_{\mathrm{surf}}^2}
+\end{equation}
+thus reinterprets the fine-structure constant as quantifying the fraction of protonic coherence that remains available for surface-mediated couplings, with the golden ratio $\varphi$ setting a proportionality between a mean internal core and the size of the active surface.
+
+At the instrumental level, the spin-measurement apparatus is likewise modelled as a composite graph with a large number of internal relations $(N_P,N_M,N_D)$ and a comparatively small active surface $R_{\mathrm{surf}}^{(\mathrm{spin})}$ that supports mixed triangles with the $(4,6)$ spin block and transmits the branch distinction to macroscopic outcomes. The associated combinatorial scheme for Born’s rule then assigns weights to mixed triangles, partitioned into two families $\mathcal{T}_+$ and $\mathcal{T}_-$, as a function of the amplitudes $(a,b)$ and the measurement angle $\theta$, and selects between outcome basins $A$ and $B$ via an exponential suppression of configurations that strongly violate heavily weighted triangles. The induced probabilities coincide with the standard Born expressions for spin-$1/2$ measurements along arbitrary axes.
+
+From this standpoint, the distinction between “microscopic’’ proton structure and “macroscopic’’ measurement apparatus is primarily one of scale rather than of principle: both are composite relational structures that allocate a substantial internal coherence budget to stabilise a finite active surface through which they couple to other structures. The fine-structure constant $\alpha$ and the Born probabilities for spin outcomes thus emerge as two manifestations of a common mechanism by which PDL structures trade off internal closure against surface coherence.
+
+\subsection{Status of the Born scheme and comparison to other approaches}
+
+The combinatorial derivation of Born's rule developed here is deliberately limited in scope. It rests on the following assumptions:
+\begin{itemize}
+  \item a particular realisation of spin-$1/2$ on the $(4,6)$ block in terms of two stationary motifs $s^{(+)}$ and $s^{(-)}$;
+  \item a symmetric, two-branch apparatus interface described by disjoint families of mixed triangles $\mathcal{T}_+$ and $\mathcal{T}_-$;
+  \item a large-$\lambda$ regime in which the coherence-optimisation functional strongly favours configurations that minimise a weighted mixed-triangle violation cost.
+\end{itemize}
+Within this framework, the scheme reproduces the conventional Born probabilities for projective measurements on spin-$1/2$ systems. However, it does not yet demonstrate that no alternative weighting prescriptions are admissible, nor that the quadratic dependence of probabilities on amplitudes is entailed solely by the PDL axioms. In particular, the present construction does not provide an analogue of Gleason’s theorem, which establishes the essential uniqueness of the Born rule in Hilbert space under suitable non-contextuality and additivity constraints.
+
+Nonetheless, the PDL-based scheme exhibits structural similarities to several established derivations of Born's rule. In common with frequentist and decision-theoretic treatments, it relates probabilities to the relative weighting of outcome branches, although here the weights emerge from a coherence cost on mixed triangles rather than from rationality postulates or self-locating uncertainty. Analogously to environmentally induced decoherence, it highlights the role of the measurement apparatus and its environment in selecting a preferred outcome basis, but replaces the machinery of density matrices and partial tracing with an optimisation problem on signed-graph coherences. In contrast to most operational reconstructions, it does not posit probability as a primitive concept; instead, probabilistic behaviour is obtained from the relative dominance of configuration classes within an underlying combinatorial ensemble.
+
+Future work could reinforce and generalise the Born scheme by:
+\begin{itemize}
+  \item rigorously characterising the class of admissible weighting functions $\alpha_\tau(\theta,a,b)$ compatible with PDL symmetries and coarse-graining requirements;
+  \item establishing that, under appropriate additional assumptions, only quadratic dependence on amplitudes yields a consistent and non-contextual assignment of weights to mixed triangles;
+  \item extending the framework beyond spin-$1/2$ to higher-spin and more general multi-level systems.
+\end{itemize}
+
+\subsection{Golden ratio as a relational invariant: prospects and caveats}
+
+The appearance of the golden ratio in the description of the protonic active surface entails both promising and cautionary implications. On the favourable side, the relation $R_{\mathrm{surf}}=\varphi\,r_{\mathrm{val}}/3$ yields a structural fine-structure constant that is in excellent quantitative agreement with experiment, without the need to adjust any continuous parameters. Conversely, the present justification of this specific scaling factor within PDL remains partially heuristic, and it has not been established that no alternative factor could reproduce the empirical value of $\alpha$ within a different architectural choice or optimisation scheme.
+
+In the present framework, $\varphi$ is interpreted as a candidate relational invariant that quantifies an optimal core--surface decomposition in a minimal composite structure obeying the PDL axioms. From a broader foundational perspective, such an interpretation would place the golden ratio on a footing analogous to that of other dimensionless constants encoding structural information, such as mass ratios or coupling ratios. Nonetheless, this interpretation must ultimately be supported by a more rigorous combinatorial analysis, demonstrating that $\varphi$ extremises a well-defined functional over the space of admissible partitions, and that nearby alternatives are disfavoured either by larger coherence defects or by inferior phenomenological performance.
+
+Pending such results, the status of $\varphi$ in PDL should be regarded as that of a structurally motivated ansatz—highly constrained and numerically successful, yet not (at present) elevated to the level of a logically derived necessity. The conjecture formulated in Sec.~\ref{subsec:phi_conjecture} is intended as a precise objective for future investigation rather than as the statement of a completed derivation.
+
+\subsection{Limitations and future directions}
+
+Several limitations of the present work merit emphasis:
+\begin{itemize}
+  \item The $(4,6)$ block, although a natural candidate for representing a spin-$1/2$ degree of freedom within PDL, has not been derived as the \emph{unique} admissible spin carrier. Other small graphs may likewise sustain two-level stationary motifs with comparable properties, and a systematic classification of such candidates has not yet been undertaken.
+  \item The representation of the spin measurement apparatus is still schematic. A fully developed PDL model of a realistic Stern--Gerlach device would require a detailed signed-graph description of magnets, sources, detectors, and their surrounding environment, together with a more quantitative characterization of how internal coherence budgets and active surfaces scale with experimental control parameters.
+  \item The instrumental coupling parameter $\alpha_{\mathrm{spin}}$ introduced in Eq.~\eqref{eq:alpha_spin_def} is qualitative and has not yet been evaluated for any specific experimental setup. Its primary role here is to demonstrate how the PDL concept of active surface can be generalized from intrinsic carriers such as the proton to macroscopic measurement devices.
+  \item The present analysis is confined to static measurement scenarios. Extending PDL to genuinely dynamical processes, incorporating time-dependent interactions and propagating excitations, is required in order to establish a more direct connection with standard quantum field-theoretic treatments.
+\end{itemize}
+
+Notwithstanding these limitations, the constructions presented here demonstrate that PDL can simultaneously accommodate the numerical value of the fine-structure constant and the functional form of Born’s rule for spin-$1/2$ measurements within a single relational framework. This suggests that the formalism is sufficiently expressive to encode non-trivial quantum phenomenology while remaining anchored in a discrete, combinatorial substrate.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this work, we have investigated how two foundational features of quantum theory—Born’s rule for spin-$1/2$ systems and the fine-structure constant governing proton–electron couplings—can be reformulated within the Projective Dynamic Logo (PDL) framework as emergent properties of finite active surfaces embedded in a relational hierarchy.
+
+On the proton side, we have recalled that the PDL proton model organises its internal relational structure into a valence sector and a relational sea, and that a finite active surface $R_{\mathrm{surf}}$ mediates coherent couplings to an external $(4,6)$ electron prototype. We have highlighted that an active surface parametrised as $R_{\mathrm{surf}}=\varphi\,r_{\mathrm{val}}/3$ yields a structural relation $\alpha^{-1}\simeq\gamma^2/R_{\mathrm{surf}}^2$ which reproduces the empirical value of the fine-structure constant with high numerical accuracy, without the introduction of any continuous free parameter. This motivates a reinterpretation of $\alpha$ as a ratio of internal to surface coherence, and identifies the golden ratio $\varphi$ as a candidate optimisation factor governing core–surface partitions.
+
+On the spin side, we have modelled the $(4,6)$ structure as a minimal spin doublet supporting two stationary motifs of equal coherence cost, naturally associated with the states $\ket{+}_z$ and $\ket{-}_z$. Building on this, we have constructed a combinatorial implementation of Born’s rule in which a spin apparatus is represented as a signed graph possessing a finite active surface, and a spin measurement along an axis at angle $\theta$ is encoded by weighted mixed triangles connecting the $(4,6)$ block to two interface branches. By assigning weights to mixed triangles proportional to the squared moduli of the rotated spin amplitudes and by selecting outcome basins through exponential suppression of violated triangles, we recover the standard Born probabilities for spin-$1/2$ measurement outcomes in the large-$\lambda$ limit.
+
+These two lines of analysis—proton structure and spin measurement—converge on a shared structural motif: the coexistence of a large internal coherence budget with a finite active surface that mediates external couplings. At the protonic level, this motif underlies a structural representation of the fine-structure constant $\alpha$; at the instrumental level, it supports a relational interpretation of Born’s rule. Although numerous technical issues remain to be addressed, the present study demonstrates that PDL can simultaneously accommodate both the functional and numerical aspects of key quantum phenomena within a unified combinatorial framework.
+
+Future research will seek to consolidate and extend this picture along several directions: establishing uniqueness results for the mixed-triangle weighting scheme underlying Born’s rule; conducting a more detailed combinatorial analysis of core–surface partitions to clarify the role and status of the golden ratio; constructing explicit PDL models of experimentally realistic measurement devices; and embedding these essentially static considerations in a fully dynamical PDL description of quantum processes. If successful, such developments would lend further support to the hypothesis that quantum amplitudes and coupling constants are, at a deeper level, manifestations of coherence allocation and topological optimisation within a finite relational substrate.
+
+\bibliographystyle{plain} 
+\bibliography{references}
+
+\end{document}

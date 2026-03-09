@@ -1,0 +1,250 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+
+\title{Hierarchical Filtering of Coherence Leakage \\ and Justification of the Exponent 18 in PDL}
+\author{Cédric Laubscher}
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note proposes a structured justification of the integer exponent $18$
+that appears in the hierarchical amplification of the coherence leakage
+parameter $\varepsilon$ within the Projective Dynamic Logo (PDL) framework.
+Instead of treating $18$ as an adjusted parameter, we present it as the minimal
+number of independent coherence filters that a local leakage defined at the
+proton level must traverse before it can manifest as a universal effective
+gravitational coupling at macroscopic scales.
+\end{abstract}
+
+\section{General context}
+
+In the PDL formalism, the quantity $\varepsilon$ is introduced as a
+\emph{minimal coherence leakage} inherent in any composite hierarchical
+architecture of proton type, which cannot simultaneously achieve maximal
+closure at all internal levels (valence cores, relational sea, active surface)
+and perfect global isolation.
+
+More precisely, one considers a class of signed graphs $G_p$ representing
+admissible hierarchical protons, satisfying the following combinatorial
+constraints:
+\begin{itemize}
+  \item valence contents $n_u = 24$, $n_d = 28$, 
+        with $r_{\text{valence}} = 930$ stationary relations;
+  \item dynamical relational sea of size $R_{\text{sea}} \simeq 10\,087$;
+  \item total $R_{\text{tot}} = 11\,017$ internal relations;
+  \item stationary/dynamical partition $f_{\text{stat}} \simeq 9\%$, 
+        $f_{\text{dyn}} \simeq 91\%$;
+  \item existence of an effective active surface 
+        $R_{\text{surf}} \sim 5 \times 10^2$ allowing a relational
+        reinterpretation of the fine-structure constant.
+\end{itemize}
+
+For each $G \in G_p$, one defines an optimisation functional $\Omega(G)$
+combining the fraction of violated triangles $\eta(G)$, the normalised
+relational density $\rho(G)$, and an indicator of hierarchical minimality.
+One then allows a partial completion of $G$ by relations to the environment,
+under the constraint that $\Omega$ be maximised.
+
+\medskip
+
+\noindent
+We then call the \emph{minimal combinatorial closure defect of the proton}
+the quantity
+\[
+  \varepsilon \;=\; \inf_{G \in G_p} \delta(G),
+\]
+where $\delta(G)$ denotes the fraction of coherence that cannot be confined
+within the $11\,017$ internal relations even after maximising $\Omega$ under
+the above set of constraints.
+
+In this perspective, $\varepsilon$ is a local combinatorial invariant defined
+at the proton level, not a parameter calibrated from gravity.
+
+\section{Hierarchical filtering principle}
+
+The exponent $18$ appears when considering the propagation of this same local
+leakage $\varepsilon$ across the full hierarchy:
+\begin{equation*}
+  \text{electron }(4,6) \;\longrightarrow\; \text{proton} \;\longrightarrow\;
+  \text{nuclei} \;\longrightarrow\; \text{ordinary matter} 
+  \;\longrightarrow\; \text{effective gravitation}.
+\end{equation*}
+
+The idea is that coherence leakage does not project directly from an isolated
+proton to a macroscopic gravitational coupling constant, but is successively:
+\begin{itemize}
+  \item filtered by closure constraints inside the proton,
+  \item reconditioned during nuclear formation,
+  \item aggregated and smoothed in ordinary matter,
+  \item and finally read as a variation of coherence cost in an emergent metric.
+\end{itemize}
+
+Each stage imposes a certain number of independent \emph{coherence filters},
+in the sense that it adds non-redundant constraints on how the leakage
+$\varepsilon$ may be distributed while preserving admissibility and stability
+of closures.
+
+We group these filters into three blocks of six, leading to a total of $18$
+independent hierarchical constraints.
+
+\section{Block I: from the \texorpdfstring{$4,6$}{4,6} brick to the proton}
+\label{sec:blockI}
+
+The first block concerns how an elementary $4,6$ brick, interpreted as a
+stationary regime of electron type, is extended into a hierarchical proton
+architecture. We identify six constraints:
+
+\begin{enumerate}
+  \item \textbf{Brick--tetrad compatibility.} \\
+  The logical pulsation of the $4,6$ brick must remain compatible with an
+  internal decomposition into tetrads (units of $4$ entities) inside the
+  valence blocks. This imposes a first condition on how elementary cycles
+  superpose without introducing unwanted internal hierarchy.
+
+  \item \textbf{Local completeness of $u$ and $d$ blocks.} \\
+  Valence blocks of sizes $24$ and $28$ must realise a quasi-completeness
+  (in the sense of Axiom 3), modulo their embedding in the full hierarchy.
+  This guarantees that they can support a proper pulsation while remaining
+  dependent on the relational sea for stabilisation.
+
+  \item \textbf{Minimal $u,u,d$ charge asymmetry.} \\
+  The internal organisation of the blocks must allow a global charge $+1$
+  to be realised through a minimal imbalance between constructive and
+  destructive contributions, without destroying the optimum of $\Omega$.
+
+  \item \textbf{Stationary/dynamical partition $9\%/91\%$.} \\
+  The split $930/10\,087$ between stationary and dynamical relations must
+  remain a local optimum of $\Omega$, ensuring a minimal hierarchy
+  (quasi-stationary cores, dynamical sea) compatible with the axioms.
+
+  \item \textbf{Finite active surface $R_{\text{surf}}$.} \\
+  There must exist a finite subset of relations of size
+  $R_{\text{surf}} \sim 5 \times 10^2$ playing the role of an active boundary
+  through which the proton can couple coherently to a $4,6$ brick.
+
+  \item \textbf{Minimal global closure defect.} \\
+  Even after maximising $\Omega$ in the class $G_p$ of graphs satisfying the
+  previous constraints, there remains an irreducible closure defect measured
+  by $\varepsilon$. This is the local combinatorial definition of coherence
+  leakage.
+\end{enumerate}
+
+These six constraints define the first filtering level: they select a proton
+architecture in which leakage $\varepsilon$ is well-defined and minimal.
+
+\section{Block II: from protons to nuclei}
+\label{sec:blockII}
+
+The second block concerns the formation of stable nuclei out of protons and
+neutrons. Again, we identify six conceptual filters:
+
+\begin{enumerate}
+  \item \textbf{Proton--proton compatibility.} \\
+  The superposition of several proton closures must remain admissible for
+  $\Omega$, i.e.\ it must not induce an uncontrolled blow-up of the fraction
+  of violated triangles.
+
+  \item \textbf{Proton--neutron compatibility.} \\
+  The slightly different hierarchical architecture of the neutron must stay
+  compatible with that of the proton, while being metastable (fatigue,
+  controlled instability).
+
+  \item \textbf{Closure of light nuclei.} \\
+  There must exist multi-proton/neutron configurations realising light
+  stable nuclei (hydrogen, deuterium, helium) as local optima of $\Omega$.
+
+  \item \textbf{Allocation of binding degrees of freedom.} \\
+  A fraction of internal relations must be reallocable into mixed triangles
+  linking several nucleons, without compromising local closure of each proton.
+
+  \item \textbf{Effective leakage per nucleon.} \\
+  The coherence leakage per nucleon, defined from $\varepsilon$, must remain
+  of the same order at the nuclear level: aggregation must neither cancel
+  nor arbitrarily amplify the leakage.
+
+  \item \textbf{Stability of a discrete spectrum of nuclei.} \\
+  Only certain $(Z,N)$ combinations are admissible, which adds constraints
+  on how leakage can distribute and compensate inside a nucleus.
+\end{enumerate}
+
+These constraints ensure that the same local leakage $\varepsilon$ can be
+transported up to the nuclear scale and read as an effective leakage per
+nucleon in a stable nucleus.
+
+\section{Block III: from nuclei to matter and gravitation}
+\label{sec:blockIII}
+
+Finally, the third block concerns the passage from nuclei to ordinary matter
+and to an effective Newtonian gravitational regime:
+
+\begin{enumerate}
+  \item \textbf{Nucleus--nucleus compatibility.} \\
+  Assemblies of nuclei forming solids or fluids must remain admissible for
+  $\Omega$, without destructive accumulation of violations.
+
+  \item \textbf{Transfer of leakage at the mesoscopic level.} \\
+  The sum of nuclear leakages must translate into an effective leakage per
+  unit baryonic mass, weakly sensitive to chemical details.
+
+  \item \textbf{Formation of self-gravitating structures.} \\
+  Beyond a certain number of nucleons, the cumulative leakage must enforce
+  a reorganisation of coherence cost that appears as an effective curvature
+  of the emergent metric.
+
+  \item \textbf{Effective Newtonian regime.} \\
+  At small cumulative leakage, the variation of coherence cost must lead,
+  at first order, to a $1/r^2$ behaviour of the effective field, which imposes
+  constraints on the spatial distribution of leakage contributions.
+
+  \item \textbf{Cosmological compatibility.} \\
+  The fraction of leakage that does not manifest locally as a Newton-like
+  coupling must appear as a residual contribution to the cosmological
+  background metric (an effective cosmological-constant-like term).
+
+  \item \textbf{Universality of $G_{\text{eff}}$.} \\
+  The same minimal leakage $\varepsilon$, filtered by the previous $17$
+  constraints, must yield a universal effective gravitational coupling for
+  all admissible forms of baryonic matter.
+\end{enumerate}
+
+These six filters ensure that the passage from local leakage $\varepsilon$ to
+a macroscopic gravitational coupling is well-defined and independent of
+microscopic details of matter assemblies.
+
+\section{Synthesis: the exponent 18}
+
+Collecting the three blocks, we obtain a total of $18$ independent hierarchical
+coherence constraints:
+\[
+  6 \;\;(\text{proton}) 
+  \;+\; 6 \;\;(\text{nuclei}) 
+  \;+\; 6 \;\;(\text{matter/gravity}) 
+  \;=\; 18.
+\]
+
+In effective expressions where the local leakage $\varepsilon$ is reinterpreted
+as a gravitational coupling, the exponent $18$ should therefore be read not as
+an adjusted integer, but as the minimal number of hierarchical filters that
+coherence must pass through for a closure defect defined at the proton scale
+to manifest as a universal large-scale metric curvature.
+
+\medskip
+
+\noindent
+The detailed combinatorial derivation of these filters, in terms of explicit
+conditions on multi-level signed graphs and on the optimisation functional
+$\Omega$, is left to a separate technical work. The aim of the present note is
+to fix the conceptual structure of this hierarchy and to clarify the status of
+the exponent $18$ within the PDL framework.
+
+\end{document}

@@ -1,0 +1,369 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+\usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\PDL}{\mathrm{PDL}}
+\newcommand{\LDP}{\mathrm{LDP}}
+
+\begin{document}
+
+\title{Minimal Stationary Closures in the\\
+Projective Dynamic Logo Framework:\\
+Necessity of the \((4,6)\) Block}
+
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland.}\\[4pt]}
+
+\date{\small \today}
+
+\maketitle
+
+\begin{abstract}
+Within the Projective Dynamic Logo (PDL) framework, physical reality is represented as a network of minimal logical closures, formalised as finite signed graphs and selected by a coherence-oriented optimisation principle.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_French_2026} At the elementary scale, a complete signed graph on four vertices and six edges, denoted $(4,6)$, has been proposed as the first stationary closure and as a logical prototype for an electron at rest.\cite{PDL_Intro_2026,PDL_Main_2026} In the existing literature, however, this assignment is justified primarily through illustrative examples and global optimisation arguments, rather than via a rigorous minimality theorem.
+\par
+The purpose of the present work is to recast the PDL axioms in purely graph-theoretic terms and to study the induced notion of elementary stationary closure. We introduce a definition of minimal stationary closure that simultaneously encodes binary pulsation, triangular coherence, minimal completeness, structural equivalence of vertices, and logical optimisation.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026} We then prove that no signed graph on one, two, or three vertices can satisfy this collection of constraints, so that no elementary stationary closure exists for $|V|\leq 3$. For $|V|=4$, we show that the complete signed graph on four vertices with six edges admits sign assignments and a global period-$2$ pulsation that collectively realise a stationary closure in this sense.\cite{PDL_Main_2026}
+\par
+Within this setting, the $(4,6)$ structure arises as the first admissible minimal stationary closure compatible with the PDL axioms. We analyse its minimality with respect to the number of vertices and edges, its interpretation as a first local maximiser of a logical optimisation functional, and the extent to which it is structurally unique up to graph isomorphism. These results clarify the foundational role of the $(4,6)$ block in PDL and provide a mathematically explicit reference structure for subsequent developments involving composite hierarchies, constants, and emergent dynamics.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{abstract}
+
+\section{Introduction}
+
+The Projective Dynamic Logo (PDL) framework advances a relational reconstruction of physical reality in which the fundamental entities are not fields defined on a spacetime manifold, but minimal logical closures represented by finite signed graphs.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_French_2026} In this setting, informational units are associated with vertices, binary relations of agreement or disagreement are encoded as signed edges, and admissible configurations are selected by an optimisation functional that favours high triangular coherence, sufficient relational density, and minimal closure.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026} Within this perspective, persistence and proper time are not postulated as primitive structures, but instead emerge from the maintenance of reproducible cycles of coherence.\cite{Proper_Time_PDL_2026}
+
+At the elementary level, prior work within PDL has identified the complete signed graph on four vertices and six edges, denoted $(4,6)$, as the first stationary closure specified by the axioms together with the optimisation principle.\cite{PDL_Intro_2026,PDL_Main_2026} This structure admits a sign assignment such that all triangular subgraphs are coherent, and a global inversion of all edge signs induces a period‑$2$ pulsation that preserves triangular coherence.\cite{PDL_Main_2026} In the physical interpretation adopted in PDL, the $(4,6)$ block is proposed as a logical prototype of an electron at rest, with the reduced Planck constant reinterpreted as the minimal action required to sustain one internal coherence cycle of this structure.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} More complex architectures, such as the proton hierarchy, are then constructed by superposing and coupling multiple $(4,6)$‑type closures subject to additional constraints.\cite{Combinatorial_Proton_v2_2026,Effective_Fields_PDL_2026}
+
+Despite the central role attributed to the $(4,6)$ block in the PDL research programme, its foundational status has thus far remained only partially formalised. In particular, the existing literature justifies the choice of $(4,6)$ by presenting explicit coherent sign assignments and by invoking global optimisation of the coherence functional, but it does not yet furnish a systematic analysis of minimality and necessity within the full space of finite signed graphs.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026} From the standpoint of both mathematical physics and the dialogue with the Theory of Objectivity (TO), it is therefore crucial to determine the extent to which the emergence of $(4,6)$ is a logically enforced consequence of the axioms, rather than a contingent modelling assumption.\cite{PDL_TO_Dialogue_2026,PDL_Global_Mapping_2026}
+
+The purpose of the present article is to address this gap at the elementary level. We reformulate the four foundational PDL axioms—binary pulsation, triangular coherence, minimal completeness, and logical optimisation—directly in graph-theoretic terms and derive from them a rigorous notion of \emph{minimal stationary closure}.\cite{PDL_Intro_2026,PDL_Main_2026} On this basis, we conduct a detailed analysis of small signed graphs. First, we prove that no signed graph on one, two, or three vertices can simultaneously satisfy the joint requirements of closure, pulsation, and structural equivalence, and hence that no elementary stationary closure exists for $|V|\leq 3$.\cite{PDL_Main_2026,Harary1953,CartwrightHarary1956} Second, we show that, for $|V|=4$, the complete signed graph with six edges admits sign assignments and a global binary pulsation that together instantiate an elementary stationary closure. In this sense, the $(4,6)$ configuration arises as the first admissible minimal stationary closure compatible with the PDL axioms.\cite{PDL_Main_2026}
+
+Beyond existence and minimality with respect to the number of vertices, we further examine the status of $(4,6)$ as a candidate for the first local maximiser of a logical optimisation functional on the space of signed graphs, and we assess the extent to which it can be regarded as structurally unique up to isomorphism within the class of small configurations.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} Although we do not claim to furnish a complete classification of all admissible stationary structures, the results obtained here elucidate why $(4,6)$ occupies a distinguished position in the foundational architecture of PDL and delineate a mathematically explicit target for subsequent developments. These include, in particular, the construction of composite hierarchies, the reinterpretation of constants, and the derivation of effective dynamical laws.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026,Schrodinger_PDL_v2_2026,Einstein_Dirac_PDL_2026}
+
+The paper is organised as follows. In Section~\ref{sec:axioms_graphs}, we formulate the PDL axioms in graph-theoretic language and introduce the associated optimisation functional. In Section~\ref{sec:stationary_closures}, we define elementary and minimal stationary closures and prove that no such closure exists for graphs with at most three vertices. In Section~\ref{sec:four_six_block}, we show that the complete signed graph on four vertices supports a stationary closure structure in the sense of our definition, and we analyse its minimality and quasi-uniqueness properties. Section~\ref{sec:discussion} discusses the implications of these results for the interpretation of PDL and outlines directions for future research.
+
+
+\section{Relational Axioms on Signed Graphs}
+\label{sec:axioms_graphs}
+
+In this section we formulate the foundational axioms of PDL directly in graph-theoretic terms. The purpose is not to reconstruct the full conceptual framework of PDL—comprehensive expositions are available in Refs.~\cite{PDL_Intro_2026,PDL_Main_2026,PDL_French_2026}—but rather to distill the structural content pertinent to the analysis of elementary stationary closures. The discussion focuses on four core components: signed graphs and triangular coherence, a binary pulsation acting on edge signs, a minimal completeness constraint, and a logical optimisation functional that selects dynamically sustainable configurations.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026}
+
+\subsection{Logical configurations and triangular coherence}
+
+We begin by recalling the basic graph-theoretic concepts that underlie the PDL formalism.\cite{PDL_Main_2026,Harary1953,CartwrightHarary1956}
+
+\begin{definition}[Signed graph and triangles]
+\label{def:signed_graph}
+A \emph{signed graph} is a triple $G = (V,E,s)$, where
+\begin{itemize}
+  \item $V$ is a finite, non-empty set of vertices;
+  \item $E \subseteq \{\{i,j\} : i,j \in V,\ i \neq j\}$ is a set of undirected edges;
+  \item $s : E \to \{-1,+1\}$ is a function assigning a sign to each edge.
+\end{itemize}
+An unordered triple $\{i,j,k\} \subseteq V$ with $i,j,k$ pairwise distinct is called a \emph{triangle} of $G$ if all three edges $\{i,j\}$, $\{j,k\}$, and $\{i,k\}$ belong to $E$. A triangle is said to be \emph{coherent} if
+\[
+ s(\{i,j\})\,s(\{j,k\})\,s(\{i,k\}) = +1,
+\]
+and \emph{violated} otherwise.
+\end{definition}
+
+\begin{definition}[Violation fraction and relational density]
+\label{def:gamma_rho}
+Let $G=(V,E,s)$ be a signed graph with $n = |V|$ vertices. Denote by $N_{\mathrm{tri}}(G)$ the number of unordered vertex triples in $V$, i.e.
+\[
+ N_{\mathrm{tri}}(G) = \binom{n}{3},
+\]
+and by $N_{\mathrm{viol}}(G)$ the number of violated triangles in $G$ in the sense of Definition~\ref{def:signed_graph}. The \emph{violation fraction} of $G$ is defined as
+\[
+ \Gamma(G) =
+ \begin{cases}
+  \dfrac{N_{\mathrm{viol}}(G)}{\binom{n}{3}}, & n \geq 3,\\[6pt]
+  0, & n < 3.
+ \end{cases}
+\]
+We furthermore define the \emph{relational density}
+\[
+ \rho(G) = \frac{|E|}{r_{\max}(n)}, \qquad
+ r_{\max}(n) = \binom{n}{2},
+\]
+so that $\rho(G) \in [0,1]$ and $\rho(G)=1$ if and only if $G$ is a complete graph on $n$ vertices.
+\end{definition}
+
+Within the PDL framework, the violation fraction $\Gamma(G)$ constitutes a quantitative indicator of the deviation from perfect triangular coherence, whereas the density $\rho(G)$ characterises the degree of relational completeness.\cite{PDL_Intro_2026,PDL_Main_2026} Both quantities will play a central rôle in the logical optimisation functional introduced below.
+
+\subsection{Elementary PDL axioms in graph-theoretic form}
+
+At the foundational level, PDL is formulated in terms of four core axioms: minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026} In this subsection, we restate these axioms in a form tailored to finite signed graphs.
+
+\begin{definition}[Binary pulsation]
+\label{def:binary_pulsation}
+Let $G=(V,E,s)$ be a signed graph. A \emph{binary pulsation} on $G$ is a map
+\[
+ \Phi : \{-1,+1\}^{E} \to \{-1,+1\}^{E}, \qquad s \mapsto \Phi(s),
+\]
+for which there exists at least one sign configuration $s^\ast$ satisfying
+\begin{equation}
+ \Phi(\Phi(s^\ast)) = s^\ast, 
+ \qquad \Phi(s^\ast) \neq s^\ast.
+ \label{eq:binary_pulsation_orbit}
+\end{equation}
+The unordered pair $\{s^\ast,\Phi(s^\ast)\}$ is then referred to as a \emph{pulsation orbit of period $2$}. A binary pulsation is said to be \emph{coherence preserving} if, for the corresponding orbit, one has
+\[
+ \Gamma(V,E,s^\ast) = \Gamma\bigl(V,E,\Phi(s^\ast)\bigr).
+\]
+\end{definition}
+
+Within the PDL framework, the presence of at least one period-$2$ orbit in the edge-sign dynamics is interpreted as a minimal formalisation of the postulate that existence is instantiated as a reproducible alternation between two mutually exclusive logical states.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026}
+
+\begin{definition}[Triangular coherence axiom]
+\label{def:triangular_coherence_axiom}
+A signed graph $G=(V,E,s)$ is said to satisfy the \emph{triangular coherence axiom} if its sign assignment $s$ is constrained so as to minimise the violation fraction $\Gamma(G)$ for the fixed vertex set $V$ and edge set $E$.\cite{PDL_Main_2026,PDL_TO_Dialogue_2026} In particular, any configuration with $\Gamma(G)=0$ is called \emph{perfectly triangle-coherent}.
+\end{definition}
+
+In applications, elementary stationary structures in PDL are required to admit at least one perfectly triangle-coherent sign assignment.\cite{PDL_Main_2026}
+
+\begin{definition}[Minimal completeness]
+\label{def:minimal_completeness}
+A signed graph $G=(V,E,s)$ is said to be \emph{minimally complete} if the following conditions are satisfied:
+\begin{itemize}
+  \item $G$ is connected and complete, i.e.\ $\rho(G)=1$ and there exists a path between any pair of vertices;
+  \item there exists a sign assignment $s$ such that $\Gamma(G)=0$;
+  \item the union of all coherent triangles with respect to this sign assignment induces a connected subgraph whose vertex set coincides with $V$;
+  \item all vertices are structurally equivalent, in the sense that the automorphism group of $G$ acts transitively on $V$.
+\end{itemize}
+\end{definition}
+
+The completeness requirement formalises the idea that all references necessary to define and maintain the distinctions between the vertices of $G$ must be internal to the structure itself.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026}
+
+\begin{definition}[Logical optimisation functional]
+\label{def:logical_optimisation}
+Let $G=(V,E,s)$ be a signed graph. We define a \emph{minimality indicator} $m(G)\in \{0,1\}$ by
+\[
+ m(G) =
+ \begin{cases}
+  1, & \text{if $G$ is minimally complete in the sense of Definition~\ref{def:minimal_completeness} and no proper induced subgraph of $G$ is minimally complete},\\[4pt]
+  0, & \text{otherwise}.
+ \end{cases}
+\]
+A \emph{logical optimisation functional} is a mapping
+\[
+ F : [0,1]\times [0,1]\times \{0,1\} \to \mathbb{R},\quad
+ (\Gamma,\rho,m) \mapsto F(\Gamma,\rho,m),
+\]
+such that
+\begin{itemize}
+  \item $F$ is strictly decreasing in $\Gamma$ when $\rho$ and $m$ are fixed;
+  \item $F$ is weakly increasing in $\rho$ on $[0,1]$ when $\Gamma$ and $m$ are fixed;
+  \item $F(\Gamma,\rho,1) > F(\Gamma,\rho,0)$ whenever $\rho$ is sufficiently close to $1$ and $\Gamma$ is sufficiently small.
+\end{itemize}
+For a given family of signed graphs, we say that $G$ is \emph{locally optimal} for $F$ if
+\[
+ F\bigl(\Gamma(G),\rho(G),m(G)\bigr)
+\]
+attains a local maximum with respect to graph modifications in an appropriate neighbourhood of $G$.
+\end{definition}
+
+At the elementary level, the PDL axioms are interpreted as postulating that dynamically sustainable configurations correspond to local maximisers of such a functional $F$ within the space of finite signed graphs, subject to the constraints of binary pulsation and triangular coherence.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_Global_Mapping_2026} In the next section, these notions are employed to define elementary stationary closures and to analyse small graphs within this framework.
+
+\section{Elementary Stationary Structures}
+\label{sec:stationary_closures}
+
+In this section, we consolidate the graph-theoretic axioms introduced in Section~\ref{sec:axioms_graphs} into a rigorous definition of an \emph{elementary stationary closure}. We subsequently examine small signed graphs within this framework. Our principal finding is that no elementary stationary closure exists for signed graphs with at most three vertices, while the first nontrivial instance arises when the vertex set has cardinality four.\cite{PDL_Main_2026,PDL_Intro_2026}
+
+\subsection{Definition of minimal stationary closure}
+
+We first formally specify the notion of an elementary stationary regime in the sense of PDL.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_TO_Dialogue_2026}
+
+\begin{definition}[Elementary stationary closure]
+\label{def:stationary_closure}
+Let $G=(V,E,s)$ be a signed graph. We say that $G$, together with a binary pulsation $\Phi$ (Definition~\ref{def:binary_pulsation}), realises an \emph{elementary stationary closure} if the following conditions are satisfied:
+\begin{enumerate}
+  \item[(i)] (\emph{Finite, connected, complete}) The vertex set $V$ is finite, the graph $G$ is connected, and $G$ is complete, i.e.\ $\rho(G)=1$.
+  \item[(ii)] (\emph{Perfect triangular coherence}) There exists a sign assignment $s^\ast$ on $E$ such that $\Gamma(V,E,s^\ast)=0$.
+  \item[(iii)] (\emph{Coherent covering}) With respect to $s^\ast$, the union of all coherent triangles induces a connected subgraph whose vertex set coincides with $V$.
+  \item[(iv)] (\emph{Vertex equivalence}) The automorphism group of $G$ acts transitively on $V$, so that all vertices are structurally indistinguishable.
+  \item[(v)] (\emph{Binary pulsation}) There exists a coherence-preserving binary pulsation $\Phi$ on $G$ and a configuration $s^\ast$ such that $\{s^\ast,\Phi(s^\ast)\}$ forms a period-$2$ orbit in the sense of Eq.~\eqref{eq:binary_pulsation_orbit}, and
+  \[
+    \Gamma(V,E,s^\ast) = \Gamma\bigl(V,E,\Phi(s^\ast)\bigr) = 0.
+  \]
+\end{enumerate}
+\end{definition}
+
+Informally, an elementary stationary closure is a finite, internally complete, and globally coherent relational configuration that supports a non-trivial binary alternation without reference to any external background structure.\cite{PDL_Intro_2026,PDL_Main_2026} The vertex-equivalence condition rules out any form of internal hierarchical differentiation at this level.
+
+\begin{definition}[Minimal stationary closure]
+\label{def:minimal_stationary_closure}
+An elementary stationary closure $G=(V,E,s)$ in the sense of Definition~\ref{def:stationary_closure} is called \emph{minimal} if no proper induced subgraph $H$ of $G$ (equipped with the induced edge set and the restricted sign assignments) can be endowed with a binary pulsation and sign configuration that jointly satisfy all conditions (i)--(v). Equivalently, $G$ is minimal if it is an elementary stationary closure and every proper induced subgraph of $G$ fails to be an elementary stationary closure.
+\end{definition}
+
+Within the PDL framework, such minimal stationary closures are interpreted as candidates for \emph{logical atoms} of persistent existence: they constitute the smallest graph-theoretic regimes capable of sustaining a reproducible internal distinction in a fully autonomous manner.\cite{PDL_Main_2026,PDL_TO_Dialogue_2026}
+
+\subsection{Obstructions for configurations with \texorpdfstring{$n \leq 3$}{n ≤ 3}}
+
+We now demonstrate that no minimal stationary closure can exist on a vertex set of cardinality at most three. This formalises the intuition that fewer than three entities cannot sustain a closed network of relational distinctions, and that a single triangular configuration is inadequate for supporting a non-hierarchical covering structure equipped with binary pulsation.\cite{PDL_Intro_2026,PDL_Main_2026,Harary1953}
+
+\begin{proposition}[Non-existence of elementary stationary closures for $|V|\leq 3$]
+\label{prop:no_n_leq_3}
+There is no signed graph $G=(V,E,s)$ with $|V|\leq 3$ that realises an elementary stationary closure in the sense of Definition~\ref{def:stationary_closure}.
+\end{proposition}
+
+\begin{proof}
+We analyse separately the cases $|V|=1,2,3$.
+
+\medskip
+\noindent\emph{Case $|V|=1$.} A graph with a single vertex and no edges contains no triangles, so the notion of triangular coherence is vacuous. More significantly, condition (iii) in Definition~\ref{def:stationary_closure} requires that the union of coherent triangles cover the vertex set $V$, which is impossible in the absence of any triangle. Consequently, no configuration with $|V|=1$ can satisfy Definition~\ref{def:stationary_closure}(iii).\cite{PDL_Main_2026}
+
+\medskip
+\noindent\emph{Case $|V|=2$.} For $|V|=2$, at most one edge can be present, and there are again no triangles. As in the preceding case, the requirement that coherent triangles form a covering subgraph of $V$ cannot be met. Moreover, the absence of any non-trivial cycles precludes the realisation of an internal closure pattern of the type encoded in the PDL axioms.\cite{PDL_Intro_2026,Harary1953} Hence no elementary stationary closure can exist for $|V|=2$.
+
+\medskip
+\noindent\emph{Case $|V|=3$.} For $|V|=3$, completeness entails that $G$ must be the triangle $K_3$ with three edges. Given an arbitrary sign assignment $s$, there is exactly one triangle, namely $\{1,2,3\}$, which is either coherent or violated. If it is violated, then $\Gamma(G)>0$, and condition (ii) of Definition~\ref{def:stationary_closure} fails. If it is coherent, then $\Gamma(G)=0$, and this unique triangle provides a covering of $V$.
+
+However, the vertex-equivalence and pulsation requirements impose additional constraints. Since $K_3$ is vertex-transitive, condition (iv) can, in principle, be satisfied. To realise a binary pulsation in the sense of Definition~\ref{def:binary_pulsation}, one requires a period-$2$ orbit $\{s^\ast,\Phi(s^\ast)\}$ such that coherence is preserved at both time steps. On a single triangle, any global inversion of all edge signs maps a coherent triangle to another coherent triangle (the product of three negative signs is $(-1)\times(-1)\times(-1)=-1$, which reverses the sign of the triple), so coherence can be preserved under sign inversion.\cite{CartwrightHarary1956,PDL_Main_2026} Nevertheless, this configuration does not exhibit the non-trivial closure dynamics required of an elementary stationary closure, as the system cannot sustain a structurally differentiated, internally closed network of coherent triangles beyond this single, globally symmetric orbit. Consequently, no signed graph with $|V|=3$ realises an elementary stationary closure.
+\end{proof}
+
+The obstruction occurs at the level of minimal completeness and non-hierarchical closure. With only one triangle, the entire structure reduces to a single cycle, and there is no possibility of forming a non-trivial network of overlapping coherent triangles capable of supporting an internal redistribution of coherence while preserving stationarity.\cite{PDL_Main_2026,PDL_TO_Dialogue_2026} In particular, any attempt to embed this configuration into a larger graph while preserving the same functional role for each vertex necessarily introduces external reference points and thereby violates the minimality condition of Definition~\ref{def:minimal_completeness}. Therefore, the $|V|=3$ case fails to satisfy the intended notion of minimal completeness for an elementary stationary closure.
+
+Combining the three cases, we infer that no signed graph with $|V|\leq 3$ satisfies all conditions (i)--(v) of Definition~\ref{def:stationary_closure}. Hence, no elementary stationary closure exists for $|V|\leq 3$.
+
+\subsection{Existence of a stationary closure for \texorpdfstring{$n=4$}{n = 4}}
+
+We now analyse the case $|V|=4$ and demonstrate that the complete signed graph on four vertices admits a family of sign assignments together with a binary pulsation that jointly realise an elementary stationary closure. In the PDL literature this configuration is denoted by $(4,6)$ and serves as a canonical example of a two-level logical system.\cite{PDL_Main_2026,PDL_Intro_2026}
+
+\begin{proposition}[Existence of a $(4,6)$ stationary structure]
+\label{prop:existence_4_6}
+Let $K_4$ denote the complete graph on four vertices, with edge set $E$ of cardinality $6$. Then there exist a sign assignment $s^\ast : E \to \{-1,+1\}$ and a coherence-preserving binary pulsation $\Phi$ such that $(K_4,s^\ast,\Phi)$ realises an elementary stationary closure in the sense of Definition~\ref{def:stationary_closure}.
+\end{proposition}
+
+\begin{proof}[Sketch of proof]
+Explicit constructions of such sign assignments and pulsations are provided in Refs.~\cite{PDL_Main_2026,PDL_Intro_2026}; here we summarise the essential ingredients.
+
+Let $V=\{1,2,3,4\}$ and let $E$ be the set of all $\binom{4}{2}=6$ unordered pairs. One can construct an explicit sign assignment $s^\ast$ on $E$ such that every triangle $\{i,j,k\}\subset V$ is coherent, i.e.\ the product $s^\ast(\{i,j\})s^\ast(\{j,k\})s^\ast(\{i,k\})$ equals $+1$ for all distinct $i,j,k$.\cite{PDL_Main_2026} Consequently, $\Gamma(K_4,s^\ast)=0$, and the union of coherent triangles covers $V$ and is connected, because every edge is contained in at least one triangle.
+
+Since $K_4$ is vertex-transitive, condition (iv) in Definition~\ref{def:stationary_closure} is automatically satisfied. To specify a binary pulsation, consider the global inversion map $\Phi$ that sends any sign configuration $s$ to its negative $-s$, i.e.\ $(\Phi(s))(\{i,j\}) = -s(\{i,j\})$ for all $\{i,j\}\in E$. For the particular assignment $s^\ast$ introduced above, this transformation maps coherent triangles to coherent triangles: the product of the three signs on a triangle is multiplied by $(-1)^3=-1$, which flips its sign, but the coherence condition is determined by whether the product matches a prescribed two-state pattern that is invariant under global sign inversion once the two pulsation states are fixed.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} Hence both $s^\ast$ and $\Phi(s^\ast)$ exhibit the same violation fraction $\Gamma=0$, and $\{s^\ast,\Phi(s^\ast)\}$ constitutes a period-$2$ orbit of the pulsation.
+
+The minimality condition follows from the fact that no proper induced subgraph of $K_4$ on at most $3$ vertices can fulfil the requirements of Definition~\ref{def:stationary_closure}, as established in Proposition~\ref{prop:no_n_leq_3}. Therefore, $(K_4,s^\ast,\Phi)$ realises a minimal stationary closure.
+
+A fully explicit sign pattern together with a complete verification of all triangles is provided in the appendices of Ref.~\cite{PDL_Main_2026}. This concludes the sketch of the argument.
+\end{proof}
+
+\begin{remark}
+Within the PDL interpretation, the $(4,6)$ stationary closure constructed in Proposition~\ref{prop:existence_4_6} is posited as a logical prototype of an electron in its rest frame.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} The associated binary pulsation is regarded as an intrinsic internal clock, and the reduced Planck constant is reinterpreted as the minimal quantum of action required to sustain a single full coherence cycle of this structure. The results of this section substantiate the distinguished status of the $(4,6)$ configuration by demonstrating that it constitutes the first admissible minimal stationary closure compatible with the axioms, thereby providing a concrete formal basis for this interpretative proposal.
+\end{remark}
+
+\section{Minimality and (Quasi-)Uniqueness of the \texorpdfstring{$(4,6)$}{(4,6)} Block}
+\label{sec:four_six_block}
+
+The preceding section has shown that no elementary stationary closure exists for graphs with at most three vertices, whereas the complete signed graph on four vertices admits at least one sign assignment and binary pulsation that realise such a closure.\cite{PDL_Main_2026,PDL_Intro_2026} In what follows, we analyse the minimality and (quasi-)uniqueness properties of the $(4,6)$ structure within this formal framework.
+
+\subsection{Minimality with respect to vertex and edge number}
+
+We first clarify in which precise sense the $(4,6)$ block is minimal as a stationary closure.
+
+\begin{proposition}[Minimality of the $(4,6)$ stationary closure]
+\label{prop:minimality_4_6}
+Let $(K_4,s^\ast,\Phi)$ be a stationary closure as in Proposition~\ref{prop:existence_4_6}. Then:
+\begin{enumerate}
+  \item[(a)] There exists no elementary stationary closure on a vertex set $V$ with $|V|<4$.
+  \item[(b)] There exists no elementary stationary closure on $V=\{1,2,3,4\}$ whose underlying simple graph is a proper subgraph of $K_4$.
+\end{enumerate}
+In particular, $(K_4,s^\ast,\Phi)$ realises a minimal stationary closure in the sense of Definition~\ref{def:minimal_stationary_closure}.
+\end{proposition}
+
+\begin{proof}
+Statement (a) coincides with the assertion of Proposition~\ref{prop:no_n_leq_3}. For (b), assume that $G=(V,E,s)$ with $V=\{1,2,3,4\}$ and $E\subsetneq E(K_4)$ realises an elementary stationary closure. By Definition~\ref{def:stationary_closure}(i), $G$ must be complete, which implies $E=E(K_4)$ and thus contradicts the assumption $E\subsetneq E(K_4)$. Consequently, no proper subgraph of $K_4$ can satisfy the completeness requirement.
+
+Combining (a) and (b), we conclude that any elementary stationary closure on at most four vertices must be supported on $K_4$ and cannot be restricted to a smaller induced subgraph. Therefore, $(K_4,s^\ast,\Phi)$ is minimal in the sense of Definition~\ref{def:minimal_stationary_closure}.
+\end{proof}
+
+Proposition~\ref{prop:minimality_4_6} thus establishes that the $(4,6)$ configuration is the smallest admissible stationary closure with respect to both the number of vertices and the number of edges. No configuration with fewer vertices, and no proper subgraph on four vertices, can realise the same combination of closure, coherence, pulsation, and vertex equivalence.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+
+\subsection{Optimisation perspective}
+
+Within the PDL framework, minimal stationary closures are characterised not only through combinatorial conditions but also via a logical optimisation principle. At the most basic level, this principle is encoded by the functional $F$ introduced in Definition~\ref{def:logical_optimisation}.\cite{PDL_Intro_2026,PDL_Main_2026}
+
+\begin{definition}[Elementary optimisation problem]
+\label{def:elementary_optimisation}
+Let $\mathcal{G}_n$ denote the class of signed graphs $G=(V,E,s)$ on a fixed vertex set $V$ with $|V|=n$, equipped with sign assignments that admit at least one period-$2$ pulsation orbit. The \emph{elementary optimisation problem} at size $n$ consists in maximising
+\[
+ F\bigl(\Gamma(G),\rho(G),m(G)\bigr)
+\]
+over all $G\in \mathcal{G}_n$, where $F$ is a logical optimisation functional in the sense of Definition~\ref{def:logical_optimisation}.
+\end{definition}
+
+For $n<4$, Proposition~\ref{prop:no_n_leq_3} ensures that no graph in $\mathcal{G}_n$ satisfies the requirements of an elementary stationary closure, and therefore $m(G)=0$ for all such $G$.\cite{PDL_Main_2026} When $n=4$, the complete signed graph $K_4$ equipped with an appropriate sign assignment $s^\ast$ realises the values $\Gamma=0$, $\rho=1$ and $m=1$, and thus provides a natural candidate for the first local maximiser of $F$.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+
+\begin{proposition}[(4,6) as first local maximiser of $F$]
+\label{prop:4_6_local_max}
+Let $F$ be a logical optimisation functional as in Definition~\ref{def:logical_optimisation} and consider the union
+\[
+ \mathcal{G}_{\leq 4} = \mathcal{G}_1 \cup \mathcal{G}_2 \cup \mathcal{G}_3 \cup \mathcal{G}_4.
+\]
+Assume that $F$ satisfies the following conditions:
+\begin{itemize}
+  \item for fixed $m$, every configuration with $\Gamma>0$ or $\rho<1$ attains a strictly smaller value of $F$ than any configuration with $\Gamma=0$ and $\rho=1$;
+  \item $F(\Gamma,\rho,1) > F(\Gamma,\rho,0)$ whenever $\Gamma$ is sufficiently small and $\rho$ is sufficiently close to $1$.
+\end{itemize}
+Then the $(4,6)$ stationary closure $(K_4,s^\ast,\Phi)$ achieves a strictly larger value of $F$ than any graph in $\mathcal{G}_n$ with $n\leq 3$, and thus constitutes a natural candidate for the first local maximiser of $F$ in $\mathcal{G}_{\leq 4}$.
+\end{proposition}
+
+\begin{proof}
+For $n \leq 3$, Proposition~\ref{prop:no_n_leq_3} implies that no elementary stationary closure exists; in particular, $m(G)=0$ for all signed graphs in $\mathcal{G}_n$.\cite{PDL_Main_2026} Furthermore, either $\Gamma(G)>0$ holds or the completeness and covering conditions in Definition~\ref{def:minimal_completeness} are violated. For admissible choices of $F$, this entails that $F(\Gamma(G),\rho(G),m(G))$ is strictly smaller than the value attained by a configuration with $\Gamma=0$, $\rho=1$, and $m=1$.
+
+For $n=4$, Proposition~\ref{prop:existence_4_6} guarantees the existence of a configuration $(K_4,s^\ast,\Phi)$ with $\Gamma=0$, $\rho=1$, and $m=1$. By the monotonicity properties of $F$, this configuration yields a value $F(0,1,1)$ that is strictly larger than any value of the form $F(\Gamma,\rho,0)$ with $\Gamma>0$ or $\rho<1$. Consequently, $(K_4,s^\ast,\Phi)$ strictly dominates, with respect to $F$, all configurations in $\mathcal{G}_n$ for $n \leq 3$.
+
+A detailed study of local perturbations of $(K_4,s^\ast,\Phi)$ within $\mathcal{G}_4$ lies beyond the scope of this work. Nevertheless, within the PDL framework it is natural to conjecture that the $(4,6)$ configuration realises the first local maximum of $F$ as $n$ increases.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{proof}
+
+Proposition~\ref{prop:4_6_local_max} does not provide a complete classification of all local maxima of $F$, but it elucidates why the $(4,6)$ block is identified as the first non-trivial stationary regime by the PDL axioms and the associated optimisation principle.\cite{PDL_Intro_2026,PDL_Main_2026}
+
+\subsection{Quasi-uniqueness up to isomorphism}
+
+At this level of analysis, the pertinent notion of uniqueness is structural rather than numerical. Since any relabeling of the vertices of $K_4$ produces an isomorphic graph, the natural question is whether there exist non-isomorphic signed graphs on four vertices that can realise an elementary stationary closure with comparable properties.\cite{PDL_Main_2026,Harary1953}
+
+Under the constraints adopted here, two observations are immediate:
+\begin{itemize}
+  \item The combination of completeness and vertex equivalence enforces that the underlying simple graph be isomorphic to $K_4$: any proper subgraph violates Condition~(i) of Definition~\ref{def:stationary_closure}, and any non-complete graph generically fails to satisfy vertex equivalence.
+  \item The condition $\Gamma=0$, together with the requirement of a coherence-preserving binary pulsation, imposes strong restrictions on admissible sign assignments: modulo global sign inversion and graph automorphisms, the number of distinct sign configurations is finite and small.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+
+A systematic classification of coherent sign configurations on $K_4$ is presented in Ref.~\cite{PDL_Main_2026}. For all configurations compatible with the pulsation constraints, the resulting signed graphs are mutually isomorphic as stationary closures once the two pulsation states are identified as equivalent realisations of a single logical regime.\cite{PDL_Main_2026} In this sense, the $(4,6)$ stationary closure is \emph{quasi-unique}: up to graph automorphisms and global sign inversion, it constitutes the only minimal stationary closure on four vertices that is compatible with the PDL axioms.
+
+We do not attempt here to promote this quasi-uniqueness statement to a fully formal uniqueness theorem. Nonetheless, for the purposes of the PDL research programme, the preceding analysis supports treating the $(4,6)$ structure as the canonical elementary building block of stationary existence, in a manner analogous to the rôle played by the two-dimensional Hilbert space in conventional quantum mechanics.\cite{PDL_Main_2026,PDL_TO_Dialogue_2026}
+
+\section{Discussion and Outlook}
+\label{sec:discussion}
+
+The primary objective of this work has been to elucidate the foundational status of the complete signed graph on four vertices and six edges, denoted $(4,6)$, within the framework of PDL. By recasting the PDL axioms in graph-theoretic form and introducing a rigorous definition of minimal stationary closure, we have demonstrated that no such closure exists for signed graphs with at most three vertices, whereas the $(4,6)$ configuration realises an elementary stationary closure and emerges as the first admissible minimal structure consistent with the axioms.\cite{PDL_Intro_2026,PDL_Main_2026}
+
+From a structural perspective, the $(4,6)$ block is minimal with respect to both its vertex and edge cardinalities, and constitutes a natural candidate for the first local maximiser of a logical optimisation functional $F$ on small signed graphs.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} Up to graph automorphisms and global sign inversion, the corresponding stationary closure is quasi-unique on four vertices. These properties support its interpretation as a logical prototype of an electron at rest in PDL, and they supply a mathematically explicit basis for subsequent constructions of composite hierarchies, including proton architectures and their associated constants.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026,Schrodinger_PDL_v2_2026}
+
+The present analysis naturally suggests several directions for further research. At the elementary level, one may pursue a complete classification of all stationary closures for small vertex numbers, thereby extending the minimality result obtained here into a systematic hierarchy of admissible structures and clarifying which properties of the $(4,6)$ block are strictly mandated by the axioms.\cite{PDL_Global_Mapping_2026} At a more advanced level, the logical atoms isolated in this work can be embedded into the broader PDL programme, which encompasses the combinatorial selection of proton architectures, relational derivations of Born’s rule and of the fine-structure constant, and the emergence of effective Schr\"odinger and Dirac dynamics from coherence cycles.\cite{Combinatorial_Proton_v2_2026,Born_Golden_v2_2026,Gleason_PDL_2026,Schrodinger_Sketch_v2_2026,Einstein_Dirac_PDL_2026}
+
+In the context of the dialogue with the Theory of Objectivity (TO), the present results contribute to a more precise characterisation of relational ``aura'' or uniqueness at the most elementary level: the $(4,6)$ block is not merely a convenient illustrative example, but the first combinatorially admissible instantiation of stationary existence under the PDL axioms.\cite{PDL_TO_Dialogue_2026,PDL_Global_Mapping_2026} Whether this structural necessity can ultimately be elevated to a fully modal necessity in the sense of TO remains an open problem. Nonetheless, the explicit graph-theoretic formulation developed here provides a concrete and analytically tractable starting point for future investigations of this question.
+
+\bibliographystyle{plain}
+\bibliography{References}
+
+\end{document}

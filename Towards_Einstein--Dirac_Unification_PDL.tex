@@ -1,0 +1,421 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+\usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\PDL}{\mathrm{PDL}}
+\newcommand{\LDP}{\mathrm{LDP}}
+\newcommand{\Hspin}{\mathcal{H}_{\mathrm{spin}}}
+\newcommand{\Hcycl}{\mathcal{H}_{\mathrm{cycl}}}
+\newcommand{\HDirac}{\mathcal{H}_{\mathrm{Dirac}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\alphaPDL}{\alpha_{\mathrm{PDL}}}
+\newcommand{\etaL}{\eta} % leakage parameter
+\newcommand{\Ccoh}{C_{\mu\nu}} % coherence tensor
+
+\begin{document}
+
+\title{Towards an Einstein--Dirac Unification\\
+from the Projective Dynamic Logo Framework}
+
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland.}\\[4pt]}
+
+\date{\small \today}
+
+\maketitle
+
+\begin{abstract}
+The Projective Dynamic Logo (PDL/LDP) framework models physical reality as a network of minimal logical closures on finite signed graphs, obtaining particles and coupling constants from coherence constraints rather than from a presupposed spacetime manifold or fundamental fields \cite{zenodo18462686,PDL_introduction,PDL}. Within this setting, the electron at rest is associated with the minimal $4,6$ closure, whereas the proton is represented as a hierarchical composite specified by a tightly constrained integer architecture and a finite active surface. This construction permits dimensionless constants such as $\hbar$ and $\alpha$ to be reinterpreted as ratios of coherence measures \cite{PDL,Derivation_alpha_PDL,Schodinger_PDL,Combinatorial_Proton_Architecture_PDL}. 
+
+The present work investigates the joint reconstruction of Dirac-type spinor matter and Einstein-type emergent geometry on this relational substrate. On the Dirac side, we factorise a Dirac spinor as $\HDirac \cong \Hcycl \otimes \Hspin$, where $\Hspin \cong \mathbb{C}^2$ encodes the spin-$\tfrac{1}{2}$ structure of the $4,6$ block, and $\Hcycl \cong \mathbb{C}^2$ encodes two internal pulsation modes associated with the positive- and negative-energy branches. In this representation, the Dirac matrices admit a PDL-inspired form $\gamma^0 \simeq \tau_3 \otimes \mathbb{1}$ and $\gamma^i \simeq \tau_1 \otimes \sigma_i$, which we interpret as combining transformations on internal coherence cycles with SU(2) spin rotations of the $4,6$ structure \cite{Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL,Toward_a_Gleason_Type_Uniqueness_Theorem_for_Born_s_Rule_in_the_PDL_Framework}. 
+
+On the Einstein side, we summarise how PDL defines proper time as a counting of internal coherence cycles, introduces a relational density and a coherence-cost pseudometric on the space of closures, and thereby reformulates the emergent metric as a cost-based distance whose large-scale modulation is governed by a small leakage parameter $\etaL$ that is hierarchically amplified from nucleonic to macroscopic scales \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,zenodo18462686}. The proton architecture, together with this same leakage parameter, then yields an effective gravitational coupling $\Geff$, previously shown to reproduce the empirical order of magnitude of Newton’s constant when combined with $\hbar$, $c$, and the proton–electron mass ratio \cite{PDL,zenodo18462686}. 
+
+As a concrete link between these two sectors, we formulate an effective Dirac–PDL equation for the $4,6$ electron in the PDL proton Coulomb field, with mass $m_e^{\PDL}$ and fine-structure constant $\alphaPDL$ determined by the discrete coherence architecture. We demonstrate that its nonrelativistic limit reproduces, under the standard assumptions on large and small components, the previously established hydrogenic Schrödinger/Pauli Hamiltonian with $\alphaPDL$, thereby establishing internal consistency between the Dirac and Schrödinger descriptions within the PDL framework \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}. 
+
+We subsequently embed this Dirac sector into the emergent metric background by introducing a coherence tensor $\Ccoh$, which aggregates contributions from mass-like coherence densities, spin-$\tfrac{1}{2}$ flux associated with the $4,6$ block, orbital fluxes in bound states, and terms induced by coherence leakage. On this basis, we propose an Einstein-type relation of the form
+\[
+\mathcal{G}_{\mu\nu}[g^{\mathrm{eff}}] \;=\; \kappa_{\PDL}\,\Ccoh\,,
+\]
+in which both the effective metric $g^{\mathrm{eff}}_{\mu\nu}$ and the coupling constant $\kappa_{\PDL}$ are determined by the same underlying relational architecture. As an explicit application, we compute the gravitational redshift of hydrogenic energy levels in a weak coherence potential $\Phi_{\mathrm{coh}} \sim -\Geff M/r$ and demonstrate that the resulting expression coincides with the standard weak-field general-relativistic redshift formula when recast in terms of $g^{\mathrm{eff}}_{00}$, while preserving a fully relational interpretation of the fundamental constants involved \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,zenodo18462686}. 
+
+Collectively, these results yield an initial, internally consistent framework in which Dirac spinor matter and Einstein-like gravitational dynamics arise from a single discrete coherence substrate, with the hydrogen atom functioning as a minimal test system. The present analysis is not a complete derivation of Einstein–Dirac dynamics from the discrete PDL evolution; rather, it delineates a constrained target architecture and establishes a set of nontrivial compatibility conditions (Dirac–Schrödinger correspondence, hydrogenic spectrum, weak-field redshift) that any future, fully unified construction within the PDL programme will be required to reproduce.
+\end{abstract}
+
+\section{Introduction}
+
+The Projective Dynamic Logo (PDL/LDP) framework seeks to reconstruct physical reality from purely relational axioms defined on finite signed graphs, thereby dispensing with any \emph{a priori} spacetime manifold, predefined field content, or fixed catalogue of elementary particles \cite{PDL,PDL_introduction,PDL_Global_Mapping_Structures_Results_Open_Problems}. Within this setting, physical entities are represented by minimal logical closures, i.e., finite configurations of pulsating binary relations whose internal consistency is determined by a coherence-optimization principle rather than by externally imposed dynamical equations \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. Under these axioms, the first admissible elementary stationary configuration is a complete signed graph with four vertices and six edges, denoted $(4,6)$, which supports a binary pulsation that preserves triangular coherence and constitutes the minimally sufficient structure to maintain a self-contained regime of existence \cite{PDL,PDL_introduction}. This configuration is identified with the electron at rest, whereas the proton is described as a minimally complex hierarchical composite constructed from local stationary cores, a highly dynamical relational sea, and a finite active surface, all characterised by a small set of integer invariants \cite{PDL,Combinatorial_Proton_Architecture_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. 
+
+Within this discrete relational architecture, several constants conventionally regarded as fundamental acquire a unified relational interpretation: the reduced Planck constant $\hbar$ quantifies the minimal coherence cost per internal cycle of the $(4,6)$ regime; the fine-structure constant $\alpha$ is reinterpreted as a ratio of internal-to-surface coherence in the proton; and candidate expressions for the Boltzmann constant $k_B$ and an effective gravitational coupling $\Geff$ are derived from the same proton architecture together with a single leakage parameter $\etaL$ \cite{PDL,Derivation_alpha_PDL,Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. Consistency analyses performed for the hydrogen atom indicate that substituting the standard proton model and the empirical value of $\alpha$ with their PDL-derived counterparts in the nonrelativistic Schrödinger equation yields energy levels that agree with experimental data within the uncertainty bounds associated with the PDL-based parameters \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}.
+
+On the gravitational side, PDL admits a topological reformulation of leakage as an intrinsic non-closure probability, introduces a coexistence topology on the space of closures, and defines a coherence-cost pseudometric whose coarse-grained behaviour reproduces, at least qualitatively, characteristic features of emergent metric structures and gravitational couplings \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. Within this framework, proper time is reinterpreted as an enumeration of internal coherence cycles; the relational density and leakage jointly induce an effective metric $g^{\mathrm{eff}}_{\mu\nu}$ and an effective coupling $\Geff$, both ultimately determined by the same proton architecture and leakage parameter $\etaL$ that enter the derivation of $\alphaPDL$ \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. The present work constitutes a first systematic attempt to relate these Dirac and Einstein sectors by formulating an effective Einstein–Dirac scheme within PDL, with the hydrogen atom serving as a minimal and analytically tractable test system.
+
+More precisely, our contributions are threefold. 
+
+First, on the Dirac side, we construct a Projective Dynamic Logo (PDL)-inspired representation of a Dirac spinor as a tensor product $\HDirac \cong \Hcycl \otimes \Hspin$, where $\Hspin \cong \mathbb{C}^2$ carries the spin-$\tfrac{1}{2}$ structure associated with the $(4,6)$ block, and $\Hcycl \cong \mathbb{C}^2$ encodes two internal pulsation modes that are naturally interpreted as the positive- and negative-energy branches. In this framework, the Dirac matrices admit the representation $\gamma^0 \simeq \tau_3 \otimes \mathbb{1}$ and $\gamma^i \simeq \tau_1 \otimes \sigma_i$, which we interpret as a combination of operations on coherence cycles with $\mathrm{SU}(2)$ rotations of the $(4,6)$ structure \cite{PDL,Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL}. We then formulate an effective Dirac equation for the PDL electron in the Coulomb field of the PDL proton, with mass $m_e^{\PDL}$ and coupling strength $\alphaPDL$ fixed by the underlying relational architecture, and we demonstrate that its nonrelativistic limit reproduces the previously derived Schrödinger/Pauli Hamiltonian for hydrogen with coupling $\alphaPDL$ \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}. 
+
+Second, on the Einstein side, we review and slightly extend the coherence-based construction of an emergent metric by introducing a coherence tensor $\Ccoh$ that aggregates contributions from mass-like coherence density, spin-related internal fluxes, orbital fluxes, and leakage-induced terms. On this basis, we outline an Einstein-type relation
+\[
+\mathcal{G}_{\mu\nu}[g^{\mathrm{eff}}] = \kappa_{\PDL}\,\Ccoh \,,
+\]
+in which both the effective metric $g^{\mathrm{eff}}_{\mu\nu}$ and the coupling $\kappa_{\PDL}$ are determined by the same proton and leakage architecture that also governs $\alphaPDL$ and $\Geff$ \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. 
+
+Third, we employ the hydrogen atom as a concrete probe of this unified structure, deriving the gravitational redshift of hydrogenic energy levels in a weak coherence potential $\Phi_{\mathrm{coh}} \sim -\Geff M/r$ and demonstrating that the result coincides with the standard weak-field general-relativistic expression when expressed in terms of the effective metric component $g^{\mathrm{eff}}_{00}$.
+
+The structure of the paper is as follows. Section~\ref{sec:background} provides a concise review of the core PDL structures pertinent to our analysis, namely the relational axioms and the $(4,6)$ block, the proton architecture together with its associated constants, and the existing Schr\"odinger--PDL treatment of the hydrogen atom. Section~\ref{sec:Dirac_from_46} develops the Dirac-theoretic framework by introducing the spin doublet associated with the $(4,6)$ structure, constructing the Dirac spinor space as $\Hcycl \otimes \Hspin$, and proposing a PDL-motivated representation of the Dirac matrices. Section~\ref{sec:Dirac_effective_NR_limit} formulates an effective Dirac--PDL equation in the Coulomb field generated by the PDL proton and derives its nonrelativistic limit, thereby recovering the hydrogenic Hamiltonian with coupling constant $\alphaPDL$. Section~\ref{sec:emergent_metric} summarises the coherence-based construction of an emergent metric, introduces the coherence tensor, and analyses the resulting effective gravitational coupling. Section~\ref{sec:Einstein_Dirac_scheme} outlines an Einstein-type field equation with coherence sources and examines the induced gravitational redshift of hydrogenic energy levels, before delineating open problems and prospects for a more complete Einstein--Dirac unification within the PDL framework.
+
+\section{Background on PDL and Existing Results}\label{sec:background}
+
+\subsection{Relational axioms and the minimal \texorpdfstring{$4,6$}{4,6} structure}
+
+In this framework, the vertices $V$ represent informational entities, the edges $E \subseteq V \times V$ encode binary relations between these entities, and each edge $(i,j)\in E$ is assigned a sign $s_{ij}\in\{\pm 1\}$ indicating agreement or disagreement \cite{PDL,zenodo18462686}.
+
+A systematic exclusion of inadequate graph configurations demonstrates that no graph with fewer than four vertices can realise a homogeneous, non-hierarchical closure that satisfies both minimal completeness and triangular coherence. When $|V|=1$ or $|V|=2$, triangular structures are absent by definition; for $|V|=3$, the unique triangle that arises is insufficient to sustain the network of overlapping coherent cycles required for stable reference. In all these cases, one of the following pathologies necessarily occurs: closure is not attained, autonomy is compromised, or a latent hierarchy is induced \cite{PDL}. The smallest configuration not ruled out by these constraints is the complete graph on four vertices with six edges, denoted $(4,6)$. For this graph, it is possible to define a sign assignment such that all triangular subgraphs satisfy the coherence condition, the union of these coherent triangles forms a single connected component, all vertices are structurally equivalent, and a global inversion of all edge signs implements a logical 2-cycle that preserves triangular coherence \cite{PDL,PDL_introduction,PDL_Global_Mapping_Structures_Results_Open_Problems}. Consequently, the $(4,6)$ configuration appears as the first admissible elementary stationary closure and is minimally identified with the stationary regime of an electron at rest: its internal binary pulsation is mapped to the Compton oscillation, and $\hbar$ is reinterpreted as the coherence cost associated with one complete internal cycle \cite{PDL,PDL_introduction}.
+
+\subsection{Proton architecture and coherence-derived constants}
+
+Beyond the elementary $(4,6)$ closure, PDL treats the proton as a minimally complex hierarchical composite object rather than as a structureless degree of freedom. The same optimisation functional that selects the $(4,6)$ block is extended to larger configurations subject to explicit combinatorial constraints: multiplicity in units of four-vertex tetrads, near-maximal triangular coherence, net charge $+1$, and a specified partition between quasi-stationary and dynamical relations \cite{Combinatorial_Proton_Architecture_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. 
+
+Under these constraints, the inferred proton architecture consists of three local valence cores, each realised as a superposition of logical tetrads with occupancies $n_u=24$ and $n_d=28$ entities, embedded within a dense relational sea and terminating at a finite active surface that mediates couplings to an electron-type $(4,6)$ structure \cite{PDL,Combinatorial_Proton_Architecture_PDL}. A detailed combinatorial analysis singles out a specific integer tuple $(24,28,930,10087,11017)$, corresponding to $r_{\text{val}}=930$ valence relations, $R_{\text{sea}}\approx 10087$ dynamical sea relations, and $R_{\text{tot}}\approx 11017$ total internal relations. This decomposition implies that the proton’s internal coherence consists of approximately $9\%$ quasi-stationary and $91\%$ dynamical contributions \cite{PDL,Combinatorial_Proton_Architecture_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. This tuple recurs systematically across the PDL literature and is regarded as a strongly constrained, though not yet rigorously proven unique, conjectured structural pattern for the proton.
+
+Within this architectural framework, several fundamental constants are reinterpreted as coherence ratios. The reduced Planck constant $\hbar$ is assigned the role of quantifying the minimal action associated with a single internal pulsation cycle of the $(4,6)$ structure, so that the relation $E = \hbar \omega$ is understood as an expression of coherence cost rather than as an externally imposed postulate \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. The fine-structure constant $\alpha$ is reformulated as a surface-to-volume coherence ratio: it quantifies the fraction of the proton’s total coherence budget that is effectively projected onto an active surface available for coherent coupling to an external $(4,6)$ block \cite{PDL,Derivation_alpha_PDL,Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL}. 
+
+In a refined version of this construction, the active surface is parameterised in terms of $r_{\text{val}} = 930$ and the golden ratio $\varphi$ via
+\[
+R_{\text{surf}} \approx \frac{\varphi\, r_{\text{val}}}{3} \simeq 501.6,
+\]
+from which one obtains the closed-form expression
+\[
+\alphaPDL^{-1} = \frac{\mu}{9 \varphi^2 r_{\text{val}}^2},
+\]
+where $\mu = m_p/m_e$ denotes the proton–electron mass ratio. This yields $\alphaPDL^{-1} \approx 137.02$, which agrees with the experimentally determined value to within a few parts in $10^{-4}$, and is achieved without the introduction of continuously adjustable fit parameters \cite{Derivation_alpha_PDL,Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. 
+
+Analogous constructions link Boltzmann’s constant $k_B$ and an effective gravitational coupling $\Geff$ to the same discrete architectural scheme, supplemented by a single leakage parameter $\etaL$ together with its hierarchical amplification. This approach reproduces the empirical orders of magnitude of $k_B$ and $G$ with controlled relative errors \cite{PDL,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}.
+
+\subsection{Hydrogen and Schr\"odinger--PDL compatibility}
+
+The hydrogen atom furnishes a natural testing ground for the PDL reinterpretation of the electron, the proton, and the fine-structure constant. In the conventional framework, the nonrelativistic Schrödinger equation with a Coulomb potential, $V(r) = -\alpha \hbar c / r$, yields the standard hydrogenic energy spectrum and eigenfunctions. Within the PDL framework, the Schrödinger equation is retained as an effective continuum description, while the pointlike proton and empirical fine-structure constant $\alpha$ are replaced by the structured PDL proton architecture and the coherence-derived coupling $\alphaPDL$ \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}. Specifically, one considers
+\[
+i\hbar \frac{\partial \psi}{\partial t} = \left(-\frac{\hbar^2}{2 m_e} \nabla^2 - \frac{\alphaPDL \hbar c}{r}\right)\psi,
+\]
+where the Coulomb coupling strength is interpreted as the projection of protonic coherence onto its effective interaction surface, and the electron is modeled as a $(4,6)$ block whose mass is determined by its intrinsic pulsation dynamics \cite{PDL,Schodinger_PDL}. A detailed consistency analysis demonstrates that this substitution preserves the hydrogenic energy levels and spectral lines in quantitative agreement with experimental measurements, up to the uncertainties associated with the PDL-based determination of $\alphaPDL$ and the proton structural parameters \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. These findings indicate that the discrete-coherence interpretation of $\alpha$ and the PDL proton architecture are at least compatible with low-energy hydrogen phenomenology and thereby provide a reference point for extending the construction to Dirac-type and Einstein-type formulations defined on the same relational substrate.
+
+\section{Dirac Structure from the \texorpdfstring{$4,6$}{4,6} Block}\label{sec:Dirac_from_46}
+
+\subsection{Spin doublet and Born rule in PDL}
+
+In the PDL framework, the minimal $(4,6)$ closure associated with an electron at rest naturally exhibits a spin-$\tfrac{1}{2}$ structure. The internal sign-configuration space of the $(4,6)$ graph supports two distinguished logically stationary motifs, related to each other by a discrete symmetry, which can be identified with the spin-up and spin-down basis states $\{\ket{+\!z},\ket{-\!z}\}$ \cite{PDL,PDL_introduction,PDL_Global_Mapping_Structures_Results_Open_Problems}. These two states generate a complex two-dimensional Hilbert space $\Hspin \cong \mathbb{C}^2$, on which the group $\mathrm{SU}(2)$ acts through rotations induced by suitable transformations of the signed graph. In an appropriate basis, these rotations are represented by the Pauli matrices $\sigma_i$ acting on $\Hspin$ \cite{Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL}. In this representation, the spin operator is given by $\mathbf{S} = \frac{\hbar}{2}\boldsymbol{\sigma}$, and the standard angular-momentum commutation relations follow directly from the underlying $\mathrm{SU}(2)$ structure realized at the level of the $(4,6)$ block.
+
+The probabilistic interpretation of spin outcomes in PDL is not introduced as an independent postulate but is instead derived from the combinatorial properties of mixed-triangle configurations that link the $(4,6)$ structure to measurement interfaces. A recent Gleason-type analysis demonstrates that, under a set of minimal operational axioms—namely normalisation, invariance under global phase transformations, rotational covariance, and measurement repeatability—the sole admissible probability measure on the projective space of $\Hspin$ that is consistent with PDL’s mixed-triangle scheme is given by Born’s rule \cite{Toward_a_Gleason_Type_Uniqueness_Theorem_for_Born_s_Rule_in_the_PDL_Framework}. More precisely, for any spin measurement along a direction $\hat{n}$, represented by a projector $P_{\hat{n}}$ on $\Hspin$, the probability of obtaining the corresponding outcome when the system is prepared in the state $\ket{\psi}$ is uniquely determined to be $p(\hat{n}|\psi) = \bra{\psi}P_{\hat{n}}\ket{\psi}$, provided that the mixed-triangle configurations implementing the measurement satisfy appropriate symmetry and noncontextuality conditions \cite{Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL,Toward_a_Gleason_Type_Uniqueness_Theorem_for_Born_s_Rule_in_the_PDL_Framework}. Consequently, at the level of the $(4,6)$ block, PDL reproduces the standard spin-$\tfrac{1}{2}$ kinematics and Born-rule probability assignments from its discrete relational substrate, thereby yielding a well-defined spin sector on which a Dirac-type extension can be consistently constructed.
+
+\subsection{From the PDL spin doublet to a Dirac spinor}
+
+The Dirac formalism represents a spin-$\tfrac{1}{2}$ fermion by means of a four-component spinor, which can be interpreted as encoding two spin projections combined with two energy branches (positive and negative). Within the PDL framework, this motivates a factorisation of the Dirac spinor space as a tensor product of a spin space associated with the $(4,6)$ block and an additional two-dimensional space that encodes internal pulsation modes. Concretely, we introduce
+\[
+\Hspin \cong \mathbb{C}^2 \quad \text{(spin space of the $(4,6)$ block)}, \qquad \Hcycl \cong \mathbb{C}^2 \quad \text{(internal pulsation modes)}.
+\]
+The space $\Hcycl$ is spanned by two orthonormal states $\{\ket{+\!\text{cycl}},\ket{-\!\text{cycl}}\}$, which we interpret as representing two logically distinct regimes of internal coherence cycles associated with the electron: a mode aligned with the conventional Compton pulsation (corresponding to the positive-energy branch) and an inverted mode which, in the effective continuum description, can be identified with the negative-energy branch of the Dirac spectrum \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. The full Dirac spinor Hilbert space is then taken to be
+\[
+\HDirac \cong \Hcycl \otimes \Hspin \cong \mathbb{C}^2 \otimes \mathbb{C}^2 \cong \mathbb{C}^4.
+\]
+In the product basis $\{\ket{\pm\!\text{cycl}}\otimes\ket{\pm z}\}$, an arbitrary state $\Psi \in \HDirac$ can be represented as a four-component column vector, where each component is associated with a definite choice of internal pulsation mode and spin orientation.
+
+This factorisation is naturally compatible with the standard physical interpretation of the Dirac spinor. The internal pulsation frequency of the $(4,6)$ block, when mapped to an energy scale via $E = \hbar\omega$, yields two branches in the relativistic dispersion relation; the logical structure of PDL readily supports two distinct coherence-cycle modes on $\Hcycl$ that can be identified with these branches \cite{PDL,PDL_introduction}. In parallel, $\Hspin$ carries the usual spin-$\tfrac{1}{2}$ degrees of freedom derived from the $(4,6)$ graph. The tensor product $\Hcycl \otimes \Hspin$ therefore furnishes a structurally motivated PDL realisation of the Dirac spinor space, with a clear separation between spin-related and cycle-related degrees of freedom.
+
+\subsection{A PDL-inspired representation of Dirac matrices}
+
+Within the factorised Hilbert space $\HDirac \cong \Hcycl \otimes \Hspin$, it is natural to represent the Dirac matrices in terms of Pauli matrices acting on each tensor factor. Let $\{\tau_1,\tau_2,\tau_3\}$ denote the Pauli matrices acting on $\Hcycl$ and $\{\sigma_1,\sigma_2,\sigma_3\}$ the Pauli matrices acting on $\Hspin$. In the standard Dirac representation, the gamma matrices can then be written as
+\[
+\gamma^0 \simeq \tau_3 \otimes \mathbb{1}_{\Hspin}, \qquad 
+\gamma^i \simeq \tau_1 \otimes \sigma_i, \quad i=1,2,3,
+\]
+up to an overall choice of basis consistent with the Clifford algebra relations $\{\gamma^\mu,\gamma^\nu\} = 2\eta^{\mu\nu}\mathbb{1}$ \cite{PDL_Global_Mapping_Structures_Results_Open_Problems}. In this representation, $\gamma^0$ acts as a diagonal operator that distinguishes the two internal pulsation modes on $\Hcycl$, whereas the spatial matrices $\gamma^i$ act as off-diagonal operators that couple these modes while implementing spin rotations on $\Hspin$.
+
+From the PDL perspective, the identification $\gamma^0 \propto \tau_3 \otimes \mathbb{1}$ encodes the way in which the temporal component of the Dirac evolution differentially weights the two coherence-cycle regimes: the sign structure associated with $\tau_3$ discriminates between the internal mode aligned with the positive-energy branch and its inverted counterpart \cite{PDL,PDL_introduction}. The spatial gamma matrices $\gamma^i \propto \tau_1 \otimes \sigma_i$ effect transitions between the two pulsation modes (through $\tau_1$) while concurrently rotating the $(4,6)$ spin (through $\sigma_i$). This reflects the fact that spatial propagation in a relativistic framework intrinsically couples internal energy branches with spin orientation. In this sense, the Dirac algebra attains a direct combinatorial interpretation within PDL: it emerges as the effective continuum encoding of discrete operations on coherence cycles and on the spin degrees of freedom associated with the $(4,6)$ closure.
+
+This PDL-motivated representation preserves the standard Dirac algebra while providing a structural interpretation of each matrix in terms of the underlying relational architecture. It also lays the groundwork for formulating an effective Dirac equation for the PDL electron in the presence of external fields, in which the mass term is directly related to the coherence cost of the $(4,6)$ pulsation, and the couplings to electromagnetic and gravitational backgrounds are represented by operators acting on $\Hcycl \otimes \Hspin$ that are themselves constrained by the PDL coherence structure.
+
+\section{An Effective Dirac Equation and its Nonrelativistic Limit}\label{sec:Dirac_effective_NR_limit}
+
+\subsection{Effective Dirac--PDL equation in an external Coulomb field}
+
+Having identified a PDL-motivated representation for the Dirac spinor and the associated gamma matrices, we now construct an effective Dirac equation describing the PDL electron in the Coulomb field generated by the PDL proton. For the moment, we work on a flat spacetime background, postponing the inclusion of the emergent metric to Section~\ref{sec:emergent_metric}. In the absence of curvature, the effective Dirac equation assumes the standard form
+\begin{equation}
+\left(i\gamma^\mu \partial_\mu - m_e^{\PDL} \frac{c}{\hbar}\right)\Psi = 0,
+\label{eq:Dirac_free_PDL}
+\end{equation}
+where $\Psi \in \HDirac \cong \Hcycl \otimes \Hspin$, the gamma matrices are represented as $\gamma^0 \simeq \tau_3 \otimes \mathbb{1}$ and $\gamma^i \simeq \tau_1 \otimes \sigma_i$, and $m_e^{\PDL}$ denotes the electron mass determined by the internal pulsation of the $(4,6)$ block through the relation $E = m_e^{\PDL} c^2 = \hbar\omega_{4,6}$ \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. To incorporate the electromagnetic interaction with the proton, we introduce a four-potential $A_\mu = (A_0,\mathbf{A})$ and implement minimal coupling by replacing $\partial_\mu$ with $\partial_\mu + i q_{\PDL} A_\mu/\hbar c$, where $q_{\PDL}$ is an effective charge parameter constrained by the PDL architecture.
+
+For a static proton localized at the origin, we set $\mathbf{A} = 0$ and
+\begin{equation}
+A_0(r) = -\frac{\alphaPDL \hbar c}{q_{\PDL} r},
+\label{eq:A0_PDL}
+\end{equation}
+such that the temporal component of the interaction reproduces the PDL Coulomb potential
+\begin{equation}
+V(r) = q_{\PDL} A_0(r) = -\frac{\alphaPDL \hbar c}{r},
+\end{equation}
+which was employed in the Schr\"odinger--PDL analysis of the hydrogen atom \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}. The corresponding effective Dirac--PDL equation in the external PDL proton field is therefore
+\begin{equation}
+\left[i\gamma^\mu\left(\partial_\mu + i\frac{q_{\PDL}}{\hbar c} A_\mu\right) - m_e^{\PDL} \frac{c}{\hbar}\right]\Psi = 0,
+\label{eq:Dirac_PDL_Coulomb}
+\end{equation}
+with $\gamma^\mu$ and $A_\mu$ specified as above. By construction, the interaction strength is fully determined by the coherence-derived parameter $\alphaPDL$ together with the choice of $q_{\PDL}$ consistent with \eqref{eq:A0_PDL}, so that no additional continuous coupling parameter is introduced at this stage.
+
+\subsection{Block decomposition and large/small components}
+
+To relate \eqref{eq:Dirac_PDL_Coulomb} to the nonrelativistic PDL hydrogen Hamiltonian, we perform the standard decomposition of the Dirac spinor into its large and small components. In the representation $\HDirac \cong \Hcycl \otimes \Hspin$, the wave function takes the form
+\[
+\Psi(t,\mathbf{r}) = \begin{pmatrix}\psi_{+}(t,\mathbf{r}) \\[2pt] \psi_{-}(t,\mathbf{r})\end{pmatrix},
+\]
+where $\psi_{+},\psi_{-}\in \Hspin \cong \mathbb{C}^2$ are the components associated with the $\ket{+\!\text{cycl}}$ and $\ket{-\!\text{cycl}}$ sectors of $\Hcycl$, respectively. Using the Dirac matrices defined in Section~\ref{sec:Dirac_from_46}, Eq.~\eqref{eq:Dirac_PDL_Coulomb} can be expressed in Hamiltonian form as
+\begin{equation}
+i\hbar \frac{\partial \Psi}{\partial t} = H_{\mathrm{D,PDL}}\Psi,
+\label{eq:Dirac_PDL_Hamiltonian}
+\end{equation}
+with
+\begin{equation}
+H_{\mathrm{D,PDL}} = \beta m_e^{\PDL} c^2 + q_{\PDL} A_0(r) + c\,\boldsymbol{\alpha}\cdot\mathbf{p},
+\label{eq:Dirac_PDL_H}
+\end{equation}
+where $\beta = \gamma^0 \simeq \tau_3 \otimes \mathbb{1}$, $\alpha^i = \gamma^0 \gamma^i \simeq \tau_3\tau_1 \otimes \sigma_i$, $\mathbf{p} = -i\hbar\nabla$, and $A_0(r)$ is given by \eqref{eq:A0_PDL}. The Hamiltonian \eqref{eq:Dirac_PDL_H} thus exhibits the same operator structure as the conventional Dirac Hamiltonian in a Coulomb potential, with the crucial distinction that the effective mass $m_e^{\PDL}$ and coupling $\alphaPDL$ are determined by the PDL coherence architecture \cite{PDL,Schodinger_PDL}.
+
+Writing \eqref{eq:Dirac_PDL_Hamiltonian} in block form leads to
+\begin{align}
+i\hbar \frac{\partial \psi_{+}}{\partial t} &= \left(m_e^{\PDL} c^2 + q_{\PDL} A_0\right)\psi_{+} + c\,\boldsymbol{\sigma}\cdot\mathbf{p}\,\psi_{-}, \label{eq:Dirac_block_plus}\\
+i\hbar \frac{\partial \psi_{-}}{\partial t} &= \left(-m_e^{\PDL} c^2 + q_{\PDL} A_0\right)\psi_{-} + c\,\boldsymbol{\sigma}\cdot\mathbf{p}\,\psi_{+}. \label{eq:Dirac_block_minus}
+\end{align}
+We now seek stationary states of the form
+\[
+\psi_{\pm}(t,\mathbf{r}) = e^{-i E t/\hbar}\,\phi_{\pm}(\mathbf{r}),
+\]
+for which Eqs.~\eqref{eq:Dirac_block_plus}--\eqref{eq:Dirac_block_minus} reduce to
+\begin{align}
+\left(E - q_{\PDL} A_0 - m_e^{\PDL} c^2\right)\phi_{+} &= c\,\boldsymbol{\sigma}\cdot\mathbf{p}\,\phi_{-}, \label{eq:Eqs_phi_plus}\\
+\left(E - q_{\PDL} A_0 + m_e^{\PDL} c^2\right)\phi_{-} &= c\,\boldsymbol{\sigma}\cdot\mathbf{p}\,\phi_{+}. \label{eq:Eqs_phi_minus}
+\end{align}
+These equations are formally isomorphic to the standard Dirac–Coulomb system, with the substitutions $(m_e,\alpha)\to(m_e^{\PDL},\alphaPDL)$ absorbed into $A_0$ and with the two-component spinors $\phi_{\pm}$ identified as elements of $\Hspin$.
+
+\subsection{Recovery of the PDL hydrogen Hamiltonian}
+
+To obtain the nonrelativistic limit, we assume that the total energy \(E\) can be decomposed as
+\[
+E = m_e^{\PDL} c^2 + \epsilon,
+\]
+where the binding energy \(\epsilon\) satisfies \(|\epsilon|\ll m_e^{\PDL} c^2\) for the low-lying hydrogenic states of interest. Under this assumption, the factor multiplying \(\phi_{-}\) in \eqref{eq:Eqs_phi_minus} becomes
+\[
+E - q_{\PDL} A_0 + m_e^{\PDL} c^2 = 2 m_e^{\PDL} c^2 + \epsilon - q_{\PDL} A_0 \approx 2 m_e^{\PDL} c^2,
+\]
+to leading order in \(\epsilon\) and \(q_{\PDL} A_0\). Consequently, \eqref{eq:Eqs_phi_minus} yields the approximate relation
+\begin{equation}
+\phi_{-} \approx \frac{1}{2 m_e^{\PDL} c}\,\boldsymbol{\sigma}\cdot\mathbf{p}\,\phi_{+}.
+\label{eq:phi_minus_approx}
+\end{equation}
+Substituting \eqref{eq:phi_minus_approx} into \eqref{eq:Eqs_phi_plus} and retaining terms up to order \(1/c^2\), we obtain
+\[
+\left(\epsilon - q_{\PDL} A_0\right)\phi_{+} \approx c\,\boldsymbol{\sigma}\cdot\mathbf{p}\,\left(\frac{1}{2 m_e^{\PDL} c} \boldsymbol{\sigma}\cdot\mathbf{p}\,\phi_{+}\right) = \frac{1}{2 m_e^{\PDL}} \left(\boldsymbol{\sigma}\cdot\mathbf{p}\right)^2 \phi_{+}.
+\]
+Using the Pauli identity \((\boldsymbol{\sigma}\cdot\mathbf{p})^2 = \mathbf{p}^2\,\mathbb{1}_{\Hspin}\), we arrive at
+\begin{equation}
+\epsilon\,\phi_{+} \approx \left[\frac{\mathbf{p}^2}{2 m_e^{\PDL}} + q_{\PDL} A_0(r)\right]\phi_{+}.
+\label{eq:epsilon_phi_plus}
+\end{equation}
+Recasting \eqref{eq:epsilon_phi_plus} in time-dependent form, with \(\phi_{+}(t,\mathbf{r}) = e^{-i \epsilon t/\hbar}\,\phi_{+}(\mathbf{r})\), yields the effective nonrelativistic evolution equation for the large component:
+\begin{equation}
+i\hbar \frac{\partial \phi_{+}}{\partial t} = \left[-\frac{\hbar^2}{2 m_e^{\PDL}} \nabla^2 + q_{\PDL} A_0(r)\right]\phi_{+}.
+\label{eq:Schrodinger_PDL_large}
+\end{equation}
+Employing the definition of \(A_0(r)\) in \eqref{eq:A0_PDL}, we have \(q_{\PDL} A_0(r) = -\alphaPDL \hbar c / r\), so that \eqref{eq:Schrodinger_PDL_large} becomes
+\begin{equation}
+i\hbar \frac{\partial \phi_{+}}{\partial t} = \left[-\frac{\hbar^2}{2 m_e^{\PDL}} \nabla^2 - \frac{\alphaPDL \hbar c}{r}\right]\phi_{+}.
+\label{eq:Schrodinger_PDL_NR}
+\end{equation}
+By comparing \eqref{eq:Schrodinger_PDL_NR} with the Schr\"odinger–PDL equation employed in the hydrogenic consistency analysis \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}, we see that the effective Dirac–PDL equation \eqref{eq:Dirac_PDL_Coulomb} reproduces, in the nonrelativistic limit and under the standard hierarchy assumption for the components, precisely the same Hamiltonian:
+\[
+H_{\mathrm{H,PDL}} = -\frac{\hbar^2}{2 m_e^{\PDL}} \nabla^2 - \frac{\alphaPDL \hbar c}{r},
+\]
+acting on the two-component spinor \(\phi_{+}\in\Hspin\). Corrections of order \(1/c^2\) arising from a more accurate elimination of \(\phi_{-}\) generate the familiar relativistic contributions (Darwin term, spin–orbit coupling, etc.), which can be incorporated into an effective Pauli Hamiltonian and matched to the \(H_{\text{spin}}\) sector introduced at the nonrelativistic level.
+
+Equation \eqref{eq:Schrodinger_PDL_NR} therefore demonstrates that the PDL-based Dirac framework is internally consistent with the previously derived Schrödinger/Pauli description of the hydrogen atom in PDL: in both the relativistic and nonrelativistic regimes, the dynamics are governed by the same coherence-determined parameters, $m_e^{\PDL}$ and $\alphaPDL$. This constitutes a nontrivial self-consistency check of the Dirac sector built on the $(4,6)$ block and lays the foundation for embedding this Dirac sector into the emergent metric background constructed from coherence and leakage in the subsequent section.
+
+\begin{proposition}[Dirac–Schrödinger compatibility within PDL]
+\label{prop:Dirac_Schrodinger_PDL}
+Consider the effective Dirac–PDL equation
+\begin{equation}
+\left[i\gamma^\mu\left(\partial_\mu + i\frac{q_{\PDL}}{\hbar c} A_\mu\right) - m_e^{\PDL} c/\hbar\right]\Psi = 0,
+\end{equation}
+with $\gamma^0 \simeq \tau_3 \otimes \mathbb{1}$, $\gamma^i \simeq \tau_1 \otimes \sigma_i$, $A_0(r) = -\alphaPDL\,\hbar c/(q_{\PDL} r)$ and $\mathbf{A}=0$, where $m_e^{\PDL}$ and $\alphaPDL$ are fixed by the PDL coherence architecture \cite{PDL,Derivation_alpha_PDL,Schodinger_PDL}. In the standard nonrelativistic regime $|E - m_e^{\PDL} c^2|\ll m_e^{\PDL} c^2$, the large component $\phi_{+}\in\Hspin$ satisfies
+\begin{equation}
+i\hbar \frac{\partial \phi_{+}}{\partial t}
+=
+\left[-\frac{\hbar^2}{2 m_e^{\PDL}} \nabla^2
+      - \frac{\alphaPDL \hbar c}{r}\right]\phi_{+},
+\end{equation}
+which coincides with the Schrödinger–PDL hydrogen Hamiltonian previously employed in \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}, without introducing any additional free parameter or extra structural hypothesis.
+\end{proposition}
+
+\noindent
+Proposition~\ref{prop:Dirac_Schrodinger_PDL} establishes that the Dirac sector constructed from the $(4,6)$ block together with the proton architecture does not constitute an independent postulate. Rather, it represents a relativistic uplift of the already tested Schrödinger–PDL hydrogen model, subject to the same coherence-determined parameters $m_e^{\PDL}$ and $\alphaPDL$.
+
+\begin{proposition}[Dirac–Schrödinger compatibility within PDL]
+\label{prop:Dirac_Schrodinger_PDL_2}
+Consider the effective Dirac–PDL equation
+\begin{equation}
+\left[i\gamma^\mu\left(\partial_\mu + i\frac{q_{\PDL}}{\hbar c} A_\mu\right) - m_e^{\PDL} c/\hbar\right]\Psi = 0,
+\end{equation}
+with $\gamma^0 \simeq \tau_3 \otimes \mathbb{1}$, $\gamma^i \simeq \tau_1 \otimes \sigma_i$, $A_0(r) = -\alphaPDL\,\hbar c/(q_{\PDL} r)$ and $\mathbf{A}=0$, where $m_e^{\PDL}$ and $\alphaPDL$ are fixed by the PDL coherence architecture \cite{PDL,Derivation_alpha_PDL,Schodinger_PDL}. In the standard nonrelativistic regime $|E - m_e^{\PDL} c^2|\ll m_e^{\PDL} c^2$, the large component $\phi_{+}\in\Hspin$ satisfies
+\begin{equation}
+i\hbar \frac{\partial \phi_{+}}{\partial t}
+=
+\left[-\frac{\hbar^2}{2 m_e^{\PDL}} \nabla^2
+      - \frac{\alphaPDL \hbar c}{r}\right]\phi_{+},
+\end{equation}
+which again reproduces the Schrödinger–PDL hydrogen Hamiltonian previously employed in \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}, without any further free parameter or additional structural requirement.
+\end{proposition}
+
+\noindent
+As in Proposition~\ref{prop:Dirac_Schrodinger_PDL}, Proposition~\ref{prop:Dirac_Schrodinger_PDL_2} confirms that the Dirac layer derived from the $(4,6)$ block and the proton architecture is not an ad hoc addition. It is a relativistic completion of the Schrödinger–PDL hydrogen model, fully constrained by the same coherence-generated quantities $m_e^{\PDL}$ and $\alphaPDL$.
+
+\section{Emergent Metric and Coherence-Based Gravitation}\label{sec:emergent_metric}
+
+\subsection{Cycle counting, relational density, and emergent metric}
+
+Within the PDL framework, proper time is not postulated as a fundamental continuous parameter; instead, it is reinterpreted as a discrete counting of internal coherence cycles associated with stationary regimes such as the $(4,6)$ block and the proton \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. For an electron at rest, each Compton period of the $(4,6)$ structure is identified with a complete re-establishment of internal coherence and is associated with a quantum of action $\hbar$. Consequently, the proper time elapsed along the electron’s worldline can be mapped to the number of such coherence cycles that have occurred \cite{PDL,PDL_introduction}. In the case of composite structures such as the proton, the relevant pulsation corresponds to a global mode emerging from the hierarchical coupling of the local valence cores, the relational sea, and the active surface, so that the effective cycle counting aggregates contributions from multiple internal structural levels \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}.
+
+\begin{remark}[Status of the Einstein--type relation]
+The relation
+\begin{equation}
+\mathcal{G}_{\mu\nu}\big[g^{\mathrm{eff}}\big] = \kappa_{\PDL}\, \Ccoh
+\end{equation}
+should, at the present stage of development, be regarded as a structurally constrained ansatz rather than as a fully derived fundamental field equation. Its form is determined by three independent elements already established within the PDL corpus: (i) the identification of proper time with cycle counting for the $(4,6)$ block and for the proton \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}, (ii) the definition of a coherence-cost pseudometric and of a coherence potential $\Phi_{\mathrm{coh}}$ constructed from relational density and leakage \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}, and (iii) the representation of an effective gravitational coupling $\Geff$ in terms of the proton’s internal architecture and the same leakage parameter $\etaL$ \cite{Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. The weak-field redshift calculation presented below then demonstrates that this ansatz already reproduces the standard weak-field general-relativistic expression in the hydrogenic regime, without the introduction of additional continuous free parameters.
+\end{remark}
+
+To connect this counting procedure to an emergent metric structure, PDL introduces the notion of \emph{relational density} $\rho_{\mathrm{rel}}$, defined as the number of active relations per unit of an abstract logical volume associated with a given region of the relational network \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. Intuitively, regions characterised by high values of $\rho_{\mathrm{rel}}$ correspond to dense matter configurations or strongly constrained relational states, whereas regions with low $\rho_{\mathrm{rel}}$ approximate a relational vacuum. Within this framework, the proper-time increment $d\tau$ experienced by a given closure located in a region of density $\rho_{\mathrm{rel}}$ can be related to a reference increment $dt_0$ through a relation of the schematic form
+\[
+d\tau = f(\rho_{\mathrm{rel}})\,dt_0,
+\]
+where $f(\rho_{\mathrm{rel}}) < 1$ in domains of high relational density, and $f(\rho_{\mathrm{rel}})\to 1$ as $\rho_{\mathrm{rel}}$ tends to its minimal background value \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. In physical terms, a larger fraction of internal coherence cycles per unit of $dt_0$ must be allocated to maintaining structural stability in dense regions, resulting in an effective slowdown of proper time that is formally analogous to gravitational time dilation.
+
+This behaviour is formalised by introducing a \emph{coherence-cost pseudometric} on the space of closures: the distance between two configurations is defined as the minimal additional leakage (coherence deficit) required to embed both configurations compatibly into a common relational environment \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. Neighbourhoods are thereby generated by logical compatibility relations, rather than by any a priori geometric proximity, inducing a coexistence topology on configuration space. In suitably coarse-grained regimes, the coherence-cost pseudometric can be approximated by a Lorentzian metric $g_{\mu\nu}^{\mathrm{eff}}$ on an effective spacetime manifold, with the temporal component $g_{00}^{\mathrm{eff}}$ encoding the dependence of $f(\rho_{\mathrm{rel}})$ on relational density in direct analogy with the role of gravitational potentials in general relativity \cite{PDL_Global_Mapping_Structures_Results_Open_Problems,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}.
+
+\subsection{Coherence tensor and effective gravitational coupling}
+
+To relate this emergent metric to a source term analogous to the energy–momentum tensor in general relativity, we introduce a \emph{coherence tensor} $\Ccoh$ on the effective spacetime. This tensor characterizes how distinct components of the underlying relational architecture contribute to the overall coherence cost. At a schematic level, we decompose
+\[
+\Ccoh = C_{\mu\nu}^{(\mathrm{mass})} + C_{\mu\nu}^{(\mathrm{spin})} + C_{\mu\nu}^{(\mathrm{orbital})} + C_{\mu\nu}^{(\mathrm{leak})},
+\]
+where each contribution aggregates appropriate terms induced by the underlying signed-graph structures. 
+
+The mass-like contribution $C_{\mu\nu}^{(\mathrm{mass})}$ arises from the density of internal relations and pulsations (for example, $(4,6)$ electrons and hierarchical proton structures). In a coarse-grained, fluid-limit description, it can be modelled as
+\[
+C_{\mu\nu}^{(\mathrm{mass})} \simeq \rho_{\mathrm{coh}}\,c^2\,u_\mu u_\nu,
+\]
+where $\rho_{\mathrm{coh}}$ denotes a coherence density, taken to be proportional to the number of active relations and internal cycles per effective volume, and $u^\mu$ is a four-velocity field encoding the mean flow of coherence cycles \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. 
+
+The spin-related contribution $C_{\mu\nu}^{(\mathrm{spin})}$ captures internal fluxes associated with the spin-$\tfrac{1}{2}$ structure of the $(4,6)$ block and analogous local closures. It can be expressed in terms of an effective spin density $S^{\alpha\beta}$ defined on the emergent spacetime, constructed from the SU(2) action on $\Hspin$, with contributions of the general schematic form $(S_{\mu\alpha}S_{\nu}{}^{\alpha})_{\mathrm{eff}}$ \cite{PDL_Global_Mapping_Structures_Results_Open_Problems}. 
+
+The orbital contribution $C_{\mu\nu}^{(\mathrm{orbital})}$ originates from spatial fluxes of coherence, such as those associated with bound electronic states in hydrogen. These terms are related to currents on the effective manifold, obtained from probability currents or fluxes defined on the underlying graphs \cite{Sketch_derivation_Schroedinger_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}.
+
+The leakage contribution $C_{\mu\nu}^{(\mathrm{leak})}$ is associated with an irreducible component of coherence deficit. Within the PDL hierarchy, no choice of closure scheme can simultaneously saturate coherence at all levels; instead, a minimal leakage parameter $\etaL$ emerges at the proton level as the smallest admissible fraction of violated triangular constraints compatible with the underlying architectural rules \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. This leakage does not represent an uncontrolled dissipation, but rather a structured export of coherence constraints into the embedding network. As coherence packets propagate through successive hierarchical layers—ranging from $(4,6)$ blocks to the proton valence structure, to nucleonic aggregates, and ultimately to macroscopic matter—the local leakage $\etaL$ is amplified by a discrete exponent. This exponent is typically identified as $18$, corresponding to eighteen sequential coherence filters arranged in three groups of six \cite{Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. The resulting effective leakage at macroscopic scales manifests in the metric sector as a small but nonvanishing source term for curvature, which can be modelled, to leading order, by
+\[
+C_{\mu\nu}^{(\mathrm{leak})} \simeq -\Lambda_{\PDL}\,g_{\mu\nu}^{\mathrm{eff}},
+\]
+where $\Lambda_{\PDL}$ is a coherence-induced quantity playing a role analogous to that of a cosmological constant \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}.
+
+The same leakage parameter $\etaL$ and its hierarchical amplification likewise enter the definition of an effective gravitational coupling $\Geff$. In the PDL framework, $\Geff$ is not treated as a fundamental input constant; rather, it is derived from the proton’s internal architecture together with $\hbar$, $c$, the proton–electron mass ratio, and the amplified leakage factor $\etaL^{18}$. This yields an expression of the schematic form
+\[
+\Geff \sim F(\hbar,c,m_p,\alphaPDL,\etaL^{18}),
+\]
+where $F$ is a fixed functional determined by dimensional analysis and by the discrete coherence constraints \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. Once the single parameter $\etaL$ is calibrated to reproduce the observed value of $G$, the same value of $\etaL$ can be consistently employed in the PDL-derived expressions for $k_B$, $\Geff$, and various cosmological observables without further adjustment. This reuse of a single leakage parameter illustrates the high degree of structural rigidity inherent in the leakage-based unification scheme \cite{PDL,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}.
+
+\subsection{Gravitational redshift of PDL hydrogen levels}
+
+With the emergent metric and effective gravitational coupling specified, the hydrogen atom can be employed as a probe of coherence-induced gravitation. In the weak-field regime generated by a macroscopic mass $M$, composed of nucleons whose coherence architecture is identical to that described above, the effective potential associated with the coherence cost takes the form
+\[
+\Phi_{\mathrm{coh}}(r) \approx -\frac{\Geff M}{r},
+\]
+to leading order in $\Geff M/(r c^2)$. This expression is formally analogous to the Newtonian gravitational potential, but with $\Geff$ determined within the PDL framework rather than postulated as a fundamental constant \cite{PDL_Global_Mapping_Structures_Results_Open_Problems,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. The corresponding effective metric component is
+\[
+g_{00}^{\mathrm{eff}}(r) \approx 1 + \frac{2\Phi_{\mathrm{coh}}(r)}{c^2} = 1 - \frac{2\Geff M}{r c^2},
+\]
+from which the relation between the proper time $\tau$ of the hydrogen atom and a distant coordinate time $t$ follows as
+\[
+d\tau(r) \approx \sqrt{g_{00}^{\mathrm{eff}}(r)}\,dt \approx \left(1 + \frac{\Phi_{\mathrm{coh}}(r)}{c^2}\right)dt = \left(1 - \frac{\Geff M}{r c^2}\right)dt,
+\]
+valid to first order in $\Geff M/(r c^2)$ \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. Since, within PDL, the internal dynamics of hydrogen is governed by the Dirac–PDL or Schr\"odinger–PDL Hamiltonian constructed from $m_e^{\PDL}$ and $\alphaPDL$, the local energy eigenvalues $E_n^{(0)}$ are defined with respect to the atom’s proper time. When these levels are observed from a distant region in which the coherence potential is negligible, the corresponding energies are redshifted according to the time-dilation factor:
+\[
+E_n^{\infty}(r) \approx \left(1 + \frac{\Phi_{\mathrm{coh}}(r)}{c^2}\right) E_n^{(0)} = \left(1 - \frac{\Geff M}{r c^2}\right) E_n^{(0)}.
+\]
+Therefore, the frequency of a transition between levels $n$ and $m$, given locally by $\nu_{n\to m}^{(0)} = \left(E_n^{(0)}-E_m^{(0)}\right)/h$, is measured at infinity as
+\[
+\nu_{n\to m}^{\infty}(r) \approx \left(1 + \frac{\Phi_{\mathrm{coh}}(r)}{c^2}\right)\nu_{n\to m}^{(0)} = \left(1 - \frac{\Geff M}{r c^2}\right)\nu_{n\to m}^{(0)}.
+\]
+This relation reproduces the standard weak-field gravitational redshift formula when $\Geff$ is identified with Newton’s gravitational constant. However, in the PDL setting it emerges from the coherence cost associated with relational density and leakage, rather than from a primordial continuum field \cite{PDL_Global_Mapping_Structures_Results_Open_Problems,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. Crucially, the same discrete relational architecture that fixes $m_e^{\PDL}$, $\alphaPDL$, and the hydrogenic spectrum at the Dirac and Schr\"odinger layers also determines the structure of $\Geff$ and $\Phi_{\mathrm{coh}}$. Consequently, the Einstein-like redshift and the Dirac-like dynamics of hydrogen are not introduced as independent postulates, but rather arise as correlated manifestations of a single underlying relational substrate.
+
+\section{Towards an Einstein–Dirac Scheme within PDL}\label{sec:Einstein_Dirac_scheme}
+
+\subsection{Emergent Einstein-type equations with coherence sources}
+
+The coherence-based construction of an effective metric and coherence tensor motivates an Einstein-type relation connecting curvature to sources of coherence. At a schematic level, we postulate an equation of the form
+\begin{equation}
+\mathcal{G}_{\mu\nu}\big[g^{\mathrm{eff}}\big] = \kappa_{\PDL}\,\Ccoh,
+\label{eq:Einstein_PDL}
+\end{equation}
+where $\mathcal{G}_{\mu\nu}[g^{\mathrm{eff}}]$ denotes an effective Einstein tensor constructed from the emergent metric $g_{\mu\nu}^{\mathrm{eff}}$, $\Ccoh$ is the coherence tensor introduced in Section~\ref{sec:emergent_metric}, and $\kappa_{\PDL}$ is an effective coupling constant determined by the PDL-derived gravitational coupling $\Geff$ via $\kappa_{\PDL}\sim 8\pi \Geff/c^4$ \cite{PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. Equation~\eqref{eq:Einstein_PDL} does not encode additional dynamical postulates at the level of the underlying graphs; instead, it provides a continuum-level summary of how variations in coherence cost, as encoded by $\Ccoh$, constrain the geometry of the emergent metric.
+
+Within this framework, the mass-like term $C_{\mu\nu}^{(\mathrm{mass})}$ recovers, in suitable limiting regimes, the role played by the matter energy density in standard general relativity, whereas $C_{\mu\nu}^{(\mathrm{spin})}$ and $C_{\mu\nu}^{(\mathrm{orbital})}$ account for spin and orbital fluxes that can, in principle, generate spin–curvature couplings and frame-dragging-type phenomena \cite{PDL_Global_Mapping_Structures_Results_Open_Problems}. The leakage contribution $C_{\mu\nu}^{(\mathrm{leak})}$, being proportional to $g_{\mu\nu}^{\mathrm{eff}}$, acts as a coherence-induced cosmological term, with a magnitude governed by $\etaL^{18}$ and by the same proton-structure considerations that underlie the derivations of $\Geff$ and $k_B$ \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. Although a complete derivation of \eqref{eq:Einstein_PDL} from the discrete PDL dynamics remains an open challenge, the existence of a coherent mapping from signed-graph structures to $(g_{\mu\nu}^{\mathrm{eff}},\Ccoh)$ furnishes a precise target for such a derivation and delineates which quantities should be regarded as fundamental in the relational description.
+
+\subsection{Einstein--Dirac coupling on a PDL substrate}
+
+On the Dirac side, Section~\ref{sec:Dirac_from_46} and Section~\ref{sec:Dirac_effective_NR_limit} established that the $(4,6)$ block admits a spin-$\tfrac{1}{2}$ representation and that a PDL-inspired Dirac equation, characterized by an effective electron mass $m_e^{\PDL}$ and Coulomb coupling $\alphaPDL$, reproduces the correct nonrelativistic hydrogenic limit. Incorporating the emergent metric into this framework is achieved by promoting ordinary derivatives in the Dirac equation to spin-covariant derivatives compatible with $g_{\mu\nu}^{\mathrm{eff}}$. In the simplest approximation, one considers an effective Dirac equation on the emergent spacetime:
+\begin{equation}
+\left(i\gamma^\mu(g^{\mathrm{eff}})\nabla_\mu(g^{\mathrm{eff}}) + i\frac{q_{\PDL}}{\hbar c}\gamma^\mu A_\mu - m_e^{\PDL} \frac{c}{\hbar}\right)\Psi = 0,
+\label{eq:Dirac_on_geff}
+\end{equation}
+where $\nabla_\mu(g^{\mathrm{eff}})$ denotes the spin-covariant derivative constructed from the effective metric $g_{\mu\nu}^{\mathrm{eff}}$ and its associated tetrad fields, and $A_\mu$ represents the electromagnetic four-potential determined by the PDL proton \cite{PDL_Global_Mapping_Structures_Results_Open_Problems,Schodinger_PDL}. The gamma matrices $\gamma^\mu(g^{\mathrm{eff}})$ are obtained from the flat-space PDL representation via the appropriate vierbein fields, thereby preserving the interpretation of $\tau_i$ and $\sigma_i$ as operators acting on internal pulsation and spin degrees of freedom, respectively.
+
+The coupled system \eqref{eq:Einstein_PDL}–\eqref{eq:Dirac_on_geff} thus defines an effective Einstein–Dirac framework grounded in PDL: the metric $g_{\mu\nu}^{\mathrm{eff}}$ and the effective coupling $\kappa_{\PDL}$ are determined by coherence and leakage properties encoded in $\Ccoh$, while the spinor field $\Psi$ describes $(4,6)$-based fermionic matter whose mass and electromagnetic couplings are fixed by the same relational architecture that governs the metric sector. The hydrogen atom in a weak coherence potential provides a minimal testbed in which both sectors can be probed simultaneously: the Dirac–PDL equation governs the local energy spectrum and spin structure, whereas the emergent metric induces a gravitational redshift controlled by $\Geff$ and by the coherence potential $\Phi_{\mathrm{coh}}$ \cite{PDL_Global_Mapping_Structures_Results_Open_Problems,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}.
+
+\subsection{Open problems and future directions}
+
+Several central questions must be resolved in order to promote this operationally effective scheme to a fully derived Einstein–Dirac theory within the PDL framework. On the Einstein side, it is necessary to identify a canonical class of graph dynamics that, under appropriate coarse-graining procedures, yields an emergent metric whose curvature satisfies an equation of the form \eqref{eq:Einstein_PDL}, with $\Ccoh$ computed directly from graph configurations rather than introduced phenomenologically at the continuum level \cite{PDL_Global_Mapping_Structures_Results_Open_Problems}. A derivation of the leakage parameter $\etaL$ from first principles—without reliance on empirical calibration—would further substantiate the connection between microscopic coherence defects and macroscopic gravitational phenomena \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL}. On the Dirac side, one must still reconstruct the complete spinor structure and the spin-covariant derivative $\nabla_\mu(g^{\mathrm{eff}})$ purely from graph-theoretic operations on $\Hcycl \otimes \Hspin$, and generalise the current analysis beyond the hydrogenic case to multi-electron systems and relativistic scattering processes \cite{Sketch_derivation_Schroedinger_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}.
+
+In addition to these technical issues, the PDL framework points to several conceptual developments. The factorisation $\HDirac \cong \Hcycl \otimes \Hspin$ motivates a reformulation of particle–antiparticle sectors and Zitterbewegung as interference phenomena between internal coherence-cycle modes, while the coherence tensor $\Ccoh$ provides a unified formalism for describing mass, spin, orbital motion, and leakage as distinct manifestations of relational constraints. At cosmological scales, the same leakage-based mechanisms that generate $\Geff$ and an effective cosmological term $\Lambda_{\PDL}$ may be employed to re-examine early-universe dynamics and the interrelation of quantum statistics, gravitation, and thermodynamic granularity \cite{PDL,A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. Consequently, the present Einstein–Dirac construction should be interpreted as a structurally explicit prototype—a target architecture for subsequent derivations—rather than as a fully completed theory.
+
+\section*{Conclusion}
+
+In this work, we have proposed a first explicit scheme in which Dirac spinor matter and Einstein-like gravitation emerge from a common discrete coherence substrate provided by the PDL framework. On the Dirac side, we have demonstrated how the spin-$\tfrac{1}{2}$ structure of the $(4,6)$ block and its internal pulsation can be combined into a factorised spinor space $\HDirac \cong \Hcycl \otimes \Hspin$, which supports a PDL-inspired representation of the Dirac matrices and an effective Dirac equation for the electron in the PDL proton Coulomb field. The nonrelativistic limit of this construction reproduces the previously established hydrogen Hamiltonian with coherence-derived $\alphaPDL$. On the Einstein side, we have reviewed how proper time, relational density, leakage, and coherence cost jointly give rise to an emergent metric, an effective gravitational coupling $\Geff$, and a coherence tensor $\Ccoh$, which together enable the formulation of Einstein-type equations with coherence sources. Using the hydrogen atom as a minimal probe, we have illustrated how gravitational redshift arises in this framework from a coherence potential $\Phi_{\mathrm{coh}}$ consistent with the PDL-derived $\Geff$, thereby establishing a linkage between the Dirac and Einstein layers on a common relational substrate. Although many technical steps remain to be derived from the underlying discrete dynamics, the resulting architecture renders the notion of an Einstein–Dirac unification within PDL sufficiently precise to be systematically scrutinised and refined in future work. 
+
+Beyond qualitative analogies, the present work establishes three nontrivial compatibility results within a single relational architecture. First, the spin-$\tfrac{1}{2}$ structure and Born’s rule for the $(4,6)$ block are obtained combinatorially from mixed-triangle configurations \cite{Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL,Toward_a_Gleason_Type_Uniqueness_Theorem_for_Born_s_Rule_in_the_PDL_Framework}. Second, Proposition~\ref{prop:Dirac_Schrodinger_PDL} shows that the Dirac–PDL equation, constructed from the same $(4,6)$ block and proton architecture, reproduces exactly the previously established Schr\"odinger–PDL hydrogen Hamiltonian with coherence-derived $m_e^{\PDL}$ and $\alphaPDL$ \cite{Schodinger_PDL,Sketch_derivation_Schroedinger_PDL}. Third, the coherence-based emergent metric, determined by the same leakage parameter $\etaL$ and proton structure, yields a weak-field hydrogenic redshift consistent with the standard general-relativistic expression when written in terms of $g^{\mathrm{eff}}_{00}$ \cite{A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework_Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL,PDL_Global_Mapping_Structures_Results_Open_Problems}. 
+
+\medskip
+
+These results do not yet constitute a full derivation of Einstein–Dirac dynamics from the discrete PDL evolution, but they delineate a precise target architecture and a set of nontrivial constraints that any future unification within PDL must satisfy. In particular, a complete treatment would require (i) deriving Eq.~\eqref{eq:Einstein_PDL} from microscopic update rules on signed graphs, (ii) constructing a fully specified coherence tensor $C_{\mu\nu}$ beyond the schematic decomposition adopted here, and (iii) generating quantitative predictions beyond the hydrogen atom (for example, in multi-electron atoms or gravitationally bound systems) that can be confronted with high-precision experimental data.
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References}
+
+\end{document}

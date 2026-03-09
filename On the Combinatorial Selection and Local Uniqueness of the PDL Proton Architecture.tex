@@ -1,0 +1,479 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{conjecture}{Conjecture}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+\usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\PDL}{\mathrm{PDL}}
+\newcommand{\LDP}{\mathrm{LDP}}
+
+\begin{document}
+
+\title{On the Combinatorial Selection and Local Uniqueness\\
+of the Proton Architecture in the PDL Framework}
+
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland.}\\[4pt]}
+
+\date{\small \today}
+
+\maketitle
+
+\begin{abstract}
+Within the Projective Dynamic Logo (PDL) framework, the proton is represented as a hierarchical composite closure assembled from elementary $(4,6)$ bricks. This construction consists of three quasi-stationary valence cores, a dynamical relational sea, and a finite active surface that mediates coherent coupling to an electron-type closure.\cite{PDL_Main_2026,PDL_Intro_2026,Combinatorial_Proton_v2_2026} Existing PDL models associate to this architecture a specific quintuple of integer parameters $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}) = (24,28,930,10087,11017)$, together with a stationary/dynamical partition close to $9/91$. This structure is then employed to derive the fine-structure constant, a coherence-based interpretation of the Boltzmann constant $k_B$, and the seed of an effective gravitational coupling.\cite{Alpha_PDL_v2_2026,Golden_Ratio_Sketch_2026,Effective_Fields_PDL_2026}
+
+The purpose of the present work is to reformulate this proton architecture as a well-posed combinatorial selection problem on signed graphs and to disentangle structurally necessary constraints from phenomenological inputs. We formalise a set of axiomatic and phenomenological constraints on proton-type closures—covering valence multiplicities, quasi-completeness, stationary/dynamical fractions, active-surface characteristics, and global closure—and recast them as conditions on integer parameters and relational counts.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} On this basis, we introduce the notion of an \emph{admissible proton configuration} and define a selection functional $S$ that quantifies the degree to which a given configuration realises the prescribed fractions, constants, coherence properties, and minimality requirements.
+
+We demonstrate that the PDL proton quintuple $(24,28,930,10087,11017)$, together with its associated hierarchical organisation, satisfies all admissibility criteria and achieves a high value of the selection functional within a bounded region of the integer-parameter space.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026} We further articulate an explicit programme for a local combinatorial uniqueness conjecture, asserting that, in a suitable neighbourhood of the PDL proton in parameter space, no other admissible configuration realises a comparable value of $S$.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} While a full proof of uniqueness is not claimed, the paper identifies a precise mathematical target and a concrete search strategy, thereby strengthening the interpretation of the PDL proton architecture as a structurally selected, rather than freely adjustable, element of the framework.
+\end{abstract}
+
+\section{Introduction}
+
+Within the PDL framework, physical reality is formalised as a network of minimal logical closures represented by finite signed graphs, with physically admissible configurations determined via a coherence-oriented optimisation principle.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_French_2026,PDL_Global_Mapping_2026} At the elementary level, the complete signed graph on four vertices and six edges—referred to as the $(4,6)$ block—has been identified as the first minimal stationary closure and is employed as a logical prototype for an electron at rest.\cite{PDL_Main_2026} At the composite level, the proton is described as a hierarchical structure assembled from $(4,6)$-type bricks, consisting of three quasi-stationary valence cores, a dynamic relational sea, and a finite active surface through which the composite closure couples coherently both to an electron-type closure and to the surrounding relational environment.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026}
+
+Within this framework, the specific quintuple of integer parameters
+\[
+ (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}) = (24,28,930,10087,11017)
+\]
+has been proposed as the proton architecture selected by the PDL axioms together with the associated optimisation principle.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} Here, $n_u$ and $n_d$ denote effective valence multiplicities associated with two distinct types of subcores, $r_{\mathrm{val}}$ denotes the number of stationary valence relations, $R_{\mathrm{sea}}$ the number of dynamical sea relations, and $R_{\mathrm{tot}}=r_{\mathrm{val}}+R_{\mathrm{sea}}$ the total number of internal relations.\cite{Combinatorial_Proton_v2_2026} This discrete internal architecture realises a stationary/dynamical partition close to $9/91$ and supports an active surface of effective size $R_{\mathrm{surf}}\approx \varphi r_{\mathrm{val}}/3$. The latter is employed to derive a structural expression for the fine-structure constant and to motivate coherence-based interpretations of $k_B$ and of an effective gravitational coupling.\cite{Alpha_PDL_v2_2026,Golden_Ratio_Sketch_2026,Effective_Fields_PDL_2026,Exponent_18_PDL_2026}
+
+Despite the fact that this proton architecture has already led to several non-trivial numerical and structural correspondences, its status within PDL remains partially conjectural.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} In particular, the existing literature justifies the specific integer values $(24,28,930,10087,11017)$ by combining axiomatic considerations with phenomenological inputs and heuristic optimisation procedures, but it does not yet formulate a fully systematic selection problem, nor does it clearly distinguish between necessary structural constraints and adjustable modelling choices.\cite{PDL_Global_Mapping_2026,PDL_TO_Dialogue_2026} From the perspective of both mathematical physics and the conceptual dialogue with the Theory of Objectivity (TO), it is therefore important to assess the rigidity of this architecture and to clarify to what extent the proton parameters can be interpreted as the outcome of a combinatorial selection mechanism operating within a well-defined space of candidate architectures.\cite{PDL_TO_Dialogue_2026}
+
+The objective of this paper is to address this problem by reformulating the PDL proton architecture as an explicit combinatorial selection problem on signed graphs. Building on Ref.~\cite{Combinatorial_Proton_v2_2026}, we derive a system of axiomatic and phenomenological constraints on proton-type closures, encompassing conditions on valence multiplicities, quasi-completeness, stationary and dynamical fractions, active surface characteristics, and global closure.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} These constraints are subsequently translated into algebraic relations and inequalities involving integer parameters and relational counts, leading to the definition of an \emph{admissible proton configuration} within the associated discrete parameter space. On this basis, we introduce a selection functional $S$ that quantitatively evaluates the extent to which a given configuration realises the required fractions, constants, coherence properties, and minimality criteria.
+
+Our first objective is to demonstrate that the PDL proton quintuplet $(24,28,930,10087,11017)$, together with its corresponding graph architecture, satisfies all admissibility conditions and achieves a high value of the selection functional $S$ for a broad class of reasonable choices of $S$.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026} We then formulate a local combinatorial uniqueness conjecture: within a bounded neighbourhood of this quintuplet in parameter space, and subject to fixed tolerance thresholds for the stationary/dynamical fraction, the active surface relation, and the fine-structure constant, the PDL configuration is the unique admissible configuration that realises a local maximum of $S$.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} Although a proof of this conjecture is beyond the scope of the present work, we outline a concrete search programme—combining analytical reductions with numerical exploration—that can, in principle, lead to its verification or refutation.
+
+The remainder of the paper is organised as follows. Section~\ref{sec:proton_architecture} provides a concise review of the PDL proton hierarchy and its associated integer parameters. In Section~\ref{sec:constraints}, we formalise the axiomatic and phenomenological constraints that admissible proton-type configurations must satisfy. Section~\ref{sec:admissible_selection} introduces the discrete parameter space, the notion of admissible configuration, and the selection functional $S$. In Section~\ref{sec:ref_solution}, we show that the PDL proton quintuplet is admissible and analyse its near-optimality with respect to $S$. Section~\ref{sec:uniqueness_programme} presents the local uniqueness conjectures and details the proposed search strategy. Finally, Section~\ref{sec:discussion} discusses the implications of these results for PDL and outlines directions for future research.
+
+\section{PDL Proton Architecture and Integer Parameters}
+\label{sec:proton_architecture}
+
+In this section, we summarise the qualitative structure of the PDL proton model and establish the notation for the integer parameters that characterise its valence content, relational multiplicities, and stationary/dynamical partition.\cite{PDL_Main_2026,PDL_Intro_2026,Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Review of the PDL proton hierarchy}
+
+Within the PDL framework, the proton is modelled as a hierarchical closure assembled from elementary $(4,6)$ bricks, which themselves realise minimal stationary closures in the sense developed in the companion work on elementary structures.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026} At the proton scale, three principal structural components are distinguished:
+\begin{itemize}
+  \item quasi-stationary valence cores, encoding the effective ``$u$''- and ``$d$''-type contributions to the proton structure;
+  \item a dynamical relational sea, which provides additional degrees of freedom and supports time-asymmetric processes while remaining constrained by the coherence-optimisation principle;
+  \item a finite active surface, consisting of relations that simultaneously separate the internal hierarchy from the environment and mediate coherent couplings to external closures, in particular to an electron-type $(4,6)$ block.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026,Effective_Fields_PDL_2026}
+\end{itemize}
+
+Qualitatively, the valence cores are represented as two ``$u$''-type blocks and one ``$d$''-type block, each constructed from a discrete number of $(4,6)$ bricks and endowed with a high degree of internal triangular coherence.\cite{Combinatorial_Proton_v2_2026} The dynamical sea is described by a large set of additional relations that may fluctuate while preserving the global stability of the proton closure under the PDL optimisation functional.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} The active surface is defined as the minimal envelope of relations that (i) separates the internal architecture from the external environment and (ii) realises the coherent coupling channels associated with electromagnetic interactions and, more speculatively, gravitational effects.\cite{Effective_Fields_PDL_2026,Alpha_PDL_v2_2026}
+
+This hierarchical description provides a discrete analogue of the conventional partonic picture of the proton: the valence cores play the rôle of effective valence quarks; the relational sea encodes sea-type degrees of freedom; and the active surface localises the physically relevant coupling channels.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} In the present work, we do not rely on the detailed microscopic realisation of this hierarchy, but only on the associated integer parameters that count how many relations are allocated to each sector.
+
+\subsection{Valence multiplicities and relational counts}
+
+Following Ref.~\cite{Combinatorial_Proton_v2_2026}, we associate to a proton-type closure the following set of integer-valued parameters:
+\begin{itemize}
+  \item $n_u\in \mathbb{N}$: effective valence multiplicity of the ``$u$''-type cores;
+  \item $n_d\in \mathbb{N}$: effective valence multiplicity of the ``$d$''-type cores;
+  \item $r_{\mathrm{u}} = \dfrac{n_u(n_u-1)}{2}$: number of internal relations within the $u$-type core(s) under the assumption that they form quasi-complete subgraphs;
+  \item $r_{\mathrm{d}} = \dfrac{n_d(n_d-1)}{2}$: number of internal relations within the $d$-type core(s) under the same quasi-completeness assumption;
+  \item $r_{\mathrm{val}} = 2 r_{\mathrm{u}} + r_{\mathrm{d}}$: total number of stationary valence relations;
+  \item $R_{\mathrm{sea}}\in \mathbb{N}$: number of dynamical sea relations;
+  \item $R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}}$: total number of internal relations in the proton closure.
+\end{itemize}
+
+Within the PDL proton model, a specific quintuplet of integer parameters
+\begin{equation}
+ (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}) = (24,28,930,10087,11017)
+ \label{eq:PDL_proton_quintuplet}
+\end{equation}
+has been identified as simultaneously satisfying a broad set of structural and phenomenological constraints.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} For this choice of parameters, the derived quantities are
+\[
+ r_{\mathrm{u}} = \frac{24\cdot 23}{2} = 276, \qquad
+ r_{\mathrm{d}} = \frac{28\cdot 27}{2} = 378, \qquad
+ r_{\mathrm{val}} = 2r_{\mathrm{u}} + r_{\mathrm{d}} = 2\cdot 276 + 378 = 930,
+\]
+and
+\[
+ R_{\mathrm{sea}} = 10087, \qquad R_{\mathrm{tot}} = 11017.
+\]
+The stationary and dynamical fractions of internal relations are therefore given by
+\[
+ f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}}
+ \approx 0.0845, \qquad
+ f_{\mathrm{dyn}} = 1 - f_{\mathrm{stat}} \approx 0.9155,
+\]
+which is numerically close to a $9/91$ partition. This specific splitting will be used in subsequent analyses, where it acquires a central role in the interpretation of effective thermodynamic quantities.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026,Effective_Fields_PDL_2026}
+
+In addition, the admissible values of the effective number of active surface relations, $R_{\mathrm{surf}}$, are constrained by the requirement that $R_{\mathrm{surf}}$ realise a simple rational multiple of $r_{\mathrm{val}}$ involving the golden ratio $\varphi$. In typical configurations this constraint takes the form
+\begin{equation}
+ R_{\mathrm{surf}} \approx \frac{\varphi}{3}\, r_{\mathrm{val}},
+ \label{eq:Rsurf_scaling}
+\end{equation}
+subject to a small integer tolerance.\cite{Golden_Ratio_Sketch_2026,Alpha_PDL_v2_2026} This relation is then employed to derive a structural expression for the fine-structure constant, which reproduces the empirical value of $\alpha$ with a relative accuracy of order $10^{-4}$, without the introduction of continuous fit parameters.\cite{Alpha_PDL_v2_2026}
+
+The present work does not introduce any additional integer parameters beyond those defined in Eq.~\eqref{eq:PDL_proton_quintuplet}. Instead, the emphasis is placed on formulating the constraints that these integers must satisfy for a proton-type closure to be admissible within PDL, and on reformulating the selection of the PDL quintuplet as a discrete optimisation problem.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\section{Axiomatic and Phenomenological Constraints}
+\label{sec:constraints}
+
+In this section, we summarise the structural and phenomenological conditions that a proton-type closure is required to satisfy within the PDL framework. These constraints are adapted from Ref.~\cite{Combinatorial_Proton_v2_2026} and from the global synthesis of PDL architectures presented in Ref.~\cite{PDL_Global_Mapping_2026}. For clarity of exposition, we organise them into four categories, respectively associated with valence cores, stationary and dynamical fractions, active surface characteristics, and global closure properties.
+
+\subsection{Valence cores and multiplicity constraints}
+
+The first class of constraints pertains to the valence content and the internal organisation of the quasi-stationary cores.
+
+\begin{itemize}
+  \item[(C1)] \textbf{Valence core structure.} The proton closure is postulated to consist of three valence cores, two of type ``$u$'' and one of type ``$d$''. Each core is constructed from a discrete number of $(4,6)$ bricks and is designed to sustain a high degree of internal triangular coherence.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026}
+  \item[(C2)] \textbf{Multiplicity in tetrads.} The effective multiplicities $n_u$ and $n_d$ are constrained to be integer multiples of $4$, reflecting that each core is assembled from tetrads of $(4,6)$ blocks and thereby maintaining consistency with the underlying $(4,6)$ architecture.\cite{Combinatorial_Proton_v2_2026}
+  \item[(C3)] \textbf{Quasi-completeness of valence cores.} The internal valence relation counts $r_{\mathrm{u}}$ and $r_{\mathrm{d}}$ are required to be close to the complete-graph values $n_u(n_u-1)/2$ and $n_d(n_d-1)/2$, respectively. This condition ensures that the cores are quasi-complete and can support an internal pulsation with minimal dependence on the dynamical sea.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026}
+  \item[(C4)] \textbf{Charge asymmetry and net charge.} The difference $n_u - n_d$ is constrained so that the resulting proton closure carries a net electric charge of $+1$ when coupled to an electron-type $(4,6)$ block. At the same time, the asymmetry between $n_u$ and $n_d$ must remain moderate so as not to compromise the optimisation of internal coherence.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+
+Collectively, these conditions express the requirement that the valence sector is simultaneously constrained by the $(4,6)$ building-block structure and sufficiently structured to realise an effective $uud$ configuration consistent with proton phenomenology.
+
+\subsection{Stationary versus dynamical fractions}
+
+The second class of constraints governs the distribution of internal relations between stationary valence cores and the dynamical sea.
+
+\begin{itemize}
+  \item[(C5)] \textbf{Stationary and dynamical counts.} The total number of internal relations is given by $R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}}$, where $r_{\mathrm{val}}$ is fixed by $n_u$ and $n_d$ via $r_{\mathrm{val}} = 2r_{\mathrm{u}} + r_{\mathrm{d}}$, and $R_{\mathrm{sea}}$ enumerates all remaining internal relations.\cite{Combinatorial_Proton_v2_2026}
+  \item[(C6)] \textbf{Stationary/dynamical fraction.} The stationary fraction
+  \[
+   f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}}
+  \]
+  is required to lie within a specified tolerance interval around a target value, typically chosen to be close to $9/91$. Equivalently, the dynamical fraction $f_{\mathrm{dyn}} = 1 - f_{\mathrm{stat}}$ is constrained to fall within the corresponding interval.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+  \item[(C7)] \textbf{Compatibility with coherence optimisation.} The selected values of $r_{\mathrm{val}}$ and $R_{\mathrm{sea}}$ must permit the resulting proton closure to be realised as a local maximiser of the PDL coherence functional. In particular, the partition of stationary and dynamical relations must not induce an excessively large fraction of violated triangles or precipitate a loss of closure.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+
+Constraint (C6) encapsulates the empirical success of the PDL proton architecture in reproducing both quantum and thermodynamic structures, whereas (C7) guarantees that this partitioning remains compatible with the underlying relational optimisation principles.
+
+\subsection{Active surface and fine-structure constant}
+
+The third family of constraints concerns the characterization of the active surface and its rôle in the structural derivation of the fine-structure constant.
+
+\begin{itemize}
+  \item[(C8)] \textbf{Existence of a finite active surface.} There must exist a finite subset of internal relations, with an effective size denoted $R_{\mathrm{surf}}$, that can be identified as an active surface. This surface separates the internal hierarchical organization from the external environment and supports coherent couplings to an electron-type $(4,6)$ closure.\cite{Effective_Fields_PDL_2026,Combinatorial_Proton_v2_2026}
+  \item[(C9)] \textbf{Golden-ratio scaling of the surface.} The size $R_{\mathrm{surf}}$ must approximately satisfy a simple scaling relation of the form
+  \[
+   R_{\mathrm{surf}} \approx \frac{\varphi}{3}\, r_{\mathrm{val}},
+  \]
+  where $\varphi$ denotes the golden ratio, within a prescribed integer tolerance $\delta_{\mathrm{surf}}$.\cite{Golden_Ratio_Sketch_2026,Alpha_PDL_v2_2026}
+  \item[(C10)] \textbf{Structural reproduction of the fine-structure constant.} Given $R_{\mathrm{surf}}$, $r_{\mathrm{val}}$, and an experimentally determined mass ratio $\mu$, the structurally defined expression for the fine-structure constant $\alpha_{\PDL}$, associated with the proton–electron coupling, must match the empirical value of $\alpha$ to within a specified relative tolerance $\delta_{\alpha}$, typically of order $10^{-4}$.\cite{Alpha_PDL_v2_2026}
+\end{itemize}
+
+Collectively, these constraints require that the active surface not only exist, but also be quantitatively constrained such that the PDL proton architecture reproduces the observed value of the fine-structure constant without invoking continuous fit parameters.
+
+\subsection{Global closure and optimisation}
+
+We conclude by imposing two global constraints that formalise the autonomy and near-optimality of the proton closure.
+
+\begin{itemize}
+  \item[(C11)] \textbf{Autonomous closure and connectivity.} The proton graph is required to be connected and logically autonomous: all relations necessary to define and maintain the distinctness of the proton as a closure must be internal to the structure, with no implicit dependence on external vertices. More precisely, the union of all coherent triangles is required to constitute a connected covering of the internal vertex set.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+  \item[(C12)] \textbf{Near-optimality with respect to the PDL functional.} The global coherence properties of the proton graph, including the fraction of violated triangles and the relational density at each level of the hierarchy, must be such that the resulting configuration is close to a local maximiser of the PDL optimisation functional $F$ over a suitably defined class of proton-type graphs.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+
+Constraint (C11) ensures that the proton may be regarded as a well-defined logical entity within the encompassing relational network, whereas (C12) encodes the hypothesis that physically realised protons correspond to near-optimal closures under the PDL selection principle, rather than to arbitrary composite graphs.
+
+In the subsequent section, these constraints are reformulated as algebraic conditions on integer-valued parameters, and the notion of an admissible proton configuration is introduced within the associated discrete parameter space.\cite{Combinatorial_Proton_v2_2026}
+
+\section{Admissible Proton Configurations and Selection Functional}
+\label{sec:admissible_selection}
+
+We now reformulate the constraints introduced in Section~\ref{sec:constraints} as conditions on integer-valued parameters and relational count variables, and we introduce a selection functional that quantitatively assesses the degree to which a given configuration satisfies the prescribed structural and combinatorial properties.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Integer parameter space and fundamental identities}
+
+We consider ordered integer tuples of the form
+\[
+ (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})\in \mathbb{N}^5,
+\]
+together with the associated derived quantities
+\[
+ r_{\mathrm{u}} = \frac{n_u(n_u-1)}{2}, \qquad
+ r_{\mathrm{d}} = \frac{n_d(n_d-1)}{2}, \qquad
+ r_{\mathrm{val}} = 2r_{\mathrm{u}} + r_{\mathrm{d}},
+\]
+and
+\[
+ R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}}.
+\]
+We impose fixed upper bounds $N_{\max}$ and $R_{\max}$ and restrict attention to tuples satisfying
+\[
+ 0 < n_u \leq N_{\max}, \qquad 0 < n_d \leq N_{\max}, \qquad
+ 0 < r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}} \leq R_{\max}.
+\]
+The specific numerical values of $N_{\max}$ and $R_{\max}$ are to be chosen in accordance with the relevant physical scales and/or computational constraints; for example, Ref.~\cite{Combinatorial_Proton_v2_2026} employs bounds of the order of a few hundred.\cite{Combinatorial_Proton_v2_2026}
+
+For any admissible tuple we define the stationary and dynamical fractions,
+\[
+ f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}}, \qquad
+ f_{\mathrm{dyn}} = 1 - f_{\mathrm{stat}} = \frac{R_{\mathrm{sea}}}{R_{\mathrm{tot}}},
+\]
+as well as an effective surface size $R_{\mathrm{surf}}$, whenever a distinguished active surface can be identified in the corresponding graph realisation.\cite{Combinatorial_Proton_v2_2026,Effective_Fields_PDL_2026}
+
+\subsection{Definition of admissible configurations}
+
+We now aggregate the constraints (C1)–(C12) into a single admissibility criterion for proton-type integer tuples.
+
+\begin{definition}[Admissible proton configuration]
+\label{def:admissible_config}
+Fix tolerance parameters
+\[
+ \delta_{\mathrm{tetrad}}>0,\quad
+ \delta_f>0,\quad
+ \delta_{\mathrm{surf}}>0,\quad
+ \delta_{\alpha}>0,
+\]
+and prescribe target values $f_{\mathrm{stat}}^{\mathrm{target}}$ and $\alpha^{\mathrm{exp}}$. An integer tuple $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$ admitting at least one graph realisation of proton type is called an \emph{admissible proton configuration} if the following conditions are satisfied:
+\begin{enumerate}
+  \item[(A1)] (\emph{Valence multiplicities}) The integers $n_u$ and $n_d$ are multiples of $4$, and the valence edge count $r_{\mathrm{val}}$ is compatible with quasi-complete core structures in the sense that
+  \[
+   \left|r_{\mathrm{val}} - \left(2\frac{n_u(n_u-1)}{2} + \frac{n_d(n_d-1)}{2}\right)\right| \leq \delta_{\mathrm{tetrad}}.
+  \]
+  \item[(A2)] (\emph{Stationary/dynamical partition}) The stationary fraction $f_{\mathrm{stat}} = r_{\mathrm{val}}/R_{\mathrm{tot}}$ satisfies the proximity condition
+  \[
+   \left|f_{\mathrm{stat}} - f_{\mathrm{stat}}^{\mathrm{target}}\right| \leq \delta_f.
+  \]
+  \item[(A3)] (\emph{Active surface}) There exists an active surface of effective size $R_{\mathrm{surf}}$ such that
+  \[
+   \left| R_{\mathrm{surf}} - \frac{\varphi}{3}\, r_{\mathrm{val}} \right| \leq \delta_{\mathrm{surf}}.
+  \]
+  \item[(A4)] (\emph{Fine-structure constant}) The PDL structural approximation $\alpha_{\PDL}$, constructed from $r_{\mathrm{val}}$, $R_{\mathrm{surf}}$, and the empirical mass ratio $\mu$, reproduces the empirical fine-structure constant $\alpha^{\mathrm{exp}}$ within relative tolerance:
+  \[
+   \left|\frac{\alpha_{\PDL} - \alpha^{\mathrm{exp}}}{\alpha^{\mathrm{exp}}}\right| \leq \delta_{\alpha}.
+  \]
+  \item[(A5)] (\emph{Global closure and coherence}) There exists at least one graph realisation of the tuple as a proton-type closure that is connected, logically autonomous in the sense of (C11), and realises a local maximum of the PDL coherence functional $F$ within the class of graphs generated from the specified integer parameters.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+\end{enumerate}
+\end{definition}
+
+Definition~\ref{def:admissible_config} thereby isolates the combinatorial core of the PDL proton architecture: admissible tuples are precisely those that can support proton-type graph realisations satisfying the multiplicity, fraction, surface, fine-structure, and closure constraints within the prescribed tolerances.\cite{Combinatorial_Proton_v2_2026}
+
+\subsection{Effective selection functional on integer tuples}
+
+We now introduce a selection functional $S$ that quantifies the extent to which a given admissible configuration realises the prescribed target properties.
+
+\begin{definition}[Selection functional]
+\label{def:selection_functional}
+Let $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$ denote an admissible proton configuration with associated quantities $f_{\mathrm{stat}}$, $R_{\mathrm{surf}}$, $\alpha_{\PDL}$, and a representative proton graph $G$. We define the \emph{selection functional} $S$ by
+\[
+ S = w_f\, S_f + w_{\alpha}\, S_{\alpha} + w_{\mathrm{coh}}\, S_{\mathrm{coh}} + w_{\mathrm{min}}\, S_{\mathrm{min}},
+\]
+where $w_f, w_{\alpha}, w_{\mathrm{coh}}, w_{\mathrm{min}}\geq 0$ are fixed weights, and
+\begin{itemize}
+  \item $S_f$ quantifies the fidelity of the stationary/dynamical fraction, for example,
+  \[
+   S_f = 1 - \frac{\left|f_{\mathrm{stat}} - f_{\mathrm{stat}}^{\mathrm{target}}\right|}{\delta_f},
+  \]
+  truncated to the interval $[0,1]$;
+  \item $S_{\alpha}$ quantifies the agreement of $\alpha_{\PDL}$ with the empirical fine-structure constant $\alpha^{\mathrm{exp}}$, for example,
+  \[
+   S_{\alpha} = 1 - \frac{1}{\delta_{\alpha}}
+   \left|\frac{\alpha_{\PDL} - \alpha^{\mathrm{exp}}}{\alpha^{\mathrm{exp}}}\right|,
+  \]
+  truncated to $[0,1]$;
+  \item $S_{\mathrm{coh}}$ measures the coherence quality of the representative graph $G$, for instance via
+  \[
+   S_{\mathrm{coh}} = 1 - \Gamma(G),
+  \]
+  or via a more refined functional dependence on the violation fraction and relational density;\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+  \item $S_{\mathrm{min}}$ encodes a preference for minimality, for example,
+  \[
+   S_{\mathrm{min}} = \frac{1}{1 + \kappa R_{\mathrm{tot}}},
+  \]
+  with $\kappa>0$, such that configurations with smaller total relation counts are favoured whenever they realise comparable values of $S_f$, $S_{\alpha}$ and $S_{\mathrm{coh}}$.\cite{Combinatorial_Proton_v2_2026}
+\end{itemize}
+We say that an admissible configuration is \emph{selected} (or selection-optimal) if it realises a local maximum of $S$ within a prescribed bounded domain of integer parameters.
+\end{definition}
+
+The precise functional form of $S$ and the choice of weights $w_f, w_{\alpha}, w_{\mathrm{coh}}, w_{\mathrm{min}}$ are not unique.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} The essential requirement is that $S$ aggregates, in a controlled and transparent manner, the principal structural and phenomenological desiderata: an appropriate stationary/dynamical fraction, compatibility with the empirical fine-structure constant, high coherence quality, and a systematic bias towards minimal relational complexity.
+
+In the next section, we evaluate these criteria for the PDL proton quintuplet \eqref{eq:PDL_proton_quintuplet} and analyse its status as an admissible and selection-optimal configuration within a bounded parameter domain.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026}
+
+\section{The PDL Proton Quintuplet as an Admissible and Selected Configuration}
+\label{sec:ref_solution}
+
+We now consider the specific PDL proton quintuplet
+\[
+ (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}) = (24,28,930,10087,11017)
+\]
+and demonstrate that it fulfills the admissibility criteria stated in Definition~\ref{def:admissible_config}. Subsequently, we analyze its status with respect to the selection functional $S$ introduced in Definition~\ref{def:selection_functional}.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Verification of constraints for \texorpdfstring{$(24,28,930,10087,11017)$}{(24,28,930,10087,11017)}}
+
+We begin by verifying the structural constraints (A1)–(A2) of Definition~\ref{def:admissible_config} for the PDL proton parameter quintuplet.
+
+\medskip
+\noindent\textbf{Valence multiplicities (A1).} For the PDL proton we have $n_u=24$ and $n_d=28$, both divisible by $4$, and thus the tetrad condition is fulfilled.\cite{Combinatorial_Proton_v2_2026} The associated quasi-complete core edge counts are
+\[
+ r_{\mathrm{u}} = \frac{24\cdot 23}{2} = 276, \qquad
+ r_{\mathrm{d}} = \frac{28\cdot 27}{2} = 378,
+\]
+so that
+\[
+ r_{\mathrm{val}}^{\mathrm{core}} = 2r_{\mathrm{u}} + r_{\mathrm{d}} = 2\cdot 276 + 378 = 930.
+\]
+The PDL architecture assigns $r_{\mathrm{val}}=930$, hence
+\[
+ \left|r_{\mathrm{val}} - r_{\mathrm{val}}^{\mathrm{core}}\right| = 0,
+\]
+and the quasi-completeness requirement is satisfied with $\delta_{\mathrm{tetrad}}=0$.\cite{Combinatorial_Proton_v2_2026}
+
+\medskip
+\noindent\textbf{Stationary/dynamical split (A2).} With $R_{\mathrm{sea}}=10087$ and $R_{\mathrm{tot}}=11017$, the stationary fraction is
+\[
+ f_{\mathrm{stat}} = \frac{930}{11017} \approx 0.0845, \qquad
+ f_{\mathrm{dyn}} \approx 0.9155.
+\]
+In Ref.~\cite{Combinatorial_Proton_v2_2026}, this value is compared with a target splitting $f_{\mathrm{stat}}^{\mathrm{target}} \approx 9/106 \approx 0.0849$, or, in a more heuristic formulation, with a $9/91$-type ratio after an appropriate rescaling.\cite{PDL_Global_Mapping_2026} For reasonable choices of the tolerance parameter $\delta_f$ (e.g.\ $\delta_f \sim 5\times 10^{-3}$), the PDL value of $f_{\mathrm{stat}}$ lies comfortably within the admissible interval.
+
+\medskip
+\noindent\textbf{Global closure and coherence (A5).} Explicit PDL constructions demonstrate the existence of graph realisations of the proton based on the quintuplet \eqref{eq:PDL_proton_quintuplet} that are connected, logically autonomous, and compatible with a local maximum of the PDL coherence functional. In particular, the violation fraction $\Gamma$ is small, and any further addition or removal of relations leads to a deterioration of the optimisation score.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} Although a fully rigorous optimisation analysis remains to be completed, these constructions provide substantial evidence that condition (A5) is satisfied for the PDL proton.
+
+\subsection{Active surface, golden ratio, and fine-structure constant}
+
+We now consider the constraints (A3)–(A4), which pertain to the active surface and the fine-structure constant.
+
+\medskip
+\noindent\textbf{Active surface (A3).} Within the PDL proton framework, an effective active surface of magnitude
+\[
+ R_{\mathrm{surf}} \approx 502
+\]
+is identified by decomposing the internal relational structure into bulk and surface contributions in such a way that internal closure is balanced against external coupling.\cite{Combinatorial_Proton_v2_2026,Effective_Fields_PDL_2026} Using the valence radius $r_{\mathrm{val}}=930$, the following golden-ratio scaling relation is obtained:
+\[
+ \frac{\varphi}{3}\, r_{\mathrm{val}} \approx \frac{1.618\ldots}{3}\times 930 \approx 502,
+\]
+which is satisfied to within a single unit:
+\[
+ \left| R_{\mathrm{surf}} - \frac{\varphi}{3}\, r_{\mathrm{val}} \right| \leq 1.
+\]
+This agreement is well within a natural small-integer tolerance, for example $\delta_{\mathrm{surf}}=2$.\cite{Golden_Ratio_Sketch_2026,Alpha_PDL_v2_2026}
+
+\medskip
+\noindent\textbf{Fine-structure constant (A4).} The structural representation of the fine-structure constant $\alpha_{\PDL}$, derived from the PDL proton architecture together with the electron $(4,6)$ block, can be expressed in terms of $r_{\mathrm{val}}$, $R_{\mathrm{surf}}$, and the empirical proton–electron mass ratio $\mu$.\cite{Alpha_PDL_v2_2026} For the quintuplet \eqref{eq:PDL_proton_quintuplet} and the associated active surface size $R_{\mathrm{surf}}$, this yields
+\[
+ \alpha_{\PDL}^{-1} \approx 137.02,
+\]
+which is consistent with the empirical value $\alpha^{-1} \approx 137.036$ to within a relative accuracy on the order of $10^{-4}$.\cite{Alpha_PDL_v2_2026,PDL_Global_Mapping_2026} Consequently, for a tolerance $\delta_{\alpha}$ of this magnitude, the PDL proton configuration satisfies condition (A4).
+
+In combination, these results imply that the PDL proton quintuplet \eqref{eq:PDL_proton_quintuplet} fulfills all admissibility criteria (A1)–(A5) for plausible choices of the tolerance parameters and therefore constitutes an admissible proton configuration in the sense of Definition~\ref{def:admissible_config}.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Near-optimality of the PDL configuration for the selection functional}
+
+We now analyse the behaviour of the selection functional $S$ on the PDL proton configuration.
+
+\begin{proposition}[High selection score for the PDL proton]
+\label{prop:high_S_PDL}
+Let $S$ be a selection functional as in Definition~\ref{def:selection_functional}, with weights $w_f, w_{\alpha}, w_{\mathrm{coh}}, w_{\mathrm{min}}\geq 0$ that assign non-negligible importance to the stationary fraction, the fine-structure constant, and coherence quality. Then, within a bounded domain of integer parameters containing the PDL proton quintuplet \eqref{eq:PDL_proton_quintuplet}, the configuration $(24,28,930,10087,11017)$ attains a selection score $S$ that is close to the maximal score observed in currently known PDL constructions.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+\end{proposition}
+
+\begin{proof}[Sketch of argument]
+By construction, the PDL proton configuration realises:
+\begin{itemize}
+  \item a stationary fraction $f_{\mathrm{stat}}$ within the prescribed tolerance of the target value, implying $S_f\approx 1$;\cite{Combinatorial_Proton_v2_2026}
+  \item an effective fine-structure constant $\alpha_{\PDL}$ whose relative deviation from the empirical value is of order $10^{-4}$, yielding $S_{\alpha}\approx 1$ for tolerances of the same order;\cite{Alpha_PDL_v2_2026}
+  \item a representative graph with a small violation fraction $\Gamma$ and high relational density, such that $S_{\mathrm{coh}}$ is close to its maximal attainable value;\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+  \item a total relation count $R_{\mathrm{tot}}=11017$ that does not appear to admit a significant reduction without compromising one or more of the above properties, so that $S_{\mathrm{min}}$ remains competitive with that of other candidates in the same domain.\cite{Combinatorial_Proton_v2_2026}
+\end{itemize}
+Consequently, the aggregated score
+\[
+ S = w_f\, S_f + w_{\alpha}\, S_{\alpha} + w_{\mathrm{coh}}\, S_{\mathrm{coh}} + w_{\mathrm{min}}\, S_{\mathrm{min}}
+\]
+is close to the largest values obtained in numerical and heuristic explorations of neighbouring parameter choices reported in Ref.~\cite{Combinatorial_Proton_v2_2026}. A rigorous proof that this configuration is a strict local maximiser of $S$ within a prescribed domain would require an exhaustive evaluation of all admissible tuples in that domain, which lies beyond the scope of this sketch. Nevertheless, the currently available computational and combinatorial evidence supports the conclusion that the PDL proton configuration achieves a high selection score and constitutes a natural candidate for a local optimum of $S$.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+\end{proof}
+
+Proposition~\ref{prop:high_S_PDL} does not establish uniqueness, but it strengthens the interpretation of the PDL proton architecture as a structurally selected configuration within a non-trivial discrete landscape, rather than as a freely adjustable modelling ansatz.\cite{Combinatorial_Proton_v2_2026}
+
+\section{Local Uniqueness Conjecture and Search Programme}
+\label{sec:uniqueness_programme}
+
+Having established that the PDL proton quintuplet is admissible and attains a high selection score, we now formulate a local combinatorial uniqueness conjecture and outline a systematic search programme designed to test it.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Bounded search domains and tolerance parameters}
+
+To render the uniqueness problem mathematically well-posed and computationally manageable, we restrict attention to a bounded domain in the underlying integer parameter space. Specifically, we impose
+\[
+ n_u \in [4,N_{\max}],\quad
+ n_d \in [4,N_{\max}],\quad
+ r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}} \in [1,R_{\max}],
+\]
+with $N_{\max}$ and $R_{\max}$ fixed a priori. For definiteness, one may adopt values such as $N_{\max}\sim 64$ and $R_{\max}\sim 2\times 10^4$, which comfortably accommodate the PDL proton parameters while ensuring that the search space remains finite.\cite{Combinatorial_Proton_v2_2026}
+
+In addition, we fix tolerance parameters $\delta_{\mathrm{tetrad}}$, $\delta_f$, $\delta_{\mathrm{surf}}$, and $\delta_{\alpha}$, as in Definition~\ref{def:admissible_config}, together with a target stationary fraction $f_{\mathrm{stat}}^{\mathrm{target}}$ and the empirical value $\alpha^{\mathrm{exp}}$. These quantities collectively specify the admissibility criteria and quantify the required accuracy with which a given configuration must reproduce the PDL structural and phenomenological characteristics.\cite{PDL_Global_Mapping_2026}
+
+\subsection{Neighbourhoods and local uniqueness conjecture}
+
+To restrict attention to configurations that lie in a controlled vicinity of the PDL proton in parameter space, we introduce the following notion of neighbourhood.
+
+\begin{definition}[Neighbourhood of the PDL proton]
+\label{def:neighbourhood}
+Fix integers $\Delta_n>0$ and $\Delta_R>0$. The \emph{neighbourhood} $\mathcal{N}_{\Delta_n,\Delta_R}$ of the PDL proton quintuplet $(24,28,930,10087,11017)$ is defined as the set of all integer tuples $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$ that satisfy
+\[
+ |n_u - 24| \leq \Delta_n,\quad
+ |n_d - 28| \leq \Delta_n,\quad
+ |r_{\mathrm{val}} - 930| \leq \Delta_R,\quad
+ |R_{\mathrm{sea}} - 10087| \leq \Delta_R,\quad
+ |R_{\mathrm{tot}} - 11017| \leq \Delta_R.
+\]
+\end{definition}
+
+The neighbourhood $\mathcal{N}_{\Delta_n,\Delta_R}$ thus constrains the analysis to configurations whose integer parameters deviate from those of the PDL proton by at most prescribed tolerances.\cite{Combinatorial_Proton_v2_2026} Within this restricted region of parameter space, it is natural to ask whether additional admissible configurations occur and, if so, how their selection scores compare quantitatively with that of the PDL proton.
+
+\begin{conjecture}[Local combinatorial uniqueness of the PDL proton]
+\label{conj:local_uniqueness}
+Fix tolerance parameters $\delta_{\mathrm{tetrad}}$, $\delta_f$, $\delta_{\mathrm{surf}}$, and $\delta_{\alpha}$, and choose strictly positive weights $w_f,w_{\alpha},w_{\mathrm{coh}},w_{\mathrm{min}}>0$ for the selection functional $S$. Then there exist bounds $N_{\max},R_{\max},\Delta_n,\Delta_R$ such that, within the neighbourhood $\mathcal{N}_{\Delta_n,\Delta_R}$ and subject to the admissibility conditions of Definition~\ref{def:admissible_config}, the PDL proton configuration $(24,28,930,10087,11017)$ is:
+\begin{enumerate}
+  \item[(i)] either the unique admissible configuration; or
+  \item[(ii)] the unique admissible configuration that realises a strict local maximum of the selection functional $S$.
+\end{enumerate}
+\end{conjecture}
+
+Conjecture~\ref{conj:local_uniqueness} naturally decomposes into two variants: a strong form (i), asserting the absence of any other admissible tuples in the neighbourhood, and a weaker form (ii), which permits the existence of additional admissible tuples but requires that none attain a selection score that locally competes with, or equals, that of the PDL proton.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Numerical and analytical strategies}
+
+The investigation of Conjecture~\ref{conj:local_uniqueness} necessitates a combined use of analytical reductions and systematic numerical analysis.
+
+From an analytical perspective, one can exploit the integer relations linking $n_u$, $n_d$, and $r_{\mathrm{val}}$, together with the stationary fraction constraint (A2) and the golden-ratio scaling condition (A3), to reduce the dimensionality of the parameter space and to derive bounds on admissible deviations from the PDL values.\cite{Combinatorial_Proton_v2_2026} For instance, the requirement that $n_u$ and $n_d$ be multiples of $4$ already discretises the search over multiplicities, while the identity $R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}}$ constrains the remaining degrees of freedom by coupling the associated counts.
+
+From a numerical perspective, a staged procedure can be adopted:
+\begin{itemize}
+  \item enumerate all tuples in $\mathcal{N}_{\Delta_n,\Delta_R}$ that satisfy the purely algebraic components of (A1)–(A2), i.e.\ the multiplicity and stationary fraction constraints;
+  \item for each admissible tuple, attempt to construct a proton-type graph realisation and determine whether there exists an active surface compatible with (A3)–(A4);\cite{Combinatorial_Proton_v2_2026,Effective_Fields_PDL_2026}
+  \item approximate the coherence quality $S_{\mathrm{coh}}$ and the minimality score $S_{\mathrm{min}}$ for these realisations, and subsequently compute the aggregate selection score $S$;
+  \item compare these scores to that of the PDL proton configuration and identify whether any alternative admissible tuples achieve comparable or superior values of $S$.
+\end{itemize}
+
+Even partial implementations of this programme, restricted to moderate values of $\Delta_n$ and $\Delta_R$, can yield informative evidence regarding the conjecture.\cite{Combinatorial_Proton_v2_2026} The absence of competing configurations within a substantial neighbourhood of the PDL values would reinforce the interpretation of the PDL proton architecture as a locally unique optimum, whereas the identification of alternative high-scoring candidates would either call this interpretation into question or motivate refinements of the underlying selection criteria.
+
+\section{Discussion and Outlook}
+\label{sec:discussion}
+
+In this work, we have reformulated the PDL proton architecture as an explicit combinatorial selection problem on signed graphs with associated integer parameters. Building on previous analyses, we specified a set of structural and phenomenological constraints on proton-type closures, translated these into conditions on the quintuplet $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$, and introduced the notion of an admissible configuration.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} We then defined a selection functional $S$ that combines stationary-fraction fidelity, agreement with the fine-structure constant, coherence quality, and a minimality bias. Within a bounded parameter domain, we showed that the PDL proton quintuplet $(24,28,930,10087,11017)$ satisfies all admissibility conditions and attains a high value of the selection functional $S$.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026}
+
+On this basis, we proposed a local combinatorial uniqueness conjecture: in a suitably defined neighbourhood of the PDL proton in parameter space, and under fixed tolerance thresholds, the PDL configuration is expected to be either the unique admissible tuple or the unique tuple realising a strict local maximum of the selection functional $S$.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} Although we do not attempt to prove this conjecture here, we outlined a search strategy that combines analytical constraints with systematic numerical exploration and that can, in principle, be used to confirm or refute the conjecture.
+
+The present analysis complements the companion study on minimal stationary closures, in which the $(4,6)$ block is identified as the first elementary stationary closure selected by the PDL axioms, and it further supports the claim that both the electron prototype and the proton architecture are structurally constrained rather than freely adjustable.\cite{PDL_Main_2026,PDL_Intro_2026} Taken together with the structural derivations of Born’s rule, the fine-structure constant, and effective dynamical equations, these results lend support to the hypothesis that a substantial fraction of observed microphysical structure can be derived from a small set of relational axioms supplemented by discrete optimisation principles.\cite{Born_Golden_v2_2026,Gleason_PDL_2026,Alpha_PDL_v2_2026,Schrodinger_PDL_v2_2026,Einstein_Dirac_PDL_2026}
+
+Future work will aim to refine the definition of the selection functional, extend the uniqueness analysis to larger regions of parameter space and to other nucleonic architectures, and establish a more direct connection between the combinatorial selection framework and empirical observables beyond the fine-structure constant, including nuclear mass systematics and scattering data.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026} From a conceptual perspective, the interplay between PDL and the Theory of Objectivity motivates further questions regarding the modal status of such combinatorially selected structures and the extent to which they can be regarded as necessary features of any admissible universe in the sense of TO.\cite{PDL_TO_Dialogue_2026}
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References}
+
+\end{document}

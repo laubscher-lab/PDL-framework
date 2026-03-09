@@ -1,0 +1,525 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}{Remark}
+
+\title{On the Combinatorial Selection of the Proton Architecture in PDL\\
+Axiomatic Constraints, Integer Structures, and a Uniqueness Conjecture}
+
+\author{C.\ Laubscher\\
+{\small Independent researcher}}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We analyse in detail the combinatorial foundations of the proton architecture proposed within the Projective Dynamic Logo (PDL) framework. In earlier studies, PDL has been employed to derive a minimal $(4,6)$ stationary closure serving as a prototype for a rest-frame electron, and to construct a hierarchical proton configuration characterised by three valence cores with multiplicities $n_u=24$ and $n_d=28$, a stationary valence content $r_{\mathrm{val}}=930$, a dynamical relational sea of cardinality $R_{\mathrm{sea}}=10\,087$, and a total relational content $R_{\mathrm{tot}}=11\,017$.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026} This discrete configuration implies a stationary-to-dynamical content ratio of approximately $9\%/91\%$ and underpins structural representations of the fine-structure constant, Boltzmann’s constant, and an effective gravitational coupling, each expressed in terms of the same restricted set of integers together with the proton–electron mass ratio.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026} In particular, the fine-structure constant is interpreted as an active-surface coherence fraction $\alpha_{\mathrm{PDL}} = \mu / R_{\mathrm{surf}}^{2}$, with the PDL proton realising $R_{\mathrm{surf}} = \varphi r_{\mathrm{val}}/3$ for valence content $r_{\mathrm{val}} = 930$ and golden ratio $\varphi = (1+\sqrt{5})/2$.\cite{LaubscherDerivationAlpha2026} The mathematical status of these integers, however, remains only partially elucidated: although they are tightly constrained by the PDL axioms and associated optimisation principles, their uniqueness within a rigorously specified combinatorial domain has not yet been formally demonstrated.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026}
+
+The present paper constitutes an initial step toward narrowing this gap. We formulate explicit axiomatic and phenomenological constraints on admissible proton architectures within PDL, encompassing divisibility conditions on valence multiplicities, specifications for stationary versus dynamical fractions, active-surface definitions linked to the fine-structure constant, and bounds obtained from coherence optimisation.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026} On this basis, we reformulate the selection of the proton integers as an integer-combinatorics problem on signed graphs and introduce a rigorous notion of admissible configuration. We then demonstrate that the currently employed quintuplet $(24,28,930,10\,087,11\,017)$ satisfies all constraints simultaneously and reproduces the established PDL-based numerical correspondences, thereby substantiating its distinguished role within the framework.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherDerivationAlpha2026} Finally, we propose a conjecture of combinatorial uniqueness for this quintuplet under the stated constraints and outline both analytical and computational methodologies for its verification. The outcome is not a proof, but rather a mathematically structured problem formulation that can be pursued in subsequent research in graph theory and mathematical physics.
+\end{abstract}
+
+\section*{Version note}
+In this version, the structural representation of the fine-structure constant associated with the PDL proton has been aligned with the updated convention adopted in the dedicated derivation of $\alpha_{\mathrm{PDL}}$ and in the Schrödinger–PDL compatibility analysis.
+Rather than taking the closed-form expression
+\[
+\alpha_{\mathrm{PDL}}^{-1} = \mu\,\varphi^{2}\,\frac{r_{\mathrm{val}}^{2}}{9}
+\]
+as the primary relation, we now regard
+\[
+\alpha_{\mathrm{PDL}} = \frac{\mu}{R_{\mathrm{surf}}^{2}}
+\]
+as the fundamental active-surface expression, where $\mu = m_p/m_e$ denotes the proton–electron mass ratio and $R_{\mathrm{surf}}$ is the active surface of the PDL proton.
+The golden-ratio hypothesis $R_{\mathrm{surf}} = \varphi\,r_{\mathrm{val}}/3$ (with $r_{\mathrm{val}} = 930$ and $\varphi = (1+\sqrt{5})/2$) is then treated as a secondary geometric specialisation, which recasts the above into
+\[
+\alpha_{\mathrm{PDL}} = \mu\,\frac{9}{\varphi^{2} r_{\mathrm{val}}^{2}},
+\]
+and yields $\alpha_{\mathrm{PDL}}^{-1} \simeq 137.02$ in agreement with experiment.
+All references to the fine-structure constant in the present article should therefore be read through this two-step interpretation: a primary active-surface relation, followed by a specific golden-ratio parametrisation of $R_{\mathrm{surf}}$ for the PDL proton.
+
+\section{Introduction}
+Contemporary fundamental physics is grounded in a set of highly successful theoretical frameworks, most prominently quantum field theory and general relativity. However, when these frameworks are extrapolated to extreme regimes—such as Planck-scale phenomena, strong-gravity environments, or the early universe—they exhibit significant conceptual tensions. In these domains, foundational notions including space, time, energy, and even that of a well-defined physical state become increasingly difficult to formulate in a self-consistent and operationally meaningful way.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026} In such regimes, mere incremental refinements of existing models appear insufficient; instead, it becomes necessary to re-examine the very preconditions and structural assumptions underlying model construction.
+
+The Projective Dynamic Logo (PDL) programme proposes to address this problem by adopting an upstream, relational approach. Rather than positing an a priori spacetime manifold populated by fields and particles, PDL represents physical reality as a network of minimal logical closures encoded by finite signed graphs. In these graphs, edges implement binary agreement/disagreement relations, and admissible configurations are selected by a coherence-oriented optimisation functional.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026} Four axioms—minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation—constrain the class of admissible signed graphs in such a way that closed, reproducible cycles can emerge. Under these axioms, the first admissible elementary stationary configuration is given by the complete signed graph on four vertices and six edges, denoted $(4,6)$. This configuration admits (i) a coherent sign assignment on all triangular subgraphs and (ii) a global binary pulsation that preserves this coherence throughout the evolution.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026} Within the PDL framework, the $(4,6)$ structure is interpreted as a logical prototype of an electron at rest, with the reduced Planck constant $\hbar$ reinterpreted as the minimal action associated with one internal coherence cycle.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026}
+
+At a higher level of organisational complexity, PDL posits a specific hierarchical internal architecture for the proton. Rather than modelling the proton as a structureless degree of freedom, this framework introduces an arrangement comprising three local stationary domains (“valence cores”), each constructed from superpositions of $(4,6)$ blocks, embedded within a dense relational sea and terminating at a finite active surface that mediates the coupling to an external $(4,6)$ electron structure.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026} A concrete realisation of this architecture employs two up-type valence cores of size $n_u=24$ and one down-type core of size $n_d=28$, yielding a total stationary valence content $r_{\mathrm{val}}=930$, a dynamical sea of $R_{\mathrm{sea}}=10\,087$ relations, and a total relational content $R_{\mathrm{tot}}=11\,017$.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026} This corresponds to a stationary–dynamical partition of approximately $9\%/91\%$, which is in qualitative accord with the QCD-based picture in which only a small fraction of the proton mass is attributed to valence degrees of freedom.\cite{LaubscherIMRadPDL2026,AmslerQCDProton} Within this discrete relational architecture, several dimensionless constants acquire a unified structural interpretation: the fine-structure constant $\alpha$ is interpreted as an active-surface coherence fraction, \[ \alpha_{\mathrm{PDL}} = \frac{\mu}{R_{\mathrm{surf}}^{2}}, \] where $\mu = m_p/m_e$ denotes the proton–electron mass ratio and $R_{\mathrm{surf}}$ is the protonic active surface; for the PDL proton, this surface is further specified by the golden-ratio relation $R_{\mathrm{surf}} = \varphi r_{\mathrm{val}}/3$.\cite{LaubscherDerivationAlpha2026} Boltzmann’s constant $k_B$ is related to the dynamical fraction together with a leakage parameter, and an effective gravitational coupling is associated with a hierarchically amplified coherence leakage.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026,LaubscherExponent18PDL2026} 
+
+In this construction, the integers $(24,28,930,10\,087,11\,017)$ are of central structural significance. They are not introduced as ad hoc fitting parameters but emerge from a combinatorial optimisation problem subject to explicit constraints: divisibility of valence multiplicities by four, near-maximal internal coherence of quark-like cores, a prescribed stationary–dynamical partition, a net charge of $+1$, and the requirement that the same architectural choice supports the structural representation of $\alpha$ in terms of $r_{\mathrm{val}}$, the proton–electron mass ratio $\mu=m_p/m_e$, and the golden ratio $\varphi$.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026,LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026} Numerical investigations reported in previous studies suggest that even modest perturbations of these integer values typically violate at least one of the imposed constraints or disrupt the concurrent agreement with empirical constants.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026} However, the existing literature has not yet recast this observation as a fully formalised mathematical problem; the asserted uniqueness and rigidity of the selected integers therefore remain, at this stage, a strongly constrained but still informal claim.
+
+The purpose of the present paper is to render this aspect of PDL explicit and mathematically tractable. Our objective is not to deliver a complete proof that the proton architecture $(24,28,930,10\,087,11\,017)$ is uniquely determined by the PDL axioms. Rather, we aim to (i) specify rigorously the constraints that any admissible proton configuration is required to satisfy, (ii) reformulate the selection of these integers as a problem in integer combinatorics on signed graphs, and (iii) advance a precise conjecture of combinatorial uniqueness that may be addressed by subsequent analytical or computational investigations. In doing so, we locate the proton architecture at the interface between relational physics and discrete mathematics, thereby providing a systematic point of entry for graph theorists and mathematical physicists interested in testing or refining the PDL framework. 
+
+The paper is structured as follows. Section~\ref{sec:background} provides a concise review of the PDL framework, with emphasis on the minimal $(4,6)$ structure and the hierarchical proton model, and introduces the notation for valence multiplicities, relational counts, and active surfaces. Section~\ref{sec:constraints} formalizes the axiomatic and phenomenological conditions that characterize an admissible proton architecture, including multiplicity constraints, stationary and dynamical fractions, active-surface requirements associated with the fine-structure constant, and qualitative coherence criteria. Section~\ref{sec:comb_problem} formulates the induced integer-combinatorics problem and defines the notion of admissible configuration in a mathematically precise manner. In Section~\ref{sec:current_solution}, we demonstrate that the PDL proton architecture $(24,28,930,10\,087,11\,017)$ simultaneously satisfies all constraints and reproduces the known structural expressions for $\alpha$ and related quantities, thereby justifying its interpretation as a distinguished solution. Section~\ref{sec:conjecture} then states a conjecture of combinatorial uniqueness for this quintuplet under the prescribed constraints and outlines analytical and computational methodologies for testing it, ranging from arithmetic reductions of the search space to exhaustive classification within bounded domains. Finally, Section~\ref{sec:discussion} examines the implications of such a uniqueness result for the status of PDL as a foundational framework and identifies directions for future mathematical and physical research.
+
+\section{Background on PDL and Proton Architecture}
+\label{sec:background}
+
+\subsection{Minimal stationary closure and the \texorpdfstring{$(4,6)$}{(4,6)} block}
+Within the PDL framework, logical configurations are formalised as finite signed graphs $G=(V,E,s)$, where $V$ denotes a finite set of vertices (informational entities), $E \subseteq \{\{i,j\} \mid i,j \in V,\, i\neq j\}$ is a set of undirected edges (binary relations), and $s:E\to\{-1,+1\}$ assigns a sign to each edge.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026} Triangles, i.e.\ simple cycles of length three, function as elementary closure motifs: for any unordered triple $\{i,j,k\}\subset V$, the triangle on $i,j,k$ is said to be present if all three edges $\{i,j\}$, $\{j,k\}$, and $\{i,k\}$ are elements of $E$, and it is said to be coherent if the product of the corresponding edge signs satisfies $s_{ij}s_{jk}s_{ik}=+1$.\cite{LaubscherPDLFull2026,LaubscherLDP2026} Triangles that are either absent or violate this sign condition are termed violated. The fraction of violated triangles, denoted $\eta(G)$, provides a quantitative index of the deviation from perfect triangular coherence.\cite{LaubscherPDLFull2026}
+
+In addition to coherence, PDL imposes requirements of logical autonomy and minimal completeness. An elementary stationary structure is defined as a finite signed graph that is connected and complete, admits at least one sign assignment with $\eta(G)=0$, has its coherent triangles forming a single connected block, exhibits structural equivalence of all vertices (i.e.\ no intrinsic hierarchical differentiation), and supports a global binary pulsation $s\mapsto -s$ that leaves coherence invariant.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026} Among all such configurations, a logical optimisation functional $F(\eta,\rho,m)$ selects graphs that minimise the fraction of violated triangles, maximise the (normalised) relational density $\rho$, and satisfy a minimality indicator $m=1$ precisely when the structure is closed without dependence on any strictly larger superstructure.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026}
+
+Within this class, the first non-trivial elementary stationary structure selected by the axioms together with the optimisation principle is the complete signed graph on four vertices and six edges, denoted $(4,6)$.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026} There exists an assignment of signs to the six edges such that all triangular subgraphs are coherent, the union of these coherent triangles covers the entire graph and forms a single connected block, and a global inversion of all signs generates a period‑2 orbit in the associated sign space that leaves the underlying coherence pattern invariant.\cite{LaubscherPDLFull2026,LaubscherLDP2026} The $(4,6)$ configuration thereby realises a minimal closed regime of logical coherence: all distinctions required to individuate the four informational entities are internally represented, and the structure is self-sufficient in the sense of minimal logical completeness.
+
+Within the PDL (Process‑Domain Logic) framework, this $(4,6)$ block is interpreted as a logical prototype of an electron at rest.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026} The global binary pulsation then provides an intrinsic internal clock, and the reduced Planck constant $\hbar$ is reinterpreted as the minimal quantum of action necessary to sustain one full coherence cycle of this structure. The electron rest energy $E_{0,e}=m_ec^2$ is correspondingly interpreted as the coherence cost per unit emergent time required to maintain the $(4,6)$ closure, and the standard relation $E_{0,e}=\hbar\omega_e$ is read as expressing the action per internal cycle in this relational description.\cite{LaubscherLDP2026,LaubscherIMRadPDL2026}
+
+\subsection{Hierarchical structure of the proton}
+Whereas a single $(4,6)$ block suffices as an effective prototype for the electron, the internal structure of the proton is known from quantum chromodynamics (QCD) to exhibit substantially greater complexity. In QCD, three valence quarks are coupled through a strongly non-perturbative gluon field, together with a highly dynamical sea of virtual quark–antiquark pairs, and the bare valence-quark masses contribute only a small fraction of the total proton mass.\cite{AmslerQCDProton} The PDL proton model aims to represent this richness within a purely combinatorial setting by introducing a hierarchical signed-graph architecture in which multiple $(4,6)$-type stationary domains are embedded into a dynamical relational background.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026}
+
+More specifically, the proton is modelled as a two-tier structure consisting of three local stationary domains, termed valence cores, together with a densely connected sea of dynamical relations.\cite{LaubscherPDLFull2026,LaubscherLDP2026} Each valence core is described as a superposition of logical tetrads assembled from $(4,6)$ blocks and is constrained to satisfy internal completeness and near-maximal triangular coherence, while remaining free of any internal hierarchical ordering. Subject to these constraints, and imposing the global requirement of a net electric charge $+1$, a specific assignment of valence multiplicities is selected: two up-type cores, each comprising $n_u=24$ informational entities, and one down-type core with $n_d=28$ entities.\cite{LaubscherPDLFull2026,LaubscherLDP2026}
+
+For a valence core comprising \(n\) constituents and represented as a complete graph, the number of internal relations is given by
+\[
+r(n) = \frac{n(n-1)}{2}.
+\]
+For \(n_u = 24\) and \(n_d = 28\), the corresponding numbers of stationary relations are \(r_u = 276\) and \(r_d = 378\), respectively, leading to a total stationary valence content
+\begin{equation}
+r_{\mathrm{val}} = 2\,r_u + r_d = 2 \times 276 + 378 = 930.
+\end{equation}
+This stationary valence sector is augmented by a large ensemble of dynamical relations forming a “relational sea” with cardinality
+\begin{equation}
+R_{\mathrm{sea}} = 10\,087,
+\end{equation}
+such that the total internal relational content of the proton becomes
+\begin{equation}
+R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}} = 930 + 10\,087 = 11\,017.
+\end{equation}
+The corresponding stationary and dynamical fractions,
+\begin{equation}
+f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}} \approx 0.09, 
+\qquad 
+f_{\mathrm{dyn}} = \frac{R_{\mathrm{sea}}}{R_{\mathrm{tot}}} \approx 0.91,
+\end{equation}
+are consistent with the qualitative expectation from quantum chromodynamics (QCD) that only a subdominant fraction of the proton’s mass is associated with valence degrees of freedom, while the predominant contribution emerges from gluonic fields and sea-quark dynamics.\cite{AmslerQCDProton,LaubscherIMRadPDL2026}
+
+Within this hierarchical configuration, the valence cores provide a quasi-rigid structural backbone that encodes a substantial fraction of the proton’s internal coherence budget, whereas the relational sea constitutes a highly dynamical environment capable of reconfiguring subject to global closure and coherence-optimisation constraints.\cite{LaubscherPDLFull2026,LaubscherLDP2026} This decomposition into comparatively stationary and strongly dynamical sectors will later be exploited to define, respectively, potential-like and kinetic-like contributions within effective descriptions. In the present context, however, it primarily motivates the introduction of distinct integer parameters $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$, which are treated as structural invariants of the proton in the PDL framework.
+
+\subsection{Active surface and structural fine-structure constant}
+The interaction between the protonic hierarchy and an external $(4,6)$ electron prototype does not engage all internal protonic relations uniformly. Instead, it is mediated by a finite subset of proton–proton relations that can participate in coherent mixed triangles with the $(4,6)$ block without increasing the global fraction of violated triangles.\cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026} This motivates the notion of an active surface, defined as the minimal relational envelope through which the proton can coherently couple to an electron-type closure while preserving global coherence.
+
+More precisely, an internal proton edge is termed active if there exists at least one vertex of an external $(4,6)$ structure such that the three edges connecting this vertex to the two endpoints of the proton edge form a coherent triangle whose inclusion does not increase the overall violation fraction in the combined proton–electron graph.\cite{LaubscherDerivationAlpha2026} The collection of all such edges defines the active surface $S_{\mathrm{act}}$, and its cardinality $R_{\mathrm{surf}}=|S_{\mathrm{act}}|$ quantifies the number of protonic relations that remain available for coherent coupling once internal closure constraints have been imposed.
+
+Under a set of structured hypotheses governing the redistribution of coherence from the valence sector to the effective surface—most prominently the introduction of the golden ratio $\varphi$ as a relational optimisation factor—the active surface is parametrised in terms of the valence content as
+\begin{equation}
+R_{\mathrm{surf}} \approx \varphi\,\frac{r_{\mathrm{val}}}{3},
+\end{equation}
+which gives $R_{\mathrm{surf}}\approx 501.6$ for $r_{\mathrm{val}}=930$ and $\varphi=(1+\sqrt{5})/2$.\cite{LaubscherDerivationAlpha2026,LaubscherGoldenRatioPDL2026} Within this framework, the fine-structure constant is reinterpreted as a surface-to-volume coherence fraction associated with the protonic active surface.
+The primary structural ansatz is taken to be
+\begin{equation}
+\alpha_{\mathrm{PDL}} = \frac{\mu}{R_{\mathrm{surf}}^{2}},
+\label{eq:alphaPrimaryComb}
+\end{equation}
+where $\mu = m_p/m_e$ denotes the proton–electron mass ratio and $R_{\mathrm{surf}}$ is the cardinality of the active surface $S_{\mathrm{act}}$.
+Under the golden-ratio optimisation hypothesis, the active surface is expressed in terms of the valence content as
+\begin{equation}
+R_{\mathrm{surf}} = \varphi\,\frac{r_{\mathrm{val}}}{3},
+\label{eq:RsurfGoldenComb}
+\end{equation}
+with $r_{\mathrm{val}} = 930$ and $\varphi = (1+\sqrt{5})/2$.\cite{LaubscherDerivationAlpha2026}
+Combining Eqs.~\eqref{eq:alphaPrimaryComb} and~\eqref{eq:RsurfGoldenComb} yields
+\begin{equation}
+\alpha_{\mathrm{PDL}} = \mu\,\frac{9}{\varphi^{2} r_{\mathrm{val}}^{2}},
+\label{eq:alphaValenceComb}
+\end{equation}
+which numerically evaluates to
+$\alpha_{\mathrm{PDL}} \simeq 7.299\times 10^{-3}$,
+equivalently
+$\alpha_{\mathrm{PDL}}^{-1} \simeq 137.02$,
+in very good agreement with the empirical value $\alpha \simeq 7.297\times 10^{-3}$ (or $\alpha^{-1} \simeq 137.036$).\cite{LaubscherDerivationAlpha2026}
+
+In the present work, this construction of $\alpha$ is not re-derived or refined; instead, it is adopted as part of the structural background within which the proton integers are to be analysed. The key observation is that the same integer quintuplet $(24,28,930,10\,087,11\,017)$ that specifies the valence and sea architecture also determines $R_{\mathrm{surf}}$ and thus enters the structural expression for $\alpha$. Any alternative candidate architecture must therefore not only satisfy the combinatorial and coherence constraints outlined above, but also retain the numerical accuracy of the PDL-based fine-structure constant. This coupling between discrete integer parameters and continuous physical constants motivates the combinatorial uniqueness problem formulated in the subsequent sections.
+
+\section{Axiomatic and Phenomenological Constraints}
+\label{sec:constraints}
+
+In this section, we make explicit the constraints that any admissible proton architecture must satisfy within the PDL framework. These conditions encapsulate, in a compact form, the logical, combinatorial, and phenomenological requirements that govern the choice of valence multiplicities, relational counts, and active-surface structure proposed in previous work.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026,LaubscherLDP2026,LaubscherDerivationAlpha2026} Throughout, we regard as structural invariants of a candidate proton architecture the integers
+\begin{equation}
+(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}),
+\end{equation}
+together with derived quantities such as the stationary and dynamical fractions and the active surface $R_{\mathrm{surf}}$.
+
+\subsection{Valence blocks and multiplicity constraints}
+
+The first group of constraints concerns the internal organisation of the valence sector, which in PDL is represented as three quasi-stationary cores corresponding, at an effective level, to the $(u,u,d)$ valence content of the proton.\cite{LaubscherPDLFull2026,LaubscherLDP2026} The constraints can be formulated as follows.
+
+\medskip
+\noindent\textbf{C1 (Three valence cores).} A candidate proton architecture contains three distinguished valence cores, two of type $u$ and one of type $d$, embedded in a larger signed-graph structure that also includes a dynamical relational sea. The valence sector is therefore characterised by multiplicities $n_u$ and $n_d$, denoting the numbers of informational entities associated with up-type and down-type cores, respectively.
+
+\medskip
+\noindent\textbf{C2 (Tetrad composition and divisibility by four).} Each valence core is constructed as a superposition of elementary tetrads based on the $(4,6)$ stationary closure. Consequently, the number of vertices in each core must be a multiple of $4$,
+\begin{equation}
+n_u \in 4\mathbb{N},\qquad n_d \in 4\mathbb{N}.
+\end{equation}
+This expresses the requirement that valence cores admit a decomposition into minimal stationary units compatible with the PDL axioms.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026}
+
+\medskip
+\noindent\textbf{C3 (Internal completeness and near-maximal coherence).} For a given pair $(n_u,n_d)$, each valence core is modelled, to leading order, as a complete graph on $n_u$ or $n_d$ vertices, respectively. The associated numbers of stationary relations are
+\begin{equation}
+r_u = \frac{n_u(n_u-1)}{2},\qquad r_d = \frac{n_d(n_d-1)}{2},
+\end{equation}
+and the total stationary valence content is
+\begin{equation}
+r_{\mathrm{val}} = 2\,r_u + r_d.
+\end{equation}
+The completeness assumption encodes internal closure and high triangular coherence within each valence core, consistent with the optimisation of the functional $F$.\cite{LaubscherPDLFull2026,LaubscherLDP2026} In practice, small deviations from exact completeness may be tolerated, but any admissible architecture must remain within a prescribed tolerance of near-maximal relational density and minimal violation fraction in the valence sector.
+
+\medskip
+\noindent\textbf{C4 (Net charge and mild asymmetry).} The multiplicities $(n_u,n_d)$ must be compatible with a net electric charge $+1$ when combined with an electron-type $(4,6)$ structure and with the assignment of effective charges to valence cores inherited from the $(u,u,d)$ composition. Furthermore, the difference $|n_u-n_d|$ is required to remain moderate, in order to avoid introducing a pronounced intrinsic asymmetry between up-type and down-type cores that would be at odds with the absence of an internal hierarchy at the level of local optimisation.\cite{LaubscherLDP2026,LaubscherIMRadPDL2026} In the currently adopted architecture, this requirement is realised by the choice $(n_u,n_d)=(24,28)$.
+
+\subsection{Stationary versus dynamical fractions}
+
+The second group of constraints encodes the empirical observation, inherited from quantum chromodynamics (QCD), that only a small fraction of the proton’s rest mass can be attributed to valence degrees of freedom, whereas the dominant contribution arises from gluonic and sea-quark components.\cite{AmslerQCDProton} Within PDL, this empirical input is implemented as conditions on the relative weights of stationary and dynamical relational content.
+
+\medskip
+\noindent\textbf{C5 (Stationary and dynamical counts).} The proton architecture is postulated to include a dynamical relational sea with cardinality $R_{\mathrm{sea}}$, such that the total number of internal relations is
+\begin{equation}
+R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}}.
+\end{equation}
+The integers $R_{\mathrm{sea}}$ and $R_{\mathrm{tot}}$ are required to be large compared to $r_{\mathrm{val}}$, encoding the dominance of dynamical over stationary relations.
+
+\medskip
+\noindent\textbf{C6 (Fractional partition $9\%/91\%$ within tolerance).} The stationary fraction
+\begin{equation}
+f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}}
+\end{equation}
+and the dynamical fraction $f_{\mathrm{dyn}} = 1 - f_{\mathrm{stat}}$ are constrained to lie within a prescribed tolerance of the target values $f_{\mathrm{stat}}^{\ast}\approx 0.09$ and $f_{\mathrm{dyn}}^{\ast}\approx 0.91$. More precisely, for a given tolerance parameter $\delta_f>0$, we impose
+\begin{equation}
+|f_{\mathrm{stat}} - f_{\mathrm{stat}}^{\ast}| \leq \delta_f,\qquad |f_{\mathrm{dyn}} - f_{\mathrm{dyn}}^{\ast}| \leq \delta_f.
+\end{equation}
+For the reference architecture $(r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})=(930,10\,087,11\,017)$, the resulting fractions are $f_{\mathrm{stat}}\simeq 0.0845$ and $f_{\mathrm{dyn}}\simeq 0.9155$, compatible with $\delta_f$ of order a few percent.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026}
+
+\medskip
+\noindent\textbf{C7 (Compatibility with coherence optimisation).} The inclusion of an extensive dynamical sea must remain compatible with the global optimisation of the functional $F$. Specifically, the introduction of $R_{\mathrm{sea}}$ additional relations must not increase the global fraction of violated triangles by more than a small tolerance relative to a purely stationary configuration of comparable size, and it must preserve logical autonomy and closure at the proton level.\cite{LaubscherPDLFull2026,LaubscherLDP2026} In the present work, this requirement is formulated qualitatively, but it can in principle be sharpened by recasting it as explicit bounds on the violation fraction $\eta(G)$ for admissible architectures.
+
+\subsection{Active surface and fine-structure constant}
+
+The third group of constraints encodes the requirement that an identical proton architecture underlies the structural representation of the fine-structure constant $\alpha$. This entails the introduction of an \emph{active surface} and the specification of its relationship to the proton–electron mass ratio.
+
+\medskip
+\noindent\textbf{C8 (Definition of the active surface).} Consider an admissible proton architecture with valence content $r_{\mathrm{val}}$ and a distinguished electron-type $(4,6)$ structure. We define the active surface $S_{\mathrm{act}}$ as the set of proton–proton edges that can participate in at least one coherent mixed triangle involving a vertex of the $(4,6)$ block, such that the inclusion of this triangle does not increase the global violation fraction when the proton and electron graphs are combined.\cite{LaubscherDerivationAlpha2026} The cardinality $R_{\mathrm{surf}}=|S_{\mathrm{act}}|$ is required to be finite and strictly smaller than $R_{\mathrm{tot}}$.
+
+\medskip
+\noindent\textbf{C9 (Core-to-surface redistribution and golden ratio).} The redistribution of coherence from the valence cores to the active surface is constrained by a relational optimisation principle, which selects the golden ratio $\varphi=(1+\sqrt{5})/2$ as the preferred optimisation factor.\cite{LaubscherGoldenRatioPDL2026} Under these assumptions, the size of the active surface is approximated by
+\begin{equation}
+R_{\mathrm{surf}} \approx \varphi\,\frac{r_{\mathrm{val}}}{3}.
+\end{equation}
+Any admissible architecture must therefore support an active surface whose cardinality is consistent with this expression to within a prescribed tolerance $\delta_{\mathrm{surf}}$,
+\begin{equation}
+\left|R_{\mathrm{surf}} - \varphi\,\frac{r_{\mathrm{val}}}{3}\right| \leq \delta_{\mathrm{surf}}.
+\end{equation}
+In the reference case $r_{\mathrm{val}}=930$, this relation yields $R_{\mathrm{surf}}\approx 501.6$, which is interpreted as an effective number of active surface relations.\cite{LaubscherDerivationAlpha2026}
+
+\medskip
+\noindent\textbf{C10 (Structural expression for the fine-structure constant).} Let $\mu=m_p/m_e$ denote the empirically determined proton–electron mass ratio. For a given candidate architecture, we introduce a structural expression for the inverse fine-structure constant,
+\begin{equation}
+\alpha_{\mathrm{PDL}}(\mu,r_{\mathrm{val}},R_{\mathrm{surf}}) = \frac{\mu}{R_{\mathrm{surf}}^{2}}.
+\end{equation}
+We impose the requirement that this quantity reproduce the empirical value $\alpha_{\mathrm{exp}}^{-1}\approx 137.036$ within a specified relative tolerance $\delta_{\alpha}$,
+\begin{equation}
+\left|\frac{\alpha_{\mathrm{PDL}}^{-1}-\alpha_{\mathrm{exp}}^{-1}}{\alpha_{\mathrm{exp}}^{-1}}\right| \leq \delta_{\alpha}.
+\end{equation}
+For the parameter choice $(r_{\mathrm{val}},R_{\mathrm{surf}})=(930,\varphi r_{\mathrm{val}}/3)$, one obtains $\alpha_{\mathrm{PDL}}^{-1}\approx 137.02$, which is compatible with a tolerance $\delta_{\alpha}$ of order $10^{-4}$.\cite{LaubscherDerivationAlpha2026}
+
+\subsection{Additional Coherence and Optimisation Conditions}
+
+In addition, admissible architectures must respect the conceptual content of the PDL axioms and of the associated optimisation functional at the full nucleon scale, rather than only within the individual valence cores. A complete specification of these requirements would entail a detailed graph-theoretic analysis; here we merely single out two broad classes of conditions that will play a role in the subsequent discussion.
+
+\section{Formal Combinatorial Problem}
+\label{sec:comb_problem}
+
+Having assembled the axiomatic and phenomenological constraints C1–C12, we now reformulate the selection of the proton integers as an explicit combinatorial problem on signed graphs. The purpose of this section is not to provide a solution to the problem, but to formulate it precisely and to introduce a rigorous notion of admissible configuration that will support the uniqueness conjecture stated later.
+
+\subsection{Parameter Space and Admissible Configurations}
+
+We begin by specifying the discrete parameter space on which candidate proton architectures are defined. A configuration is characterised by an integer quintuple
+\begin{equation}
+\Pi = (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})
+\end{equation}
+together with a choice of signed-graph realisation consistent with these integers. The integers are required to satisfy the basic combinatorial identities
+\begin{equation}
+r_u = \frac{n_u(n_u-1)}{2},\qquad r_d = \frac{n_d(n_d-1)}{2},\qquad r_{\mathrm{val}} = 2\,r_u + r_d,\qquad R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}},
+\end{equation}
+with $n_u,n_d \in 4\mathbb{N}$ as imposed by C2.\cite{LaubscherPDLFull2026,LaubscherLDP2026} Furthermore, we restrict attention to parameter ranges that are both physically and combinatorially plausible. For example, we impose the bounds
+\begin{equation}
+4 \leq n_u \leq N_{\max},\qquad 4 \leq n_d \leq N_{\max},\qquad r_{\mathrm{val}} \leq R_{\max},\qquad R_{\mathrm{tot}} \leq R_{\max},
+\end{equation}
+where $N_{\max}$ and $R_{\max}$ are fixed cutoffs chosen so as to include all architectures of interest in the vicinity of the reference values $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{tot}})=(24,28,930,11\,017)$, while excluding configurations that are substantially larger or smaller than would be compatible with the observed proton mass and spatial extension.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026}
+
+Within this parameter space, admissibility is defined as follows.
+
+\begin{definition}[Admissible proton configuration]
+A proton configuration $\Pi=(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$ is said to be admissible if and only if there exists a finite signed graph $G_{\mathrm{p}}$ and an embedding of three valence cores together with a relational sea in $G_{\mathrm{p}}$ such that:
+\begin{enumerate}[label=(A\arabic*)]
+\item The multiplicities $n_u,n_d$ satisfy $n_u,n_d\in 4\mathbb{N}$ and give rise to valence cores whose internal graphs are complete (or near-complete within a prescribed tolerance) on $n_u$ and $n_d$ vertices, with total stationary valence content $r_{\mathrm{val}}=2r_u+r_d$, as required by C1–C3.
+\item The graph $G_{\mathrm{p}}$ contains a dynamical relational sea of $R_{\mathrm{sea}}$ edges, so that the total number of internal relationships is $R_{\mathrm{tot}}=r_{\mathrm{val}}+R_{\mathrm{sea}}$, and the stationary/dynamical fractions satisfy the tolerance bounds specified in C5–C7.
+\item The combined proton graph $G_{\mathrm{p}}$ is logically autonomous and closed in the sense of C11: it is connected, has sufficiently high relational density, and does not depend on external vertices or edges to maintain its internal distinctions.
+\item When coupled to an electron-type $(4,6)$ structure $G_{\mathrm{e}}$, the union $G_{\mathrm{p}}\cup G_{\mathrm{e}}$ admits an active surface $S_{\mathrm{act}}$ whose cardinality $R_{\mathrm{surf}}$ satisfies the core-to-surface relation of C9 within tolerance, and induces a structural inverse fine-structure constant $\alpha_{\mathrm{PDL}}^{-1}=\mu R_{\mathrm{surf}}^{2}$ that meets the numerical requirement of C10.
+\item The global configuration, including valence cores, relational sea, and active surface, yields a value of the optimisation functional $F(\eta,\rho,m)$ that lies within a prescribed neighbourhood of the maximal value attained by any configuration in the parameter range under consideration, in accordance with C12.
+\end{enumerate}
+\end{definition}
+
+This definition formalises the intuitive requirement that an admissible configuration must concurrently satisfy the PDL axioms, reproduce the empirically determined stationary/dynamical partition of the proton, and support the structural derivation of $\alpha$ within prescribed tolerance bounds. It is intentionally expressed as an existence condition: for a given integer tuple $\Pi$, admissibility demands the existence of at least one signed-graph realisation that fulfils the aforementioned criteria.
+
+Operationally, one may introduce families of tolerances $(\delta_f,\delta_{\mathrm{surf}},\delta_{\alpha})$ and $(\delta_{\eta},\delta_{F})$ that regulate, respectively, the permissible deviations in stationary/dynamical fractions, active-surface size, the fine-structure constant, violation fraction, and optimisation functional. The admissible set depends explicitly on these tolerance parameters; imposing stricter tolerances reduces the cardinality of the admissible set, whereas relaxing them increases the range of admissible configurations.
+
+\subsection{Definition of the selection functional}
+
+Although the notion of admissibility already incorporates many of the qualitative features of the PDL selection principle, it is convenient to introduce a simplified selection functional that makes explicit the comparison of different integer tuples. In the present work, we do not attempt to replicate the full structure of the optimisation functional $F(\eta,\rho,m)$ employed at the foundational level.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026} Instead, we define an effective functional $\mathcal{S}$ on the space of integer tuples together with their associated graph realisations, which aggregates into a single scalar quantity the principal constraints of Section~\ref{sec:constraints}.
+
+Let $\Pi$ denote a candidate configuration endowed with a signed-graph realisation satisfying conditions (A1)–(A5). We define
+\begin{equation}
+\mathcal{S}(\Pi) = w_f\,\Phi_f(\Pi) + w_{\alpha}\,\Phi_{\alpha}(\Pi) + w_{\mathrm{coh}}\,\Phi_{\mathrm{coh}}(\Pi) + w_{\mathrm{min}}\,\Phi_{\mathrm{min}}(\Pi),
+\end{equation}
+where $w_f,w_{\alpha},w_{\mathrm{coh}},w_{\mathrm{min}}>0$ are fixed weights of comparable order of magnitude, and the constituent terms are specified as follows.
+
+\begin{itemize}
+\item $\Phi_f(\Pi)$ quantifies the fidelity of the stationary/dynamical partition:
+\begin{equation}
+\Phi_f(\Pi) = 1 - \frac{1}{2}\left(\frac{|f_{\mathrm{stat}}-f_{\mathrm{stat}}^{\ast}|}{\delta_f} + \frac{|f_{\mathrm{dyn}}-f_{\mathrm{dyn}}^{\ast}|}{\delta_f}\right),
+\end{equation}
+clipped to the interval $(-\infty,1]$. Thus, $\Phi_f\simeq 1$ when the stationary and dynamical fractions lie within the prescribed tolerance of their target values and decreases as they deviate from these targets.
+
+\item $\Phi_{\alpha}(\Pi)$ measures the accuracy of the structural fine-structure constant:
+\begin{equation}
+\Phi_{\alpha}(\Pi) = 1 - \frac{1}{\delta_{\alpha}}\,\left|\frac{\alpha_{\mathrm{PDL}}^{-1}-\alpha_{\mathrm{exp}}^{-1}}{\alpha_{\mathrm{exp}}^{-1}}\right|,
+\end{equation}
+again clipped from above by $1$. Configurations that reproduce $\alpha$ within the desired relative tolerance satisfy $\Phi_{\alpha}\simeq 1$.
+
+\item $\Phi_{\mathrm{coh}}(\Pi)$ encodes the global coherence quality, for example via
+\begin{equation}
+\Phi_{\mathrm{coh}}(\Pi) = 1 - \frac{\eta(G_{\mathrm{p}})}{\delta_{\eta}},
+\end{equation}
+where $\eta(G_{\mathrm{p}})$ denotes the violation fraction of the proton graph and $\delta_{\eta}$ specifies the admissible scale of violations. This contribution penalises configurations that exhibit substantially reduced triangular coherence relative to the reference architecture.
+
+\item $\Phi_{\mathrm{min}}(\Pi)$ is a minimality indicator designed to favour architectures that cannot be decomposed into smaller closed substructures without loss of admissibility. For instance, one may define $\Phi_{\mathrm{min}}(\Pi)=1$ if the proton graph contains no proper subgraph that satisfies the same constraints with strictly fewer relations, and $\Phi_{\mathrm{min}}(\Pi)=0$ otherwise, thereby mirroring the role of $m$ in the original functional $F$.\cite{LaubscherPDLFull2026,LaubscherLDP2026}
+\end{itemize}
+
+The specific functional forms introduced above are neither asserted to be unique nor regarded as definitive. They are proposed as a minimal formal apparatus to encode the intuition that the realised proton architecture should be not only admissible, but also approximately optimal—within the class of admissible configurations—according to a trade-off between the following criteria: (i) reproduction of the stationary and dynamical fractions, (ii) reproduction of the fine-structure constant, (iii) preservation of a high degree of coherence, and (iv) avoidance of superfluous combinatorial redundancy.
+
+\begin{definition}[Selected configuration]
+Given fixed tolerance parameters and weights, a configuration $\Pi$ is called selected if it is admissible and if $\mathcal{S}(\Pi)$ attains a local maximum over the admissible set within the parameter domain specified by $N_{\max}$ and $R_{\max}$.
+\end{definition}
+
+In this terminology, the currently employed proton architecture
+\begin{equation}
+\Pi_{\mathrm{ref}} = (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}) = (24,28,930,10\,087,11\,017)
+\end{equation}
+is postulated to be a selected configuration: it is admissible in the sense of (A1)–(A5) and realises a comparatively large value of $\mathcal{S}$ relative to neighbouring integer tuples. The central problem examined in the subsequent sections is whether $\Pi_{\mathrm{ref}}$ is, in an appropriate sense, the unique selected configuration within the parameter space under consideration.
+
+\section{The PDL Proton Architecture as a Distinguished Solution}
+\label{sec:current_solution}
+
+In this section we demonstrate that the reference proton architecture
+\begin{equation}
+\Pi_{\mathrm{ref}} = (n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}}) = (24,28,930,10\,087,11\,017)
+\end{equation}
+satisfies constraints C1–C12 and attains a high value of the selection functional $\mathcal{S}$. This provides an explicit instance of an admissible and selected configuration in the sense of Section~\ref{sec:comb_problem}, and thereby motivates its interpretation as a distinguished solution within PDL.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherIMRadPDL2026,LaubscherDerivationAlpha2026}
+
+\subsection{The integer quintuplet \texorpdfstring{$(24,28,930,10\,087,11\,017)$}{(24,28,930,10087,11017)}}
+
+We first verify that the reference integers satisfy the structural relations encoded in the definition of $\Pi$ as well as the associated multiplicity constraints.
+
+\medskip
+\noindent\textbf{Valence multiplicities and stationary content.} The up-type and down-type valence cores are assigned multiplicities
+\begin{equation}
+n_u = 24,\qquad n_d = 28,
+\end{equation}
+both of which are divisible by $4$, as required by condition C2. Under the assumption that each core is internally complete, the number of stationary internal relations in each core is given by
+\begin{equation}
+r_u = \frac{n_u(n_u-1)}{2} = \frac{24\cdot 23}{2} = 276,\qquad r_d = \frac{n_d(n_d-1)}{2} = \frac{28\cdot 27}{2} = 378.
+\end{equation}
+The total stationary valence content then reads
+\begin{equation}
+r_{\mathrm{val}} = 2\,r_u + r_d = 2\times 276 + 378 = 930,
+\end{equation}
+which reproduces the third component of $\Pi_{\mathrm{ref}}$.\cite{LaubscherPDLFull2026,LaubscherLDP2026}
+
+\medskip
+\noindent\textbf{Relational sea and total content.} The dynamical relational sea is postulated to contain
+\begin{equation}
+R_{\mathrm{sea}} = 10\,087
+\end{equation}
+relations, so that the total number of internal relations in the proton becomes
+\begin{equation}
+R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}} = 930 + 10\,087 = 11\,017,
+\end{equation}
+in agreement with the fifth component of $\Pi_{\mathrm{ref}}$.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026} The stationary and dynamical fractions are therefore
+\begin{equation}
+f_{\mathrm{stat}} = \frac{930}{11\,017} \approx 0.0845,\qquad f_{\mathrm{dyn}} = \frac{10\,087}{11\,017} \approx 0.9155,
+\end{equation}
+which are close to the target values $f_{\mathrm{stat}}^{\ast}\approx 0.09$ and $f_{\mathrm{dyn}}^{\ast}\approx 0.91$ inferred from the QCD description.\cite{AmslerQCDProton,LaubscherIMRadPDL2026} For tolerances $\delta_f$ at the level of a few percent, conditions C5 and C6 are therefore satisfied.
+
+\medskip
+\noindent\textbf{Core asymmetry and charge.} The difference between the valence multiplicities is $|n_u-n_d|=4$, which realises a modest asymmetry between the up-type and down-type cores. This is compatible with an effective $(u,u,d)$ composition with net electric charge $+1$, while avoiding a pronounced internal hierarchy between the core sizes, in accordance with C4.\cite{LaubscherLDP2026} From this perspective, the pair $(24,28)$ is the lowest non-trivial pair of multiples of $4$ that achieves a reasonable compromise between internal completeness, mild asymmetry, and consistency with the charge assignment.
+
+\medskip
+\noindent\textbf{Summary.} At the level of the integer data, $\Pi_{\mathrm{ref}}$ satisfies the algebraic relations connecting $(n_u,n_d)$ to $(r_u,r_d,r_{\mathrm{val}})$ and produces stationary and dynamical fractions that are consistent with phenomenological expectations. In conjunction with the signed-graph constructions developed in the foundational PDL literature, this renders $\Pi_{\mathrm{ref}}$ a natural candidate for an admissible configuration.\cite{LaubscherPDLFull2026,LaubscherLDP2026}
+
+\subsection{Consistency with coherence, active surface, and optimisation criteria}
+
+We now indicate how the reference architecture satisfies the more qualitative constraints, namely global coherence, an active surface compatible with the fine-structure constant, and near-optimality of the selection functional.
+
+\medskip
+\noindent\textbf{Global closure and coherence.} The explicit proton constructions in PDL demonstrate that the three valence cores of sizes $24,24,28$ can be embedded into a larger signed-graph structure, together with a relational sea of $10\,087$ relations, in such a way that the resulting proton graph $G_{\mathrm{p}}$ is both connected and logically autonomous.\cite{LaubscherPDLFull2026,LaubscherLDP2026} Each valence core is represented as a near-complete subgraph with a very small violation fraction $\eta$, while the surrounding sea is organised so as to preserve global closure and ensure that the overall violation fraction $\eta(G_{\mathrm{p}})$ remains low relative to the total number of possible triangles.\cite{LaubscherPDLFull2026} In qualitative terms, this realises constraints C3, C7, and C11: the proton appears as a closed logical entity with high triangular coherence and without dependence on external vertices or edges.
+
+\medskip
+\noindent\textbf{Active surface and fine-structure constant.} For the reference architecture $\Pi_{\mathrm{ref}}$, the valence content is $r_{\mathrm{val}}=930$. Under the core-to-surface redistribution ansatz of PDL, the cardinality of the active surface is
+\begin{equation}
+R_{\mathrm{surf}} \approx \varphi\,\frac{r_{\mathrm{val}}}{3} = \varphi\times 310 \approx 501.6,
+\end{equation}
+where $\varphi=(1+\sqrt{5})/2$ is the golden ratio.\cite{LaubscherGoldenRatioPDL2026} This satisfies the relation specified in C9 up to a small tolerance $\delta_{\mathrm{surf}}$, which accounts for the rounding of $R_{\mathrm{surf}}$ to an effective integer. The structural inverse fine-structure constant is then defined by
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1} = \frac{R_{\mathrm{surf}}^{2}}{\mu},
+\end{equation}
+with $\mu=m_p/m_e\approx 1836.15$. Inserting $R_{\mathrm{surf}}\approx 501.6$ yields
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1}(\Pi_{\mathrm{ref}}) \approx 137.02,
+\end{equation}
+which reproduces the empirical inverse fine-structure constant $\alpha_{\mathrm{exp}}^{-1}\approx 137.036$ with a relative deviation of order $10^{-4}$.\cite{LaubscherDerivationAlpha2026} This realises C10 for a very small tolerance $\delta_{\alpha}$ and shows that the same integer data $(n_u,n_d,r_{\mathrm{val}})$ that define the proton architecture also determine the structural value of $\alpha$.
+
+\medskip
+\noindent\textbf{Optimisation and minimality.} The proton architecture associated with $\Pi_{\mathrm{ref}}$ is not a freely chosen set of integers but the result of a systematic search over candidate hierarchical configurations guided by the optimisation functional $F(\eta,\rho,m)$.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026} Within this exploratory analysis, alternative tuples $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})$ were consistently found either to reduce triangular coherence, disrupt the $9\%/91\%$ partition, or spoil the agreement with the structural fine-structure constant. This observed rigidity indicates that $\Pi_{\mathrm{ref}}$ is near-optimal with respect to the selection functional $\mathcal{S}$: it jointly maximises $\Phi_f$ and $\Phi_{\alpha}$ within the allowed tolerances, maintains a low violation fraction (corresponding to a high $\Phi_{\mathrm{coh}}$), and does not allow for a smaller closed substructure with comparable performance (implying $\Phi_{\mathrm{min}}\approx 1$).\cite{LaubscherPDLFull2026}
+
+More rigorously, if one evaluates $\mathcal{S}(\Pi)$ on a neighbourhood of integer parameter tuples in the vicinity of $\Pi_{\mathrm{ref}}$—for example, by varying $n_u$ and $n_d$ in increments of $4$ and adjusting $R_{\mathrm{sea}}$ in moderate steps, while simultaneously enforcing the constraints that relate $r_{\mathrm{val}}$ and $R_{\mathrm{tot}}$—one observes that configurations achieving performance comparable to $\Pi_{\mathrm{ref}}$ are extremely rare or entirely absent within the explored region.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026} Although this observation does not constitute a formal proof, it provides empirical support for the interpretation of $\Pi_{\mathrm{ref}}$ as a local maximiser of $\mathcal{S}$ and, accordingly, as a selected configuration in the sense of Definition~2.
+
+\medskip
+\noindent\textbf{Status of the reference architecture.} Aggregating the foregoing elements, we may characterise the current status of $\Pi_{\mathrm{ref}}$ as follows:
+\begin{itemize}
+\item It satisfies the structural identities linking valence multiplicities, stationary content, sea size, and total relational content.
+\item It realises a stationary/dynamical partition that is close to the phenomenological target ratio of $9\%/91\%$.
+\item It supports an active surface that is consistent with the core-to-surface relation and yields a structural prediction for $\alpha$ in excellent agreement with experiments.
+\item It admits signed-graph realisations that preserve high triangular coherence and logical autonomy at the proton level.
+\item Within the explored domain of integer tuples, it appears to maximise a natural selection functional $\mathcal{S}$.
+\end{itemize}
+Collectively, these properties justify treating $\Pi_{\mathrm{ref}}$ as the canonical proton architecture within PDL and establish it as the baseline against which alternative architectures will be evaluated. In the next section, we employ this baseline to formulate a conjecture of combinatorial uniqueness and to outline potential strategies for its establishment, refinement, or refutation.
+
+\section{Uniqueness Conjecture and Strategy}
+\label{sec:conjecture}
+
+We now address the central question motivating this work: to what extent is the reference proton architecture $\Pi_{\mathrm{ref}}=(24,28,930,10\,087,11\,017)$ unique, within an appropriately specified class of admissible PDL configurations, in both satisfying constraints C1–C12 and maximising the selection functional $\mathcal{S}$? In this section, we formulate a precise conjecture of (local) uniqueness and outline analytical as well as computational strategies that could, in principle, be employed to investigate it.
+
+\subsection{Conjecture of combinatorial uniqueness}
+
+Constraints C1–C12, together with Definitions 1–2, provide the necessary ingredients for a mathematically well-posed uniqueness statement. To avoid trivial or ill-defined formulations, two issues must be taken into account: (i) admissibility depends explicitly on tolerance parameters and the choice of cutoffs $(N_{\max},R_{\max})$; and (ii) the selection functional $\mathcal{S}$ is not expected to admit a unique global maximiser over the entire infinite space of integer tuples, but only within a physically meaningful, restricted domain.
+
+Let $\mathcal{A}(N_{\max},R_{\max})$ denote the set of admissible configurations $\Pi$ with $4\leq n_u,n_d\leq N_{\max}$ and $R_{\mathrm{tot}}\leq R_{\max}$, for fixed tolerances $(\delta_f,\delta_{\mathrm{surf}},\delta_{\alpha},\delta_{\eta})$. Denote by $\mathcal{S}_{\max}$ the maximal value of $\mathcal{S}(\Pi)$ over $\mathcal{A}(N_{\max},R_{\max})$.
+
+\begin{conjecture}[Combinatorial uniqueness of the PDL proton architecture]
+\label{conj:uniqueness}
+There exist cutoffs $N_{\max},R_{\max}$ and tolerances $(\delta_f,\delta_{\mathrm{surf}},\delta_{\alpha},\delta_{\eta})$ of physically reasonable magnitude such that:
+\begin{enumerate}[label=(U\arabic*)]
+\item The reference configuration $\Pi_{\mathrm{ref}}=(24,28,930,10\,087,11\,017)$ is admissible, i.e.\ $\Pi_{\mathrm{ref}}\in\mathcal{A}(N_{\max},R_{\max})$, and attains the maximal selection value $\mathcal{S}(\Pi_{\mathrm{ref}})=\mathcal{S}_{\max}$.
+\item Any other admissible configuration $\Pi\in\mathcal{A}(N_{\max},R_{\max})$ with $\mathcal{S}(\Pi)=\mathcal{S}_{\max}$ is equivalent to $\Pi_{\mathrm{ref}}$ under permutations of the two up-type valence cores and graph-theoretic isomorphisms of the proton architecture.
+\end{enumerate}
+Equivalently, up to relabelling of indistinguishable substructures, $\Pi_{\mathrm{ref}}$ is the unique selected configuration within the admissible set $\mathcal{A}(N_{\max},R_{\max})$.
+\end{conjecture}
+
+The numerical values of $(N_{\max},R_{\max})$ and of the tolerances form an integral part of the conjecture. A natural choice is to take $N_{\max}$ just large enough to encompass a small neighbourhood of $(24,28)$ in the lattice of multiples of $4$ (for example $N_{\max}\sim 40$ or $48$), and to choose $R_{\max}$ sufficiently large to accommodate moderate deviations from $R_{\mathrm{tot}}=11\,017$ (e.g.\ up to several times this value), while imposing tolerances that are consistent with the empirical precision of the PDL expression for $\alpha$ and the QCD-motivated $9\%/91\%$ partition.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026,LaubscherDerivationAlpha2026}
+
+The conjecture is deliberately formulated as a local uniqueness statement within a bounded domain, rather than as a claim that $(24,28,930,10\,087,11\,017)$ constitutes the only admissible architecture in the full integer lattice. This formulation reflects the physical expectation that proton-like structures occupy a restricted region of parameter space determined by mass, spatial extent, and coherence constraints, and that any meaningful notion of uniqueness should therefore be evaluated within that physically motivated region rather than globally.
+
+\subsection{Analytical reduction of the search space}
+
+A brute-force exploration of all integer tuples in a large rectangular domain is both computationally prohibitive and conceptually unilluminating. A more efficient and transparent approach is to employ analytical arguments to restrict the admissible region of parameter space prior to any systematic enumeration. Several such strategies are outlined below.
+
+\medskip
+\noindent\textbf{Divisibility and parity constraints.} From condition C2 together with the completeness assumption, the integers $n_u$ and $n_d$ must be multiples of $4$, and the corresponding quantities $r_u,r_d$ satisfy
+\begin{equation}
+r_u = \frac{n_u(n_u-1)}{2},\qquad r_d = \frac{n_d(n_d-1)}{2},
+\end{equation}
+which enforces specific parity patterns on
+\begin{equation}
+r_{\mathrm{val}} = 2r_u + r_d.
+\end{equation}
+Within a bounded domain $4 \leq n_u,n_d \leq N_{\max}$, one can therefore classify all pairs $(n_u,n_d)$ consistent with the mild asymmetry requirement C4 and discard those for which $r_{\mathrm{val}}$ is either too small or too large to yield an admissible stationary fraction once $R_{\mathrm{tot}}$ is constrained.\cite{LaubscherLDP2026,LaubscherIMRadPDL2026}
+
+\medskip
+\noindent\textbf{Bounds from the $9\%/91\%$ partition.} The constraint on the stationary fraction,
+\begin{equation}
+f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}} \approx 0.09,
+\end{equation}
+implies
+\begin{equation}
+R_{\mathrm{tot}} \approx \frac{r_{\mathrm{val}}}{0.09}.
+\end{equation}
+Given an upper bound $R_{\max}$, this relation restricts $r_{\mathrm{val}}$ to a relatively narrow interval. When combined with the discrete structure $r_{\mathrm{val}} = 2r_u + r_d$, this substantially reduces the admissible set of pairs $(n_u,n_d)$, even before incorporating any constraint from $\alpha$.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026}
+
+\medskip
+\noindent\textbf{Constraints from the structural fine-structure constant.} The expression
+\begin{equation}
+\alpha_{\mathrm{PDL}}(\mu,r_{\mathrm{val}}) = \frac {\mu}{\left(\varphi\,\frac{r_{\mathrm{val}}}{3}\right)^{2}},
+\end{equation}
+for fixed parameters $\mu$ and $\varphi$, there is a stringent restriction on $r_{\mathrm{val}}$. If $\alpha_{\mathrm{PDL}}^{-1}$ is required to lie within a relative tolerance $\delta_{\alpha}$ of the empirical value $\alpha_{\mathrm{exp}}^{-1}$, then $r_{\mathrm{val}}$ must fall within a short arithmetic interval centred around $930$. A direct computation shows that small variations of $r_{\mathrm{val}}$ (e.g.\ by $\pm 4$ or $\pm 8$) typically induce deviations in $\alpha_{\mathrm{PDL}}^{-1}$ that exceed $10^{-4}$, implying that only a very limited number of discrete values of $r_{\mathrm{val}}$ satisfy C10.\cite{LaubscherDerivationAlpha2026}
+
+\medskip
+\noindent\textbf{Minimality considerations.} The minimality contribution $\Phi_{\mathrm{min}}$ to the selection functional disfavors architectures in which the proton graph contains a proper subgraph that already satisfies the same set of constraints with a smaller number of relations. Operationally, this suggests that configurations with unnecessarily large $R_{\mathrm{tot}}$ relative to $r_{\mathrm{val}}$ are penalised, thereby further constraining the admissible values of $R_{\mathrm{sea}}$ for any fixed $(n_u,n_d,r_{\mathrm{val}})$.\cite{LaubscherPDLFull2026}
+
+Collectively, these arguments indicate that, under physically reasonable bounds, the space of candidate integer tuples can be reduced to a comparatively small set before any detailed graph-theoretic analysis becomes necessary. A rigorous implementation of this reduction programme could be formulated as a sequence of lemmas proving, for instance, that for given tolerances and cutoffs, only finitely many pairs $(n_u,n_d)$ must be examined, and that for each such pair, only a bounded interval of $R_{\mathrm{tot}}$ remains compatible with constraints C5–C6 and C10.
+
+\subsection{Computational exploration and classification}
+
+Once the parameter space has been analytically reduced, a systematic computational exploration can be employed to test Conjecture~\ref{conj:uniqueness} within a prescribed domain. Although a complete implementation is beyond the scope of this work, we outline a plausible strategy.
+
+\medskip
+\noindent\textbf{Step 1: Enumeration of integer tuples.} Fix $N_{\max},R_{\max}$ and the numerical tolerances. Enumerate all integer pairs $(n_u,n_d)$ in $[4,N_{\max}]^{2}\cap(4\mathbb{N})^{2}$ that satisfy C2 and C4, compute $r_{\mathrm{val}}=2r_u+r_d$, and discard those for which (i) $r_{\mathrm{val}}$ lies outside the interval compatible with the $\alpha$–constraint, or (ii) no $R_{\mathrm{tot}}\leq R_{\max}$ produces a stationary fraction within the prescribed tolerance of $0.09$.\cite{LaubscherPDLFull2026,LaubscherDerivationAlpha2026}
+
+\medskip
+\noindent\textbf{Step 2: Selection of $(R_{\mathrm{sea}},R_{\mathrm{tot}})$.} For each remaining triple $(n_u,n_d,r_{\mathrm{val}})$, consider all integer values of $R_{\mathrm{sea}}$ such that $R_{\mathrm{tot}}=r_{\mathrm{val}}+R_{\mathrm{sea}}\leq R_{\max}$ and $f_{\mathrm{stat}}$ lies within the admissible tolerance. For each candidate $R_{\mathrm{tot}}$, compute $R_{\mathrm{surf}}$ from the core–surface relation and evaluate $\alpha_{\mathrm{PDL}}^{-1}$. Discard all tuples that violate C9–C10.
+
+\medskip
+\noindent\textbf{Step 3: Graph construction and coherence evaluation.} For the surviving integer tuples $\Pi$, attempt to construct explicit signed-graph realisations that satisfy the valence-completeness, global-closure, and low-violation-fraction conditions. For each such realisation, compute $\eta(G_{\mathrm{p}})$ and approximate $\Phi_{\mathrm{coh}}$ and $\Phi_{\mathrm{min}}$. This step may rely on heuristic or algorithmic procedures informed by the constructions developed in prior PDL analyses.\cite{LaubscherPDLFull2026,LaubscherLDP2026}
+
+\medskip
+\noindent\textbf{Step 4: Evaluation of the selection functional.} For each successfully realised configuration $\Pi$, evaluate the selection functional $\mathcal{S}(\Pi)$ and determine $\mathcal{S}_{\max}$ over the set of admissible candidates. If only $\Pi_{\mathrm{ref}}$ (up to obvious symmetries) attains $\mathcal{S}_{\max}$, then Conjecture~\ref{conj:uniqueness} is verified within the chosen domain and tolerances; otherwise, the conjecture is refuted or must be appropriately refined.
+
+\medskip
+\noindent\textbf{Status and prospects.} At present, Conjecture~\ref{conj:uniqueness} should be regarded as a natural, but as yet unproven, extrapolation of the empirical rigidity observed in exploratory scans in the neighbourhood of $\Pi_{\mathrm{ref}}$.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026} The formalisation given above recasts this observation as a precise mathematical problem, amenable to techniques from integer optimisation, graph theory, and computational classification. Even partial results—such as establishing uniqueness within a restricted subclass of architectures, or under strengthened constraints—would already reinforce the structural interpretation of the proton integers in PDL. Conversely, the identification of alternative admissible and selected configurations would yield valuable information about the flexibility of the framework and could motivate refinements of the axioms or of the optimisation criteria.
+
+Status and prospects. The current status of Conjecture 1 is that it constitutes a natural, yet as of now unproven, extrapolation of the empirical rigidity observed in exploratory searches in the neighbourhood of $\Pi_{\mathrm{ref}}$.\cite{LaubscherPDLFull2026,LaubscherIMRadPDL2026} Casting the conjecture in the formal framework described above converts this empirical observation into a well-posed mathematical problem amenable to methods from integer optimisation, graph theory, and computational classification. Even a partial result—for example, a proof of uniqueness within a suitably restricted subclass of architectures, or uniqueness under strengthened structural or optimisation constraints—would already provide significant support for a rigid structural interpretation of the proton integers in PDL. Conversely, the identification of alternative admissible and selected configurations would yield important information about the intrinsic flexibility of the framework and could motivate refinements of the underlying axioms or of the optimisation criteria.
+
+A natural extension of the present programme is to apply the same combinatorial methodology to the neutron. At the level of valence content, the neutron differs from the proton only by the permutation $(u,u,d)\to(u,d,d)$, yet this modification entails non-trivial implications for the net charge, the structure of internal symmetries, and the distribution between stationary and dynamical sectors.\cite{LaubscherPDLFull2026,LaubscherLDP2026} 
+
+Within the PDL framework, one anticipates that a permissible neutron configuration can be characterised by its own integer quintuplet $(n_u^{(n)},n_d^{(n)},r_{\mathrm{val}}^{(n)},R_{\mathrm{sea}}^{(n)},R_{\mathrm{tot}}^{(n)})$. However, the associated selection functional $S_{\mathrm{neutron}}$ is expected, in general, to attain a lower maximal value than the corresponding functional $S$ for the proton. This behaviour would encode, in the combinatorial language of the model, the empirical observation that a free neutron is unstable, whereas the proton is stable. A systematic investigation of this conjecture—through the formulation of neutron-specific analogues of constraints C1–C12 and a comparative analysis of the resulting maxima of $S_{\mathrm{neutron}}$ and $S$—constitutes a natural direction for further research and would furnish an additional, non-trivial test of the explanatory capacity of the PDL combinatorial framework.
+
+In the following section, we provide a concise examination of the conceptual ramifications of a prospective uniqueness theorem for the proton architecture, and analyze how the combined results of proton and neutron studies would inform the assessment of PDL as a viable foundational framework for the description of microscopic structure.
+
+\section{Discussion and Outlook}
+\label{sec:discussion}
+
+The formalisation of the proton architecture as an integer-combinatorics problem on signed graphs fulfils two principal objectives. First, it elucidates the internal status of the PDL framework by explicitly distinguishing which structural features of the proton model follow necessarily from the axioms and optimisation principles, and which instead constitute additional, independent hypotheses. Second, it isolates a mathematically well-posed problem—codified in Conjecture~\ref{conj:uniqueness}—that can be addressed independently of broader interpretative commitments concerning the ontological nature of physical reality.
+
+From the PDL standpoint, the conjectured uniqueness of $\Pi_{\mathrm{ref}}=(24,28,930,10\,087,11\,017)$ would amount to a strong form of structural rigidity. If, within physically motivated bounds and tolerances, this quintuple were indeed the sole admissible and selected configuration, it would support the interpretation that the proton architecture is not an artefact of numerological tuning but rather a combinatorially enforced consequence of the relational axioms, the coherence-optimisation criteria, and the requirement of reproducing key dimensionless constants.\cite{LaubscherPDLFull2026,LaubscherLDP2026,LaubscherDerivationAlpha2026} Such a result would reinforce the claim that PDL can nontrivially constrain microphysical structure, advancing it beyond qualitative analogy with QCD into a regime of discrete, empirically testable predictions.
+
+Conversely, if systematic analytical or computational investigations were to uncover multiple inequivalent configurations $\Pi$ that are admissible and saturate the same maximal value of the selection functional, the consequences would be equally significant. The presence of several structurally distinct proton architectures compatible with current constraints could indicate that additional axioms, refined optimisation terms, or further phenomenological inputs are necessary to resolve the degeneracy. It might also suggest that PDL, in its present formulation, characterises a broader class of possible microphysical universes, among which supplementary selection principles—potentially of cosmological or information-theoretic character—would be required to identify the particular realisation corresponding to our observed universe.\cite{LaubscherIMRadPDL2026,RovelliRelationalQM1996}
+
+Beyond the specific case of the proton, the methodology developed here suggests a broader research programme. A particularly pertinent target for such an extension is the neutron. From the perspective of valence-quark content, the neutron differs from the proton only by the replacement $(u,u,d)\to(u,d,d)$; nevertheless, this modification alters the electric charge assignment, the internal symmetry structure of the valence sector, and the pattern by which coherence may be redistributed among core, sea, and surface degrees of freedom.\cite{LaubscherPDLFull2026,LaubscherLDP2026} Within the PDL framework, it is natural to hypothesise that an admissible neutron architecture can be defined that preserves the hierarchical organisation found for the proton, but is characterised by an increased stationary component and a less tightly constrained active surface, consistent with the slightly larger neutron mass and the absence of a direct long-range electromagnetic interaction. If, subject to neutron-specific constraints analogous to C1–C12, the corresponding selection functional $S_{\mathrm{neutron}}$ were found to attain a strictly lower maximal value than the proton functional $S$, this would yield a structural account of the empirical observation that an isolated neutron is unstable, in contrast to the proton: the neutron configuration would correspond to a shallower optimum in the underlying combinatorial landscape, with decay into a proton–plus–leptons configuration representing a transition toward a more favourable architecture.
+
+Concurrently, the empirical stability of neutrons bound within certain nuclei indicates that, in such contexts, the relevant optimisation problem must be formulated at the level of composite nuclear configurations rather than individual nucleons. In PDL terms, this points to the existence of nuclear architectures in which the combined proton–neutron graph realises a higher value of an appropriately defined nuclear selection functional than any configuration accessible by allowing a neutron to decay within the nucleus. From this perspective, the contrast between unstable free neutrons and stable bound neutrons in, for example, light nuclei would manifest a shift in the level at which combinatorial optimality is achieved—from single-nucleon architectures to multi-nucleon closures. The development of such nuclear-level selection criteria, together with a systematic comparison to empirical patterns of nuclear binding and stability, constitutes a natural and physically significant extension of the present framework.
+
+From the standpoint of mathematical physics and graph theory, Conjecture~\ref{conj:uniqueness} and its variants illustrate a class of problems in which physical and combinatorial constraints are tightly interwoven. The conditions C1–C12 integrate discrete structural requirements (such as completeness, divisibility, and connectivity) with real-valued inequalities tied to empirical constants (including stationary fractions and the fine-structure constant), all expressed within the formalism of signed graphs and optimisation functionals.\cite{LaubscherIntroPDL2026,LaubscherPDLFull2026} A systematic exploration of the admissible set and of the behaviour of $\mathcal{S}$ over this domain may thus motivate the development of new methods at the interface of integer optimisation, extremal graph theory, and the analysis of signed networks subject to coherence constraints.
+
+Looking ahead, several concrete directions for further research can be identified. On the analytical side, one objective would be to establish partial results. For instance, within a suitably restricted class of architectures—such as those characterized by exactly three complete valence cores and a prescribed range of $R_{\mathrm{tot}}$—one could aim to demonstrate that no configuration other than $\Pi_{\mathrm{ref}}$ satisfies the $\alpha$ constraint to the required level of accuracy. On the computational side, one could implement the multi-stage exploration protocol described in Section~\ref{sec:conjecture}, initiating the search with relatively modest cutoffs and then progressively enlarging the exploration domain. Independent implementations, together with systematic cross-validation between them, would be essential to guarantee both reliability and reproducibility of the results.
+
+In the final analysis, the significance of this research program lies less in whether Conjecture~\ref{conj:uniqueness} is ultimately verified in full generality, and more in the fact that it renders the proton architecture in PDL amenable to rigorous and systematic mathematical investigation. By recasting an initially heuristic observation—namely, that small perturbations of the integer tuple $(24,28,930,10\,087,11\,017)$ typically disrupt essential structural features of the model—into a precisely formulated combinatorial problem, this work establishes a well-defined interface between relational physics and discrete mathematics. In doing so, it provides a concrete benchmark against which the explanatory scope and internal consistency of PDL can be quantitatively evaluated and progressively refined.
+
+\section*{Acknowledgements}
+
+The author wishes to acknowledge the contributions of colleagues and informal interlocutors who have provided questions, critiques, and constructive suggestions concerning the PDL framework and its proton architecture. Their input has been instrumental in elucidating both the strengths and the current limitations of the framework. In particular, their comments have substantially motivated the present effort to reformulate the selection of the proton integers as an explicit combinatorial problem and to emphasize the necessity of articulating empirically testable uniqueness conjectures. Any residual errors, ambiguities, or speculative extrapolations contained in this work remain the sole responsibility of the author.
+
+\bibliographystyle{plain}
+\bibliography{PDL_proton_uniqueness}
+
+\end{document}

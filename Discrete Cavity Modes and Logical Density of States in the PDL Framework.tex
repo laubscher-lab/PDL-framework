@@ -1,0 +1,374 @@
+\documentclass{article}
+\usepackage{float}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+\usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\PDL}{\mathrm{PDL}}
+\newcommand{\LDP}{\mathrm{LDP}}
+
+\usepackage{float}
+\begin{document}
+
+\title{Discrete Cavity Modes and Logical Density of States\\[4pt]
+in the Projective Dynamic Logo Framework}
+
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland.}\\\\[4pt]}
+
+\date{\small \today}
+
+\maketitle
+
+\begin{abstract}
+Within the Projective Dynamic Logo (PDL) framework, physical reality is modelled as a network of minimal logical closures on finite signed graphs, selected via a coherence-orientated variational principle rather than derived from differential equations posed on a background continuum.\cite{PDL_Intro_2026,PDL_Main_2026} This raises the natural question of whether the familiar spectral properties of field theory—specifically, the mode structure and density of states of a three-dimensional cavity—can be reproduced in a fully discrete and strictly local setting, using only graph-theoretic constraints and update rules.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026}
+
+In this work, we construct and analyse a finite ``PDL cavity'' realised as a three-dimensional signed graph with $27$ vertices, $63$ edges, and $49$ present triangles, equipped with a purely local update rule that couples a photon-like logical excitation to the underlying graph configuration.\cite{Effective_Fields_PDL_2026} For each triple of positive integers $(n_x,n_y,n_z)$, this rule specifies a discrete-time evolution in which the excitation undergoes a sequence of logical ``rebounds'' along three orthogonal directions within the cavity, while the signed graph configuration is updated locally at every time step and a coherence-leakage fraction $\varepsilon$ (triangle-violation ratio) is continuously monitored.\cite{Effective_Fields_PDL_2026,Exponent_18_PDL_2026}
+
+We provide numerical evidence that, for a broad class of low-lying index triples, the coupled dynamics of the excitation and graph is strictly periodic and admits a well-defined minimal period $N(n_x,n_y,n_z)$ with uniformly small leakage throughout the cycle.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026} We identify a large and structurally robust family of such modes that satisfies the empirical relation
+\[
+N(n_x,n_y,n_z) = 4 \bigl(n_x + n_y + n_z\bigr),
+\]
+and exhibits a characteristic two-plateau structure in the time series of $\varepsilon(t)$ over each period, while a distinct subset of modes displays a highly degenerate minimal period $N = 4$ with essentially constant and minimal leakage.\cite{Effective_Fields_PDL_2026}
+
+Interpreting $N$ as a logical wavelength and defining a logical frequency $\nu \propto 1/N$, this linear dependence implies that imposing an upper bound on the period is equivalent to imposing an upper bound on the sum $n_x + n_y + n_z$. Consequently, the number of admissible index triples scales with the volume of a three-dimensional discrete simplex.\cite{Density_of_states_Notes,Counting_States_2021} This combinatorial mode counting in the PDL cavity yields an effective density of states $\rho(\nu) \propto \nu^2$ in three dimensions, in direct correspondence with the standard continuum result for electromagnetic or quantum cavities.\cite{Density_of_states_Notes,EM_Cavities_Notes,Counting_States_2021}
+
+We do not claim to derive full quantum field dynamics from PDL. Nonetheless, the present construction demonstrates that a purely relational, discrete, and local framework can sustain cavity-like modes with organised spectra and three-dimensional density-of-states scaling, thereby reinforcing the case for PDL as a viable substrate for emergent quantum behaviour.\cite{PDL_Main_2026,PDL_Position_2026}
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{Background: PDL and relational closures}
+
+The Projective Dynamic Logo (PDL) framework constitutes a relational reformulation of microphysics in which the primitive entities are not point particles embedded in a pre-assigned spacetime manifold, but rather minimal logical closures defined on finite signed graphs.\cite{PDL_Intro_2026,PDL_Main_2026} A configuration is represented by a finite vertex set endowed with signed edges, and coherence is evaluated by imposing local closure conditions on small sub graphs, typically triangles. Physically admissible structures are then selected by maximising a coherence-oriented functional over the space of admissible signed graphs, in contrast to the conventional approach based on solving differential equations on a continuous geometrical background.\cite{PDL_Main_2026,PDL_Position_2026}
+
+At the elementary level, the complete signed graph on four vertices and six edges, commonly referred to as the $(4,6)$ block, plays a distinguished role: it realises the first non-trivial minimal stationary closure compatible with the PDL axioms and is interpreted as the logical prototype of an electron at rest.\cite{PDL_Main_2026,PDL_Intro_2026} More complex entities, such as protons, nuclei, and larger composite systems, are modelled as hierarchical assemblies of these blocks subject to additional combinatorial constraints. This construction yields specific integer-valued architectural parameters—for example $(24,28,930,10087,11017)$ in the case of the proton—and leads to quantitative predictions for physical constants.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+A recurrent feature of this programme is the occurrence of a small but irreducible \emph{coherence leakage}: even after optimisation of the signed graph architecture, a non-zero fraction of local closure constraints (triangle conditions) remains unsatisfied.\cite{Topological_Reformulation_PDL_2026,Exponent_18_PDL_2026} This leakage is interpreted as an intrinsic combinatorial defect, parameterized by $\varepsilon$, which denotes the proportion of violated triangles, and has been associated with emergent probabilistic behaviour, effective field-like descriptions, and even gravitational coupling in earlier studies.\cite{Topological_Reformulation_PDL_2026,Effective_Fields_PDL_2026,Exponent_18_PDL_2026} Across these applications, PDL furnishes a logical substrate on which conventional physical structures are reformulated in terms of signed graphs, coherence constraints, and leakage parameters.
+
+\subsection{Modes, cavities, and density of states}
+
+In conventional electromagnetic and quantum-mechanical treatments, a cavity or “box” is modelled as a bounded region of space endowed with appropriate boundary conditions, within which fields or wave functions satisfy a linear wave equation.\cite{Density_of_states_Notes,EM_Cavities_Notes} The spatial dependence of each normal mode is then labelled by a triple of non-negative integers $(n_x,n_y,n_z)$, which count the number of half-wavelengths along three mutually orthogonal directions. The corresponding angular frequencies $\omega(n_x,n_y,n_z)$ are determined by the cavity geometry and the underlying dispersion relation.\cite{EM_Cavities_Notes,Counting_States_2021} The collection of all such integer triples forms a lattice in the abstract mode-index space, and counting the number of lattice points contained within shells of increasing radius yields the standard three-dimensional density-of-states scaling.
+
+More specifically, if one considers a sufficiently large frequency window and counts the number $M(\nu_{\max})$ of modes with frequency $\nu \le \nu_{\max}$, one finds that $M(\nu_{\max})$ grows proportionally to $\nu_{\max}^3$ in three spatial dimensions, up to geometry-dependent prefactors and sub leading edge corrections.\cite{Density_of_states_Notes,Counting_States_2021} Differentiating this cumulative mode count with respect to frequency defines the density of states $\rho(\nu)$, which scales as $\nu^2$. This scaling behaviour is of fundamental importance in the theory of black-body radiation, the analysis and design of photonic cavities, and the spectral theory of quantum systems confined to bounded domains.\cite{Density_of_states_Notes,EM_Cavities_Notes}
+
+Within the PDL framework, there is no \emph{a priori} continuum background, no underlying differential wave equation, and no pre-specified metric geometry.\cite{PDL_Main_2026,PDL_Intro_2026} Instead, one works directly with finite signed graphs subject to local coherence constraints. Consequently, the very notions of “mode”, “frequency”, and “density of states” must be reconstructed in intrinsically logical and combinatorial terms. The present work constitutes an initial step in this direction: we define a discrete analogue of a cavity on a finite signed graph, introduce an explicitly specified local evolution rule, and then investigate whether the resulting periodic orbits, indexed by $(n_x,n_y,n_z)$, exhibit a counting behaviour that reproduces the three-dimensional $\nu^2$ density-of-states scaling characteristic of continuum cavities.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026}
+
+\subsection{Scope and main claims}
+
+The present study investigates a specific, concrete instantiation of a three-dimensional “cavity’’ within the PDL framework and examines the dynamics of a simple photon-like logical excitation propagating inside this finite signed graph under a local, discrete update rule.\cite{PDL_Main_2026,Effective_Fields_PDL_2026} Our objective is not to replicate the full formal structure of classical electromagnetic field theory, but rather to assess whether a minimal relational model can support cavity-like modes exhibiting an organised spectral structure and a three-dimensional density-of-states profile.
+
+More precisely, we consider a finite signed graph with $27$ vertices, $63$ edges, and $49$ present triangles, selected as a toy model of a three-dimensional cavity region, and we equip it with a local evolution rule that couples a mobile excitation to the underlying signed configuration.\cite{Effective_Fields_PDL_2026} This rule is parametrised by a triple of positive integers $(n_x,n_y,n_z)$, interpreted as discrete mode indices associated with three orthogonal directions. At each discrete time step, both the position and internal state of the excitation, as well as the local sign configuration on the graph, are updated, while we track a coherence-leakage fraction $\varepsilon$, defined as the ratio of violated triangles.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026}
+
+For each such triple, the induced dynamics specifies a trajectory in the joint configuration space of the excitation and the cavity graph. Our first main claim is that, for all low-index triples investigated in this work (including $(1,1,1)$, $(1,1,2)$, $(1,2,1)$, $(1,2,2)$, $(1,1,3)$, $(1,3,1)$, $(2,1,1)$, $(2,2,1)$, $(2,1,2)$, $(3,1,1)$, among others), this trajectory is strictly periodic and admits a minimal period $N(n_x,n_y,n_z)$, with uniformly small leakage over the entire cycle.\cite{Effective_Fields_PDL_2026,Exponent_18_PDL_2026} In particular, many modes display a robust two-plateau structure in $\varepsilon(t)$, characterized by a very low baseline value during the first half of the period and a slightly elevated, yet still small, value during the second half, followed by an exact recurrence to the initial configuration at time $t = N$.
+
+Our second main claim is that, for a large and structurally stable family of modes, the period depends linearly on the sum of the indices, in accordance with the empirical relation
+\[
+N(n_x,n_y,n_z) = 4 \bigl(n_x + n_y + n_z\bigr),
+\]
+Up to permutations of $(n_x,n_y,n_z)$, a distinct subset of modes exhibits a highly degenerate minimal period $N = 4$ with an almost constant minimal leakage.\cite{Effective_Fields_PDL_2026} This linear dependence and permutation symmetry indicate that the update rule organises the dynamics into super-cycles whose length is governed by the total number of discrete “rebounds” along the three logical axes.
+
+The third claim concerns the resulting mode density when the period $N$ is interpreted as a logical wavelength and a corresponding logical frequency is defined via $\nu \propto 1/N$.\cite{Density_of_states_Notes,EM_Cavities_Notes} Under this interpretation, imposing an upper bound on $N$ is equivalent, through the empirical relation above, to imposing an upper bound on the sum $n_x + n_y + n_z$. Consequently, the number of admissible index triples scales as the volume of a three-dimensional discrete simplex in index space.\cite{Density_of_states_Notes,Counting_States_2021} It follows that the logical mode counting in this PDL cavity generates an effective density of states scaling as $\rho(\nu) \propto \nu^2$ in three dimensions, in direct analogy with the standard continuum result for rectangular electromagnetic or quantum cavities.\cite{Density_of_states_Notes,EM_Cavities_Notes,Counting_States_2021}
+
+Within this restricted yet fully explicit setting, the paper demonstrates that a purely discrete and relational model on signed graphs can sustain cavity-like modes characterised by (i) low-leakage periodic orbits indexed by integer triples, (ii) a simple and robust empirical period law, and (iii) a three-dimensional density-of-states scaling typical of continuum field theories. These results collectively strengthen the case for PDL as a plausible substrate for emergent quantum-like spectral structures.\cite{PDL_Main_2026,PDL_Position_2026}
+
+\section{PDL Cavity Setup}\label{sec:PDL_cavity_setup}
+
+In this section, we specify the discrete cavity architecture that is employed throughout the manuscript, introduce the notion of \emph{coherence leakage} as a quantitative measure of local violations of logical closure, and define the photon-like logical excitation together with its corresponding update rule. All subsequent results are formulated with respect to this fixed setup.
+
+\subsection{Finite signed-graph cavity}
+
+We consider a finite signed graph $G = (V,E,\sigma)$, where $V$ denotes the vertex set, $E$ the edge set, and $\sigma : E \to \{+1,-1\}$ assigns a sign to each edge.\cite{PDL_Main_2026} The graph $G$ is employed as a simplified model of a three-dimensional cavity region and is specified by
+\[
+\abs{V} = 27,\qquad \abs{E} = 63.
+\]
+Moreover, $G$ contains exactly $49$ triangular faces of the form $\{i,j,k\} \subset V$ for which all three edges $\{i,j\},\{j,k\},\{k,i\}$ are present in $E$.\cite{Effective_Fields_PDL_2026} The detailed connectivity of $G$ is not intended to replicate any particular physical geometry. Instead, it is chosen as a minimal non-trivial configuration that supports a three-dimensional arrangement of vertices, together with a sufficiently rich collection of triangular subgraphs to serve as a test-bed for coherence constraints.
+
+Within the broader PDL framework, the $(4,6)$ block—that is, the complete signed graph on four vertices and six edges—functions as an elementary stationary closure representing an electron at rest, while composite proton configurations are constructed from such blocks subject to additional combinatorial constraints.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026} In contrast, in the present work we regard $G$ as a fixed background “cavity” graph within which a distinct photon-like logical excitation propagates. The internal combinatorial structure of $G$ is therefore not interpreted as a particle model, but rather as a bounded relational environment suitable for defining and analysing periodic modes.
+
+For the purposes of this paper, we assume that the vertex set $V$ admits an embedding into a three-dimensional lattice, such that each vertex can be assigned integer coordinates $(x,y,z)$ on a $3\times 3\times 3$ grid, and edges encode permitted logical adjacencies between these lattice sites.\cite{Effective_Fields_PDL_2026} This embedding is used solely to specify three orthogonal directions, $x$, $y$, and $z$, along which the photon-like excitation executes discrete “rebounds.” All substantive calculations depend only on the adjacency structure of $G$ and on the list of present triangular faces.
+
+\subsection{Local configuration and coherence leakage}
+
+A \emph{configuration} of the cavity is specified by assigning to each edge $e \in E$ a sign $\sigma_e \in \{+1,-1\}$, together with any additional discrete labels required by the photon-like excitation introduced below.\cite{Topological_Reformulation_PDL_2026} Within the PDL framework, coherence is assessed via local closure conditions defined on triangles: for a given assignment of signs, a triangle $\{i,j,k\}$ is termed \emph{coherently closed} if the product of the three edge signs along its boundary satisfies a prescribed constraint, and \emph{violated} otherwise.\cite{Topological_Reformulation_PDL_2026,Exponent_18_PDL_2026}
+
+For any given configuration, we define the \emph{triangle-violation fraction} (or leakage fraction)
+\[
+\varepsilon \coloneqq \frac{\#\{\text{violated triangles in } G\}}{\#\{\text{present triangles in } G\}} \in [0,1],
+\]
+which quantifies the proportion of local closure constraints that are not satisfied.\cite{Topological_Reformulation_PDL_2026} In earlier PDL studies, such a leakage parameter plays a central role at the proton scale, where an irreducible minimal leakage $\varepsilon_{\mathrm{p}}$ is interpreted as an intrinsic coherence deficit that must be transferred to the surrounding relational network and can contribute to an effective gravitational coupling.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+
+In the present cavity context, we do not attempt to establish a direct connection to proton-level leakage or gravity, but we retain the same definition of leakage fraction as a local, graph-theoretic measure of coherence defect. As the photon-like excitation propagates and the edge signs are dynamically updated, the value of $\varepsilon$ becomes time-dependent. Its evolution over a single period of the dynamics provides a quantitative diagnostic of the degree to which the mode is coherently maintained within the cavity.\cite{Effective_Fields_PDL_2026}
+
+\subsection{Photon-like logical excitation and update rule}
+
+To interrogate the cavity, we introduce an auxiliary degree of freedom that we interpret as a photon-like logical excitation. At any discrete time $t \in \mathbb{N}$, the global state of the system decomposes into two components:
+\begin{itemize}
+  \item the signed-graph configuration of the cavity, specified by the edge signs $\{\sigma_e(t)\}_{e \in E}$;
+  \item the excitation state, consisting of a distinguished vertex position $v(t) \in V$ and a discrete internal label that encodes the logical ``direction'' or phase of propagation.
+\end{itemize}
+The excitation is restricted to propagate along the edges of $G$, so that $v(t+1)$ must be adjacent to $v(t)$ for all $t$, and its internal label determines its response to logical reflections at the cavity boundaries.\cite{Effective_Fields_PDL_2026}
+
+The dynamics are specified by a deterministic, local update rule parametrised by a triple of positive integers $(n_x,n_y,n_z) \in \mathbb{N}^3$. Heuristically, these indices determine the number of discrete half-rebounds executed by the excitation along each of the three orthogonal directions $x$, $y$, and $z$ within a single logical ``super-cycle''.\cite{Effective_Fields_PDL_2026} At each time step, the rule:
+\begin{enumerate}
+  \item advances the excitation from $v(t)$ to a neighbouring vertex $v(t+1)$, as dictated by its current internal direction label and by the prescribed sequence of rebounds encoded in $(n_x,n_y,n_z)$;
+  \item updates the signs of a finite set of edges in the neighbourhood of $v(t)$ or along the corresponding path segment, according to a fixed pattern of sign inversions that preserves the global structure of the cavity while potentially altering which triangular subgraphs are satisfied;
+  \item evaluates the resulting leakage fraction $\varepsilon(t+1)$ for the updated configuration.
+\end{enumerate}
+All updates are strictly local, in the sense that at each time step, only vertices and edges adjacent to the current excitation position are modified; no global re-computation or non-local operations are required.\cite{PDL_Main_2026,Effective_Fields_PDL_2026}
+
+For each fixed triple \((n_x,n_y,n_z)\) and initial state \((\{\sigma_e(0)\},v(0))\), this update rule generates a discrete-time trajectory
+\[
+t \longmapsto \Bigl(\{\sigma_e(t)\}_{e \in E},\, v(t)\Bigr)
+\]
+in the joint configuration space of the cavity and the excitation, together with a time series \(t \mapsto \varepsilon(t)\) of leakage values.\cite{Topological_Reformulation_PDL_2026} In all numerical experiments reported below, the excitation is initialised at a fixed reference vertex, and the initial signed configuration is chosen to have very small leakage, ensuring that any deviation observed along the trajectory can be attributed to the dynamical cost of maintaining coherence under the prescribed motion.\cite{Effective_Fields_PDL_2026}
+
+\section{Periodic Modes Indexed by \texorpdfstring{$(n_x,n_y,n_z)$}{(n\_x,n\_y,n\_z)}}
+
+We now examine the qualitative properties of the cavity dynamics defined above, with particular emphasis on the existence of periodic trajectories, the characterization of their minimal periods, and the associated leakage profiles for low-order index triples $(n_x,n_y,n_z)$.
+
+\subsection{Definition of a mode and its period}
+
+For a fixed index triple $(n_x,n_y,n_z)$ and a prescribed initial configuration $(\{\sigma_e(0)\},v(0))$, the update rule introduced in Section~\ref{sec:PDL_cavity_setup} generates a discrete-time trajectory
+\[
+t \longmapsto \Bigl(\{\sigma_e(t)\}_{e \in E},\, v(t)\Bigr),\qquad t \in \mathbb{N},
+\]
+together with an associated leakage time series $t \mapsto \varepsilon(t)$.\cite{Effective_Fields_PDL_2026} We say that the resulting dynamics is \emph{periodic} with period $N \in \mathbb{N}$ if there exists a positive integer $N$ such that
+\[
+\{\sigma_e(t+N)\}_{e \in E} = \{\sigma_e(t)\}_{e \in E}
+\quad\text{and}\quad
+v(t+N) = v(t)
+\]
+for all $t$ beyond some finite transient. The dynamics is called \emph{strictly periodic} if these equalities hold for all $t \ge 0$ after a fixed initialisation.\cite{Topological_Reformulation_PDL_2026} Throughout this work, the initial state is chosen so that no transient behaviour is observed: once the excitation is injected into the cavity in a reference configuration characterised by low leakage, the subsequent evolution is exactly recurrent after a finite number of time steps.
+
+For each numerically explored triple $(n_x,n_y,n_z)$, we define the \emph{minimal period} $N(n_x,n_y,n_z)$ as the smallest positive integer $N$ such that
+\[
+\Bigl(\{\sigma_e(t+N)\}_{e \in E},\, v(t+N)\Bigr)
+=
+\Bigl(\{\sigma_e(t)\}_{e \in E},\, v(t)\Bigr)
+\]
+for all $t \in \mathbb{N}$.\cite{Effective_Fields_PDL_2026} The leakage profile associated with the corresponding mode is then specified by the finite sequence
+\[
+\varepsilon_0, \varepsilon_1, \dots, \varepsilon_{N},
+\]
+with $\varepsilon_t \coloneqq \varepsilon(t)$, where, by convention, the value at $t = N$ is included to make explicit the exact return to the initial leakage level.\cite{Exponent_18_PDL_2026} In the examples below, we will often summarise $\varepsilon(t)$ in a compact form such as
+\[
+\varepsilon(t) =
+\begin{cases}
+\varepsilon_{\mathrm{low}} & \text{for } 0 \le t \le N/2 - 1,\\[2pt]
+\varepsilon_{\mathrm{high}} & \text{for } N/2 \le t \le N-1,\\[2pt]
+\varepsilon_{\mathrm{low}} & \text{for } t = N,
+\end{cases}
+\]
+whenever a two-plateau structure of this type is realised.\cite{Effective_Fields_PDL_2026}
+
+Within this framework, a \emph{mode} of the PDL cavity is defined as a strictly periodic orbit of the coupled cavity–excitation dynamics for a fixed index triple $(n_x,n_y,n_z)$, together with its minimal period $N(n_x,n_y,n_z)$ and the corresponding leakage profile $\varepsilon(t)$ over one complete cycle.
+
+\subsection{Numerical exploration of low-lying index triples}
+
+To investigate the modal structure of the PDL cavity, we performed a direct numerical study of the dynamics for a set of low-order index triples $(n_x,n_y,n_z)$, typically restricted to $1 \leq n_x,n_y,n_z \leq 3$.\cite{Effective_Fields_PDL_2026} For each triple, the update rule was iterated until either a previously visited joint state $(\{\sigma_e(t)\},v(t))$ was encountered or a prescribed maximum number of iterations was reached. In all cases discussed here, an exact recurrence was observed well before the cut-off, and the minimal period $N(n_x,n_y,n_z)$ was determined by monitoring the first return to the initial configuration.\cite{Effective_Fields_PDL_2026}
+
+Representative choices of indices include
+\[
+(1,1,1),\ (1,1,2),\ (1,2,1),\ (1,2,2),\ (1,1,3),\ (1,3,1),\ (2,1,1),\ (2,2,1),\ (2,1,2),\ (3,1,1),
+\]
+for which minimal periods and leakage profiles were explicitly computed and recorded.\cite{Effective_Fields_PDL_2026} For all such configurations, the leakage remains numerically small throughout the cycle, with typical baseline values on the order of $\varepsilon \approx 2\times 10^{-3}$ and, for many modes, a slightly elevated plateau of order $\varepsilon \approx 4\times 10^{-3}$ over part of the period.\cite{Exponent_18_PDL_2026} This behaviour is consistent with interpreting these trajectories as quasi-coherent cavity modes in the PDL framework: they maintain almost all triangle constraints at all times while the excitation undergoes a highly organized sequence of logical reflections within the finite graph.
+
+\subsection{Leakage profiles and quasi-coherence}
+
+Beyond the mere existence of periodic orbits, a key characteristic of the modes observed in the PDL cavity is the small magnitude and structured temporal dependence of their leakage profiles.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026} For each index triple $(n_x,n_y,n_z)$, we record both the minimal period $N(n_x,n_y,n_z)$ and the discrete-time leakage sequence $\varepsilon(t)$ for $0 \le t \le N$. Representative patterns are summarised in Table~\ref{tab:low_modes}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccl}
+\hline
+$(n_x,n_y,n_z)$ & $N(n_x,n_y,n_z)$ & Leakage profile over one period \\
+\hline
+$(1,1,1)$ & $12$ & $\varepsilon(t) \approx 0.0021$ for $0 \le t \le 5$; \\
+          &      & $\varepsilon(t) \approx 0.0044$ for $6 \le t \le 11$; \\
+          &      & $\varepsilon(12) \approx 0.0021$. \\
+$(1,1,2)$ & $16$ & $\varepsilon(t) \approx 0.0021$ for $0 \le t \le 7$; \\
+          &      & $\varepsilon(t) \approx 0.0044$ for $8 \le t \le 15$; \\
+          &      & $\varepsilon(16) \approx 0.0021$. \\
+$(1,2,1)$ & $16$ & same pattern as $(1,1,2)$ (permutation of indices). \\
+$(1,2,2)$ & $20$ & $\varepsilon(t) \approx 0.0021$ for $0 \le t \le 9$; \\
+          &      & $\varepsilon(t) \approx 0.0044$ for $10 \le t \le 19$; \\
+          &      & $\varepsilon(20) \approx 0.0021$. \\
+$(1,1,3)$ & $20$ & same pattern as $(1,2,2)$. \\
+$(1,3,1)$ & $20$ & same pattern as $(1,2,2)$. \\
+$(2,1,1)$ & $4$  & $\varepsilon(t) \approx 0.0021$ for all $0 \le t \le 4$. \\
+$(2,2,1)$ & $4$  & same pattern as $(2,1,1)$. \\
+$(2,1,2)$ & $4$  & same pattern as $(2,1,1)$. \\
+$(3,1,1)$ & $4$  & same pattern as $(2,1,1)$. \\
+\hline
+\end{tabular}
+\caption{Minimal periods and leakage profiles for selected low-lying index triples $(n_x,n_y,n_z)$ in the PDL cavity. The numerical values of $\varepsilon$ are given to three significant digits and remain of order $10^{-3}$ throughout.\cite{Effective_Fields_PDL_2026,Exponent_18_PDL_2026}}
+\label{tab:low_modes}
+\end{table}
+
+Two qualitative features are particularly noteworthy. First, a large family of modes with minimal periods $N \in \{12,16,20,\dots\}$ exhibits a robust two-plateau structure: the leakage starts from a very low baseline value, remains essentially constant over the first half of the period, then increases to a slightly higher, yet still small, plateau over the second half, before returning exactly to the baseline value at $t = N$.\cite{Effective_Fields_PDL_2026,Exponent_18_PDL_2026} This behaviour indicates that the cavity can support quasi-coherent logical modes in which local closure constraints are satisfied almost everywhere in time, with only a modest and temporally confined coherence cost within each cycle.
+
+Second, several index triples yield an exceptionally short minimal period $N = 4$, for which the leakage remains essentially constant at its minimal baseline value throughout the entire cycle, producing highly coherent and strongly degenerate modes at a fixed logical frequency.\cite{Effective_Fields_PDL_2026} Taken together, these observations demonstrate that the discrete PDL cavity realises a non-trivial spectrum of low-leakage modes, in contrast to generic aperiodic or strongly dissipative dynamics, and they motivate a more detailed analysis of the dependence of the period $N(n_x,n_y,n_z)$ on the mode indices.
+
+\section{Empirical Periodicity Law and Symmetry Properties}
+
+The numerical data presented in Table~\ref{tab:low_modes} exhibit a remarkably simple dependence of the minimal period $N(n_x,n_y,n_z)$ on the mode indices, accompanied by non-trivial degeneracies under index permutations. In this section, we summarise these empirically observed regularities and provide an interpretation in terms of effective logical ``wavelengths''.
+
+\subsection{Linear dependence on \texorpdfstring{$n_x+n_y+n_z$}{n\_x+n\_y+n\_z}}
+
+For the family of modes characterized by minimal periods $N \in \{12,16,20,\dots\}$ and exhibiting two-plateau leakage profiles, the numerical data are accurately described by a linear dependence of $N$ on the sum of the indices.\cite{Effective_Fields_PDL_2026} Specifically, for all index triples of the form
+\[
+(1,1,1),\ (1,1,2),\ (1,2,1),\ (1,2,2),\ (1,1,3),\ (1,3,1),\ \dots,
+\]
+we observe
+\[
+N(n_x,n_y,n_z) = 4 \bigl(n_x + n_y + n_z\bigr),
+\]
+without detectable deviations within the limits of numerical precision.\cite{Effective_Fields_PDL_2026} For instance, the triple $(1,1,1)$ satisfies $n_x+n_y+n_z = 3$ and $N = 12$, the triples $(1,1,2)$ and $(1,2,1)$ have sum $4$ and $N = 16$, and the triples $(1,2,2)$, $(1,1,3)$, $(1,3,1)$ have sum $5$ and $N = 20$, all in exact agreement with the above relation.
+
+This empirical relation can be interpreted as a constraint on the manner in which the underlying update rule organizes the dynamics into super-cycles. Heuristically, each index $n_x$, $n_y$, and $n_z$ can be construed as counting the number of half-rebounds along a corresponding logical axis, such that the total sum $n_x+n_y+n_z$ determines the length of the composite sequence required for the excitation and the cavity configuration to return to their initial joint state.\cite{Effective_Fields_PDL_2026} The prefactor $4$ can then be interpreted as a characteristic temporal scale per half-rebound, arising from the specific pattern of local sign updates within the cavity.
+
+\subsection{Permutation symmetry and degenerate modes}
+
+A second systematic feature, already apparent in Table~\ref{tab:low_modes}, is the invariance of both the period and the leakage profile under permutations of the mode indices.\cite{Effective_Fields_PDL_2026} For example, the triples $(1,1,2)$ and $(1,2,1)$ not only possess the same minimal period $N = 16$, but also display leakage profiles that are indistinguishable within numerical precision. Similarly, the triples $(1,2,2)$, $(1,1,3)$, and $(1,3,1)$ all exhibit $N = 20$ and share the same characteristic two-plateau structure.\cite{Effective_Fields_PDL_2026} These observations indicate that, at least within the family of modes investigated here, the three logical directions $x$, $y$, and $z$ are dynamically equivalent in the cavity, so that the minimal period is fully determined by the multi-set $\{n_x,n_y,n_z\}$ rather than by the ordered triple.
+
+In contrast, the very short-period modes with $N=4$ constitute a distinct, highly degenerate subset. Multiple inequivalent triples, such as $(2,1,1)$, $(2,2,1)$, $(2,1,2)$, and $(3,1,1)$, all give rise to $N=4$ and exhibit an essentially constant minimal leakage over the entire cycle.\cite{Effective_Fields_PDL_2026} These modes appear to be strongly commensurate with both the underlying graph topology and the local update rule, such that their dynamics closes after a single elementary super-cycle. In terms of the associated logical frequencies, $\nu \propto 1/N$, they form a cluster of modes at a fixed high frequency, characterised by a non-trivial degeneracy in index space.
+
+Taken together, the linear period law and the observed permutation symmetry imply that, over a substantial range of small indices, the PDL cavity implements a simple and robust mapping from integer triples $(n_x,n_y,n_z)$ to minimal periods $N$. This structure will play a central role in the mode-counting arguments developed in the following section.
+
+\subsection{Interpretation in terms of logical wavelengths}
+
+In conventional wave mechanics, a mode in a cavity is characterised by its temporal frequency together with a spatial wavelength fixed by the boundary conditions and by the number of half-wavelengths along each spatial direction.\cite{EM_Cavities_Notes,Density_of_states_Notes} In the PDL cavity, by contrast, there is no underlying continuous spatial coordinate or metric. Instead, the minimal period $N(n_x,n_y,n_z)$ of a mode plays an analogous organising role for the dynamics. It is therefore natural to interpret $N$ as a \emph{logical wavelength} or cycle length, defined as the number of discrete time steps after which the joint cavity–excitation state recurs exactly.
+
+For the large class of modes for which the empirical relation
+\[
+N(n_x,n_y,n_z) = 4 \bigl(n_x + n_y + n_z\bigr)
+\]
+is satisfied,\cite{Effective_Fields_PDL_2026} this logical wavelength is directly proportional to the index sum $n_x + n_y + n_z$. Heuristically, each index $n_x$, $n_y$, and $n_z$ counts the number of discrete half-rebounds executed by the excitation along the corresponding logical axis within a single super-cycle, and the total number of such half-rebounds determines the overall cycle length. The prefactor of $4$ encodes the characteristic number of time steps per half-rebound imposed by the local update scheme; in this sense, the update rule partitions the dynamics into super-cycles whose duration scales with $n_x + n_y + n_z$.
+
+Within this framework, increasing any of the indices $n_x$, $n_y$, or $n_z$ increases the logical wavelength and decreases the corresponding logical frequency $\nu \propto 1/N$, while leaving the qualitative two-plateau structure of the leakage profile invariant.\cite{Effective_Fields_PDL_2026} The highly degenerate modes with $N = 4$ can then be interpreted as fundamental short-wavelength modes that are perfectly commensurate with the cavity structure, closing after a single elementary super-cycle and occupying a distinguished high-frequency level in the logical spectrum.
+
+\section{Logical Density of Modes}
+
+We now employ the empirical period law, together with the permutation symmetries described above, to introduce a logically defined notion of frequency for the PDL cavity modes and to derive the associated scaling behaviour of the mode density of states.
+
+\subsection{From period \texorpdfstring{$N$}{N} to logical frequency \texorpdfstring{$\nu$}{nu}}
+
+In continuum cavity and waveguide problems, each mode is characterised by a frequency $\nu$ (or angular frequency $\omega$), and the density of states is typically studied as a function of this frequency.\cite{Density_of_states_Notes,EM_Cavities_Notes} In the present discrete setting, the primary dynamical quantity associated with a mode is its minimal period $N(n_x,n_y,n_z)$, which we regard as the logical analogue of a wavelength or characteristic time scale.
+
+To connect with standard terminology, we introduce a \emph{logical frequency} $\nu$ by
+\[
+\nu(n_x,n_y,n_z) \coloneqq \frac{1}{N(n_x,n_y,n_z)},
+\]
+measured in units of inverse time steps.\cite{Effective_Fields_PDL_2026} This definition is natural in a discrete-time framework: modes with shorter periods correspond to higher logical frequencies, whereas modes with longer periods correspond to lower logical frequencies. For the counting arguments developed below, any monotone function of $1/N$ would be equivalent up to an overall scale factor; we therefore adopt this simplest normalisation for concreteness.
+
+On the large class of modes for which the empirical relation
+\[
+N(n_x,n_y,n_z) = 4 \bigl(n_x + n_y + n_z\bigr)
+\]
+holds, the logical frequency is inversely proportional to the sum $S = n_x + n_y + n_z$ of the mode indices. Consequently, imposing an upper bound on the period, or equivalently a lower bound on the logical frequency, is tantamount to imposing an upper bound on $S$.\cite{Effective_Fields_PDL_2026}
+
+\subsection{Mode counting in index space}
+
+We now analyse the set of index triples $(n_x,n_y,n_z)$ that generate cavity modes belonging to the large family governed by the linear period law. For a prescribed upper bound $N_{\max}$ on the period, the relation
+\[
+N(n_x,n_y,n_z) = 4 (n_x+n_y+n_z)
+\]
+implies that all such modes satisfy
+\[
+n_x + n_y + n_z \le S_{\max} \coloneqq \frac{N_{\max}}{4}.
+\]
+Conversely, any triple of positive integers $(n_x,n_y,n_z)$ with $n_x+n_y+n_z \le S_{\max}$, provided it lies within the regime of validity of the empirical law, corresponds to a mode whose minimal period does not exceed $N_{\max}$.\cite{Effective_Fields_PDL_2026}
+
+The associated combinatorial problem of counting such triples is classical: the number of integer solutions $(n_x,n_y,n_z) \in \mathbb{N}^3$ obeying $n_x+n_y+n_z \le S_{\max}$ exhibits asymptotic growth governed by the volume of a three-dimensional discrete simplex in index space.\cite{Density_of_states_Notes,Counting_States_2021} More precisely, one finds
+\[
+M(S_{\max}) \sim C\, S_{\max}^3
+\]
+for large $S_{\max}$, where $M(S_{\max})$ denotes the number of admissible triples and $C$ is a dimension-dependent constant that depends on the precise conventions regarding the inclusion of zero indices and the treatment of inequalities.\cite{Density_of_states_Notes,Counting_States_2021} Re-expressing this in terms of the period bound $N_{\max} = 4 S_{\max}$ yields
+\[
+M(N_{\max}) \sim C' \, N_{\max}^3,
+\]
+with $C' = C/4^3$. Thus, the cumulative number of modes with minimal period at most $N_{\max}$ scales cubically with $N_{\max}$.
+
+Equivalently, imposing a lower bound $\nu \ge \nu_{\min}$ on the logical frequency induces an upper bound $N \le N_{\max} = 1/\nu_{\min}$ on the period, and hence an upper bound $S_{\max} = N_{\max}/4$ on the sum $n_x+n_y+n_z$.\cite{Density_of_states_Notes} The mode-counting problem in the PDL cavity therefore reduces to enumerating integer lattice points in a three-dimensional region of index space, in direct analogy with standard derivations of the density of states in electromagnetic or quantum cavities.\cite{Density_of_states_Notes,EM_Cavities_Notes,Counting_States_2021}
+
+\subsection{Emergent \texorpdfstring{$\nu^2$}{nu\^2} scaling in three dimensions}
+
+To obtain a density of states from the cumulative mode count $M(N_{\max})$, we differentiate with respect to the appropriate frequency parameter. In the continuum setting, one typically relates the number of modes with physical frequency up to $\nu_{\max}$ to the volume of a ball in wave-vector space with radius proportional to $\nu_{\max}$, which yields $M(\nu_{\max}) \propto \nu_{\max}^3$ in three spatial dimensions and hence a density of states $\rho(\nu) \propto \nu^2$.\cite{Density_of_states_Notes,EM_Cavities_Notes} In the discrete PDL cavity, by contrast, the analogous scaling emerges for the cumulative count as a function of the inverse frequency, with $N$ playing the role of an effective period such that $N \propto 1/\nu$.
+
+Using the relation $M(N_{\max}) \sim C' N_{\max}^3$ and the definition $\nu = 1/N$, the cumulative number of modes with logical frequency \emph{greater than or equal to} $\nu_{\min}$ can be expressed as
+\[
+M(\nu_{\min}) \sim C' \, \frac{1}{\nu_{\min}^3},
+\]
+up to sub-leading corrections.\cite{Density_of_states_Notes} Differentiating this expression with respect to $\nu_{\min}$ (and changing the overall sign so that the resulting density increases with $\nu$) yields a density of states
+\[
+\rho(\nu) \propto \nu^2,
+\]
+where the proportionality constant is determined by the detailed structure of the cavity graph and by the specific choice of mode family under consideration.\cite{Density_of_states_Notes,EM_Cavities_Notes}
+
+In this sense, the logical mode-counting statistics in the PDL cavity reproduce the characteristic three-dimensional $\nu^2$ scaling of the density of states, as known from continuum electromagnetic and quantum systems, even though there is no underlying differential wave equation or metric background.\cite{PDL_Main_2026,PDL_Position_2026} The distinguished subset of modes with minimal period $N=4$ and approximately constant minimal leakage can be interpreted as a highly degenerate level at a fixed high logical frequency, superimposed on the global $\nu^2$ scaling without modifying its asymptotic behaviour.\cite{Effective_Fields_PDL_2026}
+
+\section{Discussion}
+
+\subsection{Relation to standard cavity and quantum models}
+
+The construction presented here is deliberately limited in scope. Its purpose is not to reproduce the full electromagnetic dynamics or the framework of quantum field theory in a cavity, but rather to investigate whether a purely discrete, relational model can sustain a non-trivial spectrum of cavity-like modes.\cite{PDL_Main_2026,PDL_Position_2026} Nonetheless, the parallels with standard mode-counting approaches are noteworthy. In continuum treatments, one enumerates integer triples $(n_x,n_y,n_z)$ that label standing-wave solutions in a rectangular or otherwise bounded domain and shows that the cumulative number of modes scales with the volume of a ball in wave-vector space. This leads to a three-dimensional density of states of the form $\rho(\nu) \propto \nu^2$.\cite{Density_of_states_Notes,EM_Cavities_Notes,Counting_States_2021}
+
+In the PDL cavity, there is no underlying wave equation or continuous wave-vector space. Instead, the empirical period relation $N = 4(n_x + n_y + n_z)$ effectively defines a mapping from integer triples to discrete temporal scales, so that the mode-counting problem reduces to counting integer lattice points within a three-dimensional simplex in index space.\cite{Effective_Fields_PDL_2026} The resulting cubic dependence of the cumulative mode count on $N$ yields a quadratic scaling of the logical density of states in $\nu \propto 1/N$, in direct analogy with the continuum prediction.\cite{Density_of_states_Notes} This indicates that at least some spectral properties typically derived from continuum differential equations can arise from purely combinatorial and relational constructions.
+
+At the same time, key differences persist. The present model does not incorporate phases, interference phenomena, or superpositions of modes; each mode corresponds instead to a deterministic periodic orbit in a finite state space.\cite{PDL_Main_2026} The notion of frequency is defined solely in terms of recurrence times, and there is no direct analogue of an energy operator or Hamiltonian associated with these modes. Consequently, the results should be interpreted as establishing a structural analogy at the level of mode counting, rather than as a comprehensive reconstruction of quantum cavity physics.
+
+\subsection{Implications for the PDL programme}
+
+Within the broader PDL research programme, the principal contribution of the present work is to demonstrate that a fixed, finite signed graph, endowed with a local update rule and a simple excitation scheme, can exhibit a structured spectrum of low-leakage modes that are naturally indexed by integer triples.\cite{PDL_Main_2026,PDL_Position_2026} This result complements previous PDL studies in which electron and proton prototypes, effective fields, and gravitational couplings were derived from static or quasi-static characteristics of signed graphs and from the analysis of hierarchical coherence leakage.\cite{Combinatorial_Proton_v2_2026,Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+
+More specifically, the existence of modes with systematically small and structured leakage profiles indicates that PDL graphs are capable of supporting quasi-coherent dynamical patterns that remain close to logical closure throughout their evolution. This, in turn, suggests that such graphs may provide an appropriate substrate for particle-like excitations or field modes in a fully relational setting.\cite{Topological_Reformulation_PDL_2026,ProperTime_PDL_2026} The empirically observed linear dependence of the period on $n_x + n_y + n_z$, together with the emergent three-dimensional density-of-states scaling, further supports the hypothesis that familiar spectral structures can arise from the combinatorial organisation of constraints on finite graphs, without presupposing an underlying continuous spacetime or Hilbert space.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+
+More generally, the analysis presented here shows how notions such as “wavelength”, “frequency”, and “mode degeneracy” can be reformulated in purely logical and combinatorial terms, as attributes of periodic orbits and index-space counting, while still reproducing central scaling relations known from continuum physics.\cite{Density_of_states_Notes,Counting_States_2021} These findings strengthen the case for PDL as a candidate framework in which quantum-like phenomena might emerge from discrete, relational primitives.
+
+\subsection{Limitations and open questions}
+
+Several limitations of the present study warrant emphasis. First, all results have been obtained for a single choice of cavity graph with $27$ vertices and a single class of local update rules; it is not yet established to what extent the empirical period law and the associated density-of-states scaling persist for alternative graphs, boundary conditions, or excitation rules.\cite{Effective_Fields_PDL_2026} Second, the numerical exploration has been restricted to comparatively small index triples $(n_x,n_y,n_z)$, selected primarily to reveal regularities rather than to provide an exhaustive characterisation of the mode spectrum.
+
+Third, the model does not incorporate superposition, interference, or measurement processes, and no inner product or Hilbert space structure has been defined on the space of modes.\cite{PDL_Main_2026} Consequently, the connection to quantum amplitudes, probabilities, and operators remains indirect, arising only through analogies in mode counting and coherence structure. Finally, the role of the highly degenerate $N=4$ modes, and their potential relationship to particularly robust or fundamental excitations, has not been thoroughly analysed.
+
+These limitations give rise to numerous open questions. Do other PDL cavity graphs exhibit the same linear period law and $\nu^2$ density-of-states scaling, or are these features specific to the present construction? Can one engineer update rules that explicitly encode phase-like information and thereby support interference between logical modes? How do coherence leakage and mode structure behave in the presence of multiple excitations, or when the cavity is coupled to more complex PDL environments? Addressing these questions will be essential for assessing the robustness and physical relevance of the spectral structures identified in this work.
+
+\section{Conclusion}
+
+We have constructed and analysed a simplified model of a three-dimensional cavity within the Projective Dynamic Logo (PDL) framework, in which a photon-like logical excitation propagates on a finite signed graph according to a local update rule indexed by integer triples $(n_x,n_y,n_z)$.\cite{PDL_Main_2026,Effective_Fields_PDL_2026} For a broad family of small index triples, the coupled cavity–excitation dynamics is strictly periodic, with a minimal period $N(n_x,n_y,n_z)$ and a leakage profile that is both small in magnitude and strongly structured: it alternates between two distinct plateaux and returns exactly to its baseline value at the end of each cycle.\cite{Effective_Fields_PDL_2026,Exponent_18_PDL_2026}
+
+Our numerical data exhibit an empirical period law
+\[
+N(n_x,n_y,n_z) = 4 \bigl(n_x + n_y + n_z\bigr)
+\]
+for a large class of modes, invariant under permutations of the indices, along with a separate, highly degenerate family of modes with minimal period $N=4$ and approximately constant minimal leakage.\cite{Effective_Fields_PDL_2026} Interpreting $N$ as a logical wavelength and defining a logical frequency $\nu \propto 1/N$, this linear relation reduces the mode-counting problem to counting integer triples with bounded sum $n_x+n_y+n_z$, whose multiplicity grows cubically with the upper bound.\cite{Density_of_states_Notes,Counting_States_2021}
+
+Consequently, the logical density of states in this PDL cavity scales as $\rho(\nu) \propto \nu^2$ in three dimensions, closely mirroring the standard continuum result for electromagnetic or quantum cavities, despite the absence of any underlying wave equation or metric background.\cite{Density_of_states_Notes,EM_Cavities_Notes} These findings show that a purely discrete, relational, and local framework on finite signed graphs can sustain cavity-like modes with organised spectra and three-dimensional density-of-states scaling, thereby providing a concrete illustration of how quantum-like spectral structures may emerge within the PDL programme.\cite{PDL_Main_2026,PDL_Position_2026}
+
+\bibliographystyle{plain}
+\bibliography{PDL_bibliography}
+
+\end{document}

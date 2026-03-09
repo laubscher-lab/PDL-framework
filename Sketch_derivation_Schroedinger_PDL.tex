@@ -1,0 +1,714 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---} 
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\title{Towards a Schr\"odinger--Type Dynamics from the Projective Dynamic Logo (PDL)\\
+A Relational Sketch Linking Coherence Cycles, Active Surfaces, and Effective Potentials}
+
+\author{C.\ Laubscher\\
+{\small Independent researcher}}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a preliminary extension of the Projective Dynamic Logo (PDL) framework toward an effective Schrödinger-type dynamics. Building on previous work, in which the minimal $4,6$ stationary closure has been identified with an electron at rest and the proton has been modeled as a hierarchical structure equipped with an active surface, we revisit the interpretation of Planck’s constant, the proton–electron mass ratio, and the fine-structure constant as coherence ratios on signed graphs. We then show how a decomposition into stationary (valence and active surface) and dynamical (relational sea) components naturally suggests analogues of potential and kinetic terms. 
+
+To exemplify these concepts, we introduce a discrete toy model based on position shells and local transitions, in which a Laplacian-like kinetic contribution and a Coulomb-like effective potential emerge within a coarse-grained description of an electronic degree of freedom. The construction developed here does not yet yield a derivation of the Schrödinger equation from the first principles of PDL; instead, it delineates a structured research program and produces several nontrivial consistency checks that connect coherence cycles and surface fluxes with standard hydrogenic phenomenology. In this respect, the present sketch complements earlier compatibility analyses, in which a PDL-based fine-structure constant was incorporated into the standard Schrödinger framework, and it should be regarded as a programmatic outline rather than a complete derivation.
+\end{abstract}
+
+\section{Introduction}
+
+The nonrelativistic Schr\"odinger equation occupies a central position in modern theoretical physics. It furnishes an extraordinarily accurate description of atomic systems, most prominently the hydrogen atom, and constitutes the foundational framework of nonrelativistic quantum chemistry. In its standard formulation, the electron is represented by a complex wave function $\psi(\mathbf{r},t)$ evolving on a prescribed spacetime background, while the proton is idealised as a static pointlike source generating a Coulomb potential. The fundamental constants appearing in this formalism—Planck’s reduced constant $\hbar$, the electron mass $m_e$, the proton mass $m_p$, and the fine-structure constant $\alpha$—are treated as exogenous parameters to be fixed by experiment, rather than as quantities derivable from more elementary structural principles.\par
+
+In contrast, the Projective Dynamic Logo (PDL) framework adopts a markedly different point of departure. Instead of postulating an underlying spacetime manifold populated by particles and fields, PDL models physical reality as a network of minimal logical closures encoded by finite signed graphs.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English,Laubscher2026LDP_French} Vertices represent informational entities, edges carry signed binary relations of agreement or disagreement, and dynamical stability is characterised by a coherence-oriented optimisation functional $F$ acting on such signed graphs. Within this purely relational setting, familiar objects of theoretical physics—such as electrons, protons, and coupling constants—are reinterpreted as emergent stationary regimes and coherence ratios.\par
+
+Previous investigations have shown, in particular, that the first minimal stationary closure selected by the PDL axioms is the complete signed graph on four vertices and six edges, denoted $(4,6)$.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English} This structure admits an assignment of edge signs such that all triangular subgraphs are coherent, and a global sign inversion generates a binary pulsation that preserves triangular coherence. Within the PDL interpretation, this configuration is identified as a logical prototype of an electron at rest, and the reduced Planck constant $\hbar$ is interpreted as the minimal action per coherence cycle of this structure. At a higher level of organisational complexity, a specific hierarchical architecture has been proposed for the proton: three valence cores of sizes $n_u=24$ and $n_d=28$, together with a dense relational sea of dynamical links, yield a total valence content $r_{\mathrm{val}}=930$ and a relational sea content $R_{\mathrm{sea}}=10\,087$.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French} The corresponding stationary and dynamical fractions are of order $9\%$ and $91\%$, respectively, in qualitative agreement with the standard QCD picture, in which only a small fraction of the proton mass is carried by valence degrees of freedom.\par
+
+Building on this protonic architectural framework, the concept of an active surface, denoted $R_{\mathrm{surf}}$, has been introduced to describe the finite subset of protonic relations that are capable of coupling coherently to an external $(4,6)$ structure via mixed triangles, without increasing the global fraction of violated triangular constraints.\cite{Laubscher2026DerivationAlpha} Under a restricted set of explicit assumptions—most notably the introduction of the golden ratio $\varphi$ as a relational optimisation parameter—one derives a structural representation of the fine-structure constant in terms of the proton–electron mass ratio $\mu = m_p/m_e$, the valence content $r_{\mathrm{val}}$, and $\varphi$,
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1} = \mu\,\varphi^{2}\,\frac{r_{\mathrm{val}}^{2}}{9},
+\label{eq:alphaPDLIntro}
+\end{equation}
+which numerically yields $\alpha_{\mathrm{PDL}}^{-1} \simeq 137.02$ for $r_{\mathrm{val}}=930$, $\mu \simeq 1836.15$, and $\varphi = (1+\sqrt{5})/2$, in close agreement with the empirical value $\alpha^{-1} \simeq 137.036$.\cite{Laubscher2026DerivationAlpha} Notably, this level of agreement is achieved without the introduction of any continuous fitting parameter.\par In a companion study, this structurally defined expression for $\alpha$ was implemented within the standard nonrelativistic Schr\"odinger framework for the hydrogen atom. Interpreting the Schr\"odinger equation as an effective dynamical law governing an electronic degree of freedom, and replacing the empirical value of $\alpha$ by $\alpha_{\mathrm{PDL}}$, it was demonstrated that both the hydrogenic energy spectrum and the Bohr radius are reproduced with an accuracy commensurate with that of the PDL-based expression for the fine-structure constant itself.\cite{Laubscher2026SchrodingerPDL} In this construction, the functional form of the Coulomb potential and of the hydrogenic Schr\"odinger equation is preserved, while the coupling constant is reinterpreted as having a structural origin.\par The present work is intended to extend this compatibility analysis. Our aim is not to provide a full derivation of the Schr\"odinger equation from the axioms of PDL, a task that would necessitate the explicit emergence of complex amplitudes, a linear and unitary dynamical law, and a continuum spacetime manifold. Instead, we seek to identify and systematically organise a collection of relational elements within PDL that naturally parallel the kinetic and potential contributions in the Schr\"odinger equation, and to construct a discrete toy model in which a Schr\"odinger-type dynamics arises as an effective description. In so doing, we emphasize both the prospects and the current shortcomings of the PDL framework as a candidate relational substrate for quantum dynamics.
+
+\subsection{Scope and position of this work}
+
+We do not aim to (i) deduce the Schr\"odinger equation as a formal theorem from the axioms of PDL, (ii) reconstruct a full Hilbert-space formalism encompassing observables and measurement postulates, or (iii) supplant the standard nonrelativistic quantum-mechanical description of atomic systems. Unlike previous compatibility analyses, in which a structurally motivated value of the fine-structure constant, $\alpha_{\mathrm{PDL}}$, was imposed on an already postulated Schr\"odinger description of the hydrogen atom, the present work investigates how the basic ingredients of PDL might themselves underlie the kinetic and potential terms, at the cost of introducing additional, explicitly articulated modelling assumptions. Accordingly, this study pursues three more modest and precisely delimited goals:
+\begin{itemize}
+\item First, to reinterpret time, energy, and mass within PDL as quantities associated with coherence cycles and coherence cost, and thereby to clarify how the familiar relations $E = \hbar \omega$ and $E = mc^{2}$ can be reformulated in a purely relational setting.
+\item Second, to exploit the structural decomposition of the proton into a stationary valence-plus-surface sector and a dynamical sea sector, and to demonstrate that this decomposition admits a natural correspondence with the distinction between potential and kinetic contributions in an effective Schr\"odinger equation for an electronic degree of freedom.
+\item Third, to construct a minimal discrete position model in which transitions of the $(4,6)$ block between neighbouring configuration classes generate a Laplacian-like kinetic term, while the protonic surface induces a Coulomb-like potential, thereby providing a concrete schematic mechanism through which Schr\"odinger-type dynamics may emerge from PDL.
+\end{itemize}
+Within this restricted remit, the contribution of this work is twofold. At the conceptual level, it demonstrates that the structural elements of PDL already known to reproduce the empirical value of the fine-structure constant can be repurposed to delineate a plausible pathway toward the emergence of Schr\"odinger-type dynamics. At the technical level, it identifies a class of discrete models and associated graph-theoretic quantities whose subsequent analytical or numerical investigation could either substantiate or falsify this proposed pathway.
+
+\subsection{Outline of the paper}
+
+The remainder of the paper is organised as follows. In Section~\ref{sec:PDLingr}, we provide a concise review of the PDL ingredients and structural results required for the subsequent construction. These include the signed-graph formalism and associated optimisation functional, the minimal $(4,6)$ structure and its interpretation as an electron prototype, the combinatorial architecture of the proton, the definition of the active surface, and the structural expression for the fine-structure constant $\alpha_{\mathrm{PDL}}$.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English,Laubscher2026LDP_French,Laubscher2026DerivationAlpha} Section~\ref{sec:TimeEnergyMass} develops a relational interpretation of time, energy, and mass in terms of coherence cycles and coherence cost. Section~\ref{sec:StatDyn} introduces the distinction between stationary and dynamical sectors in the PDL proton and demonstrates how this distinction suggests an emergent separation between potential and kinetic contributions for an effective electronic degree of freedom. Section~\ref{sec:DiscreteLaplacian} presents a discrete position model in which local transitions of the $(4,6)$ block yield a Schr\"odinger-like discrete evolution equation with a Laplacian kinetic term. Section~\ref{sec:FluxPotential} develops a flux-based description of the active surface, relating the number of mixed proton--electron triangles at a distance $r$ to an effective Coulomb-like potential. Section~\ref{sec:Semiclassical} examines a simple semiclassical Bohr-type consistency test, demonstrating that the structural value $\alpha_{\mathrm{PDL}}$ is compatible with a phase-quantisation condition. Finally, Section~\ref{sec:Discussion} summarises the main results, highlights the missing ingredients required for a complete derivation of the Schr\"odinger equation from PDL, and outlines directions for future research.
+
+\section{PDL ingredients and previous structural results}
+\label{sec:PDLingr}
+
+In this section, we provide a self-contained overview of the subset of the PDL framework that will be employed in the remainder of the article. The exposition is intentionally succinct and relies on earlier publications for proofs and in-depth analysis.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English,Laubscher2026LDP_French,Laubscher2026DerivationAlpha}
+
+\subsection{Signed graphs, coherence, and logical optimisation}
+
+Within PDL, a \emph{logical configuration} is modelled as a finite signed graph $G = (V,E,s)$, where $V$ is a finite set of vertices (informational entities), $E \subseteq \{\{i,j\} \subseteq V \mid i\neq j\}$ is a set of undirected edges (binary relations), and $s : E \to \{-1,+1\}$ associates a sign with each edge.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English} For any unordered triple $\{i,j,k\}\subset V$, we stipulate that:
+\begin{itemize}
+\item the triangle $\{i,j,k\}$ is \emph{present} if the three edges $\{i,j\},\{j,k\},\{i,k\}$ all belong to $E$;
+\item the triangle is \emph{coherent} if $s_{ij}s_{jk}s_{ik}=+1$;
+\item it is \emph{violated} otherwise, either because at least one of the three edges is missing from $E$, or because the product of the signs equals $-1$.
+\end{itemize}
+Let $n = |V|$, and denote by $\binom{n}{3}$ the total number of unordered vertex triples. The number of violated triangles in $G$ is written $N_{\mathrm{viol}}(G)$, and the fraction of violated triangles is defined by
+\begin{equation}
+\epsilon(G) = \frac{N_{\mathrm{viol}}(G)}{\binom{n}{3}},
+\end{equation}
+with the convention that $\epsilon(G)=0$ whenever $n<3$. The relational density of $G$ is given by
+\begin{equation}
+\rho(G) = \frac{|E|}{r_{\max}(n)}, \qquad r_{\max}(n) = \frac{n(n-1)}{2},
+\end{equation}
+so that $\rho(G)=1$ if and only if $G$ is a complete graph.\par To identify dynamically sustainable configurations, PDL introduces a logical optimisation functional
+\begin{equation}
+F(\epsilon,\rho,m) = w_{\mathrm{coh}} f_{\mathrm{coh}}(\epsilon) + w_{\mathrm{conn}} f_{\mathrm{conn}}(\rho) + w_{\mathrm{min}} m,
+\label{eq:Ffunctional}
+\end{equation}
+where $w_{\mathrm{coh}},w_{\mathrm{conn}},w_{\mathrm{min}}\geq 0$ are fixed weights, $f_{\mathrm{coh}}$ is strictly decreasing in $\epsilon$, $f_{\mathrm{conn}}$ is non-decreasing in $\rho$, and $m\in\{0,1\}$ is a minimality indicator, equal to $1$ if the configuration is minimally closed and $0$ otherwise.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English} Intuitively, $F$ favours configurations that exhibit a low proportion of coherence violations, high relational density up to the point of closure, and minimality with respect to set-theoretic inclusion. For the purposes of the present study, the exact analytical form of $F$ is not essential; it is sufficient that $F$ assigns strictly higher values to configurations that decrease $\epsilon$, increase $\rho$ within admissible bounds, and attain closure with minimal redundancy.
+
+\subsection{The minimal \texorpdfstring{$(4,6)$}{(4,6)} structure as an electron prototype}
+
+Within the class of finite signed graphs considered under the above optimisation scheme, the first non-trivial elementary stationary structure is the complete graph on four vertices and six edges, denoted $(4,6)$.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English} More precisely, one has:
+
+\begin{theorem}[Minimal stationary structure $(4,6)$]
+Within the class of finite signed graphs that satisfy the PDL axioms and maximise the optimisation functional $F$ at the fundamental level, the first minimal stationary structure is the complete signed graph on four vertices and six edges, $(4,6)$. There exists an assignment of edge signs such that all triangular subgraphs are coherent, the coherent triangles form a connected network that exhaustively covers the graph, and a global inversion of all signs induces a binary pulsation that preserves triangular coherence.
+\end{theorem}
+
+This result implies that the $(4,6)$ configuration realises a minimal closed regime of logical coherence: all necessary relational distinctions between the four vertices are internally encoded, and the structure does not require any strictly larger superstructure to preserve closure.\cite{Laubscher2026IntroPDL} The existence of a global sign inversion that preserves coherence defines an intrinsic two-step dynamical cycle, which is interpreted as a binary pulsation of the configuration.\par Within the PDL framework, this $(4,6)$ structure is naturally interpreted as the logical prototype of a rest-frame electron.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French} The associated binary pulsation realises the minimal internal ``clock'' corresponding to an elementary stationary regime. The reduced Planck constant $\hbar$ is accordingly reinterpreted as the minimal quantum of action required to sustain one full coherence cycle of this structure. The electron rest energy $E_{0,e}=m_e c^{2}$ is then viewed as the coherence cost per unit emergent time associated with maintaining the minimal $(4,6)$ closure.
+
+\subsection{Combinatorial architecture of the proton}
+
+A single $(4,6)$ structure is insufficient to account for the proton, whose internal organisation is, from the perspective of QCD, considerably more intricate than that of the electron. Within PDL, the proton is represented as a two-tier hierarchical configuration consisting of three local stationary domains (valence cores) embedded in a dynamical relational sea.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French,Laubscher2026DerivationAlpha} The valence sector of this architecture is characterised by the integer multiplicities
+\begin{equation}
+n_u = 24, \qquad n_d = 28,
+\end{equation}
+for the up-type and down-type valence cores, respectively. These values are subject to constraints of internal completeness (each core is composed of a multiple of four elementary units), minimal asymmetry adequate to generate the net charge $+1$, and maximisation of the optimisation functional $F$ under these conditions.\cite{Laubscher2026LDP_French}\par For these multiplicities, the numbers of stationary relations internal to the up and down valence cores are given by
+\begin{equation}
+r_u = \frac{n_u(n_u-1)}{2} = \frac{24\cdot 23}{2} = 276, \qquad
+r_d = \frac{n_d(n_d-1)}{2} = \frac{28\cdot 27}{2} = 378,
+\end{equation}
+so that the total stationary valence content is
+\begin{equation}
+r_{\mathrm{val}} = 2 r_u + r_d = 2\cdot 276 + 378 = 930.
+\end{equation}
+The relational sea is modelled as a set of dynamical relations with cardinality
+\begin{equation}
+R_{\mathrm{sea}} = 10\,087,
+\end{equation}
+implying that the total internal relational content of the proton is
+\begin{equation}
+R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}} = 930 + 10\,087 = 11\,017.
+\end{equation}
+Consequently, the stationary and dynamical fractions are
+\begin{equation}
+f_{\mathrm{stat}} = \frac{r_{\mathrm{val}}}{R_{\mathrm{tot}}} \approx 0.09, \qquad
+f_{\mathrm{dyn}} = \frac{R_{\mathrm{sea}}}{R_{\mathrm{tot}}} \approx 0.91.
+\end{equation}
+These numerical values encode the intended qualitative analogy with the QCD-based description of the proton, in which the dominant contribution to the mass originates from gluonic and sea-quark degrees of freedom, rather than from the bare masses of the valence quarks.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French}\par For the purposes of the present analysis, the essential point is that, within PDL, the proton is endowed with a finite valence coherence budget $r_{\mathrm{val}}$ and a large dynamical sea $R_{\mathrm{sea}}$, whose distinct roles will subsequently be associated with potential and kinetic contributions, respectively, in an effective electronic dynamics.
+
+\subsection{Active surface and structural fine-structure constant}
+
+The interaction between the protonic hierarchy and an external $(4,6)$ electron prototype does not uniformly involve all internal protonic relations. Rather, it is mediated by a finite subset of proton--proton relations that can participate in coherent mixed triangles with the $(4,6)$ block without increasing the global fraction of violated triangles.\cite{Laubscher2026DerivationAlpha} This motivates the following definition.
+
+\begin{definition}[Active surface]
+Let $G_p$ be a signed graph encoding the protonic structure and $G_e$ a signed graph encoding an electron-type $(4,6)$ structure. Let $G$ denote the union of $G_p$ and $G_e$, including all potential edges connecting vertices of $G_p$ and $G_e$. A protonic edge $e_{ij}\in E(G_p)$ is said to be \emph{active} with respect to $G_e$ if there exists at least one vertex $k\in V(G_e)$ such that the three edges $\{i,j\},\{i,k\},\{j,k\}$ belong to $E(G)$, the triangle $\{i,j,k\}$ is coherent, and the inclusion of this mixed triangle does not increase the global fraction of violated triangles in $G$. The \emph{active surface} $S_{\mathrm{act}}$ is defined as the set of all active protonic edges, and its cardinality $R_{\mathrm{surf}} = |S_{\mathrm{act}}|$ is called the active surface content.
+\end{definition}
+
+By construction, $S_{\mathrm{act}}$ forms a strict subset of the complete set of internal proton relations: it excludes those relations whose primary role is to sustain internal valence or sea coherence, and retains only those that can be consistently coupled to an external $(4,6)$ structure while preserving global closure. Under a set of structured hypotheses concerning the redistribution of coherence from core to surface---including the introduction of the golden ratio $\varphi$ as a relational optimisation parameter—one obtains the refined expression
+\begin{equation}
+R_{\mathrm{surf}} = \varphi\,\frac{r_{\mathrm{val}}}{3},
+\end{equation}
+which numerically gives $R_{\mathrm{surf}} \simeq 501.59$ for $r_{\mathrm{val}}=930$ and $\varphi = (1+\sqrt{5})/2$.\cite{Laubscher2026DerivationAlpha}
+
+Within this framework, the fine-structure constant is reinterpreted as a surface-coherence fraction that relates the proton’s active surface to its total coherence budget, with the latter measured in units defined by the electron. The structured hypothesis
+\begin{equation}
+\alpha^{-1} = \mu R_{\mathrm{surf}}^{2},
+\end{equation}
+where $\mu = m_p/m_e$ denotes the proton--electron mass ratio, together with the above expression for $R_{\mathrm{surf}}$, leads directly to
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1} = \mu\,\varphi^{2}\,\frac{r_{\mathrm{val}}^{2}}{9},
+\label{eq:alphaPDL}
+\end{equation}
+which coincides with Eq.~\eqref{eq:alphaPDLIntro} and reproduces the empirical fine-structure constant to within a few parts in $10^{-4}$.\cite{Laubscher2026DerivationAlpha} This structural representation of $\alpha$ will be employed in the sequel as a fixed input in the analysis of effective potentials and Schr\"odinger-type dynamics.
+
+\section{Relational interpretation of time, energy, and mass}
+\label{sec:TimeEnergyMass}
+
+In conventional physics, time, energy, and mass are typically treated as primitive notions: time is modeled as an external parameter, energy as a conserved scalar quantity associated with continuous symmetries via Noether’s theorem, and mass as an intrinsic parameter appearing in dynamical equations. Within the PDL framework, none of these concepts is postulated a priori. Instead, the fundamental entities are coherence cycles of signed graphs and the coherence cost required to sustain particular stationary regimes. In this section, we indicate how the standard interrelations between time, energy, and mass can be reformulated within this relational setting.
+
+\subsection{Coherence cycles and logical proper time}
+
+For a stationary PDL structure such as the $(4,6)$ configuration, the axioms ensure the existence of a global sign inversion that maps the configuration onto itself while preserving triangular coherence.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English} Iterating this inversion gives rise to a minimal two-step logical dynamics: at each step, all edge signs are flipped, and after two steps the configuration returns to its original sign assignment. This binary pulsation defines the simplest non-trivial internal ``clock'' associated with the structure.\par
+
+Let $\tau_{0}$ denote the time interval, in emergent metric units, associated with one full coherence cycle of the $(4,6)$ structure. Starting from the standard relativistic relation for an electron at rest,
+\begin{equation}
+E_{0,e} = m_e c^{2} = \hbar \omega_e,
+\end{equation}
+we identify the angular frequency $\omega_e$ with the logical pulsation frequency of the $(4,6)$ block and define
+\begin{equation}
+\tau_{0} = \frac{2\pi}{\omega_e}.
+\end{equation}
+A \emph{coherence cycle} is then defined as one complete period during which the $(4,6)$ structure passes through its two sign configurations and returns to its initial state while maintaining triangular coherence.\par
+
+Given a worldline of an electron-type regime, represented by a sequence of $(4,6)$ configurations embedded in a larger graph, we define its \emph{logical proper time} between two events as the number $N$ of coherence cycles completed along that worldline:
+\begin{equation}
+\Delta \tau_{\mathrm{logical}} = N\,\tau_{0}.
+\end{equation}
+This provides a relational, purely internal measure of the ``elapsed time'' for the $(4,6)$ regime, without presupposing an external time parameter. In a relativistic context, one may then identify $\Delta \tau_{\mathrm{logical}}$ with the usual proper time $\Delta \tau$ of the electron, with the Compton frequency serving as the internal clock.\cite{Laubscher2026LDP_French} In the nonrelativistic context considered here, it is sufficient to observe that the relation $E_{0,e} = \hbar \omega_e$ can be reinterpreted as a statement about the action per coherence cycle:
+\begin{equation}
+E_{0,e} \,\tau_{0} = \hbar \, 2\pi,
+\end{equation}
+i.e., each cycle carries a fixed quantum of action determined by $\hbar$.
+
+\subsection{Energy as coherence cost}
+
+Within the PDL framework, energy is not postulated as a primitive attribute of fields or particles defined on a fixed background spacetime. Instead, it is introduced operationally as the rate of coherence cost required to sustain a given stationary regime over emergent time.\cite{Laubscher2026IntroPDL,Laubscher2026LDP_French} For a regime characterised by an intrinsic pulsation frequency $\omega$, the action accumulated over a time interval $[t_1,t_2]$ is defined by
+\begin{equation}
+S = \int_{t_1}^{t_2} E(t)\,dt,
+\end{equation}
+where $E(t)$ denotes the instantaneous coherence cost per unit time. For strictly stationary regimes, $E(t)$ is constant, and the above expression reduces to $S = E\,\Delta t$. The standard Planck relation $E = \hbar \omega$ then acquires the interpretation that each coherence cycle of period $2\pi/\omega$ carries a fixed quantum of action equal to $2\pi\hbar$.\par
+
+From this viewpoint, the internal $(4,6)$ structure associated with an electron at rest is specified by a fixed coherence cost per unit time,
+\[
+E_{0,e} = m_e c^{2},
+\]
+and a corresponding fixed coherence cost per internal cycle, $E_{0,e}\,\tau_{0}$. More intricate stationary regimes, such as the protonic architecture, are likewise characterised by an intrinsic coherence cost
+\[
+E_{0,p} = m_p c^{2}.
+\]
+The inequality $m_p \gg m_e$ is thus understood as indicating that a substantially larger number of coherence relations must be sustained within the protonic hierarchy, as reflected in the extensive network of internal relations and the associated optimisation of the functional $F$.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French}\par
+
+In summary, within PDL, energy is not treated as an independent primitive quantity, but rather as a derived measure of the rate at which coherence must be actively maintained in a given relational structure.
+
+\subsection{Mass as density of coherence cycles}
+
+The standard relativistic relation $E = mc^{2}$, combined with the quantum mechanical relation $E = \hbar\omega$, suggests an interpretation of the mass $m$ of a stationary regime as a quantitative measure of the density of coherence cycles per unit time in a given reference frame. For a configuration characterized by an intrinsic angular frequency $\omega$, one obtains
+\begin{equation}
+m = \frac{\hbar \omega}{c^{2}}.
+\end{equation}
+Within the PDL framework, this can be reformulated as follows: the more demanding a structure is in terms of coherence maintenance—i.e., the larger its characteristic frequency $\omega$ and the higher the action per coherence cycle—the greater its effective mass. In this perspective, the electron and the proton do not differ because they correspond to distinct primitive substrates of matter, but rather because they realize different stationary regimes on signed graphs, each associated with its own coherence budget.\par
+
+This reinterpretation is particularly relevant for the present work because it links the proton–electron mass ratio
+\begin{equation}
+\mu = \frac{m_p}{m_e},
+\end{equation}
+which is central to the structural expression for $\alpha_{\mathrm{PDL}}$, to the ratio of coherence costs required to sustain the protonic hierarchy versus those required for the minimal $(4,6)$ closure. The structural expression
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1} = \mu\,\varphi^{2}\,\frac{r_{\mathrm{val}}^{2}}{9},
+\end{equation}
+can thus be interpreted as stating that the inverse fine-structure constant encodes an effective surface-to-volume ratio of coherence. It compares the global protonic coherence budget (parametrized by $\mu$ and $r_{\mathrm{val}}$) with the finite number of coherence channels available at the active surface (parametrized by $R_{\mathrm{surf}} = \varphi r_{\mathrm{val}}/3$).\cite{Laubscher2026DerivationAlpha} In subsequent sections, this relational conception of energy and mass will be used to reinterpret the kinetic and potential contributions in an effective Schr\"odinger equation as coherence costs associated, respectively, with dynamical and stationary sectors.
+
+\section{Stationary and dynamical sectors: towards potential and kinetic terms}
+\label{sec:StatDyn}
+
+The proton architecture specified within the PDL framework admits a natural decomposition into a stationary valence-plus-surface sector and a dynamical sea sector. In this section, we argue that this decomposition corresponds in a straightforward manner to the distinction between potential and kinetic contributions for an effective electronic degree of freedom.
+
+\subsection{Stationary protonic sector: valence cores and active surface}
+
+The valence cores together with the active surface of the PDL proton constitute a rigid backbone of the protonic hierarchy.\cite{Laubscher2026PDL_English,Laubscher2026DerivationAlpha} Their internal coherence structure is essentially fixed (up to small fluctuations) by the combinatorial parameters $n_u=24$, $n_d=28$, $r_{\mathrm{val}}=930$, and by the optimisation of $F$ subject to the PDL axioms. The active surface $S_{\mathrm{act}}$ is defined as the subset of protonic edges that can enter into coherent mixed triangles with an external $(4,6)$ structure without increasing the fraction of violated triangles. Once the proton architecture is specified, the set $S_{\mathrm{act}}$ and its cardinality $R_{\mathrm{surf}}$ are determined up to small variations.\par From the perspective of an electron-type $(4,6)$ block embedded in a larger PDL graph containing a proton, the active surface manifests as a finite set of coupling channels whose actual availability depends on the relative configuration between the $(4,6)$ block and the proton. For a fixed relative position, only a subset of active edges can be coherently engaged in mixed triangles while maintaining global closure. As the electron-type block changes its relative configuration (in the emergent sense defined below), the subset of effectively utilised active edges is modified, generating a position-dependent coherence cost associated with coupling to the proton. This position-dependent cost constitutes the natural PDL analogue of an effective potential $V(\mathbf{r})$.
+
+\subsection{Dynamical protonic sector: the relational sea}
+
+In contrast, the relational sea constitutes a highly dynamical environment.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French} Its $R_{\mathrm{sea}} = 10\,087$ relations are not rigidly fixed but can be reconfigured subject to the global constraints of closure and near-optimal coherence. From the perspective of the $(4,6)$ electron prototype, local reconfigurations of the sea can modify the manner in which the $(4,6)$ block is embedded into the global graph: edges connecting this block to neighbouring structures may appear, disappear, or change sign, provided that the overall coherence constraints are preserved or improved.\par Viewed at a coarse-grained level, these reconfigurations enable the $(4,6)$ block to effectively ``migrate'' between different regions of the protonic environment. Assigning to each such region a position label (for example, a discrete shell index or a coordinate in an emergent metric space), the relational sea thereby induces effective transitions between distinct position labels. When aggregated over many coherence cycles, these transitions can reasonably be expected to generate a diffusive or wave-like propagation pattern for an effective electronic degree of freedom. In a discrete position representation, such propagation is typically captured by a Laplacian term in the evolution equation for the amplitude associated with each position.
+
+\subsection{Separation of roles and emergent Schr\"odinger structure}
+
+The foregoing considerations motivate a natural separation of functional roles:
+\begin{itemize}
+\item The stationary sector (valence cores and active surface) specifies, for each relative configuration of proton and electron, a coherence cost associated with engaging a subset of active edges in mixed triangles. This cost depends on the logical ``distance'' and relative orientation between the $(4,6)$ block and the proton and therefore defines a position-dependent function $V(\mathbf{r})$ that acts as an effective potential.
+\item The dynamical sector (relational sea) admits local reconfigurations that alter the embedding of the $(4,6)$ block while preserving global closure. At a coarse-grained level, these reconfigurations manifest as transitions between neighbouring position labels, thereby generating an effective kinetic term that can be approximated by a Laplacian acting on a position-dependent amplitude.
+\end{itemize}
+Taken together, these two sectors provide a relational substrate for an emergent Schr\"odinger-type equation governing an electronic degree of freedom,
+\begin{equation}
+i\hbar\,\partial_t \psi(\mathbf{r},t) = \hat{T}\psi(\mathbf{r},t) + \hat{V}\psi(\mathbf{r},t),
+\end{equation}
+where $\hat{T}$ encodes the coarse-grained influence of dynamical sea reconfigurations and $\hat{V}$ encodes the coherence cost determined by the stationary protonic architecture. In the next section, we render this intuition more precise by introducing a discrete position model in which transitions between neighbouring positions yield explicitly a Laplacian-like kinetic term.
+
+\section{A Discrete Position Model and an Emergent Laplacian}
+\label{sec:DiscreteLaplacian}
+
+To demonstrate how a kinetic term of Laplacian type can arise from local reconfigurations of the relational sea, we introduce a minimal discrete position model for the $(4,6)$-electron prototype in the environment of a PDL proton. This construction is not intended as a faithful microscopic description of the full PDL dynamics; rather, it functions as an effective toy model that makes explicit how local transitions between neighbouring position classes naturally give rise to a discrete Schr\"odinger-type equation.
+
+\subsection{Discrete Position Classes and Amplitudes}
+
+We consider a one-dimensional lattice of ``position classes'' indexed by integers $n \in \mathbb{Z}$. Each index $n$ labels an equivalence class of PDL configurations in which the $(4,6)$ block is located in the vicinity of a specific region of the protonic environment, idealised as a logical position at distance $r_n = n\,\Delta x$ from the proton. More precisely, for each $n$ we posit the existence of a family of signed graphs $\mathcal{C}_n$ that jointly represent the proton, the $(4,6)$ electron block, and the surrounding relational sea, such that:
+\begin{itemize}
+\item the protonic subgraph is fixed and identical for all $\mathcal{C}_n$;
+\item the $(4,6)$ block is connected to the protonic structure in a manner characteristic of being ``centred'' at logical position $n$;
+\item the relational sea is allowed to fluctuate within each class, subject to the global closure condition and the requirement of near-optimal coherence.
+\end{itemize}
+To each class $\mathcal{C}_n$ we assign a complex amplitude $\psi_n(t)$, representing the effective weight of realising a configuration of type $\mathcal{C}_n$ at logical time $t$. The collection $\{\psi_n(t)\}_{n\in\mathbb{Z}}$ can thus be interpreted as a discrete position-space representation of an effective electronic degree of freedom. In the present context, these complex amplitudes are introduced as effective descriptors of coarse-grained PDL configurations rather than as quantities derived from the axioms themselves; a genuine emergence of complex structure and unitarity is left for future work.
+
+\medskip
+
+\begin{mdframed}[linewidth=0.5pt]
+\noindent\textit{Modelling assumptions for the discrete position model.} In order to turn these configuration classes into an explicit evolution law for the amplitudes $\psi_n(t)$, we adopt the following effective assumptions:
+\begin{itemize}
+  \item[(A1)] The relational sea induces only nearest-neighbour transitions between position classes, so that over a single logical time step $\Delta t$ the $(4,6)$ block can move at most from $\mathcal{C}_n$ to $\mathcal{C}_{n\pm 1}$.
+  \item[(A2)] The coarse-grained update rule for the amplitudes is linear in the $\psi_n(t)$, reflecting an effective superposition principle at the level of the toy model.
+  \item[(A3)] The complex coefficients that encode persistence and nearest-neighbour transitions are treated as phenomenological parameters to be tuned so that the continuum limit reproduces a Schr\"odinger-type evolution, rather than as quantities derived from first-principle PDL dynamics.
+\end{itemize}
+\end{mdframed}
+
+\subsection{Local Transition Rule Induced by Sea Reconfigurations}
+
+We now describe, at an effective level, how local reconfigurations of the relational sea act on the amplitudes $\psi_n(t)$. The central assumption is that, over a small logical time increment $\Delta t$, the $(4,6)$ block can:
+\begin{itemize}
+\item remain within a configuration belonging to class $\mathcal{C}_n$;
+\item transition to a configuration belonging to class $\mathcal{C}_{n+1}$;
+\item transition to a configuration belonging to class $\mathcal{C}_{n-1}$;
+\end{itemize}
+with transition amplitudes determined by the change in coherence induced when the $(4,6)$ block is displaced by one lattice spacing $\Delta x$.\par This assumption leads to an effective linear update rule of the form
+\begin{equation}
+\psi_n(t+\Delta t) = a\,\psi_n(t) + b\,\psi_{n+1}(t) + b\,\psi_{n-1}(t),
+\label{eq:discreteUpdate}
+\end{equation}
+where $a$ and $b$ are complex coefficients encoding, respectively, the propensity to remain at position class $n$ and to transition to the nearest-neighbour classes $n\pm 1$. In a complete PDL treatment, $a$ and $b$ would be derived from the statistics of those sea reconfigurations that preserve or enhance the optimisation functional $F$ when the $(4,6)$ block is shifted between adjacent regions. In the present context, we regard $a$ and $b$ as effective phenomenological parameters, to be tuned such that the continuum limit reproduces a standard Schr\"odinger-type evolution.
+
+\subsection{From discrete update rule to a Schr\"odinger-type equation}
+
+To render the connection with a Schr\"odinger-type equation explicit, we first rewrite Eq.~\eqref{eq:discreteUpdate} by subtracting $\psi_n(t)$ from both sides and rearranging terms:
+\begin{equation}
+\psi_n(t+\Delta t) - \psi_n(t) 
+= (a-1)\,\psi_n(t) + b\left[\psi_{n+1}(t) + \psi_{n-1}(t)\right].
+\end{equation}
+By adding and subtracting $2b\,\psi_n(t)$ on the right-hand side, we obtain
+\begin{equation}
+\psi_n(t+\Delta t) - \psi_n(t) 
+= (a-1+2b)\,\psi_n(t) + b\left[\psi_{n+1}(t)-2\psi_n(t)+\psi_{n-1}(t)\right].
+\end{equation}
+Dividing by $\Delta t$ yields
+\begin{equation}
+\frac{\psi_n(t+\Delta t) - \psi_n(t)}{\Delta t} 
+= \frac{a-1+2b}{\Delta t}\,\psi_n(t) 
++ \frac{b}{\Delta t}\left[\psi_{n+1}(t)-2\psi_n(t)+\psi_{n-1}(t)\right].
+\label{eq:discreteDerivative}
+\end{equation}
+We now interpret the bracketed expression as the action of the one-dimensional discrete Laplacian on $\psi_n(t)$:
+\begin{equation}
+\Delta_{\mathrm{disc}}\psi_n(t) := \frac{\psi_{n+1}(t)-2\psi_n(t)+\psi_{n-1}(t)}{(\Delta x)^2},
+\end{equation}
+so that Eq.~\eqref{eq:discreteDerivative} can be rewritten as
+\begin{equation}
+\frac{\psi_n(t+\Delta t) - \psi_n(t)}{\Delta t} 
+= \frac{a-1+2b}{\Delta t}\,\psi_n(t) 
++ \frac{b(\Delta x)^2}{\Delta t}\,\Delta_{\mathrm{disc}}\psi_n(t).
+\end{equation}
+Multiplying both sides by $i\hbar$ leads to
+\begin{equation}
+i\hbar\,\frac{\psi_n(t+\Delta t) - \psi_n(t)}{\Delta t} 
+= i\hbar\,\frac{a-1+2b}{\Delta t}\,\psi_n(t) 
++ i\hbar\,\frac{b(\Delta x)^2}{\Delta t}\,\Delta_{\mathrm{disc}}\psi_n(t).
+\label{eq:iħDiscrete}
+\end{equation}
+
+We require that, in the limit $\Delta t\to 0$, this expression approximates the discrete Schr\"odinger equation
+\begin{equation}
+i\hbar\,\partial_t \psi_n(t) 
+= -\,\frac{\hbar^{2}}{2m}\,\Delta_{\mathrm{disc}}\psi_n(t) + V_n\,\psi_n(t),
+\label{eq:SchrodingerDiscreteTarget}
+\end{equation}
+where $m$ denotes an effective mass and $V_n$ a position-dependent potential.\par 
+To achieve this correspondence, we impose the identifications
+\begin{equation}
+i\hbar\,\frac{b(\Delta x)^2}{\Delta t} = -\,\frac{\hbar^{2}}{2m},
+\qquad
+i\hbar\,\frac{a-1+2b}{\Delta t} = V_n.
+\label{eq:abIdentifications}
+\end{equation}
+Solving the first relation for $b$ yields
+\begin{equation}
+b = -\,i\,\frac{\hbar\,\Delta t}{2m(\Delta x)^2}.
+\end{equation}
+Substituting this expression into the second relation gives
+\begin{equation}
+a = 1 - 2b - i\,\frac{\Delta t}{\hbar} V_n.
+\end{equation}
+For these specific choices of $a$ and $b$, Eq.~\eqref{eq:iħDiscrete} reproduces Eq.~\eqref{eq:SchrodingerDiscreteTarget} up to corrections of order $O(\Delta t)$ arising from the finite-difference approximation to $\partial_t \psi_n(t)$.\par 
+In the continuum limit $\Delta x \to 0$, $\Delta t \to 0$, with a suitable scaling of the effective mass $m$ and with $V_n\to V(x)$, the discrete Laplacian converges to the second spatial derivative. Consequently, Eq.~\eqref{eq:SchrodingerDiscreteTarget} reduces to the standard one-dimensional time-dependent Schr\"odinger equation
+\begin{equation}
+i\hbar\,\partial_t \psi(x,t) 
+= -\,\frac{\hbar^{2}}{2m}\,\partial_x^{2}\psi(x,t) + V(x)\,\psi(x,t).
+\end{equation}
+Thus, for appropriate choices of the effective transition amplitudes $a$ and $b$, a local update rule for a discrete family of position classes $\mathcal{C}_n$ yields, in the continuum limit, a Schr\"odinger-type kinetic term supplemented by a position-dependent potential.
+
+\subsection{Interpreting the coefficients in PDL terms}
+
+In the effective model, the parameters $a$ and $b$ are treated as free complex numbers, to be specified phenomenologically so as to reproduce the desired continuum limit. Within the PDL framework, however, these parameters should ultimately be derivable from properties of the underlying signed graphs and their induced dynamics. At a qualitative level, the identifications in Eq.~\eqref{eq:abIdentifications} motivate the following interpretations:
+\begin{itemize}
+\item The coefficient $b$ quantifies the transition amplitude for the $(4,6)$ block to evolve from a configuration in $\mathcal{C}_n$ to a configuration in $\mathcal{C}_{n\pm 1}$ during a single time step $\Delta t$. In PDL terms, such a transition corresponds to a local reconfiguration of the relational sea that translates the embedding of the $(4,6)$ block by one lattice spacing, while preserving or improving the value of the optimisation functional $F$. The magnitude $|b|$ is therefore associated with the rate and coherence of these reconfigurations and, via Eq.~\eqref{eq:abIdentifications}, it determines the effective mass $m$ appearing in the kinetic term.
+\item The coefficient $a$ encodes both the amplitude for the system to remain in $\mathcal{C}_n$ and the phase rotation induced by the local potential $V_n$. The contribution $-i(\Delta t/\hbar)V_n$ in $a$ directly represents the position-dependent coherence cost of coupling the $(4,6)$ block to the stationary sector (valence cores plus active surface) when it is centred at site $n$. The real part of $a$ is tuned to ensure norm preservation in the continuum limit, whereas its imaginary part carries the dynamical phase generated by the potential.
+\end{itemize}
+Within this toy model, we thus obtain a concrete mechanism by which local transitions driven by the relational sea give rise to an effective Laplacian kinetic term, while the stationary protonic architecture generates a position-dependent potential. The subsequent task is to render the origin of this potential more explicit by relating it to fluxes of coherent mixed triangles emanating from the finite active surface of the proton.
+
+\section{From surface flux to a Coulomb--like potential}
+\label{sec:FluxPotential}
+
+The discrete position model introduced in the previous section illustrates how an effective kinetic term of Laplacian type can emerge from local transitions induced by the relational sea. We now turn to the potential contribution and demonstrate how a Coulomb--like radial dependence can be motivated by considering fluxes of coherent mixed triangles emanating from the finite active surface of the proton.
+
+\subsection{Active surface and mixed triangles at distance \texorpdfstring{$r$}{r}}
+
+As recalled in Section~\ref{sec:PDLingr}, the active surface $S_{\mathrm{act}}$ of the PDL proton is defined as the subset of protonic edges that can participate in coherent mixed triangles with an external $(4,6)$ electron prototype, without increasing the overall fraction of violated triangles.\cite{Laubscher2026DerivationAlpha} The cardinality $R_{\mathrm{surf}} = |S_{\mathrm{act}}|$ quantifies the number of protonic relational degrees of freedom that remain available, after internal closure constraints have been satisfied, to couple to an electron-type structure.\par
+
+We now consider a family of position shells at logical distance $r$ from the proton. Each shell corresponds to an equivalence class of configurations in which the $(4,6)$ block is located at a characteristic distance $r$ from the protonic centre, with the relational sea mediating the connection between the block and the active surface. For a given shell, we define $N_{\mathrm{mix}}(r)$ as the number of proton--electron mixed triangles that can be coherently realised at that distance, averaged over configurations within the corresponding class. Each such mixed triangle involves one active protonic edge and two proton--electron edges connecting the $(4,6)$ block to the endpoints of the active edge.\par
+
+\begin{mdframed}[linewidth=0.5pt]
+\noindent\textit{Flux ansatz for mixed triangles.}
+To model the decay of $N_{\mathrm{mix}}(r)$ with logical distance, we adopt the following effective assumptions:
+\begin{itemize}
+  \item[(B1)] Each active protonic edge contributes equally to a set of outgoing ``lines of coherence'' that propagate into the environment.
+  \item[(B2)] At sufficiently large logical distance $r$, this flux is approximately isotropic, so that it is uniformly distributed over the surface of a sphere of radius $r$ centred on the proton.
+  \item[(B3)] The number of coherently realisable mixed proton--electron triangles at distance $r$ is proportional to the available flux of coherence through the corresponding shell.
+\end{itemize}
+Under these assumptions, the number of coherent mixed triangles accessible at distance $r$ is proportional to the active surface content divided by the area of the sphere,
+\begin{equation}
+N_{\mathrm{mix}}(r) = K\,\frac{R_{\mathrm{surf}}}{4\pi r^{2}},
+\label{eq:NmixAnsatz}
+\end{equation}
+where $K$ is a dimensionless geometric factor that encodes the density of coupling directions (solid-angle channels) per active edge. The $1/r^{2}$ dependence captures the dilution of available coherent coupling channels over the surfaces of shells with increasing radius.
+\end{mdframed}
+
+\subsection{Coherence cost and instantaneous potential}
+
+Given $N_{\mathrm{mix}}(r)$, we define the instantaneous coherence cost per unit time associated with sustaining coherent mixed triangles at separation $r$ as
+\begin{equation}
+C(r) = -\lambda\,N_{\mathrm{mix}}(r)\,E_e = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{4\pi r^{2}}\,m_e c^{2},
+\label{eq:CrDefinition}
+\end{equation}
+where $E_e = m_e c^{2}$ denotes the rest energy of the $(4,6)$ electron prototype and $\lambda \in [0,1]$ is an efficiency parameter that specifies the fraction of the maximally available coherence channels, as encoded in $N_{\mathrm{mix}}(r)$, that are effectively utilized at a given time.\par The sign convention in Eq.~\eqref{eq:CrDefinition} is chosen such that $C(r)<0$ corresponds to an attractive interaction: activating coherent mixed triangles lowers the net coherence cost required to stabilize the combined proton–electron configuration relative to the uncoupled configuration at asymptotically large $r$. In this sense, $C(r)$ quantifies the coherence ``gain'' per unit time generated by the interaction.\par We interpret the effective potential $V(r)$ in an emergent Schr\"odinger equation as the energy associated with this coherence gain, namely
+\begin{equation}
+V(r) = C(r) - C(\infty) = C(r).
+\label{eq:VrEqualsCr}
+\end{equation}
+To leading order within our ansatz, this yields
+\begin{equation}
+V(r) = -\,\lambda\,\frac{K\,R_{\mathrm{surf}}}{4\pi}\,\frac{m_e c^{2}}{r^{2}}.
+\label{eq:Vr1overr2}
+\end{equation}
+Thus, the instantaneous potential emerging from a purely local flux-based description scales as $1/r^{2}$, reflecting the geometric dilution of the underlying flux. However, the effective potential entering the Schr\"odinger equation is associated with an energy scale that is effectively averaged over the electron dynamics at distance $r$, rather than an instantaneous contribution alone.
+
+\subsection{From \texorpdfstring{$1/r^{2}$}{1/r²} flux to \texorpdfstring{$1/r$}{1/r} potential}
+
+To connect this description with the Coulomb form $V(r) \propto -1/r$, we consider the coherence cost accumulated over an entire orbital period instead of an instantaneous time interval. Within a simple semiclassical picture, an electron on a circular orbit of radius $r$ and speed $v(r)$ has orbital period
+\begin{equation}
+T(r) = \frac{2\pi r}{v(r)}.
+\end{equation}
+Assuming that the coherence flux and the associated instantaneous cost $C(r)$ remain approximately constant during a single orbit, the total change in action per orbit induced by the interaction is
+\begin{equation}
+\Delta S(r) = C(r)\,T(r) = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{4\pi r^{2}}\,m_e c^{2}\,\frac{2\pi r}{v(r)} = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{r\,v(r)}.
+\label{eq:DeltaSOrbit}
+\end{equation}
+The corresponding phase accumulated over one orbit due to the interaction is
+\begin{equation}
+\Delta\phi(r) = \frac{\Delta S(r)}{\hbar} = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{\hbar}\,\frac{1}{r\,v(r)}.
+\end{equation}
+If the characteristic orbital speed $v(r)$ does not grow faster than linearly with $r$, the factor $1/(r\,v(r))$ decays at most as $1/r^{2}$; in the Bohr-like case $v(r)\propto 1/r$ it becomes independent of $r$. In all such cases, Eq.~\eqref{eq:DeltaSOrbit} demonstrates that the cumulative coherence gain per orbital cycle scales as $1/r$ for fixed $v(r)$, or as a function that decreases more slowly than $1/r^{2}$ once orbital dynamics is incorporated.\par From the viewpoint of an effective Schr\"odinger description, the potential $V(r)$ is defined as the energy scale governing phase accumulation per unit time. Since the instantaneous flux yields $C(r)\propto 1/r^{2}$ and the orbital period scales as $T(r)\propto r/v(r)$, the phase accumulated per orbit naturally acquires a factor $1/r$ in Eq.~\eqref{eq:DeltaSOrbit}. This observation suggests that the effective potential relevant for bound states can be approximated, at large separations, by
+\begin{equation}
+V(r) \simeq -\,\frac{\kappa}{r},
+\label{eq:VrCoulomb}
+\end{equation}
+where the constant $\kappa$ encapsulates the combination $\lambda K R_{\mathrm{surf}}$ and the factor $m_e c^{2}/\hbar$, together with additional contributions determined by the details of the orbital dynamics.
+
+\subsection{Relating the Coulomb constant to \texorpdfstring{$\alpha_{\mathrm{PDL}}$}{alpha	extsubscript{PDL}}}
+
+In the standard hydrogenic Schr\"odinger equation, the Coulomb potential is expressed as
+\begin{equation}
+V(r) = -\,\alpha\,\hbar c\,\frac{1}{r},
+\end{equation}
+where $\alpha$ denotes the fine-structure constant. Within the PDL framework, we aim to replace $\alpha$ by the structurally defined quantity $\alpha_{\mathrm{PDL}}$ introduced in Eq.~\eqref{eq:alphaPDL}. Identifying Eq.~\eqref{eq:VrCoulomb} with the above Coulomb form implies
+\begin{equation}
+\kappa = \alpha_{\mathrm{PDL}}\,\hbar c.
+\end{equation}
+Combining this relation with Eq.~\eqref{eq:DeltaSOrbit}, evaluated for an appropriate orbital velocity $v(r)$, yields an expression of the form
+\begin{equation}
+\lambda K R_{\mathrm{surf}} \sim \frac{\hbar^{2}}{m_e^{2} c^{2}},
+\end{equation}
+up to numerical coefficients that depend on the specific dynamical regime under consideration (for example, ground versus excited states). The key observation is that the Coulomb coupling $\alpha_{\mathrm{PDL}}\hbar c$ can be represented as a product of three distinct classes of quantities:
+\begin{itemize}
+\item The active surface content $R_{\mathrm{surf}}$, determined by the protonic architecture and related to $r_{\mathrm{val}}$ and $\varphi$ via $R_{\mathrm{surf}} = \varphi r_{\mathrm{val}}/3$.
+\item The electron rest-energy scale $m_e c^{2}$ and the quantum of action $\hbar$, which together fix the Compton frequency of the $(4,6)$ block and the action accrued per coherence cycle.
+\item The dimensionless parameters $\lambda$ and $K$, which encode, respectively, the efficiency with which available surface channels participate in coherent coupling and the effective geometric density of coupling directions per active relation.
+\end{itemize}
+
+At the present level of development, $\lambda$ and $K$ are treated as phenomenological parameters: they are introduced to represent the facts that (i) not all possible mixed triangles are simultaneously active and (ii) the geometric distribution of coupling channels on the active surface may deviate from perfect isotropy. Nonetheless, both parameters possess a well-defined structural interpretation and appear in a restricted combination once $\alpha_{\mathrm{PDL}}$ is fixed. In particular, any future refinement of the PDL framework that derives $\lambda$ and $K$ from first principles will be strongly constrained by the requirement that the resulting $\kappa$ reproduce $\alpha_{\mathrm{PDL}}\hbar c$.
+
+In this manner, the flux-based description of the active surface furnishes a relational mechanism for the emergence of a Coulomb-type potential, with its coupling constant directly linked to the same combinatorial quantities that enter the structural expression for the fine-structure constant. The subsequent section presents a simple semiclassical Bohr-type consistency check, demonstrating that $\alpha_{\mathrm{PDL}}$ is compatible with a phase quantisation condition for hydrogenic orbits.
+
+\section{Semi-classical consistency: a Bohr-type test}
+\label{sec:Semiclassical}
+
+The previous section introduced a flux-based mechanism through which a Coulomb-like potential with effective coupling $\alpha_{\mathrm{PDL}}$ can arise from the active surface of the proton. In this section, we perform a basic semi-classical consistency analysis by combining this framework with Bohr-type relations for the hydrogen ground state and examining the associated phase quantisation condition.
+
+\subsection{Bohr relations with \texorpdfstring{$\alpha_{\mathrm{PDL}}$}{alpha	extunderscore{PDL}}}
+
+In the original Bohr model of the hydrogen atom, the ground state is characterised by the following two relations:\cite{Laubscher2026SchrodingerPDL}
+\begin{equation}
+m_e v r = \hbar, \qquad \frac{m_e v^{2}}{r} = \frac{\alpha\,\hbar c}{r^{2}},
+\label{eq:BohrStandard}
+\end{equation}
+where $r$ denotes the orbital radius, $v$ the orbital speed, and $\alpha$ the fine-structure constant. The first relation encodes the quantisation of angular momentum for the $n=1$ state, while the second equates the centripetal force to the Coulomb attraction.\par Solving Eqs.~\eqref{eq:BohrStandard} for $v$ and $r$ gives
+\begin{equation}
+v = \alpha c, \qquad r = \frac{\hbar}{m_e \alpha c} = a_0,
+\label{eq:BohrSolutions}
+\end{equation}
+where $a_0$ is the Bohr radius. Within the PDL-based framework, we substitute the structurally defined coupling $\alpha_{\mathrm{PDL}}$ of Eq.~\eqref{eq:alphaPDL} for $\alpha$ and postulate that, at the level of an effective description, the Bohr relations remain valid under this replacement. Accordingly, we consider
+\begin{equation}
+m_e v r = \hbar, \qquad \frac{m_e v^{2}}{r} = \frac{\alpha_{\mathrm{PDL}}\hbar c}{r^{2}},
+\label{eq:BohrPDL}
+\end{equation}
+which implies
+\begin{equation}
+v = \alpha_{\mathrm{PDL}} c, \qquad r = \frac{\hbar}{m_e \alpha_{\mathrm{PDL}} c}.
+\label{eq:BohrPDLSolutions}
+\end{equation}
+These expressions are consistent with the effective Coulomb potential $V(r) = -\alpha_{\mathrm{PDL}}\hbar c/r$ and ensure that the orbital parameters of the ground state are expressed solely in terms of $\alpha_{\mathrm{PDL}}$ and fundamental constants.
+
+\subsection{Phase Accumulated per Orbit from Coherence Cost}
+
+We now combine the Bohr-like relations in Eq.~\eqref{eq:BohrPDLSolutions} with the flux-based coherence cost derived in Section~\ref{sec:FluxPotential}. The coherence-induced modification of the action per orbit arising from the proton--electron coupling was given in Eq.~\eqref{eq:DeltaSOrbit} as
+\begin{equation}
+\Delta S(r) = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{r\,v(r)}.
+\end{equation}
+The corresponding phase accumulated per orbit is therefore
+\begin{equation}
+\Delta\phi(r) = \frac{\Delta S(r)}{\hbar} = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{\hbar}\,\frac{1}{r\,v(r)}.
+\label{eq:PhasePerOrbit}
+\end{equation}
+Inserting the Bohr--PDL relations $v(r) = \alpha_{\mathrm{PDL}} c$ and $r = \hbar/(m_e \alpha_{\mathrm{PDL}} c)$ from Eq.~\eqref{eq:BohrPDLSolutions}, we obtain
+\begin{equation}
+\frac{1}{r\,v(r)} = \frac{m_e \alpha_{\mathrm{PDL}} c}{\hbar} \cdot \frac{1}{\alpha_{\mathrm{PDL}} c} = \frac{m_e}{\hbar}.
+\end{equation}
+Substituting this expression into Eq.~\eqref{eq:PhasePerOrbit} gives
+\begin{equation}
+\Delta\phi = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{\hbar}\,\frac{m_e}{\hbar} = -\lambda\,\frac{K\,R_{\mathrm{surf}}}{2}\,\frac{m_e^{2} c^{2}}{\hbar^{2}}.
+\label{eq:PhaseSimplified}
+\end{equation}
+Thus, the explicit dependence on $\alpha_{\mathrm{PDL}}$ cancels: once the Bohr relations are cast in terms of $\alpha_{\mathrm{PDL}}$, the phase accumulated per orbit is governed solely by the combination $\lambda K R_{\mathrm{surf}}$ together with the fundamental constants $m_e$, $c$, and $\hbar$.
+
+\subsection{Phase quantisation and constraint on \texorpdfstring{$\lambda K R_{\mathrm{surf}}$}{lambda K Rsurf}}
+
+Within a semiclassical framework, a bound state is expected to satisfy a phase quantisation condition per orbital period of the form
+\begin{equation}
+|\Delta\phi| = 2\pi n, \qquad n \in \mathbb{N}.
+\end{equation}
+For the ground state, one sets $n = 1$, which implies $|\Delta\phi| = 2\pi$. Using Eq.~\eqref{eq:PhaseSimplified}, this condition becomes
+\begin{equation}
+\lambda K R_{\mathrm{surf}}\,\frac{m_e^{2} c^{2}}{2\hbar^{2}} = 2\pi,
+\end{equation}
+or, equivalently,
+\begin{equation}
+\lambda K R_{\mathrm{surf}} = \frac{4\pi \hbar^{2}}{m_e^{2} c^{2}}.
+\label{eq:lambdaKConstraint}
+\end{equation}
+
+A crucial observation is that $\alpha_{\mathrm{PDL}}$ does not enter Eq.~\eqref{eq:lambdaKConstraint}. The structural value of $\alpha$ derived from the protonic architecture and the active surface appears in the Bohr--PDL relations that determine $v$ and $r$. Once these relations are imposed, however, the semiclassical phase quantisation condition constrains only the product $\lambda K R_{\mathrm{surf}}$. Thus, the Bohr-type phase condition does not yield an independent determination of $\alpha$; it is automatically compatible with $\alpha_{\mathrm{PDL}}$ and instead enforces a relation among the phenomenological parameters $\lambda$, $K$, and the known active surface $R_{\mathrm{surf}}$.\par
+
+This result has two main implications. First, it establishes that the structural expression for $\alpha_{\mathrm{PDL}}$ is not in tension with a standard semiclassical quantisation argument for hydrogen-like orbits. Once $\alpha_{\mathrm{PDL}}$ is substituted into the Bohr relations, the resulting phase accumulated per orbit can always be calibrated to $2\pi$ through an appropriate choice of $\lambda K$. Second, it indicates that any future derivation of $\lambda$ and $K$ from first principles within the PDL framework will be subject to a stringent constraint: the product $\lambda K R_{\mathrm{surf}}$ must obey Eq.~\eqref{eq:lambdaKConstraint} if the semiclassical description is to remain valid.\par
+
+From a conceptual perspective, Eq.~\eqref{eq:lambdaKConstraint} clarifies the division of roles among the different components of the PDL construction. The structural parameter $\alpha_{\mathrm{PDL}}$ is determined by the protonic configuration and the definition of the active surface, whereas the phenomenological parameters $\lambda$ and $K$ encode the efficiency and geometrical distribution of coherent coupling channels. The effective Coulomb coupling entering the Schr\"odinger equation then emerges from the combined action of these structural and phenomenological elements, with the semiclassical phase condition serving as a consistency requirement rather than a primary constraint on $\alpha_{\mathrm{PDL}}$.
+
+\section{Discussion and outlook}
+\label{sec:Discussion}
+
+\noindent\textbf{Relation to previous PDL studies.}
+The present sketch builds directly on three structural elements established in previous work: (i) the identification of the minimal $(4,6)$ closure with an electron at rest and the interpretation of $\hbar$ as the action per coherence cycle, (ii) the hierarchical proton architecture characterized by its valence content $r_{\mathrm{val}}$ and active surface $R_{\mathrm{surf}}$, and (iii) the structural representation of the fine-structure constant $\alpha_{\mathrm{PDL}}$ derived from these ingredients. In the accompanying compatibility analysis, $\alpha_{\mathrm{PDL}}$ was inserted into an already established Schr\"odinger framework for the hydrogen atom. In the present work, we adopt the same structural inputs as given and investigate how they can be organized into simplified (“toy”) models that reproduce Schr\"odinger-type kinetic and potential contributions, without attempting a complete derivation of quantum dynamics from the PDL axioms.
+\subsection{Summary of the construction}
+
+We have introduced a relational framework outlining how a Schr\"odinger-type dynamics for an electronic degree of freedom can emerge from the Projective Dynamic Logo (PDL). The main structural components of this construction are as follows:
+\begin{itemize}
+\item The identification of the minimal $(4,6)$ signed graph as a prototype for an electron at rest, with $\hbar$ interpreted as the minimal action per coherence cycle and $m_e c^{2}$ as the coherence cost per unit time required to sustain this structure.\cite{Laubscher2026IntroPDL,Laubscher2026PDL_English}
+\item The combinatorial specification of the proton, characterised by a valence content $r_{\mathrm{val}}=930$ and a relational sea of cardinality $R_{\mathrm{sea}}=10\,087$, together with the definition of an active surface $S_{\mathrm{act}}$ of size $R_{\mathrm{surf}}=\varphi r_{\mathrm{val}}/3$. The latter represents the finite subset of protonic relations that can couple coherently to an external $(4,6)$ block.\cite{Laubscher2026PDL_English,Laubscher2026LDP_French,Laubscher2026DerivationAlpha}
+\item The structural formula for the fine-structure constant,
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1} = \mu\,\varphi^{2}\,\frac{r_{\mathrm{val}}^{2}}{9},
+\end{equation}
+which links $\alpha$ to the proton–electron mass ratio $\mu$, the valence content $r_{\mathrm{val}}$, and the optimisation factor $\varphi$, and reproduces the empirical value of $\alpha$ to within a few parts in $10^{-4}$.\cite{Laubscher2026DerivationAlpha}
+\item The decomposition of the proton into a stationary valence-plus-surface sector and a dynamical relational sea, which admits a natural correspondence with potential and kinetic contributions, respectively, in an effective Schr\"odinger-type equation.
+\item A discrete position model in which local reconfigurations of the relational sea generate transitions between neighbouring position classes. This induces a discrete Laplacian in the evolution equations for amplitudes $\psi_n(t)$ and yields, in the continuum limit, a kinetic term of the standard form $-(\hbar^{2}/2m)\nabla^{2}$.
+\item A flux-based description of the active surface, in which a $1/r^{2}$ dilution of coherently mixed triangles, combined with orbital motion, produces an emergent $1/r$ potential. The associated coupling constant is related both to $\alpha_{\mathrm{PDL}}$ and to the composite quantity $\lambda K R_{\mathrm{surf}}$.
+\item A semiclassical Bohr-type consistency analysis demonstrating that, when $\alpha_{\mathrm{PDL}}$ is implemented in the orbital relations, the phase quantisation condition per orbit constrains the combination $\lambda K R_{\mathrm{surf}}$ while leaving $\alpha_{\mathrm{PDL}}$ unchanged. This confirms that the structurally derived value of $\alpha$ is compatible with elementary phase-quantisation arguments for hydrogenic bound states.
+\end{itemize}
+
+\subsection{Limitations and missing ingredients}
+
+Notwithstanding the encouraging correspondences identified above, several essential components are still absent for a fully rigorous derivation of the Schr\"odinger equation from PDL:
+\begin{itemize}
+\item The current framework does not provide an intrinsic definition of complex probability amplitudes associated with PDL configurations or paths. The prescription $\psi \sim \sum_{\gamma} \exp(iS[\gamma]/\hbar)$, familiar from Feynman’s path-integral formulation, has been employed only implicitly as a heuristic guideline rather than being derived from the axioms of PDL. Consequently, the use of complex amplitudes within the discrete position model should be interpreted as an effective modelling assumption rather than as a fundamental feature of the theory.\item The linearity and unitarity of the effective amplitude dynamics are postulated rather than deduced. Although local optimisation of coherence is suggestive of an emergent tendency towards globally stable superpositions, a mathematically rigorous demonstration that the coarse-grained evolution of amplitudes is exactly of Schr\"odinger type is still lacking.
+\item The discrete position model and the flux ansatz for $N_{\mathrm{mix}}(r)$ remain phenomenological. A complete derivation within PDL would require the explicit construction of proton+electron graphs, a combinatorial enumeration of coherent mixed triangles for each radial shell, and a proof that the resulting effective potential converges to a Coulomb profile in an appropriate continuum or scaling limit.
+\item The dimensionless parameters $\lambda$ and $K$, introduced to encode coupling efficiency and the geometrical distribution of surface channels, have not yet been computed from first principles. They currently appear as phenomenological quantities subject to the constraint in Eq.~\eqref{eq:lambdaKConstraint}, but are not uniquely fixed by PDL alone.
+\end{itemize}
+These limitations indicate that the present contribution should be interpreted primarily as an organised research programme supported by a set of consistency checks, rather than as a completed derivation.
+
+\subsection{Directions for future work}
+
+Several concrete research directions follow from the present analysis:
+\begin{itemize}
+\item \textbf{Explicit proton graphs and active surface counting}: Construct explicit PDL proton configurations that satisfy the underlying combinatorial constraints and evaluate $R_{\mathrm{surf}}$ and $N_{\mathrm{mix}}(r)$ directly, either analytically on suitably simplified graphs or numerically on more realistic graph families. This would provide a quantitative test of the robustness of the relations $R_{\mathrm{surf}}=\varphi r_{\mathrm{val}}/3$ and $N_{\mathrm{mix}}(r)\propto R_{\mathrm{surf}}/r^{2}$.
+\item \textbf{Toy models for the emergence of kinetic terms}: Develop minimal PDL toy models in which a $(4,6)$ block is allowed to move among a finite set of positions through reconfigurations of the surrounding sea, and compute the induced evolution of amplitudes. Such models would clarify the conditions under which a discrete Laplacian arises and, in the appropriate continuum limit, yields a Schr\"odinger-type kinetic term.
+\item \textbf{Internal definition of amplitudes and action}: Formulate and test definitions of an action functional $S[\gamma]$ directly in terms of coherence costs along PDL paths, and investigate whether a natural complex amplitude prescription of the form $\exp(iS[\gamma]/\hbar)$ can be derived from coherence optimisation principles or from other intrinsic structural features of the framework.
+\item \textbf{Extension to other nuclei and multi-electron systems}: Apply the same methodology to additional PDL nuclei (e.g.\ helium-like ions and light nuclei) and to simple multi-electron configurations, in order to determine whether a single, unified choice of structural parameters can reproduce a wider class of atomic and molecular systems.
+\end{itemize}
+The central open problem is whether PDL can be augmented by a minimal set of additional principles, such as a rule for amplitude assignment and a systematic coarse-graining procedure, that render the emergence of Schr\"odinger-type dynamics not merely plausible but mathematically unavoidable. Although the present work does not resolve this problem, it delineates specific structures, quantities, and consistency conditions that any such extended framework would be required to satisfy.
+
+\section{Semi-classical consistency: a Bohr-type test}
+\label{sec:BohrTest}
+
+In this section we revisit the flux-based Coulomb mechanism developed above and perform a semi-classical Bohr-type test. The aim is to show that the structurally defined fine-structure constant \(\alpha_{\mathrm{PDL}}\) is compatible with a simple phase-quantisation condition for hydrogenic orbits and that the resulting constraint acts on the composite parameter \(\lambda K R_{\mathrm{surf}}\) rather than on \(\alpha_{\mathrm{PDL}}\) itself.
+
+\subsection{Bohr relations with \texorpdfstring{\(\alpha_{\mathrm{PDL}}\)}{alpha\_PDL}}
+
+We start from the standard Bohr relations for the hydrogen ground state,
+\begin{equation}
+m_e v r = \hbar, 
+\qquad 
+\frac{m_e v^{2}}{r} = \frac{\alpha \,\hbar c}{r^{2}},
+\label{eq:BohrStandardFinal}
+\end{equation}
+where \(r\) is the orbital radius, \(v\) the orbital speed, and \(\alpha\) the empirical fine-structure constant. Solving Eqs.~\eqref{eq:BohrStandardFinal} for \(v\) and \(r\) yields
+\begin{equation}
+v = \alpha c, 
+\qquad 
+r = \frac{\hbar}{m_e \alpha c} = a_0,
+\end{equation}
+with \(a_0\) the Bohr radius. Within the PDL framework, we replace \(\alpha\) by the structurally defined quantity \(\alpha_{\mathrm{PDL}}\), given by
+\begin{equation}
+\alpha_{\mathrm{PDL}}^{-1} = \mu \,\varphi^{2}\,\frac{r_{\mathrm{val}}^{2}}{9},
+\end{equation}
+and assume that the Bohr relations preserve their form under this substitution. We therefore consider
+\begin{equation}
+m_e v r = \hbar, 
+\qquad 
+\frac{m_e v^{2}}{r} = \frac{\alpha_{\mathrm{PDL}} \,\hbar c}{r^{2}},
+\label{eq:BohrPDLFinal}
+\end{equation}
+which leads directly to
+\begin{equation}
+v = \alpha_{\mathrm{PDL}} c, 
+\qquad 
+r = \frac{\hbar}{m_e \alpha_{\mathrm{PDL}} c}.
+\label{eq:BohrSolutionsPDLFinal}
+\end{equation}
+These expressions define a Bohr-like orbit whose parameters depend only on \(\alpha_{\mathrm{PDL}}\) and fundamental constants, and they are consistent with an effective Coulomb potential of the form \(V(r) = -\alpha_{\mathrm{PDL}} \hbar c / r\).
+
+\subsection{Orbital phase from coherence cost}
+
+We now connect the Bohr relations in Eq.~\eqref{eq:BohrSolutionsPDLFinal} with the flux-based coherence cost of the proton--electron coupling. From the surface-flux ansatz, the instantaneous coherence gain per unit time at separation \(r\) is
+\begin{equation}
+C(r) = -\lambda \,\frac{K R_{\mathrm{surf}}}{4\pi r^{2}} \,m_e c^{2},
+\end{equation}
+where \(R_{\mathrm{surf}}\) is the active surface content, \(K\) a dimensionless geometric factor, and \(\lambda \in [0,1]\) an efficiency parameter. For an electron on a circular orbit of radius \(r\) and speed \(v(r)\), the orbital period is
+\begin{equation}
+T(r) = \frac{2\pi r}{v(r)}.
+\end{equation}
+Assuming that \(C(r)\) remains approximately constant during a single orbit, the associated change in action per orbit is
+\begin{equation}
+\Delta S(r) = C(r)\,T(r) = -\lambda \,\frac{K R_{\mathrm{surf}}}{4\pi r^{2}} \,m_e c^{2}\,\frac{2\pi r}{v(r)} = -\lambda \,\frac{K R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{r\,v(r)}.
+\label{eq:DeltaSFinal}
+\end{equation}
+The phase accumulated per orbit due to this interaction is then
+\begin{equation}
+\Delta \phi(r) = \frac{\Delta S(r)}{\hbar} = -\lambda \,\frac{K R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{\hbar}\,\frac{1}{r\,v(r)}.
+\label{eq:PhaseGeneralFinal}
+\end{equation}
+Inserting the Bohr--PDL relations \(v(r) = \alpha_{\mathrm{PDL}} c\) and \(r = \hbar/(m_e \alpha_{\mathrm{PDL}} c)\) from Eq.~\eqref{eq:BohrSolutionsPDLFinal}, we obtain
+\begin{equation}
+\frac{1}{r\,v(r)} = \frac{m_e \alpha_{\mathrm{PDL}} c}{\hbar}\,\frac{1}{\alpha_{\mathrm{PDL}} c} = \frac{m_e}{\hbar}.
+\end{equation}
+Substituting this into Eq.~\eqref{eq:PhaseGeneralFinal} yields the simplified expression
+\begin{equation}
+\Delta \phi = -\lambda \,\frac{K R_{\mathrm{surf}}}{2}\,\frac{m_e c^{2}}{\hbar}\,\frac{m_e}{\hbar} = -\lambda \,\frac{K R_{\mathrm{surf}}}{2}\,\frac{m_e^{2} c^{2}}{\hbar^{2}}.
+\label{eq:PhaseSimplifiedFinal}
+\end{equation}
+The explicit dependence on \(\alpha_{\mathrm{PDL}}\) has cancelled: once the orbital parameters are expressed in terms of \(\alpha_{\mathrm{PDL}}\), the phase per orbit depends only on the product \(\lambda K R_{\mathrm{surf}}\) and on the constants \(m_e, c, \hbar\).
+
+\subsection{Phase quantisation and constraint on \texorpdfstring{\(\lambda K R_{\mathrm{surf}}\)}{lambda K R\_surf}}
+
+In a semi-classical picture, bound states are expected to satisfy a phase quantisation condition per orbital period of the form
+\begin{equation}
+|\Delta \phi| = 2\pi n, 
+\qquad 
+n \in \mathbb{N}.
+\end{equation}
+For the ground state \(n=1\), we thus impose \(|\Delta \phi| = 2\pi\). Using Eq.~\eqref{eq:PhaseSimplifiedFinal}, this condition becomes
+\begin{equation}
+\lambda \,K R_{\mathrm{surf}}\,\frac{m_e^{2} c^{2}}{2\hbar^{2}} = 2\pi,
+\end{equation}
+or equivalently
+\begin{equation}
+\lambda K R_{\mathrm{surf}} = \frac{4\pi \hbar^{2}}{m_e^{2} c^{2}}.
+\label{eq:ConstraintLambdaKFinal}
+\end{equation}
+This equation shows that the Bohr-type phase quantisation condition constrains only the composite parameter \(\lambda K R_{\mathrm{surf}}\). The structural fine-structure constant \(\alpha_{\mathrm{PDL}}\) does not appear in Eq.~\eqref{eq:ConstraintLambdaKFinal}, because it has already been used to fix the orbital parameters \(r\) and \(v\). Consequently, the semi-classical requirement of single-valuedness for the wave function does not impose any additional constraint that could contradict the PDL-based value of \(\alpha\). Instead, it acts as a consistency condition linking \(\lambda\), \(K\), and the known active surface content \(R_{\mathrm{surf}}\).
+
+Conceptually, Eq.~\eqref{eq:ConstraintLambdaKFinal} elucidates the functional partitioning within the theoretical framework. The value of \(\alpha_{\mathrm{PDL}}\) is determined solely by the protonic microstructure and the adopted definition of the active surface, whereas the phenomenological parameters \(\lambda\) and \(K\) represent, respectively, the efficiency and geometric distribution of the coherent coupling channels. The effective Coulomb coupling entering the Schr\"odinger equation emerges from the combined influence of these elements, with the Bohr-type test serving as a non-trivial internal consistency check rather than as the primary mechanism for fixing \(\alpha_{\mathrm{PDL}}\).
+
+\section{Compact recap of the Bohr-type analysis}
+\label{sec:BohrVerification}
+
+For completeness, we restate here the essential elements of the Bohr-type analysis in a compact form, emphasising the logical steps that ensure consistency between \(\alpha_{\mathrm{PDL}}\) and the orbital phase quantisation condition.
+
+\subsection{Bohr relations and orbital parameters}
+
+The Bohr relations for the ground state are adopted in their PDL-modified form,
+\begin{equation}
+m_e v r = \hbar, 
+\qquad 
+\frac{m_e v^{2}}{r} = \frac{\alpha_{\mathrm{PDL}} \,\hbar c}{r^{2}},
+\end{equation}
+from which it follows that
+\begin{equation}
+v = \alpha_{\mathrm{PDL}} c, 
+\qquad 
+r = \frac{\hbar}{m_e \alpha_{\mathrm{PDL}} c}.
+\end{equation}
+These relations determine the orbital velocity and radius uniquely in terms of \(\alpha_{\mathrm{PDL}}\) and fundamental constants, in direct analogy with the standard Bohr model.
+
+\subsection{Coherence-induced orbital phase}
+
+The coherence-induced phase accumulated over one orbit is defined as
+\begin{equation}
+\Delta \phi(r) = \frac{C(r)\,T(r)}{\hbar},
+\end{equation}
+where the instantaneous coherence gain is given by
+\begin{equation}
+C(r) = -\lambda \,\frac{K R_{\mathrm{surf}}}{4\pi r^{2}} \,m_e c^{2},
+\end{equation}
+and the orbital period is
+\begin{equation}
+T(r) = \frac{2\pi r}{v(r)}.
+\end{equation}
+Upon substituting the Bohr–PDL expressions for \(r\) and \(v(r)\), one obtains
+\begin{equation}
+\Delta \phi = -\lambda \,\frac{K R_{\mathrm{surf}}}{2}\,\frac{m_e^{2} c^{2}}{\hbar^{2}}.
+\end{equation}
+Imposing the single-valuedness condition \(|\Delta \phi| = 2\pi\) yields the constraint
+\begin{equation}
+\lambda K R_{\mathrm{surf}} = \frac{4\pi \hbar^{2}}{m_e^{2} c^{2}},
+\end{equation}
+in which any explicit dependence on \(\alpha_{\mathrm{PDL}}\) is absent.
+
+The conclusion is thus explicit and twofold. First, once \(\alpha_{\mathrm{PDL}}\) is fixed at a structural level and employed to define the Bohr-like orbit, the semiclassical phase quantisation condition does not feed back onto \(\alpha_{\mathrm{PDL}}\), but instead constrains solely the product \(\lambda K R_{\mathrm{surf}}\). Second, this yields a concrete and non-trivial internal consistency check demonstrating that the PDL-based expression for the fine-structure constant is compatible with elementary semiclassical quantisation for hydrogenic bound states.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
