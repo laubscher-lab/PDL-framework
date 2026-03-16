@@ -1,0 +1,292 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\geometry{margin=2.5cm}
+\usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\PDL}{\mathrm{PDL}}
+\newcommand{\LDP}{\mathrm{LDP}}
+
+\begin{document}
+
+\title{Coherence Leakage, Hierarchical Filtering, and the Exponent $18$\\
+in the Projective Dynamic Logo Framework}
+
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland.}\\[4pt]}
+
+\date{\small \today}
+
+\maketitle
+
+\begin{abstract}
+Within the Projective Dynamic Logo (PDL) framework, physical reality is represented as a network of minimal logical closures on finite signed graphs, where elementary $(4,6)$ blocks and hierarchically organised proton structures constitute the fundamental combinatorial units of microphysics.\cite{PDL_Main_2026,PDL_Intro_2026,Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} Beyond this essentially static construction, PDL incorporates the concept of \emph{coherence leakage} at the proton level: even after maximising a coherence-oriented functional over the space of admissible proton graphs, there remains a small but irreducible fraction of relational coherence that cannot be fully localised and is necessarily exported to the surrounding relational network.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026} In earlier work, this leakage has been modelled in a semi-heuristic manner, and its hierarchical amplification across scales has been encoded in an empirical exponent $18$.
+
+The purpose of this paper is to provide a more systematic and structurally grounded account of coherence leakage and of the exponent $18$ within PDL. First, we specify a class of admissible proton graphs determined by the integer architecture $(24,28,930,10087,11017)$ and its associated combinatorial constraints, and we introduce a notion of \emph{minimal closure defect}, defined as the infimum of the triangle-violation fraction over this class.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} We interpret this defect as a combinatorial invariant $\varepsilon$ that quantifies intrinsic coherence leakage at the proton level. Second, we reinterpret the exponent $18$ as the total number of independent coherence filters arising from the hierarchical organisation of structure, from elementary bricks to protons, from protons to nuclei, and from nuclei to ordinary matter and emergent gravitational behaviour.\cite{Exponent_18_PDL_2026}
+
+On this basis, we formulate a schematic scaling ansatz in which an effective gravitational coupling $G_{\mathrm{eff}}^{\PDL}$ depends on $\varepsilon$ via an exponent close to $18$, and we articulate qualitative constraints that any such dependence must satisfy in order to remain compatible with both the internal consistency of PDL and empirical phenomenology.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026,PDL_Global_Mapping_2026} Although we do not claim to derive the full gravitational field equations from PDL, the present analysis clarifies the interpretation of coherence leakage as a combinatorial invariant, systematises the hierarchical filtering structure, and outlines a research programme for evaluating the robustness and physical relevance of the exponent $18$.
+\end{abstract}
+
+\section{Introduction}
+
+The Projective Dynamic Logo (PDL) framework advances a relational reconstruction of physical reality in which the fundamental entities are minimal logical closures, mathematically represented by finite signed graphs and selected via a coherence-oriented optimisation principle.\cite{PDL_Intro_2026,PDL_Main_2026,PDL_French_2026,PDL_Global_Mapping_2026} At the elementary level, the complete signed graph on four vertices and six edges, referred to as the $(4,6)$ block, realises the first minimal stationary closure under the PDL axioms and serves as a logical prototype for an electron at rest.\cite{PDL_Main_2026} At the composite level, the proton is modelled as a hierarchical closure assembled from $(4,6)$ building blocks, comprising three quasi-stationary valence cores, a dynamical relational sea, and a finite active surface that mediates coherent couplings to electron-type closures and to the surrounding environment.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026}
+
+Within this framework, a specific integer architecture $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})=(24,28,930,10087,11017)$ has been isolated as a natural candidate for the PDL proton. This configuration satisfies a wide range of combinatorial and phenomenological constraints and yields a structural expression for the fine-structure constant with a relative accuracy on the order of $10^{-4}$.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026,PDL_Global_Mapping_2026} Complementary analyses have demonstrated that, under explicit constraints, this architecture constitutes an admissible and locally selected configuration within the discrete parameter space of proton-type closures.\cite{Combinatorial_Proton_v2_2026} Combined with the $(4,6)$ minimality result, these findings support the interpretation that key microscopic structures in PDL are not arbitrarily adjustable but are instead subject to stringent combinatorial constraints.
+
+Beyond these structural considerations, PDL also incorporates a more speculative element, namely the notion of \emph{coherence leakage} and its possible rôle in gravitation and cosmology.\cite{PDL_Main_2026,Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026} Intuitively, even when a proton-type graph is optimised with respect to the PDL coherence functional, a small but finite fraction of relational coherence cannot be fully confined within the corresponding closure. This residual fraction may be interpreted as an intrinsic defect of closure—i.e., a logical leakage exported into the surrounding relational field.\cite{Topological_Reformulation_PDL_2026} In earlier PDL studies, this concept has been formalised by introducing a small dimensionless parameter $\varepsilon$ at the proton level and by postulating an effective gravitational coupling proportional to $\varepsilon^{18}$, where the exponent $18$ is justified via a hierarchical filtering argument.\cite{Exponent_18_PDL_2026}
+
+From both mathematical and physical perspectives, this construction raises several nontrivial issues. At the mathematical level, it is essential to determine whether $\varepsilon$ can be defined in purely combinatorial terms—as an invariant associated with an appropriate class of proton graphs—rather than introduced phenomenologically as a free parameter adjusted to fit gravitational data.\cite{Topological_Reformulation_PDL_2026,PDL_Global_Mapping_2026} At the physical level, one must clarify the status of the exponent $18$: is it merely an artefact of a specific heuristic construction, or can it be understood as the minimal number of independent coherence filters required to relate microscopic leakage to a macroscopic effective coupling?\cite{Exponent_18_PDL_2026} More generally, any proposal connecting coherence leakage to gravitation must satisfy basic qualitative requirements—such as the emergence of an approximate $1/r^2$ regime and the correct order of magnitude for Newton’s constant in ordinary matter—if it is to be regarded as a plausible framework for further theoretical development.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026}
+
+The objective of the present work is to analyse these questions at a structural level, without overstating the current level of completeness of the PDL-based approach to gravitation. First, we specify a class of admissible proton graphs, grounded in the combinatorial architecture and constraints developed in previous studies, and we introduce a \emph{minimal closure defect} defined as the infimum of the triangle-violation fraction over this class.\cite{Combinatorial_Proton_v2_2026} This quantity is then interpreted as a combinatorial invariant $\varepsilon$ quantifying intrinsic coherence leakage at the proton scale.\cite{Topological_Reformulation_PDL_2026} Second, we revisit the hierarchical filtering scheme and reorganise the exponent $18$ into three groups of six independent coherence filters associated with (i) the extension from elementary $(4,6)$ bricks to protons, (ii) nuclear assembly, and (iii) the transition from nuclei to ordinary matter and an emergent effective gravitational regime.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026}
+
+Building on this framework, we examine a schematic scaling ansatz in which an effective gravitational coupling $G_{\mathrm{eff}}^{\PDL}$ depends on $\varepsilon$ through an exponent close to $18$, and we formulate qualitative constraints and limitations of such an ansatz.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026} The goal is not to derive Einsteinian gravitation in full detail from PDL, but rather to clarify the logical status of coherence leakage and of the hierarchical exponent, to distinguish which features are structurally enforced and which remain conjectural, and to outline a concrete research programme.
+
+The paper is organised as follows. In Section~\ref{sec:epsilon_proton}, we introduce the class of admissible proton graphs and define both the minimal closure defect and the associated coherence-leakage parameter $\varepsilon$. Section~\ref{sec:hierarchical_filters} develops the hierarchical filtering scheme and decomposes the exponent $18$ into three sets of six constraints. Section~\ref{sec:effective_gravity} outlines an effective gravitational coupling in terms of $\varepsilon$ and analyses the qualitative requirements it must satisfy. Section~\ref{sec:discussion} concludes with a discussion of open problems and possible directions for future research.
+
+\section{Coherence Leakage at the Proton Level}
+\label{sec:epsilon_proton}
+
+In this section, we formalise the concept of coherence leakage at the proton level within the PDL framework. We begin by specifying a class of admissible proton graphs, defined in terms of the integer-based architecture and associated constraints introduced in previous work.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} On this basis, we introduce a minimal closure defect, given by the infimum of the triangle-violation fraction over this admissible class, and interpret the resulting quantity as an intrinsic leakage parameter $\varepsilon$.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026}
+
+\subsection{From optimal closures to minimal defects}
+
+Within the PDL framework, the proton is modelled as a finite signed graph $G = (V, E, s)$ endowed with a hierarchical organisation into valence cores, relational sea, and active surface, and selected by a coherence-oriented functional $F$. This functional is designed to privilege configurations exhibiting high triangular coherence, sufficient relational density, and minimal closure.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} Even when $F$ is (locally) maximised within a prescribed class of graphs, perfect closure across all hierarchical levels is generically unattainable: a non-zero fraction of triangles remains structurally frustrated, and certain relational constraints fail to be satisfied exactly.\cite{Topological_Reformulation_PDL_2026}
+
+To formalise this phenomenon in a combinatorial setting, we focus on a restricted class of proton graphs that implement the architecture and constraints specified in Ref.~\cite{Combinatorial_Proton_v2_2026}.
+
+\begin{definition}[Class of admissible proton graphs]
+\label{def:class_Gp}
+Let $(n_u, n_d, r_{\mathrm{val}}, R_{\mathrm{sea}}, R_{\mathrm{tot}})$ be a fixed tuple of integers specifying a proton architecture, for example the canonical PDL proton architecture $(24, 28, 930, 10087, 11017)$.\cite{Combinatorial_Proton_v2_2026} We denote by $\mathcal{G}_p$ the class of finite signed graphs $G = (V, E, s)$ that realise this architecture and satisfy:
+\begin{itemize}
+  \item the vertex set $V$ admits a hierarchical decomposition into valence cores, relational sea, and active surface consistent with the prescribed integers;
+  \item the graph realisation obeys the admissibility conditions (multiplicities, stationary/dynamical fractions, active-surface relations, and global closure) introduced in Ref.~\cite{Combinatorial_Proton_v2_2026};
+  \item the graph is connected and logically autonomous, i.e.\ all relational references required to define the proton as a closure are internal to $G$.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+\end{definition}
+
+For any graph $G \in \mathcal{G}_p$, let $\Gamma(G)$ denote the fraction of structurally violated triangles, as in the elementary PDL analysis,\cite{PDL_Main_2026,Harary1953} and let $F(G)$ denote the value of the PDL coherence functional associated with $G$.\cite{PDL_Main_2026,PDL_Global_Mapping_2026} By construction, $F$ is a decreasing function of $\Gamma(G)$ and favours configurations achieving an optimal compromise between coherence, connectivity, and minimality.\cite{PDL_Main_2026}
+
+\begin{definition}[Minimal closure defect and leakage parameter $\varepsilon$]
+\label{def:epsilon}
+Let $\mathcal{G}_p$ be as in Definition~\ref{def:class_Gp}. The \emph{minimal closure defect} associated with $\mathcal{G}_p$ is defined by
+\[
+ \varepsilon \;=\; \inf_{G \in \mathcal{G}_p} \Gamma(G),
+\]
+where $\Gamma(G) \in [0,1]$ is the fraction of violated triangles in $G$. A graph $G^\ast \in \mathcal{G}_p$ is said to be \emph{$\varepsilon$-optimal} if
+\[
+ \Gamma(G^\ast) \leq \varepsilon + \delta,
+\]
+for some small tolerance $\delta \geq 0$, and if it approximately maximises the coherence functional $F$ within $\mathcal{G}_p$.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+\end{definition}
+
+Conceptually, $\varepsilon$ quantifies the irreducible fraction of relational incoherence that cannot be internalised within a proton closure, even after optimising the internal combinatorial structure over the admissible class $\mathcal{G}_p$.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026} This leakage constitutes an intrinsic characteristic of the chosen proton architecture rather than an artefact of any particular non-optimal graph realisation.
+
+\subsection{Basic properties and interpretation of \texorpdfstring{$\varepsilon$}{epsilon}}
+
+We summarise here several elementary properties and interpretative observations concerning the leakage parameter $\varepsilon$.
+
+\begin{proposition}[Elementary bounds on $\varepsilon$]
+\label{prop:epsilon_bounds}
+Let $\mathcal{G}_p$ be a non-empty class of admissible proton graphs in the sense of Definition~\ref{def:class_Gp}. Then:
+\begin{enumerate}
+  \item[(a)] $0 \leq \varepsilon \leq 1$;
+  \item[(b)] if there exists $G\in\mathcal{G}_p$ with $\Gamma(G)=0$, then $\varepsilon=0$;
+  \item[(c)] under the combined constraints of hierarchical structure, active surface, and admissibility, it is natural to expect $\varepsilon>0$, i.e.\ perfect closure is obstructed.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) For any finite signed graph $G$, the fraction of violated triangles $\Gamma(G)$, by definition, takes values in $[0,1]$. Consequently, its infimum $\varepsilon$ also belongs to $[0,1]$.\cite{PDL_Main_2026,Harary1953}
+
+(b) If there exists $G\in\mathcal{G}_p$ such that $\Gamma(G)=0$, then by definition of the infimum we have $\varepsilon\leq 0$. Since $\Gamma(G)\geq 0$ for all $G$, it follows that $\varepsilon\geq 0$, hence $\varepsilon=0$.
+
+(c) The third statement is not established here as a formal theorem but is instead formulated as a structural conjecture, motivated by the specific PDL proton constructions.\cite{Combinatorial_Proton_v2_2026,Exponent_18_PDL_2026} More precisely, the simultaneous imposition of (i) a hierarchical decomposition into valence, sea, and active surface components, (ii) quasi-completeness and high internal coherence of the valence cores, and (iii) the existence of a finite active surface realising the fine-structure constant, appears to be incompatible with exact triangular coherence across all scales.\cite{Combinatorial_Proton_v2_2026,Alpha_PDL_v2_2026,Topological_Reformulation_PDL_2026} Under these assumptions, existing PDL constructions yield graphs with a small but strictly positive value of $\Gamma(G)$, and heuristic considerations indicate that attempts to reduce $\Gamma(G)$ further either disrupt the required hierarchical organisation or violate other structural constraints.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026} A rigorous proof that $\varepsilon>0$ under an explicit and minimal set of hypotheses remains an open problem.
+\end{proof}
+
+\begin{remark}
+The interpretation of $\varepsilon$ is scale-dependent. At the purely combinatorial level, $\varepsilon$ is defined as the minimal fraction of violated triangles compatible with a proton-type graph satisfying the PDL constraints.\cite{Combinatorial_Proton_v2_2026} At a more conceptual level, as articulated in the topological reformulation of PDL, $\varepsilon$ can be viewed as an intrinsic probability of non-closure, i.e.\ as a quantitative measure of logical leakage associated with the coexistence of multiple, partially incompatible closures and with the impossibility of achieving perfect coherence in a sufficiently rich hierarchical architecture.\cite{Topological_Reformulation_PDL_2026} From this perspective, $\varepsilon$ is not an externally prescribed parameter but an emergent invariant of the relational organisation at the proton scale.
+
+It is crucial to distinguish this form of leakage from ordinary dissipative processes. The parameter $\varepsilon$ is defined relative to an optimisation problem over admissible proton graphs and remains non-zero even under idealised local dynamics, thereby encoding a structural non-closure rather than contingent energy or information losses.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026} This conceptual distinction motivates the proposal to relate $\varepsilon$ to effective macroscopic couplings, instead of interpreting it merely as an accounting device for dissipation.
+\end{remark}
+
+\begin{remark}[Dynamic origin of $\varepsilon$]
+\label{rem:dynamic_origin}
+A direct combinatorial analysis of the valence sector shows that the static signed graph alone does not enforce $\varepsilon > 0$. For any finite signed graph, Harary's theorem guarantees the existence of a balanced sign assignment with $\Gamma = 0$: it suffices to 2-colour the vertices and assign $+1$ to intra-group edges and $-1$ to inter-group edges. For the architecture $(24, 28, 930, 10087, 11017)$, the partition $A = \{u_1, u_2\}$, $B = \{d\}$ explicitly provides such an assignment over all 70\,300 triangles of the valence sector, with $\Gamma = 0$. It follows that $\varepsilon > 0$ cannot arise from the static graph alone and must originate from additional constraints absent from the static description. Three candidate sources are: (D) \textbf{Pulsation-induced transient violations}. If the update rule $F$ requires specific edges to flip sign, mixed triangles crossing the active surface may be violated during one half-period while coherent during the other. The minimal fraction of violations averaged over a complete cycle, $\Gamma_{\mathrm{cycle}}(G) = \frac{1}{2}(\Gamma(G) + \Gamma(F(G)))$, can be strictly positive even when $\Gamma(G) = 0$. (E) \textbf{Topological frustration}. Simultaneous coupling of the proton to multiple external $(4,6)$ blocks may impose mutually incompatible sign constraints on the surface, generating irreducible odd negative cycles. (F) \textbf{Charge constraint}. Encoding the net charge $+1$ may forbid all balanced 2-colourings compatible with the valence-sea architecture. The central conjecture of the PDL gravitation programme can then be stated precisely: \begin{equation} \varepsilon = \inf_{G \in \mathcal{G}_p} \Gamma_{\mathrm{cycle}}(G) = \varepsilon_G = \left(\frac{G_N m_p^2}{\hbar c}\right)^{1/18} = 0.0075194. \label{eq:central_conjecture} \end{equation} Establishing this equality requires: (i) an explicit specification of the proton pulsation rule $F$; (ii) a computation of $\Gamma_{\mathrm{cycle}}$ for the canonical architecture; (iii) a verification that this minimum coincides with $\varepsilon_G$. These three steps constitute the priority research programme for grounding the structural bridge between combinatorial coherence leakage and the gravitational constant.
+\end{remark}
+
+\begin{remark}[Computational determination of $\varepsilon$]
+\label{rem:computational_eps}
+A direct numerical analysis of the valence sector confirms that the minimal closure defect of the static signed graph is zero: under the balanced Harary assignment with $A = \{u_1, u_2\}$ and $B = \{d\}$, all 70\,300 triangles of the valence sector $(n_u=24, n_d=28)$ are coherent, so $\Gamma_{\min} = 0$. This implies that $\varepsilon > 0$ cannot arise from the static graph alone but requires a dynamical constraint, as discussed in Remark~\ref{rem:dynamic_origin}.
+
+Independently, the bridge formula established in Ref.~\cite{Universal_Coherence_Leakage_2026} provides a structurally derived expression for $\varepsilon_G$:
+\begin{equation}
+    \varepsilon_G 
+    \;=\; \frac{\Delta r_{\mathrm{val}} \cdot r_{\mathrm{val}}^2 \cdot n_u^2}
+               {R_{\mathrm{tot}} \cdot R_{\mathrm{surf}} \cdot (n_u^2-1)},
+    \label{eq:eps_G_bridge}
+\end{equation}
+numerically verified to $10^{-5}$ relative precision. This expression shows that $\varepsilon_G$ is not a purely combinatorial invariant of the proton architecture: it contains $\Delta r_{\mathrm{val}}$, which depends on $\alpha_{\exp}$ and $\mu$. The leakage parameter $\varepsilon_G$ is therefore a mixed quantity — partly combinatorial, partly electromagnetic — that encodes precisely the structural link between the gravitational and electromagnetic sectors established by the bridge formula.
+\end{remark}
+
+In the subsequent sections, we will regard $\varepsilon$ as a small, architecture-dependent invariant that is successively filtered and amplified by the hierarchical organisation of PDL. This process ultimately gives rise to an effective gravitational coupling operative at macroscopic scales.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+
+\section{Hierarchical Filtering and the Exponent \texorpdfstring{$18$}{18}}
+\label{sec:hierarchical_filters}
+
+We now reconsider the hierarchical filtering framework in which the local coherence leakage $\varepsilon$, defined at the proton scale, is progressively constrained and reinterpreted across successive structural tiers. The key premise is that $\varepsilon$ does not translate directly into a macroscopic coupling; instead, it is modulated by a sequence of independent coherence constraints associated with the transitions from elementary constituents to protons, from protons to nuclei, and from nuclei to bulk matter and effective gravitation.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026} Within the PDL gravitation programme, this sequence is formalised as a set of $18$ independent filters, systematically organised into three groups of six.
+
+\subsection{From local leakage to macroscopic effects}
+
+At the proton scale, the leakage parameter $\varepsilon$ quantifies the minimal fraction of coherence that cannot be fully contained within the internal closure.\cite{Topological_Reformulation_PDL_2026} Macroscopic phenomena such as gravitation, however, emerge only after aggregating large ensembles of protons into nuclei and, subsequently, into ordinary matter, and after reinterpreting the residual non-closure as a modulation of the coherence-cost landscape that can be represented as an effective metric or field.\cite{PDL_Main_2026,Effective_Fields_PDL_2026}
+
+The associated hierarchical filtering framework can be summarised as follows:
+\begin{itemize}
+  \item At the first level, $\varepsilon$ is defined for individual proton-type closures and is subject to internal constraints that couple valence, sea, and active surface degrees of freedom.
+  \item At the second level, proton and neutron closures are combined into nuclear configurations, which impose additional constraints on the permissible distributions and compensations of local leakage at the nuclear scale.
+  \item At the third level, nuclei assemble into ordinary matter, and the residual manifestation of leakage must be consistent with an effective, approximately Newtonian gravitational regime at macroscopic scales.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+
+Each stage enforces non-redundant conditions on the admissible propagation channels of $\varepsilon$, such that only a strongly filtered, collective contribution can be interpreted as a macroscopic coupling. The exponent $18$ is proposed as the total number of such independent coherence filters in this hierarchical structure.\cite{Exponent_18_PDL_2026}
+
+\begin{definition}[Hierarchical filtering blocks]
+\label{def:filter_blocks}
+We organize the coherence filters into three hierarchical blocks:
+\begin{itemize}
+  \item \emph{Block I (6 filters):} constraining the transition from elementary $(4,6)$ bricks to the hierarchical proton architecture;
+  \item \emph{Block II (6 filters):} constraining the transition from individual protons and neutrons to stable nuclei;
+  \item \emph{Block III (6 filters):} constraining the transition from nuclei to ordinary matter and to an effective gravitational regime.\cite{Exponent_18_PDL_2026}
+\end{itemize}
+The total of $18$ filters is interpreted as the minimal number of independent structural constraints that a local leakage must satisfy in order to emerge as a universal effective coupling at macroscopic scales.
+\end{definition}
+
+\subsection{Block I: From \texorpdfstring{$(4,6)$}{(4,6)} bricks to the proton}
+
+The first block addresses the extension from elementary $(4,6)$ closures to a stable proton architecture. Following Ref.~\cite{Exponent_18_PDL_2026}, we distinguish six conceptually separate constraints:
+
+\begin{itemize}
+  \item[(I1)] \textbf{Brick–tetrad compatibility.} The logical pulsation pattern and coherence structure of the $(4,6)$ brick must remain compatible with an internal decomposition into tetrads when embedded within the valence cores. This imposes restrictions on how elementary cycles may superpose without generating spurious internal hierarchical levels.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026}
+  \item[(I2)] \textbf{Local quasi-completeness of $u$ and $d$ cores.} The valence multiplicities $n_u$ and $n_d$ must be such that the associated cores can realise quasi-complete graphs with high internal coherence. This condition ensures that the cores can sustain a well-defined pulsation while remaining dependent on the relational sea for stabilisation.\cite{Combinatorial_Proton_v2_2026}
+  \item[(I3)] \textbf{Minimal $u,u,d$ charge asymmetry.} The internal organisation of the valence cores must permit the emergence of a total charge $+1$ through a minimal imbalance between constructive and destructive contributions, in a manner that does not compromise the coherence optimum.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+  \item[(I4)] \textbf{Stationary/dynamical partition.} The partition between stationary valence relations and dynamical sea relations must yield a stationary fraction $f_{\mathrm{stat}}$ within the admissible range, typically close to $9/91$, while remaining compatible with coherence optimisation.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+  \item[(I5)] \textbf{Finite active surface.} There must exist a finite active surface of radius $R_{\mathrm{surf}}$ that simultaneously separates the proton interior from its environment and supports coherent couplings to an electron-type $(4,6)$ block. The parameter $R_{\mathrm{surf}}$ is further required to approximately follow the golden-ratio scaling.\cite{Golden_Ratio_Sketch_2026,Alpha_PDL_v2_2026,Effective_Fields_PDL_2026}
+  \item[(I6)] \textbf{Minimal closure defect.} Even after maximising the coherence functional over the resulting class of graphs, an irreducible closure defect $\varepsilon$ persists, as defined in Definition~\ref{def:epsilon}, demonstrating that exact closure is obstructed at the proton scale.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026}
+\end{itemize}
+
+Taken together, these six constraints delimit the admissible implementations of local leakage at the proton level. In particular, they guarantee that the defect parameter $\varepsilon$ is intrinsically associated with a structurally well-defined, hierarchically organised proton, rather than with arbitrary aggregates of $(4,6)$ bricks.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+
+\subsection{Block II: From protons to nuclei}
+
+The second block addresses the aggregation of protons and neutrons into stable nuclear configurations. In this context, six distinct conceptual filters can be identified:\cite{Exponent_18_PDL_2026}
+
+\begin{itemize}
+  \item[(II1)] \textbf{Proton–proton compatibility.} The superposition of multiple proton closures must remain admissible with respect to the PDL coherence functional. In particular, the assembly of several protons into multi-proton configurations should not induce an uncontrolled growth in the proportion of violated triangles.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026}
+  \item[(II2)] \textbf{Proton–neutron compatibility.} The hierarchical organisation of neutrons, which differs slightly from that of protons, must remain structurally compatible with proton architectures, so as to allow for bound proton–neutron systems without a catastrophic breakdown of coherence.\cite{Exponent_18_PDL_2026}
+  \item[(II3)] \textbf{Closure of light nuclei.} There must exist configurations involving a small number of nucleons (e.g.\ hydrogen, deuterium, helium) that achieve locally optimal closures with respect to the PDL functional, thereby providing a discrete counterpart of light, stable nuclei.\cite{PDL_Global_Mapping_2026}
+  \item[(II4)] \textbf{Allocation of binding degrees of freedom.} A finite fraction of internal relations must be reassignable to mixed triangles connecting several nucleons, without compromising the local closure properties of each proton or neutron core. This requirement constrains the permissible redistribution of leakage and coherence across different nucleons.\cite{Exponent_18_PDL_2026}
+  \item[(II5)] \textbf{Effective leakage per nucleon.} The coherence leakage per nucleon, obtained by aggregating the individual leakages of protons and neutrons, must remain of the same order of magnitude at the nuclear scale. In particular, the aggregation process should neither suppress leakage entirely nor generate arbitrarily large amplification.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026}
+  \item[(II6)] \textbf{Discrete nuclear stability pattern.} Only specific combinations of proton and neutron numbers $(Z,N)$ are admissible as stable or long-lived nuclei. This imposes additional constraints on the ways in which leakage and coherence can be distributed and mutually compensated within a nucleus.\cite{PDL_Global_Mapping_2026}
+\end{itemize}
+
+Collectively, these filters ensure that the local leakage parameter $\varepsilon$, defined at the proton level, can be consistently propagated to an effective leakage at the nuclear scale, without being either suppressed or diverging, and while remaining compatible with the observed discrete pattern of nuclear stability.\cite{Exponent_18_PDL_2026}
+
+\subsection{Block III: From nuclei to matter and effective gravitation}
+
+The third block concerns the transition from nuclear-scale structures to ordinary matter and to an emergent effective gravitational regime. In this context, six additional filters can be specified:\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+
+\begin{itemize}
+  \item[(III1)] \textbf{Coherent aggregation into ordinary matter.} Nuclear closures must be capable of aggregating into electrically neutral or weakly charged composite systems (atoms, molecules, condensed phases) without erasing or fundamentally degrading the coherence properties previously established at the nuclear level.
+  \item[(III2)] \textbf{Emergent effective field.} The net effect of coherence leakage at the scale of macroscopic matter must admit a coarse-grained description as a smooth variation of a coherence-cost functional, such that this variation can be reformulated as an effective field or metric that governs the interaction among closures.\cite{Effective_Fields_PDL_2026,Proper_Time_PDL_2026}
+  \item[(III3)] \textbf{Approximate Newtonian regime.} In suitable limits (weak coherence leakage, moderate matter densities), the effective interaction between macroscopic aggregates of matter must reduce, to a good approximation, to a Newtonian $1/r^2$ law, in a manner consistent with the discrete Gauss-type constructions developed within PDL.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026}
+  \item[(III4)] \textbf{Compatibility with PDL cosmological scenarios.} The emergent effective coupling must be consistent with PDL-based cosmological frameworks, in which constraint events in a pre-physical relational field generate and recycle stable closures across cosmological scales.\cite{PDL_Main_2026,PDL_Global_Mapping_2026}
+  \item[(III5)] \textbf{Robustness under heterogeneity.} The effective coupling must remain well-defined and approximately universal for heterogeneous matter configurations; in particular, it must not depend sensitively on detailed internal proton or nuclear arrangements in ordinary, non-extreme regimes.\cite{Exponent_18_PDL_2026}
+  \item[(III6)] \textbf{Universality of the effective coupling.} The projection of $\varepsilon$ through the hierarchy of closures must yield an effective coupling that is approximately universal for all standard forms of baryonic matter, at least at leading order, thereby reproducing the empirically observed universality of the gravitational interaction.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026}
+\end{itemize}
+
+Collectively, these six filters ensure that the residual manifestation of coherence leakage at the matter scale is consistent with an effective, approximately universal gravitational coupling, rather than giving rise to composition-dependent or strongly environment-sensitive interactions.\cite{Effective_Fields_PDL_2026}
+
+The full set of $18$ filters (I1–I6, II1–II6, III1–III6) thus yields a structured interpretation of the exponent $18$ appearing in the PDL gravitation ansatz. In the following section, we examine how this exponent enters a schematic expression for an effective gravitational coupling in terms of the proton-level leakage parameter $\varepsilon$.
+
+\section{From \texorpdfstring{$\varepsilon$}{epsilon} to an Effective Gravitational Coupling}
+\label{sec:effective_gravity}
+
+We now outline how the leakage parameter $\varepsilon$, together with the hierarchical filtering structure introduced above, can be synthesized into an effective gravitational coupling within PDL. The objective is not to construct a fully developed theory of gravitation, but rather to propose a consistent scaling ansatz and to delineate qualitative constraints that any such framework must satisfy.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+
+\subsection{Scaling ansatz and effective coupling}
+
+Building on the hierarchical filtering blocks introduced in Section~\ref{sec:hierarchical_filters}, it is natural to posit that the emergent macroscopic effect of proton-level leakage scales as a high power of $\varepsilon$, capturing the cumulative suppression induced by multiple, effectively independent constraints. Within the established PDL gravitation programme, this behaviour is encoded through an exponent $18$, corresponding to six filters per hierarchical block.\cite{Exponent_18_PDL_2026}
+
+A general scaling ansatz may be expressed as
+\begin{equation}
+ G_{\mathrm{eff}}^{\PDL} \;=\; C \,\varepsilon^{n},
+ \label{eq:Geff_ansatz}
+\end{equation}
+where $G_{\mathrm{eff}}^{\PDL}$ denotes the effective gravitational coupling in the PDL framework, $n$ is an integer exponent, and $C$ encapsulates the numerical and dimensional factors determined by the internal architecture and the adopted system of units.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026} In this setting, the choice $n=18$ is interpreted as the minimal number of independent coherence filters that a local leakage signal must traverse in order to appear as a universal, approximately Newtonian interaction at macroscopic scales.\cite{Exponent_18_PDL_2026}
+
+\begin{definition}[Effective gravitational coupling in PDL]
+\label{def:Geff_PDL}
+Let $\varepsilon$ denote the minimal closure defect associated with a given class of admissible proton graphs, as in Definition~\ref{def:epsilon}, and let $n$ be an integer representing the total number of independent hierarchical filters (typically $n=18$). An \emph{effective gravitational coupling in PDL} is any quantity $G_{\mathrm{eff}}^{\PDL}$ of the form
+\[
+ G_{\mathrm{eff}}^{\PDL} = C \,\varepsilon^{n},
+\]
+where $C$ is a constant fixed by the internal architecture (including, for instance, the proton integer parameters, the active surface, and the relevant mass scales) and by the chosen system of units, and where $G_{\mathrm{eff}}^{\PDL}$ is intended to approximate Newton’s constant $G_N$ for ordinary matter in suitable regimes.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+\end{definition}
+
+In this formulation, the substantive content resides in: (i) demonstrating that $\varepsilon$ is indeed an architecture-dependent invariant, as argued in Section~\ref{sec:epsilon_proton}; (ii) providing a structural justification for the exponent $n$ (in particular, for the value $n=18$) based on the organisation of the hierarchical filters; and (iii) establishing that $C \varepsilon^{n}$ attains an order of magnitude consistent with $G_N$ for realistic matter compositions.\cite{Exponent_18_PDL_2026,PDL_Global_Mapping_2026} The present work primarily addresses points (i) and (ii), while a detailed quantitative determination of $C$ and $\varepsilon$ is deferred to future studies.
+
+\subsection{Qualitative constraints and limitations}
+
+Any proposal of the form \eqref{eq:Geff_ansatz} must satisfy a set of qualitative constraints in order to be physically meaningful.
+
+\begin{proposition}[Qualitative constraints on $G_{\mathrm{eff}}^{\PDL}$]
+\label{prop:Geff_constraints}
+An effective gravitational coupling $G_{\mathrm{eff}}^{\PDL}$ defined as in Definition~\ref{def:Geff_PDL} is required to satisfy at least the following qualitative conditions:
+\begin{enumerate}
+  \item[(i)] \emph{Monotonicity in leakage:} $G_{\mathrm{eff}}^{\PDL}$ should be a monotonically increasing function of $\varepsilon$ for fixed $C$ and $n$, such that a larger intrinsic non-closure induces a stronger effective coupling.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026}
+  \item[(ii)] \emph{Correct order of magnitude:} for ordinary baryonic matter composed of protons and neutrons, with leakage $\varepsilon$ determined by the PDL proton architecture, $G_{\mathrm{eff}}^{\PDL}$ should be of the same order of magnitude as Newton’s constant $G_N$ in conventional units.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026}
+  \item[(iii)] \emph{Approximate universality:} in ordinary regimes, the dependence of $G_{\mathrm{eff}}^{\PDL}$ on microscopic composition (e.g.\ detailed nuclear structure, chemical bonding, or molecular configuration) should be weak, so that $G_{\mathrm{eff}}^{\PDL}$ can be regarded as effectively universal for macroscopic bodies.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026}
+  \item[(iv)] \emph{Compatibility with the Newtonian limit:} in regimes of weak leakage and moderate mass densities, the effective interaction derived from $G_{\mathrm{eff}}^{\PDL}$ together with the PDL coherence-cost landscape should approximate a $1/r^2$ Newtonian potential between matter aggregates, in agreement with the behaviour suggested by discrete Gauss-type constructions in PDL.\cite{Effective_Fields_PDL_2026}
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+The present analysis does not aim to establish that all of these constraints are rigorously satisfied by a specific choice of $\varepsilon$, $n$, and $C$. Instead, it elucidates the structural rôle of $\varepsilon$ as a minimal closure defect and of $n$ as a count of independent coherence filters, and it delineates the qualitative benchmarks that any PDL-based proposal for gravitation must attain.\cite{Exponent_18_PDL_2026,Topological_Reformulation_PDL_2026,PDL_Global_Mapping_2026}
+
+More specifically, although the exponent $18$ has been motivated as minimal in Ref.~\cite{Exponent_18_PDL_2026}, a rigorous proof that no smaller number of filters can yield an effective coupling with the required universality and scaling properties remains outstanding. Likewise, a precise determination of $\varepsilon$ via combinatorial optimisation over proton graphs, together with a detailed calibration of $C$ to reproduce $G_N$, calls for substantial further work at the interface between combinatorial PDL structures and phenomenological constraints.\cite{Effective_Fields_PDL_2026,PDL_Global_Mapping_2026} These open problems should not be interpreted as deficiencies of the present formal framework; rather, they identify the concrete research tasks that must be completed in order to render the PDL gravitation programme a quantitatively predictive theory.
+\end{remark}
+
+\section{Discussion and Outlook}
+\label{sec:discussion}
+
+In this work, we have refined the treatment of coherence leakage and hierarchical filtering within the PDL framework. Building on the combinatorial proton architecture developed in earlier studies, we introduced a class of admissible proton graphs and defined a minimal closure defect $\varepsilon$ as the infimum of the triangle-violation fraction over this class.\cite{Combinatorial_Proton_v2_2026,PDL_Global_Mapping_2026} This parameter was interpreted as an intrinsic quantifier of logical leakage at the proton level, clearly distinguished from conventional dissipative phenomena.\cite{Topological_Reformulation_PDL_2026}
+
+We subsequently decomposed the previously heuristic exponent $18$ into a structured hierarchy of coherence filters, organised into three blocks of six. These blocks correspond, respectively, to the transitions from elementary $(4,6)$ bricks to protons, from protons to nuclei, and from nuclei to ordinary matter and effective gravitation.\cite{Exponent_18_PDL_2026} This decomposition elucidates the assertion that any local leakage must propagate through a large number of independent structural constraints before it can manifest as a universal macroscopic coupling. It also provides a more transparent interpretation of the exponent that appears in the PDL gravitation ansatz.\cite{PDL_Global_Mapping_2026}
+
+On this basis, we proposed a schematic scaling relation $G_{\mathrm{eff}}^{\PDL} = C \varepsilon^{n}$ and discussed qualitative constraints that any such effective gravitational coupling must satisfy. These constraints include monotonic dependence on the leakage parameter, approximate universality across distinct matter configurations, and consistency with a Newtonian $1/r^2$ regime in the appropriate limits.\cite{Exponent_18_PDL_2026,Effective_Fields_PDL_2026} The present analysis does not yet constitute a full derivation of Einsteinian gravitation from PDL. Instead, it identifies the structural roles of $\varepsilon$ and of the hierarchical exponent, and delineates the steps required for a more complete and rigorous treatment.
+
+Considered together with the companion works on minimal stationary closures and on the combinatorial selection of the PDL proton architecture, the present results enhance the internal coherence of PDL: the electron prototype, the proton structure, and the proposed gravitation mechanism all emerge from combinatorial constraints and optimisation principles rather than from ad hoc parameter choices.\cite{PDL_Main_2026,Combinatorial_Proton_v2_2026,Exponent_18_PDL_2026} Future research will focus on establishing the positivity of $\varepsilon$ under explicit structural assumptions, analysing the robustness and potential uniqueness of the exponent $18$, and investigating whether the PDL gravitation ansatz can be confronted with astrophysical and cosmological data in a quantitatively controlled manner.\cite{Topological_Reformulation_PDL_2026,PDL_Global_Mapping_2026}
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References}
+
+\end{document}
