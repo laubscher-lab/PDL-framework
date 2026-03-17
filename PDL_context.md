@@ -76,6 +76,10 @@ prototype). The proton is a hierarchical composite.
 | Existence_as_Pulsating_Closure...tex | D_Exist | Ontological meditation on PDL (article, philosophy of physics) | Philosophical |
 | Whoever_We_May_Be...v2.tex | D_Who_v2 | Philosophical synthesis, article format (academic) | Philosophical |
 | Whoever_we_may_be — The Projective Dynamic Logo.tex | D_Who_book | Same themes, book format (\documentclass{book}) | Philosophical |
+| Quoi_que_nous_soyons...v2.tex | D_Who_book_FR | Popular introduction FR —
+  revised and corrected version | CURRENT |
+| Whatever_We_May_Be...v2.tex   | D_Who_book_EN | Popular introduction EN —
+  full GB translation of D_Who_book_FR | CURRENT |
 
 ---
 
@@ -165,6 +169,7 @@ Verified to 10⁻⁵. Contains α_exp and μ irreducibly.
    - D16 (new document) develops the selection functional S and local uniqueness
      conjecture formally — stronger than previous treatment
    - Analytic proof still pending
+   - Note (Session 4): D_Who_book now references D16 selection functional S in footnote (Ch. 3, proton uniqueness). Consistent with D_Map v8 treatment.
 
 5. [MEDIUM] Series conjecture for bridge formula
    - Δr_val/ε_G = R · n_u²/(n_u²+1) = 6.3781 (residual < 0.001%)
@@ -237,6 +242,28 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
   (e) D_Map v8 prepared for Zenodo publication: all corrections integrated,
       Zenodo description drafted and finalised.
 
+  - **Session 4 (March 2026):** Full editorial revision and English translation of
+  the popular introduction book "Quoi que nous soyons / Whatever We May Be".
+
+  Key productions:
+  (a) French file revised: triple opening restructured (Résumé migrated to
+      separate quatrieme_couverture.tex), Introduction rewritten with Wheeler/
+      Rovelli/Wolfram positioning note and TO developed, medical section
+      recalibrated as open programme, duplicate at line ~915 removed, grief
+      passage cleaned, energy chapter reformulated.
+  (b) Theoretical corrections applied: D20 (Universal Coherence Leakage) added
+      to Annexe B as primary result; contradiction on ε status corrected (α
+      derived without free parameter; G requires calibration of ε); D16
+      selection functional S referenced in footnote on uniqueness conjecture.
+  (c) TikZ figure of (4,6) structure added to Chapter 1.
+  (d) Full English translation produced (GB spelling, \pdl command):
+      Whatever_We_May_Be___The_Projective_Dynamic_Logo.tex — 1142 lines,
+      10 translation blocks TR-1 to TR-10.
+  (e) Back cover produced in both languages:
+      quatrieme_couverture.tex (FR) and back_cover_EN.tex (GB).
+  (f) Editorial assessment: text judged fit as dual-audience ambassador
+      (gymnasium to scientific public). Main residual risk: predictions chapter
+      density for non-specialist readers.
 ---
 
 ## Instructions for Next Session
