@@ -1,5 +1,5 @@
 # PDL Research Context — Cédric Laubscher
-*Last updated: March 2026 — Session 2. Copy this file to GitHub after each session.*
+*Last updated: March 2026 — Session 3. Copy this file to GitHub after each session.*
 
 ---
 
@@ -58,8 +58,9 @@ prototype). The proton is a hierarchical composite.
 |------|------|---------|--------|
 | PDL.tex | D1 | Main framework: axioms, proton, α, G, k_B | Reference |
 | PDL_Intro.tex | D2 | Introduction to PDL | Reference |
+| Position_paper_PDL.tex | D3 | Position paper: status, open problems, TO interface | Reference |
 | Combinatorial_Proton_Architecture_PDL_v2.tex | D12 | Proton integers, uniqueness conjecture v1 | Solid |
-| On_the_Combinatorial_Selection_and_Local_Uniqueness... | D16 | Refined uniqueness conjecture + selection functional S | NEW — solid |
+| On_the_Combinatorial_Selection_and_Local_Uniqueness...tex | D16 | Refined uniqueness conjecture + selection functional S | NEW — solid |
 | Coherence_Leakage_Hierarchical_Filtering...v2.tex | D17 | 18 filters 6+6+6, ε definition | Updated with Remarks 2.5 & 2.6 |
 | Emergence_of_the_Golden_Ratio.tex | D18 | φ from self-similarity condition | Sketch |
 | Relational_Emergence_of_Born_s_Rule_v2.tex | D_Born | Born's rule + φ conjecture | Propositional |
@@ -70,9 +71,11 @@ prototype). The proton is a hierarchical composite.
 | Derivation_alpha_PDL_v2.tex | D_α | Structural derivation of α | Solid |
 | Toward_a_Gleason-Type...tex | D_Gleason | Born's rule uniqueness for spin-1/2 | Theorem established |
 | Towards_Einstein-Dirac_Unification_PDL.tex | D_ED | Dirac+Einstein on PDL substrate | Exploratory |
-| PDL_Global_Mapping...v7.tex | D_Map | Full corpus mapping, dependency diagram | Reference — read first |
-| Universal_Coherence_Leakage...V3.tex | D20-V3 | Bridge G ↔ α — PRIMARY RESULT | CURRENT VERSION |
-| Whoever_we_may_be.tex | D_Who | Ontological reading of PDL | Philosophical |
+| PDL_Global_Mapping...v7.tex | D_Map | Full corpus mapping, dependency diagram | Reference — NEEDS UPDATE (see §D_Map below) |
+| Universal_Coherence_Leakage...V3.tex | D20-V3 | Bridge G ↔ α — PRIMARY RESULT | CURRENT VERSION (= V2, see §D20 below) |
+| Existence_as_Pulsating_Closure...tex | D_Exist | Ontological meditation on PDL (article, philosophy of physics) | Philosophical |
+| Whoever_We_May_Be...v2.tex | D_Who_v2 | Philosophical synthesis, article format (academic) | Philosophical |
+| Whoever_we_may_be — The Projective Dynamic Logo.tex | D_Who_book | Same themes, book format (\documentclass{book}) | Philosophical |
 
 ---
 
@@ -81,13 +84,38 @@ prototype). The proton is a hierarchical composite.
 | Version | Status | Key change |
 |---------|--------|-----------|
 | V1 (original) | SUPERSEDED | ε_G=0.0073891 (wrong), bridge formula 3φ²ε_G (no basis) |
-| V2 | SUPERSEDED | Corrected ε_G, corrected bridge formula |
-| V3 | CURRENT | Further refinements — read this version |
+| V2 | SUPERSEDED (label) | Corrected ε_G, corrected bridge formula |
+| V3 | CURRENT | **Scientifically identical to V2** — confirmed in Session 3 |
+
+**Session 3 finding:** V2 and V3 are word-for-word identical in all sections
+(abstract, all six sections, all tables, all equations, all numerical values).
+V3 is V2 re-saved under a new filename. No new scientific content.
 
 Errors corrected from V1:
 - ε_G: 0.0073891 → 0.0075194 (V1 implied G=4.87×10⁻¹¹, 27% below CODATA)
 - Δr_val: 0.049751 → 0.047960
 - Bridge formula: 3φ²·ε_G → ε_G · R · C (structurally derived)
+
+---
+
+## D_Map v7 — Known Error (Needs Correction)
+
+D_Map v7 (Section on G–α bridge roadmap) still cites the old, invalidated bridge
+formula from D20-V1:
+
+  **WRONG (still in D_Map v7):**
+  "the relation Δr_val ≈ 3φ²ε_G remains valid..."
+
+  **CORRECT (D20-V2/V3):**
+  Δr_val = ε_G · (R_tot · R_surf / r_val²) · (n_u²−1)/n_u²
+
+Also, the entry for D20 in D_Map refers to the V1 document (the "newly introduced"
+document). The document index and roadmap sections of D_Map must be updated to:
+1. Replace 3φ²ε_G with the correct structural formula
+2. Reference D20-V3 as the current version, not the original
+3. Update open problem CT5 (bridge uniqueness) to reflect corrected formula
+
+Patch file: PDL_DMap_v7_corrections.tex (see outputs, Session 3)
 
 ---
 
@@ -186,6 +214,16 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
 - **Session 2 (March 2026):** GitHub connection established. Discovered new
   documents in corpus: D20-V3, D16 (local uniqueness), D_Map v7, D_Who.
   Context file updated to reflect full corpus state.
+
+- **Session 3 (March 2026):** V2 uploaded for comparison with V3.
+  Key findings:
+  (a) D20-V2 and D20-V3 are word-for-word identical — V3 is V2 re-saved.
+  (b) Full corpus audit: discovered 3 additional documents not previously listed:
+      D3 (Position_paper_PDL.tex), D_Exist (Existence_as_Pulsating_Closure...tex),
+      D_Who_v2 (Whoever_We_May_Be...v2.tex, article format).
+  (c) Critical error found in D_Map v7: roadmap section still uses old bridge
+      formula Δr_val ≈ 3φ²ε_G from D20-V1 (invalidated). Correction patch
+      produced (PDL_DMap_v7_corrections.tex).
 
 ---
 
