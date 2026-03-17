@@ -241,8 +241,7 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
       - Legend added
   (e) D_Map v8 prepared for Zenodo publication: all corrections integrated,
       Zenodo description drafted and finalised.
-
-  - **Session 4 (March 2026):** Full editorial revision and English translation of
+- **Session 4 (March 2026):** Full editorial revision and English translation of
   the popular introduction book "Quoi que nous soyons / Whatever We May Be".
 
   Key productions:
