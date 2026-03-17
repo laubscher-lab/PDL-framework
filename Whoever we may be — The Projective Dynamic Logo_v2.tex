@@ -1,0 +1,1143 @@
+% ============================================================
+%  Projective Dynamic Logo — Popular introduction
+%  Cédric Laubscher — 2026
+%  Compile with XeLaTeX or LuaLaTeX (recommended)
+%  or pdfLaTeX (replace fontspec with inputenc/fontenc)
+% ============================================================
+
+\documentclass[12pt, a4paper, openright]{book}
+\usepackage{hyphenat}
+% --- Encoding and language ---
+\ifdefined\XeTeXversion
+\usepackage{ifxetex,ifluatex}
+\ifxetex
+\usepackage{fontspec}
+  \setmainfont{Latin Modern}
+  \setsansfont{Source Sans Pro}
+  \setmonofont{JuliaMono}[Scale=0.85]
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\fi
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+
+\let\showhyphens\relax
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+% --- Page layout ---
+\usepackage{xcolor}
+\usepackage[
+  top=2.8cm, bottom=3cm,
+  left=3cm, right=3cm,
+  headheight=15pt
+]{geometry}
+\usepackage{emptypage}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Typography ---
+\usepackage[sfdefault]{sourcesanspro}
+\setlength{\skip\footins}{18pt plus 6pt minus 4pt}
+
+% --- Mathematics ---
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+% --- Headers and footers ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape\leftmark}
+\fancyhead[RO]{\small\itshape\rightmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- Chapter headings ---
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\large\normalfont\centering}
+  {\chaptertitlename\ \thechapter}
+  {12pt}
+  {\huge\centering}
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+
+% --- Table of contents ---
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\normalfont\huge}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftsecfont}{\normalfont}
+\setlength{\cftbeforechapskip}{6pt}
+
+% --- Links and PDF ---
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!60!black,
+  citecolor=black,
+  pdftitle={Whatever We May Be — The Projective Dynamic Logo},
+  pdfauthor={Cédric Laubscher},
+  pdfsubject={Scientific and philosophical introduction},
+  pdflang={en-GB}
+]{hyperref}
+
+% --- Epigraphs ---
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.78\textwidth}
+\renewcommand{\epigraphflush}{center}
+\renewcommand{\epigraphrule}{0.4pt}
+
+% --- Custom lists ---
+\usepackage{enumitem}
+\setlist[description]{leftmargin=2em, labelindent=0pt, font=\normalfont}
+
+% --- Paragraph spacing ---
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0pt}
+
+% --- Custom commands ---
+\newcommand{\pdl}{\textsc{pdl}}
+\newcommand{\eg}{\textit{e.g.}\ }
+\newcommand{\ie}{\textit{i.e.}\ }
+
+% ============================================================
+\begin{document}
+
+% --- Title page ---
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\fontsize{11}{13}\selectfont Cédric Laubscher}\\[1.2cm]
+  {\fontsize{30}{36}\selectfont\normalfont Whatever We May Be}\\[0.6cm]
+  {\fontsize{16}{20}\selectfont\itshape
+    An Introduction to the Projective Dynamic Logo}\\[0.4cm]
+  {\fontsize{13}{16}\selectfont\itshape
+    From the Electron to the Human Condition:\\
+    the Logic of Coherence that Governs Everything}\\[3cm]
+  \rule{0.45\textwidth}{0.4pt}\\[0.8cm]
+  {\small Independent researcher, Switzerland}\\[0.3cm]
+  {\small March 2026}\\[1.5cm]
+  \vfill
+  {\footnotesize
+    All technical publications of the PDL are freely available on \href{https://zenodo.org}{Zenodo}
+    under the name Cédric Laubscher.}
+\end{titlepage}
+
+% --- Copyright page ---
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushleft}
+  \small
+  \textcopyright\ 2026 Cédric Laubscher.\\[0.4em]
+  This text is made available under the
+  \href{https://creativecommons.org/licenses/by/4.0/}{%
+    Creative Commons Attribution 4.0 International (CC BY 4.0)} licence.\\[0.4em]
+  You are free to share and adapt this text,
+  provided you credit the author and source.\\[1.2em]
+  \textit{First edition, March 2026.}\\[0.4em]
+  Typeset in \LaTeX\
+\end{flushleft}
+\vspace*{\fill}
+\newpage
+
+% --- Epigraph ---
+\thispagestyle{empty}
+\vspace*{4cm}
+\epigraph{%
+  Whatever we may be, from the atoms that form our molecules to our most intimate thoughts, we are nothing but the necessary expression of a simple and implacable logic of coherence. A logic of causality that fulfils itself at every pulse. It is the Origin, the engine and the essence of the universe. The human being is merely its most vulnerable instrument.%
+}{C.~Laubscher}
+\newpage
+
+% ============================================================
+\mainmatter
+% ============================================================
+
+% --- Foreword ---
+\chapter*{Foreword \\ Why This Search}
+\addcontentsline{toc}{chapter}{Foreword}
+
+There is a question I have never managed to put away. Not the question of God, nor that of the meaning of life, though neither is far off. But a barer, more stubborn question: \emph{why does anything persist?}
+
+\medskip
+
+I am not speaking of the cosmos in general, nor of life in particular. I am speaking of the smallest and most ordinary thing there is: an electron. An electron exists. It has always existed, since the first seconds of the universe. It will still exist when our sun has burnt out. It does not degrade. It does not age. It is rigorously identical to every other electron in the universe, at any place, at any moment. Why? Not \emph{how}---physics is very good at describing how an electron behaves. But \emph{why} is it there? Why that particular form, and not another? Why that stability, which seems to defy entropy\footnote{A measure of the disorder of a physical system; according to the second law of thermodynamics, it can only increase in an isolated system.}?
+
+\medskip
+
+This is not only my question. It is the crack that physics itself has not managed to close: its two great theories, general relativity and quantum mechanics, contradict each other at the extremes---at the heart of black holes, at the instant of the Big Bang. Our most powerful tools do not know what they are talking about where the question becomes truly bare.
+
+\medskip
+
+This question led me to do something perhaps a little mad: to start from scratch. Not to correct existing physics. To suspend it entirely. To remove space. To remove time. To remove particles. And to pose the question in its absolute nakedness: under these conditions, what \emph{can} exist?
+
+\medskip
+
+The answer I found---or rather watched emerge, because one does not choose such things---is at once simple and vertiginous. It begins with the electron. It passes through the proton, through black holes, through the great constants that govern the universe. And it leads back to us.
+
+\medskip
+
+This text is the account of that search. Not a textbook. Not a scientific paper. A narrative: the way in which a simple idea, a pulse, led step by step to a vision of the world that I invite you to explore together.
+
+% Summary removed --- content migrated to back cover (separate file)
+\clearpage
+
+% --- Introduction ---
+\chapter[Introduction]{Introduction\\ The Question Physics Dares Not Ask}
+
+There is a question that some people have asked themselves at least once, as a child or as an adult, gazing at the sky or staring into the void: \emph{why is there something rather than nothing?} Most of the time, one files it away under philosophy and moves on. Physics itself seems to have decided not to deal with it: it describes \emph{how} things behave, not \emph{why} they exist. And yet something is wrong---something that physics itself has not resolved in a century.
+
+\subsection*{An Intellectual Scandal}
+
+We have two great theories of the world. General relativity describes gravitation, the curvature of spacetime, the orbits of planets, black holes. Quantum mechanics describes the behaviour of elementary particles, atoms, all the physics of the infinitely small. Each is of stupefying precision. Each has been verified millions of times under ever more demanding experimental conditions. And yet they are fundamentally incompatible: relativity presupposes a continuous, smooth, curved spacetime; quantum mechanics presupposes discrete quantities, jumps, irreducible indeterminacy. As soon as one pushes both theories towards their common limits---at the heart of a black hole, at the instant of the Big Bang, at the Planck scale where gravitation and quantum effects simultaneously become unavoidable---their concepts collapse together. This is not a problem of calculation; it is a problem of \emph{language}. Their conceptual foundations simply cannot speak of the same reality.
+
+\medskip
+
+Attempts at reconciliation abound: string theory, loop quantum gravity, non-commutative geometry. These programmes, immense and rigorous, share a common assumption: that there exists, \emph{a priori}, a space, a time, and entities moving within them. They correct existing theories without ever questioning this starting point. The PDL takes a different path: it questions that very assumption.\footnote{This strategy is not without precedent in fundamental physics. Wheeler already proposed \emph{``it from bit''}: the idea that information is more fundamental than matter. Rovelli developed a relational quantum mechanics in which the properties of objects exist only relative to other systems. Wolfram explores universes defined by discretely evolving hypergraphs. The PDL shares with these approaches the intuition that the continuous and the geometrical are emergent structures; it distinguishes itself by deriving, from explicit combinatorial axioms and without any adjusted free parameter, the numerical values of the fundamental physical constants---something none of these programmes has yet accomplished.}
+
+\subsection*{Suspending Everything}
+
+The Projective Dynamic Logo does something radical: it \emph{suspends} everything. No space. No time. No particles given in advance. And it poses the bare question: under these conditions, what could still exist? The answer is at once simple and vertiginous. For something to truly exist---not merely for an instant, but durably, recognisably, really---it is necessary and sufficient that it form a cycle. A difference that returns to itself. A pulse. That is all. From this single principle, without presupposing either space or time, the PDL reconstructs step by step the logical form of the electron, then that of the proton, then the great constants of physics---no longer as numbers fallen from the sky, but as \emph{coherence ratios}: signatures of the way in which each structure manages its own internal equilibrium.
+
+\subsection*{A Programme, Not a Doctrine}
+
+The PDL is not a doctrine: it is an open research programme. Some of its results are solidly established---the derivation of the $(4,6)$ structure, the combinatorial expressions for $\alpha$ and $\hbar$. Others are precise and testable conjectures---the uniqueness of the protonic quintet, the mechanism of the eighteen filters. Others still are philosophical extrapolations, clearly identified as such in the chapters that follow. This distinction is not a rhetorical precaution: it is an intellectual obligation.
+
+\medskip
+
+Nor does the PDL advance in isolation. It has entered into formal dialogue with the \emph{Theory of Objectivity} (TO), an independent programme that seeks to identify the minimal logical conditions any admissible universe must satisfy in order to allow the persistent existence of distinct objects. This dialogue has led to precise refinements: a more rigorous definition of active surfaces, a more explicit treatment of boundaries, and a deeper reflection on what it means to \emph{exist for more than one observer}. These two programmes do not merge; they mutually reinforce one another, and their partial convergence constitutes an independent consistency test for each.\footnote{The PDL--TO dialogue is recorded in a dedicated publication in the corpus, available on Zenodo under the author's name.}
+
+\subsection*{What We Shall Build Together}
+
+We shall begin at the beginning: nothingness, and the question of what can emerge from it. Not nothingness as a poetic backdrop---nothingness as a logical challenge. Then, step by step: the electron, the proton, the great constants, causality, time. And at the end of the journey, the question that has guided this book from its first line: what does this logic tell us about \emph{ourselves}?
+
+\medskip
+
+Every technical concept will be rendered in ordinary language before being used. Formal developments are gathered in footnotes for those who wish to go further without interrupting the reading. By the end of this journey, the epigraph---\textit{``the human being is merely its most vulnerable instrument''}---will, I hope, have taken on a new meaning. 
+
+% ============================================================
+\chapter{Nothing, then Something}
+
+Imagine you had to erase everything. Not just the objects around you, not just the Earth or the Sun or the galaxies---everything. Space itself. Time itself. Nothing remains, not even an empty backdrop against which something might appear. Under these conditions, what could possibly happen?
+
+\medskip
+
+Most physical theories sidestep this question. They assume that spacetime already exists, that laws already exist, that potential particles already exist; then they describe how all of this evolves. That is legitimate, and remarkably effective. But it is cheating with the question of origins. The PDL refuses this evasion. It places itself deliberately \emph{upstream} of all that and poses the problem in its full nakedness: what is necessary and sufficient for there to be something rather than nothing, durably?
+
+\subsection*{Instantaneous Existence Does Not Count}
+
+First observation, blunt: a thing that exists only for an instant does \emph{not really count}. If a difference appears and then vanishes without leaving the slightest trace, with no possibility of being recognised or retrieved, then it is logically indistinguishable from nothing. What has existed only once, unable to return, is as if it had never occurred.
+
+\medskip
+
+This is not an abstract philosophical claim; it is a logical constraint. For something to be real in the strong sense, it must be \emph{identifiable}---that is, retrievable, recognisable, re-instantiable. And this requires that it be capable of returning to itself.
+
+\medskip
+
+In the same way, a perfectly still state, absolutely uniform, with not the slightest internal difference, is equally indistinguishable from nothing: if strictly nothing is happening, there is nothing to observe, nothing to distinguish, nothing to name.
+
+\medskip
+
+The only serious candidate for existence, in this austere framework, is therefore a difference that can repeat itself: a gap, a contrast, a distinction capable of returning to itself in a structured way. Not once---once is chance. But a cycle, a return: there is something that can lay claim to existing.
+
+\subsection*{The Minimal Pulse}
+
+The PDL formalises this idea under the name of minimal binary pulsation. Imagine two possible states: agreement and disagreement, yes and no, $+1$ and $-1$. A rule passes from one to the other and back: a perfect return journey, a cycle of length two. This is the absolute minimum of what can be called an event that endures.
+
+\medskip
+
+Notice that at this stage there is still neither physical time, nor space, nor measurable frequency. There is only the logical possibility of an alternation: something can return to what it was. That is all. But it is already infinitely more than nothing. I remember the moment this idea struck me for the first time. Not in a laboratory, not before an equation---in the silence of an ordinary night, wondering why an electron does not age. The answer I eventually glimpsed was so simple that it at first seemed trivial. Then vertiginous.
+
+\medskip
+
+An image from everyday life: a beating heart does not exist because of the space it occupies; it exists because it can repeat its cycle indefinitely. A melody does not exist because it occupies a place; it exists because it can be recognised, replayed, retrieved. The PDL says: at bottom, everything that exists operates on this same principle. Space and time come \emph{after}, as tools for organising and comparing cycles---not before, as a pre-existing backdrop.
+
+\subsection*{A Granular Universe by Necessity}
+
+There is a consequence that is not always apparent at first glance, but which is fundamental. If existence rests upon a cycle---upon an exact return to the initial state---then that cycle cannot be continuous.
+
+\medskip
+
+Here is why. A continuous process, in the mathematical sense, can always be interrupted midway: it passes through infinitely many intermediate states, and nothing guarantees that it will ever return exactly to its starting point. A cycle that must close \emph{exactly}, without drift, without accumulation of error, must on the contrary be discrete: it passes through a finite number of well-distinguished states and returns to one of them rigorously. This is the only way for a structure to remain identical to itself through time.
+
+\medskip
+
+In other words: the granularity of the universe is not a hypothesis that the PDL adds to its model. It is a logical constraint that the programme \emph{derives}. If something is to exist durably, it must be discrete. Quantum physics has accustomed us to the idea that energy is transmitted in packets, that the energy levels of an atom are discrete, that nature does not admit infinite divisibility at all scales. The PDL says this is no accident: it is the inevitable signature of everything that can persist.
+
+\medskip
+
+This idea resonates with the deepest currents of contemporary physics---holography, entropic gravity, quantum information---all of which converge on the same finding: the continuous is a convenient approximation, and deep reality is combinatorial. The PDL situates itself within this current and offers a justification from first principles.
+
+\subsection*{Why a Single Pulse Is Not Enough}
+
+An isolated pulse, however, poses a problem. If it is connected to nothing else, how can it be distinguished from another identical pulse? How can it \emph{reference itself}? Without a relational context it remains indefinable: two identical, isolated alternations are rigorously indistinguishable from one another.
+
+\medskip
+
+For a distinction to be operational, it must be anchored in a network of relations---it must be able to situate itself relative to something else. This is why the PDL introduces a second requirement: elementary entities must be connected to one another, and these relations must themselves form closed loops.
+
+\medskip
+
+The simplest closed loop is a triangle: three entities, each connected to the other two. A triangle is the smallest circuit capable of closing on itself without calling on anything external. And within a triangle, something remarkable can occur: the three relations can be mutually \emph{coherent} or \emph{incoherent}, depending on the way their signs combine.
+
+\medskip
+
+The PDL then posits a central axiom: admissible structures are those that minimise triangular incoherence. A structure that fails to satisfy its own internal constraints cannot persist; it dissolves. Only those configurations that manage to close on themselves coherently endure.
+
+\subsection*{The First Admissible Structure}
+
+We can now pose the concrete question: what is the smallest network of connected entities that simultaneously satisfies both requirements---pulsation and triangular coherence---without calling on any external support?
+
+\medskip
+
+The answer is unique, and it is surprisingly precise: four entities connected by six links. Neither fewer nor more. With three entities one can form a coherent triangle, but one cannot propagate the reference through a sufficiently rich network: a single loop is too fragile. With four entities and six links, a logical tetrahedron\footnote{The fascination with this form is not new. Plato already associated the tetrahedron with fire, the most active element, in the \textit{Timaeus}, considering it the simplest and most stable elementary structure. In chemistry, tetrahedral geometry governs carbon bonding, the foundation of all organic chemistry. In crystallography, it appears in the most compact lattices. In theoretical computer science, graphs with 4 vertices and 6 edges (the complete graph $K_4$) constitute the smallest non-trivial connected structure. That the PDL recovers this same form by a purely logical route, without presupposing either space or matter, is perhaps no coincidence.} denoted $(4,6)$, one reaches the first threshold where everything fits together: all loops are coherent, the pulsation cycle is possible, and the structure is self-sufficient.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  noeud/.style={circle, draw, fill=black, inner sep=0pt, minimum size=7pt},
+  every edge/.style={draw, thick}
+]
+\node[noeud, label=above:{$1$}] (A) at (0, 2) {};
+\node[noeud, label=left:{$2$}] (B) at (-1.6, 0) {};
+\node[noeud, label=right:{$3$}] (C) at (1.6, 0) {};
+\node[noeud, label=below:{$4$}] (D) at (0, 0.75) {};
+\draw (A) -- (B);
+\draw (A) -- (C);
+\draw (A) -- (D);
+\draw (B) -- (C);
+\draw (B) -- (D);
+\draw (C) -- (D);
+\end{tikzpicture}
+\caption{\small The $(4,6)$ structure: four nodes connected by six links. It is the smallest network capable of simultaneously satisfying both PDL requirements---pulsation and triangular coherence---without calling on any external support. Node $4$ is represented inside the triangle to make all six edges visible; the structure is symmetric.}
+\label{fig:46}
+\end{figure}
+
+\medskip
+
+This $(4,6)$ structure is not invented or arbitrarily chosen: it is \emph{derived} from the constraints. It is the first logically obligatory answer to the question: what can exist without presupposing anything else?
+
+\medskip
+
+In the next chapter we shall see that this abstract structure---four points, six links, one pulse---is precisely what the PDL identifies as the logical archetype of the electron. Not because the electron \emph{is} a mathematical graph, but because the electron is, in nature, the first physical realisation of what the logic of coherence makes obligatory.
+
+\medskip
+
+Before reaching that point, let us pause for a moment on what we have just done. We have used neither space, nor time, nor energy, nor any law of physics. We have only asked: what can return to itself coherently? And a precise structure emerged, inevitable. This is the heart of the PDL: existence is not a backdrop. It is a problem of logical optimisation, and physical reality is its solution.\footnote{The logical strategy presented here in narrative form is formalised in a set of technical publications (axioms on signed graphs, minimal closure theorems, numerical verifications of the physical constants) available on Zenodo under the author's name. These works constitute the rigorous foundation of which this text is the readable surface.}
+
+\subsection*{What to Take Away}
+
+Let us summarise what this chapter has built, stone by stone. Starting from nothing---no space, no time, no matter---we asked a single question: what can exist durably? The logical answer is a structure that returns to itself coherently: a cycle, a pulse, a network of relations that closes without contradiction. And the smallest structure capable of satisfying all these constraints simultaneously is precisely $(4,6)$: four entities, six links, one pulse.
+
+\medskip
+
+This $(4,6)$ is not yet an electron. It is something more fundamental: it is the minimal logical form of existence. The electron is the physical realisation of this form in our universe. It does not age, it does not degrade, it is rigorously identical to every other electron in the universe---not by chance, but because it \emph{is} that minimal closure, that coherent pulse that nothing can undo without destroying the logic itself.
+
+\medskip
+
+What physics has observed for a century---the absolute stability of the electron, its spin, its perfect identity---the PDL \emph{derives}. That is the difference between observing and understanding. 
+
+% ============================================================
+\chapter[The First Pulse --- the Electron]{The First Pulse \\ the Electron}
+
+In the previous chapter we established that the smallest structure capable of existing autonomously and coherently is the $(4,6)$ network: four entities, six links, one pulsation cycle. This structure was not invented; it was derived from the most minimal constraints one can impose on anything that claims to exist durably.
+
+\medskip
+
+But a question immediately arises: does this purely logical construction have anything to do with the real world? The PDL's answer is yes, and in a very precise way.
+
+\subsection*{The Electron: the Universe's Discrete Star}
+
+Among all known particles, the electron occupies a singular place. It is strictly stable: unlike many particles that decay in fractions of a second, an isolated electron never transforms into anything else. It is universal: all electrons in the universe are rigorously identical, at any place, at any moment. It is structurally simple: at all scales accessible to our instruments, it has no detectable substructure. And it is animated by an internal oscillation, the Compton frequency\footnote{A frequency linked to the electron's mass by $f = mc^2/h$; it is the natural rate at which the electron ``pulses'' in its own rest frame.}, which is its own and is directly related to its mass.
+
+\medskip
+
+These four characteristics---stability, universality, absence of internal structure, intrinsic oscillation---are precisely those expected of the $(4,6)$ structure. Stable because its internal coherence is maximal and does not degrade. Universal because it is the unique solution to the logical problem posed. Without internal structure because it is minimal by construction. And animated by a pulse because that is its very definition.
+
+\medskip
+
+The PDL therefore proposes what it calls a minimal correspondence principle: the electron at rest is the first physical realisation of the logical closure $(4,6)$. This is not a metaphysical identity. One is not saying that the electron \emph{is} a mathematical graph. It is a precise and testable structural hypothesis.
+
+\medskip
+
+To understand it, one must know what is meant by \emph{stationary regime}: a structure is said to be stationary when it pulses, rotates, oscillates, but never transforms into something else. It changes state at each pulsation, but always returns to the same initial pattern. Like a spinning top: in permanent motion, yet its overall form remains stable. A \emph{non}-stationary structure, by contrast, degrades, decays, or transforms into something else with time.
+
+\medskip
+
+Within this framework, the question becomes: if something must exist in nature as the \emph{first} stationary regime---that is, the simplest structure that pulses without ever degrading---what is the natural candidate? The PDL's answer is the electron: stable, universal, without substructure, animated by a permanent internal oscillation. Everything one expects of the $(4,6)$ closure, dressed in physics.
+
+\subsection*{The Cost of Existing}
+
+This correspondence is more than a pleasing analogy. It allows us to re-read an equation that everyone has seen without ever truly understanding:
+
+\begin{equation}
+E = \hbar\,\omega
+\end{equation}
+
+Before doing so, a word on the term \emph{quantum}---plural: \emph{quanta}. In everyday life, energy seems able to take any value: one can heat water a little, a lot, very little. But at the scale of particles, nature does not work that way. Energy is not continuous like flowing water; it is transmitted in discrete packets, minimal portions that cannot be subdivided further. A quantum is precisely such a packet: the smallest amount of energy a given structure can exchange in a single transaction. One cannot receive half a quantum, any more than one can receive half a coin in a transaction that requires it whole.
+
+\medskip
+
+In standard physics, the equation $E = \hbar\,\omega$ simply states that the energy of this packet is proportional to the frequency $\omega$ of the associated oscillation, with $\hbar$ (the reduced Planck constant, pronounced ``h-bar'') as the proportionality factor. That is correct, but it is silent: why this relation? Where does $\hbar$ come from? Why that precise value?
+
+\medskip
+
+In the PDL, the same equation reads differently. $\omega$ is the frequency of the pulse of the $(4,6)$ structure, the physical expression of its logical pulsation. And $\hbar$ is no longer a mysterious parameter imported from outside: it is the minimal cost of one coherence cycle, the quantity of action required for the structure to loop back on itself once. Existing, even in the simplest possible way, has a price. That price is paid at every pulse. And $\hbar$ is its currency.
+
+\medskip
+
+This re-reading transforms what seemed an arbitrary law into a logical necessity. Planck's constant is not a curiosity of nature; it is the quantitative expression of the fact that no cycle of existence is free.
+
+\subsection*{Mass as a Measure of Coherence Organisation}
+
+If $\hbar$ is the cost of one cycle, then mass and energy can be re-read as measures of the internal organisation a structure must maintain, and at what rate, in order to continue existing.
+
+\medskip
+
+For the simple $(4,6)$ structure---the electron---this measure is minimal and uniform. All its coherence is internal, well organised, without hierarchy. This is why the electron is so light: it pays the bare minimum to exist.
+
+\medskip
+
+Inertia, too, finds a new reading here. Why is it difficult to change the state of motion of a massive object? Because such an object is a structure whose internal coherence is dense and strongly organised. Modifying it requires reorganising a large number of cycles simultaneously, which demands a proportional investment of coherence. What we call mass is in reality the \emph{internal rigidity} of a logical closure.
+
+\subsection*{A Structure, Not a Point}
+
+One of the most persistent habits of classical physics is to treat elementary particles as \emph{points}: entities without dimension, without interior, without structure. The PDL breaks with this habit---not by attributing a geometric size to them, but by recognising in them an internal relational organisation.
+
+\medskip
+
+The electron, in this framework, is not a point in space. It is a pattern of relations: four nodes, six links, a cycle that sustains itself. What matters is not where it is, but \emph{how it is organised}. The space in which it is found is an emergent description, convenient for comparing several electrons with one another, but no more fundamental than the relational structure that defines it.
+
+\subsection*{The First Instrument}
+
+Let us return to the phrase that guides this text. It says that we are all, from atoms to thoughts, the instruments of a logic of coherence. The electron is the first of these instruments: the simplest way the universe has of concretely realising what logic makes obligatory.
+
+\medskip
+
+It is not there by chance. It is not there because some external law would have created it. It is there because, as soon as something must exist in a minimal, autonomous, and coherent way, the $(4,6)$ form is inevitable---and the electron is that form, dressed in physics.
+
+\medskip
+
+But the universe does not content itself with electrons. It builds far more complex structures: protons and neutrons, nuclei, atoms, molecules, stars, living beings. How does one pass from the minimal pulse to all this richness? That is the question of the next chapter.
+
+\subsection*{What Measurement Owes to Coherence}
+
+There is a question that quantum mechanics has posed for a century without ever truly answering it: why are quantum probabilities \emph{squares}? Why, when one measures the spin\footnote{An intrinsic property of quantum particles, analogous to rotation about an axis, but with no classical equivalent; it takes only two discrete values, ``up'' or ``down''.} of an electron, is the probability of obtaining a result proportional to the square of an amplitude, and not to the amplitude itself, nor to its cube?
+
+\medskip
+
+This rule---called Born's rule, after the physicist Max Born who formulated it in 1926\footnote{Formally, if a quantum system is in the state $|\psi\rangle = a\,|\!\uparrow\rangle + b\,|\!\downarrow\rangle$, where $a$ and $b$ are complex numbers satisfying $|a|^2 + |b|^2 = 1$, then the probability of obtaining the result ``spin up'' upon measurement is $|a|^2$, and that of obtaining ``spin down'' is $|b|^2$. It is the square of the modulus of the amplitude---not the amplitude itself---that gives the probability. This rule applies to all observables of quantum mechanics, not only spin: the probability of finding a particle at a point in space, the probability that an atom emits a photon, the probability that a nuclear reaction occurs---all are calculated via squared amplitudes. Why squares and not something else? In standard physics this rule is simply postulated; the PDL proposes, for the first time in a discrete framework, a structural derivation.}---is one of the cornerstones of all quantum physics. It is verified with extraordinary precision in millions of experiments. But in the standard framework it is \emph{postulated}: laid down as a rule of the game, with no explanation of its origin. Why squares? Nobody truly knows. It is one of the questions that resisted me longest. I turned it over for months before understanding that the answer was not in the existing equations, but upstream of them, in the very structure of what it means to measure something that pulses.
+
+\medskip
+
+That is where the opening came. The PDL gives an answer, and it is one of the most solid pieces of the programme. Within this framework, measuring the spin of an electron means coupling the $(4,6)$ structure to a measuring apparatus, itself modelled as a network of relations. This coupling operates through what are called mixed triangles: triplets of links connecting two nodes of the electron to one node of the apparatus. These triangles can be coherent or incoherent, exactly like the internal triangles of the $(4,6)$ structure. And the same principle applies: the system globally minimises incoherence.
+
+\medskip
+
+The apparatus has two branches---say, ``spin up'' and ``spin down''. Each configuration of the global system is weighted according to the number of coherent mixed triangles it realises in each branch. In the limit where this optimisation is strong, the effective probabilities of ending up in one branch or the other converge to a precise expression. And that expression is, exactly, Born's rule: probabilities are the squares of amplitudes.
+
+\medskip
+
+This result was subsequently consolidated by a Gleason-type proof.\footnote{Gleason's theorem, established by the American mathematician Andrew Gleason in 1957, answers the following question: if one wishes to assign probabilities to the outcomes of quantum measurements in a consistent way---that is, without the probabilities depending on the chosen measurement context---what form can these probabilities take? The answer is remarkably constraining: in a Hilbert space of dimension at least three, the only admissible assignment is precisely Born's rule. Not one among others: the only one. This result is regarded as one of the deepest demonstrations in the foundations of quantum mechanics, showing that Born's rule is not an arbitrary choice---it is the inevitable consequence of requiring minimal consistency in the assignment of probabilities. The PDL establishes an analogous result in a discrete and combinatorial framework rather than in the continuous Hilbert space (the abstract mathematical space in which quantum states are represented as vectors; the standard framework of quantum mechanics) of standard physics: this is what makes it a structural advance rather than a mere reformulation (\textit{Toward a Gleason-Type Uniqueness Theorem for Born's Rule in the PDL Framework}, C.~Laubscher, Zenodo, 2026).} Concretely, under natural operational conditions---phase invariance, rotational covariance, repeatability of measurement, symmetry between the two branches---it can be shown that Born's rule is the only probability assignment compatible with the structure of the PDL. It is not merely that it emerges naturally: no other rule can exist within this framework without contradicting its own constraints.
+
+\medskip
+
+In other words: in a universe governed by the PDL's logic of coherence, quantum probabilities \emph{could only have been squares}. This is not a choice. It is a structural necessity, and it has considerable reach: the most fundamental rule of quantum mechanics---the one that says how the probabilistic world of the infinitely small translates into observable results---is not an arbitrary convention. It is the inevitable consequence of a universe that optimises its relational coherence. The same logic that selects the electron as the first admissible structure also dictates the way it responds to measurement. 
+
+% ============================================================
+\chapter[Building Bigger --- the Proton]{Building Bigger \\ the Proton}
+
+The electron is admirable in its simplicity. But the universe we inhabit does not reduce to isolated electrons. There are nuclei, atoms, molecules---and at the heart of all of this, the proton, roughly two thousand times heavier than the electron and of a radically different internal complexity.
+
+\medskip
+
+How does the PDL approach the proton? Not by postulating it, not by adding it by hand. By \emph{deriving} it---by showing that, as soon as one stacks $(4,6)$ closures according to the same criteria of coherence and optimisation, a precise hierarchical architecture imposes itself.
+
+\subsection*{You Cannot Simply Add Electrons}
+
+The first temptation would be to say: the proton is simply several $(4,6)$ structures placed end to end. But this does not work. If each sub-structure seeks to maximise its own internal closure, the whole becomes too dense, too saturated. There is no room for a rich internal dynamics, no flexibility, no possibility of interaction with the outside. A sum of absolutes does not make a coherent whole.
+
+\medskip
+
+The PDL therefore imposes an additional rule: in a composite structure, there must be a hierarchy. Certain regions are strongly closed---these are the stationary cores. Others are more open, more dynamic---this is the relational sea. This asymmetry between local closure and global openness is what allows the structure to remain coherent without becoming rigid.\footnote{Readers familiar with particle physics will recognise structural analogues here: the stationary cores correspond to \emph{valence quarks}, and the relational sea to the field of \emph{gluons} and \emph{virtual quarks} of quantum chromodynamics. But these technical terms are not necessary to follow the argument: the PDL reconstructs this architecture independently, without postulating them.}
+
+\subsection*{Integers That Are Not Parameters}
+
+When the PDL applies its optimisation criteria to this architecture---maximal coherence, minimal hierarchy, net charge compatible with that of the electron---it obtains a structure characterised by five precise integers:
+
+\begin{itemize}
+\item $n_u = 24$ and $n_d = 28$: the sizes of the two types of stationary cores (up and down quarks), expressed as a number of elementary entities.
+\item $r_{\text{val}} = 930$: the total number of internal links within the three valence cores.\footnote{Note that $6 + r_{\text{val}} + R_{\text{sea}} = R_{\text{tot}} + 6$, i.e.\ $6 + 930 + 10\,087 = 11\,017 + 6$. This equality constitutes a third characterisation of $r_{\text{val}} = 930$: it is the unique value for which the total hierarchy of the proton remains commensurable with the elementary building block $(4,6)$---the basic discrete invariant.}
+\item $R_{\text{sea}} = 10\,087$: the number of links in the dynamic relational sea.
+\item $r_{\text{tot}} = 11\,017$: the total relational budget of the proton.
+\end{itemize}
+
+These numbers are not adjusted to match experimental data. They are \emph{selected} by the logical constraints: divisibility by four, controlled asymmetry between the cores, and maximisation of global coherence under the constraint of minimality. Their proximity to experimental results---notably the approximately $9\,\%$ stationary\,/\,$91\,\%$\footnote{The approximate $9\,\%$ stationary\,/\,$91\,\%$ dynamic partition is consistent with the results of deep inelastic scattering (DIS) experiments. The combined measurements of the H1 and ZEUS experiments at the HERA collider established that valence quarks carry only about $45\,\%$ of the proton's total momentum, the remainder being attributed to gluons and sea quarks. See: H1 and ZEUS Collaborations, \textit{Combined Measurement and QCD Analysis of the Inclusive $e^{\pm}p$ Scattering Cross Sections at HERA}, \textit{JHEP} 01 (2010) 109, arXiv:0911.0884 [hep-ex].} dynamic partition of the proton's energy---is an \emph{a posteriori} validation, not an adjustment.
+
+\medskip
+
+These five integers did not fall from the sky, nor were they adjusted by hand to fit the data. They are selected by the PDL's optimisation functional under strictly combinatorial constraints:\footnote{The derivation of these five integers, the systematic numerical simulations exploring the space of neighbouring configurations, and the local uniqueness conjecture are developed in full in \textit{On the Combinatorial Selection of the Proton Architecture in PDL --- Axiomatic Constraints, Integer Structures, and a Uniqueness Conjecture}, C.\,Laubscher, Zenodo, 2026. A formal proof of global uniqueness remains an open problem.} divisibility by four, maximal triangular coherence, stationary\,/\,dynamic fraction close to $9\,/\,91$, net charge $+1$, and simultaneous compatibility with the fine-structure constant. Systematic numerical simulations were carried out\footnote{These explorations are the subject of a dedicated article in the PDL corpus: \textit{On the Combinatorial Selection of the Proton Architecture in PDL --- Axiomatic Constraints, Integer Structures, and a Uniqueness Conjecture} (C.\ Laubscher, Zenodo, 2026). The simulations, conducted on Google Colab, swept the space of neighbouring configurations by varying the multiplicities $n_u$ and $n_d$ in steps of four and adjusting $R_\text{sea}$ over moderate intervals. In each case, alternative configurations violated at least one constraint among the $9/91$ partition, the precision on $\alpha^{-1}$, and global triangular coherence. These results provide strong numerical support for the local uniqueness conjecture without constituting a formal proof: a uniqueness theorem in the strict mathematical sense remains an open problem.} to test the rigidity of this quintet. Changing a single integer---for instance, moving $R_\text{tot}$ from $11\,017$ to $11\,018$---suffices to destroy the simultaneous agreement with the constants of nature. This is not a numerical coincidence: it is the signature of an extraordinarily tight structural constraint. The proton architecture is therefore the most constrained candidate the programme has identified to date, but the formal and exhaustive demonstration of its absolute uniqueness remains an open problem and one of the most stimulating mathematical challenges the PDL addresses to specialists in combinatorial optimisation.
+
+\medskip
+
+I shall not forget the moment when these five numbers ceased to be variables and became constraints. When one realises that not a single one can be changed without destroying everything, something shifts in the way one looks at physics---and perhaps at reality as a whole.
+
+\subsection*{The Active Surface and the Golden Ratio}
+
+The proton does not live in isolation. It interacts with electrons, with other protons, and with radiation. For this it has an active surface: a subset of its relations projected outwards and made available for coupling with other structures.
+
+\medskip
+
+The solution to the optimisation problem for this surface reveals, in a conjectural but strongly constrained way, the golden ratio\footnote{A ratio that appears naturally in problems of self-similarity and optimal partition.} $\varphi = (1+\sqrt{5})/2$---not as a mystical symbol, but as the value that optimises the partition between interior and exterior in a hierarchical structure subject to the PDL's constraints.
+
+\subsection*{The Constants of Nature as Coherence Ratios}
+
+It is at this stage that the PDL accomplishes something remarkable. The great physical constants find here a precise structural interpretation.
+
+\medskip
+
+The fine-structure constant $\alpha \approx 1/137$ is reinterpreted as the ratio between the proton's active surface and its total relational budget: the fraction of coherence that the proton projects outwards to interact with an electron.\footnote{$\alpha$ (alpha) is one of the most celebrated constants in physics. It measures the strength with which charged particles---such as the electron and the proton---attract or repel one another through the electromagnetic force. Its value, approximately $1/137$, is a dimensionless number: it depends on no system of measurement. Why precisely $1/137$ and not something else? Nobody knows within the framework of standard physics. This is precisely what the PDL seeks to explain.} Boltzmann's constant $k_B$ encodes the way coherence is distributed between the microscopic and macroscopic levels of organisation.\footnote{$k_B$ (Boltzmann's constant, named after the Austrian physicist Ludwig Boltzmann, 1844--1906) is the bridge between two worlds: that of individual particles and that of the heat we feel. It translates what we call \emph{temperature}---a macroscopic notion, that of the thermometer---into terms of the average agitation of particles at the microscopic scale. Without it, statistical physics and thermodynamics could not communicate.} The gravitational constant $G$, finally, is obtained by hierarchical amplification of that same leakage rate $\varepsilon$ over eighteen levels of organisation.\footnote{The detail of these eighteen filters, organised into three blocks of six levels (interior of the proton, proton to atomic nucleus, nucleus to macroscopic matter), together with the derivation of the effective gravitational coupling, are developed in \textit{Coherence Leakage, Hierarchical Filtering, and the Exponent\,18 in the PDL Framework}, C.\,Laubscher, Zenodo, 2026.} It is important to be precise about the status of this result: $G$ is not derived without a free parameter as $\alpha$ is. The value of $\varepsilon$ is, at this stage of the programme, calibrated to reproduce the experimental value of $G$; it is then this same calibrated $\varepsilon$ that is used to recover simultaneously $\alpha$ and $k_B$. What the PDL establishes structurally is the \emph{form} of the link between $G$, $\alpha$, and the proton architecture; the numerical \emph{value} of $\varepsilon$ remains, for the time being, an empirical parameter. This distinction between fixed logical architecture and partial numerical calibration is one of the marks of the programme's epistemic honesty.
+
+\medskip
+
+What is essential to retain: the laws of nature are not arbitrary rules inscribed in the cosmos. They are compact descriptions of the way a finite universe manages its coherence at every scale, from the electron to the stars.
+
+\subsection*{The Proton and the Black Hole: the Same Surface Logic}
+
+There is a kinship that standard physics has not yet fully recognised, and which the PDL brings to light naturally: the proton and the black hole obey the same fundamental principle. In both cases, what counts physically is not encoded in the volume, but on a boundary.
+
+\medskip
+
+For the black hole, this principle is known as holography. Since the work of Bekenstein and Hawking in the 1970s, it has been known that the entropy of a black hole is proportional to the area of its horizon, not to its volume. In other words, all the physical information contained in a black hole is inscribed on its surface, like a hologram. This result, confirmed by many independent approaches, suggests that the dimensionality of the interior volume is an emergent description, not a fundamental one.
+
+\medskip
+
+The PDL recovers exactly the same principle for the proton, but from the logic of coherence: the proton's active surface---that fraction of its relations projected outwards---is the only place where the proton can be interrogated, measured, coupled to anything else. Its interior---the five integers, the stationary cores, the relational sea---is structurally inaccessible from outside except through what its surface projects. This is not an instrumental limitation: it is a logical necessity. A closure can interact with what lies beyond it only through what it exposes.
+
+\medskip
+
+The difference between the two objects is one of scale and direction: the black hole draws macroscopic coherence inwards towards its horizon, whilst the proton projects its coherence outwards via its active surface. One is a closure that absorbs, the other a closure that radiates. But the structure is the same: information on the boundary, inaccessible interior, and an incompressible leakage that governs interaction with the rest of the world. And if one traces back further still, to the electron, the same pattern is there---four entities, six links, a pulse that returns to itself. The electron says no more than the proton, which says no more than the black hole: \emph{here is how something can exist without dissolving}. This is not a metaphor and it is not postulated. It is the inevitable consequence of a single principle of logical closure, applied to three organisational regimes that standard physics treats as entirely separate.
+
+\medskip
+
+This convergence is not a metaphor and it is not postulated. It emerges from the same principle of logical closure applied to two radically different organisational regimes. If it withstands testing, it constitutes one of the strongest arguments in favour of a structural unification of particle physics and gravitation---not by adding equations, but by deriving both from a common principle.
+
+\subsection*{A Digression: What the PDL Says About Computation}
+
+The reader familiar with computer science may have noticed a striking resonance. The $(4,6)$ structure---a network of four nodes connected by six links subject to a discrete update rule---resembles nothing so much as a minimal cellular automaton. This is no coincidence. The PDL suggests that computation and physical existence share a deep common structure: in both cases, what ``runs'' stably is what ``exists''. A programme that loops indefinitely without terminating is, in this framework, the software version of a closure; a programme that crashes is a structure that could not maintain its internal coherence.
+
+\medskip
+
+This resonance is more than a metaphor. Recent work on quantum complexity and quantum circuits shows that the stability of a quantum computation depends precisely on the ability of logical gates to maintain entanglement against environmental decoherence. The central problem of quantum computing---how to preserve coherence long enough to perform a useful computation---is, in the PDL's language, the problem of maintaining an open closure without dissolving it. Quantum error-correcting codes, which detect and repair coherence violations without directly measuring the state of the system, can be read as technological implementations of the minimal-leakage principle.
+
+\medskip
+
+More generally, the PDL invites us to reformulate the fundamental question of computational complexity: why are some problems harder than others? In the PDL's relational framework, the difficulty of a computation might be related to the coherence cost required to maintain all of the problem's constraints simultaneously. The complexity classes $\mathbf{P}$ and $\mathbf{NP}$\footnote{The classes P and NP are the two great categories of computational complexity theory. A problem is said to be in class P (for \textit{Polynomial}) if there exists an algorithm capable of solving it in reasonable time---more precisely, in a number of steps that grows polynomially with the size of the problem. A problem is said to be in class NP (for \textit{Non-deterministic Polynomial}) if a proposed solution can be \emph{verified} quickly, even if \emph{finding} it potentially takes exponential time. The question of whether P $=$ NP---that is, whether every problem whose solution is quickly verifiable is also quickly solvable---is one of the seven Millennium Prize Problems of the Clay Institute, as yet unsolved, and considered one of the deepest open questions in all of science.} might then reflect a structural difference in the coherence costs required: an open conjecture, but a precise one.
+
+\subsection*{A Universe That Builds Itself}
+
+The proton marks a decisive threshold. Beyond the first minimal closure that is the electron, here is a composite architecture that emerges from a hierarchy of organised pulses: stationary cores, a dynamic sea, a surface of interaction, constants that are its imprints.
+
+\medskip
+
+But there is a limit to this logic of nesting. No structure, however well organised, can close completely. Something always escapes---an incompressible leakage, an irreducible opening towards what lies beyond. It is from this leakage, precisely, that gravitation arises. And it is this same opening that makes us vulnerable.
+
+% ============================================================
+\chapter[Nothing Closes Completely --- the Leak]{Nothing Closes Completely \\ the Leak}
+
+So far, the PDL has built: first the minimal pulse, then the electron, then the proton. At each step, the logic of coherence selects the most closed, most stable, most autonomous structure possible. One might suppose that the ultimate goal is the perfect closure---a structure that needs nothing, that sustains itself indefinitely without ever letting anything escape.
+
+\medskip
+
+That perfect closure does not exist. And this is not a defect of the programme; it is one of its most profound results.
+
+\subsection*{Irreducible Incoherence}
+
+Recall the principle of triangular coherence: in every admissible structure, the triangles of relations must satisfy an internal consistency condition. For the electron's $(4,6)$ structure, this condition can be satisfied perfectly: all triangles are coherent, no internal contradiction subsists. This is why the electron is so stable.
+
+\medskip
+
+But as soon as one constructs a composite structure---as soon as one assembles several elementary closures into a richer architecture---something changes. The number of triangular constraints to be satisfied simultaneously grows far faster than the number of available degrees of freedom. Beyond a certain level of complexity, it becomes \emph{mathematically impossible} to satisfy all constraints at once.
+
+\medskip
+
+Imagine a group of five friends who all want to get along perfectly with one another. Between two people, agreement is possible---one only needs to find common ground. But among five people, there are ten pairs of relations to manage simultaneously. And experience shows that the larger the group, the harder it becomes for everyone to agree with everyone else at the same time: certain tensions become inevitable, not through ill will, but because the demands of each relationship end up contradicting one another. One can minimise the friction, distribute it intelligently, but one cannot eliminate it all. This is exactly what the PDL says for physical structures: beyond a certain threshold of complexity, a residue of incoherence is structurally inevitable. That residue is the coherence leak.
+
+\medskip
+
+There always remains a residue: a fraction of the triangles that cannot be made coherent, whatever one does. The PDL quantifies this fraction by a parameter denoted $\varepsilon$, the coherence leakage rate. For the proton, this rate is very small, but it is strictly positive. It cannot be cancelled. It is structural.
+
+\subsection*{What Becomes of the Leak}
+
+A first reaction might be to see $\varepsilon$ as a simple defect, a residual imperfection of little consequence. The PDL says the opposite: this leak is not lost. It is \emph{exported}.
+
+\medskip
+
+The coherence that cannot be absorbed within a structure propagates outwards, into the network of relations surrounding that structure. It does not disappear; it becomes a constraint on neighbouring structures.\footnote{\textit{Thermodynamic resonance.} The first law of thermodynamics states that the energy of an isolated system is conserved: nothing is lost, nothing is created, everything is transformed. The PDL instantiates an analogous principle for coherence: the leakage $\varepsilon$ is not a clean loss, but a redistribution towards the environment. This parallel is more than a narrative analogy: Boltzmann's constant $k_B$, a cornerstone of statistical thermodynamics, is precisely one of the three constants that the PDL connects through the same parameter $\varepsilon$, suggesting that thermodynamics and gravitation might be two macroscopic readings of a single principle of coherence conservation.} At large scales, this exported coherence translates into a modification of what is called the metric---the way structures mutually influence one another at a distance.
+
+\medskip
+
+In other words: gravitation is the macroscopic manifestation of coherence leakage.\footnote{\textit{Resonance --- Bekenstein, Hawking and surface entropy (1972--1974).} In 1972, Jacob Bekenstein showed that the entropy of a black hole is proportional to the area of its horizon---not to its volume. Stephen Hawking completed this result in 1974 by showing that black holes emit thermal radiation at a temperature that simultaneously connects $G$, $\hbar$, and $k_B$---the three constants that the PDL links through a single leakage parameter $\varepsilon$. This is not yet a derivation: the PDL does not yet explain Hawking radiation. It is a structural resonance: the idea that physical information resides on a boundary rather than in a volume is precisely what the proton's active surface instantiates in the PDL. A formal dialogue between these two frameworks remains to be built.} What Newton described as an attractive force between masses, what Einstein reinterpreted as a curvature of spacetime, the PDL reads as the collective propagation of coherence irreducibly lost by each composite structure.\footnote{This claim does not rest on intuition or analogy: it is the result of detailed mathematical demonstration, developed in several PDL programme publications (\textit{Coherence Leakage, Hierarchical Filtering, and the Exponent~18 in the PDL Framework}; \textit{A Structural Derivation of the Fine-Structure Constant from the PDL}; \textit{From Discrete Coherence Flux to Effective Fields}, all available on Zenodo). What gives it its force, and what distinguishes it from a mere narrative reformulation, is the nature of the convergence obtained. The same formal framework, from the same logical constraints and without any parameter adjusted \emph{ad hoc}, simultaneously and independently derives three quantities:
+\begin{itemize}
+\item the coherence leakage rate $\varepsilon$, quantified at the scale of the proton;
+\item the fine-structure constant $\alpha \approx 1/137$, expressed as a combinatorial ratio over the proton structure;
+\item the gravitational constant $G$, obtained by hierarchical amplification of $\varepsilon$ over approximately eighteen levels of organisation.
+\end{itemize}
+\textit{Epistemic note:} among these three quantities, $\alpha$ is derived without any adjusted free parameter; the value of $\varepsilon$ is calibrated to reproduce $G$, and this same $\varepsilon$ is then used to test consistency with $\alpha$ and $k_B$. The force of the result lies in this \emph{mutual coherence}: a single parameter, fixed once, simultaneously reproduces three constants that standard physics treats as entirely independent. These three values are compatible with experimental measurements. Their mutual coherence---the fact that they emerge from the same logical edifice without contradicting one another---constitutes the true keystone of the programme. In physics, recovering a fundamental constant by derivation is already remarkable. Recovering three simultaneously, from a single coherence principle and without freedom of adjustment, is the most severe test one can impose on a theory---and the PDL passes it.}
+
+\subsection*{Hierarchical Filtering and the Exponent 18}
+
+How can a leakage so infinitesimal at the scale of the proton produce an effect as observable as gravitation?
+
+The PDL's answer is a mechanism of \emph{hierarchical filtering}: the leakage does not produce gravitation directly. It produces it after traversing eighteen successive levels of organisation. At each level, the leakage from the level below is slightly amplified and transmitted upwards. After eighteen steps, the signal---which started from almost nothing at the scale of a proton---has acquired the intensity we measure as gravitation.
+
+Here, concretely, are the main stages of this cascade:\footnote{The detail of these eighteen filters, organised into three blocks of six, is developed in \textit{Coherence Leakage, Hierarchical Filtering, and the Exponent~18 in the PDL Framework} (C.\ Laubscher, Zenodo, 2026).}
+
+\begin{itemize}
+\item Levels 1--6: the interior of the proton. The leak is born at the heart of the proton's own architecture---between the valence cores, the dynamic sea, and the active surface. It is here that the parameter $\varepsilon$ is defined and quantified.
+\item Levels 7--12: from the proton to the atomic nucleus. Protons and neutrons assemble into nuclei. The leakage of each nucleon combines and redistributes at the nuclear level. The constraints of nuclear stability constitute the filters of this block.
+\item Levels 13--18: from the nucleus to macroscopic matter. Nuclei form atoms, atoms form molecules, molecules form macroscopic objects, then self-gravitating structures. At each step, the accumulated leakage is amplified according to the laws of collective coherence, until at the end of the process it produces an effective coupling of the order of $10^{-38}$---which is precisely what we measure for the gravitational constant $G$.
+\end{itemize}
+
+\medskip
+
+This result is worth pausing over. Conventional physics treats $\alpha$ and $G$ as two entirely independent constants:\footnote{In 2025, a study published in \textit{AIP Advances} (Vopson \textit{et al.}) independently proposed that gravitation might emerge from an entropy-reduction process in a computational universe---a striking conceptual convergence with the PDL's coherence optimisation principle, reached by an entirely different route.} nobody has ever known why they have the values they have, nor why they should have any connection with one another. The PDL says the opposite: these two constants are two faces of one and the same combinatorial defect in the proton architecture. There is only one leak, only one parameter $\varepsilon$; depending on whether one projects it towards the active surface (electromagnetic coupling) or towards the hierarchical filtering (gravitation), one obtains $\alpha$ or $G$.\footnote{\textit{Resonance --- Verlinde and entropic gravity (2010).} In 2010, the Dutch physicist Erik Verlinde proposed that gravitation is not a fundamental force, but emerges thermodynamically from variations of entropy---exactly as the pressure of a gas emerges from the agitation of its molecules. Observational tests on more than 33\,000 galaxies confirmed partial consistency with this prediction in 2016--2017, without requiring dark matter. The PDL mechanism is structurally more precise: where Verlinde postulates an elastic volume entropy, the PDL proposes an explicit combinatorial derivation of the leakage $\varepsilon$, amplified over eighteen hierarchical levels. Both approaches converge on the same central intuition---gravitation as \emph{information accounting on boundaries}---but by independent routes. (E.\ Verlinde, \textit{On the Origin of Gravity and the Laws of Newton}, JHEP 04 (2011) 029, arXiv:1001.0785; M.\,M.\ Brouwer \textit{et al.}, \textit{First test of Verlinde's theory of emergent gravity using weak gravitational lensing measurements}, MNRAS 466, 2547 (2017)).}
+
+\medskip
+
+In other words, what is remarkable is not only the final result: it is the mutual coherence. The fine-structure constant $\alpha$ is derived directly, without any free parameter, from the combinatorics of the proton---this is the most severe test one can impose on a theory, and the PDL passes it. The gravitational constant $G$ requires the calibration of a single parameter $\varepsilon$, fixed once; this same $\varepsilon$ then allows one to recover simultaneously $\alpha$ and $k_{\rm B}$. One input parameter, three constants in output---three quantities that standard physics treats as entirely independent of one another.
+
+\subsection*{Biology as Coherence Optimisation}
+
+If gravitation is the macroscopic manifestation of coherence leakage at the nuclear scale, one may ask what the PDL says about biological structures, which seem actively to \emph{resist} the leak.
+
+\medskip
+
+The living cell is, in this framework, a remarkable example of hierarchical closure. It maintains an electrochemical gradient across its membrane, selectively exchanges matter and energy with its environment, reproduces its internal organisation with extraordinary fidelity, and actively repairs its own incoherences. Contemporary molecular biology continually reveals the precision of these mechanisms: chaperone proteins, which help other proteins find their correct conformation, are literally devices for repairing structural coherence. The mechanisms of DNA replication and correction, which reduce the copy error rate to less than one base in a billion, are biological implementations of the closure optimisation principle.
+
+\medskip
+
+In this framework, life is not a mysterious phenomenon that escapes the laws of physics: it is the most elaborate form taken by coherence optimisation when closures acquire the capacity to reproduce. Darwinian evolution, far from being a blind and arbitrary process, can be read as a search algorithm in the space of admissible closures: structures that maintain their coherence long enough to reproduce persist; the others dissolve. \emph{Natural selection} is, in this vocabulary, the filter that eliminates closures whose coherence is insufficient to ensure their own replication in a given environment.
+
+\medskip
+
+This Darwinian re-reading does not weaken the theory of evolution---it anchors it in a more fundamental principle. Genetic variation, drift, and selection continue to operate exactly as Darwin described; what the PDL adds is an explanation of \emph{why} selection is possible, why some structures are more stable than others, and why biological complexity tends to grow: because a high-level closure can manage its own coherence leakage more economically than a collection of independent closures.
+
+\subsection*{Transcendence: a Precise Word}
+
+The word \emph{transcendence} often evokes mystery or the religious. The PDL proposes a rigorous and sober version of it.
+
+\medskip
+
+A structure is \emph{transcendent} in the PDL's sense not because it belongs to another world, but because it cannot contain itself entirely. Its coherence overflows. A part of what it is depends on conditions lying beyond its own boundaries---in the network that surrounds it, in the structures with which it coexists, in a global coherence field that no individual closure controls.
+
+\medskip
+
+In this sense, transcendence is not the exception; it is the rule. Everything sufficiently complex to be interesting is transcendent. Richness and openness go together. One cannot have complexity and perfect closure simultaneously.
+
+\subsection*{Being Open Without Dissolving}
+
+This tension between closure and openness is universal in the PDL. Every structure must find an equilibrium: sufficiently closed to remain itself, sufficiently open to interact, adapt, evolve. Too closed: it isolates itself and can no longer participate in the global dynamics. Too open: it loses its internal coherence and dissolves.
+
+\medskip
+
+We know this tension well in our daily lives. An excessively rigid individual ends up cut off from the world. An individual without internal boundaries is overwhelmed and no longer knows who they are. Between the two lies a delicate space---that of living coherence, of the structure that sustains itself by adapting. The PDL says that this space is not a psychological metaphor: it is the structural condition of all complex existence, from the proton to the human being.
+
+\subsection*{A Universe That Cannot Close on Itself}
+
+This is not a system tending towards perfect equilibrium, towards total closure. It is a network of partially open structures organising themselves relative to one another, each exporting a fraction of its coherence into a global field that constrains them all.
+
+\medskip
+
+We are all---electrons, protons, human beings---nodes in this fabric. We export coherence. We receive it. We can neither do without it nor dissolve into it. It is this shared condition, this fundamental impossibility of total closure, that the next chapter will help us re-read through the lens of causality and time. 
+
+% ============================================================
+\chapter{Causality Revisited}
+
+Why do things happen in a certain order? Why does a cause precede its effect? Why does time seem to flow in a single direction? These questions have been at the heart of physics since Newton. And yet they remain strangely unanswered at a deep level in current theories.
+
+\medskip
+
+Relativity says that time is relative to the observer. Quantum mechanics says that the future is not determined before measurement. But neither truly explains \emph{why} there is a direction of time, why causes precede effects, why the world is not simply a frozen block of correlations without order. The PDL proposes a different answer, and it begins by calling into question the very definition of causality.
+
+\subsection*{Causality as a Chain: a Convenient but Limited Picture}
+
+The classical image of causality is that of a chain: A causes B, B causes C, C causes D. Each link pushes the next. This image is intuitive, it works well for describing everyday phenomena, and it underlies all of classical physics.
+
+\medskip
+
+But it becomes problematic as soon as one leaves simple situations. In quantum mechanics, an event has no single, localised cause: it results from a superposition of states. In general relativity, the temporal order between two events depends on the observer. And at the origins of the universe, the very notions of ``before'' and ``after'' lose their meaning.
+
+\subsection*{Causality as Global Coherence}
+
+In the PDL, causality is not a relation between two isolated events. It is a \emph{global} property: an event is causally linked to another not because it ``pushes'' it, but because both belong to the same coherence network, which cannot admit them simultaneously in just any order.
+
+\medskip
+
+Imagine a very busy diary: certain appointments cannot be moved without shifting others---not because they directly touch one another, but because they share common constraints: a room, a person, a deadline. It is not the first appointment that ``forces'' the second; it is the global structure of the diary that imposes an admissible order. Remove the common constraint, and the order disappears with it. This is exactly what the PDL says: causality is not an arrow between two points; it is a global coherence constraint that can be read in the structure of the entire network.
+
+\medskip
+
+What we call a \emph{cause} is a state that opens a set of coherent transitions. What we call an \emph{effect} is the state resulting from the most economical transition in terms of coherence---the one that best preserves the global integrity of the network. Causal order is therefore not an arrow imposed from outside; it is the signature of the way a network of closures manages its own maintenance.
+
+\subsection*{ER = EPR: Entanglement as Shared Coherence}
+
+This vision of causality finds an unexpected resonance in one of the boldest ideas in contemporary physics. In 2013, Juan Maldacena and Leonard Susskind proposed the $\text{ER} = \text{EPR}$ conjecture: two entangled quantum particles would be connected by an Einstein--Rosen bridge---that is, by what general relativity calls a wormhole. What seemed to be merely a statistical correlation between two distant particles would in reality be a deep geometric connection between two regions of spacetime.\footnote{J.\,Maldacena \& L.\,Susskind, \textit{Cool horizons for entangled black holes}, Fortschr.\ Phys.\ \textbf{61}, 781 (2013), arXiv:1306.0533. A concrete and calculable realisation of this connection, explicitly deriving the bridge from entanglement in a conformal field theory, was published in November 2024: arXiv:2411.18485.}
+
+\medskip
+
+Quantum entanglement is one of the most disconcerting phenomena in physics: two particles, once brought into contact, can remain instantaneously correlated regardless of the distance separating them. Measuring one seems to ``inform'' the other, without any signal travelling between them. Einstein called this ``spooky action at a distance'' and refused to believe it; experiment proved him wrong.
+
+\medskip
+
+The PDL arrives at the same intuition by an entirely different route. When two coherent closures interact, they do so through \emph{mixed triangles}: relations that straddle their respective boundaries and create a shared coherence between them. This coupling is not a force acting at a distance; it is a common structural constraint, exactly as two appointments in the same shared diary share a constraint without ``touching'' one another. Quantum entanglement, in this framework, is not a mysterious phenomenon: it is the relational signature of a shared coherence between boundaries.
+
+\medskip
+
+The convergence between $\text{ER} = \text{EPR}$ and the PDL is not a formal derivation: neither programme derives from the other. It is an independent convergence towards the same central intuition---that geometry and information are two readings of the same coherence substrate---reached by entirely different routes. If it withstands testing, it suggests that causality, entanglement, and the geometry of spacetime are not three separate subjects in physics, but three facets of one and the same principle of relational coherence.
+
+\subsection*{Time as a Reading of Coherence}
+
+Time, in this framework, is not a backdrop against which events unfold. It is an emergent reading of the order in which coherent configurations succeed one another. When a closure passes from one state to another whilst maintaining its coherence, it ``advances in time''---not because it follows a universal calendar, but because it realises a sequence of admissible states in the only order possible given its internal constraints.
+
+\medskip
+
+This is not a negation of time; it is an explanation of its origin. Time is the way a universe of partial closures tells its own story of coherence maintenance. Where coherence can be maintained, time advances. Where it collapses---in singularities, at origins---time loses its meaning, precisely because there is no longer any admissible sequence.
+
+\subsection*{The Constants as Causal Signatures}
+
+The fine-structure constant $\alpha$ does not only say ``here is the strength of electromagnetism''; it says: ``here is the fraction of coherence that a proton can share with an electron without either losing its integrity''. It is a causal constraint: if $\alpha$ were significantly different, atoms as we know them could not maintain their internal coherence, and chemistry---and life---would be impossible.
+
+\medskip
+
+The constants of nature are not arbitrary settings of one universe among many possible ones; they are the necessary conditions for a universe of partial closures to remain globally coherent.
+
+\subsection*{Determinism, Chance, and Freedom}
+
+For simple structures---the electron, the proton---the sequence of admissible states is highly constrained. The dynamics resembles strict determinism. But for complex structures, those whose relational sea is vast, the number of admissible transitions explodes. There is no longer a single path; there are multitudes, all coherent, all equally possible.
+
+\medskip
+
+What we call chance is the signature of this multiplicity. What we call freedom is the capacity, peculiar to the most complex structures, to \emph{represent} their own space of admissible transitions and to actively explore that space. Freedom and determinism are therefore not opposed in the PDL; they are two regimes of the same continuum, whose position depends on the internal richness of the structure in question.
+
+\subsection*{Causality Without a Clockmaker}
+
+What makes this picture particularly striking is the sobriety of the means it mobilises. The entire edifice of the PDL---the constants, gravitation, time, causality---rests on two ingredients only: integers, which define the discrete structure of the relational network, and a geometric relation, the golden ratio $\varphi$, which governs the redistribution of coherence between the core and the active surface of the proton. No continuously adjustable parameters. No constants introduced by hand. Two constraints, and an entire universe follows.
+
+\medskip
+
+The picture that emerges from the PDL is that of a universe that has no need of a clockmaker, of an external law, of a prime mover. Causality is not a rule imposed from without; it is the inevitable consequence of coherent structures seeking to sustain themselves. The order of the world is not programmed; it is \emph{negotiated}, at every instant, by millions of closures simultaneously managing their own coherence and their inevitable leakage towards what lies beyond them.
+
+\medskip
+
+We are ready now to pose the question that this book has been preparing since its first line: what does all this tell us about \emph{ourselves}? What does it mean to be a human being in a universe governed by this logic of coherence? 
+
+% ============================================================
+\chapter{We, Vulnerable Instruments}
+
+This is the chapter that cost me most to write. Not for technical reasons, but because it means saying something honest about us---about what this logic implies if it is true. I wrote it, deleted it, rewrote it. What you are reading here is the version in which I stopped censoring myself.
+
+\medskip
+
+We have followed the logic of coherence from nothingness to the proton, from the proton to the constants of nature, from the constants to causality and time. At each step, the same law: to exist is to form a stable cycle, to manage coherence, to accept an irreducible leakage towards what lies beyond us.
+
+\medskip
+
+It is time to pose the question that this journey was preparing: what does this logic say about \emph{us}? Not about the electron, not about the proton---about the human being, with their consciousness, their emotions, their choices, their fragility.
+
+\subsection*{We Are High-Level Closures}
+
+What follows is not a metaphor. It is the direct application of the same principle of irreducible leakage---mathematically demonstrated for the proton, quantified by $\varepsilon_G$, amplified over eighteen levels---to a composite structure of incomparably greater complexity: the human being.
+
+\medskip
+
+A human being is, from the PDL's point of view, a composite structure of vertiginous complexity. Billions upon billions of electrons and protons, organised into atoms, molecules, cells, organs, systems. Each hierarchical level forms its own closures, manages its own coherence, and exports its own leakage towards higher levels and towards the environment.
+
+\medskip
+
+But a human being is not merely a stack of physical closures. They are also---and this is where the PDL touches something new---a closure that has developed the capacity to represent itself. A structure that can model its own functioning, anticipate its own future states, evaluate its own admissible transitions and choose among them.
+
+\medskip
+
+It is this leap---from physical closure to reflexive closure---that distinguishes the human being from the electron or the proton. Not a rupture in the logic of coherence, but its most elaborate expression we know: a structure that manages its coherence not only by reacting, but by \emph{anticipating}, \emph{planning}, \emph{meaning}.
+
+\subsection*{Identity as a Closure Maintained Through Time}
+
+What is identity? In ordinary life, it is what makes you \emph{you} today, tomorrow, in ten years' time, despite changes of body, ideas, relationships. In the PDL's language, identity is the maintenance of a coherence pattern through time. Not the rigidity of a structure that never changes---the electron is rigid, but it has no identity in the human sense. Rather the persistence of an organisation that re-instantiates itself at each cycle, slightly modified but recognisable, like a melody that can be played in different keys without ceasing to be itself.
+
+\medskip
+
+Maintaining one's identity demands continuous effort. It is a work of coherence: integrating new experiences without dissolving, adapting without betraying oneself, remaining open without losing the thread. This effort has a cost---a coherence cost, in the PDL's literal sense. And when that cost becomes too high, when contradictions accumulate, when losses exceed the capacity for integration, the closure wavers. What we call an identity crisis, a psychological collapse, or simply exhaustion can be read as a deficit of internal coherence that the structure can no longer manage alone.
+
+\subsection*{Memory, Attention, Effort}
+
+Several dimensions of human experience find a precise echo in the PDL's vocabulary. Not as reductions, but as \emph{resonances} that invite us to think differently.
+
+\medskip
+
+Memory can be read as the capacity to preserve structural regularities beyond a single cycle: coherence patterns that have been stabilised and can be reactivated. To remember is to re-instantiate a past closure in a present context. To forget is to let a pattern degrade until it can no longer be retrieved.
+
+\medskip
+
+Attention resembles an allocation of coherence resources: to direct one's attention towards something is to concentrate one's internal coherence on a particular sub-network, at the expense of others. This is why attention is limited and tires: it consumes something real.
+
+\medskip
+
+Effort, whether physical or mental, corresponds to the resistance one encounters when trying to modify a well-established closure---changing a habit, learning something new, overcoming a fear. The denser and older the closure, the more costly it is to reorganise in coherence terms. This is inertia, but applied to the mind: no longer the resistance of a physical mass, but the resistance of a solidly woven cognitive pattern.
+
+\subsection*{Freedom: What a Complex Structure Can Do}
+
+A structure as complex as the human brain has a number of internally coherent configurations so vast that no calculation could enumerate them. Among these configurations, some are more stable, others more fragile. Some open new possibilities, others close doors. Human freedom is the navigation through this space, guided by experience, constrained by biology and history, but real---because the space itself is real.
+
+\medskip
+
+This freedom is not infinite. It is bounded by the available coherence, by the closures already established, by the irreducible leakages towards an environment one does not control. But it is vast enough for what we call a choice, a deliberation, a decision, a commitment not to be an illusion. It is a real navigation through a real space of admissible possibilities.
+
+\subsection*{What Medicine Might Read Differently}
+
+Contemporary medicine faces a paradox: the more precise it becomes in its molecular description of diseases, the more it struggles to grasp the patient as a coherent whole. The PDL does not, at this stage, have a medical theory---and it would be dishonest to claim otherwise. What it offers is more modest and more precise: a structural vocabulary that could, if formalised, open a research programme at the interface of fundamental physics and biology.
+
+\medskip
+
+The starting point is solid. A living cell is, in the PDL's framework, a remarkable example of hierarchical closure: it maintains an electrochemical gradient across its membrane, selectively exchanges matter and energy with its environment, reproduces its internal organisation with extraordinary fidelity, and actively repairs its own incoherences. The mechanisms of DNA replication and correction, which reduce the copy error rate to less than one base in a billion, are biological implementations of the closure optimisation principle. At this level, the dialogue between the PDL and molecular biology is concrete and well-founded.
+
+\medskip
+
+What remains open---and constitutes one of the programme's most stimulating challenges---is to derive, from the PDL's axioms, a formal criterion of biological viability: a necessary and sufficient condition, in terms of closures and coherence leakage, for a biological system to sustain itself. Such a criterion would allow certain medical questions to be reformulated in a structural language: not to replace medical biology, but to anchor it in a more fundamental principle. This programme is open. It is not yet a result.\footnote{This direction is identified as an open problem in the global mapping of the corpus: \textit{PDL: Global Mapping of Structures, Results, and Open Problems}, C.\,Laubscher, Zenodo, 2026.}
+
+\subsection*{Vulnerability: the Structural Price of Complexity}
+
+The result here is structural, not metaphorical. In the PDL, the coherence leakage $\varepsilon$ grows with hierarchical complexity: the richer a structure, the greater its incompressible opening towards the outside. The human being, the most complex composite structure we know, is the most extreme consequence of this.
+
+\medskip
+
+A human being is the most elaborate composite structure we know. Their coherence leakage is therefore immense---not in the physical sense of gravitational exponentiation, but in the existential sense: a considerable part of what maintains a human being in coherence lies \emph{outside them}. In the other people who recognise them. In the institutions that organise them. In the ecosystems that sustain them. In the languages that allow them to think. In the shared memories that give them a history.
+
+\medskip
+
+Remove these supports---total isolation, loss of recognition, destruction of the social fabric---and the human closure begins to degrade. This is not a metaphor: it is a well-documented clinical observation. Human vulnerability is not a contingent weakness that could be eliminated with more will or technique. It is the direct and inevitable consequence of our complexity. We are vulnerable because we are rich---because our coherence is so dense and so hierarchical that it cannot sustain itself without a vast and diverse network of external support.
+
+\subsection*{Relation as a Condition of Existence}
+
+If human coherence depends structurally on the outside, then relation is not a luxury or an ornament of life: it is a condition of existence.\footnote{This claim has a precise technical content in the PDL: a structure whose coherence leakage exceeds its capacity for internal absorption can sustain itself only by importing coherence from its environment. Relational dependence is not a psychological property---it is a structural constraint on any closure of high complexity.} To be in relation---with other people, with nature, with ideas, with a tradition---is to feed one's own closure with external coherence. It is what allows the structure to sustain itself and to develop.
+
+\medskip
+
+The PDL offers here, cautiously, a structural reading of what the great ethical and spiritual traditions have always sensed: that the human being is fundamentally relational, that their dignity is inseparable from their fragility, and that caring for others is also caring for the fabric of coherence that holds us all in existence.
+
+\subsection*{Instruments, Not Victims}
+
+The guiding phrase of this text calls the human being ``the most vulnerable of instruments''. An instrument, in the PDL's sense, is not passive: it is a structure through which a logic is realised, a form through which something universal finds a particular, local, irreplaceable expression.
+
+\medskip
+
+The electron is an instrument: through it, the logic of minimal coherence is realised for the first time in the physical world. The proton is an instrument: through it, that same logic builds its first complex architecture. And the human being is an instrument---the most elaborate, the richest, the most fragile---through which the logic of coherence reaches the level at which it can \emph{reflect upon itself}.
+
+\medskip
+
+This is perhaps what is most singular about the human condition: we are not merely structures that sustain themselves, we are structures that \emph{know} they sustain themselves, that can contemplate the logic running through them, that can choose to participate in it consciously. We are the place where the universe begins to understand itself.
+
+\medskip
+
+This does not place us above the logic of coherence; it plunges us more deeply into it. Our reflexivity is not an escape: it is a responsibility. The responsibility to manage our coherence with care---our own, and that of the relational fabric on which we depend and to which we contribute.
+
+\medskip
+
+Let us take a concrete example. Someone loses a loved one. In ordinary language, one might say they are ``broken''. In the PDL's language, one might say that their identity closure---that pattern of relations, memories, habits, projects that constitutes their self---has undergone a massive perturbation. A part of the coherence network that defined them has disappeared with the other. They must rebuild: find a new equilibrium, reorganise the internal relations that still define them. It is painful, not metaphorically but structurally: it is the real cost of a profound reorganisation of a complex closure. And what makes this reconstruction possible is precisely the leak---the incompressible opening towards others, towards the world, that prevents the closure from folding in upon itself in suffering.
+
+\medskip
+
+Our vulnerability is not a defect. It is the condition of our openness. And our openness is the condition of our existence. 
+
+% ============================================================
+\chapter[Conclusion --- Learning to Read the Logos]{Conclusion \\ Learning to Read the Logos}
+
+We set out from nothing. Not nothingness as a poetic backdrop, but as a logical challenge: what can exist without presupposing anything else? The PDL's answer is of radical sobriety---a difference that can repeat itself, a cycle that returns to itself, a pulse. That is all. And yet, from this single principle, an entire architecture has emerged: the electron, the proton, the constants of nature, gravitation, time, and even the human condition.
+
+\subsection*{A Programme That Knows How to Engage}
+
+The PDL does not advance in isolation. It has entered into formal dialogue with another fundamental research programme: the Theory of Objectivity (TO), which seeks to identify the minimal logical conditions any admissible universe must satisfy in order to permit the persistent existence of distinct objects for several observers.\footnote{\textit{A Modal Dialogue Between the Projective Dynamic Logo and the Theory of Objectivity}, C.~Laubscher, Zenodo, 2026.}
+
+\medskip
+
+This dialogue is not an academic curiosity. It has produced concrete refinements in the PDL programme: a more rigorous definition of active surfaces, a more explicit treatment of the boundaries between a structure and its environment, and a deeper reflection on what it means to ``exist for more than one observer''. These refinements are not cosmetic; they have allowed certain claims of the programme to be made more robust and more clearly delimited.
+
+\medskip
+
+What is worth retaining is that a research programme's capacity to engage with its intellectual neighbours without dissolving---without losing its internal coherence---is itself a form of test. A too-fragile programme collapses at the first critical gaze. A too-rigid programme closes and ceases to progress. The PDL demonstrated in this exchange that it could do what its own structures do: remain open without dissolving. Accept the leakage towards what lies beyond it, and emerge more precise.
+
+\subsection*{What the PDL Is Not}
+
+The PDL is not a finished theory that would replace current physics overnight. It is not a philosophical doctrine claiming to explain everything. It is a research programme: a set of precise mathematical constructions, testable hypotheses, conjectures honestly identified as such, and open questions clearly posed. This epistemic honesty is one of its most precious qualities.
+
+\subsection*{What the PDL Changes}
+
+It changes the way one thinks about existence: to exist is no longer a mysterious property, it is a performance---an active maintenance of coherence under constraint. It changes the way one thinks about the constants of nature: these numbers are no longer arbitrary; they encode the conditions under which a universe of partial closures can remain globally coherent. It changes the way one thinks about vulnerability: being fragile is no longer a defect to be corrected, it is the structural condition of all complex existence. It changes, perhaps, the way one thinks about transcendence: no longer a separate beyond, but the structural impossibility of containing oneself entirely.
+
+\medskip
+
+It also changes the way one thinks about what a serious theory is. A serious theory is not only a theory that predicts things correctly---it is a theory that says precisely what would destroy it.
+
+\subsection*{The PDL Knows What Could Refute It. And It Says So.}
+
+First scenario: the constants $\alpha$ and $G$ are locked in the PDL by a precise protonic architecture defined by five integers---$n_u = 24$, $n_d = 28$, $r_\text{val} = 930$, $R_\text{sea} = 10\,087$, $R_\text{tot} = 11\,017$. This architecture is unique: changing any one of these integers, even by a single unit, destroys the agreement with the measured values. If future measurements of $\alpha$ or $G$ were to deviate from the corridor defined by this architecture---not by one percent, but by a tiny fraction, since the window is extraordinarily narrow---the bridge between the two constants would collapse. This would not be a correctable discrepancy. It would be a refutation.
+
+\medskip
+
+Second scenario: the PDL asserts that the architecture $(24, 28, 930, 10\,087, 11\,017)$ is the unique solution simultaneously satisfying the programme's constraints. If someone were to find an alternative architecture---other integers, another logical proton, another hierarchical closure---reproducing the same constants with the same precision, the claim to uniqueness would fall. The programme would remain interesting, but it would lose one of its strongest assertions.
+
+\medskip
+
+Two more recent results of the programme deserve mention, as they illustrate two very different ways in which the framework can be tested.
+
+\medskip
+
+The first concerns light and cavities. In ordinary physics, a closed box---a cavity---can contain light. If one counts how many different vibrational modes that light can adopt as a function of frequency, one obtains a well-known law: the number of modes grows as the square of the frequency, written $\rho(\nu) \propto \nu^2$. This law underlies black-body radiation and, ultimately, all of quantum field theory. The PDL has shown that a cavity constructed \emph{solely} from finite signed graphs, without presupposing the prior existence of space or a wave equation, spontaneously supports periodic modes whose density follows exactly this same law $\rho(\nu) \propto \nu^2$, in three dimensions.\footnote{\textit{Discrete Cavity Modes and Logical Density of States in the PDL Framework}, C.~Laubscher, Zenodo, 2026.} This result was not constructed to reproduce that law: it is a consequence of it. It is an independent and non-circular validation: the same framework that selects the electron and the proton reproduces, without additional parameters, a law that physics has established since Planck as a fundamental property of three-dimensional space. This suggests that the three-dimensional structure of space itself might emerge, in this programme, as a consequence of relational coherence constraints, rather than as a presupposed backdrop.
+
+\medskip
+
+The second result concerns one of the oldest challenges in theoretical physics: the unification of general relativity and quantum mechanics. The PDL sketches a framework in which this incompatibility might find a natural resolution: the $(4,6)$ structures that model the electron can be read as the seeds of Dirac spinors, whilst the emergent metric arising from coherence cycles provides an analogue of Einstein's curvature.\footnote{\textit{Towards an Einstein--Dirac Unification from the PDL Framework}, C.~Laubscher, Zenodo, 2026.} Preliminary consistency checks---hydrogen limit, gravitational redshift---have been conducted with encouraging results. It is essential to be clear about the status of this result: it is a structural sketch, not an accomplished unification. But to our knowledge, no other programme today proposes a simultaneous derivation---from a single principle of logical closure, without free parameters---of the form of the electron, the architecture of the proton, the great constants of nature, \emph{and} a structural common language for general relativity and quantum mechanics. This is not a correction. It is not a reformulation. It is a change of foundations: and if the foundations hold, what they carry holds with them.
+
+\medskip
+
+These two scenarios are not fears: they are safeguards. They show that the PDL is not built to resist everything. It is built to be right---or to be put in default in a precise and irrefutable way. That is the very definition of a serious scientific programme.
+
+\subsection*{Energy, Mechanical Production, and the Cost of Closure}
+
+The PDL has concrete implications for the way we think about the production and transformation of energy. In the classical framework, energy is a conserved quantity that transforms from one form to another; thermodynamics describes its limits. In the PDL's framework, energy can be re-read as a measure of the internal organisation that a structure can maintain and transfer---what the programme calls, in a precise technical sense, a coherence budget.
+
+\medskip
+
+This re-reading has consequences for the understanding of machines. A heat engine, viewed through the PDL, is a closure that exploits a coherence gradient between two reservoirs (hot and cold) to produce ordered work. Carnot efficiency---the maximum possible efficiency of a heat engine---is, in this vocabulary, the constraint on the fraction of coherence a closure can transfer from a disorganised (hot) reservoir to a more organised (cold) one, without violating the second law of thermodynamics. What Boltzmann described as entropy, and which the PDL re-reads as a measure of coherence leakage distributed across a large number of degrees of freedom, is precisely the macroscopic translation of the PDL's leakage parameter~$\varepsilon$, aggregated across billions upon billions of elementary closures.
+
+\medskip
+
+Recent developments in energy---nuclear fusion, hydrogen fuel cells, superconducting materials---can all be read as attempts to construct closures capable of maintaining or transferring coherence with minimal leakage. The challenge of thermonuclear fusion is precisely to maintain a plasma at over one hundred million degrees in a sufficiently coherent state for fusion reactions to occur: it is a closure problem under the most extreme conditions imaginable. The recent advances at ITER and the promising results of inertial confinement fusion---notably the positive net energy records at NIF in 2022--2023---concretely illustrate how much the coherence management of a plasma is a fundamental problem, and how difficult it is to maintain an open closure without dissolving it.
+
+\subsection*{The PDL Confronted with Recent Discoveries}
+
+A serious research programme does not live in isolation: it must confront the most recent experimental discoveries---not to \emph{explain} them prematurely, but to test whether its conceptual framework is compatible with them. Here are some of the most significant recent advances in physics and biology, read through the PDL's perspective.
+
+\begin{itemize}
+
+\item \textit{Images of the black holes M87* and Sgr~A*.} In 2019 and 2022, the Event Horizon Telescope network produced the first direct images of an event horizon---that of the supermassive black hole in the galaxy M87, then of the one at the centre of our own galaxy. These images show a luminous ring surrounding a shadow---exactly what Einstein's general relativity predicts. In the PDL's framework, a black hole is a region where the density of closures is so extreme that local coherence leakage can no longer propagate outwards: the event horizon\footnote{The boundary beyond which no signal, not even light, can escape from a black hole.} is the boundary beyond which no coherence can be exported. The preliminary sketch of the Einstein--Dirac interface in the PDL---explicitly identified as speculative---finds here a first geometric confrontation with observation.
+
+\item \textit{Gravitational waves and LIGO.} Since the first direct detection of gravitational waves by LIGO\footnote{Laser Interferometer Gravitational-Wave Observatory; the American detector that made the first direct observation of gravitational waves in 2015.} in 2015, over one hundred events have been recorded---mergers of black holes and neutron star pairs. These waves are, in classical physics, ripples in the curvature of spacetime. In the PDL, they would be collective propagations of coherence leakage: perturbations of the global coherence field generated by extremely violent events involving very high-mass structures. The reinterpretation of~$G$ as the result of hierarchical filtering over eighteen levels is precisely the type of prediction that high-precision gravitational wave measurements could, in time, test.
+
+\item \textit{Proton mass measurements and the crisis of constants.} Recent very high-precision measurements of the proton mass (notably by Penning trap) and the ongoing discussions about slight tensions between different measurements of the Hubble constant (the ``Hubble tension problem''\footnote{A statistical disagreement between the two main methods of measuring the rate of expansion of the universe: one based on the cosmic microwave background, the other on Cepheid stars and supernovae.}) raise questions about the stability of the fundamental constants. If the PDL is right to link~$\alpha$ and~$G$ to a precise protonic architecture, then any temporal or spatial variation of these constants would be the signature of a variation in the architecture itself---which is difficult to conceive within the PDL's framework, but nonetheless constitutes a valuable consistency test.
+
+\item \textit{Synthetic biology and the origins of life.} Advances in synthetic biology---notably the laboratory creation of minimal cells capable of dividing (JCVI experiments since 2010, culminating in \textit{JCVI-syn3.0} in 2016 and \textit{syn3A} in 2021)---raise the question of what is minimally necessary for a biological structure to be ``alive''. In the PDL's framework, a minimal viable cell is the smallest biological closure capable of maintaining its internal coherence \emph{and} of reproducing. The discovery that \textit{syn3.0} contains around 473 genes, a third of which remain of unknown function, suggests that the space of minimal biological closures is not yet fully mapped---and that the PDL might offer structural criteria for understanding why certain configurations are viable and others are not.
+
+\item \textit{Physics of out-of-equilibrium systems.} The work of Jeremy England (MIT) on \emph{adaptive dissipation}\footnote{Jeremy England has shown that any self-replicating system coupled to a thermal bath must necessarily produce a minimal quantity of entropy, proportional to its growth rate and internal irreversibility. This result establishes a formal link between thermodynamic dissipation and structural persistence, which the PDL reformulates in terms of relational coherence. See: J.\,L.~England, \textit{Statistical Physics of Self-Replication}, \textit{J.~Chem.~Phys.}~139, 121923 (2013); and \textit{Nature Nanotechnology}~\textbf{10}, 919--923 (2015).} shows that physical systems subject to an external energy flux tend spontaneously towards configurations that maximise their dissipation---what he sometimes calls the ``thermodynamics of evolution''. This idea is structurally close, though formulated in a different language, to the PDL principle according to which the most stable closures are those that best manage their coherence leakage towards the environment. A formal dialogue between these two approaches remains to be built, but the conceptual convergence is striking.
+
+\end{itemize}
+
+\subsection*{Returning to the Phrase}
+
+Let us return, one last time, to the phrase that opened this text:
+
+\begin{quote}
+\itshape Whatever we may be, from the atoms that form our molecules to our most intimate thoughts, we are nothing but the necessary expression of a simple and implacable logic of coherence. A logic of causality that fulfils itself at every pulse. It is the Origin, the engine and the essence of the universe. The human being is merely its most vulnerable instrument.
+\end{quote}
+
+This phrase is not a slogan. It is a working hypothesis, formulated with precision, anchored in rigorous mathematical constructions, open to refutation. But if it is right---even partially---then it says something profound about what it is to exist. It means that every time you maintain a coherent thought, every time you keep a promise, every time you repair a damaged relationship, you are participating in the same project as the electron looping back upon itself. The vocabulary changes, the scale changes, the richness changes---but the deep structure is the same: maintaining coherence, accepting the leak, remaining open without dissolving.
+
+\subsection*{An Invitation, Not a Doctrine}
+
+The PDL is a young, ambitious, incomplete programme. It needs to be tested, criticised, refined---by physicists, philosophers, mathematicians, by all those who take an interest in it and bring questions its authors have not yet thought to ask.
+
+\medskip
+
+If you are a physicist or mathematician, the technical publications, freely available on \href{https://zenodo.org}{Zenodo}, await you with their demonstrations, their conjectures, and their open questions. If you are a philosopher, you will find there a precise and contestable ontology. And if you are simply someone who wonders what it means to live in this universe, we hope that this text has given you some new tools for posing that question more clearly.
+
+\medskip
+
+For perhaps this is what it ultimately means to learn to read the Logos: not to decipher a sacred text, not to master a definitive theory, but to learn to recognise, in everything that endures, the silent work of coherence---and in every fragility, the signature of an irreducible opening towards what lies beyond us.
+
+\medskip
+
+I do not know whether the PDL is correct. I know that it is coherent, that it is testable, and that it has not yet been put in default. That is all one can ask of a research programme at this stage. What I hope is that it will at least have given you the desire to pose the question differently.
+
+% ============================================================
+\chapter{If This Vision Is Correct\texorpdfstring{\,\ldots}{...}}
+
+The PDL is a research programme, not a doctrine. But every serious programme must answer a precise question: \emph{what does it predict that is not yet known?} This chapter does not recap what has been established. It looks forward: towards the tests that await, the dialogues that remain to be built, and the domains where the logic of coherence, if it proves fundamental, obliges us to reformulate questions we believed to be settled.
+
+\subsection*{What the PDL Predicts --- and Has Not Yet Been Measured}
+
+The strength of a scientific programme is measured not only by what it explains from the past, but by what it commits to predicting for the future. The PDL formulates several precise predictions, some of which are today technically accessible.
+
+\medskip
+
+\textbf{The fine-structure constant $\alpha$ and the proton-to-electron mass ratio $\mu$.} The PDL simultaneously locks $\alpha$ and the gravitational constant $G$ from a unique five-integer architecture $(24, 28, 930, 10\,087, 11\,017)$. This implies a prediction on the ratio $\mu = m_p / m_e$:\footnote{The ratio $\mu = m_p/m_e \approx 1836$ is the number of times the electron ``fits into'' the proton's mass. Its precise value has been a puzzle since the beginnings of atomic physics: nothing in standard physics explains why this number is exactly what it is.} if the architecture is correct, this ratio cannot be even slightly different from what is measured, since it is constrained by the same logical closure. Measurements of $\mu$ by precision molecular spectroscopy\footnote{Precision spectroscopy consists of measuring very exactly the frequencies of light absorbed or emitted by molecules or atoms. By measuring these frequencies with a precision of the order of $10^{-12}$, one can test whether the fundamental constants have exactly the expected values.}---notably on H$_2^+$ and HD$^+$ in ion traps\footnote{An ion trap is a device that holds charged atoms or molecules in suspension in a vacuum, using electric and magnetic fields, allowing them to be studied without disturbance from collisions.}---now reach precisions of the order of $10^{-11}$ to $10^{-12}$. Any deviation from the value predicted by the architecture would be a direct refutation.
+
+\medskip
+
+\textbf{The topological signature of the electron in colliders.} The PDL models the electron as a minimal stationary closure of type $(4,6)$\footnote{The notation $(4,6)$ denotes a signed graph with 4 vertices and 6 edges: the smallest structure capable of maintaining a stable coherence cycle according to the PDL's rules. It is not a geometric object in ordinary space, but an abstract relational structure.}---the smallest signed graph capable of maintaining a stable cyclic coherence. This structure is not a simple point: it has an internal topology that could, in principle, leave traces in high-energy scattering processes. At the LHC,\footnote{The Large Hadron Collider at CERN in Geneva is the most powerful machine ever built for studying matter at the sub-atomic scale: it accelerates protons to speeds close to that of light and collides them, revealing their constituents.} the ATLAS and CMS experiments measure angular and polarisation distributions in processes involving electrons at energies of the order of a TeV.\footnote{A TeV (teraelectronvolt) is an energy unit in particle physics: it is about one trillion times the energy of a visible-light photon. At this scale, the internal structures of particles, if they exist, become in principle detectable.} If the $(4,6)$ structure has a geometric signature in these processes---for example a slight deviation in angular distribution functions or in polarimetric Stokes parameters\footnote{The Stokes parameters are quantities describing the polarisation state of light or particles: they allow measurement of whether particles produced in a collision preferentially ``rotate'' in one direction.}---it would in principle be detectable. The PDL has not yet derived the precise differential cross-section\footnote{The differential cross-section is a measure of the probability that a particle is scattered in a given direction during a collision. It is the quantity most directly measured by particle physics experiments.} that this structure implies: this is an open problem explicitly identified in the programme.\footnote{\textit{PDL Global Mapping of Structures, Results and Open Problems}, v8, C.~Laubscher, 2026, available on \href{https://github.com/laubscher-lab/PDL-framework}{GitHub}.}
+
+\medskip
+
+\textbf{The proton as structural analogue of black holes.} One of the PDL's most unexpected predictions concerns the parallel between the structure of the proton and that of a black hole. In both cases, the PDL describes a closure whose active surface encodes the total information contained in the volume: for the proton, this is the Mersenne surface\footnote{The Mersenne surface, in the PDL, is the layer of cycles forming the active boundary of the proton: the level at which the proton's internal information ``dialogues'' with the outside. Its name comes from the fact that the number $R_\text{sea} = 10\,087$ is linked to a Mersenne-type combinatorial structure.} defined by $R_\text{sea} = 10\,087$ cycles; for a black hole, it is the event horizon.\footnote{The event horizon of a black hole is the imaginary boundary beyond which nothing---not even light---can escape. It is not a solid surface: it is a point of no return defined by the geometry of spacetime.} If this parallel is structurally well-founded, it implies a precise prediction: the ratio between the proton's entropy\footnote{Bekenstein--Hawking entropy is a measure of the number of internal states of a black hole, proportional to the area of its horizon. The PDL's conjecture is that the proton obeys an analogous scaling law, which would constitute a deep link between particle physics and gravitation.} (in the generalised Bekenstein--Hawking sense) and its charge radius should follow the same scaling law as for black holes. Ultra-precise measurements of the proton's charge radius---notably by laser spectroscopy of muonic hydrogen,\footnote{Muonic hydrogen is an artificial atom in which the ordinary electron is replaced by a muon---a particle 200 times heavier. Because the muon orbits much closer to the proton, it is far more sensitive to the proton's exact size. In 2010, measurements on this atom revealed a proton radius slightly different from values obtained with ordinary hydrogen: this is the so-called ``proton radius puzzle''.} which revealed the famous ``proton radius puzzle'' in 2010---could constitute an indirect test of this parallel.
+
+\subsection*{Cosmology: Hubble Constant, Dark Matter, Dark Energy}
+
+\textbf{The Hubble tension re-read as an architectural signal.} The ``Hubble tension'' refers to the persistent disagreement between two independent measurements of the rate of expansion of the universe:\footnote{The universe is expanding: galaxies are moving away from one another. The Hubble constant $H_0$ measures the speed of this expansion: it indicates how many km/s a galaxy recedes for each megaparsec of distance (one megaparsec is approximately 3.26 million light-years).} the cosmic microwave background method\footnote{The cosmic microwave background (CMB) is the fossil radiation emitted 380\,000 years after the Big Bang, when the universe had cooled sufficiently to become transparent. Its temperature and fluctuations allow cosmological parameters to be reconstructed with great precision.} gives $H_0 \approx 67.4$ km/s/Mpc, whilst the local distance scale (Cepheid stars,\footnote{Cepheid stars have a luminosity that oscillates periodically. Because this period is linked to their intrinsic luminosity, they serve as ``standard candles'' for measuring distances in the universe.} Type Ia supernovae) gives $H_0 \approx 73$ km/s/Mpc. This disagreement, exceeding $5\sigma$,\footnote{In scientific statistics, a $5\sigma$ discrepancy means the probability that the disagreement is due to chance is less than one in 3.5 million. This is the conventional threshold for speaking of a ``discovery'' in particle physics.} has resisted all known systematic corrections for more than a decade. In the PDL, $G$ is the result of hierarchical filtering over eighteen levels of coherence leakage amplification. If this filtering is not perfectly uniform at cosmological scales---if there exists a slight dependence of $G$ on the local density of closures---then $H_0$ might effectively take slightly different values depending on the density regime being probed. This is not an explanation of the tension, but a structural prediction: if the PDL is correct, the Hubble tension should \emph{persist}, and its amplitude should be correlated with the scale at which $G$ is measured.
+
+\medskip
+
+\textbf{Dark matter as a population of non-luminous closures.} The PDL does not a priori predict the existence of weakly interacting massive particles (WIMPs).\footnote{WIMPs (\textit{Weakly Interacting Massive Particles}) are hypothetical dark-matter particles: massive like atomic nuclei, but interacting so weakly with ordinary matter as to be practically undetectable. They are one of the most studied candidates for explaining dark matter.} But it does predict the existence of a spectrum of stable closures: structures that satisfy the programme's coherence constraints without necessarily coupling to photons. A stable non-luminous closure would, in this vocabulary, be a structure whose active surface supports no electromagnetic modes---that is, a closure whose architecture differs from that of the electron and proton, but is equally constrained. The PDL thus generates a qualitative prediction: if dark matter exists, it should have precise topological properties---notably a well-defined surface entropy and a mass linked to an integer number of coherence cycles. This prediction is for now qualitative; making it quantitative is an open problem.
+
+\medskip
+
+\textbf{Dark energy as relational vacuum energy.} In standard cosmology, dark energy is modelled by a cosmological constant $\Lambda$\footnote{The cosmological constant $\Lambda$ was introduced by Einstein in 1917 to maintain a static universe---he subsequently withdrew it, calling it his ``greatest blunder''. It was reintroduced in 1998 when it was discovered that the expansion of the universe is accelerating. Its measured value is $10^{120}$ times smaller than what quantum field theory predicts: one of the most glaring unresolved problems in modern physics.}---a vacuum energy term whose measured value is $10^{120}$ times smaller than particle physics predicts: the ``ultraviolet catastrophe'' of modern cosmology. In the PDL, the vacuum is not empty: it is populated by minimal closures in dynamic equilibrium, whose aggregated coherence leakage constitutes a residual energy of the global relational network. If this residual energy is proportional to the total number of elementary closures in the observable universe---a finite and calculable number within the PDL---then the value of $\Lambda$ might be derived rather than postulated. This calculation has not yet been performed: it constitutes one of the programme's most ambitious open problems.
+
+\medskip
+
+\textbf{The Dark Energy Survey and large-scale structure.} In January 2026, the DES collaboration published the combined analysis of its full six years of data---the most precise mapping to date of the distribution of matter and dark energy at large scales.\footnote{DES Collaboration, \textit{Dark Energy Survey scientists release analysis of all six years of data}, January 2026.} The results show a slight tension with the standard $\Lambda$CDM model\footnote{The $\Lambda$CDM model (\textit{Lambda Cold Dark Matter}) is the standard cosmological model: it describes a universe composed of approximately $5\,\%$ ordinary matter, $27\,\%$ cold dark matter, and $68\,\%$ dark energy represented by $\Lambda$. It is the most precise model available, but leaves unanswered the fundamental questions about the nature of its two dominant components.} in gravitational shear parameters,\footnote{Weak gravitational lensing is the slight deformation of images of distant galaxies caused by matter---both ordinary and dark---along their line of sight. By statistically measuring these deformations across millions of galaxies, one can map the distribution of mass in the universe.} suggesting either that dark energy is not a pure constant or that gravitation behaves slightly differently from Einstein's predictions at very large scales. In the PDL's framework, these tensions are exactly what one would expect if $G$ is the result of hierarchical filtering over eighteen levels: at scales where the density of elementary closures becomes sufficiently low, the filtering might no longer be uniform, producing a slightly density-dependent \emph{effective gravitation}. The PDL therefore predicts that these DES tensions should \emph{persist and amplify} with future surveys---notably DESI,\footnote{DESI (\textit{Dark Energy Spectroscopic Instrument}) is a spectrograph installed on the Mayall Telescope in Arizona, capable of simultaneously measuring the distance of 5\,000 galaxies. Euclid is an ESA satellite launched in 2023 to map the geometry of the dark universe. The Rubin Observatory in Chile will begin in 2025 the largest photographic survey ever undertaken.} Euclid, and the Rubin Observatory---and that they should be correlated with similar anomalies in the measurement of $H_0$. This is not an explanation: it is a structural prediction.
+
+\medskip
+
+\textbf{Direct dark matter detection and the neutrino floor.} Direct dark matter detection experiments---notably LZ (\textit{LUX-ZEPLIN}),\footnote{LUX-ZEPLIN is a dark matter detector installed 1.5 km underground in a gold mine in South Dakota. It contains 10 tonnes of ultra-pure liquid xenon: if a dark matter particle passes through this volume, it should produce a tiny flash of light. The depth protects the detector from cosmic ray backgrounds.} XENONnT, and PandaX-4T---reached in 2025 a historic threshold: the \emph{neutrino floor},\footnote{The neutrino floor is the limit below which dark matter detectors can no longer distinguish a possible dark matter signal from the background produced by solar neutrinos---quasi-undetectable particles emitted continuously by the Sun. Reaching this floor means current detectors have reached their fundamental limit for WIMP searches.} the regime where the irreducible background consists of solar neutrinos interacting via coherent nuclear scattering (CE$\nu$NS). LZ notably excluded WIMPs in the 3--9 GeV/c$^2$ window with record limits, without any positive signal.\footnote{LZ Collaboration, \textit{Dark matter search sets new limits and achieves neutrino floor}, December 2025.} In the PDL's language, this absence is structurally significant: if dark matter is a population of stable non-luminous closures, as the programme predicts, then these closures should not interact with ordinary nuclei via the exchange of standard gauge bosons.\footnote{Gauge bosons are the particles that ``carry'' the fundamental forces: the photon for electromagnetism, the W and Z bosons for the weak force, gluons for the strong force. A non-luminous closure, in the PDL, would be a structure that couples to none of these carriers.} The absence of WIMPs in the explored windows is therefore \emph{compatible} with the PDL's prediction of a dark matter of topological rather than particulate nature. The PDL's precise prediction---that the mass of stable non-luminous closures should be linked to an integer number of coherence cycles, not freely distributed in a continuous spectrum---implies they might be located at very precise masses, still out of reach of current detectors, or conversely well below the GeV.\footnote{A GeV (gigaelectronvolt) is a mass-energy unit in particle physics: the proton weighs approximately 0.938 GeV. Current detectors search primarily for WIMPs between 1 and 1\,000 GeV. The sub-GeV region (below 1 GeV) remains largely unexplored.} This is a test that future sub-GeV detection programmes---notably DarkSPHERE and the phonon detectors at SNOLAB\footnote{SNOLAB is a Canadian underground laboratory situated 2 km deep in a nickel mine in Ontario. Phonon detectors measure the vibrations of a crystal lattice produced by a collision: they can in principle detect particles far lighter than liquid-xenon detectors.}---could address as early as 2026--2027.
+
+\subsection*{Tests in Nanotechnology and Synthetic Biology}
+
+\textbf{Nano-living structures and minimal closures.} Recent advances in synthetic biology---notably the minimal cells JCVI-syn3A\footnote{JCVI-syn3A is a synthetic bacterial cell created by the J. Craig Venter Institute: it contains only 473 genes, compared to several thousand for an ordinary bacterium. It is the simplest artificial cell ever built capable of growing and dividing. A third of its genes have an as yet unknown function, suggesting that we do not yet fully understand what is minimally necessary for life.} (473 genes, a third of unknown function)---raise the question of what is \emph{minimally} necessary for a biological structure to be viable. The PDL predicts that viability is a closure property: a minimal viable cell is the smallest biological closure capable of maintaining its internal coherence \emph{and} reproducing. This prediction is testable: if one constructs synthetic cells with decreasing numbers of functional components, the PDL predicts the existence of a \emph{hard threshold} of viability---not a progressive degradation, but an abrupt transition between ``coherent closure'' and ``dissolution''. Current gene-reduction experiments do not yet show clearly whether this transition is abrupt or gradual: this is precisely what the PDL predicts, and what synthetic biology could test.
+
+\medskip
+
+\textbf{Artificial nanostructures and the golden ratio.} The PDL has shown that the proton's active surface spontaneously gives rise to the golden ratio $\varphi = (1+\sqrt{5})/2$\footnote{The golden ratio $\varphi \approx 1.618$ is a mathematical number that appears in very varied contexts: the spiral of shells, the arrangement of sunflower seeds, the proportions of the Parthenon. In the PDL, its appearance is not the sign of a mysterious harmony, but of a combinatorial constraint: it is the ratio that minimises the coherence leakage of a surface under integer constraint.} as the ratio between surface cycles and total cycles.\footnote{\textit{Emergence of the Golden Ratio in the PDL Proton Surface}, C.~Laubscher, 2026.} This emergence is not aesthetic: it is structural, linked to the stability conditions of a closure under combinatorial constraint. If the golden ratio is a general property of optimal stable closures---and not an accident of the proton---then artificial nanostructures designed to maximise their mechanical stability under constraint should converge towards geometric ratios close to $\varphi$. Tests on fullerenes,\footnote{Fullerenes are pure carbon molecules formed of pentagons and hexagons: the best known, buckminsterfullerene C$_{60}$, resembles a football. Their remarkable stability makes them natural candidates for testing whether stable constrained structures converge towards precise geometric ratios.} carbon nanotubes, and DNA origami structures\footnote{DNA origami is a technique that folds DNA strands into precise three-dimensional structures: nanocubes, spheres, octahedra. These structures are fully programmable and allow geometric predictions to be tested at the nanometre scale.} could verify whether this property is universal or specific to the proton.
+
+\subsection*{Quantum Computing: Maintaining Openness Without Dissolving}
+
+Quantum computing is, to date, the technological domain where the tension between coherence and leakage is most visible, most costly, and most precisely measured. A quantum computer computes correctly only if its qubits\footnote{A qubit (\textit{quantum bit}) is the basic unit of quantum information. Unlike a classical bit which is either 0 or 1, a qubit can be in a superposition of both states simultaneously---until it is measured. This property is both the strength of quantum computing and its fragility: the slightest coupling with the environment destroys the superposition.} remain in coherent superposition throughout the computation. Decoherence---the involuntary coupling of the system with its environment---is the principal enemy. This problem is not an engineering detail: it is, in the PDL's language, the fundamental problem of maintaining an open closure without dissolving it.
+
+\medskip
+
+\textbf{Qubits as partial closures.} In the PDL, a qubit is not a point-like object with two states: it is a partial closure whose active surface can be in a superposition of two coherence configurations. Decoherence is then precisely the PDL's leakage $\varepsilon$---the impossibility for a closure to remain totally closed on itself in the presence of an environment. What quantum engineers call ``coherence time'' $T_2$\footnote{The time $T_2$ (phase coherence time) measures how long a qubit can maintain its superposition before interaction with the environment destroys the phase information. The best current superconducting qubits achieve $T_2$ of the order of a few milliseconds: a record, but still insufficient for the most ambitious algorithms.} is, in this vocabulary, the duration during which a partial closure can maintain its configuration before the leakage prevails. This re-reading is not merely metaphorical: it predicts that $T_2$ should depend on the topology of the coupling between the qubit and its environment in a precise way, linked to the structure of the PDL's active surfaces.
+
+\medskip
+
+\textbf{Quantum error-correcting codes as implementations of minimal leakage.} Quantum error-correcting codes---surface codes,\footnote{A surface code is an error-correcting code that encodes a logical qubit in a network of several physical qubits arranged on a two-dimensional grid. By measuring combinations of neighbouring qubits (without measuring the individual qubits), errors can be detected and corrected without destroying the information. Google demonstrated in 2023 that this type of code does indeed reduce the error rate as the network grows.} the Steane code, the Shor code---are devices that detect and repair coherence violations of a qubit without directly measuring its state (which would destroy it). In the PDL's language, they are technological implementations of the minimal-leakage principle: they construct a second-level closure---a meta-closure---capable of absorbing the coherence leakage of the first-level closure (the physical qubit) without that leakage propagating to the computation. This reading has a structural implication: the fault-tolerance threshold\footnote{The fault-tolerance threshold is the per-operation error rate below which quantum correction is possible: if each operation has less than approximately $1\,\%$ error, one can in principle build an arbitrarily reliable quantum computer by adding correction qubits. Above this threshold, errors accumulate faster than they can be corrected.} of quantum computing should, within the PDL's framework, be derivable from the leakage parameters $\varepsilon$ of the underlying architecture, and not merely calculated empirically.
+
+\medskip
+
+\textbf{Entanglement as shared surface constraint.} Quantum entanglement is, in standard physics, a non-local correlation between two systems that cannot be described independently.\footnote{Quantum entanglement was described by Einstein as ``spooky action at a distance'' (\textit{spukhafte Fernwirkung}): two entangled particles share a common state, such that measuring one instantaneously affects the description of the other, regardless of the distance between them. This phenomenon has been confirmed experimentally many times, notably by Alain Aspect in 1982 and John Clauser, who were awarded the 2022 Nobel Prize in Physics.} The PDL offers a structural interpretation: two entangled qubits are two closures sharing a common active surface. Separating the qubits geographically does not break this constraint as long as both closures continue to share a common boundary in the global relational network. This interpretation converges with the $\text{ER} = \text{EPR}$ conjecture\footnote{The $\text{ER} = \text{EPR}$ conjecture, proposed by Juan Maldacena and Leonard Susskind in 2013, suggests that two entangled particles (EPR, named after Einstein, Podolsky and Rosen) are connected by a geometric tunnel in spacetime (ER, for Einstein--Rosen, i.e.\ a \textit{wormhole}). This conjecture would thus unify quantum mechanics and general relativity within a single framework.} of Maldacena and Susskind (2013). The PDL arrives at the same structure by an entirely different route: not through the geometry of spacetimes, but through the topology of signed graphs.
+
+\medskip
+
+\textbf{A testable prediction: the structure of quantum noise.} The PDL predicts that decoherence is not a purely random process: it is structured by the topology of the leaking closure. More precisely, the quantum noise spectrum---the frequency distribution of errors on a qubit---should reflect the topological structure of its environmental coupling, rather than being simply white or Markovian.\footnote{A Markovian process is a memoryless process: the future state depends only on the present state, not on the past. Markovian noise is therefore uncorrelated in time. Non-Markovian noise exhibits temporal correlations: errors at time $t$ are linked to past errors, reflecting an internal structure of the system.} Recent experiments on IBM and Google superconducting quantum processors (notably Sycamore and Heron) have revealed temporal correlations in the phase noise (\textit{$1/f$ noise})\footnote{$1/f$ noise (pink noise or flicker noise) is a type of noise whose power is inversely proportional to frequency: it is stronger at low frequencies than at high ones. This type of noise is ubiquitous in nature---it is found in current fluctuations in transistors, the heartbeat, even music---and always signals the presence of long-memory processes.} that suggest precisely a non-Markovian structure. The PDL predicts that this structured noise should be modelable as a hierarchical coherence leakage---with correlations at multiple timescales corresponding to the different closure levels of the system. This model is calculable and comparable to existing experimental data: it is one of the most immediately accessible tests of the programme.
+
+\subsection*{Noetics: Consciousness, Cognition, and Coherence}
+
+The PDL does not claim to explain consciousness. But it formulates a precise hypothesis about what consciousness \emph{would be} if the logic of coherence proved fundamental: a process of global coherence maintenance in a network of neuronal closures---that is, exactly what a complex physical system does to remain coherent in the face of perturbations. This hypothesis is refutable.
+
+\medskip
+
+\textbf{Prediction on neuronal decoherence.} If consciousness is a coherence phenomenon, then altered states of consciousness---sleep, anaesthesia, dissociative states---should correspond to measurable reductions of the functional coherence of the neuronal network. This is not a new prediction in itself: Tononi's Integrated Information Theory (IIT)\footnote{Integrated Information Theory (IIT), proposed by neuroscientist Giulio Tononi, suggests that consciousness is proportional to the amount of information a system generates ``above and beyond'' what its parts generate separately---a measure called $\Phi$ (phi). The larger $\Phi$, the more conscious the system. This theory predicts that some highly interconnected networks could be more conscious than a human brain, which remains highly controversial.} makes similar predictions. But the PDL predicts something more precise: the transition between consciousness and unconsciousness should have the structure of a \emph{closure phase transition}---not a continuous degradation of coherence, but an abrupt transition between a regime of globally coherent closure and a regime of decoupled local closures. High temporal and spatial resolution EEG\footnote{EEG (electroencephalogram) measures the collective electrical activity of neurons through the skull. At high temporal and spatial resolution, it allows the functional coherence of the brain to be tracked in real time, notably during transitions between states of consciousness.} measurements during anaesthetic induction---notably studies on ``complexity loss'' measured by Lempel--Ziv entropy\footnote{Lempel--Ziv entropy is a measure of the compressibility of a signal: the more complex and unpredictable a signal, the less compressible it is and the higher its Lempel--Ziv entropy. Recent studies show that this measure drops abruptly during anaesthetic induction, suggesting an abrupt loss of cerebral complexity: exactly what the PDL predicts for a closure phase transition.}---could test whether this transition is first-order (abrupt) or second-order (gradual).
+
+\medskip
+
+\textbf{The Born's rule paradox.} The PDL has sketched a derivation of Born's rule\footnote{Born's rule is the rule that allows probabilities to be calculated in quantum mechanics: if a system is in a state $|\psi\rangle$, the probability of finding it in the state $|\phi\rangle$ is $|\langle\phi|\psi\rangle|^2$. It is one of the most precisely verified rules in all of physics, but its deep origin remains mysterious: why the square of the modulus, and not the modulus itself, or its cube?}---the rule that predicts probabilities in quantum mechanics---from coherence constraints on active surfaces, without a priori postulating the Hilbert structure of quantum mechanics.\footnote{\textit{Relational Emergence of Born's Rule and a Golden-Ratio Active Surface in PDL}, v2, C.~Laubscher, 2026.} If this derivation is correct, it implies that quantum probabilities are not fundamental properties of reality, but emergent properties of coherence management by observers who are themselves described as closures. This prediction has a testable consequence: in quantum interference experiments involving ``observers'' of very different sizes and complexities---atoms, molecules, silica beads, and eventually biological systems---the PDL predicts that deviations from the standard Born's rule could appear when the size of the observer approaches that of the observed system. These deviations would, according to the PDL, be a signature of the coherence leakage between observer and system, and not a violation of quantum mechanics.
+
+\subsection*{AI as a Testing Accelerator}
+
+An unexpected development of 2025--2026 deserves mention: the convergence between artificial intelligence and theoretical physics. Deep learning models\footnote{Deep learning is an artificial intelligence technique that uses artificial neural networks with many layers to recognise patterns in massive datasets. These same architectures can be used to explore high-dimensional mathematical spaces, such as that of the PDL's admissible signed graphs.} are now capable of exploring high-dimensional combinatorial spaces---precisely the type of problem posed by the search for alternative architectures to $(24, 28, 930, 10\,087, 11\,017)$ in the space of admissible signed graphs. The second PDL refutation scenario---finding an alternative architecture reproducing $\alpha$ and $G$ with the same precision---is today computationally addressable: a gradient-descent search programme\footnote{Gradient descent is an optimisation algorithm: it seeks the minimum of a function by moving step by step in the direction of steepest decrease. Applied to the space of integer architectures of the PDL, it would allow systematic exploration of whether other integer combinations satisfy the same coherence constraints.} in the space of integers constrained by the PDL's coherence criteria is technically feasible on current computing infrastructures. If such an exhaustive search finds no alternative within a reasonably large space, the PDL's uniqueness conjecture is considerably strengthened. If it finds one, the programme must reformulate. In either case, the answer is accessible: it is a computational research programme, not only a theoretical one.
+
+\subsection*{What Remains to Be Built}
+
+An honest scientific programme does not only list its predictions: it identifies its open construction sites---those without which the predictions will remain conjectures.
+
+\begin{itemize}
+\item \textbf{A complete derivation of the electron-electron scattering cross-section from the $(4,6)$ structure.} Without this calculation, the PDL cannot be confronted with LHC data at high energy.
+\item \textbf{A calculation of the cosmological constant $\Lambda$ from the number of elementary closures in the observable universe.} This is the most direct cosmological test; it is also the most difficult.
+\item \textbf{A complete formalism for discrete quantum gravity.} The PDL sketches an emergent metric via coherence cycles, and an analogue of Dirac spinors via $(4,6)$ structures.\footnote{\textit{Towards an Einstein--Dirac Unification from the PDL Framework}, C.~Laubscher, 2026.} The strong-field limit---black holes and early-universe cosmology---remains to be treated.
+\item \textbf{A PDL criterion of biological viability.} Synthetic biology awaits a structural criterion: what is the necessary and sufficient condition, in terms of closures, for a biological system to be viable? This criterion remains to be formulated.
+\item \textbf{A formal correspondence between PDL structures and the protocols of quantum computing.} The previous section lays the conceptual foundations; the translation into the language of quantum circuits and operator algebra remains to be done.
+\end{itemize}
+
+These open sites are not gaps: they are proof that the programme is alive. A programme with nothing left to do is no longer a research programme; it is a museum. The PDL, at this stage, is far more a building site than a completed edifice---and that is precisely what makes it a serious programme.
+
+% ============================================================
+\backmatter
+\appendix
+
+\chapter*{Appendix --- Going Further}
+\addcontentsline{toc}{chapter}{Appendix}
+
+\subsection*{A. Glossary of Key Terms}
+
+\begin{description}
+
+\item[$(4,6)$ structure] The complete graph on four vertices and six edges: the first logically admissible closure under the PDL's constraints. Identified as the archetype of the electron at rest.
+
+\item[Pulse (binary pulsation)] An alternation between two distinct states that returns to itself in two steps. It is the minimal form of existence in the PDL: a difference capable of repeating itself.
+
+\item[Coherence budget] The total quantity of internal coherence a structure can maintain simultaneously. Mass, energy, and certain physical constants are ways of measuring this budget at different scales.
+
+\item[Closure] A relational structure that satisfies its own coherence constraints without calling on any external support. To exist, in the PDL, is to instantiate a closure.
+
+\item[Minimal stationary closure] The smallest structure capable of both pulsing and maintaining its triangular coherence autonomously. In the PDL, this is the $(4,6)$ structure, identified as the logical archetype of the electron at rest.
+
+\item[Triangular coherence] A condition imposed on every triplet of mutually connected relations: their product must satisfy a precise sign rule. A coherent triangle is a closed loop without internal contradiction.
+
+\item[Fine-structure constant ($\alpha$)] Measures the strength of the electromagnetic coupling. In the PDL, it is reinterpreted as the ratio between the proton's active surface and its total relational budget.
+
+\item[Hierarchical filtering] The mechanism by which a minute coherence leakage at the nuclear scale is amplified, level by level, until it produces an observable macroscopic effect---notably gravitation.
+
+\item[Coherence leakage ($\varepsilon$)] The irreducible fraction of triangles that cannot be made simultaneously coherent in a composite structure. This leakage is exported towards the environment and constitutes, at large scales, the basis of gravitational coupling.
+
+\item[Finite signed graph] A finite set of nodes connected by edges, each carrying a sign $+1$ or $-1$. It is the basic substrate on which all PDL closures are defined.
+
+\item[Quantum entanglement] A property of two quantum particles that have interacted, whose states can no longer be described independently of one another, even when separated by a great distance. Measuring one instantaneously affects what can be predicted for the other, without any physical signal being exchanged. This phenomenon, predicted by quantum mechanics and confirmed experimentally since the 1980s (Alain Aspect's experiments), constitutes one of the deepest differences between quantum and classical physics. In the PDL, entanglement is reinterpreted as a shared coherence between the boundaries of two closures, via mixed triangles: it is not a mysterious action at a distance, but the relational signature of a structural constraint that two closures share.
+
+\item[Projective Dynamic Logo (PDL)] A fundamental research programme developed by Cédric Laubscher since 2024, which reconstructs physical reality from axioms defined on finite signed graphs, without presupposing space, time, or particles.
+
+\item[Relational sea] In the proton's architecture, the set of dynamic links surrounding the stationary cores. Analogous to the field of gluons and virtual quarks in quantum chromodynamics.
+
+\item[Coherence ratio] The way of reading the fundamental physical constants in the PDL: not as arbitrary numbers, but as measures of the distribution of coherence between the interior, the surface, and the exterior of a given structure.
+
+\item[Active surface] The subset of a composite structure's relations projected outwards and available for coupling with other structures.
+
+\item[Transcendence (in the PDL's sense)] The structural property of every sufficiently complex closure: the impossibility of containing itself entirely, the necessity of depending on a global coherence field that exceeds its own boundaries.
+
+\end{description}
+
+\subsection*{B. Map of Technical Publications}
+
+All technical works of the PDL are freely available on \href{https://zenodo.org}{\textbf{Zenodo}}, under the name Cédric Laubscher. The following publications constitute the core of the programme:
+
+\begin{enumerate}
+
+\item \textit{The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL)}---axioms, derivation of the $(4,6)$ structure, minimal correspondence principle with the electron.
+
+\item \textit{Minimal Stationary Closures in the PDL Framework: Necessity of the $(4,6)$ Block}---rigorous demonstration of the minimality of the $(4,6)$ structure.
+
+\item \textit{On the Combinatorial Selection of the Proton Architecture in PDL}---derivation of the integers 24, 28, 930, 10\,087, 11\,017 and the uniqueness conjecture.
+
+\item \textit{A Structural Derivation of the Fine-Structure Constant from the PDL}---combinatorial expression for $\alpha$ without adjustable parameter.
+
+\item \textit{Universal Coherence Leakage, the Bridge Formula, and the Derivation of~$G$}---central result of the programme: derivation of the bridge formula $\varepsilon_G \cdot R \cdot C$ structurally linking the gravitational constant and the fine-structure constant, without ad hoc assumption.
+
+\item \textit{Coherence Leakage, Hierarchical Filtering, and the Exponent 18 in the PDL Framework}---leakage mechanism and amplification towards the effective gravitational coupling.
+
+\item \textit{From Discrete Coherence Flux to Effective Fields}---the passage from discrete graphs to continuous field descriptions.
+
+\item \textit{Discrete Cavity Modes and Logical Density of States in the PDL Framework}---standard density of states reproduced from finite graphs.
+
+\item \textit{Logical Leakage as Self-Maintained Probability: A Topological Reformulation in the PDL Framework}---quantum probabilities reinterpreted as frequencies of coherence violations.
+
+\item \textit{Towards a Schrödinger-Type Dynamics from the PDL}---link between coherence cycles and the Schrödinger equation.
+
+\item \textit{Towards an Einstein--Dirac Interface in the PDL Framework}---bridges between the PDL, general relativity, and relativistic quantum mechanics.
+
+\item \textit{PDL: Global Mapping of Structures, Results, and Open Problems}---overview of the programme, established results, conjectures, and open questions.
+
+\item \textit{Whatever We May Be: Existence, Coherence, and Vulnerable Instruments}---ontological and philosophical synthesis of the PDL corpus, for a mixed audience.
+
+\end{enumerate}
+
+% ============================================================
+\end{document}
