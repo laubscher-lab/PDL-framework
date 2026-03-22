@@ -1,5 +1,5 @@
 # PDL Research Context — Cédric Laubscher
-*Last updated: March 2026 — Session 3. Copy this file to GitHub after each session.*
+*Last updated: March 2026 — Session 5. Copy this file to GitHub after each session.*
 
 ---
 
@@ -28,6 +28,23 @@ prototype). The proton is a hierarchical composite.
 
 ---
 
+## Core Integer Architecture (Neutron) — DERIVED Session 5
+
+| Symbol | Value | Derivation |
+|--------|-------|------------|
+| n_u | 24 | p-n compatibility |
+| n_d | 28 | p-n compatibility |
+| r_val(n) | 1032 | r_u + 2×r_d, exact |
+| R_tot(n) | 10992 | R_tot(p) − (Δn+1)², exact |
+| R_sea(n) | 9960 | R_tot(n) − r_val(n), exact |
+| f_stat(n) | 9.39% | slightly above proton (8.44%) |
+
+Key relation: R_tot(n) = R_tot(p) − (n_d − n_u + 1)² = 11017 − 25 = 10992
+Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
+
+---
+
+
 ## Key Derived Results (All Verified)
 
 ### Fine-structure constant
@@ -49,6 +66,26 @@ prototype). The proton is a hierarchical composite.
   G_PDL = 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻²
   G_CODATA 2022 = 6.67430 × 10⁻¹¹
   Écart: +27 ppm — within experimental uncertainty (22 ppm)
+
+### Nuclear binding unit T (Session 5)
+  T = R_surf(p)² / R_sea(n) = 501.6² / 9960 = 25.26 ≈ (Δn+1)² = 25
+  Identity: neutron deficit = neutron binding capacity (±1%)
+  T_pp = R_surf(p)² / R_tot(p) = 22.84  [proton-proton conflict]
+
+### Saturation threshold (Session 5)
+  Z_sat = R_sea(n) / R_surf(p) = 9960 / 501.6 ≈ 20  (calcium)
+  For Z < 20: one neutron binds all Z protons simultaneously
+  For Z > 20: saturation → N > Z required
+
+### Maximum magic number (Session 5)
+  N_crit,max = R_sea(p) / (2 × gap) = 10087 / 80 = 126.1
+  → Largest nuclear magic number N=126, no free parameter
+  → Bi-209 (Z=83, N=126) identified as last stable nucleus by structural impossibility
+
+### New relation R_tot = 6μ (Session 5)
+  6μ_p = 11016.92 ≈ 11017 = R_tot(p)  at 0.001%
+  Not in corpus previously. Factor 6 = edges of (4,6) brick.
+  Interpetation: each brick edge carries one proton-to-electron mass ratio of coherence.
 
 ---
 
@@ -80,6 +117,7 @@ prototype). The proton is a hierarchical composite.
   revised and corrected version | CURRENT |
 | Whatever_We_May_Be...v2.tex   | D_Who_book_EN | Popular introduction EN —
   full GB translation of D_Who_book_FR | CURRENT |
+| PDL_Nuclear_Stability_Skeleton.tex | D_Nuc | Nuclear stability, neutron quintuplet, N_crit=126, magic numbers | New — Session 5 |
 
 ---
 
@@ -176,6 +214,25 @@ Verified to 10⁻⁵. Contains α_exp and μ irreducibly.
    - Would be next-order correction to C = (n_u²-1)/n_u²
    - Not yet derived
 
+6. [RESOLVED Session 5] Neutron quintuplet derivation
+   - Previously postulated; now derived exactly
+   - R_tot(n) = R_tot(p) − (Δn+1)² = 10992 ✓
+
+7. [HIGH] Shell splitting from Δn = 4 (OP1 in D_Nuc)
+   - Mechanism identified: Δn/(2n_u) = 1/12 ≈ 0.083 ħω₀ ✓ empirically
+   - Explicit combinatorial derivation from signed-graph formalism: NOT YET DONE
+   - This is the key open problem for the full derivation of all 7 magic numbers
+
+8. [MEDIUM] Isotopic window width ΔN(Z) (OP2 in D_Nuc)
+   - Requires nuclear coordination number c(Z,N) from collective closure geometry
+   - Current model overestimates ΔN for heavy nuclei
+
+9. [MEDIUM] Lacunae Z=43, Z=61 (OP3 in D_Nuc)
+   - Structural impossibility of stable closure conjectured, not yet proven
+
+10. [FUTURE] Chemical properties via Block III (OP4 in D_Nuc)
+    - Coupling nucleus ↔ electron cloud not yet developed
+
 ---
 
 ## Computational Results (Session 1, March 2026)
@@ -241,6 +298,7 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
       - Legend added
   (e) D_Map v8 prepared for Zenodo publication: all corrections integrated,
       Zenodo description drafted and finalised.
+  
 - **Session 4 (March 2026):** Full editorial revision and English translation of
   the popular introduction book "Quoi que nous soyons / Whatever We May Be".
 
@@ -263,6 +321,30 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
   (f) Editorial assessment: text judged fit as dual-audience ambassador
       (gymnasium to scientific public). Main residual risk: predictions chapter
       density for non-specialist readers.
+
+  - **Session 5 (March 2026):** Full nuclear stability programme developed and
+  published as D_Nuc (PDL_Nuclear_Stability_Skeleton.tex).
+
+  Key results established (no free parameters):
+  (a) Neutron quintuplet (24,28,1032,9960,10992) derived for first time via
+      R_tot(n) = R_tot(p) − (Δn+1)² = 11017 − 25 = 10992. Gap of 40
+      decomposed as 25 (structural permutation cost) + 15 (mass fatigue).
+  (b) New relation R_tot(p) = 6μ_p at 0.001% — not previously in corpus.
+      Interpretation: each (4,6)-brick edge carries one μ of coherence.
+  (c) Nuclear binding unit T = R_surf²/R_sea ≈ 25 = (Δn+1)² identified.
+      Fundamental identity: neutron deficit = neutron binding capacity.
+  (d) Saturation threshold Z_sat = R_sea(n)/R_surf(p) ≈ 20 (calcium) derived.
+      Structural origin of the N≈Z / N>Z frontier in the chart of nuclides.
+  (e) N_crit,max = R_sea(p)/(2×gap) = 126.1 — largest magic number derived.
+      Bi-209 identified as last stable nucleus by sea-exhaustion argument.
+  (f) Origin of nuclear spin-orbit coupling identified as Δn = n_d − n_u = 4.
+      Splitting energy Δn/(2n_u) = 1/12 ≈ 0.083 ħω₀ matches empirical values.
+      Full derivation of intermediate magic numbers 2,8,20,28,50,82: conjecture.
+
+  Productions:
+  - PDL_Nuclear_Stability_Skeleton.tex (D_Nuc) — full paper, 456 lines, GB English
+  - References.bib — complete bibliography file
+  - Principal open problem: OP1 (shell splitting from Δn, signed-graph derivation)
 ---
 
 ## Instructions for Next Session
