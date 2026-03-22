@@ -322,7 +322,106 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
       (gymnasium to scientific public). Main residual risk: predictions chapter
       density for non-specialist readers.
 
-  - **Session 5 (March 2026):** Full nuclear stability programme developed and
+  ---
+
+## Session 5 (March 2026) — Diffusion, visibilité et démarches éditoriales
+
+### Démarches vers la communauté scientifique
+
+- **Carlo Rovelli (Foundations of Physics)** — courriel envoyé à rovelli.carlo@gmail.com
+  avec proposition d'essai sur le LDP. Deux réponses reçues :
+  (1) réponse automatique signalant surcharge de messages ;
+  (2) réponse personnelle : *"FoP ne prend pas en compte ce genre de soumissions."*
+  Conclusion : "Quoi que nous soyons" / "Whatever We May Be" n'est pas le bon
+  format pour FoP. Un article technique court centré sur un résultat précis
+  serait nécessaire pour une future soumission.
+
+- **PhilSci-Archive** — soumission de "Whatever We May Be" refusée :
+  *"The item lies outside the range of material suitable for PhilSci-Archive."*
+  Conclusion : les archives académiques attendent des articles de recherche,
+  pas des textes de vulgarisation.
+
+- **Liste quantum-foundations@maillist.ox.ac.uk (Oxford)** — première annonce
+  refusée par le modérateur. Version recalibrée envoyée, centrée sur le résultat
+  Gleason-type. Réponse d'Aleks Kissinger (Oxford) : la liste ne permet pas
+  l'auto-promotion de ses propres travaux. Réponse envoyée à Kissinger demandant
+  les bons canaux pour partager des preprints avec la communauté quantum foundations.
+
+### Infrastructure de visibilité mise en place
+
+- **Academia.edu** — profil créé et public. Quatre publications uploadées :
+  - Gleason-Type Uniqueness of Born's Rule (https://zenodo.org/records/18663156)
+  - Universal Coherence Leakage / Bridge D20-V3 (https://doi.org/10.5281/zenodo.19056994)
+  - PDL Global Mapping v8 (https://doi.org/10.5281/zenodo.19065389)
+  - Whatever We May Be (https://doi.org/10.5281/zenodo.19076555)
+  - Post de présentation du PDL publié sur le profil.
+  - Bio rédigée et publiée.
+
+- **Google Scholar** — profil créé avec adresse Gmail. Publications ajoutées
+  manuellement via DOIs Zenodo. Indexation automatique en cours (délai normal :
+  4 à 8 semaines).
+
+- **ORCID** — profil créé. Toutes les publications Zenodo importées via DataCite.
+  ORCID connecté à : Zenodo (profil + preprints), Academia.edu, site web
+  cedriclaubscher.ch.
+
+- **Google Alerts** — trois alertes créées :
+  - "Projective Dynamic Logo"
+  - "Cédric Laubscher"
+  - "PDL coherence leakage"
+
+- **Métadonnées Zenodo** — mots-clés optimisés sur les quatre preprints
+  prioritaires. Tous indexés dans OpenAIRE.
+
+- **ResearchGate** — compte refusé (absence d'affiliation institutionnelle).
+  Demande de reconsidération envoyée via formulaire de support avec liens Zenodo.
+
+- **PhilPeople** — profil créé mais masqué automatiquement en raison de
+  l'absence d'affiliation institutionnelle. À relancer via support.
+
+- **Semantic Scholar** — non accessible au moment de la session. À vérifier
+  ultérieurement.
+
+### Leçons stratégiques de la session
+
+1. **Format des soumissions** — "Quoi que nous soyons" / "Whatever We May Be"
+   est un livre de vulgarisation grand public. Il n'est pas adapté aux archives
+   académiques (PhilSci, FoP). Cibles éditoriales potentielles : Hermann,
+   Odile Jacob, Seuil "Science ouverte".
+
+2. **Point d'entrée dans la communauté quantum foundations** — le résultat
+   Gleason-type est le meilleur vecteur. C'est du vocabulaire natif de cette
+   communauté.
+
+3. **Article technique prioritaire** — le bridge D20-V3 est le résultat le plus
+   audacieux et le plus falsifiable. Un article court en anglais (8-10 pages)
+   centré sur ce résultat est la prochaine étape pour une soumission à une revue
+   de second rang (International Journal of Theoretical Physics, Axiomathes,
+   Synthese).
+
+4. **Dialogue TO-PDL** — utile dans les textes philosophiques et grand public.
+   À ne pas mentionner dans les articles techniques soumis à peer review.
+   Garder les raffinements conceptuels produits par ce dialogue, sans nommer TO
+   comme source de légitimation.
+
+5. **Reconnaissance scientifique** — le chemin passe par : (1) un article
+   technique publié dans une revue à comité de lecture, (2) des citations par
+   d'autres chercheurs, (3) un dialogue avec au moins un chercheur institutionnel.
+   La visibilité sur les plateformes (Academia, Google Scholar, ORCID) est une
+   condition nécessaire mais non suffisante.
+
+### Prochaines étapes prioritaires
+
+1. Rédiger un article technique court sur le bridge D20-V3 pour soumission
+   à une revue de second rang.
+2. Identifier 2-3 chercheurs dont les travaux convergent avec le LDP et
+   préparer un message de contact ciblé.
+3. Attendre la réponse d'Aleks Kissinger sur les bons canaux de diffusion.
+4. Relancer PhilPeople via leur support pour débloquer le profil.
+5. Vérifier Semantic Scholar dans quelques semaines.
+6. Surveiller les statistiques Zenodo et Google Scholar une fois par semaine.
+
+  - **Session 6 (March 2026):** Full nuclear stability programme developed and
   published as D_Nuc (PDL_Nuclear_Stability_Skeleton.tex).
 
   Key results established (no free parameters):
