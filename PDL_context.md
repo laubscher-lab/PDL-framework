@@ -1,5 +1,5 @@
 # PDL Research Context — Cédric Laubscher
-*Last updated: March 2026 — Session 5. Copy this file to GitHub after each session.*
+*Last updated: March 2026 — Session 5 (v2). Copy this file to GitHub after each session.*
 
 ---
 
@@ -118,6 +118,7 @@ Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
 | Whatever_We_May_Be...v2.tex   | D_Who_book_EN | Popular introduction EN —
   full GB translation of D_Who_book_FR | CURRENT |
 | PDL_Nuclear_Stability_Skeleton.tex | D_Nuc | Nuclear stability, neutron quintuplet, N_crit=126, magic numbers | New — Session 5 |
+| PDL_Global_Mapping...v9.tex | D_Map | Full corpus mapping, dependency diagram, D22 integrated | CURRENT — v9 (Session 5) |
 
 ---
 
@@ -444,6 +445,16 @@ N_mixed [d,u1,u2] triangles  = 16,128 = 28×24×24
   - PDL_Nuclear_Stability_Skeleton.tex (D_Nuc) — full paper, 456 lines, GB English
   - References.bib — complete bibliography file
   - Principal open problem: OP1 (shell splitting from Δn, signed-graph derivation)
+
+  Post-session additions (same session):
+  (g) D_Map v8 → v9 produced:
+      - D22 added to document index table (main list + appendix)
+      - NUC1 and NUC2 added to epistemic status table (tab:status)
+      - Nuclear open problems (OP1–OP3) added to roadmap section
+      - Remark on partial realisation of Block II filters added after II1–II6
+      - Nuclear node added to TikZ dependency diagram with 3 arrows:
+        proton→nuclear, nuclear→metric, nuclear→bridge
+      - D_Map v9 ready for Zenodo publication
 ---
 
 ## Instructions for Next Session
