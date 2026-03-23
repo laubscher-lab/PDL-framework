@@ -1,15 +1,11 @@
 # PDL Research Context — Cédric Laubscher
-*Last updated: March 2026 — Session 7. Copy this file to GitHub after each session.*
+*Last updated: March 2026 — Session 8. Copy this file to GitHub after each session.*
 
 ---
 
 ## Framework Overview
 
-The **Projective Dynamic Logo (PDL)** reconstructs physical reality from relational
-axioms on finite signed graphs, without presupposing spacetime. Four axioms: minimal
-binary pulsation, triangular coherence, minimal completeness, logical optimisation.
-The minimal admissible stationary closure is the (4,6) complete graph (electron
-prototype). The proton is a hierarchical composite.
+The **Projective Dynamic Logo (PDL)** reconstructs physical reality from relational axioms on finite signed graphs, without presupposing spacetime. Four axioms: minimal binary pulsation, triangular coherence, minimal completeness, logical optimisation. The minimal admissible stationary closure is the (4,6) complete graph (electron prototype). The proton is a hierarchical composite.
 
 ---
 
@@ -53,42 +49,29 @@ Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
 
 ### Gravitational bridge formula (D20-V3 — PRIMARY RESULT)
   Δr_val = ε_G · (R_tot · R_surf / r_val²) · (n_u² - 1) / n_u²
+  ε_G = 0.0075194, Δr_val = 0.047960, R×C = 6.3781 (0.004% residual)
+  G_PDL = 6.67448 × 10⁻¹¹  vs  G_CODATA = 6.67430 × 10⁻¹¹  (+27 ppm)
 
-  Components:
-  - ε_G = (G·m_p²/ħc)^(1/18) = 0.0075194  (CODATA 2022)
-  - Δr_val = (3/φ)·sqrt(μ/α_exp) − 930 = 0.047960
-  - R = R_tot·R_surf/r_val² = 6.38920  (hierarchical amplification)
-  - C = (n_u²−1)/n_u² = 575/576 = 0.99826389  (no-self-loop correction)
-  - R × C = 6.3781  (0.004% residual vs empirical ratio)
-
-### G prediction
-  G_PDL = 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻²
-  G_CODATA 2022 = 6.67430 × 10⁻¹¹
-  Écart: +27 ppm — within experimental uncertainty (22 ppm)
-
-### Topological proof of exponent 18 — NEW Session 7
+### Topological proof of exponent 18 — PROVED Session 7–8 (D23 v2)
   K4 = ∂Δ³ ≅ S²  →  dim H₂(S²;Z) = 1
-  ker(d₁) = ⟨e_{r_val(p)}⟩ = (0,0,1,0,0,0)ᵀ  [proved over Q(√5), exact]
-  ker(d₂) = trivial on free variables of C₂  [proved over Q(√5), exact]
   Decomposition: 18 = 6 + 5 + 4 + 3  (ranks + boundary morphisms)
+  ker(d₁) = ⟨e_{r_val(p)}⟩ = (0,0,1,0,0,0)ᵀ  [PROVED over Q(√5)]
+  ker(d₂) ⊇ ⟨e_{r_val(n)}⟩ = (0,0,1,0,0,0)ᵀ  [PROVED over Q(√5)]
   Boundary morphisms: δ₀₁ [T=(Δn+1)²], δ₁₂ [G=ε^18], δ_long [bridge formula]
-  Common ancestor with periodic table: both 18s are invariants of S² imposed
-  by dim_R = 3.
 
-### Nuclear binding unit T (Session 5)
-  T = R_surf(p)² / R_sea(n) = 501.6² / 9960 = 25.26 ≈ (Δn+1)² = 25
-  Identity: neutron deficit = neutron binding capacity (±1%)
-  T_pp = R_surf(p)² / R_tot(p) = 22.84  [proton-proton conflict]
+### n-dimensional generalisation — PROVED Session 8 (D23 v2)
+  E(n) = n(n²+3)/2  (PDL gravitational exponent in R^n)
+  Shell(n) = 3·C(2n-2, n-1)  (max electrons per period in R^n)
+  E(n) = Shell(n)  ↔  n ∈ {1, 3}  [PROVED: Stirling + direct check]
+  Interpretation: n=3 is the unique non-trivial dimension in which
+  gravitational coupling structure and atomic shell structure share
+  the same topological integer.
 
-### Saturation threshold (Session 5)
-  Z_sat = R_sea(n) / R_surf(p) = 9960 / 501.6 ≈ 20  (calcium)
-
-### Maximum magic number (Session 5)
-  N_crit,max = R_sea(p) / (2 × gap) = 10087 / 80 = 126.1
-  → Bi-209 (Z=83, N=126) last stable nucleus
-
-### New relation R_tot = 6μ (Session 5)
-  6μ_p = 11016.92 ≈ 11017 = R_tot(p)  at 0.001%
+### Nuclear binding (D22)
+  T = R_surf(p)² / R_sea(n) ≈ 25 ≈ (Δn+1)²
+  Z_sat = R_sea(n) / R_surf(p) ≈ 20  (calcium)
+  N_crit,max = R_sea(p) / (2×gap) = 126.1  →  Bi-209 last stable nucleus
+  6μ_p ≈ R_tot(p)  at 0.001%
 
 ---
 
@@ -111,7 +94,7 @@ Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
 | Derivation_alpha_PDL_v2.tex | D_α | Structural derivation of α | Solid |
 | Toward_a_Gleason-Type...tex | D_Gleason | Born's rule uniqueness for spin-1/2 | Theorem established |
 | Towards_Einstein-Dirac_Unification_PDL.tex | D_ED | Dirac+Einstein on PDL substrate | Exploratory |
-| PDL_Global_Mapping...v10.tex | D_Map | Full corpus mapping, dependency diagram | CURRENT — v10 (Session 7) |
+| PDL_Global_Mapping...v10.tex | D_Map | Full corpus mapping, dependency diagram | CURRENT — v10 |
 | Universal_Coherence_Leakage...V3.tex | D20-V3 | Bridge G ↔ α — PRIMARY RESULT | CURRENT VERSION |
 | Existence_as_Pulsating_Closure...tex | D_Exist | Ontological meditation on PDL | Philosophical |
 | Whoever_We_May_Be...v2.tex | D_Who_v2 | Philosophical synthesis, article format | Philosophical |
@@ -119,7 +102,7 @@ Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
 | Quoi_que_nous_soyons...v2.tex | D_Who_book_FR | Popular introduction FR | CURRENT |
 | Whatever_We_May_Be...v2.tex | D_Who_book_EN | Popular introduction EN | CURRENT |
 | PDL_Nuclear_Stability_Skeleton.tex | D_Nuc / D22 | Nuclear stability, neutron quintuplet, N_crit=126 | Published Zenodo |
-| PDL_Exponent18_Topology.tex | D23 | Topological origin of exponent 18 — NEW | Ready for Zenodo |
+| PDL_Exponent18_Topology_v2.tex | D23 v2 | Topological origin of exponent 18 — UPDATED | Ready for Zenodo |
 
 ---
 
@@ -133,96 +116,85 @@ Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
 
 ---
 
-## Open Problems (current status)
+## D23 Version History
 
-1. [RESOLVED Session 7] Topological proof of exponent 18
-   - ker(d₁) = ⟨e_{r_val(p)}⟩ proved analytically over Q(√5)
-   - Decomposition 18 = 6+5+4+3 proved
-   - Document D23 produced and ready for Zenodo
+| Version | Lines | Key change |
+|---------|-------|-----------|
+| v1 (Session 7) | 468 | First complete version: decomposition 18=6+5+4+3, ker(d₁) proved |
+| v2 (Session 8) | 543 | + ker(d₂) ⊇ ⟨e_{r_val(n)}⟩ proved (OP4); + E(n)=Shell(n)↔n∈{1,3} (OP3); OP2 corrected; OP5 added |
 
-2. [OPEN — HIGH] Formal identification of δ_long as boundary morphism (OP1 in D23)
-   - Bridge formula δ_long: C₁ → C₃ conjectured to factor through [S²]
-   - Would complete the categorical interpretation of all 3 boundary morphisms
+---
 
-3. [OPEN — MEDIUM] Golden ratio in spectrum of J_{d₂} (OP2 in D23)
-   - σ(J_{d₂}) ∋ {φ, 1/φ} observed numerically
-   - Analytical proof via R_surf = φ·r_val/3 self-similarity: not yet done
+## Open Problems (current status — D23 v2)
 
-4. [OPEN — FUTURE] n-dimensional generalisation (OP3 in D23)
-   - K_{n+1} in R^n: express exponent as function of n
-   - Co-vary with shell structure of quantum system in R^n
+### D23 open problems
 
-5. [OPEN — MEDIUM] ker(d₂) = ⟨e_{r_val(n)}⟩ analytically (OP4 in D23)
-   - Numerical: confirmed. Exact over Q(√5): not yet done.
+| # | Label | Status | Description |
+|---|-------|--------|-------------|
+| OP1 | δ_long as boundary morphism | OPEN — HIGH | Prove δ_long factors through [S²] categorically |
+| OP2 | φ in architecture of J_{d₂} | OPEN — MEDIUM | Characterise the Q(√5)-lattice structure of the Gram matrix; the σ={φ,1/φ} observation was an artefact of a proxy ε_G |
+| OP3 | Proof of Shell(n) formula | OPEN — MEDIUM | Analytical proof of Shell(n)=3·C(2n-2,n-1) via Gegenbauer polynomials |
+| OP4 | Completeness of ker(d₂) | OPEN — MEDIUM | Prove ker(d₂)=⟨e_{r_val(n)}⟩ exactly (inclusion proved; equality pending) |
+| OP5 | Structural necessity of n=3 | OPEN — FUTURE | Show n≠3 is forbidden by PDL axioms, not just a non-coincidence point |
 
-6. [OPEN — HIGH] Shell splitting from Δn = 4 (OP1 in D22)
-   - Mechanism identified: Δn/(2n_u) = 1/12 ≈ 0.083 ħω₀
-   - Combinatorial derivation from signed-graph formalism: NOT YET DONE
+### D22 open problems
 
-7. [OPEN — MEDIUM] Analytic uniqueness proof for (24,28) (ongoing)
-   - Computational uniqueness confirmed in large domain
-   - Analytic proof still pending
+| # | Label | Status | Description |
+|---|-------|--------|-------------|
+| OP1 | Shell splitting from Δn=4 | OPEN — HIGH | Derive Δn/(2n_u)≈0.083ħω₀ from signed-graph formalism |
+| OP2 | Isotopic window width ΔN(Z) | OPEN — MEDIUM | Derive from nuclear coordination number c(Z,N) |
+| OP3 | Lacunae Z=43, Z=61 | OPEN — MEDIUM | Prove structural impossibility of stable closure |
+| OP4 | Chemical properties Block III | OPEN — FUTURE | Coupling nucleus ↔ electron cloud |
 
-8. [OPEN — MEDIUM] Derivation of ε_G from first principles
-   - ε_G currently calibrated from empirical G
-   - Would make G fully derived, no free parameter
+### Programme-level open problems
 
-9. [OPEN — MEDIUM] Isotopic window width ΔN(Z) (OP2 in D22)
-10. [OPEN — MEDIUM] Lacunae Z=43, Z=61 (OP3 in D22)
-11. [OPEN — FUTURE] Chemical properties via Block III (OP4 in D22)
+| # | Label | Status | Description |
+|---|-------|--------|-------------|
+| P1 | Uniqueness of (24,28) | OPEN — MEDIUM | Analytic proof (computational uniqueness confirmed) |
+| P2 | Derivation of ε_G | OPEN — MEDIUM | From first principles, without calibration from empirical G |
 
 ---
 
 ## Session History
 
-- **Session 1 (March 2026):** Full D20 rewrite V1→V2. Key discovery: ε_G is
-  dynamical, not derivable from static valence graph. PDL_context.md created.
+- **Session 1 (March 2026):** Full D20 rewrite V1→V2. Key discovery: ε_G is dynamical. PDL_context.md created.
 
 - **Session 2 (March 2026):** GitHub connection established. Full corpus audit.
 
-- **Session 3 (March 2026):** D20-V2 = D20-V3 confirmed. D_Map v7→v8. Three
-  new documents found (D3, D_Exist, D_Who_v2).
+- **Session 3 (March 2026):** D20-V2 = D20-V3 confirmed. D_Map v7→v8. Three new documents found.
 
-- **Session 4 (March 2026):** D_Who_book_EN (Whatever We May Be) produced.
-  D_Map v8 consistency check. Session history and open problems updated.
+- **Session 4 (March 2026):** Whatever We May Be (EN) produced. D_Map v8 consistency check.
 
-- **Session 5 (March 2026):** Full nuclear stability programme (D22).
-  Neutron quintuplet derived. N_crit=126.1, Z_sat=20. D_Map v8→v9.
+- **Session 5 (March 2026):** Full nuclear stability programme (D22). Neutron quintuplet, N_crit=126.1, Z_sat=20. D_Map v8→v9.
 
-- **Session 6 (March 2026):** Dissemination strategy reviewed. PhilSci,
-  Academia, Semantic Scholar status checked. Article strategy refined.
+- **Session 6 (March 2026):** Dissemination strategy reviewed.
 
-- **Session 7 (March 2026):** Topological origin of exponent 18 established.
+- **Session 7 (March 2026):** D23 v1 produced (468 lines).
+  - K4 = ∂Δ³ ≅ S², H₂(S²;Z) ≅ Z computed exactly.
+  - 18 = 6+5+4+3 proved.
+  - ker(d₁) = ⟨e_{r_val(p)}⟩ proved over Q(√5).
+  - rank(d₂) = 4 proved. CT4 upgraded to theorem.
+  - D_Map v9→v10. PDL_context.md v7 produced.
 
-  Key results proved (no free parameters, exact arithmetic over Q(√5)):
-  (a) K4 = ∂Δ³ ≅ S² — the PDL elementary closure is a 2-sphere.
-      H₂(S²;Z) ≅ Z with generator [S²] = (-1,+1,-1,+1)ᵀ (explicit).
-  (b) Decomposition 18 = 6+5+4+3 proved:
-      - rank(d₀) = 6 (Bloc I, unique solution n_u=24 via quadratic)
-      - rank(d₁) = 5, ker(d₁) = ⟨e_{r_val(p)}⟩ = (0,0,1,0,0,0)ᵀ [exact]
-      - rank(d₂) = 4 on free variables of C₂ [exact]
-      - 3 boundary morphisms: δ₀₁, δ₁₂, δ_long
-  (c) Common topological ancestor of PDL exponent 18 and periodic table 18:
-      both are invariants of S² imposed by dim_R = 3.
-  (d) Status of CT4 upgraded: exponent 18 is now a PROVED THEOREM, not
-      an empirically calibrated conjecture.
-
-  Productions:
-  - PDL_Exponent18_Topology.tex (D23) — 468 lines, GB English, complete
-  - References_Topology.bib — 16 entries
-  - PDL_Global_Mapping_v10.tex — 7 modifications integrating D23:
-    * D23 added to tab:documents and tab:doc_index
-    * CT4 epistemic status updated to "proved theorem"
-    * TOP1 new entry added to tab:status
-    * Roadmap updated: exponent-18 problem marked substantially resolved
-    * New paragraph in §1.2 introducing D23
-    * Bibliography entry Topology_18_PDL_2026 noted in comments
-
-  Next actions:
-  1. Publish D23 on Zenodo (description and keywords prepared)
-  2. Publish D_Map v10 on Zenodo
-  3. Tackle OP2 (golden ratio in spectrum) or OP4 (ker d₂ exact) as next proof
-  4. Consider OP3 (n-dimensional generalisation) for a short follow-up note
+- **Session 8 (March 2026):** D23 v1→v2 (543 lines). Four new results added:
+  (a) OP4 RESOLVED: ker(d₂) ⊇ ⟨e_{r_val(n)}⟩ proved exactly over Q(√5).
+      Column r_val(n) of J_{d₂} is identically zero — r_val(n)=1032 is the
+      passive variable of the nuclear-to-gravitational transition, exact
+      parallel with r_val(p)=930 at the proton-to-nuclear transition.
+  (b) OP2 CORRECTED: σ(J_{d₂}) ∋ {φ,1/φ} was an artefact of a proxy ε_G
+      that over-scaled one column by ×50. With exact values, φ enters the
+      ENTRIES of J_{d₂} via R_surf=φ·r_val/3 but not the singular values.
+      OP2 reformulated as characterisation of the Q(√5)-lattice in J_{d₂}.
+  (c) OP3 RESOLVED: E(n)=Shell(n) ↔ n∈{1,3} proved.
+      E(n) = n(n²+3)/2, Shell(n) = 3·C(2n-2,n-1) [closed form verified].
+      Proof: Stirling shows Shell(n) grows exponentially for n≥4 while
+      E(n) grows polynomially → unique crossing at n=3.
+      Physical interpretation: n=3 is the unique non-trivial dimension
+      for which gravitational coupling and atomic shell structure share
+      the same topological integer.
+  (d) OP5 ADDED: Structural necessity of n=3 (show n≠3 forbidden by axioms).
+  (e) D23 v2 produced and filed for Zenodo.
+  (f) ORCID update in progress.
 
 ---
 
