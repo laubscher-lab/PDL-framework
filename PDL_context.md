@@ -1,108 +1,78 @@
-# PDL Research Context — Cédric Laubscher
-*Last updated: March 2026 — Session 8. Copy this file to GitHub after each session.*
+# PDL — Project Context and Session Memory
+# Last updated: Session 8 (March 2026)
 
 ---
 
-## Framework Overview
+## Programme Identity
 
-The **Projective Dynamic Logo (PDL)** reconstructs physical reality from relational axioms on finite signed graphs, without presupposing spacetime. Four axioms: minimal binary pulsation, triangular coherence, minimal completeness, logical optimisation. The minimal admissible stationary closure is the (4,6) complete graph (electron prototype). The proton is a hierarchical composite.
-
----
-
-## Core Integer Architecture (Proton)
-
-| Symbol | Value | Meaning |
-|--------|-------|---------|
-| n_u | 24 | Up-quark multiplicity |
-| n_d | 28 | Down-quark multiplicity |
-| r_u | 276 | Internal relations per u-core = C(24,2) |
-| r_d | 378 | Internal relations for d-core = C(28,2) |
-| r_val | 930 | Total valence relations = 2×276 + 378 |
-| R_sea | 10087 | Dynamical sea relations |
-| R_tot | 11017 | Total internal relations |
-| R_surf | φ × 310 ≈ 501.6 | Active surface = φ·r_val/3 |
+**PDL** = Projective Dynamic Logo (English) = **LDP** = Logo Dynamique Projectif (French)
+Author: Cédric Laubscher, independent researcher, Switzerland
+Contact: cedric.laubscher@gmail.com
+Repository: https://github.com/laubscher-lab/PDL-framework
+Zenodo: search "Cédric Laubscher"
 
 ---
 
-## Core Integer Architecture (Neutron) — DERIVED Session 5
+## Core Integers (never change these)
 
-| Symbol | Value | Derivation |
-|--------|-------|------------|
-| n_u | 24 | p-n compatibility |
-| n_d | 28 | p-n compatibility |
-| r_val(n) | 1032 | r_u + 2×r_d, exact |
-| R_tot(n) | 10992 | R_tot(p) − (Δn+1)², exact |
-| R_sea(n) | 9960 | R_tot(n) − r_val(n), exact |
-| f_stat(n) | 9.39% | slightly above proton (8.44%) |
-
-Key relation: R_tot(n) = R_tot(p) − (n_d − n_u + 1)² = 11017 − 25 = 10992
-Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
-
----
-
-## Key Derived Results (All Verified)
-
-### Fine-structure constant
-  α_PDL = μ / R_surf² = μ / (φ² · (r_val/3)²)
-  α_PDL⁻¹ ≈ 137.022  vs  α_exp⁻¹ = 137.036
-  Agreement: ~10⁻⁴, no free parameters.
-
-### Gravitational bridge formula (D20-V3 — PRIMARY RESULT)
-  Δr_val = ε_G · (R_tot · R_surf / r_val²) · (n_u² - 1) / n_u²
-  ε_G = 0.0075194, Δr_val = 0.047960, R×C = 6.3781 (0.004% residual)
-  G_PDL = 6.67448 × 10⁻¹¹  vs  G_CODATA = 6.67430 × 10⁻¹¹  (+27 ppm)
-
-### Topological proof of exponent 18 — PROVED Session 7–8 (D23 v2)
-  K4 = ∂Δ³ ≅ S²  →  dim H₂(S²;Z) = 1
-  Decomposition: 18 = 6 + 5 + 4 + 3  (ranks + boundary morphisms)
-  ker(d₁) = ⟨e_{r_val(p)}⟩ = (0,0,1,0,0,0)ᵀ  [PROVED over Q(√5)]
-  ker(d₂) ⊇ ⟨e_{r_val(n)}⟩ = (0,0,1,0,0,0)ᵀ  [PROVED over Q(√5)]
-  Boundary morphisms: δ₀₁ [T=(Δn+1)²], δ₁₂ [G=ε^18], δ_long [bridge formula]
-
-### n-dimensional generalisation — PROVED Session 8 (D23 v2)
-  E(n) = n(n²+3)/2  (PDL gravitational exponent in R^n)
-  Shell(n) = 3·C(2n-2, n-1)  (max electrons per period in R^n)
-  E(n) = Shell(n)  ↔  n ∈ {1, 3}  [PROVED: Stirling + direct check]
-  Interpretation: n=3 is the unique non-trivial dimension in which
-  gravitational coupling structure and atomic shell structure share
-  the same topological integer.
-
-### Nuclear binding (D22)
-  T = R_surf(p)² / R_sea(n) ≈ 25 ≈ (Δn+1)²
-  Z_sat = R_sea(n) / R_surf(p) ≈ 20  (calcium)
-  N_crit,max = R_sea(p) / (2×gap) = 126.1  →  Bi-209 last stable nucleus
-  6μ_p ≈ R_tot(p)  at 0.001%
+| Symbol | Value | Role |
+|--------|-------|------|
+| n_u | 24 | Up-core valence multiplicity |
+| n_d | 28 | Down-core valence multiplicity |
+| r_val(p) | 930 | Proton total stationary valence |
+| R_sea(p) | 10087 | Proton dynamical sea |
+| R_tot(p) | 11017 | Proton total relational budget |
+| R_surf | 310φ ∈ Q(√5) | Proton active surface |
+| r_val(n) | 1032 | Neutron total stationary valence |
+| R_sea(n) | 9960 | Neutron dynamical sea |
+| R_tot(n) | 10992 | Neutron total relational budget |
+| N_crit | 126.1 | Maximum stable neutron number |
+| Z_sat | 20 | Saturation threshold (valley of stability) |
 
 ---
 
-## Corpus — Complete Document List
+## Key Numerical Values
 
-| File | Doc# | Content | Status |
-|------|------|---------|--------|
-| PDL.tex | D1 | Main framework: axioms, proton, α, G, k_B | Reference |
-| PDL_Intro.tex | D2 | Introduction to PDL | Reference |
-| Position_paper_PDL.tex | D3 | Position paper: status, open problems, TO interface | Reference |
-| Combinatorial_Proton_Architecture_PDL_v2.tex | D12 | Proton integers, uniqueness conjecture v1 | Solid |
-| On_the_Combinatorial_Selection_and_Local_Uniqueness...tex | D16 | Refined uniqueness conjecture + selection functional S | Solid |
-| Coherence_Leakage_Hierarchical_Filtering...v2.tex | D17 | 18 filters 6+6+6, ε definition | Updated with Remarks 2.5 & 2.6 |
-| Emergence_of_the_Golden_Ratio.tex | D18 | φ from self-similarity condition | Sketch |
-| Relational_Emergence_of_Born_s_Rule_v2.tex | D_Born | Born's rule + φ conjecture | Propositional |
-| A_Topological_Reformulation.tex | D_Topo | ε as intrinsic probability | Conceptual |
-| Coherence_Effective_Fields_PDL.tex | D_Fields | Gauss/Faraday discrete, Schrödinger emergence | Programme |
-| Schodinger_PDL_v2.tex | D_Schr | Hydrogen compatibility with α_PDL | Consistent |
-| Sketch_derivation_Schroedinger_PDL_v2.tex | D_Schr2 | Schrödinger derivation sketch | Sketch |
-| Derivation_alpha_PDL_v2.tex | D_α | Structural derivation of α | Solid |
-| Toward_a_Gleason-Type...tex | D_Gleason | Born's rule uniqueness for spin-1/2 | Theorem established |
-| Towards_Einstein-Dirac_Unification_PDL.tex | D_ED | Dirac+Einstein on PDL substrate | Exploratory |
-| PDL_Global_Mapping...v10.tex | D_Map | Full corpus mapping, dependency diagram | CURRENT — v10 |
+| Quantity | Value | Status |
+|----------|-------|--------|
+| φ (golden ratio) | (1+√5)/2 = 1.61803... | Exact |
+| ε_G | 0.0075197 | Derived via bridge formula from α_exp |
+| α_PDL^{-1} | 137.022 | Derived, no free param, dev 1.0×10⁻⁴ |
+| G_PDL | 6.67448×10⁻¹¹ m³kg⁻¹s⁻² | Derived, dev 27 ppm vs CODATA 2022 |
+| Δr_val | 0.047960 | EM valence surplus |
+| R = R_tot·R_surf/r_val² | ≈ 6.3892 | Amplification factor |
+| C = n_u²/(n_u²-1) | 576/575 | Up-core coherence correction |
+| R·C | ≈ 6.4003 | Bridge product |
+| κ = R_surf/R_tot | 310φ/11017 ≈ 0.04553 ∈ Q(√5) | Surface engagement coefficient |
+| 18κ | ≈ 0.8195 ∈ Q(√5) | Gravitational amplification of κ |
+| σ_loc (Hubble) | ≈ 0.211 | Constrained by H0_local/H0_CMB |
+
+---
+
+## Corpus Documents
+
+| File | Label | Description | Status |
+|------|-------|-------------|--------|
+| PDL.tex | D1 | Main technical article: axioms, (4,6), proton, constants | Published Zenodo |
+| PDL_intro / PDL_Intro_2026 | D2 | Accessible introduction EN | Published Zenodo |
+| PDL_position / Position_paper_PDL.tex | D3 | Position paper: status, open problems, TO interface | Published Zenodo |
+| TO-PDL.tex | D_TO | Interface with Theory of Objectivity | Published Zenodo |
+| Towards_Einstein-Dirac_Unification_PDL.tex | D_ED | Einstein–Dirac unification sketch | Published Zenodo |
+| A_Topological_Reformulation...tex | D_Top | Leakage as probability, coexistence topology | Published Zenodo |
+| Derivation_alpha_PDL_v2.tex | D_Alpha / D5 | Structural derivation of α (v2) | Published Zenodo |
+| Relational_Emergence_of_Born... | D_Born / D6 | Born's rule + golden ratio active surface (v2) | Published Zenodo |
+| Coherence_Leakage...Exponent_18...v2.tex | D17 | Hierarchical filtering, exponent 18 (v2) | Published Zenodo |
 | Universal_Coherence_Leakage...V3.tex | D20-V3 | Bridge G ↔ α — PRIMARY RESULT | CURRENT VERSION |
 | Existence_as_Pulsating_Closure...tex | D_Exist | Ontological meditation on PDL | Philosophical |
 | Whoever_We_May_Be...v2.tex | D_Who_v2 | Philosophical synthesis, article format | Philosophical |
-| Whoever_we_may_be — The Projective Dynamic Logo.tex | D_Who_book | Same themes, book format | Philosophical |
-| Quoi_que_nous_soyons...v2.tex | D_Who_book_FR | Popular introduction FR | CURRENT |
-| Whatever_We_May_Be...v2.tex | D_Who_book_EN | Popular introduction EN | CURRENT |
-| PDL_Nuclear_Stability_Skeleton.tex | D_Nuc / D22 | Nuclear stability, neutron quintuplet, N_crit=126 | Published Zenodo |
-| PDL_Exponent18_Topology_v2.tex | D23 v2 | Topological origin of exponent 18 — UPDATED | Ready for Zenodo |
+| Whoever_we_may_be — LDP_v2.tex | D_Who_book | Same themes, book format FR | Published Zenodo |
+| Whatever_We_May_Be...v2.tex | D_Who_book_EN | Popular introduction EN | Published Zenodo |
+| Quoi_que_nous_soyons...v2.tex | D_Who_book_FR | Popular introduction FR | Published Zenodo |
+| Discrete_Cavity_Modes...tex | D19 | PDL cavity, density of states ρ(ν)∝ν² | Published Zenodo |
+| PDL_Nuclear_Stability_Skeleton.tex | D22 | Nuclear stability, neutron quintuplet, N_crit=126 | Published Zenodo |
+| PDL___Topological_Origin_of_the_Exponent_18_v2.tex | D23 | Topological origin of exponent 18: K₄=∂Δ³≅S², 18=6+5+4+3 | Published Zenodo |
+| PDL_Bridge_G_Alpha_v2.tex | D24 | **NEW** Paper 1: parameter-free bridge α–G | Ready for Zenodo/arXiv |
+| PDL_Hubble_tension.tex | D25 | **NEW** Paper 2: Hubble tension from closure density | Ready for Zenodo/arXiv |
 
 ---
 
@@ -110,91 +80,206 @@ Gap decomposition: 6μ_n − R_tot(n) = 40 = 25 (structural) + 15 (mass fatigue)
 
 | Version | Status | Key change |
 |---------|--------|-----------|
-| V1 (original) | SUPERSEDED | ε_G=0.0073891 (wrong), bridge formula 3φ²ε_G (no basis) |
+| V1 (original) | SUPERSEDED | ε_G=0.0073891 (wrong), bridge formula 3φ²ε_G (no structural basis) |
 | V2 | SUPERSEDED (label) | Corrected ε_G, corrected bridge formula |
 | V3 | CURRENT | Scientifically identical to V2 — confirmed in Session 3 |
 
 ---
 
-## D23 Version History
+## Open Problems (current status)
 
-| Version | Lines | Key change |
-|---------|-------|-----------|
-| v1 (Session 7) | 468 | First complete version: decomposition 18=6+5+4+3, ker(d₁) proved |
-| v2 (Session 8) | 543 | + ker(d₂) ⊇ ⟨e_{r_val(n)}⟩ proved (OP4); + E(n)=Shell(n)↔n∈{1,3} (OP3); OP2 corrected; OP5 added |
+1. [RESOLVED — Session 7] Topological proof of exponent 18 (D23)
+   - K₄ = ∂Δ³ ≅ S², H₂(S²;Z) ≅ Z, generator [S²] = (-1,+1,-1,+1)ᵀ
+   - Decomposition 18 = 6+5+4+3 proved analytically over Q(√5)
+   - rank(d₀)=6, rank(d₁)=5 with ker=⟨e_{r_val(p)}⟩, rank(d₂)=4
+
+2. [OPEN — HIGH] Formal categorical identification of δ_long (OP1 in D23)
+   - Bridge formula δ_long: C₁→C₃ conjectured to factor through [S²]∈H₂(∂Δ³;Z)
+   - Would complete interpretation of all 3 boundary morphisms as realisations
+     of the single generator of H₂(S²;Z)
+
+3. [OPEN — MEDIUM] Golden ratio in algebraic structure of J_{d₂} (OP2 in D23)
+   - φ enters every entry of J_{d₂} via R_surf = φ·r_val/3
+   - Characterise the φ-structured lattice in the space of PDL transition amplitudes
+
+4. [OPEN — MEDIUM] Closed-form proof of Shell(n) = 3·C(2n-2,n-1) (OP3 in D23)
+   - Verified computationally for n=1..8; analytical proof via Gegenbauer polynomials pending
+
+5. [OPEN — MEDIUM] ker(d₂) = ⟨e_{r_val(n)}⟩ exact (OP4 in D23)
+   - Numerical confirmation done; exact proof over Q(√5) not yet complete
+
+6. [OPEN — FUTURE] Structural necessity of n=3 (OP5 in D23)
+   - E(3)=Shell(3)=18 proved; showing n≠3 is forbidden by PDL axioms remains open
+   - Would constitute a derivation of 3-dimensionality from coherence axioms
+
+7. [OPEN — HIGH] Derivation of ε_G from first principles (OP1 in D24)
+   - ε_G currently determined via bridge formula from α_exp
+   - Need: explicit graph-theoretic computation of minimal frustration density
+     η(G_{p*}) on the proton constraint graph at p*
+   - Resolving this makes G a fully predicted constant with no empirical input
+   - SAME COMPUTATION needed to derive ρ₀ in D25 (OP1 in D25)
+
+8. [OPEN — HIGH] Global uniqueness of proton quintuplet (OP2 in D24)
+   - Local rigidity under ±1 perturbation of any integer: confirmed computationally
+   - Formal proof of global uniqueness within all PDL-admissible configurations: pending
+   - Blocks upgrade of Theorems in D24 from "tightly constrained" to "proved"
+
+9. [OPEN — MEDIUM] Higher-order corrections to bridge formula (OP3 in D24)
+   - Residual 0.34% in bridge Δr_val = ε_G·R·C
+   - Conjecture: series in 1/n_u² converges; next term ≈ R·C·n_u²/(n_u²+1) ≈ 6.3781
+   - Would reduce residual below 0.001%
+
+10. [OPEN — MEDIUM] Categorical proof of δ_long as long morphism (OP4 in D24)
+    - Bridge formula is the algebraic realisation of δ_long: C₁→C₃
+    - Proof that it factors through [S²] would place G–α connection on topological footing
+
+11. [OPEN — MEDIUM] Parameter-free derivation of k_B (OP5 in D24 / OP5 in D25)
+    - Current: order-of-magnitude consistency via k_B^PDL ~ ℏω_p·ε_G^12
+    - Need: precise structural identification of the thermodynamic ensemble in PDL
+
+12. [OPEN — HIGH] Derivation of saturation density ρ₀ (OP1 in D25)
+    - ρ₀ = density at which ⟨N⟩ = 1/κ (each surface relation engaged once)
+    - Requires computing the "volume" of N(P₀) in the coherence-cost pseudometric d
+    - SAME COMPUTATION as OP1 in D24 (derivation of ε_G from first principles)
+
+13. [OPEN — MEDIUM] Exact treatment of engagement correlations (OP2 in D25)
+    - Theorem 3.1 (D25) assumes independence of engagement events across neighbours
+    - Correction of order κ·σ_loc ≈ 0.01: within current uncertainties
+    - Full treatment requires pair-correlation function on J(P₀,Pᵢ)∩J(P₀,Pⱼ)
+
+14. [OPEN — MEDIUM] Quantitative prediction of σ_loc from LSS data (OP3 in D25)
+    - Current: σ_loc ≈ 0.211 consistent with known LSS; not derived from it
+    - Need: integrate closure-density field ρ_cl(r) from DESI/Euclid catalogues
+    - Would transform P1–P3 predictions from structural to quantitative
+
+15. [OPEN — MEDIUM] Higher-order corrections in κ to Hubble formula (OP4 in D25)
+    - Leading term: 18κ·σ_loc ≈ 0.173
+    - Next order: C(18,2)κ²·σ_loc² ≈ 0.014 (1.4% of tension amplitude)
+    - Detectable at DESI precision (0.5%)
+
+16. [OPEN — MEDIUM] Shell splitting from Δn=4 (OP1 in D22)
+    - Mechanism identified: Δn/(2n_u) = 1/12 ≈ 0.083 ℏω₀
+    - Combinatorial derivation from signed-graph formalism: not yet done
+
+17. [OPEN — MEDIUM] Isotopic window width ΔN(Z) (OP2 in D22)
+
+18. [OPEN — MEDIUM] Lacunae Z=43, Z=61 (OP3 in D22)
+
+19. [OPEN — FUTURE] Chemical properties via Block III (OP4 in D22)
 
 ---
 
-## Open Problems (current status — D23 v2)
+## Epistemic Status Summary (D24 + D25 results)
 
-### D23 open problems
-
-| # | Label | Status | Description |
-|---|-------|--------|-------------|
-| OP1 | δ_long as boundary morphism | OPEN — HIGH | Prove δ_long factors through [S²] categorically |
-| OP2 | φ in architecture of J_{d₂} | OPEN — MEDIUM | Characterise the Q(√5)-lattice structure of the Gram matrix; the σ={φ,1/φ} observation was an artefact of a proxy ε_G |
-| OP3 | Proof of Shell(n) formula | OPEN — MEDIUM | Analytical proof of Shell(n)=3·C(2n-2,n-1) via Gegenbauer polynomials |
-| OP4 | Completeness of ker(d₂) | OPEN — MEDIUM | Prove ker(d₂)=⟨e_{r_val(n)}⟩ exactly (inclusion proved; equality pending) |
-| OP5 | Structural necessity of n=3 | OPEN — FUTURE | Show n≠3 is forbidden by PDL axioms, not just a non-coincidence point |
-
-### D22 open problems
-
-| # | Label | Status | Description |
-|---|-------|--------|-------------|
-| OP1 | Shell splitting from Δn=4 | OPEN — HIGH | Derive Δn/(2n_u)≈0.083ħω₀ from signed-graph formalism |
-| OP2 | Isotopic window width ΔN(Z) | OPEN — MEDIUM | Derive from nuclear coordination number c(Z,N) |
-| OP3 | Lacunae Z=43, Z=61 | OPEN — MEDIUM | Prove structural impossibility of stable closure |
-| OP4 | Chemical properties Block III | OPEN — FUTURE | Coupling nucleus ↔ electron cloud |
-
-### Programme-level open problems
-
-| # | Label | Status | Description |
-|---|-------|--------|-------------|
-| P1 | Uniqueness of (24,28) | OPEN — MEDIUM | Analytic proof (computational uniqueness confirmed) |
-| P2 | Derivation of ε_G | OPEN — MEDIUM | From first principles, without calibration from empirical G |
+| Result | Status |
+|--------|--------|
+| K₄ unique minimal PDL closure | Structural theorem (D23) |
+| n_u=24 from quadratic, unique | Proved (D23, D24) |
+| R_surf = 310φ ∈ Q(√5) | Structural definition |
+| α_PDL^{-1} = φ²r_val²/(9μ), no free param | Derived (D24) |
+| α_PDL^{-1} = 137.022, dev 10⁻⁴ | Verified vs CODATA 2022 |
+| Bridge Δr_val = ε_G·R·C, 0.34% residual | Tightly constrained (D24) |
+| G_PDL = 6.67448×10⁻¹¹, dev 27 ppm | Verified vs CODATA 2022 (D24) |
+| κ = R_surf/R_tot ∈ Q(√5), no free param | Derived (D25) |
+| p_e = κ (engagement probability) | Proved (D25, Lemma 3.1) |
+| σ(N) = 1-(1-κ)^N, exact | Proved (D25, Theorem 3.1) |
+| σ(x) = 1-e^{-x}, continuum limit | Proved (D25, Proposition 3.1) |
+| G_eff(ρ_cl) ≈ G₀(1+18κ·σ), leading order | Derived (D25, Theorem 4.1) |
+| σ_loc ≈ 0.211 from H0_local/H0_CMB | Constrained (D25) |
+| Predictions P1, P2, P3 (Hubble) | Structural, falsifiable (D25) |
 
 ---
 
 ## Session History
 
-- **Session 1 (March 2026):** Full D20 rewrite V1→V2. Key discovery: ε_G is dynamical. PDL_context.md created.
+- **Session 1 (March 2026):** Full D20 rewrite V1→V2. Key discovery: ε_G is
+  dynamical, not derivable from static valence graph. PDL_context.md created.
 
 - **Session 2 (March 2026):** GitHub connection established. Full corpus audit.
 
-- **Session 3 (March 2026):** D20-V2 = D20-V3 confirmed. D_Map v7→v8. Three new documents found.
+- **Session 3 (March 2026):** D20-V2 = D20-V3 confirmed. D_Map v7→v8. Three
+  new documents found (D3, D_Exist, D_Who_v2).
 
-- **Session 4 (March 2026):** Whatever We May Be (EN) produced. D_Map v8 consistency check.
+- **Session 4 (March 2026):** D_Who_book_EN (Whatever We May Be) produced.
+  D_Map v8 consistency check. Session history and open problems updated.
 
-- **Session 5 (March 2026):** Full nuclear stability programme (D22). Neutron quintuplet, N_crit=126.1, Z_sat=20. D_Map v8→v9.
+- **Session 5 (March 2026):** Full nuclear stability programme (D22).
+  Neutron quintuplet derived. N_crit=126.1, Z_sat=20. D_Map v8→v9.
 
-- **Session 6 (March 2026):** Dissemination strategy reviewed.
+- **Session 6 (March 2026):** Dissemination strategy reviewed. PhilSci,
+  Academia, Semantic Scholar status checked. Article strategy refined.
 
-- **Session 7 (March 2026):** D23 v1 produced (468 lines).
-  - K4 = ∂Δ³ ≅ S², H₂(S²;Z) ≅ Z computed exactly.
-  - 18 = 6+5+4+3 proved.
-  - ker(d₁) = ⟨e_{r_val(p)}⟩ proved over Q(√5).
-  - rank(d₂) = 4 proved. CT4 upgraded to theorem.
-  - D_Map v9→v10. PDL_context.md v7 produced.
+- **Session 7 (March 2026):** Topological origin of exponent 18 established.
+  Key results proved over Q(√5): K₄=∂Δ³≅S², 18=6+5+4+3 analytically,
+  common ancestor of PDL exponent 18 and periodic table 18.
+  Productions: D23 (PDL_Exponent18_Topology.tex, 468 lines), D_Map v10.
 
-- **Session 8 (March 2026):** D23 v1→v2 (543 lines). Four new results added:
-  (a) OP4 RESOLVED: ker(d₂) ⊇ ⟨e_{r_val(n)}⟩ proved exactly over Q(√5).
-      Column r_val(n) of J_{d₂} is identically zero — r_val(n)=1032 is the
-      passive variable of the nuclear-to-gravitational transition, exact
-      parallel with r_val(p)=930 at the proton-to-nuclear transition.
-  (b) OP2 CORRECTED: σ(J_{d₂}) ∋ {φ,1/φ} was an artefact of a proxy ε_G
-      that over-scaled one column by ×50. With exact values, φ enters the
-      ENTRIES of J_{d₂} via R_surf=φ·r_val/3 but not the singular values.
-      OP2 reformulated as characterisation of the Q(√5)-lattice in J_{d₂}.
-  (c) OP3 RESOLVED: E(n)=Shell(n) ↔ n∈{1,3} proved.
-      E(n) = n(n²+3)/2, Shell(n) = 3·C(2n-2,n-1) [closed form verified].
-      Proof: Stirling shows Shell(n) grows exponentially for n≥4 while
-      E(n) grows polynomially → unique crossing at n=3.
-      Physical interpretation: n=3 is the unique non-trivial dimension
-      for which gravitational coupling and atomic shell structure share
-      the same topological integer.
-  (d) OP5 ADDED: Structural necessity of n=3 (show n≠3 forbidden by axioms).
-  (e) D23 v2 produced and filed for Zenodo.
-  (f) ORCID update in progress.
+- **Session 8 (March 2026):** PDL Hubble tension programme.
+
+  Theoretical developments:
+  (a) Formal derivation of δ(ρ_cl) from graph combinatorics:
+      - Lemma: p_e = κ = R_surf/R_tot ∈ Q(√5) from uniform relational budget
+      - Theorem (exact): σ(N) = 1-(1-κ)^N, no free parameter
+      - Proposition: continuum limit σ(x) = 1-e^{-x}, error bounded at ≤0.5%
+      - Key: exponential form derived, not postulated
+  (b) Density-dependent G_eff(ρ_cl) = G₀(1+18κ·σ(ρ_cl/ρ₀)) derived
+  (c) Hubble tension identified as observational signature of κ-mechanism:
+      σ_loc ≈ 0.211 consistent with LSS data
+  (d) Three falsifiable predictions P1–P3 formulated for DESI/Euclid/SKA
+
+  Productions:
+  - D24: PDL_Bridge_G_Alpha_v2.tex + PDL_Bridge_references.bib
+    Paper 1 (British English, Theorem/Proof style, Q(√5) arithmetic)
+    α–G bridge: α at 10⁻⁴, G at 27 ppm, from single ε_G = 0.0075197
+    Target journal: Foundations of Physics or IJMPA
+  - D25: PDL_Hubble_tension.tex + PDL_Hubble_references.bib
+    Paper 2 (British English, same style as D24)
+    σ(N)=1-(1-κ)^N derived; Hubble tension as structural prediction
+    Target journal: JCAP or Universe (MDPI)
+
+  Epistemic assessment:
+  - D24 is ready for arXiv + Zenodo submission
+  - D25 is ready for arXiv + Zenodo submission, with ρ₀ as single free parameter
+  - Critical path: OP1 (D24) = OP1 (D25) = derivation of ε_G/ρ₀ from first principles
+    Resolving this single problem would make G a fully derived constant and
+    would simultaneously determine ρ₀, making D25 parameter-free as well
+
+---
+
+## Dependency Map (critical path)
+
+```
+Proton quintuplet (24,28,930,10087,11017)
+    ├── α (Theorem, D5/D24) ──────────────────────── no free param
+    ├── Δr_val (Proposition, D24) ─────────────────── from α_exp
+    │        └── Bridge R·C (Theorem, D24) ──────── G at 27 ppm
+    │                 └── ε_G = 0.0075197
+    │                          ├── G_PDL (D24) ─── 27 ppm CODATA 2022
+    │                          └── k_B (order of magnitude, D1)
+    ├── κ = R_surf/R_tot (D25) ────────────────────── exact Q(√5)
+    │        └── σ(N) = 1-(1-κ)^N (D25) ──────────── proved
+    │                 └── G_eff(ρ_cl) (D25) ────── Hubble tension
+    ├── Exponent 18 (Theorem, D23) ─────────────── topological necessity
+    │        └── 18κ = 0.8195 (D25) ──────────── amplification
+    └── Nuclear stability (D22) ─────────────────── N_crit=126.1
+```
+
+**OPEN GATE:** derivation of ε_G from η(G_{p*}) (OP1/D24 = OP1/D25)
+- If proved: G becomes parameter-free, ρ₀ determined, D25 becomes parameter-free
+- This is the highest-priority open problem in the programme
+
+---
+
+## Next Actions (priority order)
+
+1. **[IMMEDIATE]** Publish D24 and D25 on Zenodo and arXiv (hep-th + gr-qc)
+2. **[IMMEDIATE]** Update D_Map to v11 integrating D24 and D25
+3. **[HIGH]** Tackle OP1 (D24): compute η(G_{p*}) = minimal frustration density
+   of the proton constraint graph by explicit graph-theoretic enumeration
+4. **[HIGH]** Contact DESI data team re: σ_loc computation from galaxy catalogues
+   (OP3 in D25) — this could provide observational confirmation of P2
+5. **[MEDIUM]** Complete ker(d₂) = ⟨e_{r_val(n)}⟩ exact over Q(√5) (OP4 in D23)
+6. **[MEDIUM]** Higher-order bridge correction: verify R·C·n_u²/(n_u²+1) conjecture
 
 ---
 
@@ -207,3 +292,5 @@ After each session, update:
 - Open Problems (mark resolved, add new)
 - Key Numerical Values (if new results)
 - Corpus table (if new documents)
+- Dependency map (if new connections)
+- Next Actions (reprioritise)
