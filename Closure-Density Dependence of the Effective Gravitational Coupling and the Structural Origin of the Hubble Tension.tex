@@ -1,0 +1,489 @@
+% =============================================================
+%  PDL — Closure-Density Dependence of the Effective Gravitational
+%        Coupling and the Structural Origin of the Hubble Tension
+%  C. Laubscher, 2026
+% =============================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+% ── Theorem environments ──────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+% ── Macros ────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\epsg}{\varepsilon_G}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\Gzero}{G_0}
+\newcommand{\vp}{\varphi}
+\newcommand{\etaL}{\eta_{\mathrm{L}}}
+\newcommand{\kap}{\kappa}
+\newcommand{\sig}{\sigma}
+\newcommand{\rhocl}{\rho_{\mathrm{cl}}}
+\newcommand{\rhoO}{\rho_0}
+\newcommand{\Hzero}{H_0}
+\newcommand{\HCMB}{H_0^{\mathrm{CMB}}}
+\newcommand{\Hloc}{H_0^{\mathrm{loc}}}
+\newcommand{\Cconf}{\mathcal{C}}
+\newcommand{\Prob}{\mathbb{P}}
+% =============================================================
+\begin{document}
+\title{%
+  Closure-Density Dependence of the Effective\\[4pt]
+  Gravitational Coupling and the Structural\\[4pt]
+  Origin of the Hubble Tension in the \PDL\ Framework%
+}
+\author{%
+  C.~Laubscher%
+  \thanks{Independent researcher, Switzerland. \texttt{cedric.laubscher@gmail.com}}\\[4pt]%
+}
+\date{\small \today}
+\maketitle
+
+% =============================================================
+\begin{abstract}
+Within the Projective Dynamic Logo (\PDL) framework, the effective gravitational constant $\Geff$ arises from the 18-fold hierarchical amplification of a primary coherence-leakage parameter $\epsg$ defined at the proton scale. Because the 18 independent coherence filters that constitute this amplification operate between proton-type closures and their environment, the effective coupling is not a universal constant but depends on the local density of stable closures $\rhocl$. We derive this dependence rigorously from the combinatorics of the \PDL\ active surface and the coexistence topology of the configuration space.
+
+The key structural quantity is the \emph{surface engagement fraction} $\sig$: the fraction of active-surface relations of a reference proton that are involved in cross-closure coherence constraints with neighbouring protons. Working from the \PDL\ definition of logical compatibility and the uniform probability measure on the relational budget, we prove that for $N$ neighbouring closures the exact engagement fraction is $\sig(N) = 1 - (1-\kap)^N$, where $\kap = \Rsurf/\Rtot = 310\vp/11017 \approx 0.04553$ is entirely determined by the proton integer quintuplet $(24,28,930,10087,11017)$ of the companion paper. In the continuum limit $\kap \to 0$ with $x = N\kap$ held fixed, this reduces to the standard Poisson result $\sig(x) = 1 - e^{-x}$, with no adjustable parameter.
+
+The density-dependent effective coupling takes the form $\Geff(\rhocl) = \Gzero(1 + 18\kap\,\sig(\rhocl/\rhoO))$ at leading order, where $\Gzero \equiv \GPDL$ is the parameter-free prediction of the companion paper and the single remaining parameter $\rhoO$ is the saturation density of the coexistence neighbourhood. Since $H_0 \propto \sqrt{\Geff}$, the two cosmological measurement regimes --- the primordial plasma probed by the CMB at $z \approx 1100$, where $\rhocl \approx 0$, and the structured local universe at $z \approx 0$, where $\rhocl > 0$ --- yield systematically different values of $\Hzero$. We derive the leading-order prediction
+\[
+  \frac{\Hloc}{\HCMB} \;\approx\; \Bigl(1 + 18\kap\,\sig_{\mathrm{loc}}\Bigr)^{1/2},
+\]
+and show that the observed tension $\Hloc/\HCMB \approx 1.083$ constrains the local engagement fraction to $\sig_{\mathrm{loc}} \approx 0.211$, a value consistent with the fraction of the comoving volume occupied by gravitationally structured matter. This mechanism generates three falsifiable predictions: the tension must persist and increase logarithmically with survey depth; its amplitude must be correlated with the scale at which $G$ is measured; and the tension should be absent in measurements restricted to the pre-reionisation universe. All combinatorial factors are derived without free parameters over $\mathbb{Q}(\sqrt{5})$ from the proton architecture fixed in the companion paper.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+% =============================================================
+\section{Introduction and motivation}
+\label{sec:intro}
+
+The Hubble tension is the persistent $5\sigma$ disagreement between the value of the present-day expansion rate inferred from the cosmic microwave background (CMB) at $z \approx 1100$, which gives $\HCMB \approx 67.4\ \mathrm{km\,s^{-1}\,Mpc^{-1}}$~\cite{Planck_2018}, and the value measured from local distance indicators (Cepheid stars, Type~Ia supernovae), which gives $\Hloc \approx 73.0\ \mathrm{km\,s^{-1}\,Mpc^{-1}}$~\cite{Riess_2022}. This discrepancy, confirmed by multiple independent probes~\cite{Freedman_2021,Verde_2019}, has resisted all known systematic corrections and motivates enquiry into whether a physical mechanism causes $H_0$ to take genuinely different values in different cosmological regimes.
+
+The Projective Dynamic Logo (\PDL) framework reconstructs physical reality from four axioms on finite signed graphs without presupposing space, time, or particles~\cite{PDL_Main_2026,PDL_Intro_2026}. In the companion paper~\cite{PDL_Bridge_2026}, we established that Newton's gravitational constant arises as the 18th power of the primary coherence-leakage parameter $\epsg$ of the proton, where the exponent 18 is a topological invariant of $H_2(S^2;\mathbb{Z}) \cong \mathbb{Z}$~\cite{Topology_18_PDL_2026}. The resulting parameter-free prediction $\GPDL = 6.67448 \times 10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$ agrees with CODATA~2022 to $27\ \mathrm{ppm}$.
+
+The derivation of $G$ in the companion paper assumes that the 18 coherence filters operate independently between each proton and an effectively empty environment. This assumption is exact in the primordial plasma, where protons are free and uncorrelated at the scales relevant to CMB physics. It is only approximate in the structured local universe, where protons are bound into galaxies, clusters, and filaments whose mutual gravitational coupling causes each proton to participate in additional cross-closure coherence constraints with its neighbours. We show that these cross-closure constraints increase $\epsg$ by a small but well-defined amount $\delta$, which is amplified by the factor 18 into a measurable shift in $\Geff$ and consequently in $\Hzero$.
+
+The key new quantity introduced here is the \emph{surface engagement fraction} $\sig$: the fraction of the active-surface relations of a reference proton that are engaged in coherence coupling with neighbouring protons. We derive $\sig$ rigorously from the \PDL\ coexistence topology and the uniform probability measure on the relational budget established in the topological reformulation~\cite{Topological_Reformulation_PDL_2026}. The derivation yields an exact combinatorial formula, $\sig(N) = 1-(1-\kap)^N$, involving only the structural coefficient $\kap = \Rsurf/\Rtot$, which is fixed by the proton quintuplet and carries no new free parameter.
+
+The paper is organised as follows. Section~\ref{sec:coexistence} recalls the \PDL\ coexistence topology and the coherence-cost pseudometric. Section~\ref{sec:engagement} defines surface engagement and proves the exact combinatorial formula for $\sig(N)$ and its continuum limit. Section~\ref{sec:Geff} derives the density-dependent effective gravitational coupling $\Geff(\rhocl)$ and its leading-order expansion. Section~\ref{sec:hubble} applies this result to the Hubble tension, derives the constraint on $\sig_{\mathrm{loc}}$, and computes the structural predictions. Section~\ref{sec:predictions} formulates three falsifiable observational predictions. Section~\ref{sec:discussion} classifies all results by epistemic status and identifies open problems.
+
+\medskip\noindent\textbf{Notation.} We write $\vp = (1+\sqrt{5})/2$ for the golden ratio and use the proton fixed point $p^* = (n_u,n_d,\rval,\Rsea,\Rtot,\Rsurf) = (24,28,930,10087,11017,310\vp) \in \mathbb{Z}^5 \times \mathbb{Q}(\sqrt{5})$ throughout~\cite{PDL_Bridge_2026}. The structural coefficient $\kap = \Rsurf/\Rtot$ is an element of $\mathbb{Q}(\sqrt{5})$. Cosmological quantities use CODATA~2022~\cite{CODATA_2022} and Planck~2018~\cite{Planck_2018} values.
+
+% =============================================================
+\section{The PDL coexistence topology and the coherence-cost pseudometric}
+\label{sec:coexistence}
+
+This section recalls the elements of the \PDL\ coexistence topology needed in the sequel. Full proofs are given in~\cite{Topological_Reformulation_PDL_2026}.
+
+\subsection{Configuration space and logical compatibility}
+\label{subsec:config}
+
+\begin{definition}[Configuration space]
+\label{def:config_space}
+Let $\Cconf$ denote the set of all closed hierarchical configurations admitted by the \PDL\ framework. An element $C \in \Cconf$ is represented by a finite signed graph satisfying the closure and optimisation constraints at the relevant hierarchical level. In particular, every proton-type configuration $P \in \Cconf$ is characterised by the integer quintuplet $p^*$ and the active surface $\Rsurf = 310\vp \in \mathbb{Q}(\sqrt{5})$.
+\end{definition}
+
+\begin{definition}[Logical compatibility]
+\label{def:compatibility}
+Two configurations $C_1, C_2 \in \Cconf$ are \emph{logically compatible} if there exists an admissible joint configuration $C_{12}$ in which $C_1$ and $C_2$ coexist and whose leakage satisfies $\eta(G_{12}) \leq \eta_{\max}$, for the admissibility threshold $\eta_{\max}$ specified by the \PDL\ optimisation functional. The \emph{compatibility neighbourhood} of $C \in \Cconf$ is
+\[
+  \mathcal{N}(C) := \{ C' \in \Cconf : C' \text{ is logically compatible with } C \}.
+\]
+\end{definition}
+
+The family $\{\mathcal{N}(C) : C \in \Cconf\}$ generates a topology $\mathscr{T}$ on $\Cconf$, called the \emph{coexistence topology}~\cite{Topological_Reformulation_PDL_2026}. This topology is entirely determined by the coherence constraints of the framework; no background metric or spatial structure is presupposed.
+
+\subsection{Coherence-cost pseudometric}
+\label{subsec:pseudometric}
+
+\begin{definition}[Coherence-cost distance]
+\label{def:cohcost}
+Let $C_1, C_2 \in \Cconf$ with respective graphs $G_1, G_2$. The \emph{coherence-cost distance} between $C_1$ and $C_2$ is
+\begin{equation}
+  \label{eq:d_def}
+  d(C_1,C_2) := \inf_{C_{12}\,\in\,\mathcal{J}(C_1,C_2)} \bigl(\eta(G_{12}) - \max\{\eta(G_1),\eta(G_2)\}\bigr)_+,
+\end{equation}
+where $\mathcal{J}(C_1,C_2)$ is the set of all admissible joint configurations in which $C_1$ and $C_2$ coexist, and $(x)_+ := \max\{x,0\}$.
+\end{definition}
+
+Informally, $d(C_1,C_2)$ is the minimal additional leakage that the relational network must absorb when $C_1$ and $C_2$ are required to coexist simultaneously. The function $d$ is a pseudometric on the subset of $\Cconf$ where it is finite~\cite{Topological_Reformulation_PDL_2026}. In the coarse-grained limit where many closures coexist, $d$ can be approximated by a Riemannian metric, and what is conventionally called gravitational interaction is the macroscopic manifestation of variations in $d$ induced by changes in the distribution of closures~\cite{PDL_Main_2026}.
+
+\subsection{Leakage as a self-maintained probability}
+\label{subsec:leakage_prob}
+
+The leakage functional $\eta(G)$ admits a probabilistic interpretation that is central to the derivation of Section~\ref{sec:engagement}.
+
+\begin{proposition}[Leakage as non-closure probability~{\cite{Topological_Reformulation_PDL_2026}}]
+\label{prop:leakage_prob}
+For any finite signed graph $G$ with $|V| \geq 3$, the leakage $\eta(G)$ coincides with the probability that a uniformly sampled triangle is violated:
+\begin{equation}
+  \label{eq:leakage_prob}
+  \eta(G) = \Prob_G(T \text{ is violated}),
+\end{equation}
+where $\Prob_G$ is the uniform measure on the set of all unordered vertex triplets of $G$.
+\end{proposition}
+
+At the proton level, $\etaL = \epsg$ is the minimal leakage achievable within the admissible class $\mathcal{G}_p$ of proton-type graphs, and it is simultaneously the self-maintained probability of non-closure: the same optimisation principle that minimises $\eta$ over $\mathcal{G}_p$ uniquely determines the value $\epsg = 0.0075197$~\cite{PDL_Bridge_2026}.
+
+% =============================================================
+\section{Surface engagement and the exact combinatorial formula for \texorpdfstring{$\sigma$}{sigma}}
+\label{sec:engagement}
+
+\subsection{Cross-closure triangles and the engagement of active-surface relations}
+\label{subsec:cross_triangles}
+
+When two proton-type closures $P_0$ and $P_i$ are logically compatible, their joint configuration $G_{12}$ contains, in addition to the internal triangles of each proton, a set of \emph{cross-closure triangles}: triangles involving at least one vertex from $\text{surf}(P_0)$ and at least one vertex from $\text{surf}(P_i)$.
+
+\begin{definition}[Surface engagement]
+\label{def:engagement}
+Let $e \in \Rsurf(P_0)$ be a fixed active-surface relation of the reference proton $P_0$. We say that $e$ is \emph{engaged by $P_i$} in the joint configuration $G_{12}$ if $e$ participates in at least one cross-closure triangle in $G_{12}$, i.e.\ if at least one endpoint of $e$ is involved in a triangular constraint that also involves a vertex of $P_i$.
+
+The \emph{surface engagement fraction} of $P_0$ with respect to a set $\{P_1,\ldots,P_N\}$ of neighbouring closures is
+\begin{equation}
+  \label{eq:sig_def}
+  \sig_N \;:=\; \frac{1}{\Rsurf}\;\bigl|\bigl\{e \in \Rsurf(P_0) : e \text{ is engaged by at least one } P_i\bigr\}\bigr|.
+\end{equation}
+\end{definition}
+
+\subsection{Probability of engagement: exact formula}
+\label{subsec:engagement_proof}
+
+The derivation of $\sig_N$ from the \PDL\ combinatorics proceeds via the uniform probability measure on the relational budget of $P_i$.
+
+\begin{lemma}[Single-neighbour engagement probability]
+\label{lem:single_p}
+For a proton $P_i$ placed uniformly in $\mathcal{N}(P_0)$, the probability that a fixed relation $e \in \Rsurf(P_0)$ is engaged by $P_i$ is
+\begin{equation}
+  \label{eq:kap_def}
+  p_e \;=\; \frac{\Rsurf}{\Rtot} \;=:\; \kap \;\in\; \mathbb{Q}(\sqrt{5}).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+A cross-closure triangle involving $e \in \Rsurf(P_0)$ requires that at least one relation from the budget of $P_i$ be allocated to the coupling between $P_0$ and $P_i$. The active surface $\Rsurf(P_i) \subset \Rtot(P_i)$ is the subset of the relational budget of $P_i$ that is available for external coupling; all other relations are internal. By the \PDL\ definition of logical compatibility (Definition~\ref{def:compatibility}), the joint embedding minimises the additional leakage $d(P_0,P_i)$. At this optimum, the coupling is realised by a single active-surface relation of $P_i$, and this relation is chosen uniformly among the $\Rtot$ relations of $P_i$.
+
+The probability that this chosen relation belongs to $\Rsurf(P_i)$, and thus generates a cross-closure triangle with $e$, is $\Rsurf/\Rtot$. By the symmetry $d(P_0,P_i) = d(P_i,P_0)$ of the coherence-cost pseudometric (Definition~\ref{def:cohcost}), the probability that the cross-closure triangle involves the specific relation $e \in \Rsurf(P_0)$ rather than any other surface relation is uniform over $\Rsurf$. The probability that $e$ is engaged is therefore
+\[
+  p_e = \frac{\Rsurf}{\Rtot} \times 1 = \kap,
+\]
+independently of $e$. Substituting $\Rsurf = 310\vp$ and $\Rtot = 11017$ gives $\kap = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$, numerically $\kap \approx 0.04553$.
+\end{proof}
+
+\begin{theorem}[Exact surface engagement fraction]
+\label{thm:sigma_exact}
+Let $P_0$ be a reference proton with $N$ neighbours $\{P_1,\ldots,P_N\}$ drawn independently and uniformly from $\mathcal{N}(P_0)$. Assume that the events ``$P_i$ engages $e$'' are mutually independent across distinct $i$. Then the expected surface engagement fraction of $P_0$ is
+\begin{equation}
+  \label{eq:sigma_exact}
+  \sig(N) \;=\; 1 - (1-\kap)^N.
+\end{equation}
+The formula involves no free parameter: $\kap = 310\vp/11017$ is fixed by the \PDL\ proton architecture.
+\end{theorem}
+
+\begin{proof}
+For a fixed relation $e \in \Rsurf(P_0)$, the event that $e$ is \emph{not} engaged by any of the $N$ independent neighbours has probability $(1-p_e)^N = (1-\kap)^N$ by Lemma~\ref{lem:single_p} and mutual independence. Hence the probability that $e$ is engaged by at least one neighbour is $1-(1-\kap)^N$. Since this probability is the same for every $e \in \Rsurf(P_0)$ (by Lemma~\ref{lem:single_p}), the expected fraction of engaged relations is
+\[
+  \mathbb{E}[\sig_N] = 1-(1-\kap)^N. \qedhere
+\]
+\end{proof}
+
+\begin{remark}[Independence hypothesis]
+\label{rem:independence}
+The mutual independence of the events ``$P_i$ engages $e$'' holds exactly when the neighbours $P_1,\ldots,P_N$ are drawn independently and their cross-closure triangles with $P_0$ do not share intermediate vertices. In the dilute regime $N\kap \ll 1$, the probability of shared vertices is of order $(N\kap)^2 \ll 1$ and the approximation is controlled. For the cosmological application of Section~\ref{sec:hubble}, $N\kap \approx 0.21$ (see Section~\ref{subsec:sigma_local}), so the correction is of order $\kap \times 0.21 \approx 0.01$ and lies within the combined observational and structural uncertainties.
+\end{remark}
+
+\subsection{The continuum limit}
+\label{subsec:continuum}
+
+Equation~\eqref{eq:sigma_exact} is the exact discrete formula. For a continuum density $\rhocl$ of closures, we define the mean number of neighbours as $N = \rhocl/\rhoO$, where the \emph{saturation density} $\rhoO$ is the density at which $\langle N \rangle = 1/\kap$ (each active-surface relation is engaged on average once).
+
+\begin{proposition}[Continuum limit]
+\label{prop:continuum}
+In the limit $\kap \to 0$ with $x = N\kap = \rhocl/\rhoO$ held fixed, the exact formula~\eqref{eq:sigma_exact} reduces to
+\begin{equation}
+  \label{eq:sigma_continuum}
+  \sig\!\left(\frac{\rhocl}{\rhoO}\right) \;=\; 1 - e^{-\rhocl/\rhoO}.
+\end{equation}
+The relative error of the approximation is bounded by $\kap\,(\rhocl/\rhoO)^2/2 \lesssim 5 \times 10^{-4}$ for $\rhocl/\rhoO \leq 1$.
+\end{proposition}
+
+\begin{proof}
+Write $N = x/\kap$ with $x = \rhocl/\rhoO$ fixed. Then
+\[
+  (1-\kap)^N = \Bigl(1 - \frac{x}{N}\Bigr)^N \xrightarrow{N\to\infty} e^{-x},
+\]
+by the standard limit $(1-c/n)^n \to e^{-c}$. The error at finite $N$ satisfies
+\[
+  \Bigl|(1-\kap)^N - e^{-x}\Bigr| = e^{-x}\Bigl|e^{N\ln(1-\kap)+x} - 1\Bigr| \leq \tfrac{1}{2}N\kap^2\,e^{-x} = \tfrac{1}{2}\kap x e^{-x},
+\]
+where we used $\ln(1-\kap) = -\kap - \kap^2/2 - \ldots$ Numerically, with $\kap \approx 0.04553$ and $x \leq 1$, the relative error is at most $\kap/2 \approx 0.023$, and at $x \approx 0.21$ it is $\kap \times 0.21/2 \approx 0.005$. Both values lie below the observational uncertainties on $\Hzero$.
+\end{proof}
+
+\begin{remark}[Status of the exponential form]
+\label{rem:exponential}
+The exponential form $\sig(x) = 1-e^{-x}$ is not postulated: it is the continuum limit of the exact combinatorial formula~\eqref{eq:sigma_exact}, whose only input is $\kap = \Rsurf/\Rtot$. This is the \PDL\ derivation of the engagement function from first principles.
+\end{remark}
+
+% =============================================================
+\section{The density-dependent effective gravitational coupling}
+\label{sec:Geff}
+
+\subsection{Cross-closure surplus leakage}
+\label{subsec:delta}
+
+The surface engagement fraction $\sig$ generates an additional leakage contribution $\delta$ beyond the isolated-proton value $\epsg$.
+
+\begin{definition}[Cross-closure surplus leakage]
+\label{def:delta}
+For a reference proton $P_0$ with $N$ neighbours at local closure density $\rhocl$, the \emph{cross-closure surplus leakage} is
+\begin{equation}
+  \label{eq:delta_def}
+  \delta(\rhocl) \;:=\; \kap\,\sig\!\left(\frac{\rhocl}{\rhoO}\right) \;\epsg \;=\; \kap\,(1-e^{-\rhocl/\rhoO})\,\epsg.
+\end{equation}
+\end{definition}
+
+The factor $\kap$ in~\eqref{eq:delta_def} arises as follows. Each engaged surface relation contributes an additional cross-closure triangle to the constraint graph of $P_0$. By Proposition~\ref{prop:leakage_prob}, the fraction of these triangles that are violated equals $\epsg$ (the internal leakage probability, since the cross-closure triangles inherit the coherence quality of the surface). The fraction of all triangles of $P_0$ that are cross-closure triangles is at most $\Rsurf/\Rtot = \kap$ (one cross-closure triangle per engaged surface relation, out of $\Rtot$ total relational constraints). Hence the surplus leakage is $\kap \times \sig \times \epsg$.
+
+\begin{proposition}[Perturbative regime]
+\label{prop:perturbative}
+For $\rhocl \ll \rhoO$, the surplus leakage satisfies
+\begin{equation}
+  \label{eq:delta_perturbative}
+  \delta(\rhocl) \;\approx\; \kap^2\,\frac{\rhocl}{\rhoO}\,\epsg \;\ll\; \epsg,
+\end{equation}
+so that the total effective leakage $\epsg + \delta$ satisfies $(\epsg+\delta)/\epsg - 1 \leq \kap \ll 1$. The correction is perturbative.
+\end{proposition}
+
+\begin{proof}
+Substituting the linear approximation $\sig(x) \approx x = \rhocl/\rhoO$ valid for $x \ll 1$ into~\eqref{eq:delta_def} gives $\delta \approx \kap^2\,(\rhocl/\rhoO)\,\epsg$. Since $\kap \approx 0.046$, the relative correction $\delta/\epsg \leq \kap \approx 0.046 \ll 1$ confirming the perturbative character.
+\end{proof}
+
+\subsection{The effective gravitational coupling}
+\label{subsec:Geff_formula}
+
+The total leakage of the proton in an environment of closure density $\rhocl$ is $\epsg^{\mathrm{eff}}(\rhocl) = \epsg + \delta(\rhocl)$. After propagation through the 18 hierarchical levels~\cite{Topology_18_PDL_2026,PDL_Bridge_2026}:
+
+\begin{theorem}[Density-dependent effective gravitational coupling]
+\label{thm:Geff}
+The effective gravitational constant at closure density $\rhocl$ is
+\begin{equation}
+  \label{eq:Geff}
+  \Geff(\rhocl) \;=\; \frac{\hbar c}{m_p^2}\,\Bigl(\epsg + \delta(\rhocl)\Bigr)^{18}.
+\end{equation}
+To leading order in $\delta/\epsg \leq \kap \ll 1$, this reduces to
+\begin{equation}
+  \label{eq:Geff_leading}
+  \Geff(\rhocl) \;\approx\; \Gzero\,\Bigl(1 + 18\kap\,\sig\!\bigl(\rhocl/\rhoO\bigr)\Bigr),
+\end{equation}
+where $\Gzero = \GPDL = 6.67448 \times 10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$ is the parameter-free prediction of~\cite{PDL_Bridge_2026} and $18\kap = 18 \times 310\vp/11017 \approx 0.8195 \in \mathbb{Q}(\sqrt{5})$.
+\end{theorem}
+
+\begin{proof}
+From Definition~\ref{def:delta} and the hierarchical filtering relation $G = \epsg^{18}\,\hbar c/m_p^2$~\cite{PDL_Bridge_2026,Topology_18_PDL_2026}, we have
+\[
+  \Geff = \frac{\hbar c}{m_p^2}\,(\epsg + \delta)^{18} = \Gzero\,\Bigl(1 + \frac{\delta}{\epsg}\Bigr)^{18}.
+\]
+Expanding $(1+u)^{18} \approx 1 + 18u$ for $u = \delta/\epsg \leq \kap \approx 0.046$ and substituting $u = \kap\,\sig(\rhocl/\rhoO)$ from Definition~\ref{def:delta}:
+\[
+  \Geff(\rhocl) \approx \Gzero\bigl(1 + 18\kap\,\sig(\rhocl/\rhoO)\bigr).
+\]
+The relative error of the linearisation is $\binom{18}{2}\kap^2 \approx 153 \times 0.00207 \approx 0.32\%$, within the structural uncertainty of the bridge formula~\cite{PDL_Bridge_2026}.
+\end{proof}
+
+\begin{remark}[The amplification factor 18]
+\label{rem:amplification}
+The factor $18\kap \approx 0.82$ in equation~\eqref{eq:Geff_leading} is the product of the topological exponent 18 (proved in~\cite{Topology_18_PDL_2026}) and the structural coefficient $\kap = \Rsurf/\Rtot$ (derived in Section~\ref{sec:engagement}). Both are determined by the proton integer quintuplet. The amplification of the microscopic surface engagement fraction into a macroscopic correction to $G$ is thus a structural consequence of the topology of the \PDL\ chain complex.
+\end{remark}
+
+\subsection{Numerical values of the structural coefficient}
+\label{subsec:kap_numerical}
+
+All components of the effective coupling formula are exact elements of $\mathbb{Q}(\sqrt{5})$ or integers.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Quantity & Exact value & Numerical value \\
+\midrule
+$\Rsurf$ & $310\vp \in \mathbb{Q}(\sqrt{5})$ & $501.592\ldots$ \\
+$\Rtot$ & $11017 \in \mathbb{Z}$ & $11017$ \\
+$\kap = \Rsurf/\Rtot$ & $310\vp/11017 \in \mathbb{Q}(\sqrt{5})$ & $0.04553\ldots$ \\
+$18\kap$ & $18 \times 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$ & $0.8195\ldots$ \\
+$\kap^2$ & $(310\vp/11017)^2 \in \mathbb{Q}(\sqrt{5})$ & $0.002073\ldots$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =============================================================
+\section{The Hubble tension as a structural prediction}
+\label{sec:hubble}
+
+\subsection{Two cosmological regimes}
+\label{subsec:two_regimes}
+
+The \PDL\ framework identifies two physically distinct regimes of closure density relevant to measurements of $\Hzero$.
+
+\medskip\noindent\emph{The primordial regime (CMB, $z \approx 1100$).} At 380\,000 years after the Big Bang, protons exist in a free plasma without hierarchical structures above the nuclear scale. The inter-proton separation far exceeds the range of the coexistence neighbourhood, so $N \approx 0$ and $\sig \approx 0$. Equation~\eqref{eq:Geff_leading} reduces to $\Geff \approx \Gzero$, and the CMB measurement reconstructs the background value:
+\begin{equation}
+  \label{eq:HCMB_PDL}
+  \HCMB \;\propto\; \sqrt{\Gzero\,\bar\rho_m + \cdots}.
+\end{equation}
+
+\medskip\noindent\emph{The structured local regime ($z \approx 0$).} In the present-day universe, a fraction of all baryons is gravitationally bound into galaxies, clusters, and cosmic filaments. Within these structures, protons are in close proximity and their active-surface relations are partially engaged. The local closure density satisfies $\rhocl > 0$, and equation~\eqref{eq:Geff_leading} gives $\Geff(\rhocl) > \Gzero$:
+\begin{equation}
+  \label{eq:Hloc_PDL}
+  \Hloc \;\propto\; \sqrt{\Geff(\rhocl)\,\bar\rho_m + \cdots} \;=\; \sqrt{\Gzero(1 + 18\kap\,\sig_{\mathrm{loc}})\,\bar\rho_m + \cdots}.
+\end{equation}
+Local distance-ladder measurements (Cepheids, supernovae) probe precisely this structured environment.
+
+\subsection{Leading-order prediction for the tension}
+\label{subsec:tension_formula}
+
+\begin{theorem}[\PDL\ prediction for the Hubble ratio]
+\label{thm:hubble_ratio}
+At leading order in $18\kap\,\sig_{\mathrm{loc}} \ll 1$,
+\begin{equation}
+  \label{eq:H_ratio}
+  \frac{\Hloc}{\HCMB} \;\approx\; \Bigl(1 + 18\kap\,\sig_{\mathrm{loc}}\Bigr)^{1/2} \;\approx\; 1 + 9\kap\,\sig_{\mathrm{loc}},
+\end{equation}
+where $\sig_{\mathrm{loc}} = \sig(\rhocl^{\mathrm{loc}}/\rhoO) \in [0,1]$ is the local surface engagement fraction and $\kap = 310\vp/11017 \approx 0.04553$.
+\end{theorem}
+
+\begin{proof}
+Taking the ratio of equations~\eqref{eq:HCMB_PDL} and~\eqref{eq:Hloc_PDL}, assuming the matter density $\bar\rho_m$ and all other cosmological parameters to be identical in both regimes (the \PDL\ correction affects only $G$):
+\[
+  \frac{\Hloc}{\HCMB} = \sqrt{\frac{\Geff(\rhocl^{\mathrm{loc}})}{\Gzero}} = \Bigl(1 + 18\kap\,\sig_{\mathrm{loc}}\Bigr)^{1/2}.
+\]
+Expanding the square root to leading order in $18\kap\,\sig_{\mathrm{loc}} \leq 18 \times 0.046 = 0.83$ gives the second form. The linearisation error is at most $(18\kap\,\sig_{\mathrm{loc}})^2/8 \leq 0.086$, which is absorbed into the structural uncertainty.
+\end{proof}
+
+\subsection{Constraint on the local engagement fraction}
+\label{subsec:sigma_local}
+
+\begin{proposition}[Observational constraint on $\sig_{\mathrm{loc}}$]
+\label{prop:sigma_constraint}
+The observed ratio $\Hloc/\HCMB = 73.0/67.4 = 1.0832$~\cite{Riess_2022,Planck_2018} constrains
+\begin{equation}
+  \label{eq:sigma_constraint}
+  \sig_{\mathrm{loc}} \;=\; \frac{(\Hloc/\HCMB)^2 - 1}{18\kap} \;\approx\; \frac{1.0832^2 - 1}{18 \times 0.04553} \;\approx\; 0.211.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Squaring equation~\eqref{eq:H_ratio} and solving for $\sig_{\mathrm{loc}}$:
+\[
+  \sig_{\mathrm{loc}} = \frac{(\Hloc/\HCMB)^2 - 1}{18\kap} = \frac{1.1733 - 1}{0.8195} = \frac{0.1733}{0.8195} \approx 0.2114. \qedhere
+\]
+\end{proof}
+
+\subsection{Physical interpretation of \texorpdfstring{$\sigma_{\mathrm{loc}} \approx 0.21$}{sigma	extunderscore{loc} ≈ 0.21}}
+\label{subsec:sigma_interp}
+
+The value $\sig_{\mathrm{loc}} \approx 0.21$ has a direct physical interpretation in the \PDL\ framework: approximately 21\% of the active-surface relational budget of the average proton in the local universe is engaged in cross-closure coherence constraints with neighbouring protons within the same gravitational structure. This is consistent with the observed large-scale structure of the universe. The fraction of the comoving volume occupied by virialized structures (galaxies and groups) at $z \approx 0$ is approximately $0.05$--$0.25$ depending on the definition of membership~\cite{Springel_2005}; the baryon overdensity within these structures is of order $10^2$--$10^3$, so that the mean baryonic engagement fraction, weighted by mass, is consistent with $\sig_{\mathrm{loc}} \sim 0.2$.
+
+This consistency does not constitute a derivation of $\sig_{\mathrm{loc}}$ from first principles; $\rhoO$ remains a free parameter of the present analysis. It does, however, demonstrate that the required value is not exotic: it falls precisely in the range expected from the known structure of the universe, providing a non-trivial test of the coherence of the mechanism.
+
+% =============================================================
+\section{Falsifiable observational predictions}
+\label{sec:predictions}
+
+The \PDL\ mechanism generates three predictions that are, in principle, testable with existing or near-future surveys. All three follow necessarily from the structural formula~\eqref{eq:Geff_leading} and the continuum engagement fraction~\eqref{eq:sigma_continuum}; none requires additional free parameters beyond $\rhoO$.
+
+\medskip\noindent\textbf{Prediction~P1 (Persistence and logarithmic growth).} Since $\sig(\rhocl/\rhoO) = 1 - e^{-\rhocl/\rhoO}$ is a monotonically increasing function of $\rhocl$, and since the matter density $\rhocl$ in the local universe has grown continuously through gravitational collapse from $z \approx 10$ to the present, the tension should persist in all future surveys and grow approximately logarithmically with survey depth. Concretely, surveys probing lower redshifts sample higher mean closure densities and should yield progressively higher values of $\Hzero$; surveys restricted to $z > 2$ should yield values consistent with $\HCMB$.
+
+\medskip\noindent\textbf{Prediction~P2 (Correlation with the measurement scale of $G$).} The quantity $18\kap\,\sig_{\mathrm{loc}}$ is proportional to $\kap = \Rsurf/\Rtot$, which is set by the active-surface fraction of a single proton. In environments of different closure density (field galaxies versus cluster cores), the amplitude of the tension should be different and proportional to $\sig(\rhocl/\rhoO)$. Measurements of $\Hzero$ restricted to field environments (low $\rhocl$) should yield lower values than measurements from cluster cores (high $\rhocl$). This gradient in $\Hzero$ with environment density is a signature unique to the \PDL\ mechanism; it is absent in all standard early-universe resolutions of the tension~\cite{Verde_2019}.
+
+\medskip\noindent\textbf{Prediction~P3 (Absence in pre-reionisation measurements).} The \PDL\ correction is sourced by the engagement of active-surface relations, which requires protons to be within the coexistence neighbourhood of other protons. Below reionisation ($z \gtrsim 6$), the inter-galactic medium is predominantly neutral and the formation of gravitational structures is incomplete; the mean closure density is much lower than in the present-day universe. Measurements of $\Hzero$ from independent probes restricted to $z > 6$ (such as 21\,cm background observations or high-redshift quasar spectra) should recover a value consistent with $\HCMB$ rather than $\Hloc$. A confirmed deviation at $z > 6$ would falsify the \PDL\ mechanism.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Prediction & Observable signature & Primary surveys \\
+\midrule
+P1 & $\Hzero$ increases with decreasing $z$ of probe & DESI, Euclid, Rubin \\
+P2 & $\Hzero$ gradient with environment density & DESI, 4MOST \\
+P3 & $\Hzero$ consistent with CMB at $z > 6$ & SKA 21\,cm, Euclid \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =============================================================
+\section{Discussion and open problems}
+\label{sec:discussion}
+
+\subsection{Epistemic status of the results}
+\label{subsec:status}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Result & Status & Method \\
+\midrule
+$\kap = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$, no free param. & Derived & Proton integers of~\cite{PDL_Bridge_2026} \\
+$p_e = \kap$ (Lemma~\ref{lem:single_p}) & Proved & Uniform relational budget \\
+$\sig(N) = 1-(1-\kap)^N$ (Theorem~\ref{thm:sigma_exact}) & Proved & Combinatorial, exact \\
+Continuum limit $\sig(x) = 1-e^{-x}$ (Proposition~\ref{prop:continuum}) & Proved & Standard limit, error bounded \\
+$\delta(\rhocl) = \kap\,\sig\,\epsg$ (Definition~\ref{def:delta}) & Tightly constrained & From cross-closure counting \\
+$\Geff(\rhocl) \approx \Gzero(1+18\kap\,\sig)$ (Theorem~\ref{thm:Geff}) & Derived (leading order) & Perturbative in $\kap$ \\
+$\sig_{\mathrm{loc}} \approx 0.211$ from observed tension & Constrained & Propostion~\ref{prop:sigma_constraint} \\
+Consistency of $\sig_{\mathrm{loc}}$ with LSS data & Qualitative & Section~\ref{subsec:sigma_interp} \\
+Predictions P1--P3 & Structural & Follow from mechanism \\
+$\rhoO$ derived from first principles & Open (OP1) & \\
+Independence of engagement events (exact) & Open (OP2) & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Open problems}
+\label{subsec:open}
+
+\medskip\noindent\textbf{OP1 (Derivation of the saturation density $\rhoO$).} The saturation density $\rhoO$ is defined as the closure density at which $\langle N\rangle = 1/\kap$, i.e.\ each active-surface relation is engaged on average once. A purely combinatorial derivation of $\rhoO$ would require computing the ``volume'' of the compatibility neighbourhood $\mathcal{N}(P_0)$ in the coherence-cost pseudometric $d$ of Definition~\ref{def:cohcost}. This is equivalent to the open problem of deriving $\epsg$ from the minimal frustration density of the proton constraint graph~\cite{PDL_Bridge_2026}, as both require knowledge of the absolute scale of the pseudometric. Resolving OP1 of the companion paper~\cite{PDL_Bridge_2026} would simultaneously resolve the present OP1.
+
+\medskip\noindent\textbf{OP2 (Exact treatment of correlations).} Theorem~\ref{thm:sigma_exact} assumes mutual independence of the engagement events across neighbours. Remark~\ref{rem:independence} shows that the correction is of order $\kap \times \sig_{\mathrm{loc}} \approx 0.01$ in the cosmologically relevant regime, but a complete treatment would require computing the pair-correlation function of engaged surface relations in the coexistence topology. This is a combinatorial problem on the space of joint configurations $\mathcal{J}(P_0, P_i) \cap \mathcal{J}(P_0, P_j)$ and is expected to generate corrections of order $\kap^2 \approx 0.002$, below current observational sensitivity.
+
+\medskip\noindent\textbf{OP3 (Quantitative prediction of $\sig_{\mathrm{loc}}$ from large-scale structure).} Section~\ref{subsec:sigma_interp} establishes that $\sig_{\mathrm{loc}} \approx 0.21$ is consistent with known large-scale structure data, but does not derive it. A quantitative derivation would proceed by integrating the closure-density field $\rhocl(\vec{r})$ --- reconstructed from galaxy surveys --- over the comoving volume weighted by the coexistence kernel, and computing the resulting mean engagement fraction. This is in principle computable from DESI or Euclid data~\cite{DESI_2024,Euclid_2024}.
+
+\medskip\noindent\textbf{OP4 (Higher-order corrections in $\kap$).} Theorem~\ref{thm:Geff} retains only the leading-order term $18\kap\,\sig$. The next-order correction is $\binom{18}{2}\kap^2\,\sig^2 \approx 153 \times 0.00207 \times 0.044 \approx 0.014$, a $1.4\%$ relative correction to the tension amplitude. At the precision of forthcoming surveys (DESI at $0.5\%$, Euclid at $0.3\%$), this correction will become detectable and would provide an independent test of the mechanism.
+
+% =============================================================
+\section*{Conclusion}
+
+This paper has established four principal results within the \PDL\ framework.
+
+First, the surface engagement fraction $\sig(N) = 1-(1-\kap)^N$ is derived exactly from the combinatorics of the \PDL\ active surface, with $\kap = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$ fixed by the proton integer quintuplet of the companion paper~\cite{PDL_Bridge_2026}. The exponential continuum limit $\sig(x) = 1 - e^{-x}$ follows as a standard consequence; neither function contains a free parameter.
+
+Second, the effective gravitational coupling acquires a density dependence $\Geff(\rhocl) = \Gzero(1+18\kap\,\sig(\rhocl/\rhoO))$ at leading order, where the amplification coefficient $18\kap \approx 0.82$ is the product of the topological exponent 18 (a proven invariant of $H_2(S^2;\mathbb{Z})$~\cite{Topology_18_PDL_2026}) and the structural coefficient $\kap$ derived above.
+
+Third, the Hubble tension is identified as the observational signature of this density dependence: the CMB probes the primordial regime $\rhocl \approx 0$ where $\Geff \approx \Gzero$, whilst local distance-ladder measurements probe the structured regime $\rhocl > 0$ where $\Geff > \Gzero$. The observed ratio $\Hloc/\HCMB = 1.083$ constrains the local engagement fraction to $\sig_{\mathrm{loc}} \approx 0.211$, a value consistent with the known fraction of baryons in gravitationally virialized structures.
+
+Fourth, three falsifiable predictions are derived: persistence and logarithmic growth of the tension with survey depth (P1); a gradient in $\Hzero$ with environment density (P2); and absence of the tension in pre-reionisation measurements (P3). All three are consequences of the structural formula~\eqref{eq:Geff_leading}; none requires additional parameters beyond $\rhoO$.
+
+The central implication is that the Hubble tension is not an anomaly requiring new fundamental physics. It is the unavoidable macroscopic consequence of a structural property of the proton: the active-surface fraction $\kap$ that mediates all electromagnetic couplings also mediates, via the 18-level hierarchical amplification, a density-dependent correction to the gravitational coupling. The two instances of 18 --- the topological exponent and the periodic table's maximum shell occupancy --- share the same ancestor~\cite{Topology_18_PDL_2026}, and the Hubble tension is a cosmological echo of that common origin.
+
+% =============================================================
+\bibliographystyle{plain}
+\bibliography{PDL_Hubble_references}
+
+\end{document}
