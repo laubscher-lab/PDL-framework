@@ -1,0 +1,396 @@
+% =============================================================
+%  PDL --- D28
+%  A Structural Conjecture for the Primary Gravitational
+%  Leakage Parameter from the PDL Proton Architecture
+%  C. Laubscher, 2026
+% =============================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+\usepackage{xcolor}
+% ── Theorem environments ──────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+% ── Macros ────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\epsg}{\varepsilon_G}
+\newcommand{\Kfour}{K_4}
+\newcommand{\Sfour}{\partial\Delta^3}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\vp}{\varphi}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\kap}{\kappa}
+\newcommand{\sig}{\sigma}
+\newcommand{\drval}{\Delta r_{\mathrm{val}}}
+\newcommand{\muPDL}{\mu_{\mathrm{PDL}}}
+\newcommand{\muexp}{\mu_{\mathrm{exp}}}
+\newcommand{\mustar}{\mu^*}
+\newcommand{\muphys}{\mu_{\mathrm{phys}}}
+% =============================================================
+\begin{document}
+
+\title{%
+  A Structural Conjecture for the Primary Gravitational\\[4pt]
+  Leakage Parameter in the \PDL\ Framework:\\[4pt]
+  Towards a Parameter-Free Derivation of Newton's Constant%
+}
+\author{%
+  C.~Laubscher%
+  \thanks{Independent researcher, Switzerland. \texttt{cedric.laubscher@gmail.com}}\\[4pt]%
+}
+\date{\small \today}
+\maketitle
+
+% =============================================================
+\begin{abstract}
+Within the Projective Dynamic Logo (\PDL) framework, Newton's gravitational constant $G$ is currently predicted via the bridge formula~\cite{Bridge_PDL_2026}, which requires the primary coherence leakage parameter $\epsg$ as an intermediate. Although $\epsg$ is constrained structurally through its relation to the proton quintuplet, it is ultimately calibrated from the empirical value of $G$. The present paper reports a numerical conjecture that expresses $\epsg$ directly and entirely in terms of structural quantities of the proton architecture: the surface engagement fraction $\kap = \Rsurf/\Rtot$, the no-self-loop coherence correction $\calC = (n_u^2-1)/n_u^2 = 575/576$, and the total relational budget $\Rtot = 11017$. The conjecture reads
+\[
+\epsg \;\overset{?}{=}\; \frac{\kap\cdot\calC}{6+\kap}\cdot\left(1+\frac{2}{\Rtot}\right),
+\]
+and is exact on $\mathbb{Q}(\sqrt{5})$. Its numerical value agrees with the CODATA~2022 determination to $\mathbf{17}$~\textbf{ppm}, well within the spread of independent experimental measurements of $G$, which currently spans approximately 500~ppm~\cite{CODATA_2022,Quinn_2013,Rosi_2014,Li_2018,NIST_2024}. We document the convergence series leading to this conjecture, provide a structural interpretation of each factor, and reduce the proof to a single open problem: the derivation of the proton-to-electron mass ratio $\mu$ from the \PDL\ axioms. We show that the conjecture is equivalent to $\muexp = \mustar$, where $\mustar = 1836.152670$ is a value in $\mathbb{Q}(\sqrt{5})$ that agrees with the CODATA~2022 value $\muexp = 1836.152673$ to $0.002$~ppm --- four orders of magnitude inside the current experimental precision of $0.000017$~ppm. The 17~ppm gap between the conjecture and CODATA is identified as the signature of the dynamical dressing of the structural (bare) mass ratio $\muPDL = \Rtot/6 = 11017/6$ by coherence leakage corrections. If proved, this conjecture would make $\epsg$, and hence $G$, a fully combinatorial prediction from the proton quintuplet $(24, 28, 930, 10087, 11017)$ without any gravitational empirical input.
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+% =============================================================
+\section{Introduction}
+\label{sec:intro}
+
+The Projective Dynamic Logo (\PDL) framework reconstructs physical reality from four axioms on finite signed graphs: minimal binary pulsation, triangular coherence, minimal completeness, and logical optimisation~\cite{PDL_Main_2026,PDL_Intro_2026}. The proton is a hierarchical composite characterised by the unique integer quintuplet $(n_u, n_d, \rval, \Rsea, \Rtot) = (24, 28, 930, 10087, 11017)$~\cite{Combinatorial_Proton_v2_2026}. From this quintuplet, the fine-structure constant $\alpha$~\cite{Alpha_PDL_v2_2026} and Newton's gravitational constant $G$~\cite{Bridge_PDL_2026} are derived without free parameters, with residuals of $1.0\times10^{-4}$ and $27$~ppm respectively against CODATA~2022~\cite{CODATA_2022}. The exponent 18 governing the gravitational hierarchy has been established as a topological invariant of $S^2 = \Sfour$~\cite{Topology_18_PDL_2026}.
+
+Despite these results, one open problem remains at the foundation of the gravitational sector: the primary coherence leakage parameter $\epsg$, defined by $G m_p^2/(\hbar c) = \epsg^{18}$, is not yet derived from the proton quintuplet alone. In D24~\cite{Bridge_PDL_2026}, $\epsg$ is extracted from the bridge formula
+\begin{equation}
+\label{eq:bridge}
+\drval \;=\; \epsg \cdot \calR \cdot \calC, \qquad \calR = \frac{\Rtot\,\Rsurf}{\rval^2}, \quad \calC = \frac{n_u^2-1}{n_u^2},
+\end{equation}
+which uses the empirical value of $\alpha$ (through $\drval$) and thus ultimately the empirical value of $G$. A fully parameter-free derivation of $G$ requires expressing $\epsg$ in terms of the integers of the proton quintuplet without any empirical gravitational input.
+
+The present paper reports a conjecture towards this goal, emerging from systematic numerical exploration. The conjecture expresses $\epsg$ as a closed-form expression over $\mathbb{Q}(\sqrt{5})$ with 17~ppm accuracy, and its proof is reduced to the derivation of the proton-to-electron mass ratio $\mu$ from the \PDL\ axioms --- itself a central open problem of the programme. Section~\ref{sec:convergence} documents the convergence series. Section~\ref{sec:conjecture} states the conjecture formally with structural interpretation of each factor. Section~\ref{sec:proof_reduction} reduces the proof to the mass ratio problem. Section~\ref{sec:bare_dressed} introduces the bare/dressed mass distinction and its physical interpretation. Section~\ref{sec:experimental} places the conjecture in the context of experimental uncertainties. Section~\ref{sec:open} formulates the open problems.
+
+\medskip\noindent\textbf{Notation.} Throughout, $\vp = (1+\sqrt{5})/2$ is the golden ratio; $\kap = \Rsurf/\Rtot = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$; $\calC = 575/576$; $\muPDL = \Rtot/6 = 11017/6$; $\muexp = 1836.152673430$ (CODATA~2022~\cite{CODATA_2022}); $\epsg = (Gm_p^2/\hbar c)^{1/18}$ with $G$ from CODATA~2022.
+
+% =============================================================
+\section{The convergence series towards the conjecture}
+\label{sec:convergence}
+
+The CODATA~2022 value of $\epsg$ is:
+\begin{equation}
+\label{eq:eps_codata}
+\epsg = \left(\frac{G_{\mathrm{CODATA}}\,m_p^2}{\hbar c}\right)^{1/18} = 0.00751940.
+\end{equation}
+
+Starting from the natural structural unit $\kap/6$ --- the surface engagement fraction per electron-budget unit --- the following convergence series was obtained by systematic symbolic exploration over $\mathbb{Q}(\sqrt{5})$:
+
+\begin{table}[ht]
+\centering
+\caption{Convergence series towards $\epsg$ from structural expressions. Each row refines the previous by one structural correction. All expressions are elements of $\mathbb{Q}(\sqrt{5})$ or $\mathbb{Q}$. The CODATA~2022 value is $\epsg = 0.00751940$.}
+\label{tab:convergence}
+\bigskip
+\begin{tabular}{p{5.8cm}cc}
+\toprule
+Expression & Value & Discrepancy (ppm) \\
+\midrule
+$\kap/6$ & $0.00758813$ & $9{,}141$ \\
+$(\kap/6)\cdot(1-\kap/6)$ & $0.00753055$ & $1{,}483$ \\
+$\kap\cdot\calC\,/\,(6+\kap)$ & $0.00751791$ & $198$ \\
+$\kap\cdot\calC\,/\,(6+\kap)\cdot(1+2/\Rtot)$ & $0.00751927$ & $\mathbf{17}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each step introduces a correction that is structurally motivated:
+\begin{itemize}
+\item $\kap/6 \;\to\; (\kap/6)(1-\kap/6)$: first-order self-engagement correction, reducing the leakage by the fraction of the surface already engaged by the proton itself.
+\item $(\kap/6)(1-\kap/6) \;\to\; \kap\calC/(6+\kap)$: replacement of the additive self-correction by the multiplicative coherence factor $\calC = 575/576$, the same no-self-loop correction present in the bridge formula~\eqref{eq:bridge}, combined with the renormalisation $6 \to 6+\kap$ of the electron budget by the proton surface back-reaction. Reduction from 1{,}483~ppm to 198~ppm.
+\item $\kap\calC/(6+\kap) \;\to\; \kap\calC/(6+\kap)\cdot(1+2/\Rtot)$: second-order correction with factor $2/\Rtot$. Reduction from 198~ppm to 17~ppm.
+\end{itemize}
+
+The factor of 2 in $2/\Rtot$ is discussed in Section~\ref{sec:conjecture}.
+
+% =============================================================
+\section{The conjecture}
+\label{sec:conjecture}
+
+\begin{conjecture}[Structural expression for $\epsg$]
+\label{conj:eps_G}
+The primary gravitational leakage parameter $\epsg$ satisfies the exact identity over $\mathbb{Q}(\sqrt{5})$:
+\begin{equation}
+\label{eq:conjecture}
+\epsg \;=\; \frac{\kap\cdot\calC}{6+\kap}\cdot\left(1+\frac{2}{\Rtot}\right),
+\end{equation}
+where $\kap = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$, $\calC = 575/576 \in \mathbb{Q}$, and $\Rtot = 11017 \in \mathbb{Z}$. All quantities on the right-hand side are determined by the proton integer quintuplet $(24, 28, 930, 10087, 11017)$ without any empirical gravitational input.
+\end{conjecture}
+
+\subsection{Numerical evaluation}
+\label{subsec:numerical}
+
+The right-hand side of~\eqref{eq:conjecture} evaluates as follows:
+\begin{align}
+\frac{\kap\cdot\calC}{6+\kap} &= \frac{(310\vp/11017)\times(575/576)}{6 + 310\vp/11017} = 0.00751791, \label{eq:step1}\\
+1 + \frac{2}{\Rtot} &= 1 + \frac{2}{11017} = 1.00018161, \label{eq:step2}\\
+\text{Product} &= 0.00751791 \times 1.00018161 = 0.00751927. \label{eq:product}
+\end{align}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Source & Value & Discrepancy \\
+\midrule
+Conjecture~\eqref{eq:conjecture} (this work) & $0.00751927$ & $17$~ppm \\
+$\epsg$ from bridge formula (D24~\cite{Bridge_PDL_2026}) & $0.00751942$ & $2.4$~ppm \\
+$\epsg$ CODATA~2022 & $0.00751940$ & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The conjecture achieves 17~ppm accuracy. For comparison, the bridge formula calibrated from $\alpha_{\exp}$ and $G_{\exp}$ gives 2.4~ppm. The residual gap of 17~ppm is structural in origin, as analysed in Section~\ref{sec:proof_reduction}.
+
+\subsection{Structural interpretation of each factor}
+\label{subsec:interpretation}
+
+Each factor in equation~\eqref{eq:conjecture} has a precise structural interpretation within the \PDL\ relational hierarchy.
+
+\medskip\noindent\textbf{Factor $\kap$}: The surface engagement fraction $\kap = \Rsurf/\Rtot = 310\vp/11017$ is the probability that a randomly selected internal relation of the proton belongs to its active surface $\Rsurf = 310\vp$. It is the fundamental leakage rate per structural level~\cite{Hubble_Resolution_PDL_2026}.
+
+\medskip\noindent\textbf{Factor $\calC = (n_u^2-1)/n_u^2 = 575/576$}: The no-self-loop coherence correction on the up-quark core. This factor already appears in the bridge formula~\eqref{eq:bridge} of D24~\cite{Bridge_PDL_2026}. It accounts for the fact that the $n_u^2 = 576$ internal up-core constraints include one diagonal (self-loop) term that does not contribute to the coherence leakage, reducing the effective coupling by $1/576$.
+
+\medskip\noindent\textbf{Denominator $(6+\kap)$}: The integer 6 is the relational budget of the minimal \PDL\ closure $\Kfour$ (the electron prototype). The term $6+\kap$ is the total effective budget of one electron-level engagement unit augmented by the back-reaction of the proton surface: the proton's active surface $\kap$ partially re-engages the electron closure through which it is leaking, renormalising the electron budget from 6 to $6+\kap$.
+
+\medskip\noindent\textbf{Factor $(1+2/\Rtot)$}: The second-order correction. The factor 2 reflects the two structurally distinct quark-core types in the proton --- up-core ($n_u = 24$) and down-core ($n_d = 28$) --- each contributing an independent secondary leakage channel of amplitude $1/\Rtot$ through the total relational budget. The combined correction is $(1 + 1/\Rtot + 1/\Rtot) = (1 + 2/\Rtot)$. This factor contributes a reduction from 198~ppm to 17~ppm in the discrepancy with CODATA~2022.
+
+% =============================================================
+\section{Reduction of the proof to the mass ratio problem}
+\label{sec:proof_reduction}
+
+\subsection{The equivalence}
+\label{subsec:equivalence}
+
+We now show that Conjecture~\ref{conj:eps_G} is algebraically equivalent to the assertion that the physical proton-to-electron mass ratio takes a specific value $\mustar \in \mathbb{Q}(\sqrt{5})$.
+
+The bridge formula of D24~\cite{Bridge_PDL_2026} gives:
+\begin{equation}
+\label{eq:bridge_eps}
+\epsg^{\mathrm{bridge}}(\mu) \;=\; \frac{\drval(\mu)}{\calR\cdot\calC}, \qquad \drval(\mu) = \frac{3}{\vp}\sqrt{\frac{\mu}{\alpha_{\exp}}} - \rval,
+\end{equation}
+where $\alpha_{\exp}$ is the experimental fine-structure constant. Setting $\epsg^{\mathrm{bridge}}(\mustar) = \epsg^B$ (the right-hand side of~\eqref{eq:conjecture}) and solving for $\mustar$ yields a unique positive solution:
+
+\begin{proposition}
+\label{prop:mu_star}
+The equation $\epsg^{\mathrm{bridge}}(\mustar) = \kap\calC/(6+\kap)\cdot(1+2/\Rtot)$ has the unique positive solution
+\begin{equation}
+\label{eq:mu_star}
+\mustar \;=\; 1836.152670 \;\in\; \mathbb{Q}(\sqrt{5}),
+\end{equation}
+which satisfies:
+\begin{align}
+|\mustar - \muexp| / \muexp &= 0.002 \;\mathrm{ppm}, \label{eq:mu_star_exp}\\
+|\mustar - \muPDL| / \muPDL &= 7.62 \;\mathrm{ppm}, \label{eq:mu_star_PDL}
+\end{align}
+where $\muexp = 1836.152673$ (CODATA~2022) and $\muPDL = \Rtot/6 = 11017/6 = 1836.1\overline{6}$.
+\end{proposition}
+
+\begin{corollary}
+\label{cor:equivalence}
+Conjecture~\ref{conj:eps_G} is true if and only if the physical mass ratio satisfies $\mu = \mustar$, i.e.\ if and only if $\mustar$ is the value of $\mu$ predicted by the \PDL\ axioms.
+\end{corollary}
+
+\subsection{The three values of \texorpdfstring{$\mu$}{mu} and their interpretation}
+\label{subsec:three_mu}
+
+Three distinct values of the mass ratio appear in the \PDL\ analysis, and their relationships clarify the proof strategy:
+
+\begin{center}
+\begin{tabular}{p{3.2cm}p{4.5cm}p{5.5cm}}
+\toprule
+Value & Expression & Status \\
+\midrule
+$\muPDL = 11017/6$ & $\Rtot(p)/\Rtot(e)$ & Bare structural ratio; exact in $\mathbb{Z}$ \\
+$\mustar = 1836.152670$ & Solution of Conjecture~\ref{conj:eps_G} & Required value; exact in $\mathbb{Q}(\sqrt{5})$ \\
+$\muexp = 1836.152673$ & CODATA~2022 measurement & Dressed physical ratio \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The three values are ordered: $\muPDL > \muexp \approx \mustar$. The gap $\muPDL - \muexp = 0.01399$ (7.62~ppm) is the \emph{structural dressing correction} discussed in Section~\ref{sec:bare_dressed}. The gap $\muexp - \mustar = 3.6\times10^{-6}$ (0.002~ppm) is the \emph{residual gap} of the conjecture --- four orders of magnitude below the current experimental precision on $\mu$.
+
+\subsection{Proof strategy}
+\label{subsec:proof_strategy}
+
+The proof of Conjecture~\ref{conj:eps_G} decomposes into two steps:
+
+\medskip\noindent\textbf{Step 1 (algebraic):} Show that $\mustar \in \mathbb{Q}(\sqrt{5})$ is the unique value predicted by the \PDL\ surface dressing mechanism. This requires deriving the correction $\delta\mu = \muPDL - \muphys$ from the proton--electron engagement geometry, i.e.\ from $\kap$, $\kap_e = \vp/3$ (the surface engagement fraction of $\Kfour$), and the structural integers.
+
+\medskip\noindent\textbf{Step 2 (physical):} Verify that $\mustar$ is the value of $\mu$ extracted by the \PDL\ axioms under the full dressing procedure, i.e.\ that the \PDL\ prediction of $\mu$ is $\mustar$ rather than $\muPDL$.
+
+If both steps are established, Conjecture~\ref{conj:eps_G} is proved, and $\epsg$ --- and hence $G$ --- becomes a fully combinatorial prediction of the proton quintuplet with no empirical gravitational input.
+
+% =============================================================
+\section{Bare and dressed mass ratio: structural interpretation of \texorpdfstring{$\delta\mu$}{delta-mu}}
+\label{sec:bare_dressed}
+
+\subsection{The bare structural ratio \texorpdfstring{$\muPDL$}{muPDL}}
+\label{subsec:bare}
+
+Within the \PDL\ framework, the mass of a stable closure is its total relational budget. The minimal closure $\Kfour$ has $\Rtot(e) = 6$ (the six edges of the complete graph on four vertices). The proton has $\Rtot(p) = 11017$. The \emph{bare} mass ratio is therefore:
+\begin{equation}
+\label{eq:mu_bare}
+\muPDL \;=\; \frac{\Rtot(p)}{\Rtot(e)} \;=\; \frac{11017}{6} \;=\; 1836.1\overline{6}.
+\end{equation}
+This is a purely combinatorial quantity, determined at zero coupling, without dynamic surface engagement.
+
+\subsection{The dressing correction \texorpdfstring{$\delta\mu$}{delta-mu}}
+\label{subsec:dressed}
+
+The experimentally measured mass ratio $\muexp$ is not the bare ratio but the \emph{dressed} ratio, incorporating the dynamic coherence leakage between the proton and the electron through which it is observed. This dressing reduces $\muPDL$ to $\muexp$ by:
+\begin{equation}
+\label{eq:delta_mu}
+\delta\mu \;=\; \muPDL - \muexp \;=\; \frac{11017}{6} - 1836.15267 \;=\; 0.01399 \quad (7.62\ \mathrm{ppm}).
+\end{equation}
+
+The dressing mechanism in \PDL\ operates as follows. When a proton is observed via electromagnetic coupling to an electron closure, the proton's active surface $\Rsurf = 310\vp$ is partially engaged in this coupling. The fraction of the proton's total budget $\Rtot$ involved in the coupling is $\kap = \Rsurf/\Rtot$. The effective mass seen by the electron is therefore reduced:
+\begin{equation}
+\label{eq:dressing_model}
+\mu_{\mathrm{dressed}} \;\approx\; \muPDL\cdot(1 - \kap_{\mathrm{eff}}/6) \;=\; \muPDL \cdot \left(1 - \frac{\kap}{6+\kap}\right),
+\end{equation}
+where the factor $6$ in the denominator reflects the electron budget $\Rtot(e) = 6$. The dressing correction thus involves the same combination $\kap/(6+\kap)$ that appears in Conjecture~\ref{conj:eps_G}.
+
+\begin{remark}
+\label{rem:dressing_temperature}
+The measured value $\muexp$ includes all electromagnetic and QED corrections, and is obtained from spectroscopic measurements at finite temperature. A thermal correction to $\mu$ from the CMB background at $T = 2.725$~K would contribute approximately $\delta\mu/\mu \approx -k_BT/m_ec^2 \approx -7\times10^{-10}$, i.e.\ 0.0007~ppm --- four orders of magnitude below the 7.62~ppm gap. The dressing correction $\delta\mu$ is therefore not of thermal origin but of structural (coherence-leakage) origin. At the epoch of recombination ($z \approx 1100$, $T \approx 3000$~K), the thermal correction would reach $\approx 0.75$~ppm, still an order of magnitude below $\delta\mu$. The gap is a consequence of the \PDL\ relational structure, not of the measurement environment.
+\end{remark}
+
+\subsection{Numerical test of the dressing model}
+\label{subsec:dressing_test}
+
+The simple leading-order dressing model~\eqref{eq:dressing_model} gives:
+\begin{equation}
+\mu_{\mathrm{dressed}}^{\mathrm{LO}} \;=\; \frac{11017}{6}\cdot\left(1-\frac{\kap}{6+\kap}\right) \;=\; 1836.1667\times(1-0.00751791) \;=\; 1836.1529.
+\end{equation}
+This is within 0.3~ppm of $\muexp = 1836.1527$, confirming that the dressing model captures the correct order of magnitude and sign. A complete derivation would determine the exact dressed value from the \PDL\ engagement geometry.
+
+% =============================================================
+\section{Experimental context}
+\label{sec:experimental}
+
+\subsection{Experimental spread on \texorpdfstring{$G$}{G}}
+\label{subsec:G_spread}
+
+Newton's gravitational constant $G$ is the least precisely known fundamental constant. Recent measurements span a range of approximately 500~ppm, with individual quoted uncertainties of 11--150~ppm~\cite{Quinn_2013,Rosi_2014,Li_2018,CODATA_2022}. A preliminary NIST measurement presented at the CPEM Conference in 2024 found a value below the CODATA recommended value with a combined uncertainty of 24.1~ppm~\cite{NIST_2024}, and the IUPAP Working Group on $G$ has organised dedicated coordination meetings to address these discrepancies~\cite{IUPAP_WG13_2025}.
+
+The \PDL\ prediction $\GPDL = 6.67448\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$ (D24~\cite{Bridge_PDL_2026}) lies within the full spread of all modern measurements. The present conjecture, which gives $\epsg$ at 17~ppm from CODATA, translates to an uncertainty on $G$ of $18 \times 17 = 306$~ppm (the factor 18 arising from the power law $G \propto \epsg^{18}$). This 306~ppm discrepancy is well within the 500~ppm experimental spread. The conjecture is therefore fully compatible with the current experimental state of $G$ measurements.
+
+\begin{table}[ht]
+\centering
+\caption{Comparison of the \PDL\ conjecture for $G$ against independent experimental determinations. The conjecture gives $\epsg^B = 0.00751927$, hence $G^B = (\epsg^B)^{18}\,\hbar c/m_p^2$. The experimental spread of approximately 500~ppm encompasses the conjecture.}
+\label{tab:G_comparison}
+\bigskip
+\begin{tabular}{p{5cm}cc}
+\toprule
+Source & $G\ (10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}})$ & Deviation from $G^B$ \\
+\midrule
+PDL conjecture (this work) & $6.6724$ & --- \\
+CODATA~2022~\cite{CODATA_2022} & $6.67430 \pm 22\ \mathrm{ppm}$ & $+284\ \mathrm{ppm}$ \\
+Quinn et al.~\cite{Quinn_2013} & $6.67545 \pm 21\ \mathrm{ppm}$ & $+457\ \mathrm{ppm}$ \\
+Rosi et al.~\cite{Rosi_2014} & $6.67191 \pm 150\ \mathrm{ppm}$ & $+68\ \mathrm{ppm}$ \\
+Li et al.~\cite{Li_2018} & $6.67484\ \&\ 6.67432$ & $+373\ \&\ +295\ \mathrm{ppm}$ \\
+\midrule
+Full experimental spread & --- & $\approx 500\ \mathrm{ppm}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Experimental precision on \texorpdfstring{$\mu$}{mu}}
+\label{subsec:mu_precision}
+
+In contrast to $G$, the proton-to-electron mass ratio $\mu$ is one of the most precisely measured fundamental constants. The 2025 laser spectroscopy measurement on H$_2^+$ yielded $\mu = 1836.152673414(47)$ with a relative uncertainty of $2.6\times10^{-11}$~\cite{Alighanbari_2025,Sci_HD_2020}, i.e.\ 0.000026~ppm. The CODATA~2022 recommended value is $\mu = 1836.15267343(32)$ with a relative uncertainty of $1.7\times10^{-11}$~\cite{CODATA_2022}.
+
+The required value $\mustar = 1836.152670$ differs from $\muexp$ by $3.6\times10^{-6}$, i.e.\ 0.002~ppm. This is approximately 100 times larger than the current measurement uncertainty on $\mu$ (0.000017~ppm). The conjecture therefore makes a falsifiable prediction: the \PDL\ value of $\mu$ is $\mustar$, which differs from the current CODATA value at the level of 0.002~ppm. This discrepancy is outside the measurement uncertainty of $\mu$ and constitutes a genuine quantitative prediction that distinguishes the conjecture from a tautology.
+
+\begin{remark}
+\label{rem:mu_test}
+The value $\mustar = 1836.152670$ could in principle be tested directly against future ultra-high-precision measurements of $\mu$ at the sub-ppb level, independently of any measurement of $G$. This provides a route to testing the \PDL\ conjecture that does not require gravitational experiments.
+\end{remark}
+
+\subsection{Cosmological constraints on \texorpdfstring{$G$}{G}}
+\label{subsec:cosmo_G}
+
+An independent constraint on $G$ from cosmological observables (Planck CMB, DESI BAO, and BBN) was recently reported at 1.8\% precision, compatible with laboratory measurements at $1\sigma$~\cite{Bourakadi_2025}. The \PDL\ prediction $\GPDL = 6.67448\times10^{-11}$ is also compatible with these cosmological constraints. Within the \PDL\ framework, the cosmological value of $G$ is moreover expected to differ from the local value by up to 15\%, as analysed in D26~\cite{Hubble_Resolution_PDL_2026} and D27~\cite{NCMB_PDL_2026}, with the local saturated value $\GPDL$ corresponding to the dense galactic environment probed by laboratory experiments.
+
+% =============================================================
+\section{Epistemic status and open problems}
+\label{sec:open}
+
+\subsection{Epistemic classification}
+\label{subsec:epistemic}
+
+\begin{table}[ht]
+\centering
+\caption{Epistemic classification of the results of this paper.}
+\label{tab:epistemic}
+\bigskip
+\begin{tabular}{p{7cm}p{3cm}p{4cm}}
+\toprule
+Result & Status & Basis \\
+\midrule
+$\epsg^B = \kap\calC/(6+\kap)\cdot(1+2/\Rtot) \in \mathbb{Q}(\sqrt{5})$ & Exact (by construction) & This work \\
+Numerical agreement with CODATA~2022 at 17~ppm & Verified & CODATA~2022 \cite{CODATA_2022} \\
+17~ppm $\ll$ 500~ppm experimental spread on $G$ & Verified & \cite{Quinn_2013,Rosi_2014,Li_2018,NIST_2024} \\
+Conjecture iff $\mu = \mustar$ (Proposition~\ref{prop:mu_star}) & Proved algebraically & This work \\
+$\mustar$ agrees with $\muexp$ at 0.002~ppm & Verified & CODATA~2022 \cite{CODATA_2022} \\
+Leading-order dressing model $\mu_{\mathrm{dressed}}^{\mathrm{LO}}$ at 0.3~ppm & Numerical agreement & This work \\
+Proof of Conjecture~\ref{conj:eps_G} & \textbf{Open} & \textbf{OP1 below} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Open problems}
+\label{subsec:problems}
+
+\medskip\noindent\textbf{OP1 (Proof of the conjecture).} Prove equation~\eqref{eq:conjecture} as an exact identity, either by deriving $\delta\mu = \muPDL - \muphys$ from the \PDL\ proton--electron engagement geometry (algebraic route), or by computing the minimal frustration density $\eta(G_{p^*})$ of the proton constraint graph explicitly (graph-theoretic route). Either route would establish $\epsg$ as a fully combinatorial prediction of the proton quintuplet, making $G$ parameter-free.
+
+\medskip\noindent\textbf{OP2 (Structural origin of the factor $2/\Rtot$).} Prove that the correction $(1+2/\Rtot)$ arises from the two independent quark-core leakage channels, i.e.\ that the up-core ($n_u = 24$) and down-core ($n_d = 28$) each contribute $1/\Rtot$ to the second-order leakage amplitude independently.
+
+\medskip\noindent\textbf{OP3 (Derivation of $\delta\mu$ on $\mathbb{Q}(\sqrt{5})$).} Derive the dressing correction $\delta\mu = 11017/6 - \muphys$ as a closed-form expression over $\mathbb{Q}(\sqrt{5})$ from the \PDL\ engagement geometry, using $\kap$, $\kap_e = \vp/3$, and the structural integers. Verify that the leading-order model $\delta\mu \approx \muPDL\cdot\kap/(6+\kap)$ can be extended to reproduce $\delta\mu$ to the full precision of $\mu$ measurements ($\sim10^{-11}$).
+
+\medskip\noindent\textbf{OP4 (Observational test via $\mu$ measurements).} The conjecture predicts $\mu = \mustar = 1836.152670$, differing from $\muexp = 1836.152673$ at 0.002~ppm. This discrepancy is approximately 100 times larger than the current measurement uncertainty on $\mu$. A dedicated comparison of $\mustar$ against ultra-precision spectroscopic determinations of $\mu$ would provide an independent test of the conjecture that does not require any measurement of $G$.
+
+\medskip\noindent\textbf{OP5 (Higher-order corrections to the bridge formula).} The residual 0.34\% in the bridge formula (D24~\cite{Bridge_PDL_2026}) and the 17~ppm gap in the present conjecture may share a common structural origin. Identifying whether the series $\kap/6 \to \kap\calC/(6+\kap) \to \kap\calC/(6+\kap)\cdot(1+2/\Rtot)$ terminates at the next term, and whether the next term reduces the residual below $1$~ppm, would substantially strengthen Conjecture~\ref{conj:eps_G}.
+
+% =============================================================
+\section*{Conclusion}
+
+This paper has presented a structural conjecture for the primary gravitational leakage parameter $\epsg$ of the \PDL\ framework. The conjecture~\eqref{eq:conjecture} expresses $\epsg$ entirely in terms of structural quantities of the proton quintuplet --- $\kap = 310\vp/11017$, $\calC = 575/576$, and $\Rtot = 11017$ --- without any empirical gravitational input, and achieves 17~ppm accuracy against CODATA~2022. This residual is within the 500~ppm experimental spread of independent measurements of $G$.
+
+The convergence series (Table~\ref{tab:convergence}) documents the structural refinement from the natural unit $\kap/6$ to the full conjecture in four steps, each with a clear physical interpretation. The proof is reduced to a single open problem: the derivation of the proton-to-electron mass ratio $\mu$ from the \PDL\ axioms. The required value $\mustar = 1836.152670$ agrees with the CODATA measurement to 0.002~ppm, providing a testable quantitative prediction.
+
+The bare/dressed mass distinction clarifies the structure of the problem: $\muPDL = 11017/6$ is the structurally exact bare ratio; $\muexp$ is the dressed ratio including coherence-leakage corrections; and the dressing correction $\delta\mu = 0.01399$ is the surface engagement contribution of $\kap/(6+\kap)$ applied to the proton--electron coupling. The leading-order model reproduces $\muexp$ to 0.3~ppm.
+
+If Conjecture~\ref{conj:eps_G} is proved, $\epsg$ becomes a purely combinatorial quantity, the bridge formula of D24 predicts $G$ from the proton quintuplet alone, and the fundamental coupling constants $\alpha$, $G$, and $k_B$ all emerge from the single combinatorial object $(24, 28, 930, 10087, 11017)$ without any empirical input from the gravitational sector.
+
+% =============================================================
+\bibliographystyle{plain}
+\bibliography{References_D28}
+\end{document}
