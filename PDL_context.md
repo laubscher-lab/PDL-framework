@@ -207,7 +207,7 @@ Production: D29 (PDL_D29.tex, References_D29.bib) — ready for Zenodo.
 | Pdl_hubble_resolution.tex | D26 | Full cosmological resolution | **Published Zenodo 10.5281/zenodo.19221310** |
 | Structural Derivation of N_CMB...tex | D27 | N_CMB=40 from neutron gap; param-free Hubble | **Session 10 — Ready for Zenodo** |
 | The PDL--QCD Boundary...tex | D28 | PDL–QCD boundary; δμ factorisation; ε_G conjecture | **Session 10 — Ready for Zenodo** |
-| PDL_D29.tex | D29 | Axiomatic derivation of 155/11017; OP2 resolved | **Session 11 — Ready for Zenodo** |
+| Axiomatic Derivation of the Leading Valence Engagement Amplitude in the PDL Framework.tex | D29 | Axiomatic derivation of 155/11017; OP2 resolved | **Session 11 — Ready for Zenodo** |
 
 ---
 
