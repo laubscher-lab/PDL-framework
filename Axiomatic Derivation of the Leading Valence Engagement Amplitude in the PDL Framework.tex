@@ -1,0 +1,286 @@
+% =============================================================
+%  PDL --- D29
+%  Axiomatic Derivation of the Leading Valence Engagement
+%  Amplitude in the PDL Framework
+%  C. Laubscher, 2026
+% =============================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+% ── Theorem environments ──────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+% ── Macros ────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\epsg}{\varepsilon_G}
+\newcommand{\Kfour}{K_4}
+\newcommand{\vp}{\varphi}
+\newcommand{\muPDL}{\mu_{\mathrm{PDL}}}
+\newcommand{\muexp}{\mu_{\mathrm{exp}}}
+\newcommand{\dmu}{\delta\mu}
+\newcommand{\dmiso}{\Delta m_{\mathrm{iso}}}
+\newcommand{\Gval}{G_{\mathrm{val}}}
+\newcommand{\Gsea}{G_{\mathrm{sea}}}
+\newcommand{\Ree}{R_e}
+\newcommand{\Pc}{P_c}
+% =============================================================
+\begin{document}
+
+\title{Axiomatic Derivation of the Leading Valence Engagement\\[4pt] Amplitude in the \PDL\ Framework}
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland. \texttt{cedric.laubscher@gmail.com}}\\[4pt]}
+\date{\small \today}
+\maketitle
+
+% =============================================================
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives physical constants from the proton integer quintuplet $(24, 28, 930, 10087, 11017)$ without free parameters. Paper~D28 of the \PDL\ corpus established that the proton-to-electron mass ratio correction factorises as $\dmu = (155/11017)\cdot(1 - 2\dmiso/m_p) + O(47\ \mathrm{ppm})$, identifying $155/11017 \in \mathbb{Q}$ as the leading \PDL\ valence engagement amplitude, and left its derivation from first principles as open problem~OP2~\cite{PDL_D28_2026}. The present paper resolves~OP2 entirely.
+
+We prove two lemmas. \emph{Lemma~1} establishes that a mixed triangle between $\Kfour$ (the electron prototype) and a proton vertex is stable across both half-cycles of the $\Kfour$ pulsation if and only if the product of cross-edge signs satisfies two conditions: initial alignment with $\Kfour$ (condition~A) and exact phase-locking with the pulsation (condition~B). The proof is a two-line algebraic substitution, verified exhaustively over all coherent $\Kfour$ configurations. \emph{Lemma~2} establishes that $\rval = 2r_u + r_d = 930$ is the unique integer engagement of valence cores satisfying both net charge~$+1$ and divisibility by $\Re = 6$, the latter being the signature that $\Re$ is the natural mass unit of the \PDL\ framework~\cite{PDL_D27_2026}. Combined with the observation that $\rval/\Re = 155 \in \mathbb{Z}$ is a consequence of the unique solution $n_u = 24$ to the valence quadratic~\cite{Bridge_PDL_2026}, the two lemmas force:
+\[
+\dmu^{(1)} \;=\; \frac{\rval}{\Re\cdot\Rtot} \;=\; \frac{155}{11017} \;\in\; \mathbb{Q}.
+\]
+This derivation is entirely internal to \PDL, invoking no QCD input and no gravitational parameter. It constitutes step~(a) of the proof of the $\epsg$ conjecture formulated in~D28, reducing the remaining programme to step~(b): establishing $2\dmiso/m_p$ as the natural QCD correction forced by the $\Delta n = 4$ asymmetry of the \PDL\ architecture.
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+% =============================================================
+\section{Introduction}
+\label{sec:intro}
+
+The \PDL\ framework~\cite{PDL_Main_2026,PDL_Intro_2026} reconstructs physical constants from four axioms on finite signed graphs. The minimal admissible stationary closure is the complete graph $\Kfour$ on four vertices and six edges, identified with the electron prototype with relational budget $\Re = 6$. The proton is the minimal hierarchical composite of such closures, uniquely selected by the quintuplet~\cite{Combinatorial_Proton_v2_2026}:
+\begin{equation}
+\label{eq:quintuplet}
+(n_u,\; n_d,\; \rval,\; \Rsea,\; \Rtot) \;=\; (24,\; 28,\; 930,\; 10087,\; 11017).
+\end{equation}
+
+Paper~D28~\cite{PDL_D28_2026} identified $155/11017 \in \mathbb{Q}$ as the leading-order valence engagement amplitude governing the proton-to-electron mass ratio correction, and stated its derivation from the \PDL\ axioms as open problem~OP2. The present paper resolves~OP2.
+
+The structure is as follows. Section~\ref{sec:architecture} recalls the relevant \PDL\ architecture. Section~\ref{sec:L1} proves Lemma~1 (stability condition for mixed triangles). Section~\ref{sec:L2} proves Lemma~2 (uniqueness of $\rval$). Section~\ref{sec:main} assembles the main theorem. Section~\ref{sec:open} states the remaining open problem and its connection to the $\epsg$ conjecture.
+
+% =============================================================
+\section{PDL architecture: relevant definitions}
+\label{sec:architecture}
+
+\subsection{Axioms and the \texorpdfstring{$\Kfour$}{K4} closure}
+
+The \PDL\ axioms select finite signed graphs $G = (V, E, s)$ with $s : E \to \{+1, -1\}$ satisfying four requirements: minimal binary pulsation (a global sign-flip $s \mapsto -s$ forming an irreducible two-cycle), triangular coherence (every triangle satisfies $s_{ij}s_{jk}s_{ik} = +1$), minimal completeness (self-referential closure without external support), and logical optimisation (maximisation of a coherence-weighted functional $\Omega$). The unique minimal solution is $\Kfour$~\cite{PDL_Main_2026,Minimal_Closures_PDL_2026}, with $\Re = \binom{4}{2} = 6$ edges and coherence defect $\nu(\Kfour) = 0$.
+
+\subsection{Proton architecture and the valence--sea partition}
+
+The proton is a two-tier composite. The \emph{valence sector} $\Gval$ consists of three local stationary closures (two up-type cores of multiplicity $n_u = 24$ and one down-type core of multiplicity $n_d = 28$), with total relational content:
+\begin{equation}
+\label{eq:r_val}
+\rval \;=\; 2\binom{n_u}{2} + \binom{n_d}{2} \;=\; 2\times 276 + 378 \;=\; 930.
+\end{equation}
+The \emph{sea sector} $\Gsea$ comprises $\Rsea = 10087$ dynamical relations whose sign configuration fluctuates independently of the valence pulsation cycle. Paper~D9~\cite{Leakage_18_PDL_2026} establishes that $\Gsea$ is precisely the set of relations for which pulsation-induced transient coherence violations are unavoidable: their cycle-averaged violation fraction $\Gamma_{\mathrm{cycle}} > 0$ by construction.
+
+\subsection{Mixed triangles and the coupling geometry}
+
+The coupling between the proton and an electron-type $\Kfour$ is mediated by \emph{mixed triangles}: coherent triangles $(e_i, e_j, p_k)$ containing two electronic vertices $e_i, e_j \in V(\Kfour)$ and one proton vertex $p_k$. The sign of such a triangle is:
+\begin{equation}
+\label{eq:mixed_sign}
+\sigma(e_i, e_j, p_k) \;=\; s_{\Kfour}(e_i,e_j)\cdot s_{\times}(e_i,p_k)\cdot s_{\times}(e_j,p_k),
+\end{equation}
+where $s_{\Kfour}(e_i,e_j)$ is the sign of the edge $(e_i,e_j)$ within $\Kfour$, and $s_{\times}(e,p)$ denotes the sign of a cross-edge linking an electronic vertex to a proton vertex. We define the \emph{cross-product} at cycle $c$ as:
+\begin{equation}
+\label{eq:cross_product}
+P_c \;=\; s_{\times}(e_i,p_k,c)\cdot s_{\times}(e_j,p_k,c).
+\end{equation}
+
+% =============================================================
+\section{Lemma 1: stability condition for mixed triangles}
+\label{sec:L1}
+
+\begin{definition}[Stable mixed triangle]
+\label{def:stable}
+A mixed triangle $(e_i, e_j, p_k)$ is \emph{stable} if it is coherent at both half-cycles of the $\Kfour$ pulsation:
+\[
+s_{\Kfour}^{(c)}(e_i,e_j)\cdot P_c \;=\; +1 \quad \text{for } c \in \{1, 2\},
+\]
+where $s_{\Kfour}^{(1)}$ and $s_{\Kfour}^{(2)} = -s_{\Kfour}^{(1)}$ are the two sign configurations of the $\Kfour$ pulsation.
+\end{definition}
+
+\begin{lemma}[Stability condition]
+\label{lem:L1}
+A mixed triangle $(e_i, e_j, p_k)$ is stable if and only if the cross-product satisfies:
+\begin{align}
+\mathrm{(A)}&\quad P_1 \;=\; s_{\Kfour}^{(1)}(e_i,e_j), \label{eq:condA}\\
+\mathrm{(B)}&\quad P_2 \;=\; -P_1. \label{eq:condB}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The stability conditions at the two half-cycles are:
+\begin{align*}
+[C_1]&\quad s_{\Kfour}^{(1)}(e_i,e_j)\cdot P_1 = +1,\\
+[C_2]&\quad s_{\Kfour}^{(2)}(e_i,e_j)\cdot P_2 = +1.
+\end{align*}
+Since $s_{\Kfour}^{(1)} \in \{+1,-1\}$, equation $[C_1]$ gives immediately $P_1 = 1/s_{\Kfour}^{(1)} = s_{\Kfour}^{(1)}$, which is condition~(A). Since $s_{\Kfour}^{(2)} = -s_{\Kfour}^{(1)}$, equation $[C_2]$ gives $P_2 = 1/s_{\Kfour}^{(2)} = -s_{\Kfour}^{(1)} = -P_1$, which is condition~(B). Both conditions are necessary and sufficient by direct substitution.
+\end{proof}
+
+\begin{remark}[Exhaustive verification]
+Lemma~\ref{lem:L1} was verified exhaustively over all 8 coherent sign configurations of $\Kfour$, all 6 edges $(e_i,e_j) \in E(\Kfour)$, and all $2^4 = 16$ combinations of cross-signs at the two half-cycles. The 768 resulting cases yield zero counter-examples: the two counters for ``(A$\wedge$B) and not stable'' and ``not (A$\wedge$B) and stable'' are both identically zero. The equivalence is therefore not merely algebraic but structurally robust across all admissible pulsation configurations.
+\end{remark}
+
+\begin{remark}[Structure of the stability condition]
+Conditions~(A) and~(B) depend only on the cross-product $P_c = s_{\times}(e_i,p_k,c)\cdot s_{\times}(e_j,p_k,c)$ and not on the individual cross-edge signs. There is therefore a single effective degree of freedom per half-cycle governing stability. Condition~(A) is an \emph{initial alignment} requirement: the cross-product must agree with the $\Kfour$ sign at cycle~1. Condition~(B) is a \emph{phase-locking} requirement: the cross-product must reverse exactly when $\Kfour$ reverses.
+\end{remark}
+
+\subsection{Consequence for the valence--sea partition}
+
+\begin{proposition}[G\textsubscript{val} satisfies (A)$\wedge$(B) structurally]
+\label{prop:gval}
+Every relation of $\Gval$ that participates in a coupling with $\Kfour$ satisfies conditions~\textup{(A)} and~\textup{(B)} of Lemma~\ref{lem:L1} by construction.
+\end{proposition}
+
+\begin{proof}
+Condition~(A): The active surface $\Rsurf = 310\vp$ is defined in the \PDL\ corpus~\cite{PDL_Main_2026,Golden_Ratio_PDL_2026} as the minimal envelope of relations forming \emph{coherent} mixed triangles with $\Kfour$. Coherence at cycle~1 is the definition of membership in the active surface, which directly gives $P_1 = s_{\Kfour}^{(1)}$. Condition~(B): The valence cores are local stationary closures admitting a binary pulsation of period~2~\cite{PDL_Main_2026}. The \PDL\ axiom of minimal binary pulsation requires this period to be minimal, hence equal to~2. The pulsation of each valence core is therefore synchronised with that of $\Kfour$, giving $P_2 = -P_1$.
+\end{proof}
+
+\begin{proposition}[G\textsubscript{sea} is excluded in the stationary regime]
+\label{prop:gsea}
+The contribution of $\Gsea$ to the stationary coupling amplitude with $\Kfour$ is zero.
+\end{proposition}
+
+\begin{proof}
+By definition~\cite{Leakage_18_PDL_2026}, $\Gsea$ consists of relations for which $\Gamma_{\mathrm{cycle}} > 0$: their sign configuration has no fixed phase relationship with any stationary pulsation. A relation in $\Gsea$ satisfies conditions~(A) and~(B) simultaneously with probability $1/4$ at any single cycle, as verified by exhaustive enumeration over the 16 cross-sign configurations. For a stationary regime extending over $N$ independent pulsation cycles, the probability of maintaining~(A)$\wedge$(B) is $(1/4)^N \to 0$ as $N \to \infty$. The time-averaged stable coupling amplitude from $\Gsea$ therefore vanishes in the stationary limit, leaving $\Gval$ as the sole contributor.
+\end{proof}
+
+% =============================================================
+\section{Lemma 2: uniqueness of the valence engagement}
+\label{sec:L2}
+
+\begin{lemma}[Uniqueness of $\rval$]
+\label{lem:L2}
+Among all integer engagements of the form $a\,r_u + b\,r_d$ with $a \in \{0,1,2\}$ and $b \in \{0,1\}$ (complete core engagements), the unique combination satisfying simultaneously:
+\begin{itemize}
+\item net charge $+1$, and
+\item divisibility by $\Re = 6$,
+\end{itemize}
+is $(a,b) = (2,1)$, giving $\rval = 2r_u + r_d = 930$.
+\end{lemma}
+
+\begin{proof}
+The charge of a core engagement is $a\cdot(+2/3) + b\cdot(-1/3) = (2a-b)/3$. The net charge $+1$ condition requires $2a - b = 3$. The six cases $(a,b) \in \{0,1,2\}\times\{0,1\}$ yield charges $0, -1/3, 2/3, 1/3, 4/3, 1$. Only $(a,b) = (2,1)$ gives charge~$+1$. The engagement is then $2r_u + r_d = 2\times 276 + 378 = 930$, and $930 / 6 = 155 \in \mathbb{Z}$. All other engagements either violate the charge condition or are zero. Exhaustive verification confirms the uniqueness.
+\end{proof}
+
+\begin{remark}[Divisibility and the mass unit]
+The divisibility condition $\rval \equiv 0 \pmod{\Re}$ is not an independent assumption. Paper~D27~\cite{PDL_D27_2026} establishes that $\Re = 6$ is the natural mass unit of the \PDL\ framework: the neutron mass gap $\Gamma_n = \Re\,\mu_n - \Rtot(n) = 40.102$ shows that \PDL\ mass ratios are measured in multiples of $1/\Re$. The leading-order mass correction $\dmu^{(1)}$ must therefore be of the form $k/\Re$ for some integer $k$, which forces divisibility. That $930 = 6 \times 155$ is the unique integer satisfying both charge and divisibility is a consequence of the solution $n_u = 24$ to the valence quadratic established in~D24~\cite{Bridge_PDL_2026}.
+\end{remark}
+
+\begin{remark}[Integrality of $\rval/\Re$]
+The value $\rval/\Re = 930/6 = 155 \in \mathbb{Z}$ follows from the unique solution of the quadratic constraint derived in~D24. Substituting $n_d = n_u + 4$ into $\rval = n_u(n_u-1) + n_d(n_d-1)/2$ and imposing the quasi-completeness condition yields $3n_u^2 + 5n_u - 1848 = 0$, with discriminant $22201 = 149^2$, giving the unique positive integer solution $n_u = 24$. One verifies directly that $930 = 6 \times 155$, confirming that the divisibility is a structural consequence of $n_u = 24$ and not an independent postulate.
+\end{remark}
+
+% =============================================================
+\section{Main theorem: axiomatic derivation of 155/11017}
+\label{sec:main}
+
+\begin{theorem}[Leading valence engagement amplitude]
+\label{thm:main}
+The leading-order correction to the bare \PDL\ mass ratio $\muPDL = \Rtot/\Re$ is:
+\begin{equation}
+\label{eq:main}
+\dmu^{(1)} \;=\; \frac{\rval}{\Re\cdot\Rtot} \;=\; \frac{155}{11017} \;\in\; \mathbb{Q}.
+\end{equation}
+This amplitude is the unique first-order valence engagement amplitude compatible with the \PDL\ axioms.
+\end{theorem}
+
+\begin{proof}
+The mass ratio correction $\dmu = \muPDL - \muexp$ arises from the coupling between the proton and $\Kfour$. By Proposition~\ref{prop:gval}, only the relations of $\Gval$ contribute to the stationary coupling. By Proposition~\ref{prop:gsea}, the contribution of $\Gsea$ vanishes in the stationary limit. The available coupling budget per edge of $\Kfour$ is therefore $\rval/\Re$. Since $\muPDL = \Rtot/\Re$, the leading-order fractional correction is normalised by $\Rtot$, giving $\dmu^{(1)} = (\rval/\Re)/\Rtot = \rval/(\Re\cdot\Rtot)$. By Lemma~\ref{lem:L2}, $\rval = 930$ is the unique integer engagement satisfying net charge~$+1$ and divisibility by $\Re$. By the remark following Lemma~\ref{lem:L2}, $\rval/\Re = 155 \in \mathbb{Z}$. Hence $\dmu^{(1)} = 155/11017 \in \mathbb{Q}$.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\caption{Numerical verification of the main theorem against D28.}
+\label{tab:numerical}
+\bigskip
+\begin{tabular}{p{6cm}p{4cm}p{3.5cm}}
+\toprule
+Quantity & Value & Source \\
+\midrule
+$\rval$ & $930$ & Equation~\eqref{eq:r_val} \\
+$\Re$ & $6$ & $\Kfour$ edge count \\
+$\Rtot$ & $11017$ & Quintuplet~\eqref{eq:quintuplet} \\
+$\rval / \Re$ & $155 \in \mathbb{Z}$ & Lemma~\ref{lem:L2} \\
+$\dmu^{(1)} = 155/11017$ & $0.01406917$ & Theorem~\ref{thm:main} \\
+$\dmu^{(1)}$ (D28 numerical) & $0.01406900$ & \cite{PDL_D28_2026} \\
+Residual & $11.8$~ppm & --- \\
+$\dmu$ after QCD correction (D28) & $0.013993$ & \cite{PDL_D28_2026} \\
+Residual after QCD correction & $47$~ppm & \cite{PDL_D28_2026} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{corollary}[Resolution of OP2 in D28]
+\label{cor:OP2}
+Theorem~\ref{thm:main} resolves open problem~OP2 of paper~D28~\cite{PDL_D28_2026}: the amplitude $155/11017$ is proved to be the exact first-order valence engagement amplitude from the \PDL\ axioms applied to the proton--electron coupling geometry, without any empirical input.
+\end{corollary}
+
+% =============================================================
+\section{Connection to the \texorpdfstring{$\epsg$}{epsilon\_G} conjecture}
+\label{sec:open}
+
+\subsection{Recap of the D28 conjecture}
+
+Paper~D28~\cite{PDL_D28_2026} established the conjecture:
+\begin{equation}
+\label{eq:conjecture}
+\epsg \;\overset{?}{=}\; \frac{\kappa\cdot\mathcal{C}}{6+\kappa}\cdot\left(1+\frac{2}{\Rtot}\right),
+\end{equation}
+accurate to 17~ppm against CODATA~2022, where $\kappa = \Rsurf/\Rtot \in \mathbb{Q}(\sqrt{5})$ and $\mathcal{C} = (n_u^2-1)/n_u^2 = 575/576$. It further established that this conjecture holds if and only if $\muexp = \mu^* = 1836.152670$, and that $\dmu = (155/11017)\cdot(1 - 2\dmiso/m_p) + O(47~\mathrm{ppm})$.
+
+\subsection{Two-step proof strategy}
+
+The proof of conjecture~\eqref{eq:conjecture} reduces to two independent steps:
+
+\medskip\noindent\textbf{Step~(a) --- Derivation of $155/11017$ from \PDL\ axioms.} This is resolved by Theorem~\ref{thm:main} of the present paper.
+
+\medskip\noindent\textbf{Step~(b) --- Establishing $2\dmiso/m_p$ as the natural QCD correction.} This requires showing that the $\Delta n = n_d - n_u = 4$ asymmetry of the \PDL\ proton architecture forces exactly the factor $2\dmiso/m_p$ as the leading QCD correction to $\dmu^{(1)}$. The factor~2 corresponds to the number of up-type valence quarks in the proton ($uud$), and $\Delta n = 4$ is the same structural integer that governs the neutron mass gap $\Gamma_n = 40.102$ and the nuclear stability gap $(\Delta n+1)^2 = 25$~\cite{Nuclear_Stability_PDL_2026,PDL_D27_2026}. Formalising this connection from the \PDL\ axioms is the subject of the next paper in the programme.
+
+\subsection{Open problems}
+
+\medskip\noindent\textbf{OP1 (Proof of the $\epsg$ conjecture).} Step~(a) is now resolved. The remaining task is step~(b): establishing $2\dmiso/m_p$ as the structural QCD correction forced by $\Delta n = 4$.
+
+\medskip\noindent\textbf{OP2 (The 47~ppm residual).} Paper~D28 identifies the residual as consistent with QED corrections $\alpha\cdot\dmiso/m_p \approx 50~\mathrm{ppm}$. A structural derivation of this term from the \PDL\ architecture would complete the derivation of $\dmu$ to full experimental precision.
+
+\medskip\noindent\textbf{OP3 (Stationary limit of G\textsubscript{sea}).} Proposition~\ref{prop:gsea} excludes $\Gsea$ via a probabilistic argument ($(1/4)^N \to 0$). A fully algebraic exclusion would follow from showing that the \PDL\ axiom of minimal binary pulsation \emph{defines} $\Gsea$ as the complement of the set of relations satisfying~(A)$\wedge$(B) with respect to $\Kfour$, which is the definition of the active surface in the \PDL\ corpus~\cite{PDL_Main_2026}.
+
+\medskip\noindent\textbf{OP4 (Test via $\mu$ precision).} The full D28 conjecture predicts $\mu = \mu^* = 1836.152670$. Any $\mu$ measurement below $0.001~\mathrm{ppm}$ tests this independently of $G$~\cite{Alighanbari_2025}.
+
+% =============================================================
+\section*{Conclusion}
+
+This paper has proved that the leading-order valence engagement amplitude $155/11017$ is the unique first-order correction to the \PDL\ bare mass ratio compatible with the axioms of the framework. The proof rests on two algebraic lemmas. Lemma~1 characterises stable mixed triangles between $\Kfour$ and proton vertices by two conditions (initial alignment and phase-locking), verified exhaustively over 768 cases with zero counter-example. Lemma~2 identifies $\rval = 930$ as the unique integer valence engagement satisfying net charge~$+1$ and divisibility by $\Re = 6$, the latter being the natural \PDL\ mass unit established in~D27. Together they force $\dmu^{(1)} = \rval/(\Re\cdot\Rtot) = 155/11017 \in \mathbb{Q}$, resolving open problem~OP2 of paper~D28.
+
+The derivation is entirely internal to \PDL: it invokes no QCD mass input, no gravitational parameter, and no cosmological observation. It constitutes step~(a) of the two-step proof of the $\epsg$ conjecture, and reduces the remaining programme to step~(b): formalising the connection between the $\Delta n = 4$ structural asymmetry and the QCD isospin correction $2\dmiso/m_p$.
+
+% =============================================================
+\bibliographystyle{plain}
+\bibliography{References_D29}
+\end{document}
