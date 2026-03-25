@@ -169,8 +169,8 @@ Leading-order dressing model: μ_dressed ≈ μ_PDL·(1−κ/(6+κ)) = 1836.1529
 | A_Parameter_Free_Bridge.tex | D24 | Bridge α–G, parameter-free | **Published Zenodo 10.5281/zenodo.19219858** |
 | Closure_Density_Dependence.tex | D25 | Hubble tension from closure density | **Published Zenodo 10.5281/zenodo.19206960** |
 | Pdl_hubble_resolution.tex | D26 | Full cosmological resolution | **Published Zenodo 10.5281/zenodo.19221310** |
-| PDL_D27.tex | D27 | N_CMB=40 from neutron gap; param-free Hubble | **Session 10 — Ready for Zenodo** |
-| PDL_D28.tex | D28 | PDL–QCD boundary; δμ factorisation; ε_G conjecture | **Session 10 — Ready for Zenodo** |
+| Structural Derivation of N_CMB from the PDL Neutron Architecture and Parameter-Free Resolution of the Hubble Tension.tex | D27 | N_CMB=40 from neutron gap; param-free Hubble | **Session 10 — Ready for Zenodo** |
+| The PDL--QCD Boundary_ Structural Derivation of the Proton--Electron Mass Ratio Correction and a Parameter-Free Conjecture for Newton's Constant.tex | D28 | PDL–QCD boundary; δμ factorisation; ε_G conjecture | **Session 10 — Ready for Zenodo** |
 
 ---
 
