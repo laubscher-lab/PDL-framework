@@ -1,0 +1,447 @@
+% ================================================================
+%  PDL --- D33
+%  Dirac Equation from the SL(2,C) Pulsation of K_4 in the PDL Framework
+%  C. Laubscher, 2026
+% ================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+% ── Theorem environments ──────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+% ── Macros ────────────────────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\hb}{\hbar}
+\newcommand{\Ree}{R_e}
+\newcommand{\vp}{\varphi}
+\newcommand{\aPDL}{\alpha_{\PDL}}
+\newcommand{\mePDL}{m_e^{\PDL}}
+\newcommand{\Hcycl}{\mathcal{H}_{\mathrm{cycl}}}
+\newcommand{\Hspin}{\mathcal{H}_{\mathrm{spin}}}
+\newcommand{\HDirac}{\mathcal{H}_{\mathrm{Dirac}}}
+\newcommand{\cplu}{|c_+\rangle}
+\newcommand{\cmin}{|c_-\rangle}
+\newcommand{\Kfour}{K_4}
+
+% ================================================================
+\begin{document}
+
+\title{Dirac Equation from the $\mathrm{SL}(2,\mathbb{C})$ Pulsation of $K_4$ in the \PDL\ Framework}
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland. \texttt{cedric.laubscher@gmail.com}}}
+\date{\small \today}
+\maketitle
+
+% ================================================================
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives physical constants and dynamical laws from four axioms on finite signed graphs. Paper~D32 of the corpus established that the non-relativistic Schr\"odinger equation for an electron in the Coulomb field of a \PDL\ proton follows from the $(A)\wedge(B)$ stability criterion of D29 and the Compton pulsation of $\Kfour$, without free parameter. The transition coefficient $b = -i\hb\Delta t/(2\mePDL(\Delta x)^2)$ was derived from the phase inversion $P_2 = -P_1$ imposed by condition~(B). The present paper derives the relativistic extension: the Dirac equation for a \PDL\ electron follows from the same condition~(B), via an algebraic chain that requires no additional postulate.
+
+Four results are established. \emph{Lemma~1} identifies the half-cycle transition operator $T$ on the two-dimensional pulsation space $\Hcycl \cong \mathbb{C}^2$ from two conditions that are direct translations of the \PDL\ pulsation axiom and condition~(B) respectively. \emph{Theorem~1} proves algebraically that $T^2 = -I_2$, with the corollary that the \PDL\ pulsation has period~4 in $\Hcycl$ (four half-cycles per complete cycle in the complex amplitude representation), establishing the spin-$\tfrac{1}{2}$ structure of $\Kfour$ as a theorem rather than a postulate. \emph{Theorem~2} (uniqueness) shows that $T = -i\tau_2$ is the \emph{unique} $2\times2$ operator satisfying the four \PDL\ pulsation constraints; in particular, $\tau_1$ is excluded by the algebraic condition $\tau_1^2 = +I_2 \neq -I_2$. \emph{Theorem~3} proves that the Clifford algebra $\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu}I_4$ for the \PDL-motivated matrices $\gamma^0 = \tau_3 \otimes I_2$ and $\gamma^i = i\tau_2 \otimes \sigma_i$ is a theorem of the \PDL\ pulsation axioms, with numerical residual $0.00\times10^0$. The non-relativistic limit reproduces exactly the Schr\"odinger--\PDL\ equation of D32. No free parameter enters at any stage.
+
+The document is self-contained with respect to its sole external dependency: a compact verification table for condition~(B) is included (Table~\ref{tab:condB}), allowing the reader to verify the key ingredient independently without access to D29.
+\end{abstract}
+
+% ================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The \PDL\ programme reconstructs fundamental physics from four axioms on finite signed graphs~\cite{PDL_Main_2026,PDL_Intro_2026}. The proton is characterised by the unique integer quintuplet $(n_u, n_d, \rval, \Rsea, \Rtot) = (24, 28, 930, 10087, 11017)$, from which the fine-structure constant $\aPDL^{-1} = \vp^2 \rval^2/(9\mu) = 137.022$ (where $\mu = \Rtot/\Ree = 11017/6$) and the gravitational constant $G_{\PDL}$ are derived without free parameter~\cite{Combinatorial_Proton_v2_2026,Bridge_PDL_2026,Effective_Sigma_PDL_2026}.
+
+Paper~D29 established that a mixed triangle $(e_i, e_j, p_k)$, coupling two electronic vertices of $\Kfour$ to one proton vertex, is stable across both half-cycles of the $\Kfour$ pulsation if and only if two conditions hold~\cite{PDL_D29_2026}: condition~(A) requires initial alignment of the cross-product $P_1$ with the $\Kfour$ edge sign $s^{(1)}(e_i, e_j)$; condition~(B) imposes the exact phase inversion $P_2 = -P_1$. This was verified exhaustively over 768 cases with zero counter-example.
+
+Paper~D32 derived the non-relativistic Schr\"odinger equation from condition~(B) and the Compton pulsation of $\Kfour$~\cite{PDL_D32_2026}. The key advance was the identification that condition~(B) forces a $\pi$ phase shift between the two half-cycles of every stable mixed triangle; the coherent sum over one pulsation cycle then fixes $b = -i\hb\Delta t/(2\mePDL(\Delta x)^2)$ without free parameter. Open problem~OP4 of D32 identified the relativistic extension --- the Dirac equation from the full $\mathrm{SL}(2,\mathbb{C})$ structure of the Compton pulsation --- as the next target.
+
+The present paper resolves~OP4. The $\Kfour$ pulsation between $s^{(1)}$ and $s^{(2)} = -s^{(1)}$ defines, upon representation in $\Hcycl \cong \mathbb{C}^2$, a half-cycle operator $T$ whose algebraic properties are entirely determined by condition~(B). We prove that $T^2 = -I_2$ is a theorem, that $T = -i\tau_2$ is uniquely forced among all $2\times2$ matrices satisfying the \PDL\ constraints, and that the Clifford algebra then follows without additional input. The factorisation $\HDirac \cong \Hcycl \otimes \Hspin$ yields a \PDL-motivated Dirac equation whose non-relativistic limit is exactly D32.
+
+Section~\ref{sec:prereq} recalls the \PDL\ prerequisites, including a self-contained verification table for condition~(B). Section~\ref{sec:T} derives $T$ with an explicit remark on the physical origin of the sign in condition~$(T\textrm{-}b)$. Sections~\ref{sec:T2} through~\ref{sec:dirac} establish Theorems~1--3. Section~\ref{sec:NR} derives the non-relativistic limit. Sections~\ref{sec:numerics} and~\ref{sec:open} present numerical checks and open problems.
+
+% ================================================================
+\section{\PDL\ prerequisites}
+\label{sec:prereq}
+
+\subsection{The \texorpdfstring{$K_4$}{K4} closure and its pulsation}
+
+$\Kfour$ is the complete signed graph on four vertices $\{0,1,2,3\}$ and six edges $E(\Kfour) = \{\{i,j\} : i < j\}$. A sign assignment $s^{(1)} : E(\Kfour) \to \{+1,-1\}$ satisfying triangular coherence ($s^{(1)}_{ij} s^{(1)}_{jk} s^{(1)}_{ik} = +1$ for every triangle) exists and is unique up to the global flip. The \emph{binary pulsation} alternates between $s^{(1)}$ and $s^{(2)} = -s^{(1)}$; both configurations are triangularly coherent, and the two-step cycle is an irreducible internal clock with angular frequency $\omega_c = \mePDL c^2/\hb$~\cite{PDL_Main_2026}. There are exactly 8 coherent sign configurations of $\Kfour$, forming 4 pulsation pairs $\{s^{(1)}, s^{(2)}\} = \{s, -s\}$.
+
+\subsection{Condition~(B) and its self-contained verification}
+\label{subsec:condB}
+
+A mixed triangle $(e_i, e_j, p_k)$, with $e_i, e_j \in V(\Kfour)$ and $p_k$ a proton vertex, is \emph{stable} across both half-cycles if and only if the cross-product $P_c = s_\times(e_i, p_k, c)\cdot s_\times(e_j, p_k, c)$ at half-cycle $c \in \{1,2\}$ satisfies~\cite{PDL_D29_2026}:
+\begin{align}
+\mathrm{(A)} &\quad P_1 = s^{(1)}(e_i, e_j), \label{eq:condA} \\
+\mathrm{(B)} &\quad P_2 = -P_1. \label{eq:condB}
+\end{align}
+
+Table~\ref{tab:condB} provides a self-contained verification of the logical equivalence $(A)\wedge(B) \Leftrightarrow \text{stable}$ for all four sign combinations $(P_1, P_2) \in \{+1,-1\}^2$, together with the counts from the 768 exhaustive cases of D29. A reader without access to D29 can verify the sole external dependency of this paper directly from this table.
+
+\begin{table}[ht]
+\centering
+\caption{Self-contained verification of the stability criterion for mixed triangles in the \PDL\ framework. The sign $s^{(1)}(e_i, e_j)$ is fixed at $+1$ without loss of generality (the case $-1$ is equivalent by global sign flip). Counts are summed over all 8 coherent $\Kfour$ configurations, all 6 edges, and all $2^4 = 16$ cross-sign combinations (768 cases total; 192 stable; 0 counter-examples to the equivalence).}
+\label{tab:condB}
+\begin{tabular}{cccccr}
+\toprule
+$P_1$ & $P_2$ & (A): $P_1 = s^{(1)}$ & (B): $P_2 = -P_1$ & $(A)\wedge(B)$ & Stable \\
+\midrule
+$+1$ & $+1$ & $\checkmark$ & $\times$ & $\times$ & No \\
+$+1$ & $-1$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Yes \\
+$-1$ & $+1$ & $\times$ & $\checkmark$ & $\times$ & No \\
+$-1$ & $-1$ & $\times$ & $\times$ & $\times$ & No \\
+\bottomrule
+\multicolumn{6}{l}{\small $P_2/P_1 = -1$ in all 192 stable cases. $(A)\wedge(B) \Leftrightarrow$ stable: 768/768, 0 counter-examples.}
+\end{tabular}
+\end{table}
+
+The sole relevant output of condition~(B) for the present paper is the ratio $P_2/P_1 = -1$, verified in all 192 stable cases. This is the quantity that constrains the half-cycle operator $T$ in Section~\ref{sec:T}.
+
+\subsection{The Dirac spinor factorisation}
+\label{subsec:factorisation}
+
+The \PDL\ Dirac spinor space is factorised as~\cite{Einstein_Dirac_PDL_2026}:
+\begin{equation}
+\HDirac \;\cong\; \Hcycl \otimes \Hspin, \label{eq:factorisation}
+\end{equation}
+where $\Hcycl \cong \mathbb{C}^2$ encodes the two half-cycles of the $\Kfour$ pulsation (positive and negative energy branches), and $\Hspin \cong \mathbb{C}^2$ encodes the spin-$\tfrac{1}{2}$ doublet of the $(4,6)$ block. The spin-$\tfrac{1}{2}$ structure of $\Hspin$ follows from the two logically stationary motifs of the $(4,6)$ closure, related by a discrete symmetry; Born's rule on $\Hspin$ is derived in~\cite{Born_PDL_2026,Gleason_PDL_2026}. The present paper derives the operator structure of $\Hcycl$ from the \PDL\ pulsation axioms; the structure of $\Hspin$ is used only in the tensor product definition of $\gamma^i$ (Section~\ref{sec:dirac}).
+
+% ================================================================
+\section{The half-cycle operator \texorpdfstring{$T$}{T}}
+\label{sec:T}
+
+\subsection{Representation in \texorpdfstring{$\Hcycl$}{Hcycl})}
+
+We represent the two pulsation states in an orthonormal basis of $\Hcycl$:
+\begin{equation}
+s^{(1)} \;\longleftrightarrow\; \cplu = \begin{pmatrix}1\\0\end{pmatrix}, \qquad s^{(2)} = -s^{(1)} \;\longleftrightarrow\; \cmin = \begin{pmatrix}0\\1\end{pmatrix}.
+\label{eq:basis}
+\end{equation}
+The half-cycle operator $T : \Hcycl \to \Hcycl$ advances the system by one half-cycle.
+
+\begin{definition}[Half-cycle operator]
+\label{def:T}
+The operator $T$ is defined by two conditions translating the \PDL\ pulsation axiom and condition~(B) into $\Hcycl$:
+\begin{align}
+(T\textrm{-}a)& \quad T\cplu = \cmin, \label{eq:Ta} \\
+(T\textrm{-}b)& \quad T\cmin = -\cplu. \label{eq:Tb}
+\end{align}
+\end{definition}
+
+Condition~$(T\textrm{-}a)$ expresses the forward step $s^{(1)} \to s^{(2)}$. Condition~$(T\textrm{-}b)$ expresses the return step $s^{(2)} \to s^{(1)}$ with the sign inversion discussed in Remark~\ref{rem:sign_origin} below.
+
+\begin{remark}[Physical origin of the sign in condition~$(T\textrm{-}b)$]
+\label{rem:sign_origin}
+The sign $-1$ in condition~$(T\textrm{-}b)$ is not a convention. It is forced by the structure of the \PDL\ pulsation combined with condition~(B), as follows.
+
+Consider the two-step cycle $s^{(1)} \to s^{(2)} \to s^{(1)}$ at the level of sign configurations. The return step $s^{(2)} \to s^{(1)}$ appears, classically, to simply restore the initial state. However, $s^{(2)} = -s^{(1)}$: the second configuration carries a global factor $-1$ relative to the first. When this factor is represented in $\Hcycl$, the return step cannot map $\cmin$ to $+\cplu$ without discarding the phase information accumulated during the forward step. The requirement that $T$ \emph{preserves} this phase information --- which is the content of unitarity, condition~(ii) of Theorem~\ref{thm:uniqueness} --- forces $T\cmin = -\cplu$.
+
+Equivalently, Table~\ref{tab:condB} shows that $P_2/P_1 = -1$ in all stable cases. In the amplitude representation, this ratio is the phase factor acquired over one half-cycle. The product over a full cycle $(P_2/P_1)\cdot(P_1/P_2) = (-1)\cdot(-1) = +1$ confirms that the sign configuration returns to $s^{(1)}$ after two steps, while the amplitude acquires a factor $T^2\cplu = -\cplu$ (proved in Theorem~\ref{thm:T2}). This accumulated factor $-1$ is the \PDL\ origin of the spin-$\tfrac{1}{2}$ double-cover: the sign configuration is period-2, but the complex amplitude is period-4.
+\end{remark}
+
+\begin{lemma}[Explicit form of $T$]
+\label{lem:T_explicit}
+The unique matrix on $\mathbb{C}^2$ satisfying Definition~\ref{def:T} is:
+\begin{equation}
+T = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = -i\tau_2,
+\label{eq:T_matrix}
+\end{equation}
+where $\tau_2 = \bigl(\begin{smallmatrix}0 & -i \\ i & 0\end{smallmatrix}\bigr)$.
+\end{lemma}
+
+\begin{proof}
+Conditions~$(T\textrm{-}a)$ and~$(T\textrm{-}b)$ fix all four entries of $T$: the first column is $T\cplu = \cmin = (0,1)^T$ and the second column is $T\cmin = -\cplu = (-1,0)^T$. Hence $T = \bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr) = -i\tau_2$.
+\end{proof}
+
+% ================================================================
+\section{\texorpdfstring{$T^2 = -I_2$}{T2 = -I2} and the period-4 corollary}
+\label{sec:T2}
+
+\begin{theorem}[$T^2 = -I_2$]
+\label{thm:T2}
+The half-cycle operator $T$ defined by conditions~$(T\textrm{-}a)$ and~$(T\textrm{-}b)$ satisfies $T^2 = -I_2$.
+\end{theorem}
+
+\begin{proof}
+We evaluate $T^2$ on both basis vectors:
+\begin{align*}
+T^2\cplu &= T(T\cplu) \stackrel{(T\text{-}a)}{=} T\cmin \stackrel{(T\text{-}b)}{=} -\cplu, \\
+T^2\cmin &= T(T\cmin) \stackrel{(T\text{-}b)}{=} T(-\cplu) = -T\cplu \stackrel{(T\text{-}a)}{=} -\cmin.
+\end{align*}
+Since $T^2$ acts as $-I_2$ on every basis vector of $\Hcycl$, we conclude $T^2 = -I_2$.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:T2} uses only the \PDL\ pulsation axiom ($s^{(2)} = -s^{(1)}$, encoded in~$(T\textrm{-}a)$) and condition~(B) (encoded in~$(T\textrm{-}b)$). No Clifford algebra, no spinor formalism, and no relativistic postulate is invoked.
+\end{remark}
+
+\begin{corollary}[Period-4 pulsation and spin-$\tfrac{1}{2}$ structure]
+\label{cor:period4}
+The \PDL\ pulsation has period~4 in $\Hcycl$: $T^4 = I_2$. A complete return to the initial complex amplitude requires four half-cycles, not two.
+\end{corollary}
+
+\begin{proof}
+$T^4 = (T^2)^2 = (-I_2)^2 = +I_2$.
+\end{proof}
+
+\begin{remark}[Sign configurations versus complex amplitudes]
+\label{rem:period_distinction}
+The \PDL\ pulsation is period-2 at the level of sign configurations: $s^{(1)} \to s^{(2)} \to s^{(1)}$. The period-4 structure of Corollary~\ref{cor:period4} is a property of the complex amplitude representation in $\Hcycl$. After two half-cycles, the sign configuration returns to $s^{(1)}$, but the amplitude has acquired a factor $T^2 = -I_2$: only after four half-cycles does $T^4 = +I_2$ restore the full state. This is the defining algebraic property of a spin-$\tfrac{1}{2}$ rotor, here derived from the \PDL\ axioms rather than postulated. The standard statement that ``a spinor requires a rotation of $4\pi$ to return to itself'' has here a precise combinatorial meaning: four half-cycles of the $\Kfour$ binary pulsation.
+\end{remark}
+
+% ================================================================
+\section{Uniqueness of \texorpdfstring{$T = -i\tau_2$}{T = -i tau2}}
+\label{sec:uniqueness}
+
+\begin{theorem}[Uniqueness of $T$]
+\label{thm:uniqueness}
+Among all operators $O$ on $\mathbb{C}^2$, the unique one satisfying simultaneously:
+\begin{enumerate}[label=(\roman*)]
+\item $O^2 = -I_2$,
+\item $O^\dagger O = I_2$ (unitarity, from preservation of coherence),
+\item $O^\dagger = -O$ (anti-Hermiticity, from time-reversal anti-symmetry),
+\item $O\cplu = \cmin$ (forward half-cycle, condition~$(T\textrm{-}a)$),
+\end{enumerate}
+is $O = -i\tau_2$.
+\end{theorem}
+
+\begin{proof}
+Conditions~(ii) and~(iii) require $O \in i\,\mathfrak{su}(2)$, i.e.\ $O = i(n_0 I_2 + n_1\tau_1 + n_2\tau_2 + n_3\tau_3)$ for $n_\mu \in \mathbb{R}$ with $n_0^2 + |\mathbf{n}|^2 = 1$. Condition~(i) gives $O^2 = -(n_0^2 + |\mathbf{n}|^2)I_2 - 2in_0(\mathbf{n}\cdot\boldsymbol{\tau}) = -I_2$, so the off-diagonal term requires $n_0 = 0$, leaving $|\mathbf{n}| = 1$. Thus $O = i(n_1\tau_1 + n_2\tau_2 + n_3\tau_3)$. Condition~(iv) reads $O\cplu = \cmin$: evaluating gives $i(n_3,\, n_1 + in_2)^T = (0,1)^T$, which yields $n_3 = 0$ and $i(n_1 + in_2) = 1$, hence $n_1 = 0$ and $n_2 = -1$ (with $|\mathbf{n}|=1$ confirmed). The unique solution is $O = -i\tau_2$.
+\end{proof}
+
+Table~\ref{tab:candidates} verifies this exhaustively for all eight canonical candidates in $\{I_2, \tau_1, \tau_2, \tau_3\} \times \{1, i\}$.
+
+\begin{table}[ht]
+\centering
+\caption{Exhaustive check of the four \PDL\ conditions for all canonical candidates. Only $-i\tau_2$ satisfies all four simultaneously. The exclusion of $\tau_1$ via $\tau_1^2 = +I_2 \neq -I_2$ is an algebraic result independent of any convention.}
+\label{tab:candidates}
+\begin{tabular}{lcccc}
+\toprule
+Operator $O$ & $O^2 = -I_2$ & $O^\dagger O = I_2$ & $O^\dagger = -O$ & $O\cplu = \cmin$ \\
+\midrule
+$\tau_1$ & $\times$ \;($\tau_1^2 = +I_2$) & $\checkmark$ & $\times$ & $\checkmark$ \\
+$i\tau_1$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ \\
+$\tau_2$ & $\times$ & $\checkmark$ & $\times$ & $\times$ \\
+$i\tau_2$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ \\
+$-i\tau_2$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+$\tau_3$ & $\times$ & $\checkmark$ & $\times$ & $\times$ \\
+$i\tau_3$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ \\
+$iI_2$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Why $\tau_1$ is excluded]
+The operator $\tau_1 = \bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$ maps $\cplu \mapsto \cmin$ correctly (condition~(iv) satisfied), but $\tau_1^2 = I_2 \neq -I_2$. It describes a period-2 oscillation in $\mathbb{C}^2$ --- a classical bit-flip --- not the period-4 pulsation demanded by the \PDL\ axioms. The failure $\tau_1^2 = +I_2$ is algebraic and cannot be remedied by any choice of convention or phase. The \PDL\ pulsation is not a classical oscillator, and $\tau_1$ is excluded by the axioms themselves.
+\end{remark}
+
+% ================================================================
+\section{Dirac matrices and the Clifford algebra as a theorem}
+\label{sec:dirac}
+
+\subsection{Construction of the \PDL\ Dirac matrices}
+
+\begin{definition}[\PDL\ Dirac matrices]
+\label{def:gamma}
+Using the factorisation $\HDirac \cong \Hcycl \otimes \Hspin$ with $T = -i\tau_2$ from Theorem~\ref{thm:uniqueness}, the \PDL\ Dirac matrices are:
+\begin{equation}
+\gamma^0 = \tau_3 \otimes I_2, \qquad \gamma^i = i\tau_2 \otimes \sigma_i \quad (i = 1,2,3),
+\label{eq:gamma_PDL}
+\end{equation}
+where $\sigma_i$ are the Pauli matrices acting on $\Hspin$. Note that $\gamma^i = (-T) \otimes \sigma_i$: the spatial Dirac matrices are built from the \PDL\ half-cycle operator $T$, with sign fixed by the Minkowski convention $\eta^{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$.
+\end{definition}
+
+\begin{remark}[Why $\gamma^0 = \tau_3 \otimes I_2$]
+The temporal matrix $\gamma^0$ uses $\tau_3$ rather than $T = -i\tau_2$. This is forced by the requirement $\{\gamma^0, \gamma^i\} = 0$ (Case~3 of Theorem~\ref{thm:clifford}), which holds because $\tau_3$ and $\tau_2$ anti-commute for distinct Pauli indices. The operator $\tau_3 = \bigl(\begin{smallmatrix}+1&0\\0&-1\end{smallmatrix}\bigr)$ is the \emph{pulsation sign operator}: it assigns $+1$ to the first half-cycle state $\cplu$ (positive energy branch) and $-1$ to the second $\cmin$ (negative energy branch), providing the correct causal structure for $\gamma^0$ in the Minkowski metric $(+,-,-,-)$.
+\end{remark}
+
+\subsection{The Clifford algebra as a \PDL\ theorem}
+
+\begin{theorem}[Clifford algebra from $T^2 = -I_2$]
+\label{thm:clifford}
+The \PDL\ Dirac matrices of Definition~\ref{def:gamma} satisfy:
+\begin{equation}
+\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu} I_4.
+\label{eq:clifford}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We verify the three independent cases.
+
+\smallskip\noindent\emph{Case~1: $\{\gamma^i, \gamma^i\} = -2I_4$.}
+\begin{equation}
+\{\gamma^i, \gamma^i\} = 2(\gamma^i)^2 = 2(i\tau_2)^2 \otimes \sigma_i^2 = 2(-I_2) \otimes I_2 = -2I_4,
+\end{equation}
+where $(i\tau_2)^2 = -I_2$ is precisely $T^2 = -I_2$ from Theorem~\ref{thm:T2}, and $\sigma_i^2 = I_2$.
+
+\smallskip\noindent\emph{Case~2: $\{\gamma^i, \gamma^j\} = 0$ for $i \neq j$.}
+\begin{equation}
+\{\gamma^i, \gamma^j\} = (i\tau_2)^2 \otimes \{\sigma_i, \sigma_j\} = (-I_2) \otimes 0 = 0,
+\end{equation}
+using $\{\sigma_i, \sigma_j\} = 2\delta_{ij}I_2 = 0$ for $i \neq j$.
+
+\smallskip\noindent\emph{Case~3: $\{\gamma^0, \gamma^i\} = 0$.}
+\begin{equation}
+\{\gamma^0, \gamma^i\} = (\tau_3 \cdot i\tau_2 + i\tau_2 \cdot \tau_3) \otimes \sigma_i = \{\tau_3, i\tau_2\} \otimes \sigma_i = 0 \otimes \sigma_i = 0,
+\end{equation}
+since $\{\tau_3, i\tau_2\} = i(\tau_3\tau_2 + \tau_2\tau_3) = 0$ (Pauli matrices anti-commute for distinct indices). Assembling the three cases gives equation~\eqref{eq:clifford}.
+\end{proof}
+
+\begin{remark}[The Clifford algebra is not postulated]
+Equation~\eqref{eq:clifford} is here a \emph{theorem}, not a postulate. Its key ingredient is $T^2 = -I_2$ (Theorem~\ref{thm:T2}), which itself follows solely from the \PDL\ axiom $s^{(2)} = -s^{(1)}$ and condition~(B). In the standard derivation of the Dirac equation, the Clifford algebra is postulated as the starting point; in the \PDL\ framework, it emerges from the combinatorial structure of $\Kfour$.
+\end{remark}
+
+\begin{proposition}[Hermiticity]
+\label{prop:hermiticity}
+The \PDL\ Dirac matrices satisfy $(\gamma^0)^\dagger = \gamma^0$ and $(\gamma^i)^\dagger = -\gamma^i$.
+\end{proposition}
+
+\begin{proof}
+$(\gamma^0)^\dagger = \tau_3^\dagger \otimes I_2 = \tau_3 \otimes I_2 = \gamma^0$. For $\gamma^i$: $(i\tau_2)^\dagger = -i\tau_2^\dagger = -i\tau_2$, so $(\gamma^i)^\dagger = -i\tau_2 \otimes \sigma_i = -\gamma^i$.
+\end{proof}
+
+% ================================================================
+\section{The \PDL\ Dirac equation and its non-relativistic limit}
+\label{sec:NR}
+
+\subsection{The \PDL\ Dirac equation}
+
+Using the matrices of Definition~\ref{def:gamma}, the \PDL\ Dirac equation for an electron in the Coulomb field of a \PDL\ proton is:
+\begin{equation}
+\left[i\gamma^\mu\!\left(\partial_\mu + i\frac{q_{\PDL}}{\hb c} A_\mu\right) - \frac{\mePDL c}{\hb}\right]\Psi = 0,
+\label{eq:Dirac_PDL}
+\end{equation}
+where $\mePDL$ is fixed by the Compton pulsation $\hb\omega_c = \mePDL c^2$, and $q_{\PDL}$ is the \PDL\ charge. For the hydrogenic Coulomb field: $A_0(r) = -\aPDL \hb c/(q_{\PDL} r)$ and $\mathbf{A} = 0$, with $\aPDL = \mu/\Rsurf^2$ from D29--D30~\cite{PDL_D29_2026,PDL_D30_2026}.
+
+\subsection{Non-relativistic limit and consistency with D32}
+
+\begin{proposition}[Dirac--Schr\"odinger consistency]
+\label{prop:NR_limit}
+In the non-relativistic limit, the large component $\phi_+$ of the \PDL\ spinor $\Psi = (\phi_+, \phi_-)^T \mathrm{e}^{-i\mePDL c^2 t/\hb}$ with $\phi_- \ll \phi_+$ satisfies:
+\begin{equation}
+i\hb \frac{\partial \phi_+}{\partial t} = \left[-\frac{\hb^2}{2\mePDL}\nabla^2 - \frac{\aPDL \hb c}{r}\right]\phi_+.
+\label{eq:Schrodinger_NR}
+\end{equation}
+This is exactly the Schr\"odinger--\PDL\ equation of D32~\cite{PDL_D32_2026}, with the same parameters $\mePDL$ and $\aPDL$ fixed by the proton quintuplet.
+\end{proposition}
+
+\begin{proof}
+The decoupling condition $\{\gamma^0, \gamma^i\} = 0$ (Case~3 of Theorem~\ref{thm:clifford}) guarantees that the large and small components separate in the non-relativistic regime. The block structure $\gamma^0 = \mathrm{diag}(+I_2, -I_2)$ identifies $\phi_+$ as the upper two components. Eliminating $\phi_-$ via $\phi_- \approx \boldsymbol{\sigma}\cdot\hat{\mathbf{p}}/(2\mePDL c)\,\phi_+$ and retaining leading-order terms yields equation~\eqref{eq:Schrodinger_NR}, with coupling $q_{\PDL} A_0(r) = -\aPDL \hb c/r$. Relativistic corrections at order $1/c^2$ generate the standard Darwin, spin--orbit, and kinematic terms~\cite{Bjorken_Drell}.
+\end{proof}
+
+\begin{remark}[Internal consistency at two relativistic levels]
+Equation~\eqref{eq:Schrodinger_NR} is identical to equation~(1) of D32~\cite{PDL_D32_2026}. The parameters $\mePDL$ and $\aPDL$ are the same in both the relativistic description (D33) and the non-relativistic description (D32), and both are fixed without free parameter by the proton quintuplet $(24, 28, 930, 10087, 11017)$. The \PDL\ programme is self-consistent at two dynamical levels: the non-relativistic hydrogen atom and the relativistic hydrogen atom are governed by the same combinatorial axioms, with no adjustment at the interface.
+\end{remark}
+
+% ================================================================
+\section{Numerical checks}
+\label{sec:numerics}
+
+All numerical checks were performed in Python\,3 (NumPy\,2.x) and confirmed to machine precision. Every entry of Table~\ref{tab:numerics} was computed independently.
+
+\begin{table}[ht]
+\centering
+\caption{Numerical verification of the main algebraic results of D33. All residuals are identically zero to machine precision (float64). Python code available from the author upon request.}
+\label{tab:numerics}
+\begin{tabular}{llr}
+\toprule
+Quantity & Expression verified & Max.\ residual \\
+\midrule
+$T^2 = -I_2$ & $\max|T^2 + I_2|$ & $0.00\times10^0$ \\
+$T^4 = I_2$ (period-4) & $\max|T^4 - I_2|$ & $0.00\times10^0$ \\
+Unitarity of $T$ & $\max|T^\dagger T - I_2|$ & $0.00\times10^0$ \\
+Anti-Hermiticity of $T$ & $\max|T^\dagger + T|$ & $0.00\times10^0$ \\
+Clifford algebra & $\max_{\mu,\nu}|\{\gamma^\mu,\gamma^\nu\} - 2\eta^{\mu\nu}I_4|$ & $0.00\times10^0$ \\
+$(\gamma^0)^\dagger = \gamma^0$ & $\max|\gamma^0 - (\gamma^0)^\dagger|$ & $0.00\times10^0$ \\
+$(\gamma^i)^\dagger = -\gamma^i$ & $\max_i|\gamma^i + (\gamma^i)^\dagger|$ & $0.00\times10^0$ \\
+$(\gamma^i)^2 = -I_4$ & $\max_i|(\gamma^i)^2 + I_4|$ & $0.00\times10^0$ \\
+$\{\gamma^0,\gamma^i\} = 0$ & $\max_i|\{\gamma^0,\gamma^i\}|$ & $0.00\times10^0$ \\
+$\tau_1$ excluded: $\tau_1^2 = +I_2$ & $\max|\tau_1^2 - I_2|$ & $0.00\times10^0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Hydrogen energy levels from the \PDL\ Dirac equation~\eqref{eq:Dirac_PDL}, with $\aPDL^{-1} = 137.022$ (CODATA 2022: $137.036$, deviation $10^{-4}$). The fine-structure splitting $\Delta E = E_{\mathrm{Dirac}}^{\PDL} - E_{\mathrm{Bohr}}^{\PDL}$ is at the sub-meV level, consistent with the $10^{-4}$ precision of $\aPDL$.}
+\label{tab:spectrum}
+\begin{tabular}{ccrrr}
+\toprule
+$n$ & $j$ & $E_{\mathrm{Dirac}}^{\PDL}$ (eV) & $E_{\mathrm{Bohr}}^{\PDL}$ (eV) & $\Delta E$ (eV) \\
+\midrule
+$1$ & $\tfrac{1}{2}$ & $-13.608889$ & $-13.608707$ & $-0.000181$ \\
+$2$ & $\tfrac{1}{2}$ & $-3.402233$  & $-3.402177$  & $-0.000057$ \\
+$2$ & $\tfrac{3}{2}$ & $-3.402188$  & $-3.402177$  & $-0.000011$ \\
+$3$ & $\tfrac{1}{2}$ & $-1.512099$  & $-1.512079$  & $-0.000020$ \\
+$3$ & $\tfrac{3}{2}$ & $-1.512085$  & $-1.512079$  & $-0.000007$ \\
+$3$ & $\tfrac{5}{2}$ & $-1.512081$  & $-1.512079$  & $-0.000002$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Relative spectral precision of the \PDL\ Dirac framework with respect to $\alpha_{\mathrm{CODATA}}^{-1} = 137.036$. The uniform value $|\Delta E|/E = 2.22\times10^{-4}$ across all levels confirms that the framework introduces no additional spectral error beyond the known $10^{-4}$ deviation of $\aPDL$.}
+\label{tab:precision}
+\begin{tabular}{ccr}
+\toprule
+$n$ & $j$ & $|E_{\PDL} - E_{\mathrm{CODATA}}|/|E_{\mathrm{CODATA}}|$ \\
+\midrule
+$1$ & $\tfrac{1}{2}$ & $2.22\times10^{-4}$ \\
+$2$ & $\tfrac{1}{2}$ & $2.22\times10^{-4}$ \\
+$2$ & $\tfrac{3}{2}$ & $2.22\times10^{-4}$ \\
+$3$ & $\tfrac{1}{2}$ & $2.22\times10^{-4}$ \\
+$3$ & $\tfrac{3}{2}$ & $2.22\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ================================================================
+\section{Open problems}
+\label{sec:open}
+
+\textbf{OP1 (Fully algebraic non-relativistic limit).} Proposition~\ref{prop:NR_limit} uses the standard large-component elimination, which invokes the continuum kinetic action $\hb\omega_c = \mePDL c^2$ at an intermediate step (as in D32, OP1). A fully algebraic derivation of the NR limit from the discrete \PDL\ update rules, without the continuum action argument, would make the derivation chain purely combinatorial.
+
+\textbf{OP2 (Multi-body Dirac extension).} Equation~\eqref{eq:Dirac_PDL} covers one $\Kfour$ block in the field of one proton. Extension to helium and many-electron atoms requires specifying how two independent $(A)\wedge(B)$ criteria interact in $\HDirac^{(1)} \otimes \HDirac^{(2)}$, and whether Pauli exclusion emerges from the mixed-triangle structure.
+
+\textbf{OP3 (QED extension).} The present treatment covers the electron in an external Coulomb field. A \PDL--QED programme would derive the photon sector from the graph structure and yield radiative corrections (Lamb shift, anomalous magnetic moment) from first principles.
+
+\textbf{OP4 (Connection to $G_{\mathrm{eff}}(N)$).} The link between the Dirac coupling $\aPDL$ and the gravitational coupling $G_{\mathrm{eff}}(N) = \sigma(N)\cdot G_{\PDL}$ of D31~\cite{PDL_D31_2026,Effective_Sigma_PDL_2026} at the level of the 18-step chain complex $\varepsilon_G^{18}$ remains to be established algebraically (OP6 of D32, OP1 of D31).
+
+% ================================================================
+\section*{Conclusion}
+
+This paper has derived the \PDL\ Dirac equation from condition~(B) of D29 via an algebraic chain requiring no additional postulate. The central result is that the half-cycle operator $T = -i\tau_2$ is the \emph{unique} $2\times2$ operator satisfying the four \PDL\ pulsation constraints (Theorem~\ref{thm:uniqueness}), and that the Clifford algebra $\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu}I_4$ follows from this uniqueness as a theorem (Theorem~\ref{thm:clifford}, numerical residual: $0.00\times10^0$).
+
+Two results emerge beyond the primary goal. First, the \PDL\ pulsation has period~4 in the complex amplitude representation $\Hcycl$ (Corollary~\ref{cor:period4}): the spin-$\tfrac{1}{2}$ double-cover structure is a consequence of the axioms, not a postulate. The standard statement that a spinor requires a $4\pi$ rotation to return to itself corresponds here to four half-cycles of the $\Kfour$ binary pulsation. Second, the operator $\tau_1$ is excluded by the algebraic fact $\tau_1^2 = +I_2 \neq -I_2$ (Table~\ref{tab:candidates}), showing that the correct Lorentz representation is uniquely selected by the \PDL\ axioms.
+
+The document is self-contained: Table~\ref{tab:condB} allows the reader to verify the sole external dependency (condition~(B) from D29) without access to D29, and Remark~\ref{rem:sign_origin} explains from first principles why the sign $-1$ in condition~$(T\textrm{-}b)$ is forced by the pulsation structure rather than being a convention.
+
+The non-relativistic limit of the \PDL\ Dirac equation reproduces exactly the Schr\"odinger--\PDL\ equation of D32 (Proposition~\ref{prop:NR_limit}), with the same parameters $\mePDL$ and $\aPDL$ fixed by the proton quintuplet $(24, 28, 930, 10087, 11017)$. The \PDL\ programme is self-consistent at two dynamical levels: the non-relativistic and relativistic descriptions of the hydrogen atom both emerge from the same combinatorial axioms, without free parameter.
+
+% ================================================================
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References_D33}
+
+\end{document}

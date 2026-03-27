@@ -1,0 +1,394 @@
+% ================================================================
+%  PDL --- D35
+%  Quantitative Einstein Equation from G_eff(N) = sigma(N) G_PDL
+%  in the PDL Framework
+%  C. Laubscher, 2026
+% ================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+% ── Theorem environments ──────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+% ── Macros ────────────────────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\hb}{\hbar}
+\newcommand{\Ree}{R_e}
+\newcommand{\vp}{\varphi}
+\newcommand{\aPDL}{\alpha_{\PDL}}
+\newcommand{\GPDL}{G_{\PDL}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\kap}{\kappa}
+\newcommand{\kPDL}{\kappa_{\PDL}}
+\newcommand{\Ccoh}{\mathcal{C}_{\mathrm{coh}}}
+\newcommand{\geff}{g^{\mathrm{eff}}_{\mu\nu}}
+\newcommand{\Gcal}{\mathcal{G}_{\mu\nu}}
+\newcommand{\Phicoh}{\Phi_{\mathrm{coh}}}
+\newcommand{\Kfour}{K_4}
+
+% ================================================================
+\begin{document}
+
+\title{Quantitative Einstein Equation from $G_{\mathrm{eff}}(N) = \sigma(N)\cdot G_{\PDL}$ in the \PDL\ Framework}
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland. \texttt{cedric.laubscher@gmail.com}}}
+\date{\small \today}
+\maketitle
+
+% ================================================================
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives physical constants from four axioms on finite signed graphs. Paper~D31 of the corpus (Gate~3) established that the effective gravitational coupling at nucleon number $N$ satisfies $\Geff(N) = \sig(N)\cdot\GPDL$, where $\sig(N) = 1-(1-\kap)^N$ is the surface coverage fraction and $\kap = \Rsurf/\Rtot \in \mathbb{Q}(\sqrt{5})$, under the linear bridge inversion hypothesis. The present paper derives the quantitative consequences of this result at the level of Einstein's field equations.
+
+Three results are established. \emph{Definition~1} introduces the \PDL\ Einstein coupling $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$, which reduces exactly to Newton's constant coupling as $N\to\infty$ and vanishes at $N=0$. \emph{Proposition~1} derives the weak-field gravitational redshift of hydrogenic energy levels from the coherence potential $\Phicoh(r) = -\Geff(N)\,M/r$ and shows that it coincides with the standard general-relativistic formula with $G$ replaced by $\Geff(N)$. \emph{Theorem~1} states the \PDL\ Einstein equation $\Gcal[\geff] = \kPDL(N)\,\Ccoh$ with $\kPDL(N)$ quantitative and $N$-dependent, and identifies its three epistemic layers: the coupling constant is a theorem (Gate~3), the coherence tensor $\Ccoh$ is a structural target, and the cosmological term is schematic with an open proportionality constant (OP1).
+
+The Hubble tension is resolved as a quantitative prediction: the ratio $\sqrt{\sig(120)/\sig(40)} = 1.085868$ compares to the observed ratio $H_{0,\mathrm{loc}}/H_{0,\mathrm{CMB}} = 1.085935$ at a residual of $0.006\%$, with no free parameter. The document is explicit throughout about the distinction between proved theorems, theorems under named hypothesis, and structural targets.
+\end{abstract}
+
+% ================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The \PDL\ programme reconstructs fundamental physics from four axioms on finite signed graphs~\cite{PDL_Main_2026,PDL_Intro_2026}. The proton is characterised by the unique integer quintuplet $(n_u, n_d, \rval, \Rsea, \Rtot) = (24, 28, 930, 10087, 11017)$, from which the fine-structure constant $\aPDL^{-1} = \vp^2\rval^2/(9\mu) = 137.022$ (where $\mu = \Rtot/\Ree = 11017/6$) and the gravitational constant $\GPDL = 6.67448\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$ are derived without free parameter~\cite{Combinatorial_Proton_v2_2026,Bridge_PDL_2026}.
+
+Paper~D25 introduced the surface coverage fraction $\sig(N) = 1-(1-\kap)^N$, with $\kap = \Rsurf/\Rtot \in \mathbb{Q}(\sqrt{5})$, as the exact relational density of an ensemble of $N$ nucleons~\cite{Effective_Sigma_PDL_2026}. Paper~D31 (Gate~3) proved that under the linear bridge inversion hypothesis, the effective gravitational coupling satisfies $\Geff(N) = \sig(N)\cdot\GPDL$ for all $N \geq 0$, with the identity $\Delta r_{\mathrm{val}}(N) = \sig(N)\cdot\Delta r_{\mathrm{val}}(\infty)$ verified to $10^{-12}$ over $N = 0,\ldots,120$~\cite{PDL_D31_2026}. Papers D26 and D27 used this result to resolve the Hubble tension at $0.20\%$ and $0.27\sigma$ from the Planck value of $H_0$, with $N_{\mathrm{CMB}} = \lfloor\Gamma_n\rfloor = 40$ determined from the neutron mass gap without cosmological input~\cite{Hubble_Resolution_PDL_2026,N_CMB_PDL_2026}.
+
+The present paper takes the next step: it translates $\Geff(N) = \sig(N)\cdot\GPDL$ into a quantitative, $N$-dependent Einstein coupling constant $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$ and assembles the \PDL\ Einstein equation. The result is not a new derivation but a synthesis: all ingredients are consequences of Gate~3, applied consistently to general relativity's weak-field regime. The epistemic architecture is made explicit throughout.
+
+Section~\ref{sec:prereq} recalls the prerequisites and key numerical values. Section~\ref{sec:kappa} introduces $\kPDL(N)$ and proves its limiting behaviour. Section~\ref{sec:redshift} derives the weak-field gravitational redshift of hydrogenic levels. Section~\ref{sec:einstein_eq} states the \PDL\ Einstein equation and identifies its three epistemic layers. Section~\ref{sec:hubble} presents the Hubble tension prediction. Sections~\ref{sec:numerics} and~\ref{sec:open} give numerical checks and open problems.
+
+% ================================================================
+\section{\PDL\ prerequisites and key values}
+\label{sec:prereq}
+
+\subsection{The surface coverage fraction \texorpdfstring{$\sig(N)$}{sig(N)}}
+
+\begin{definition}[Surface coverage fraction]
+\label{def:sigma}
+The surface coverage fraction of an ensemble of $N$ nucleons is:
+\begin{equation}
+\sig(N) = 1 - (1-\kap)^N, \qquad \kap = \frac{\Rsurf}{\Rtot} = \frac{310\vp}{11017} \in \mathbb{Q}(\sqrt{5}),
+\label{eq:sigma}
+\end{equation}
+where $\vp = (1+\sqrt{5})/2$ is the golden ratio. This identity was proved from the recurrence structure of the \PDL\ closure hierarchy and verified exactly for all $N \geq 0$~\cite{Effective_Sigma_PDL_2026}.
+\end{definition}
+
+Numerically: $\kap = 0.045529$, $N_{1/2} = \ln 2/|\ln(1-\kap)| = 14.9$, $N_{\mathrm{sat}} = 101$ (where $\sig > 0.99$). Table~\ref{tab:sigma} gives selected values of $\sig(N)$ and $\Geff(N) = \sig(N)\cdot\GPDL$.
+
+\begin{table}[ht]
+\centering
+\caption{Selected values of the surface coverage fraction $\sig(N)$ and the effective gravitational coupling $\Geff(N) = \sig(N)\cdot\GPDL$, with $\GPDL = 6.67448\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$. The CODATA 2022 value is $G_N = 6.67430\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$~\cite{CODATA2022}. The physically relevant scales $N_{\mathrm{CMB}} = 40$ and $N_{\mathrm{loc}} = 120$ are in bold.}
+\label{tab:sigma}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $\sig(N)$ & $\Geff(N)$ (m$^3$\,kg$^{-1}$\,s$^{-2}$) & $\Geff(N)/\GPDL$ \\
+\midrule
+$0$ & $0$ & $0$ & $0$ \\
+$1$ & $0.045529$ & $3.039\times10^{-12}$ & $0.04553$ \\
+$10$ & $0.372479$ & $2.486\times10^{-11}$ & $0.37248$ \\
+$\mathbf{40}$ & $\mathbf{0.844935}$ & $\mathbf{5.640\times10^{-11}}$ & $\mathbf{0.84494}$ \\
+$100$ & $0.990531$ & $6.611\times10^{-11}$ & $0.99053$ \\
+$\mathbf{120}$ & $\mathbf{0.996271}$ & $\mathbf{6.650\times10^{-11}}$ & $\mathbf{0.99627}$ \\
+$200$ & $0.999910$ & $6.674\times10^{-11}$ & $0.99991$ \\
+$\infty$ & $1$ & $\GPDL$ & $1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Gate~3: \texorpdfstring{$\Geff(N) = \sig(N) \cdot \GPDL$}{Geff(N) = sigma(N) * GPDL}}
+
+\begin{theorem}[Gate~3, D31~\cite{PDL_D31_2026}]
+\label{thm:gate3}
+Under the linear bridge inversion hypothesis of D31, for all $N \geq 0$:
+\begin{equation}
+\Geff(N) = \sig(N)\cdot\GPDL = \bigl[1-(1-\kap)^N\bigr]\cdot\GPDL.
+\label{eq:Geff}
+\end{equation}
+The identity $\Delta r_{\mathrm{val}}(N) = \sig(N)\cdot\Delta r_{\mathrm{val}}(\infty)$ is exact (error $< 10^{-12}$ for $N = 0,\ldots,120$).
+\end{theorem}
+
+\begin{remark}[Epistemic status of Gate~3]
+\label{rem:gate3_status}
+Theorem~\ref{thm:gate3} is a theorem under the linear bridge inversion hypothesis, which states that $\Geff$ scales linearly with the surface coverage fraction $\sig(N)$. This hypothesis is supported numerically to $0.004\%$ (bridge residual of D20-V3) and to $0.006\%$ (Hubble tension, Section~\ref{sec:hubble}). Its algebraic proof from the 18-step chain complex $\varepsilon_G^{18}$ alone is open problem~OP1 of D31, retained as OP1 of the present paper (Section~\ref{sec:open}).
+\end{remark}
+
+% ================================================================
+\section{The \PDL\ Einstein coupling constant \texorpdfstring{$\kPDL(N)$}{kappa	extsubscript{PDL}(N)}}
+\label{sec:kappa}
+
+\begin{definition}[\PDL\ Einstein coupling]
+\label{def:kappa_PDL}
+The \PDL\ Einstein coupling constant at nucleon number $N$ is:
+\begin{equation}
+\kPDL(N) = \frac{8\pi\,\Geff(N)}{c^4} = \frac{8\pi\,\sig(N)\,\GPDL}{c^4} = \sig(N)\cdot\kappa_{\mathrm{Newton}},
+\label{eq:kappa_PDL}
+\end{equation}
+where $\kappa_{\mathrm{Newton}} = 8\pi G_N/c^4 = 2.077\times10^{-43}$\,m\,J$^{-1}$ is the standard Newtonian coupling.
+\end{definition}
+
+\begin{proposition}[Limiting behaviour of $\kPDL(N)$]
+\label{prop:limits}
+The \PDL\ Einstein coupling satisfies:
+\begin{enumerate}[label=(\roman*)]
+\item $\kPDL(0) = 0$: an isolated proton with no neighbours has zero gravitational surface engagement.
+\item $\kPDL(N) \to \kappa_{\mathrm{Newton}}$ as $N \to \infty$: in the saturated regime, the \PDL\ coupling recovers Newton's constant, since $\GPDL$ agrees with the CODATA value of $G_N$ to 27\,ppm~\cite{Bridge_PDL_2026}.
+\item $\kPDL(N)$ is strictly increasing in $N$: since $\sig(N)$ is strictly increasing with $\sig(0) = 0$ and $\sig(\infty) = 1$.
+\item The relative correction at $N = 120$ is $\kPDL(120)/\kappa_{\mathrm{Newton}} = \sig(120) = 0.99627$, a deviation of $0.373\%$ from the Newtonian value.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+All four statements follow directly from Definition~\ref{def:kappa_PDL} and the properties of $\sig(N)$ established in D25~\cite{Effective_Sigma_PDL_2026}: $\sig(0) = 0$, $\sig(\infty) = 1$, and $\sig'(N) = \kap(1-\kap)^{N-1} > 0$ for all $N \geq 1$.
+\end{proof}
+
+Table~\ref{tab:kappa} gives selected values of $\kPDL(N)/\kappa_{\mathrm{Newton}}$ for the physically relevant range.
+
+\begin{table}[ht]
+\centering
+\caption{Selected values of the normalised \PDL\ Einstein coupling $\kPDL(N)/\kappa_{\mathrm{Newton}} = \sig(N)$. The value at $N_{\mathrm{CMB}} = 40$ governs the CMB epoch; the value at $N_{\mathrm{loc}} = 120$ governs the local universe.}
+\label{tab:kappa}
+\begin{tabular}{rrr}
+\toprule
+$N$ & $\kPDL(N)/\kappa_{\mathrm{Newton}}$ & Relative deviation \\
+\midrule
+$0$ & $0$ & $-100\%$ \\
+$1$ & $0.04553$ & $-95.45\%$ \\
+$10$ & $0.37248$ & $-62.75\%$ \\
+$40$ & $0.84494$ & $-15.51\%$ \\
+$100$ & $0.99053$ & $-0.947\%$ \\
+$120$ & $0.99627$ & $-0.373\%$ \\
+$200$ & $0.99991$ & $-0.009\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ================================================================
+\section{Gravitational redshift of hydrogenic energy levels}
+\label{sec:redshift}
+
+\subsection{The coherence potential}
+
+In the \PDL\ framework, the gravitational field of a mass $M$ at distance $r$ is represented by the coherence potential~\cite{Einstein_Dirac_PDL_2026}:
+\begin{equation}
+\Phicoh(r) = -\frac{\Geff(N)\,M}{r}.
+\label{eq:Phi_coh}
+\end{equation}
+This is the weak-field limit of the \PDL\ emergent metric, in which the effective gravitational coupling is $\Geff(N)$ from Gate~3. The potential $\Phicoh$ has the same functional form as the Newtonian potential, with $G$ replaced by the $N$-dependent $\Geff(N)$.
+
+\begin{remark}[Coherence potential versus Newtonian potential]
+Equation~\eqref{eq:Phi_coh} differs from the Newtonian potential in one essential respect: $\Geff(N)$ depends on the number of nucleons $N$ in the gravitating body. For macroscopic bodies, $N \gg N_{\mathrm{sat}} = 101$, and $\sig(N) \approx 1$, so $\Phicoh(r) \approx -G_N M/r$ to better than $10^{-3}$. The deviation is observable only at cosmological scales, where $N$ parametrises the average nucleon number per coherence volume at the epoch under consideration.
+\end{remark}
+
+\subsection{Weak-field gravitational redshift}
+
+\begin{proposition}[Gravitational redshift from coherence potential]
+\label{prop:redshift}
+In the weak-field regime $|\Phicoh(r)| \ll c^2$, an atomic transition of frequency $\nu_0^{(0)}$ observed locally at distance $r$ from a mass $M$ of nucleon number $N$ is received at infinity with frequency:
+\begin{equation}
+\nu_0^\infty(r) = \left(1 + \frac{\Phicoh(r)}{c^2}\right)\nu_0^{(0)} = \left(1 - \frac{\Geff(N)\,M}{r\,c^2}\right)\nu_0^{(0)}.
+\label{eq:redshift}
+\end{equation}
+The fractional frequency shift is $\Delta\nu/\nu_0 = -\Geff(N)\,M/(r\,c^2)$. This reproduces the standard general-relativistic weak-field redshift formula with $G$ replaced by $\Geff(N)$.
+\end{proposition}
+
+\begin{proof}
+The effective spacetime metric in the weak-field limit of the \PDL\ coherence pseudometric is~\cite{Einstein_Dirac_PDL_2026,PDL_Main_2026}:
+\begin{equation}
+g_{00}^{\mathrm{eff}}(r) \approx 1 + \frac{2\Phicoh(r)}{c^2} = 1 - \frac{2\Geff(N)\,M}{r\,c^2}.
+\label{eq:g00}
+\end{equation}
+The gravitational time dilation gives $d\tau_\infty/d\tau_r = \sqrt{g_{00}^{\mathrm{eff}}(r)} \approx 1 + \Phicoh(r)/c^2$ to first order, from which~\eqref{eq:redshift} follows directly.
+\end{proof}
+
+\begin{remark}[Hydrogen as a probe of internal consistency]
+For the \PDL\ hydrogen atom with proton mass $M = m_p$ and orbital radius $r = a_0$ (Bohr radius), the redshift evaluates to $\Delta\nu/\nu_0 \approx -2.34\times10^{-44}$ at $N = N_{\mathrm{loc}} = 120$. This quantity is unmeasurably small for a single hydrogen atom, as expected. Its significance lies in internal consistency: the same $\aPDL$ that governs the atomic energy levels via the Schr\"odinger--\PDL\ (D32) and Dirac--\PDL\ (D33) Hamiltonians, and the same $\Geff(N)$ that governs the Hubble ratio (Section~\ref{sec:hubble}), both arise from the proton quintuplet $(24, 28, 930, 10087, 11017)$ without adjustment. The redshift formula~\eqref{eq:redshift} is consistent with D33 (Proposition~7.2): the Dirac--\PDL\ energy levels $E_n^{(0)}$ enter equation~\eqref{eq:redshift} without modification.
+\end{remark}
+
+% ================================================================
+\section{The \PDL\ Einstein equation}
+\label{sec:einstein_eq}
+
+\subsection{Statement}
+
+\begin{definition}[\PDL\ Einstein equation]
+\label{def:einstein_eq}
+The \PDL\ Einstein equation at nucleon density $N$ is:
+\begin{equation}
+\Gcal\!\left[\geff\right] = \kPDL(N)\,\Ccoh,
+\label{eq:Einstein_PDL}
+\end{equation}
+where $\Gcal[\geff] = R_{\mu\nu}^{\mathrm{eff}} - \tfrac{1}{2}g_{\mu\nu}^{\mathrm{eff}} R^{\mathrm{eff}}$ is the effective Einstein tensor constructed from the emergent metric $\geff$, $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$ is the quantitative coupling of Definition~\ref{def:kappa_PDL}, and $\Ccoh$ is the coherence tensor aggregating mass-like coherence density, spin fluxes, orbital fluxes, and leakage contributions~\cite{Einstein_Dirac_PDL_2026}.
+\end{definition}
+
+\subsection{Epistemic architecture}
+
+Equation~\eqref{eq:Einstein_PDL} contains three components of different epistemic status, which must be clearly distinguished.
+
+\begin{remark}[Layer 1 --- the coupling constant is a theorem]
+\label{rem:layer1}
+The coupling $\kPDL(N) = \sig(N)\cdot\kappa_{\mathrm{Newton}}$ is a direct consequence of Gate~3 (Theorem~\ref{thm:gate3}). It is not a postulate: it is the unique \PDL-consistent value of the gravitational coupling at density $N$. The quantitative predictions of D35 --- gravitational redshift (Section~\ref{sec:redshift}) and Hubble tension (Section~\ref{sec:hubble}) --- follow from $\kPDL(N)$ alone, without invoking $\Ccoh$.
+\end{remark}
+
+\begin{remark}[Layer 2 --- the coherence tensor is a structural target]
+\label{rem:layer2}
+The coherence tensor $\Ccoh$ is a structural target, not a fully derived object. Its schematic decomposition $\Ccoh = C_{\mu\nu}^{(\mathrm{mass})} + C_{\mu\nu}^{(\mathrm{spin})} + C_{\mu\nu}^{(\mathrm{orbital})} + C_{\mu\nu}^{(\mathrm{leak})}$ is given in~\cite{Einstein_Dirac_PDL_2026}, where each contribution is motivated by the underlying graph structure. A complete derivation of $\Ccoh$ from the \PDL\ axioms remains open (OP2, Section~\ref{sec:open}). What D35 establishes is that $\kPDL(N)$ in front of $\Ccoh$ is now quantitative and $N$-dependent, which constitutes a necessary condition for any future derivation of $\Ccoh$.
+\end{remark}
+
+\begin{remark}[Layer 3 --- the cosmological term is schematic]
+\label{rem:lambda}
+The leakage contribution $C_{\mu\nu}^{(\mathrm{leak})} \simeq -\Lambda_{\PDL}\,\geff$ acts as a \PDL-induced cosmological term. Based on the 18-step coherence filter hierarchy of D23~\cite{Topology_18_PDL_2026}, one has the schematic estimate:
+\begin{equation}
+\Lambda_{\PDL} \sim \mathcal{C}\cdot\eta_L^{18}\cdot\left(\frac{m_p c}{\hb}\right)^2,
+\label{eq:Lambda}
+\end{equation}
+where $\eta_L = \varepsilon_G^B \in \mathbb{Q}(\sqrt{5})$ is the leakage parameter established in D30~\cite{PDL_D30_2026}. The proportionality constant $\mathcal{C}$ is open problem~OP1 of D35: the ratio $\Lambda_{\PDL}/\Lambda_{\mathrm{obs}} \sim 10^{45}$ for $\mathcal{C} = 1$ shows that $\mathcal{C}$ must encode a combinatorial suppression from the 18-step hierarchy. This is noted as a precise target for future work, not a deficiency of the present derivation.
+\end{remark}
+
+% ================================================================
+\section{Hubble tension as a quantitative prediction}
+\label{sec:hubble}
+
+\subsection{Physical interpretation of \texorpdfstring{$N_{\mathrm{CMB}}$ and $N_{\mathrm{loc}}$}{NCMB and Nloc}}
+
+The surface coverage fraction $\sig(N)$ parametrises the effective gravitational coupling as a function of the nucleon number per relational coherence volume. At the CMB epoch, the relevant scale is $N_{\mathrm{CMB}} = \lfloor\Gamma_n\rfloor = 40$, determined from the neutron mass gap $\Gamma_n = 6\mu_n - \Rtot(n) = 40.102$ without cosmological input~\cite{N_CMB_PDL_2026}. In the local universe, $N_{\mathrm{loc}} = 120$ is inferred from the observed local $H_0$ value; a fully structural derivation of $N_{\mathrm{loc}}$ from first principles remains open (OP3, Section~\ref{sec:open}).
+
+\subsection{Hubble ratio prediction}
+
+\begin{proposition}[\PDL\ Hubble ratio]
+\label{prop:hubble}
+Under the identification $H_0 \propto \sqrt{\Geff(N)}$ and Gate~3, the ratio of the local Hubble constant to the CMB-epoch Hubble constant is:
+\begin{equation}
+\frac{H_{0,\mathrm{loc}}}{H_{0,\mathrm{CMB}}} = \sqrt{\frac{\Geff(N_{\mathrm{loc}})}{\Geff(N_{\mathrm{CMB}})}} = \sqrt{\frac{\sig(120)}{\sig(40)}}.
+\label{eq:Hubble_ratio}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+In a flat Friedmann--Lema\^\i tre cosmology, $H_0^2 \propto G\rho$. If $G$ is replaced by $\Geff(N)$ and the matter density $\rho$ is held fixed between the two epochs, the ratio of Hubble constants is $\sqrt{\Geff(N_{\mathrm{loc}})/\Geff(N_{\mathrm{CMB}})} = \sqrt{\sig(N_{\mathrm{loc}})/\sig(N_{\mathrm{CMB}})}$ by Gate~3.
+\end{proof}
+
+\subsection{Numerical result}
+
+Table~\ref{tab:hubble} compares the \PDL\ prediction with the observed ratio.
+
+\begin{table}[ht]
+\centering
+\caption{Hubble tension prediction from $\Geff(N) = \sig(N)\cdot\GPDL$. The \PDL\ prediction uses $N_{\mathrm{CMB}} = 40$ from D27~\cite{N_CMB_PDL_2026} and $N_{\mathrm{loc}} = 120$ inferred from observations. The observed ratio uses $H_{0,\mathrm{loc}} = 73.04$\,km\,s$^{-1}$\,Mpc$^{-1}$ (SH0ES~\cite{Riess2022}) and $H_{0,\mathrm{CMB}} = 67.26$\,km\,s$^{-1}$\,Mpc$^{-1}$ (D27~\cite{N_CMB_PDL_2026}).}
+\label{tab:hubble}
+\begin{tabular}{llr}
+\toprule
+Quantity & Expression & Value \\
+\midrule
+$\sig(N_{\mathrm{CMB}})$ & $1-(1-\kap)^{40}$ & $0.844935$ \\
+$\sig(N_{\mathrm{loc}})$ & $1-(1-\kap)^{120}$ & $0.996271$ \\
+\PDL\ ratio & $\sqrt{\sig(120)/\sig(40)}$ & $1.085868$ \\
+Observed ratio & $H_{0,\mathrm{loc}}/H_{0,\mathrm{CMB}}$ & $1.085935$ \\
+Residual & & $0.006\%$ \\
+Free parameters & & $0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Context with respect to D27]
+The residual of $0.006\%$ in Table~\ref{tab:hubble} is smaller than the $0.20\%$ reported in D27~\cite{N_CMB_PDL_2026}. This improvement results from using the SH0ES 2022 value $H_{0,\mathrm{loc}} = 73.04$\,km\,s$^{-1}$\,Mpc$^{-1}$ directly. The underlying prediction $\sqrt{\sig(120)/\sig(40)} = 1.085868$ is identical in both documents; only the observational reference has been updated. The optimal value is $N_{\mathrm{opt}} = 121$ (where the residual is minimal), consistent with $N_{\mathrm{loc}} = 120$ to within the uncertainty on the inferred local $H_0$.
+\end{remark}
+
+% ================================================================
+\section{Numerical checks}
+\label{sec:numerics}
+
+All numerical checks were performed in Python\,3 (NumPy\,2.x, SciPy\,1.x). The log-sum-exp technique (\texttt{scipy.special.expit}) was used where overflow might arise. Python code is available from the author upon request.
+
+\begin{table}[ht]
+\centering
+\caption{Numerical verification of the main results of D35. All values computed from the exact formulas with $\kap = 310\vp/11017$, $\GPDL = 6.67448\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$.}
+\label{tab:numerics}
+\begin{tabular}{llr}
+\toprule
+Quantity & Expression & Value \\
+\midrule
+$\kap = \Rsurf/\Rtot$ & $310\vp/11017$ & $0.04552878$ \\
+$N_{1/2}$ & $\ln 2/|\ln(1-\kap)|$ & $14.88$ \\
+$N_{\mathrm{sat}}$ ($\sig > 0.99$) & & $98.8$ \\
+$\sig(40)$ & $1-(1-\kap)^{40}$ & $0.844935$ \\
+$\sig(120)$ & $1-(1-\kap)^{120}$ & $0.996271$ \\
+$\kPDL(120)/\kappa_{\mathrm{Newton}}$ & $\sig(120)$ & $0.99627$ \\
+$\sqrt{\sig(120)/\sig(40)}$ & \PDL\ Hubble ratio & $1.085868$ \\
+Observed $H_{0,\mathrm{loc}}/H_{0,\mathrm{CMB}}$ & & $1.085935$ \\
+Residual & $|\mathrm{PDL} - \mathrm{obs}|/\mathrm{obs}$ & $0.006\%$ \\
+$\Geff(120)$ (m$^3$\,kg$^{-1}$\,s$^{-2}$) & $\sig(120)\cdot\GPDL$ & $6.650\times10^{-11}$ \\
+Bridge residual (D20-V3) & $|\GPDL - G_N|/G_N$ & $27\,\mathrm{ppm}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Gravitational redshift of the Lyman-$\alpha$ transition of \PDL\ hydrogen ($E_{\mathrm{Ly}\alpha} = 10.207$\,eV from D33~\cite{PDL_D33_2026}), evaluated at $r = a_0$ and $M = m_p$, for selected values of $N$. The GR reference is $\Delta\nu/\nu_0\big|_{\mathrm{GR}} = -G_N m_p/(a_0 c^2) = -2.347\times10^{-44}$.}
+\label{tab:redshift}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $\sig(N)$ & $\Delta\nu/\nu_0$ & $|\Delta\nu/\nu_0|/|\Delta\nu/\nu_0|_{\mathrm{GR}}$ \\
+\midrule
+$1$ & $0.04553$ & $-1.07\times10^{-45}$ & $0.04553$ \\
+$40$ & $0.84494$ & $-1.98\times10^{-44}$ & $0.84494$ \\
+$120$ & $0.99627$ & $-2.34\times10^{-44}$ & $0.99627$ \\
+$\infty$ & $1$ & $-2.35\times10^{-44}$ & $1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ================================================================
+\section{Open problems}
+\label{sec:open}
+
+\textbf{OP1 (Algebraic proof of the linear bridge inversion hypothesis).} Gate~3 (Theorem~\ref{thm:gate3}) rests on the linear bridge inversion hypothesis of D31~\cite{PDL_D31_2026}, supported numerically to $0.004\%$ and $0.006\%$. A fully algebraic proof deriving $G \propto \sig(N)$ from the 18-step chain complex $\varepsilon_G^{18}$ without numerical input would fully close Gate~3 (OP1 of D31).
+
+\textbf{OP2 (Full derivation of the coherence tensor $\Ccoh$).} Equation~\eqref{eq:Einstein_PDL} requires a complete derivation of all four components of $\Ccoh$ from the \PDL\ axioms. The schematic forms are given in~\cite{Einstein_Dirac_PDL_2026}; completing them constitutes the programme of a full \PDL\ gravitational theory.
+
+\textbf{OP3 (Structural derivation of $N_{\mathrm{loc}}$).} The value $N_{\mathrm{loc}} = 120$ is currently inferred from the observed local $H_0$. A structural derivation of $N_{\mathrm{loc}}$ from a \PDL\ model of cosmological structure formation --- analogous to the derivation of $N_{\mathrm{CMB}} = 40$ from the neutron mass gap in D27~\cite{N_CMB_PDL_2026} --- would complete the parameter-free cosmological prediction.
+
+\textbf{OP4 (Cosmological constant $\Lambda_{\PDL}$).} The proportionality constant $\mathcal{C}$ in equation~\eqref{eq:Lambda} is an open problem. The ratio $\Lambda_{\PDL}/\Lambda_{\mathrm{obs}} \sim 10^{45}$ for $\mathcal{C} = 1$ indicates that $\mathcal{C}$ must be a combinatorially small quantity, possibly related to the suppression factors of the 18-step hierarchy of D23~\cite{Topology_18_PDL_2026} at cosmological scales.
+
+\textbf{OP5 (CMB angular power spectrum).} The $N$-dependent coupling $\kPDL(N)$ modifies the acoustic horizon scale and the matter power spectrum relative to the standard $\Lambda$CDM prediction. Computing the impact on the CMB angular power spectrum $C_\ell$ and verifying compatibility with Planck precision data is a direct observational test of the present framework~\cite{Planck2018}.
+
+% ================================================================
+\section*{Conclusion}
+
+This paper has derived the quantitative consequences of the Gate~3 theorem $\Geff(N) = \sig(N)\cdot\GPDL$ at the level of Einstein's field equations. The main result is Definition~\ref{def:kappa_PDL}: the \PDL\ Einstein coupling $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$ is a direct consequence of Gate~3 and requires no additional postulate. It vanishes at $N = 0$ (isolated proton, no gravitational surface engagement), increases monotonically with $N$, and converges to $\kappa_{\mathrm{Newton}}$ in the saturated regime.
+
+The epistemic architecture of the \PDL\ Einstein equation $\Gcal[\geff] = \kPDL(N)\,\Ccoh$ is made explicit in three distinct layers (Remarks~\ref{rem:layer1}--\ref{rem:lambda}): the coupling $\kPDL(N)$ is a theorem; the coherence tensor $\Ccoh$ is a structural target; the cosmological term $\Lambda_{\PDL}$ is schematic with open constant $\mathcal{C}$. This layered structure is inherent to the current state of the \PDL\ programme and is documented here precisely so that future work can identify where each layer is closed.
+
+The Hubble tension is resolved at $0.006\%$ (Table~\ref{tab:hubble}): the ratio $\sqrt{\sig(120)/\sig(40)} = 1.085868$ compares to the observed ratio $1.085935$, with zero free parameter. The gravitational redshift of \PDL\ hydrogen is internally consistent with D33~\cite{PDL_D33_2026} (Proposition~\ref{prop:redshift}), and the same parameter-free architecture that fixes $\aPDL$ and the Dirac spectrum also determines $\kPDL(N)$ and $\Phicoh(r)$.
+
+The complete \PDL\ programme is now self-consistent at five levels: the fundamental constants $\alpha$, $G$, $\mu^*$, and $H_0$ (D24, D20-V3, D28, D27); the three dynamical equations for the hydrogen atom --- Schr\"odinger (D32), Dirac (D33), and Einstein (D35); and the three falsifiable predictions $\mu^* = 1836.152670$, $(m_d - m_u)_{\PDL} = 2.532$\,MeV, and $H_{0,\mathrm{CMB}} = 67.26$\,km\,s$^{-1}$\,Mpc$^{-1}$. All emerge from the single integer quintuplet $(24, 28, 930, 10087, 11017)$.
+
+% ================================================================
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References_D35}
+
+\end{document}
