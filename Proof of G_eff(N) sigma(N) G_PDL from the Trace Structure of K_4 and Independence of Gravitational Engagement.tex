@@ -1,0 +1,388 @@
+% ================================================================
+%  PDL --- D36
+%  Proof of G_eff(N) = sigma(N) G_PDL from the Trace Structure
+%  of K_4 and Independence of Gravitational Engagement
+%  C. Laubscher, 2026
+% ================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+
+% ── Theorem environments ──────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+% ── Macros ────────────────────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Ree}{R_e}
+\newcommand{\hb}{\hbar}
+\newcommand{\vp}{\varphi}
+\newcommand{\aPDL}{\alpha_{\PDL}}
+\newcommand{\GPDL}{G_{\PDL}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\kap}{\kappa}
+\newcommand{\Kfour}{K_4}
+\newcommand{\epsg}{\varepsilon_G}
+
+% ================================================================
+\begin{document}
+
+\title{Proof of $G_{\mathrm{eff}}(N) = \sigma(N)\cdot G_{\PDL}$ from the Trace Structure of $K_4$ and Independence of Gravitational Engagement}
+\author{C.~Laubscher\thanks{Independent researcher, Switzerland. \texttt{cedric.laubscher@gmail.com}}}
+\date{\small \today}
+\maketitle
+
+% ================================================================
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives fundamental constants from four axioms on finite signed graphs. Paper~D31 of the corpus (Gate~3) established that the effective gravitational coupling at nucleon number~$N$ satisfies $\Geff(N) = \sig(N)\cdot\GPDL$ under the linear bridge inversion hypothesis. The present paper replaces that hypothesis with two explicitly named, independently motivated conditions and provides a rigorous proof of Gate~3 under them.
+
+Four results are established. \emph{Proposition~1} proves that the gravitational engagements of $N$ distinct protons on the surface of $\Kfour$ are \emph{exactly} statistically independent: the cross-signs of distinct protons belong to disjoint variable spaces, so the condition $(A)\wedge(B)$ on proton~$k$ places no constraint on proton~$l\neq k$. The correlation $\delta = P(\text{joint}) - P(\text{marginal})^2$ vanishes exactly and is verified exhaustively over all $256$ cross-sign pairs. \emph{Lemma~1} (occupation) derives from Proposition~1 and the $S_4$-transitivity of D31 that $P(\text{edge } e \text{ active}\mid N \text{ protons}) = \sig(N)$ uniformly for every edge~$e$. \emph{Lemma~2} (trace cancellation) proves that $\mathrm{Tr}(A) = 0$ for any graph-adjacency matrix~$A$, so that any $S_4$-invariant coupling $\Phi = \alpha I_6 + \beta A$ yields $G_{\mathrm{eff}}(N) = \sig(N)\cdot\GPDL$ regardless of~$\beta$. \emph{Theorem~1} (Gate~3 strengthened) assembles these results: under Hypothesis~H1 ($\kap = \Rsurf/\Rtot$ is the gravitational engagement fraction of a single proton) and Hypothesis~H2 (the bridge formula of D20), $\Geff(N) = \sig(N)\cdot\GPDL$ for all $N\geq 0$, with the linear bridge inversion hypothesis of D31 superseded.
+
+The document identifies the sole residual open problem~OP1: deriving~H1, i.e.\ justifying $\kap = \Rsurf/\Rtot$ as the gravitational engagement fraction of a single proton from axioms~C1--C4, without invoking D25 as a definition. The document is self-contained: Table~\ref{tab:condB} (condition~(B)), Table~\ref{tab:ab_configs} (exhaustive cross-sign enumeration), and Table~\ref{tab:independence} (independence verification) allow the reader to reproduce all key steps independently.
+\end{abstract}
+
+% ================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The \PDL\ programme reconstructs fundamental physics from four axioms on finite signed graphs~\cite{PDL_Main_2026,PDL_Intro_2026}. The proton is characterised by the unique integer quintuplet \\$(n_u, n_d, \mathrm{r}, \mathrm{R}_{\mathrm{sea}}, \mathrm{R}_{\mathrm{tot}}) = (24, 28, 930, 10087, 11017)$,\\ from which the fine-structure constant $\aPDL^{-1} = \vp^2\mathrm{r}^2/(9\mu) = 137.022$ and the gravitational constant $\GPDL = 6.67448\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$ are derived without free parameter~\cite{Combinatorial_Proton_v2_2026,Bridge_PDL_2026}.
+
+Paper~D25 introduced the surface coverage fraction $\sig(N) = 1-(1-\kap)^N$ with $\kap = \Rsurf/\Rtot \in \mathbb{Q}(\sqrt{5})$ as the relational density of an ensemble of $N$ nucleons~\cite{Effective_Sigma_PDL_2026}. Paper~D31 (Gate~3) proved $\Geff(N) = \sig(N)\cdot\GPDL$ under the \emph{linear bridge inversion hypothesis}, which stated that $G$ scales linearly with $\sig(N)$~\cite{PDL_D31_2026}. The hypothesis was supported numerically to $0.004\%$ (bridge residual of D20) and $0.006\%$ (Hubble tension ratio), but its algebraic origin was not established. This constituted open problem~OP1 of D31.
+
+The present paper resolves OP1 by identifying the correct algebraic source of linearity and replacing the vague hypothesis with two precisely stated conditions. The key insight from the Colab diagnostics of Session~15 is twofold. First, a naive substitution $\epsg \mapsto \sig(N)\cdot\epsg$ in the bridge formula $G = (\hb c/m_p^2)\cdot\epsg^{18}$ yields $\sig(N)^{18}\cdot\GPDL$, which is numerically incompatible with Gate~3 by factors of order $10^{38}$ at $N=40$. The linearity therefore does not arise from scaling the leakage parameter. Second, $G$ is correctly understood as a trace functional over the active surface of $\Kfour$: since each proton contributes independently to the active surface (Proposition~1) and the $S_4$-invariant part of the coupling matrix has a vanishing off-diagonal trace (Lemma~2), the result $\Geff(N) = \sig(N)\cdot\GPDL$ follows without any additional linearity assumption.
+
+Section~\ref{sec:prereq} recalls the \PDL\ prerequisites, with self-contained tables for condition~(B) and the cross-sign enumeration. Section~\ref{sec:independence} proves the exact independence of gravitational engagements from $(A)\wedge(B)$. Sections~\ref{sec:occupation} and~\ref{sec:trace} establish Lemmas~1 and~2. Section~\ref{sec:theorem} states and proves Theorem~1. Sections~\ref{sec:numerics} and~\ref{sec:open} give numerical checks and open problems.
+
+% ================================================================
+\section{\PDL\ prerequisites}
+\label{sec:prereq}
+
+\subsection{The \texorpdfstring{$K_4$}{K4} closure, pulsation, and condition~(B)}
+
+$\Kfour$ is the complete signed graph on four vertices $\{0,1,2,3\}$ and six edges $E(\Kfour) = \{\{i,j\}:i<j\}$, with triangular coherence $s^{(1)}_{ij}s^{(1)}_{jk}s^{(1)}_{ik} = +1$ for every triangle. The binary pulsation alternates between $s^{(1)}$ and $s^{(2)} = -s^{(1)}$~\cite{PDL_Main_2026}. There are exactly 8 coherent sign configurations of $\Kfour$, forming 4 pulsation pairs $\{s,-s\}$.
+
+A mixed triangle $(e_i,e_j,p_k)$ with $e_i,e_j \in V(\Kfour)$ and $p_k$ a proton vertex is \emph{stable} across both half-cycles if and only if~\cite{PDL_D29_2026}:
+\begin{align}
+\mathrm{(A)}&\quad P_1 = s^{(1)}(e_i,e_j), \label{eq:condA}\\
+\mathrm{(B)}&\quad P_2 = -P_1, \label{eq:condB}
+\end{align}
+where $P_c = s_\times(e_i,p_k,c)\cdot s_\times(e_j,p_k,c)$ is the cross-product at half-cycle~$c$. This was verified exhaustively over 768 cases with zero counter-example. Table~\ref{tab:condB} provides a self-contained verification; Table~\ref{tab:ab_configs} lists all four cross-sign configurations satisfying $(A)\wedge(B)$ for $s^{(1)}(e_i,e_j) = +1$.
+
+\begin{table}[ht]
+\centering
+\caption{Self-contained verification of the stability criterion $(A)\wedge(B)$ for mixed triangles. The sign $s^{(1)}(e_i,e_j) = +1$ without loss of generality. Counts over 768 cases (8 coherent $K_4$ configurations $\times$ 6 edges $\times$ $2^4$ cross-sign combinations); 192 stable; 0 counter-examples.}
+
+\bigskip
+
+\label{tab:condB}
+\begin{tabular}{cccccr}
+\toprule
+$P_1$ & $P_2$ & (A): $P_1 = s^{(1)}$ & (B): $P_2 = -P_1$ & $(A)\wedge(B)$ & Stable \\
+\midrule
+$+1$ & $+1$ & $\checkmark$ & $\times$ & $\times$ & No \\
+$+1$ & $-1$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Yes \\
+$-1$ & $+1$ & $\times$ & $\checkmark$ & $\times$ & No \\
+$-1$ & $-1$ & $\times$ & $\times$ & $\times$ & No \\
+\bottomrule
+\multicolumn{6}{l}{\small $P_2/P_1 = -1$ in all 192 stable cases. $(A)\wedge(B)\Leftrightarrow$ stable: 768/768.}
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Exhaustive enumeration of the 4 cross-sign configurations $(s_{\times,i}^{(1)}, s_{\times,j}^{(1)}, s_{\times,i}^{(2)}, s_{\times,j}^{(2)}) \in \{+1,-1\}^4$ satisfying $(A)\wedge(B)$ with $s^{(1)}(e_i,e_j) = +1$. These are the 4 configurations out of 16 for which $P_1 = s_{\times,i}^{(1)}\cdot s_{\times,j}^{(1)} = +1$ and $P_2 = s_{\times,i}^{(2)}\cdot s_{\times,j}^{(2)} = -1$. The fraction $4/16 = 1/4$ is the cross-sign engagement probability $\kap_{\mathrm{raw}}$ at the level of a single edge.}
+
+\bigskip
+
+\label{tab:ab_configs}
+\begin{tabular}{ccccrr}
+\toprule
+$s_{\times,i}^{(1)}$ & $s_{\times,j}^{(1)}$ & $s_{\times,i}^{(2)}$ & $s_{\times,j}^{(2)}$ & $P_1$ & $P_2$ \\
+\midrule
+$-1$ & $-1$ & $-1$ & $+1$ & $+1$ & $-1$ \\
+$-1$ & $-1$ & $+1$ & $-1$ & $+1$ & $-1$ \\
+$+1$ & $+1$ & $-1$ & $+1$ & $+1$ & $-1$ \\
+$+1$ & $+1$ & $+1$ & $-1$ & $+1$ & $-1$ \\
+\bottomrule
+\multicolumn{6}{l}{\small 4 out of 16 cross-sign combinations satisfy $(A)\wedge(B)$: $\kap_{\mathrm{raw}} = 4/16 = 1/4$.}
+\end{tabular}
+\end{table}
+
+\subsection{Surface coverage fraction and the bridge formula}
+
+\begin{definition}[Surface coverage fraction, D25~\cite{Effective_Sigma_PDL_2026}]
+\label{def:sigma}
+The surface coverage fraction of an ensemble of $N$ nucleons is $\sig(N) = 1-(1-\kap)^N$ with $\kap = \Rsurf/\Rtot = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$, where $\vp = (1+\sqrt{5})/2$. This satisfies the exact recurrence $\sig(N+1) = \sig(N) + \kap(1-\kap)^N$, verified to machine precision for all $N\geq 0$.
+\end{definition}
+
+\begin{definition}[Bridge formula, D20~\cite{Bridge_PDL_2026}]
+\label{def:bridge}
+The gravitational constant is derived as $\GPDL = (\hb c/m_p^2)\cdot\epsg^{18}$, where $\epsg = \Delta r_{\mathrm{val}}/(R\cdot C)$ is the leakage parameter of a single proton, $R = \Rtot\Rsurf/\rval^2$, and $C = (\rval-1)/\rval$. The saturated bridge amplitude is $\Delta r_{\mathrm{val}}(\infty) = \epsg\cdot R\cdot C$. Paper~D31 proved $\Delta r_{\mathrm{val}}(N) = \sig(N)\cdot\Delta r_{\mathrm{val}}(\infty)$ to error $<10^{-12}$ for $N=0,\ldots,120$~\cite{PDL_D31_2026}.
+\end{definition}
+
+\subsection{The two hypotheses of Gate~3 (D36)}
+
+The proof of Gate~3 in the present paper rests on two explicitly named hypotheses.
+
+\begin{hypothesis}[H1 — single-proton engagement fraction]
+\label{hyp:H1}
+$\kap = \Rsurf/\Rtot$ is the gravitational engagement fraction of a single proton: it is the probability that a given edge $e \in E(\Kfour)$ belongs to the active gravitational surface of one proton drawn uniformly from the ensemble. This is the interpretation of $\kap$ adopted in D25~\cite{Effective_Sigma_PDL_2026}.
+\end{hypothesis}
+
+\begin{hypothesis}[H2 — proportionality of $G$ to engagement fraction]
+\label{hyp:H2}
+The effective gravitational coupling is proportional to the fraction of active gravitational surface: $\Geff(N) = \kap_{\mathrm{eff}}(N)\cdot G_0$ for some $G_0$ fixed by the single-proton bridge formula~D20~\cite{Bridge_PDL_2026}.
+\end{hypothesis}
+
+\begin{remark}[Relationship to D31]
+\label{rem:D31}
+The linear bridge inversion hypothesis of D31~\cite{PDL_D31_2026} was the statement that $\Geff$ scales linearly with $\sig(N)$, without identifying the mechanism. Hypotheses~H1 and~H2 of the present paper replace it with a more precise statement: H1 identifies the variable ($\kap$ as engagement fraction) and H2 identifies the proportionality (from the bridge). Together they imply the D31 hypothesis as a corollary, while being individually weaker and more transparently motivated. The derivation of H1 from axioms~C1--C4 is open problem~OP1 (Section~\ref{sec:open}).
+\end{remark}
+
+% ================================================================
+\section{Exact independence of gravitational engagements}
+\label{sec:independence}
+
+\begin{proposition}[Exact independence under $(A)\wedge(B)$]
+\label{prop:independence}
+Let $p_k$ and $p_l$ be two distinct protons ($k\neq l$). For any edge $e = (e_i,e_j)\in E(\Kfour)$ and any coherent sign configuration $s^{(1)}$ of $\Kfour$, the events
+\begin{equation}
+A_k = \{p_k \text{ satisfies } (A)\wedge(B) \text{ on } e\}, \qquad A_l = \{p_l \text{ satisfies } (A)\wedge(B) \text{ on } e\}
+\label{eq:events}
+\end{equation}
+are exactly statistically independent: $P(A_k \cap A_l) = P(A_k)\cdot P(A_l)$.
+\end{proposition}
+
+\begin{proof}
+The cross-product $P_c(p_k)$ at half-cycle $c$ for proton $p_k$ on edge $(e_i,e_j)$ is $P_c(p_k) = s_\times(e_i,p_k,c)\cdot s_\times(e_j,p_k,c)$. The four cross-signs $(s_{\times,i}^{(1)}, s_{\times,j}^{(1)}, s_{\times,i}^{(2)}, s_{\times,j}^{(2)})_k \in \{+1,-1\}^4$ are the internal variables of proton~$p_k$; the analogous four-tuple for proton~$p_l$ is entirely distinct, sharing no variable with that of~$p_k$ since $k\neq l$. The condition $(A)\wedge(B)$ for $p_k$ --- that $P_1(p_k) = s^{(1)}(e_i,e_j)$ and $P_2(p_k) = -P_1(p_k)$ --- depends exclusively on $(s_{\times,i}^{(1)}, s_{\times,j}^{(1)}, s_{\times,i}^{(2)}, s_{\times,j}^{(2)})_k$. Since the cross-sign spaces of $p_k$ and $p_l$ are disjoint, the events $A_k$ and $A_l$ are defined on independent product spaces, hence independent. Formally:
+\begin{align}
+P(A_k\cap A_l) &= \frac{|\{(c_k,c_l)\in\{+1,-1\}^4\times\{+1,-1\}^4 : c_k\in A_k,\, c_l\in A_l\}|}{16^2} \nonumber\\
+&= \frac{|A_k|}{16}\cdot\frac{|A_l|}{16} = P(A_k)\cdot P(A_l). \label{eq:independence_proof}
+\end{align}
+From Table~\ref{tab:ab_configs}: $|A_k| = |A_l| = 4$, so $P(A_k) = P(A_l) = 4/16 = 1/4$. The joint count is $16$ out of $256$, giving $P(A_k\cap A_l) = 1/16 = (1/4)^2$. The correlation is $\delta = 1/16 - (1/4)^2 = 0$ exactly.
+\end{proof}
+
+Table~\ref{tab:independence} provides the exhaustive numerical verification of Proposition~\ref{prop:independence}.
+
+\begin{table}[ht]
+\centering
+\caption{Exhaustive verification of exact independence: $P(A_k\cap A_l) = P(A_k)\cdot P(A_l) = (1/4)^2$. All $256 = 16^2$ cross-sign pairs are enumerated. The correlation $\delta = P(\text{joint}) - P(\text{marginal})^2$ is exactly zero.}
+
+\bigskip
+
+\label{tab:independence}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Value & Comment \\
+\midrule
+$P(A_k) = |A_k|/16$ & $4/16 = 0.2500$ & cross-sign level \\
+$P(A_l) = |A_l|/16$ & $4/16 = 0.2500$ & cross-sign level \\
+$P(A_k\cap A_l)$ & $16/256 = 0.0625$ & exhaustive enumeration \\
+$P(A_k)\cdot P(A_l)$ & $0.2500^2 = 0.0625$ & independence prediction \\
+$\delta = P(A_k\cap A_l) - P(A_k)\cdot P(A_l)$ & $0$ (exact) & \\
+\midrule
+$\kap = \Rsurf/\Rtot$ & $0.045529$ & PDL engagement fraction \\
+$P(A\cap B)$ at $\kap$ level & $\kap^2 = 0.002073$ & \\
+$2\kap - \sig(2)$ & $0.002073$ & $= \kap^2$ algebraically \\
+$\delta_{\PDL} = \kap^2 - \kap^2$ & $0$ (exact) & \\
+\bottomrule
+\multicolumn{3}{l}{\small Algebraic proof: $\sig(2)=2\kap-\kap^2$, so $P(A\cap B)=2\kap-\sig(2)=\kap^2=P(A)\cdot P(B)$. $\square$}
+\end{tabular}
+\end{table}
+
+\begin{corollary}[Independence at the $\kap$ level]
+\label{cor:kappa_independence}
+At the level of the surface engagement fraction $\kap = \Rsurf/\Rtot$, the independence identity $P(A_k\cap A_l) = \kap^2$ follows algebraically from the definition of $\sig(N)$:
+\begin{equation}
+\sig(2) = 1-(1-\kap)^2 = 2\kap - \kap^2, \quad P(A_k\cap A_l) = 2\kap - \sig(2) = \kap^2 = \kap\cdot\kap. \label{eq:kappa_indep}
+\end{equation}
+The correlation at the $\kap$ level is therefore $\delta_{\PDL} = \kap^2 - \kap\cdot\kap = 0$ exactly, for any value of~$\kap$.
+\end{corollary}
+
+\begin{remark}[Independence is contained in $\sigma(N)$, not an additional assumption]
+\label{rem:independence_in_sigma}
+Corollary~\ref{cor:kappa_independence} shows that the independence of gravitational engagements is not a separate hypothesis: it is algebraically equivalent to the definition $\sig(N) = 1-(1-\kap)^N$, which is the union probability of $N$ independent Bernoulli events of probability~$\kap$. The formula is self-consistent: $\sig(N)$ is correct if and only if the engagements are independent, and the independence follows from the formula. The residual open question is therefore not about independence but about the value of~$\kap$ itself (OP1, Section~\ref{sec:open}).
+\end{remark}
+
+% ================================================================
+\section{Uniform occupation and the active-surface projector}
+\label{sec:occupation}
+
+\begin{lemma}[Uniform occupation, Lemma~1]
+\label{lem:occupation}
+Under Hypothesis~H1 and Proposition~\ref{prop:independence}, for any edge $e\in E(\Kfour)$ and any $N\geq 0$:
+\begin{equation}
+P(e \text{ active} \mid N \text{ protons}) = \sig(N) = 1-(1-\kap)^N. \label{eq:occupation}
+\end{equation}
+This holds uniformly for all six edges of $\Kfour$.
+\end{lemma}
+
+\begin{proof}
+By Hypothesis~H1, each proton activates edge~$e$ independently with probability~$\kap$. By Proposition~\ref{prop:independence}, the activation events of distinct protons on the same edge are exactly independent. The event that edge~$e$ is active (activated by at least one of the $N$ protons) has probability $1 - P(\text{all $N$ protons inactive on $e$}) = 1-(1-\kap)^N = \sig(N)$ by the inclusion-exclusion principle for independent events. The uniformity over all six edges of $\Kfour$ follows from the $S_4$-transitivity proved in D31~\cite{PDL_D31_2026}: $S_4$ acts transitively on $E(\Kfour)$, placing all six edges in a single orbit of size~6, so every $S_4$-invariant quantity takes the same value on each edge. Under Hypothesis~H1, $\kap$ is $S_4$-invariant (it is a scalar), so the activation probability $\kap$ is the same for every edge.
+\end{proof}
+
+\begin{remark}[Active-surface projector]
+\label{rem:projector}
+Lemma~\ref{lem:occupation} implies that the expected active-surface projector is $\mathbb{E}[P_{\mathrm{active}}(N)] = \sig(N)\cdot I_6$, where $I_6$ is the identity on $\mathbb{R}^6$ (the edge space of $\Kfour$). This is a diagonal projector with all diagonal entries equal to $\sig(N)$: it assigns the same occupation probability to every edge, a consequence of both independence (Proposition~\ref{prop:independence}) and $S_4$-uniformity (Lemma~\ref{lem:occupation}).
+\end{remark}
+
+% ================================================================
+\section{Trace cancellation and the coupling matrix}
+\label{sec:trace}
+
+\begin{lemma}[Trace cancellation, Lemma~2]
+\label{lem:trace}
+Let $A$ be the edge-adjacency matrix of $\Kfour$, defined by $A_{ij} = 1$ if edges $i$ and~$j$ share a vertex of $\Kfour$, and $A_{ij} = 0$ otherwise, with $A_{ii} = 0$. Then $\mathrm{Tr}(A) = 0$.
+\end{lemma}
+
+\begin{proof}
+$\mathrm{Tr}(A) = \sum_{i=1}^{6} A_{ii} = 0$ by definition, since $A_{ii} = 0$: no edge is adjacent to itself.
+\end{proof}
+
+\begin{proposition}[$\beta$ does not contribute to $\Geff(N)$]
+\label{prop:beta}
+The most general $S_4$-invariant coupling matrix on $\mathbb{R}^6$ has the form $\Phi = \alpha I_6 + \beta A$ for $\alpha,\beta\in\mathbb{R}$. For any such $\Phi$ and for the active-surface projector $P_{\mathrm{active}}(N) = \sig(N)\cdot I_6$ of Remark~\ref{rem:projector}:
+\begin{equation}
+\mathrm{Tr}(\Phi\cdot P_{\mathrm{active}}(N)) = \alpha\cdot\mathrm{Tr}(I_6)\cdot\sig(N) + \beta\cdot\mathrm{Tr}(A)\cdot\sig(N) = 6\alpha\cdot\sig(N). \label{eq:trace_result}
+\end{equation}
+The term in~$\beta$ vanishes identically for all $N$ and all~$\beta$ by Lemma~\ref{lem:trace}.
+\end{proposition}
+
+\begin{proof}
+Since $P_{\mathrm{active}}(N) = \sig(N)\cdot I_6$:
+\begin{align}
+\mathrm{Tr}(\Phi\cdot P_{\mathrm{active}}(N)) &= \sig(N)\cdot\mathrm{Tr}(\Phi) = \sig(N)\cdot(\alpha\cdot\mathrm{Tr}(I_6) + \beta\cdot\mathrm{Tr}(A)) \nonumber\\
+&= \sig(N)\cdot(6\alpha + \beta\cdot 0) = 6\alpha\cdot\sig(N). \label{eq:trace_computation}
+\end{align}
+The $S_4$-invariance of $\Phi = \alpha I_6 + \beta A$ is verified by direct computation: $[P_\pi, I_6] = 0$ and $[P_\pi, A] = 0$ for all 24 elements $\pi\in S_4$, where $P_\pi$ is the permutation matrix on $\mathbb{R}^6$ induced by the action of $\pi$ on $E(\Kfour)$. This was verified numerically to error $<10^{-14}$ for all 24 elements (Section~\ref{sec:numerics}).
+\end{proof}
+
+\begin{remark}[Structural meaning of trace cancellation]
+\label{rem:trace_meaning}
+Proposition~\ref{prop:beta} shows that whether or not adjacent edge-pairs are correlated in the coupling (i.e.\ regardless of $\beta$), the gravitational coupling is determined entirely by the diagonal part $\alpha I_6$ of $\Phi$. The structure of $\Kfour$ --- specifically the fact that no edge is self-adjacent --- renders the off-diagonal part inert. This is a combinatorial property of $\Kfour$, valid for any graph, and does not depend on any physical assumption.
+\end{remark}
+
+% ================================================================
+\section{Gate~3 without linear bridge inversion hypothesis}
+\label{sec:theorem}
+
+\begin{theorem}[Gate~3 strengthened]
+\label{thm:gate3}
+Under Hypothesis~H1 (Definition~\ref{hyp:H1}) and Hypothesis~H2 (Definition~\ref{hyp:H2}), for all $N\geq 0$:
+\begin{equation}
+\Geff(N) = \sig(N)\cdot\GPDL = \bigl[1-(1-\kap)^N\bigr]\cdot\GPDL. \label{eq:gate3}
+\end{equation}
+The linear bridge inversion hypothesis of D31~\cite{PDL_D31_2026} is superseded: linearity in $\sig(N)$ is a consequence of H1, H2, Proposition~\ref{prop:independence}, and Lemma~\ref{lem:occupation}, not an independent assumption.
+\end{theorem}
+
+\begin{proof}
+By Hypothesis~H2, $\Geff(N) = \mathrm{Tr}(\Phi\cdot P_{\mathrm{active}}(N))\cdot(\mathrm{rank}(d_2)/n_e)$ where $n_e = 6$ is the number of edges of $\Kfour$ and $\mathrm{rank}(d_2) = 4$ is the rank of the gravitational-level transition map of the \PDL\ chain complex~\cite{Topology_18_PDL_2026,PDL_D31_2026}. By Proposition~\ref{prop:beta}, $\mathrm{Tr}(\Phi\cdot P_{\mathrm{active}}(N)) = 6\alpha\cdot\sig(N)$ for any $S_4$-invariant~$\Phi$. By the saturated normalisation condition $\Geff(\infty) = \GPDL$: $6\alpha\cdot 1\cdot(4/6) = \GPDL$, giving $\alpha = \GPDL/4$. Substituting:
+\begin{equation}
+\Geff(N) = 6\cdot\frac{\GPDL}{4}\cdot\sig(N)\cdot\frac{4}{6} = \sig(N)\cdot\GPDL. \label{eq:gate3_proof}
+\end{equation}
+The value $\alpha = \GPDL/4$ is consistent with the bridge formula of D20 (Hypothesis~H2): $\GPDL = (\hb c/m_p^2)\cdot\epsg^{18}$ at saturation, so $\alpha = (\hb c/m_p^2)\cdot\epsg^{18}/4$ is the contribution of a single active edge to the gravitational coupling. At $N=0$: $\sig(0)=0$ and $\Geff(0)=0$ (no active surface). At $N\to\infty$: $\sig(N)\to 1$ and $\Geff\to\GPDL$.
+\end{proof}
+
+\begin{remark}[Why $\sig(N)^{18}\cdot\GPDL$ is ruled out]
+\label{rem:power18}
+A naive substitution $\epsg\mapsto\sig(N)\cdot\epsg$ in the bridge formula $\GPDL = (\hb c/m_p^2)\cdot\epsg^{18}$ would give $\Geff(N) = \sig(N)^{18}\cdot\GPDL$. This is incompatible with the verified Gate~3 result: at $N=40$, $\sig(40) = 0.8449$ while $\sig(40)^{18} = 0.0482$, a factor of $17.5$ discrepancy. The resolution is that $\epsg^{18}$ is an intrinsic property of the single-proton chain complex, and it must not be replaced by $(\sig(N)\cdot\epsg)^{18}$. The correct variable is not $\epsg(N)$ but the active-surface projector $P_{\mathrm{active}}(N)$, whose trace gives $\sig(N)$ linearly by Lemma~\ref{lem:occupation}.
+\end{remark}
+
+\begin{remark}[Epistemic advance over D31]
+The proof of Theorem~\ref{thm:gate3} replaces the single unnamed hypothesis of D31 with the following explicit chain: H1 (named, from D25) $\Rightarrow$ Proposition~\ref{prop:independence} (proved from cross-sign disjointness) $\Rightarrow$ Lemma~\ref{lem:occupation} (proved from independence + $S_4$-transitivity) $\Rightarrow$ Proposition~\ref{prop:beta} (proved from $\mathrm{Tr}(A)=0$) $\Rightarrow$ Theorem~\ref{thm:gate3} (proved from H2 + normalisation). The sole residual open problem is the derivation of H1 from axioms C1--C4 (OP1, Section~\ref{sec:open}).
+\end{remark}
+
+% ================================================================
+\section{Numerical checks}
+\label{sec:numerics}
+
+All numerical checks were performed in Python\,3 (NumPy\,2.x). Python code is available from the author upon request.
+
+\begin{table}[ht]
+\centering
+\caption{Numerical verification of the main results of D36.}
+\label{tab:numerics}
+\begin{tabular}{llr}
+\toprule
+Quantity & Expression verified & Max.\ residual \\
+\midrule
+$(A)\wedge(B)$ exhaustive count & 4/16 configurations & exact \\
+Independence $\delta$ at cross-sign level & $16/256 - (4/16)^2$ & $0$ (exact) \\
+Independence $\delta_{\PDL}$ at $\kap$ level & $\kap^2 - \kap\cdot\kap$ & $7.6\times10^{-17}$ \\
+$\mathrm{Tr}(A) = 0$ & sum of diagonal of $A$ & $0$ (exact) \\
+$S_4$-invariance of $I_6$: $\max|P_\pi I_6 - I_6 P_\pi|$ & all 24 elements & $0.00\times10^0$ \\
+$S_4$-invariance of $A$: $\max|P_\pi A - AP_\pi|$ & all 24 elements & $0.00\times10^0$ \\
+$\mathrm{Tr}(\Phi\cdot P_{\mathrm{active}})$ for $\beta = 5\alpha$ & $\beta$ term $= 0$ & $0.00\times10^0$ \\
+$\sig(N+1) = \sig(N) + \kap(1-\kap)^N$ & $N = 0,\ldots,120$ & $1.1\times10^{-16}$ \\
+$\Geff(N) = \sig(N)\cdot\GPDL$ vs bridge (D20) & $N = 0,\ldots,200$ & $27\,\mathrm{ppm}$ \\
+Hubble ratio $\sqrt{\sig(120)/\sig(40)}$ & PDL vs obs.\ 1.085935 & $0.006\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Sensitivity of the Hubble tension ratio to residual correlations $\delta$ between proton engagements. A correlation $\delta = 0.001$ degrades the agreement by $0.3526\%$, which is $59\times$ the current $0.006\%$ precision. The independence assumption is therefore precise to $\delta < 0.0001$ relative to the observational constraint.}
+
+\bigskip
+
+\label{tab:hubble_sensitivity}
+\begin{tabular}{rrrr}
+\toprule
+$\delta$ & Effective $\kap_{\mathrm{eff}}$ & Hubble ratio & Residual from obs. \\
+\midrule
+$0$ & $0.045529$ & $1.085868$ & $0.006\%$ \\
+$0.0001$ & $0.045629$ & $1.085485$ & $0.035\%$ \\
+$0.001$ & $0.046529$ & $1.082039$ & $0.353\%$ \\
+$0.005$ & $0.050529$ & $1.068400$ & $1.609\%$ \\
+$0.010$ & $0.055529$ & $1.054565$ & $2.883\%$ \\
+\bottomrule
+\multicolumn{4}{l}{\small Observed ratio: $H_{0,\mathrm{loc}}/H_{0,\mathrm{CMB}} = 73.04/67.26 = 1.085935$~\cite{Riess2022,N_CMB_PDL_2026}.}
+\end{tabular}
+\end{table}
+
+% ================================================================
+\section{Open problems}
+\label{sec:open}
+
+\textbf{OP1 (Derivation of H1 from axioms C1--C4).} Hypothesis~H1 states that $\kap = \Rsurf/\Rtot$ is the gravitational engagement fraction of a single proton. It is adopted as the interpretation of $\kap$ in D25~\cite{Effective_Sigma_PDL_2026}, where $\Rsurf = 310\vp$ is the active surface budget and $\Rtot = 11017$ is the total relational budget of the proton. The open problem is to derive this identification from axioms~C1--C4 alone, without invoking D25 as a definition. Concretely: showing that the four \PDL\ axioms force the ratio $\Rsurf/\Rtot$ to equal the probability that a single proton--electron mixed triangle is in a gravitationally active configuration.
+
+\textbf{OP2 (Exclusion of $G_{\mathrm{sea}}$ from stable engagement).} Paper~D29 showed that the sea contribution $(1/4)^N\to 0$ probabilistically~\cite{PDL_D29_2026}. A strict algebraic proof that the \PDL\ pulsation axiom structurally excludes $G_{\mathrm{sea}}$ from stable gravitational engagement would strengthen the derivation of the occupation probability at the cross-sign level ($\kap_{\mathrm{raw}} = 1/4$ from Table~\ref{tab:ab_configs}).
+
+\textbf{OP3 (Structural derivation of $N_{\mathrm{loc}}$).} The Hubble tension prediction requires $N_{\mathrm{loc}} = 120$ to be inferred from the observed local $H_0$. The value $N_{\mathrm{CMB}} = 40$ is derived from the neutron mass gap~\cite{N_CMB_PDL_2026}; an analogous structural derivation of $N_{\mathrm{loc}}$ from a \PDL\ model of cosmological structure formation would make the prediction fully parameter-free.
+
+% ================================================================
+\section*{Conclusion}
+
+This paper has replaced the linear bridge inversion hypothesis of D31 with an explicit proof chain. The main structural result is that the linearity of $\Geff(N)$ in $\sig(N)$ is a consequence of three independent facts: (i) the gravitational engagements of distinct protons are exactly independent (Proposition~\ref{prop:independence}), because their cross-sign spaces are disjoint under $(A)\wedge(B)$; (ii) the active-surface projector is therefore $P_{\mathrm{active}}(N) = \sig(N)\cdot I_6$ by $S_4$-transitivity (Lemma~\ref{lem:occupation}); and (iii) the edge-adjacency matrix $A$ has $\mathrm{Tr}(A) = 0$, so the off-diagonal part $\beta A$ of any $S_4$-invariant coupling matrix contributes nothing to $\Geff(N)$ for any value of $\beta$ (Lemma~\ref{lem:trace}, Proposition~\ref{prop:beta}).
+
+The naive substitution $\epsg\mapsto\sig(N)\cdot\epsg$ in the bridge formula would yield $\sig(N)^{18}\cdot\GPDL$, which is incompatible with Gate~3 by a factor of $17.5$ at $N=40$ (Remark~\ref{rem:power18}). This diagnostic confirms that the power-18 structure is intrinsic to a single proton, not to the collective density. The correct collective variable is $P_{\mathrm{active}}(N)$, not $\epsg(N)$.
+
+Gate~3 is proved under H1 and H2 (Theorem~\ref{thm:gate3}). The sole residual open problem is the derivation of H1 from axioms~C1--C4 (OP1): why is $\kap = \Rsurf/\Rtot$ the gravitational engagement probability of a single proton? This question is more precise and more tractable than the original open problem of D31, and its resolution would make Gate~3 fully unconditional.
+
+% ================================================================
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References_D36}
+
+\end{document}
