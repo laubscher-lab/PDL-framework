@@ -1,17 +1,12 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 15 + Veille scientifique (28 March 2026)*
+*Last updated: Session 16 (31 March 2026)*
 
 ---
 
 ## Programme Summary
 
-The Projective Dynamic Logo (PDL) programme derives fundamental physical constants and
-structures from four axioms on finite signed graphs, without presupposing spacetime,
-particles, or fields. The minimal admissible closure under these axioms is the complete
-graph K₄ on four vertices and six edges, identified with the electron prototype (R_e = 6).
-The proton is the minimal hierarchical composite, uniquely characterised by the integer
-quintuplet (24, 28, 930, 10087, 11017).
+The Projective Dynamic Logo (PDL) programme derives fundamental physical constants and structures from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields. The minimal admissible closure under these axioms is the complete graph K₄ on four vertices and six edges, identified with the electron prototype (R_e = 6). The proton is the minimal hierarchical composite, uniquely characterised by the integer quintuplet (24, 28, 930, 10087, 11017).
 
 **Three Gates resolved (Sessions 11–13):**
 - Gate 1 (D29): 155/11017 proved from PDL axioms alone
@@ -28,15 +23,23 @@ quintuplet (24, 28, 930, 10087, 11017).
 - D36: Gate 3 strengthened — linear bridge inversion hypothesis replaced by two named
   conditions (H1, H2); independence of gravitational engagements proved exactly from (A)∧(B)
 - Programme self-consistent at five levels: constants (α, G, μ*, H₀) + dynamics
-  (Schrödinger, Dirac, Einstein) + probability (Born) — all from quintuplet
-  (24, 28, 930, 10087, 11017)
+  (Schrödinger, Dirac, Einstein) + probability (Born) — all from quintuplet (24, 28, 930, 10087, 11017)
+
+**Session 16 — Documentation, dissemination, and external vigilance:**
+- DM v11 produced (complete LaTeX rewrite): 23 pages, 43 citations, zero compilation errors;
+  deposited on Zenodo (DOI: 10.5281/zenodo.19335759, published 30 March 2026)
+- Website cedriclaubscher.ch updated: title corrected, 7-phase guided journey, complete
+  document table (D01–D36, DOI-verified), four narrative blocks rewritten
+- Zenodo abstract for DM v10 updated to reflect Sessions 11–15 advances
+- External scientific vigilance: three papers analysed (see External Connections section)
+- LaTeX convention established: no spurious mid-sentence line breaks in .tex source
 
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 15)
+## Corpus Table (Zenodo canonical order — updated Session 16)
 
 *Note: Document numbering follows the Zenodo canonical order. The PDL_context.md
-versions prior to this one used an internal numbering that diverged from Zenodo
+versions prior to Session 15 used an internal numbering that diverged from Zenodo
 for D21 (formerly called D20-V3), D24 (formerly called D25), and D25 (formerly
 called D24). The table below is the authoritative reference.*
 
@@ -70,7 +73,7 @@ called D24). The table below is the authoritative reference.*
 | D21   | 10.5281/zenodo.19056994 | Universal Coherence Leakage V3 — Bridge G↔α | **Primary result** | Published |
 | DN    | 10.5281/zenodo.19076555 | Whatever We May Be — popular book EN | Vulgarisation | Published |
 | D22   | 10.5281/zenodo.19164084 | Nuclear stability, periodic table as closure hierarchies | Nuclei | Published |
-| DM    | 10.5281/zenodo.19194978 | D_Map v10 — Global Mapping of PDL | Navigation | Published |
+| DM    | 10.5281/zenodo.19335759 | D_Map v11 — Global Mapping of PDL | **Navigation** | Published |
 | D23   | 10.5281/zenodo.19197268 | Topological origin of exponent 18: K₄, S², periodic table v2 | Topology | Published |
 | D24   | 10.5281/zenodo.19206960 | Closure-density dependence of G_eff and Hubble tension | Cosmology | Published |
 | D25   | 10.5281/zenodo.19219858 | Parameter-free structural bridge α↔G | **Bridge α–G** | Published |
@@ -135,7 +138,7 @@ called D24). The table below is the authoritative reference.*
        PDL as a Foundational Research Programme: Current Status, Open Problems, and Interface with TO
 
 [D10]  https://doi.org/10.5281/zenodo.18716526
-       Coherence_Effective_Fields_Gauss_Faraday_Structure_Triangle_Counts_Schrödinger_Dynamics_PDL_Framework.pdf
+       Coherence_Effective_Fields_Gauss_Faraday_Structure_Triangle_Counts_Schrodinger_Dynamics_PDL_Framework.pdf
        From Discrete Coherence Flux to Effective Fields: A Structured Programme within PDL
 
 [D10a] https://doi.org/10.5281/zenodo.19329465
@@ -192,7 +195,7 @@ called D24). The table below is the authoritative reference.*
 
 [D20]  https://doi.org/10.5281/zenodo.18940047
        Whoever_We_May_Be_Existence__Coherence__and_Vulnerable_Instruments_A_Philosophical_Synthesis_of_the_PDL_Framework_v2.pdf
-       Whoever We May Be: Existence, Coherence, and Vulnerable Instruments – A Philosophical Synthesis
+       Whoever We May Be: Existence, Coherence, and Vulnerable Instruments — A Philosophical Synthesis
 
 [D21]  https://doi.org/10.5281/zenodo.19056994
        Universal_Coherence_Leakage__Bridging_the_Gravitational_and_Fine_Structure_Constants_through_Discrete_Relational_Closures_V3.pdf
@@ -207,9 +210,11 @@ called D24). The table below is the authoritative reference.*
        Pdl_nuclear_stability_skeleton.pdf
        Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in PDL
 
-[DM]   https://doi.org/10.5281/zenodo.19194978
-       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v10.pdf
-       PDL Global Mapping of Structures, Results, and Open Problems (version 10)
+[DM]   https://doi.org/10.5281/zenodo.19335759
+       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v11.pdf
+       PDL Global Mapping of Structures, Results, and Open Problems (version 11)
+       *** Updated Session 16: complete rewrite covering D01-D36, 23 pages, 43 refs ***
+       *** Previous version (v10): https://doi.org/10.5281/zenodo.19194978 ***
 
 [D23]  https://doi.org/10.5281/zenodo.19197268
        PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
@@ -248,7 +253,7 @@ called D24). The table below is the authoritative reference.*
        Proof of G_eff(N)=σ(N)·G_PDL in PDL: Gate 3 Resolved (v. préliminaire)
 
 [D32]  https://doi.org/10.5281/zenodo.19306269
-       Schrödinger_Dynamics_from_the__A___B__Coupling_Criterion.pdf
+       Schrodinger_Dynamics_from_the__A___B__Coupling_Criterion.pdf
        Schrödinger Dynamics from the (A)∧(B) Coupling Criterion in PDL
 
 [D33]  https://doi.org/10.5281/zenodo.19307249
@@ -342,7 +347,7 @@ discrepancies. The old internal numbering diverged from Zenodo for three documen
 | D25 (old) | **D24** | Closure-density dependence of G_eff and Hubble tension |
 | D_Exist | **D19** | Existence as pulsating closure |
 | D_Who / D_Who_v2 | **D20** | Whoever We May Be — philosophical synthesis |
-| D_Map | **DM** | Global Mapping v10 |
+| D_Map | **DM** | Global Mapping (v10 superseded by v11 in Session 16) |
 
 *New labels added during corpus audit (not renumbering — insertions only):*
 
@@ -353,6 +358,35 @@ discrepancies. The old internal numbering diverged from Zenodo for three documen
 | **D16b** | 10.5281/zenodo.18841166 | D16a and D17 | Combinatorial selection and local uniqueness of the proton architecture |
 
 *All references in this document use the Zenodo canonical numbering.*
+
+---
+
+## DM v11 Summary (Session 16 — Global Mapping rewrite)
+
+**Title:** PDL Global Mapping of Structures, Results, and Open Problems (version 11)
+**DOI:** https://doi.org/10.5281/zenodo.19335759
+**Published:** 30 March 2026
+
+**Scope:** Complete LaTeX rewrite covering D01–D36 plus all auxiliaries. Supersedes DM v10
+(10.5281/zenodo.19194978). Source files: PDL_Global_Mapping_v11.tex (1064 lines) +
+PDL_references_v11.bib (548 lines, 43 entries).
+
+**Key additions over v10:**
+- Thirteen new documents (D24–D36) incorporated with full descriptions
+- Epistemic status updated: G, Schrödinger, Dirac, Born, Einstein now theorems (not conjectures)
+- Six-layer epistemic architecture table
+- TikZ dependency diagram (critical path: axioms → Einstein equation)
+- Eleven numbered open problems in priority order
+- Three parameter-free falsifiable predictions table
+- Practical continuation guide (workflow, LaTeX conventions, infrastructure, entry points)
+- Complete glossary with all PDL-specific terms
+
+**LaTeX technical notes:**
+- Bibliography style: \bibliographystyle{unsrt} with \usepackage[numbers]{natbib}
+  (plainnat overflows alphabet for 43 same-author/same-year entries — known limitation)
+- Package lmodern removed for compatibility with the compilation environment
+- One label fix: \ref{subsec:H1} corrected to \ref{op:H1}
+- Compilation: 23 pages, 43 citations resolved, zero errors after three-pass compile
 
 ---
 
@@ -513,45 +547,44 @@ precision). Independence must hold to δ < 0.0001.
   exhaustive). T² = −I₂ in three lines. Clifford algebra as theorem (residual 0.00×10⁰).
   Spin-½ double cover as consequence, not postulate. NR limit = D32 exactly.
 
-  **Front 2 — Born rule (D34):** OP5 resolved Level 1. εcoh = |⟨−θ|ψ⟩|² from apparatus
-  symmetry. P₊ = |⟨+θ|ψ⟩|² algebraically. Gleason uniqueness closes argument. Heaviside
-  obstruction identified (discrepancy = 1.00 exact). OP1 = derive α_τ.
+  **Front 2 — Born rule (D34):** OP5 resolved at Level 1. Five Gleason axioms verified.
+  Gleason uniqueness theorem applied. Born rule P₊ = |⟨+θ|ψ⟩|² unique. Level 2 open.
 
-  **Front 3 — Einstein equation (D35):** κ_PDL(N) = σ(N)·κ_Newton theorem. Hubble ratio
-  improved to 0.006%. Three epistemic layers documented.
+  **Front 3 — Einstein equation (D35):** Gate 3 synthesised at GR level. κ_PDL(N) =
+  σ(N)·κ_Newton (theorem). Hubble ratio 0.006% (0 free parameters, updated from 0.20%).
 
-  **Front 4 — Gate 3 strengthened (D36):** Four Colab blocks. σ(N)^18 ruled out.
-  N·G(1) ruled out. Tautology identified and resolved. δ = 0 exact (256 pairs).
-  Tr(A) = 0 combinatorial. H1 identified as sole remaining algebraic step.
+  **Front 4 — Gate 3 strengthened (D36):** Linear bridge inversion hypothesis replaced.
+  Independence δ=0 proved from (A)∧(B) (exhaustive). Tr(A)=0 proved combinatorially.
+  Hypothesis reduced to H1 alone (OP1 of D36).
 
-  **Front 5 — Epistemic assessment:** PDL self-consistent at five levels simultaneously
-  (α, G, μ*, H₀; Schrödinger; Dirac; Einstein; Born) from single quintuplet
-  (24, 28, 930, 10087, 11017). All documents D27–D36 published on Zenodo.
+  **Front 5 — Programme self-consistency:** Five levels now simultaneously covered:
+  constants, nuclear structure, quantum dynamics, gravitational dynamics, cosmology.
 
-- **Veille scientifique (28 March 2026):** Monitoring of three recent results with
-  structural connections to PDL. See section "External Scientific Connections" below.
-  No modification to critical path.
+- **Session 16 (31 March 2026):** Documentation and dissemination session.
+
+  **DM v11:** Complete LaTeX rewrite of the global mapping document. 23 pages, 43 citations,
+  zero compilation errors. Deposited on Zenodo (DOI: 10.5281/zenodo.19335759). Source files
+  (PDL_Global_Mapping_v11.tex + PDL_references_v11.bib) available on GitHub.
+
+  **Website cedriclaubscher.ch:** Full update. Title corrected ("Dynamique" → "Dynamic";
+  "for Physical" → "for Physics"). "A Guided Journey" restructured into 7 phases (I: Logical
+  Foundations, II: Architecture of Matter, III: Constants, IV: Three Gates, V: Derived
+  Equations, VI: Cosmology, VII: Dialogue and Open Frontiers). Document table updated to
+  D01–D36 with DOI-verified links. Four narrative blocks rewritten (Origin, Listening,
+  Threshold, Crossing) to integrate the programme's current state and philosophical register.
+
+  **Zenodo abstract for DM v10:** Updated to reflect Sessions 11–15 advances.
+
+  **External communications:** Response to Eric Needham (Academia) on nuclear stability
+  model. Academia post drafted announcing corpus update. Three external papers analysed
+  (see External Scientific Connections and External Vigilance sections).
+
+  **LaTeX convention established:** No spurious mid-sentence line breaks in .tex source.
+  This applies to all future PDL documents.
 
 ---
 
-## Key Results Summary (Sessions 11–15)
-
-### Axiomatic derivation of 155/11017 — Session 11 (D29)
-
-**KEY RESULT — Gate 1 RESOLVED.** δμ⁽¹⁾ = r_val/(R_e·R_tot) = 155/11017 proved from PDL
-axioms alone. Two lemmas exhaustively verified (768 cases, 0 counter-example). Lemma 1:
-(A)∧(B) ↔ stable mixed triangle. Lemma 2: r_val = 930 unique (charge +1, divisibility R_e).
-
-### Derivation of the QCD correction coefficient — Session 12 (D30)
-
-**KEY RESULT — GATE 2 RESOLVED.** ε_G^B conjecture proved under minimal PDL–QCD interface.
-Lemma 2 (D30): engagement coefficient a = 2 forced by PDL axiom C4. Factor 2 in
-2Δm_iso/m_p is a structural theorem. Δm_iso = m_d − m_u is the unique irreducible external
-parameter, forced by C1. G = (ħc/m_p²)·(ε_G^B)^18 with ε_G^B ∈ Q(√5) fully proved.
-
-### Gate 3 — G_eff(N) = σ(N)·G_PDL — Sessions 13+15 (D31, D36)
-
-**KEY RESULT — GATE 3 THEOREM.**
+## Cosmological Framework
 
 ```
 σ(N) = 1 − (1−κ)^N  [exact from recurrence, D24]
@@ -569,7 +602,7 @@ Discrepancy: 0.006% — no free parameter (updated Session 15)
 
 ---
 
-## External Scientific Connections — Veille (28 March 2026)
+## External Scientific Connections — Veille
 
 *Recent external results with structural connections to PDL. These do not modify the
 critical path but constitute validation anchors and future research directions.*
@@ -636,6 +669,47 @@ supercritical liquid. **Structurally deepest external connection identified to d
 **What is not formalised:** K₄ ↔ H₂O tetrahedron is a structural analogy, not a
 derivation. Priority: Low for current critical path.
 
+### E4 — "Reality as Structured Information" (Bulaquena, Zenodo, 2025/2026)
+
+**Reference:** M. Bulaquena (claimed affiliation: Yale University), "Reality as Structured
+Information: A Layered Ontological Framework," deposited on Zenodo.
+
+**Assessment (Session 16):** This paper shares PDL's motivational vocabulary
+(persistence, constraint, relational ontology) but contains no formal derivations.
+The central "Bulaquena parameter" (Λ_B) is never given a numerical value or derived
+from the framework's axioms. The self-citations (Bulaquena 2022, 2023, 2024 with DOIs
+that do not verify in standard databases) raise serious concerns about authenticity.
+The paper is likely AI-generated or of negligible scientific quality.
+
+**Risk for PDL:** Superficial resemblance (zero-free-parameter claims, discrete geometric
+language, Theorem/Conjecture labeling) could lead uninformed readers to confuse the two
+programmes. The decisive distinction is that PDL derives specific numerical predictions
+(G at 27 ppm, μ* = 1836.152670, H₀ = 67.26 km/s/Mpc); the RIS framework derives none.
+
+**Action:** No public response recommended. If contacted on Academia, the appropriate
+question is: "What is the numerical value of Λ_B, and how is it derived from your
+constraint operator?" — a question the framework cannot answer.
+
+### E5 — "Dark Matter: A Gravitational Effect" (anonymous, 2010/2022)
+
+**Reference:** Anonymous author, "Dark Matter: A Gravitational Effect, Mediated by the
+Observable and Closed Universe," personal essay revised February 2022.
+
+**Assessment (Session 16):** Qualitative speculative essay, no equations, no derivations.
+The central claim — that dark matter is an augmented gravitational effect in the plane of
+spiral galaxies due to relativistic mass of peripheral galaxies — is an intuition, not a
+proof. The "blanketing" model of repulsive gravity is physically problematic (gravity
+cannot be shielded in general relativity).
+
+**Interesting structural resonance with PDL:** The paper's core intuition — that the
+effective gravitational coupling experienced by a galaxy depends on its density context —
+echoes G_eff(N) = σ(N)·G_PDL in PDL. This is NOT the same mechanism, but the same
+phenomenological direction. An open question for PDL: can G_eff(N) with appropriate N(r)
+reproduce observed galaxy rotation curves without dark matter particles?
+
+**Action:** File as a future research direction (galaxy rotation curves via G_eff(N)).
+Not a critical-path priority. A potential paper topic once H1 is resolved.
+
 ### Summary Table — External Connections
 
 | ID | Source | Date | Key PDL connection | Priority |
@@ -643,10 +717,44 @@ derivation. Priority: Low for current critical path.
 | E1 | QQG / Afshordi et al. (PRL) | 18 Mar 2026 | Emergence without ad hoc; non-particulate ε_G strategy | Medium |
 | E2 | Chandra / Yu et al. (ApJ) | 24 Mar 2026 | L_Edd(N) = f(G_eff(N)); N(z) invertible from ṁ(z) | Low |
 | E3 | LLCP water / You et al. (Science) | 26 Mar 2026 | K₄ ↔ H₂O tetrahedron; C_p divergence ↔ OP1 D36 | Medium (long-term) |
+| E4 | Bulaquena RIS (Zenodo) | 2025/2026 | Superficial resemblance; no quantitative content; vigilance | Low (vigilance) |
+| E5 | Dark matter essay (anonymous) | 2010/2022 | G_eff(N) density-dependence ↔ galaxy rotation curves | Low (future direction) |
 
 ---
 
-## Open Problems (current status — Session 15)
+## External Vigilance — Pseudoscientific Programmes
+
+*This section records programmes that superficially resemble PDL but are pseudoscientific.
+Knowledge of these is important for maintaining PDL's epistemic distinctiveness in public
+communications.*
+
+### V1 — Recursive Harmonic Codex (RHC)
+
+**Author/title:** Anonymous (or AI-generated), "A Ten-Part Theoretical Finalization of
+Grand Unified Physics: The Recursive Harmonic Codex," deposited on Zenodo.
+
+**Assessment (Session 16):** This is a pseudoscientific compendium with fundamental
+mathematical errors. The core claim — that in base b, "10" means "1i + 0r" — is a basic
+misunderstanding of positional notation (in binary, "10" = 2, not the imaginary unit i).
+The framework also claims to bypass Shannon's entropy limit, which is physically impossible.
+Other red flags: "7.5-dimensional observer physics," a "144,000-node limit" (biblical
+reference, Apocalypse 7:4), and messianic rhetoric ("the 101-year detour is officially
+over," "the Cartesian era is dead").
+
+**Risk for PDL:** The RHC uses legitimate mathematical terminology (Golay code, Leech
+lattice, Farey sequences, quaternions) without mathematical content — exactly as some
+low-quality programmes use "coherence," "closure," or "relational" language. The RHC
+coincidentally uses "24-dimensional" structures. A reader unfamiliar with both programmes
+might confuse them. The decisive distinction: PDL derives G at 27 ppm, μ* = 1836.152670,
+H₀ = 67.26 km/s/Mpc from axioms; the RHC derives no numerical quantity whatsoever.
+
+**Action:** Do not respond publicly. Do not engage on Academia or elsewhere. Any
+response would grant visibility. If asked to compare PDL and RHC, point to the numerical
+predictions and the explicit open-problem structure of PDL.
+
+---
+
+## Open Problems (current status — Session 16)
 
 1. **[RESOLVED — Session 7]** Topological proof of exponent 18 (D23)
 2. **[RESOLVED — Sessions 11–12]** Derivation of ε_G from first principles (D29, D30)
@@ -656,43 +764,46 @@ derivation. Priority: Low for current critical path.
 5. **[RESOLVED — Session 14]** Schrödinger dynamics from (A)∧(B) — OP6 D31 (D32)
 6. **[RESOLVED — Session 15]** Dirac equation from SL(2,ℂ) pulsation — OP4 D32 (D33)
 7. **[RESOLVED AT LEVEL 1 — Session 15]** Born rule — OP5 D32 (D34); Level 2 open
+8. **[RESOLVED — Session 16]** DM v11 — global mapping updated to reflect D01–D36
 
-8.  **[OPEN — HIGH — OP1 D36]** Derive H1 from axioms C1–C4
+9.  **[OPEN — HIGH — OP1 D36]** Derive H1 from axioms C1–C4
     - Why is κ = R_surf/R_tot the gravitational engagement probability of a single proton?
     - Sole remaining step to make Gate 3 fully unconditional.
 
-9.  **[OPEN — HIGH — OP1 D32]** Algebraic derivation of b without continuum action argument
+10. **[OPEN — HIGH — OP1 D32]** Algebraic derivation of b without continuum action argument
 
-10. **[OPEN — HIGH — OP1 D34]** Derivation of triangle weights α_τ from PDL axioms
+11. **[OPEN — HIGH — OP1 D34]** Derivation of triangle weights α_τ from PDL axioms
     - Uniform weights give Heaviside (discrepancy = 1.00 exact, structural obstruction)
 
-11. **[OPEN — HIGH]** The 47 ppm residual in δμ
+12. **[OPEN — HIGH]** The 47 ppm residual in δμ
     - Structure: O(47 ppm) ≈ 2α·Δm_iso/m_p ≈ 39 ppm; identify factor g
 
-12. **[OPEN — HIGH]** Algebraic exclusion of G_sea (OP2 in D31, OP2 in D36)
+13. **[OPEN — HIGH]** Algebraic exclusion of G_sea (OP2 in D31, OP2 in D36)
 
-13. **[OPEN — MEDIUM — OP2 D35]** Full derivation of coherence tensor C_coh
+14. **[OPEN — MEDIUM — OP2 D35]** Full derivation of coherence tensor C_coh
 
-14. **[OPEN — MEDIUM — OP1 D35]** Cosmological constant Λ_PDL
+15. **[OPEN — MEDIUM — OP1 D35]** Cosmological constant Λ_PDL
     - Λ_PDL ~ C·η_L^18·(m_p c/ħ)²; ratio Λ_PDL/Λ_obs ~ 10^45 for C=1
     - Note E1: QQG shows such a derivation is achievable from a UV-complete framework.
 
-15. **[OPEN — MEDIUM — OP3 D36]** Structural derivation of N_local
-16. **[OPEN — MEDIUM — OP2 D32]** Linearity and unitarity from PDL optimisation functional
-17. **[OPEN — MEDIUM]** Multi-body extension — helium, Pauli exclusion (OP3 D32)
-18. **[OPEN — MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
-19. **[OPEN — MEDIUM]** Global uniqueness of proton quintuplet (OP2 D25)
-20. **[OPEN — FUTURE]** Test via lattice QCD — (m_d−m_u)_PDL = 2.532 MeV; ~5 years (FLAG)
-21. **[OPEN — FUTURE]** Test via μ precision — μ* = 1836.152670 at 0.002 ppm
-22. **[OPEN — MEDIUM]** Shell splitting from Δn=4 (OP1 D22)
-23. **[OPEN — MEDIUM]** Isotopic window width ΔN(Z) (OP2 D22)
-24. **[OPEN — MEDIUM]** Lacunae Z=43, Z=61 (OP3 D22)
-25. **[OPEN — FUTURE — E3]** Derive LLCP position (T_c ≈ 210 K, P_c ≈ 1,000 atm) from
+16. **[OPEN — MEDIUM — OP3 D36]** Structural derivation of N_local
+17. **[OPEN — MEDIUM — OP2 D32]** Linearity and unitarity from PDL optimisation functional
+18. **[OPEN — MEDIUM]** Multi-body extension — helium, Pauli exclusion (OP3 D32)
+19. **[OPEN — MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
+20. **[OPEN — MEDIUM]** Global uniqueness of proton quintuplet (OP2 D25)
+21. **[OPEN — FUTURE]** Test via lattice QCD — (m_d−m_u)_PDL = 2.532 MeV; ~5 years (FLAG)
+22. **[OPEN — FUTURE]** Test via μ precision — μ* = 1836.152670 at 0.002 ppm
+23. **[OPEN — MEDIUM]** Shell splitting from Δn=4 (OP1 D22)
+24. **[OPEN — MEDIUM]** Isotopic window width ΔN(Z) (OP2 D22)
+25. **[OPEN — MEDIUM]** Lacunae Z=43, Z=61 (OP3 D22)
+26. **[OPEN — FUTURE — E3]** Derive LLCP position (T_c ≈ 210 K, P_c ≈ 1,000 atm) from
     PDL closure parameters
+27. **[OPEN — LOW — E5]** Galaxy rotation curves from G_eff(N(r)) — dark matter without
+    exotic particles as a PDL derivation target
 
 ---
 
-## Epistemic Status Summary — Session 15
+## Epistemic Status Summary — Session 16
 
 | Result | Status | Document |
 |--------|--------|----------|
@@ -736,7 +847,7 @@ derivation. Priority: Low for current critical path.
 
 ---
 
-## Epistemic Architecture (updated Session 15)
+## Epistemic Architecture (updated Session 16)
 
 **Layer 1 — Axioms → combinatorial results (fully rigorous):**
 K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
@@ -765,7 +876,7 @@ targets (OP2, OP1 of D35).
 
 ---
 
-## Dependency Map (critical path — updated Session 15)
+## Dependency Map (critical path — updated Session 16)
 
 ```
 Proton quintuplet (24,28,930,10087,11017)
@@ -828,7 +939,7 @@ OPEN FRONTIER (OP1 D36): derive H1 (κ = R_surf/R_tot) from axioms C1–C4
 
 ---
 
-## Next Actions (priority order — Session 15 + Veille)
+## Next Actions (priority order — Session 16)
 
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
 2.  **[IMMEDIATE]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
@@ -843,12 +954,13 @@ OPEN FRONTIER (OP1 D36): derive H1 (κ = R_surf/R_tot) from axioms C1–C4
 11. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
 12. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
 13. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
-14. **[MEDIUM]** DM: Update corpus map to include D33–D36
-15. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
-16. **[FUTURE]** Monitor μ precision measurements
-17. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
-18. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
+14. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
+15. **[FUTURE]** Monitor μ precision measurements
+16. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
+17. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
     (T_c, P_c) from PDL closure parameters
+18. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
+    alternative — requires H1 resolved first
 
 ---
 
@@ -867,4 +979,16 @@ After each session, update:
 - Dependency Map (new connections)
 - Next Actions (reprioritise)
 
-*All references in this document use the Zenodo canonical numbering (D01–D36 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+**LaTeX conventions (established Session 16, applies to all documents):**
+- No spurious mid-sentence line breaks in .tex source
+- British English throughout
+- Complete .bib bibliography as a separate file
+- theorem, proof, definition, conjecture, openproblem, hypothesis environments
+- Epistemic status table in each document
+- Numbered open problems
+- Abstracts: context → problem → key result with numerical values → consequence in chain
+- Bibliography style: \bibliographystyle{unsrt} with \usepackage[numbers]{natbib}
+  for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
+
+*All references in this document use the Zenodo canonical numbering
+(D01–D36 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
