@@ -53,12 +53,15 @@ called D24). The table below is the authoritative reference.*
 | D08   | 10.5281/zenodo.18664995 | Topological reformulation in PDL | Topology | Published |
 | D09   | 10.5281/zenodo.18675200 | Position paper / open problems | Programme | Published |
 | D10   | 10.5281/zenodo.18716526 | Discrete coherence flux to effective fields | Dynamics | Published |
+| D10a  | 10.5281/zenodo.19329465 | Proper time as coherence-cycle counting, emergent metric | Metric/time | Published |
 | D11   | 10.5281/zenodo.18725069 | Towards Einstein–Dirac unification (sketch) | Synthesis | Published |
 | D12   | 10.5281/zenodo.18828183 | Derivation of the fine-structure constant α | α | Published |
 | D13   | 10.5281/zenodo.18831587 | Schrödinger compatibility with PDL | QM | Published |
 | D14   | 10.5281/zenodo.18832069 | Born's rule + golden-ratio active surface | QM | Published |
 | D15   | 10.5281/zenodo.18832542 | Schrödinger-type dynamics sketch | QM | Published |
 | D16   | 10.5281/zenodo.18832953 | Combinatorial proton architecture | Proton | Published |
+| D16a  | 10.5281/zenodo.18841034 | Minimal stationary closures — necessity of the (4,6) block | Foundations | Published |
+| D16b  | 10.5281/zenodo.18841166 | Combinatorial selection and local uniqueness of the proton architecture | Proton | Published |
 | D17   | 10.5281/zenodo.18841254 | Coherence leakage and exponent 18 | Coupling G | Published |
 | D18   | 10.5281/zenodo.18854190 | Discrete cavity modes, density of states | Stat. phys. | Published |
 | D19   | 10.5281/zenodo.18854559 | Existence as pulsating closure (ontology) | Philosophy | Published |
@@ -135,6 +138,10 @@ called D24). The table below is the authoritative reference.*
        Coherence_Effective_Fields_Gauss_Faraday_Structure_Triangle_Counts_Schrödinger_Dynamics_PDL_Framework.pdf
        From Discrete Coherence Flux to Effective Fields: A Structured Programme within PDL
 
+[D10a] https://doi.org/10.5281/zenodo.19329465
+       Proper_Time_as_Coherence_Cycle_Counting_and_Emergent_Metric_in_a_Relational_Graph_Framework_PDL.pdf
+       Proper Time as Coherence-Cycle Counting, Emergent Metric, and Relational Distance in PDL
+
 [D11]  https://doi.org/10.5281/zenodo.18725069
        Towards_Einstein__Dirac_Unification_PDL.pdf
        Towards an Einstein–Dirac Unification from the Projective Dynamic Logo Framework
@@ -158,6 +165,14 @@ called D24). The table below is the authoritative reference.*
 [D16]  https://doi.org/10.5281/zenodo.18832953
        Combinatorial_Proton_Architecture_PDL_v2.pdf
        On the Combinatorial Selection of the Proton Architecture in PDL
+
+[D16a] https://doi.org/10.5281/zenodo.18841034
+       Minimal_Stationary_Closures_in_the_PDL_Framework_Necessity_of_the_4_6_Block.pdf
+       Minimal Stationary Closures in the PDL Framework: Necessity of the (4,6) Block
+
+[D16b] https://doi.org/10.5281/zenodo.18841166
+       On_the_Combinatorial_Selection_and_Local_Uniqueness_of_the_PDL_Proton_Architecture.pdf
+       On the Combinatorial Selection and Local Uniqueness of the Proton Architecture in PDL
 
 [D17]  https://doi.org/10.5281/zenodo.18841254
        Coherence_Leakage_Hierarchical_Filtering_and_the_Exponent_18_in_the_PDLogo_Framework.pdf
@@ -328,6 +343,14 @@ discrepancies. The old internal numbering diverged from Zenodo for three documen
 | D_Exist | **D19** | Existence as pulsating closure |
 | D_Who / D_Who_v2 | **D20** | Whoever We May Be — philosophical synthesis |
 | D_Map | **DM** | Global Mapping v10 |
+
+*New labels added during corpus audit (not renumbering — insertions only):*
+
+| New label | DOI | Inserted between | Content |
+|-----------|-----|-----------------|---------|
+| **D10a** | 10.5281/zenodo.19329465 | D10 and D11 | Proper time as cycle counting; emergent metric; relational distance |
+| **D16a** | 10.5281/zenodo.18841034 | D16 and D17 | Minimal stationary closures; necessity of the (4,6) block |
+| **D16b** | 10.5281/zenodo.18841166 | D16a and D17 | Combinatorial selection and local uniqueness of the proton architecture |
 
 *All references in this document use the Zenodo canonical numbering.*
 
@@ -844,5 +867,4 @@ After each session, update:
 - Dependency Map (new connections)
 - Next Actions (reprioritise)
 
-*Note: Always use the Zenodo canonical numbering (D01–D36, DN, DM, D01F, D20F).
-The bibliography section above is the authoritative reference for DOIs.*
+*All references in this document use the Zenodo canonical numbering (D01–D36 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
