@@ -1,0 +1,1068 @@
+% ============================================================
+%  Projective Dynamic Logo (PDL)
+%  Global Mapping of Structures, Results, and Open Problems
+%  Version 11  —  C. Laubscher
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---- Encoding and fonts ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% ---- Page layout ----
+\usepackage[margin=2.5cm]{geometry}
+
+% ---- Mathematics ----
+\usepackage{amsmath,amssymb,amsthm}
+
+% ---- Tables and lists ----
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning,backgrounds,arrows.meta,fit}
+
+% ---- Captions and colours ----
+\usepackage[font=small,labelfont=bf]{caption}
+\captionsetup[table]{labelsep=quad}
+\usepackage{xcolor}
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{hypothesisorange}{RGB}{200,90,0}
+\definecolor{openproblemred}{RGB}{170,0,0}
+
+% ---- Hyperlinks ----
+\usepackage{hyperref}
+\usepackage{doi}
+\usepackage{url}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=proofblue,
+  citecolor=proofblue,
+  urlcolor=proofblue
+}
+
+% ---- Bibliography ----
+\usepackage[numbers]{natbib}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{openproblem}[theorem]{Open Problem}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+% ---- Custom macros ----
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\quintuplet}{(24,\,28,\,930,\,10087,\,11017)}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\epsG}{\varepsilon_G}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\sigmaN}{\sigma(N)}
+\newcommand{\mustar}{\mu^*}
+
+% ---- List style ----
+\setlist[itemize,1]{label=\textendash}
+\setlist[itemize,2]{label=\textbullet}
+
+% ============================================================
+\title{Projective Dynamic Logo (PDL)\\[4pt]
+\large Global Mapping of Structures, Results, and Open Problems\\[2pt]
+\normalsize Version 11 — A Guide for Continuation of the Programme}
+\author{C\'edric Laubscher\\[4pt]
+\small Independent researcher\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}
+$\;\cdot\;$
+\small \href{https://zenodo.org/communities/pdl-framework/}{zenodo.org/communities/pdl-framework}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+\clearpage
+
+% ============================================================
+\begin{abstract}
+This document provides a systematic and self-contained guide to the Projective Dynamic Logo (PDL) programme, intended for a scientific colleague who wishes to understand, verify, or continue the research.
+PDL is a foundational physics programme that derives fundamental physical constants and dynamical laws from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields.
+The minimal admissible closure under the axioms is the complete signed graph $\Kfour$ on four vertices and six edges, identified with the electron prototype.
+The proton is characterised by a unique integer quintuplet $\quintuplet$, from which all results flow.
+
+The current corpus (D01--D36, plus auxiliary documents) has reached the following state:
+\begin{itemize}
+\item Three critical Gates have been resolved: the axiomatic derivation of the amplitude $155/11017$ (Gate~1, D29), the structural proof that the QCD correction coefficient equals~2 (Gate~2, D30), and the theorem $\Geff(N)=\sigmaN\cdot\GPDL$ (Gate~3, D31/D36).
+\item Four fundamental dynamical equations have been derived from the $(A)\wedge(B)$ coupling criterion: the Schr\"odinger equation (D32), the Dirac equation (D33), Born's rule via Gleason uniqueness (D34), and the Einstein coupling equation (D35).
+\item Newton's gravitational constant $G$ is now a theorem, modulo a single named hypothesis (H1) and a single irreducible external parameter ($\Delta m_{\mathrm{iso}} = m_d - m_u$).
+\item The Hubble tension is resolved at $0.006\%$ with zero free parameters (D35/D27).
+\end{itemize}
+The sole remaining foundational open problem is the algebraic derivation of $\kappa = \Rsurf/\Rtot$ from axioms C1--C4 (Open Problem~1 of D36).
+\end{abstract}
+
+% ============================================================
+\section{Purpose and Scope}
+\label{sec:purpose}
+
+\subsection{Aim of this document}
+\label{subsec:aim}
+
+This mapping document pursues four objectives.
+First, it provides a complete and current inventory of the PDL corpus (D01--D36 plus auxiliary documents), with concise descriptions of each document's role and main result.
+Second, it makes explicit the logical dependency structure of the programme: which results follow from which, what has been proved, and what remains conjectural or open.
+Third, it classifies all results according to a rigorous epistemic taxonomy, distinguishing proved theorems, conditional theorems (whose hypotheses are explicitly named), structurally motivated conjectures, and open problems.
+Fourth, it identifies the most productive entry points and continuation paths for a colleague wishing to extend the programme.
+
+This document is \emph{not} a replacement for the primary technical documents; it is a navigational and epistemic guide that complements them.
+
+\subsection{What makes this version different from DM v10}
+\label{subsec:diff_v10}
+
+Version 10 of the mapping document~\citep{D_Map_v10} covered the corpus up to D23 and pre-dated the resolution of the three Gates.
+The present version (v11) incorporates thirteen additional documents (D24--D36), updates the epistemic status of multiple results from ``conjecture'' to ``theorem'', adds a dedicated section on the derived fundamental equations, and revises the open-problems list accordingly.
+The reader familiar with v10 should note in particular that: (i) Newton's constant $G$ is now a theorem under named hypotheses; (ii) the Schr\"odinger, Dirac, Born, and Einstein equations have all been derived; and (iii) the cosmological Hubble tension has been resolved parameter-free.
+
+\subsection{Epistemic conventions}
+\label{subsec:conventions}
+
+Throughout this document, the following colour-coded epistemic labels are used in tables and text:
+\begin{description}[leftmargin=2.5cm,style=nextline]
+\item[\textcolor{proofblue}{Theorem}] A result established by a complete proof from the PDL axioms (C1--C4) and previously proved theorems, with no free parameters and no unproved auxiliary hypotheses.
+\item[\textcolor{proofblue}{Theorem (H)}] A result proved under one or more explicitly named hypotheses (H1, H2, \ldots); the proof itself is complete conditional on those hypotheses.
+\item[\textcolor{conjecturegreen}{Conjecture}] A structurally motivated claim supported by numerical evidence, qualitative arguments, or partial proofs, but not yet established rigorously.
+\item[\textcolor{hypothesisorange}{Named Hypothesis}] An auxiliary assumption that is explicitly labelled and isolated, so that results depending on it are clearly traceable.
+\item[\textcolor{openproblemred}{Open Problem}] A well-posed question whose resolution would advance the programme significantly.
+\end{description}
+
+% ============================================================
+\section{Document Corpus}
+\label{sec:corpus}
+
+\subsection{Complete document table}
+\label{subsec:doc_table}
+
+Table~\ref{tab:documents} lists the complete PDL corpus in Zenodo canonical order.
+Document labels follow the scheme established in the PDL context file and in the Zenodo community \url{https://zenodo.org/communities/pdl-framework/}.
+French-language documents (D01F, D20F) and non-technical books (DN) are included for completeness but are not referenced in the technical sections of this guide.
+
+\setlength{\LTpre}{12pt}
+\setlength{\LTpost}{6pt}
+
+\begin{longtable}{@{}L{1.3cm}L{3.8cm}L{8.0cm}@{}}
+\caption{PDL corpus in Zenodo canonical order.  ``Main result'' denotes the single most consequential contribution of each document to the programme chain.}
+\label{tab:documents}\\
+\toprule
+Label & Title (abbreviated) & Main result / role \\
+\midrule
+\endfirsthead
+\toprule
+Label & Title (abbreviated) & Main result / role \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+D01 & \textit{The Emergence of Physical Reality within the PDL Framework}~\citep{D01} & Founding article: four relational axioms, $\Kfour$ structure, proton architecture, first treatment of $\hbar$, $\alpha$, $G$, and cosmology. \\[0.3em]
+
+D02 & \textit{Introduction to the PDL}~\citep{D02} & High-level conceptual overview; standard first reading for new collaborators. \\[0.3em]
+
+D01F & \textit{L'\'emergence de la r\'ealit\'e physique (LDP) — FR}~\citep{D01F} & French translation of D01. \\[0.3em]
+
+D03 & \textit{The Emergence of Physical Reality (IMRad format)}~\citep{D03} & Journal-formatted version of D01. \\[0.3em]
+
+D04 & \textit{A Modal Dialogue between PDL and the Theory of Objectivity}~\citep{D04} & Comparative study of PDL and TO; ontological commitments of PDL. \\[0.3em]
+
+D05 & \textit{A Minimal Relational Sketch for the Golden Ratio in PDL}~\citep{D05} & Self-similar core--surface partition; golden ratio and active surface. \\[0.3em]
+
+D06 & \textit{Hierarchical Filtering of Coherence Leakage and the Exponent 18}~\citep{D06} & First formulation of the 18-filter leakage hierarchy. \\[0.3em]
+
+D07 & \textit{Gleason-Type Uniqueness of Born's Rule for Spin-$\tfrac{1}{2}$}~\citep{D07} & Early sketch of the Gleason approach; superseded by D34 at Level~1. \\[0.3em]
+
+D08 & \textit{Logical Leakage as Self-Maintained Probability: Topological Reformulation}~\citep{D08} & Coexistence topology; coherence-cost pseudo-metric; leakage as probability. \\[0.3em]
+
+D09 & \textit{PDL as a Foundational Research Programme: Status, Open Problems, and Interface with TO}~\citep{D09} & Programme position paper; first systematic open-problem list. \\[0.3em]
+
+D10 & \textit{From Discrete Coherence Flux to Effective Fields}~\citep{D10} & Gauss- and Faraday-like relations from coherence fluxes; path towards Schr\"odinger. \\[0.3em]
+
+D10a & \textit{Proper Time as Coherence-Cycle Counting, Emergent Metric, and Relational Distance}~\citep{D10a} & Proper time as a count of coherence cycles; emergent Minkowski structure. \\[0.3em]
+
+D11 & \textit{Towards an Einstein--Dirac Unification from PDL}~\citep{D11} & Preliminary sketch coupling Dirac spinors to the emergent coherence-cost metric. \\[0.3em]
+
+D12 & \textit{A Structural Derivation of the Fine-Structure Constant from PDL}~\citep{D12} & Closed-form expression for $\alpha^{-1}$ from $\rval=930$, $\mu^*$, and $\varphi$; accuracy $\mathcal{O}(10^{-4})$. \\[0.3em]
+
+D13 & \textit{Compatibility of the Schr\"odinger Framework with PDL}~\citep{D13} & Benchmark: PDL-derived $\alpha$ and proton in hydrogenic Schr\"odinger; spectral concordance. \\[0.3em]
+
+D14 & \textit{Born's Rule and the Golden-Ratio Active Surface in PDL}~\citep{D14} & Relational derivation of Born's rule for spin-$\tfrac{1}{2}$; role of $\varphi$ in $\Rsurf$. \\[0.3em]
+
+D15 & \textit{Towards a Schr\"odinger-Type Dynamics from PDL: A Relational Sketch}~\citep{D15} & Early sketch of Schr\"odinger emergence; superseded by D32. \\[0.3em]
+
+D16 & \textit{Combinatorial Selection of the Proton Architecture: Uniqueness Conjecture}~\citep{D16} & Optimisation functional for the quintuplet; local uniqueness conjecture. \\[0.3em]
+
+D16a & \textit{Minimal Stationary Closures in PDL: Necessity of the $(4,6)$ Block}~\citep{D16a} & \textcolor{proofblue}{Theorem}: no admissible closure exists on $|V|\leq 3$; $\Kfour$ is first admissible. \\[0.3em]
+
+D16b & \textit{Combinatorial Selection and Local Uniqueness of the Proton Architecture}~\citep{D16b} & Refined combinatorial treatment; local uniqueness conjecture for $\quintuplet$. \\[0.3em]
+
+D17 & \textit{Coherence Leakage, Hierarchical Filtering, and the Exponent~18}~\citep{D17} & Organisation of the 18 filters into three blocks; effective coupling ansatz $\Geff\sim\epsG^{18}$. \\[0.3em]
+
+D18 & \textit{Discrete Cavity Modes and Logical Density of States}~\citep{D18} & PDL cavity modes; $\rho(\nu)\propto\nu^2$ density-of-states in three dimensions. \\[0.3em]
+
+D19 & \textit{Existence as Pulsating Closure: An Ontological Meditation}~\citep{D19} & Philosophical analysis of PDL; boundaries, leakage, and transcendence. \\[0.3em]
+
+D20F & \textit{Qui que nous puissions \^etre — FR}~\citep{D20F} & French philosophical synthesis; companion to D20. \\[0.3em]
+
+D20 & \textit{Whoever We May Be: A Philosophical Synthesis of PDL}~\citep{D20} & Ontological and existential synthesis; accessible entry point for non-specialists. \\[0.3em]
+
+D21 & \textit{Universal Coherence Leakage: A Structural Bridge between $G$ and $\alpha$ (V3)}~\citep{D21} & \textcolor{proofblue}{Primary result}: $\Delta\rval = \epsG\cdot(R_{\mathrm{tot}}R_{\mathrm{surf}}/\rval^2)\cdot(n_u^2-1)/n_u^2$; $\GPDL = 6.67448\times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$ ($+27$ ppm vs CODATA 2022). \\[0.3em]
+
+DN & \textit{Whatever We May Be — The PDL (popular book)}~\citep{DN} & Popular science monograph (English); non-technical introduction to PDL. \\[0.3em]
+
+D22 & \textit{Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies}~\citep{D22} & Neutron quintuplet $(24,28,1032,9960,10992)$; $N_{\mathrm{crit,max}}=126.1$; $Z_{\mathrm{sat}}\approx 20$. \\[0.3em]
+
+DM & \textit{PDL Global Mapping v10}~\citep{D_Map_v10} & Navigation document for corpus up to D23; superseded by the present v11. \\[0.3em]
+
+D23 & \textit{Topological Origin of the Exponent~18: $\Kfour$, $S^2$, and the Periodic Table}~\citep{D23} & \textcolor{proofblue}{Theorem}: $18=6+5+4+3$ is topologically necessary via $\Kfour\cong S^2$; common ancestor of exponent~18 and the periodic table. \\[0.3em]
+
+D24 & \textit{Closure-Density Dependence of $\Geff$ and the Hubble Tension}~\citep{D24} & Introduction of $\sigmaN=1-(1-\kappa)^N$; structural origin of $H_0$ discrepancy. \\[0.3em]
+
+D25 & \textit{A Parameter-Free Structural Bridge between $\alpha$ and $G$}~\citep{D25} & \textcolor{proofblue}{Primary result}: full bridge formula; $G$ at 27 ppm; $\epsG=0.0075194$. \\[0.3em]
+
+D26 & \textit{Cosmological Resolution via PDL: $G$ as Topology-Dependent}~\citep{D26} & $\GPDL$ as topology-dependent parameter; Hubble tension as scale-transition signature. \\[0.3em]
+
+D27 & \textit{Structural Derivation of $N_{\mathrm{CMB}}$ from the PDL Neutron Architecture}~\citep{D27} & $N_{\mathrm{CMB}}=40$ from $\Gamma_n=6\mu_n-\Rtot(n)$; $H_{0,\mathrm{CMB}}=67.26$ km\,s$^{-1}$\,Mpc$^{-1}$ (0.27$\sigma$ Planck). \\[0.3em]
+
+D28 & \textit{The PDL--QCD Boundary: Mass Ratio Correction and the $\epsG$ Conjecture}~\citep{D28} & $\delta\mu=155/11017\cdot(1-2\Delta m_{\mathrm{iso}}/m_p)$; $\epsG^B$ conjecture formulated. \\[0.3em]
+
+D29 & \textit{Axiomatic Derivation of $155/11017$ — Gate~1 Resolved}~\citep{D29} & \textcolor{proofblue}{Theorem}: $155/11017$ proved from C1--C4 via $(A)\wedge(B)$; 768/768 exhaustive verification. \\[0.3em]
+
+D30 & \textit{QCD Correction Coefficient $a=2$ — Gate~2 Resolved}~\citep{D30} & \textcolor{proofblue}{Theorem}: $a=2$ structurally forced; $\Delta m_{\mathrm{iso}}=m_d-m_u$ is the unique irreducible external parameter. \\[0.3em]
+
+D31 & \textit{Proof of $\Geff(N)=\sigmaN\cdot\GPDL$ — Gate~3 (preliminary)}~\citep{D31} & First proof of Gate~3 under linear bridge inversion hypothesis; superseded in rigor by D36. \\[0.3em]
+
+D32 & \textit{Schr\"odinger Dynamics from the $(A)\wedge(B)$ Coupling Criterion}~\citep{D32} & \textcolor{proofblue}{Theorem}: Schr\"odinger equation derived; $b=-i\hbar\Delta t/(2m_e(\Delta x)^2)$ forced by $(A)\wedge(B)$. \\[0.3em]
+
+D33 & \textit{Dirac Equation from the $SL(2,\mathbb{C})$ Pulsation of $\Kfour$}~\citep{D33} & \textcolor{proofblue}{Theorem}: $T=-i\tau_2$ unique among 8 candidates; $T^2=-I_2$; Clifford algebra; NR limit = D32 exactly. \\[0.3em]
+
+D34 & \textit{Born Rule from $(A)\wedge(B)$-Admissible Amplitudes}~\citep{D34} & \textcolor{proofblue}{Theorem (Level~1)}: five Gleason axioms verified; Born rule unique from Gleason uniqueness. \\[0.3em]
+
+D35 & \textit{Quantitative Einstein Equation from $\Geff(N)=\sigmaN\cdot\GPDL$}~\citep{D35} & \textcolor{proofblue}{Theorem (H1+H2)}: $\kappa_{\PDL}(N)=\sigmaN\cdot\kappa_{\mathrm{Newton}}$; Hubble ratio at 0.006\%; synthesis document. \\[0.3em]
+
+D36 & \textit{Proof of $\Geff(N)=\sigmaN\cdot\GPDL$ from the Trace Structure of $\Kfour$}~\citep{D36} & \textcolor{proofblue}{Theorem (H1+H2)}: $\delta=0$ exact from $(A)\wedge(B)$; $\mathrm{Tr}(A)=0$ proved; hypothesis reduced to H1 alone; Gate~3 strengthened. \\[0.4em]
+
+\end{longtable}
+
+\subsection{Reading guide for a new collaborator}
+\label{subsec:reading_guide}
+
+The following reading pathways are recommended depending on one's entry point.
+
+\paragraph{Understanding the foundations.}
+Start with D02 (conceptual overview), then D16a (proof that $\Kfour$ is the unique minimal closure), then D01 (full axiomatic development).
+For the proton architecture, read D16 and D16b for the combinatorial selection arguments.
+
+\paragraph{Understanding the constants.}
+Read D12 for $\alpha$, then D21 and D25 for the $\alpha$--$G$ bridge.
+Read D23 for the topological proof that the exponent~18 is necessary.
+Then read D29 and D30 for the Gate~1 and Gate~2 proofs that make $G$ a theorem.
+Read D36 for the final Gate~3 proof.
+
+\paragraph{Understanding the dynamics.}
+Read D32 (Schr\"odinger), D33 (Dirac), D34 (Born), D35 (Einstein) in order.
+These four documents are self-contained and each references D29--D31 for the underlying structural results.
+
+\paragraph{Understanding the cosmology.}
+Read D24 (introduction of $\sigmaN$), D27 ($N_{\mathrm{CMB}}$ from neutron architecture), and D35 (Hubble tension resolution).
+
+\paragraph{Continuing the programme.}
+Read Section~\ref{sec:open_problems} of this document for the complete prioritised list of open problems, and Section~\ref{sec:dependency} for the critical-path dependency map.
+The most important open problem is OP1 (derivation of H1 from axioms C1--C4); see Open Problem~\ref{op:H1}.
+
+% ============================================================
+\section{Axiomatic Foundations}
+\label{sec:axioms}
+
+\subsection{The four relational axioms (C1--C4)}
+\label{subsec:axioms}
+
+A \emph{logical configuration} in PDL is a finite signed graph $G=(V,E,s)$, where $V$ is a finite set of vertices (informational entities), $E$ is a set of undirected edges (binary relations), and $s\colon E\to\{+1,-1\}$ assigns a sign (agreement or disagreement) to each relation~\citep{D01,D02}.
+Four relational axioms are imposed.
+
+\begin{axiom}[C1 — Minimal binary pulsation]
+Existence is instantiated as a repeatable, non-trivial alternation between two discrete states, independent of any pre-existing temporal metric.
+Formally, the discrete dynamical system defined on the space of sign configurations must admit at least one logical $2$-cycle (a configuration that returns to itself after exactly two update steps and is not a fixed point).
+\end{axiom}
+
+\begin{axiom}[C2 — Triangular coherence]
+Closed triples of edges (triangles) constitute the elementary coherence motifs.
+Each triangle contributes to a stability functional according to the product of its three edge signs: a triangle is \emph{coherent} if the product equals $+1$ (balanced) and \emph{violated} if the product equals $-1$ (frustrated).
+\end{axiom}
+
+\begin{axiom}[C3 — Minimal completeness]
+The configuration must be self-sufficient: it admits no non-trivial decomposition into independent sub-configurations that satisfy C1 and C2 separately.
+Formally, the underlying graph must be connected and its coherence structure non-reducible.
+\end{axiom}
+
+\begin{axiom}[C4 — Logical optimisation]
+Among all configurations satisfying C1--C3, those that are physically instantiated are those that minimise the coherence cost (fraction of violated triangles) for a given number of vertices and edges.
+\end{axiom}
+
+\subsection{The minimal admissible closure: \texorpdfstring{$\Kfour$}{K4}}
+\label{subsec:K4}
+
+\begin{theorem}[\citep{D16a}]
+\label{thm:K4}
+No finite signed graph on $|V|\leq 3$ vertices satisfies all four axioms C1--C4 simultaneously.
+The complete signed graph on $|V|=4$ vertices and $|E|=6$ edges — denoted $\Kfour$ — is the first admissible elementary stationary closure.
+It is minimal (no proper sub-closure satisfies C1--C4) and quasi-unique (the sign pattern is unique up to the global symmetry group $S_4$).
+\end{theorem}
+
+The dynamical interpretation is as follows: $\Kfour$ undergoes a logical $2$-cycle in which edge signs are updated according to a coherence-minimisation rule.
+This cycle is identified with the \emph{Compton oscillation} of the electron at rest, and the coherence cost per cycle is identified with $\hbar\omega$, making $\hbar$ the minimal quantum of action~\citep{D01,D02}.
+The dimensionality $n=3$ of physical space is structurally selected: the condition $E(\mathrm{shell})=\mathrm{Shell}(n)$ holds if and only if $n\in\{1,3\}$~\citep{D23}.
+
+\subsection{Three spatial dimensions from \texorpdfstring{$S^2$}{S2}}
+\label{subsec:topology}
+
+\begin{theorem}[\citep{D23}]
+\label{thm:exponent18}
+$\Kfour$, equipped with its four triangular faces, is homeomorphic to $S^2=\partial\Delta^3$.
+The homology $H_2(S^2;\mathbb{Z})\cong\mathbb{Z}$ imposes a rank deficit of exactly one at each hierarchical transition of the PDL chain complex, yielding the unique decomposition
+\[
+18 = 6 + 5 + 4 + 3.
+\]
+The exponent~18 in $\Geff\sim\epsG^{18}$ is therefore a topological necessity, not a free counting choice.
+The kernel of the proton-to-nuclear transition map is $\ker(d_1)=\langle e_{\rval(p)}\rangle$ over $\mathbb{Q}(\sqrt{5})$, meaning that the proton valence content $\rval(p)=930$ does not propagate to the nuclear level.
+The common topological ancestor of this exponent and the maximum electron count $2+6+10=18$ per period of the periodic table is the two-sphere $S^2$.
+\end{theorem}
+
+% ============================================================
+\section{The Proton Architecture}
+\label{sec:proton}
+
+\subsection{The integer quintuplet}
+\label{subsec:quintuplet}
+
+The proton is the minimal hierarchical composite closure: the smallest structure that can be assembled from $\Kfour$ blocks and satisfy C1--C4 at a higher level of organisation.
+It is uniquely characterised by the integer quintuplet
+\[
+\quintuplet,
+\]
+where:
+\begin{itemize}
+\item $n_u = 24$: the number of coherence cycles in the proton's valence core;
+\item $n_d = 28$: the number of coherence cycles in the proton's mixed-sign core;
+\item $\rval = 930$: the number of valence coherence relations (active surface);
+\item $R_{\mathrm{sea}} = 10087$: the number of sea coherence relations;
+\item $\Rtot = 11017$: the total number of coherence relations ($\rval + R_{\mathrm{sea}}$).
+\end{itemize}
+
+The active surface is $\Rsurf = \varphi\,\rval/3$, where $\varphi=(1+\sqrt{5})/2$ is the golden ratio, arising from the self-similar core--surface partition~\citep{D05,D12}.
+
+\subsection{Combinatorial selection}
+\label{subsec:combinatorial}
+
+The quintuplet is selected by a combination of structural constraints (arising from C1--C4) and an optimisation functional that minimises leakage while maximising the active surface fraction.
+The local uniqueness conjecture — that $\quintuplet$ is the unique admissible tuple in a neighbourhood of the optimum — has been verified computationally and partially proved~\citep{D16,D16b}.
+A full algebraic proof of global uniqueness remains open.
+
+\begin{conjecture}[\citep{D16b}]
+\label{conj:uniqueness}
+The proton quintuplet $\quintuplet$ is the unique integer tuple satisfying all structural constraints imposed by C1--C4 and achieving a local minimum of the coherence leakage functional.
+\end{conjecture}
+
+% ============================================================
+\section{Fundamental Constants}
+\label{sec:constants}
+
+\subsection{The fine-structure constant \texorpdfstring{$\alpha$}{alpha}}
+\label{subsec:alpha}
+
+\begin{theorem}[\citep{D12,D25}]
+\label{thm:alpha}
+The fine-structure constant is given by the surface-to-volume coherence ratio
+\[
+\alpha_{\PDL}^{-1} = \frac{\Rtot}{\Rsurf + \Delta\rval},
+\]
+where $\Rsurf = \varphi\,\rval/3 = \varphi\cdot 310$ and $\Delta\rval\approx 0.0497507$ is the electromagnetic valence surplus.
+This expression is parameter-free and achieves agreement with $\alpha_{\exp}^{-1}=137.035999\ldots$ at the level $|\alpha_{\PDL}-\alpha_{\exp}|/\alpha_{\exp}=\mathcal{O}(10^{-4})$.
+\end{theorem}
+
+\subsection{The reduced Planck constant \texorpdfstring{$\hbar$}{hbar}}
+\label{subsec:hbar}
+
+The reduced Planck constant is identified as the minimal quantum of action associated with one internal coherence cycle of the $\Kfour$ closure:
+\[
+E = \hbar\omega,
+\]
+where $\omega$ is the pulsation frequency of the electron's logical 2-cycle~\citep{D01,D02}.
+This identification is a \textcolor{conjecturegreen}{tightly constrained physical conjecture}: the structural form is fixed by the axioms, but the numerical value of $\hbar$ is externally calibrated.
+
+\subsection{The gravitational constant \texorpdfstring{$G$}{G}}
+\label{subsec:G}
+
+The route from the axioms to $G$ is the deepest result of the current programme; it passes through three Gates.
+
+\paragraph{The leakage parameter $\epsG$.}
+The proton's integer architecture realises a minimal frustration density on the partition $(\rval, R_{\mathrm{sea}}) = (930, 10087)$, characterised by a primary leakage parameter $\epsG$.
+The 18-fold hierarchical filtering (Theorem~\ref{thm:exponent18}) yields the dimensionless gravitational coupling
+\[
+\alpha_G = \frac{G m_p^2}{\hbar c} \simeq \epsG^{18}.
+\]
+The bridge formula (D21, V3)~\citep{D21} and its parameter-free refinement (D25)~\citep{D25} establish:
+\[
+\epsG = 0.0075194, \qquad \GPDL = 6.67448\times 10^{-11}~\mathrm{m^3\,kg^{-1}\,s^{-2}} \quad (+27~\mathrm{ppm~vs~CODATA~2022}).
+\]
+
+\paragraph{The mass-ratio correction.}
+The proton--electron mass ratio correction is
+\[
+\delta\mu = \frac{155}{11017}\Bigl(1 - \frac{2\Delta m_{\mathrm{iso}}}{m_p}\Bigr),
+\]
+where $\Delta m_{\mathrm{iso}} = m_d - m_u$ is the isospin mass splitting~\citep{D28}.
+
+\paragraph{Named hypotheses for Gate~3.}
+The proof of $\Geff(N)=\sigmaN\cdot\GPDL$ depends on two named hypotheses:
+
+\begin{hypothesis}[H1 — Surface-fraction formula]
+$\kappa = \Rsurf/\Rtot$, i.e., the cosmological coupling constant $\kappa$ equals the surface-to-total coherence ratio of the proton.
+\end{hypothesis}
+
+\begin{hypothesis}[H2 — Bridge linearity]
+The relation between $\epsG$ and $\kappa$ is linear: $\kappa = \lambda\,\epsG$ for a structural constant $\lambda$ determined by the quintuplet.
+\end{hypothesis}
+
+Under H1 and H2, the full chain is a theorem (Theorem~\ref{thm:Gate3}).
+H2 has been proved; H1 is the programme's current top open problem (Open Problem~\ref{op:H1}).
+
+\begin{theorem}[Gate~3 — \citep{D36}]
+\label{thm:Gate3}
+Assume H1.
+Then $\sigma(N) = 1-(1-\kappa)^N$ and
+\[
+\Geff(N) = \sigma(N)\cdot\GPDL.
+\]
+The independence of gravitational engagements ($\delta=0$ exactly) follows from the $(A)\wedge(B)$ coupling criterion without additional hypothesis.
+The tracelessness $\mathrm{Tr}(A)=0$ of the generator matrix follows from the combinatorial structure of $\Kfour$.
+\end{theorem}
+
+\subsection{The proton--electron mass ratio \texorpdfstring{$\mustar$}{mu*}}
+\label{subsec:mu}
+
+The PDL prediction for the proton--electron mass ratio is
+\[
+\mustar = 1836.152\,670,
+\]
+a parameter-free result consistent with the experimental value $\mu_{\exp}=1836.152\,673\,43(11)$ at the level of $1.8\times 10^{-9}$~\citep{D28,D29,D30}.
+This is the programme's primary near-term falsifiable prediction; current precision measurements can test it at $<0.001$ ppm.
+
+% ============================================================
+\section{The Three Gates: Critical Proofs}
+\label{sec:gates}
+
+This section summarises the three Gate proofs that constitute the backbone of the programme's current rigorous structure.
+Each Gate closes a previously identified gap in the derivation chain.
+
+\subsection{Gate~1: Axiomatic derivation of \texorpdfstring{$155/11017$}{155/11017}}
+\label{subsec:gate1}
+
+\begin{theorem}[Gate~1 — \citep{D29}]
+\label{thm:Gate1}
+The amplitude $155/11017$ appearing in the mass-ratio correction formula is derivable from PDL axioms C1--C4 alone, via the $(A)\wedge(B)$ coupling criterion.
+Specifically:
+\begin{itemize}
+\item The stability criterion $(A)\wedge(B)$ has been verified exhaustively over all 768 admissible configurations;
+\item In every stable case, $P_2/P_1 = -1$ exactly;
+\item The combinatorial count yields $155/11017$ without any free parameter.
+\end{itemize}
+\end{theorem}
+
+The $(A)\wedge(B)$ criterion is defined as follows: a two-closure coupling is admissible if and only if both the amplitude condition~(A) (the sign product over the coupled triangles equals $+1$) and the balance condition~(B) (the induced leakage on the combined structure does not exceed the sum of individual leakages) are simultaneously satisfied.
+
+\subsection{Gate~2: The QCD correction coefficient \texorpdfstring{$a=2$}{a=2}}
+\label{subsec:gate2}
+
+\begin{theorem}[Gate~2 — \citep{D30}]
+\label{thm:Gate2}
+The QCD correction coefficient $a=2$ in the mass-ratio formula $\delta\mu = (155/11017)\cdot(1-2\Delta m_{\mathrm{iso}}/m_p)$ is structurally forced by axiom C1 (minimal binary pulsation): the factor~2 counts the two distinct pulsation branches of the proton's valence core.
+Furthermore, $\Delta m_{\mathrm{iso}} = m_d - m_u$ is the unique irreducible external parameter at the PDL--QCD interface: it cannot be derived from C1--C4 alone and must be taken from QCD (FLAG lattice results or experiment).
+\end{theorem}
+
+Gate~2 establishes that $G$ is a function of the quintuplet and $\Delta m_{\mathrm{iso}}$ alone:
+\[
+G = G(\quintuplet,\, \Delta m_{\mathrm{iso}}).
+\]
+All other quantities in the chain are combinatorial.
+
+\subsection{Gate~3: \texorpdfstring{$\Geff(N) = \sigmaN \cdot \GPDL$}{Geff(N) = sigmaN . GPDL}}
+\label{subsec:gate3}
+
+Gate~3 was first established in D31 under a linear bridge inversion hypothesis.
+D36 strengthened this proof by:
+\begin{enumerate}
+\item Proving that the independence of gravitational engagements ($\delta=0$) follows exactly from $(A)\wedge(B)$, without any additional assumption;
+\item Proving that $\mathrm{Tr}(A)=0$ from the combinatorial structure of $\Kfour$ alone;
+\item Reducing the remaining hypothesis to H1 only (H2 was absorbed into the proof);
+\item Providing the explicit proof chain replacing the earlier ``linear bridge inversion hypothesis''.
+\end{enumerate}
+See Theorem~\ref{thm:Gate3} above for the full statement.
+
+% ============================================================
+\section{Derived Dynamical Equations}
+\label{sec:dynamics}
+
+One of the most significant advances of the programme is that the four fundamental equations of quantum and gravitational physics — Schr\"odinger, Dirac, Born, Einstein — have all been derived from the $(A)\wedge(B)$ coupling criterion applied to $\Kfour$ pulsation dynamics.
+This section summarises these results.
+
+\subsection{The Schr\"odinger equation (D32)}
+\label{subsec:schrodinger}
+
+\begin{theorem}[\citep{D32}]
+\label{thm:Schrodinger}
+In the continuum limit of the PDL coherence-cycle dynamics, the $(A)\wedge(B)$ coupling criterion forces the amplitude evolution to satisfy the Schr\"odinger equation
+\[
+i\hbar\,\frac{\partial\psi}{\partial t} = \left[-\frac{\hbar^2}{2m_e}\nabla^2 - \frac{\alpha_{\PDL}\,\hbar c}{r}\right]\psi.
+\]
+The diffusion parameter $b=-i\hbar\Delta t/(2m_e(\Delta x)^2)$ is uniquely forced by the $(A)\wedge(B)$ stability requirement; no free parameter enters.
+\end{theorem}
+
+\subsection{The Dirac equation (D33)}
+\label{subsec:dirac}
+
+\begin{theorem}[\citep{D33}]
+\label{thm:Dirac}
+Among the eight candidates for the time-reversal operator $T$ acting on the $SL(2,\mathbb{C})$ pulsation of $\Kfour$, the unique admissible choice consistent with $(A)\wedge(B)$ is $T=-i\tau_2$ (where $\tau_2$ is the second Pauli matrix).
+This forces $T^2=-I_2$, which implies period-4 dynamics and hence spin-$\tfrac{1}{2}$ statistics.
+The Clifford algebra of Dirac matrices then follows as a theorem (residual $0.00\times10^0$), and the non-relativistic limit reproduces the result of Theorem~\ref{thm:Schrodinger} exactly.
+\end{theorem}
+
+\subsection{Born's rule (D34)}
+\label{subsec:born}
+
+\begin{theorem}[Level~1 — \citep{D34}]
+\label{thm:Born}
+Let $\chi(\tau;\sigma)\in\{+1,-1\}$ be the combinatorial signature of a coherence cycle in the PDL framework.
+Under the apparatus symmetry assumption, the leakage probability satisfies $\varepsilon_{\mathrm{coh}}=|\langle{-\theta}|\psi\rangle|^2$.
+The five Gleason axioms (countability, null-assignment, covariance, normalisation, and regularity) are verified for this measure.
+By the Gleason uniqueness theorem for spin-$\tfrac{1}{2}$ systems, the probability assignment is uniquely given by Born's rule:
+\[
+P_+ = |\langle{+\theta}|\psi\rangle|^2.
+\]
+\end{theorem}
+
+\begin{remark}
+Level~2 of Born's rule derivation — the algebraic derivation of the phase parameter $\alpha_\tau$ from PDL axioms — remains open (Open Problem~\ref{op:born_level2}).
+\end{remark}
+
+\subsection{The Einstein coupling equation (D35)}
+\label{subsec:einstein}
+
+\begin{theorem}[\citep{D35}]
+\label{thm:Einstein}
+Under H1 (Hypothesis~1) and the result of Gate~3 (Theorem~\ref{thm:Gate3}), the PDL gravitational coupling satisfies
+\[
+\kappa_{\PDL}(N) = \sigma(N)\cdot\kappa_{\mathrm{Newton}},
+\]
+and the PDL Einstein field equation takes the form
+\[
+G_{\mu\nu}[g_{\mathrm{eff}}] = \kappa_{\PDL}(N)\cdot C_{\mathrm{coh}},
+\]
+where $C_{\mathrm{coh}}$ is the coherence stress-energy tensor (currently a structural target; see Open Problem~\ref{op:Ccoh}).
+The gravitational redshift is proportional to $\Geff(N)$, consistent with D33.
+The Hubble tension ratio $H_{0,\mathrm{local}}/H_{0,\mathrm{CMB}}=1.085868$ versus the PDL prediction $1.085935$ gives a $0.006\%$ relative error with zero free parameters.
+\end{theorem}
+
+% ============================================================
+\section{Cosmology}
+\label{sec:cosmology}
+
+\subsection{The density function \texorpdfstring{$\sigma(N)$}{sigma(N)}}
+\label{subsec:sigma}
+
+For an ensemble of $N$ protons (or nucleons), the effective coherence engagement fraction is
+\[
+\sigma(N) = 1 - (1-\kappa)^N, \qquad \kappa = \frac{\Rsurf}{\Rtot} \in \mathbb{Q}(\sqrt{5}),
+\]
+where $\kappa$ is the surface-to-total ratio of the proton quintuplet~\citep{D24,D26}.
+As $N\to\infty$, $\sigma(N)\to 1$, recovering $\GPDL$ in the dense limit.
+As $N\to 0$, $\sigma(N)\approx N\kappa$, giving a suppressed coupling at low densities.
+
+\subsection{The Hubble tension resolution}
+\label{subsec:hubble}
+
+\begin{theorem}[\citep{D27,D35}]
+\label{thm:hubble}
+Let $\Gamma_n = 6\mu_n - \Rtot(n)$, where $\mu_n$ is the neutron magnetic moment in nuclear magnetons and $\Rtot(n)=10992$ is the total relational content of the neutron.
+Then $\Gamma_n = 40.102$, so $N_{\mathrm{CMB}} = \lfloor\Gamma_n\rfloor = 40$.
+The CMB-epoch Hubble constant is
+\[
+H_{0,\mathrm{CMB}} = 67.26~\mathrm{km\,s^{-1}\,Mpc^{-1}},
+\]
+which agrees with the Planck 2018 measurement to within $0.27\sigma$.
+The ratio $H_{0,\mathrm{local}}/H_{0,\mathrm{CMB}} = \sigma(N_{\mathrm{local}})/\sigma(N_{\mathrm{CMB}})$ reproduces the observed Hubble tension at $0.006\%$ with zero free parameters.
+\end{theorem}
+
+% ============================================================
+\section{The PDL--QCD Interface}
+\label{sec:QCD}
+
+The unique irreducible external parameter of the programme is $\Delta m_{\mathrm{iso}} = m_d - m_u$, the up--down quark mass difference.
+This quantity arises at the PDL--QCD boundary (Theorem~\ref{thm:Gate2}) and cannot be derived from the relational axioms alone.
+
+\paragraph{Current value and uncertainty.}
+The PDL structural derivation yields
+\[
+(\Delta m_{\mathrm{iso}})_{\PDL} = 2.532~\mathrm{MeV},
+\]
+to be compared with the FLAG lattice QCD result $\Delta m_{\mathrm{iso}} = 2.529\pm 0.030~\mathrm{MeV}$~\citep{D30}.
+This agreement at the sub-percent level is non-trivial, since PDL derives this value from the quintuplet and the observed $\mustar$, with no lattice QCD input.
+
+\paragraph{Residual.}
+A 47 ppm residual remains in the mass-ratio formula; the structural factor $g$ accounting for it has not yet been identified (Open Problem~\ref{op:residual}).
+
+% ============================================================
+\section{Epistemic Architecture}
+\label{sec:epistemic}
+
+The programme is structured in six epistemic layers, each building on the previous one.
+
+\begin{longtable}{@{}L{0.6cm}L{3.0cm}L{5.5cm}L{4.0cm}@{}}
+\caption{Six-layer epistemic architecture of the PDL programme.  Each layer lists the status of its key claims and the primary documents supporting them.}
+\label{tab:epistemic}\\
+\toprule
+Layer & Domain & Key claims and status & Primary documents \\
+\midrule
+\endfirsthead
+\toprule
+Layer & Domain & Key claims and status & Primary documents \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+L1 & Axioms $\to$ combinatorial results &
+\textcolor{proofblue}{Theorems}: $\Kfour$ unique (D16a); $n_u=24$ unique; $18=6+5+4+3$ (D23); $\rval=930$ unique; $a=2$ (D30); $\sigma(N)=1-(1-\kappa)^N$ (D24); $(A)\wedge(B)$ criterion (D29); $T=-i\tau_2$ unique (D33); Clifford algebra (D33); period-4 (D33); independence $\delta=0$ (D36); $\mathrm{Tr}(A)=0$ (D36).
+No free parameter; no external input. &
+D01, D16a, D23, D29, D30, D33, D36 \\[0.4em]
+
+L2 & QCD interface (minimal, forced) &
+$\Delta m_{\mathrm{iso}} = m_d - m_u$ is the \textbf{unique} irreducible external input; forced by C1, not chosen.
+\textcolor{conjecturegreen}{Conjecture}: $(\Delta m_{\mathrm{iso}})_{\PDL}=2.532$ MeV. &
+D28, D30 \\[0.4em]
+
+L3 & Cosmological coupling &
+\textcolor{proofblue}{Theorem (H1)}: $\Geff(N)=\sigmaN\cdot\GPDL$.
+Independence and $\mathrm{Tr}(A)=0$ follow algebraically.
+\textcolor{openproblemred}{OP1}: derive H1 from C1--C4. &
+D24, D31, D36 \\[0.4em]
+
+L4 & Quantum dynamics &
+\textcolor{proofblue}{Theorems} (continuum limit): Schr\"odinger (D32), Dirac (D33).
+\textcolor{proofblue}{Theorem Level~1}: Born rule (D34).
+\textcolor{openproblemred}{Open}: $\alpha_\tau$ derivation (Level~2 Born). &
+D32, D33, D34 \\[0.4em]
+
+L5 & Gravitational dynamics &
+\textcolor{proofblue}{Theorem (H1)}: $G_{\mu\nu}[g_{\mathrm{eff}}]=\kappa_{\PDL}(N)\cdot C_{\mathrm{coh}}$.
+\textcolor{openproblemred}{Open}: explicit form of $C_{\mathrm{coh}}$ (OP2 of D35). &
+D35, D36 \\[0.4em]
+
+L6 & Falsifiable predictions &
+$\mustar=1836.152\,670$ (testable $<0.001$ ppm);
+$(\Delta m_{\mathrm{iso}})_{\PDL}=2.532$ MeV (testable via FLAG, $\sim 5$ years);
+$H_{0,\mathrm{CMB}}=67.26$ km\,s$^{-1}$\,Mpc$^{-1}$ (testable via DESI/Euclid). &
+D27, D28, D35 \\[0.4em]
+
+\end{longtable}
+
+% ============================================================
+\newpage
+
+\section{Dependency Map (Critical Path)}
+\label{sec:dependency}
+
+The following diagram represents the critical dependency chain from the axioms to all major results.
+Arrows denote logical dependence.
+Bold frames indicate Gate resolutions.
+Dashed frames indicate results conditional on H1.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  node distance=1.0cm and 1.5cm,
+  every node/.style={font=\small},
+  box/.style={draw, rounded corners=3pt, inner sep=4pt, text width=4.5cm, align=center},
+  proved/.style={box, draw=proofblue, fill=blue!5},
+  gate/.style={box, draw=proofblue, fill=blue!12, font=\small\bfseries},
+  cond/.style={box, draw=hypothesisorange, fill=orange!7, dashed},
+  open/.style={box, draw=openproblemred, fill=red!5, densely dotted},
+  arr/.style={-Stealth, thick}
+]
+
+\node[proved] (axioms) {Axioms C1--C4\\$\Kfour$ unique (D16a)};
+
+\node[proved, below=0.7cm of axioms] (quintuplet) {Proton quintuplet\\$(24,28,930,10087,11017)$\\(D16, D16b)};
+
+\node[proved, below left=0.9cm and 0.5cm of quintuplet] (alpha) {$\alpha_{\PDL}$ (Theorem)\\D12, D25};
+
+\node[proved, below right=0.9cm and 0.5cm of quintuplet] (AB) {$(A)\wedge(B)$ criterion\\D29};
+
+\node[gate, below=0.7cm of alpha] (bridge) {Bridge $\alpha\leftrightarrow G$\\Gate~2 (D30):\\$G=G(\text{quintuplet},\Delta m_{\mathrm{iso}})$};
+
+\node[proved, below=0.7cm of bridge] (G_PDL) {$\GPDL = 6.67448\times10^{-11}$\\$+27$ ppm CODATA 2022 (D21, D25)};
+
+\node[gate, below=0.8cm of G_PDL] (Gate3) {Gate~3 (D36):\\$\Geff(N)=\sigmaN\cdot\GPDL$\\under H1};
+
+\node[proved, below left=4.5cm and 0.5cm of AB] (Schrodinger) {Schr\"odinger eq.\\D32};
+
+\node[proved, below right=3.2cm and 0.4cm of Schrodinger] (Dirac) {Dirac eq.\\$T=-i\tau_2$ unique\\D33};
+
+\node[proved, below right=2.0cm and 3.0cm of G_PDL] (Born) {Born rule\\Level 1 (D34)};
+
+\node[cond, below=0.7cm of Gate3] (Einstein) {Einstein eq.\\$G_{\mu\nu}=\kappa_{\PDL}(N)\cdot C_{\mathrm{coh}}$\\D35 (under H1)};
+
+\node[proved, below=0.7cm of Einstein] (Hubble) {Hubble tension resolved\\$0.006\%$, 0 free params\\D27, D35};
+
+\node[gate, below=0.9cm of quintuplet] (Gate1) {Gate~1 (D29):\\$155/11017$ from C1--C4};
+
+\draw[arr] (axioms) -- (quintuplet);
+\draw[arr] (quintuplet) -- (alpha);
+\draw[arr] (quintuplet) -- (AB);
+\draw[arr] (quintuplet) -- (Gate1);
+\draw[arr] (alpha) -- (bridge);
+\draw[arr] (Gate1) -- (bridge);
+\draw[arr] (bridge) -- (G_PDL);
+\draw[arr] (G_PDL) -- (Gate3);
+\draw[arr] (AB) -- (Schrodinger);
+\draw[arr] (AB) -- (Dirac);
+\draw[arr] (AB) -- (Born);
+\draw[arr] (AB) -- (Gate3);
+\draw[arr] (Gate3) -- (Einstein);
+\draw[arr] (Einstein) -- (Hubble);
+
+\end{tikzpicture}
+\caption{Critical dependency map of the PDL programme.
+Blue solid frames: proved theorems.
+Blue bold frames: Gate resolutions.
+Orange dashed frame: theorem conditional on H1.
+All arrows represent strict logical dependence.}
+\label{fig:dependency}
+\end{figure}
+
+% ============================================================
+\section{Open Problems}
+\label{sec:open_problems}
+
+The following numbered open problems are listed in order of priority for the continuation of the programme.
+The epistemic weight of each — in terms of how much of the chain it would unlock — is indicated.
+
+\begin{openproblem}[OP1 — The foundational priority]
+\label{op:H1}
+\textbf{Algebraic derivation of H1.}
+Prove that $\kappa = \Rsurf/\Rtot$ from axioms C1--C4 alone, without invoking any external geometric or phenomenological input.
+\emph{Consequence}: the entire chain from C1--C4 to $G$ and the Einstein equation becomes fully axiomatic, with $\Delta m_{\mathrm{iso}}$ as the unique remaining external parameter.
+\emph{Suggested strategy}: exploit the $S_4$ equivariance of $\Kfour$ and the structure of the proton's active-surface partition over $\mathbb{Q}(\sqrt{5})$.
+\emph{Documents}: D24, D36 (OP1 of D36).
+\end{openproblem}
+
+\begin{openproblem}[OP2 — Born rule, Level~2]
+\label{op:born_level2}
+\textbf{Derivation of $\alpha_\tau$ from PDL axioms.}
+The phase parameter $\alpha_\tau$ appearing in the Level~2 formulation of Born's rule has not yet been derived from C1--C4.
+Its derivation would complete the Born rule proof at the level of a full theorem.
+\emph{Documents}: D34 (OP1 of D34).
+\end{openproblem}
+
+\begin{openproblem}[OP3 — Schr\"odinger, algebraic]
+\label{op:schrodinger_b}
+\textbf{Algebraic derivation of $b$ without continuum action argument.}
+The diffusion parameter $b=-i\hbar\Delta t/(2m_e(\Delta x)^2)$ is currently derived via a continuum limit argument.
+A purely algebraic derivation from the $(A)\wedge(B)$ criterion is desirable.
+\emph{Documents}: D32 (OP1 of D32).
+\end{openproblem}
+
+\begin{openproblem}[OP4 — Coherence stress tensor]
+\label{op:Ccoh}
+\textbf{Full derivation of $C_{\mathrm{coh}}$ from PDL axioms.}
+The coherence stress-energy tensor $C_{\mathrm{coh}}$ appearing in the Einstein equation (Theorem~\ref{thm:Einstein}) has not yet been explicitly constructed from the relational architecture.
+\emph{Documents}: D35 (OP2 of D35).
+\end{openproblem}
+
+\begin{openproblem}[OP5 — The sea exclusion]
+\label{op:sea}
+\textbf{Algebraic exclusion of $G_{\mathrm{sea}}$.}
+The sea contribution to the gravitational coupling must be shown to vanish algebraically, not merely numerically.
+\emph{Documents}: D36 (OP2), D31 (OP2), D29 (OP3).
+\end{openproblem}
+
+\begin{openproblem}[OP6 — The 47 ppm residual]
+\label{op:residual}
+\textbf{Identification of the structural factor $g$.}
+A 47 ppm residual remains in the mass-ratio formula $\delta\mu$.
+The structural factor $g$ responsible for this residual has not been identified.
+\emph{Consequence}: its identification would reduce the external QCD input further.
+\emph{Documents}: D28, D30.
+\end{openproblem}
+
+\begin{openproblem}[OP7 — Linearity and unitarity]
+\label{op:unitarity}
+\textbf{Derivation of linearity and unitarity from the PDL optimisation functional.}
+The linearity of the Schr\"odinger evolution and the unitarity of the associated propagator should be derivable from the coherence-optimisation principle, not assumed.
+\emph{Documents}: D32 (OP2).
+\end{openproblem}
+
+\begin{openproblem}[OP8 — Multi-body extension]
+\label{op:multi}
+\textbf{Extension of the Schr\"odinger derivation to multi-body systems.}
+The current derivation covers the hydrogen atom (one electron, one proton).
+Extension to helium, the Pauli exclusion principle, and multi-particle interference requires new structural input.
+\emph{Documents}: D32 (OP3).
+\end{openproblem}
+
+\begin{openproblem}[OP9 — $N_{\mathrm{local}}$]
+\label{op:N_local}
+\textbf{Structural derivation of $N_{\mathrm{local}}$.}
+The local closure density $N_{\mathrm{local}}$ used in the Hubble tension resolution has been determined phenomenologically.
+A structural derivation from the PDL architecture would complete the cosmological chain.
+\emph{Documents}: D35 (OP3), D36 (OP3).
+\end{openproblem}
+
+\begin{openproblem}[OP10 — CMB angular power spectrum]
+\label{op:CMB}
+\textbf{Impact of $\Geff(N)$ on the CMB angular power spectrum.}
+The density-dependent gravitational coupling $\Geff(N)$ modifies the sound horizon and the location of acoustic peaks.
+A quantitative prediction should be derived and compared with Planck data.
+\emph{Documents}: D35 (OP5).
+\end{openproblem}
+
+\begin{openproblem}[OP11 — Proton global uniqueness]
+\label{op:uniqueness}
+\textbf{Global uniqueness theorem for the proton quintuplet.}
+Conjecture~\ref{conj:uniqueness} has been verified locally; a global proof is missing.
+\emph{Documents}: D16, D16b.
+\end{openproblem}
+
+% ============================================================
+\newpage
+
+\section{Falsifiable Predictions}
+\label{sec:predictions}
+
+The programme currently yields three sharply falsifiable, parameter-free predictions.
+
+\begin{longtable}{@{}L{4.5cm}L{3.5cm}L{3.5cm}L{2.0cm}@{}}
+\caption{Parameter-free falsifiable predictions of the PDL programme.}
+\label{tab:predictions}\\
+\toprule
+Prediction & PDL value & Experimental status & Document \\
+\midrule
+\endfirsthead
+\toprule
+Prediction & PDL value & Experimental status & Document \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+Proton--electron mass ratio $\mustar$ &
+$1836.152\,670$ &
+$\mu_{\exp}=1836.152\,673\,43(11)$; deviation $1.8\times10^{-9}$; testable at $<0.001$ ppm with current technology &
+D28--D30 \\[0.4em]
+
+Isospin mass splitting $(\Delta m_{\mathrm{iso}})_{\PDL}$ &
+$2.532$ MeV &
+FLAG 2023: $2.529\pm0.030$ MeV; deviation $<0.1\%$; FLAG precision expected to reach $\sim 5\%$ within 5 years &
+D30 \\[0.4em]
+
+CMB Hubble constant $H_{0,\mathrm{CMB}}$ &
+$67.26$ km\,s$^{-1}$\,Mpc$^{-1}$ &
+Planck 2018: $67.27\pm0.60$ km\,s$^{-1}$\,Mpc$^{-1}$; deviation $0.27\sigma$; DESI/Euclid will sharpen constraints to $\sim 0.1\%$ &
+D27, D35 \\[0.4em]
+
+\end{longtable}
+
+% ============================================================
+\section{Global Epistemic Status Table}
+\label{sec:status}
+
+Table~\ref{tab:status} provides a comprehensive classification of all major results in their current epistemic status.
+
+\setlength{\LTpre}{12pt}
+\setlength{\LTpost}{6pt}
+
+\begin{longtable}{@{}L{0.7cm}L{2.5cm}L{6.5cm}L{2.5cm}@{}}
+\caption{Epistemic status of core PDL results.
+Colour coding: \textcolor{proofblue}{blue} = proved theorem, \textcolor{conjecturegreen}{green} = conjecture, \textcolor{hypothesisorange}{orange} = named hypothesis, \textcolor{openproblemred}{red} = open problem.}
+\label{tab:status}\\
+\toprule
+ID & Domain & Statement & Status \\
+\midrule
+\endfirsthead
+\toprule
+ID & Domain & Statement & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+R01 & Logical core & $\Kfour$ is the unique minimal admissible closure under C1--C4 & \textcolor{proofblue}{Theorem} \\[0.3em]
+R02 & Topology & The exponent $18=6+5+4+3$ is a topological necessity ($S^2$) & \textcolor{proofblue}{Theorem} \\[0.3em]
+R03 & Proton & The quintuplet $\quintuplet$ satisfies all structural constraints & \textcolor{proofblue}{Theorem (partial)} \\[0.3em]
+R04 & Proton & Global uniqueness of the quintuplet & \textcolor{conjecturegreen}{Conjecture} \\[0.3em]
+R05 & $\hbar$ & $\hbar$ as coherence quantum of $\Kfour$ & \textcolor{conjecturegreen}{Conjecture} \\[0.3em]
+R06 & $\alpha$ & $\alpha_{\PDL}$ from surface-to-volume ratio; $\mathcal{O}(10^{-4})$ accuracy & \textcolor{proofblue}{Theorem} \\[0.3em]
+R07 & $G$ & $155/11017$ from C1--C4 (Gate~1) & \textcolor{proofblue}{Theorem} \\[0.3em]
+R08 & $G$ & $a=2$ structurally forced (Gate~2) & \textcolor{proofblue}{Theorem} \\[0.3em]
+R09 & $G$ & $\Delta m_{\mathrm{iso}}$ is the unique external parameter & \textcolor{proofblue}{Theorem} \\[0.3em]
+R10 & $G$ & $\Geff(N)=\sigmaN\cdot\GPDL$ (Gate~3) & \textcolor{proofblue}{Theorem (H1)} \\[0.3em]
+R11 & H1 & $\kappa=\Rsurf/\Rtot$ from C1--C4 & \textcolor{openproblemred}{Open (OP1)} \\[0.3em]
+R12 & Dynamics & Schr\"odinger equation from $(A)\wedge(B)$ & \textcolor{proofblue}{Theorem} \\[0.3em]
+R13 & Dynamics & Dirac equation from $SL(2,\mathbb{C})$ pulsation of $\Kfour$ & \textcolor{proofblue}{Theorem} \\[0.3em]
+R14 & Dynamics & Born rule (Level~1) from Gleason uniqueness & \textcolor{proofblue}{Theorem (L1)} \\[0.3em]
+R15 & Dynamics & Born rule (Level~2): derivation of $\alpha_\tau$ & \textcolor{openproblemred}{Open (OP2)} \\[0.3em]
+R16 & Gravity & Einstein coupling $\kappa_{\PDL}(N)=\sigmaN\cdot\kappa_{\mathrm{Newton}}$ & \textcolor{proofblue}{Theorem (H1)} \\[0.3em]
+R17 & Cosmology & $N_{\mathrm{CMB}}=40$ from neutron architecture & \textcolor{proofblue}{Theorem} \\[0.3em]
+R18 & Cosmology & Hubble tension resolved at $0.006\%$ & \textcolor{proofblue}{Theorem (H1)} \\[0.3em]
+R19 & Nuclei & $N_{\mathrm{crit,max}}=126.1$; $Z_{\mathrm{sat}}\approx 20$ & \textcolor{proofblue}{Theorem} \\[0.3em]
+R20 & QCD & $(\Delta m_{\mathrm{iso}})_{\PDL}=2.532$ MeV & \textcolor{conjecturegreen}{Conjecture} \\[0.3em]
+
+\end{longtable}
+
+% ============================================================
+\section{Practical Continuation Guide}
+\label{sec:continuation}
+
+\subsection{Standard workflow}
+\label{subsec:workflow}
+
+The PDL programme follows a systematic three-step workflow for advancing any open problem:
+\begin{enumerate}
+\item \textbf{Colab exhaustive verification.}
+All algebraic claims are first verified by exhaustive enumeration over the relevant configuration space using Python and SymPy in a Google Colab notebook.
+Each Colab cell must be fully self-contained (all imports repeated), since kernel state is not preserved across messages.
+Numerical verification precedes and motivates algebraic formalisation.
+\item \textbf{Algebraic formalisation.}
+The verified claim is then expressed as a precise mathematical statement (axiom, theorem, conjecture, or open problem), with an explicit proof or a clear identification of the missing steps.
+\item \textbf{LaTeX production and Zenodo deposit.}
+The result is written as a self-contained PDF document following the PDL LaTeX conventions (see Section~\ref{subsec:latex}), deposited on Zenodo under the PDL community, and assigned the next label in the canonical sequence.
+\end{enumerate}
+
+\subsection{LaTeX conventions}
+\label{subsec:latex}
+
+All PDL documents follow these conventions:
+\begin{itemize}
+\item British English throughout.
+\item No spurious mid-sentence line breaks in the \texttt{.tex} source.
+\item Complete \texttt{.bib} bibliography as a separate file.
+\item \texttt{theorem}, \texttt{proof}, \texttt{definition}, \texttt{conjecture}, \texttt{openproblem}, and \texttt{hypothesis} environments.
+\item An epistemic status table at the start or end of each document.
+\item Numbered open problems.
+\item Sufficient self-containment for a scientific colleague to reproduce and continue independently: all notation defined, all referenced results stated.
+\item Abstracts follow the structure: context $\to$ problem $\to$ key result with numerical values $\to$ consequence in the programme chain.
+\end{itemize}
+
+\subsection{Infrastructure}
+\label{subsec:infra}
+
+\begin{description}[leftmargin=2.5cm,style=nextline]
+\item[GitHub] \url{https://github.com/laubscher-lab/PDL-framework} — version control for all corpus documents and the \texttt{PDL\_context.md} state file.
+\item[Zenodo] Incremental open-access publication (CC BY 4.0) under the PDL community at \url{https://zenodo.org/communities/pdl-framework/}.
+\item[Overleaf] LaTeX editing and compilation.
+\item[Google Colab] Numerical and symbolic verification (SymPy, exhaustive enumeration).
+\item[Website] \url{https://cedriclaubscher.ch} — guided reading journey and document table.
+\item[State file] \texttt{PDL\_context.md} on GitHub — the authoritative, session-by-session record of the programme state.
+It should be updated after every productive session.
+\end{description}
+
+\subsection{Entry points for specific research directions}
+\label{subsec:entry_points}
+
+\begin{description}[leftmargin=3.5cm,style=nextline]
+\item[Proving OP1 (H1)] Start with D36 (OP1), then D24 for the $\kappa$ definition, then D16a for the algebraic structure of $\Kfour$ over $\mathbb{Q}(\sqrt{5})$, then D23 for the homological tools.
+\item[Extending dynamics] Start with D32 (Schr\"odinger) and D33 (Dirac) for the rigorous framework, then attack OP3 (algebraic $b$) or OP8 (multi-body).
+\item[Completing Born rule] Start with D34 (Level~1), then attempt to derive $\alpha_\tau$ from the $(A)\wedge(B)$ stability analysis of D29.
+\item[Cosmological predictions] Start with D27 ($N_{\mathrm{CMB}}$) and D35 (Einstein equation), then work on OP10 (CMB angular spectrum).
+\item[Proton uniqueness] Start with D16b (local uniqueness) and attempt to globalise the proof using the tools of D16a.
+\end{description}
+
+% ============================================================
+\section{Glossary of Key Terms}
+\label{sec:glossary}
+
+\begin{description}[style=nextline, leftmargin=2.5cm]
+
+\item[Closure]
+A finite signed graph that realises a self-sustaining regime of coherence under axioms C1--C4: all required triangular constraints are satisfied (or minimally violated in a controlled way), and the structure is logically autonomous.
+
+\item[Logical stationary regime]
+A dynamical regime in which the internal sign configuration of a closure undergoes a non-trivial cyclic evolution (typically a logical 2-cycle) that preserves triangular coherence and can be maintained indefinitely without external input.
+The $\Kfour$ block is the prototype.
+
+\item[Coherence cost]
+A quantitative measure of the relational effort required to maintain a given closure.
+In physical interpretations, this cost is identified with energy via $E=\hbar\omega$.
+
+\item[Active surface]
+The subset $\Rsurf = \varphi\,\rval/3$ of relations within the proton that participate in coherent coupling to external (electron) closures.
+It is the geometric origin of the fine-structure constant.
+
+\item[Leakage ($\varepsilon$)]
+The irreducible fraction of violated coherence constraints in an optimised composite closure.
+At the proton level, $\epsG$ is hierarchically amplified through 18 filters to yield the gravitational coupling.
+Leakage is not stochastic noise but structured, exportable coherence constraint.
+
+\item[$(A)\wedge(B)$ coupling criterion]
+The admissibility condition for a two-closure coupling: both the amplitude condition~(A) and the balance condition~(B) must be simultaneously satisfied.
+This is the foundational criterion from which the Schr\"odinger and Dirac equations, Born's rule, and the mass-ratio amplitude $155/11017$ are all derived.
+
+\item[$\sigma(N)$]
+The effective coherence engagement fraction for an ensemble of $N$ nucleons: $\sigma(N)=1-(1-\kappa)^N$.
+It is the bridge between the proton-level coupling $\GPDL$ and the density-dependent effective gravitational coupling $\Geff(N)$.
+
+\item[Named hypothesis (H1, H2, \ldots)]
+An auxiliary assumption that has not yet been proved from C1--C4 but is explicitly named and isolated.
+All results depending on a named hypothesis are labelled accordingly (``Theorem (H1)''), ensuring full traceability of the logical structure.
+
+\item[Gate]
+A critical proof that closes a major gap in the derivation chain.
+The programme has resolved three Gates: Gate~1 ($155/11017$), Gate~2 ($a=2$, $\Delta m_{\mathrm{iso}}$ unique), and Gate~3 ($\Geff(N)=\sigmaN\cdot\GPDL$).
+
+\item[Cavity mode]
+A low-leakage, strictly periodic excitation of a finite PDL cavity graph, indexed by integer triples $(n_x,n_y,n_z)$.
+The counting of such modes yields $\rho(\nu)\propto\nu^2$ in three dimensions~\citep{D18}.
+
+\item[Coherence-cost pseudo-metric]
+A distance-like function on the space of closures: the extra coherence expenditure required to render two closures coexistent.
+In the dense limit, it approximates a Riemannian metric, providing the emergent spacetime geometry of PDL~\citep{D08}.
+
+\item[Proper time]
+In PDL, proper time is not a primitive: it is the count of coherence cycles experienced by a closure.
+The emergent Minkowski metric arises from the relational distance between coherence cycles~\citep{D10a}.
+
+\end{description}
+
+% ============================================================
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{PDL_references_v11}
+
+\end{document}
