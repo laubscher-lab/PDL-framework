@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 16 (31 March 2026)*
+*Last updated: Session 17 (31 March 2026)*
 
 ---
 
@@ -34,9 +34,27 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - External scientific vigilance: three papers analysed (see External Connections section)
 - LaTeX convention established: no spurious mid-sentence line breaks in .tex source
 
+**Session 17 — Black hole thermodynamics and OP1 D36 investigation (31 March 2026):**
+- D37: Surface locality of relational entropy — BH-1 proved unconditionally from D29
+  uniqueness: S ∝ R_surf (area law as theorem, not postulate). Valence sector has
+  Ω_val = 1, hence S_val = 0. Sea excluded by D29. Full entropy on active surface.
+- D38: Bekenstein–Hawking entropy from G_eff(N) — BH-2 proved algebraically:
+  S_BH/k_B = 4π(M_eff/M_Planck)² with M_eff = σ(N)·N·m_p. Identity exact (< 10⁻¹⁵
+  over ten decades). C₀ = 4π(m_p/M_Planck)² identified exactly. Three falsifiable
+  predictions: (i) entropy suppression σ(N)² at epoch N; (ii) PBH threshold +11.89%
+  (σ(40)^(−2/3)), testable by Fermi-LAT; (iii) S/E ratio ∝ σ(N(z)) in AGN populations.
+- D39: Partial resolution of OP1 D36 — Indifference Lemma (H3). Two-factor decomposition
+  κ = (φ/3)·(r_val/R_tot) proved (error < 10⁻¹⁵). C3 alone proved insufficient
+  (constructive counterexample: edge in zero triangles satisfying C3). H3 formulated,
+  proved consistent with C1–C4, proved unique under S₄-symmetry (D36), constrained
+  to ±0.22% by Hubble observable. OP1 D36 resolved under H3; OP1 D39 = derive H3
+  from C1–C4 without D36.
+- Colab numerical exploration: κ uniqueness among quintuplet fractions verified;
+  C₀ = 4π(m_p/M_Pl)² confirmed exactly; σ(N)^(−2/3) PBH law confirmed.
+
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 16)
+## Corpus Table (Zenodo canonical order — updated Session 17)
 
 *Note: Document numbering follows the Zenodo canonical order. The PDL_context.md
 versions prior to Session 15 used an internal numbering that diverged from Zenodo
@@ -88,6 +106,9 @@ called D24). The table below is the authoritative reference.*
 | D34   | 10.5281/zenodo.19322776 | Born rule from (A)∧(B)-admissible amplitudes | **Proof** | Published |
 | D35   | 10.5281/zenodo.19322936 | Quantitative Einstein equation from G_eff(N) | Synthesis | Published |
 | D36   | 10.5281/zenodo.19323033 | Proof G_eff(N)=σ(N)·G_PDL, trace structure K₄ — Gate 3 strengthened | **Proof** | Published |
+| D37   | (pending Zenodo) | Surface Locality of Relational Entropy and the PDL Area Law | **Proof** | Produced Session 17 |
+| D38   | (pending Zenodo) | Bekenstein–Hawking Entropy from G_eff(N): the 4π Identity and PBH Predictions | **Proof+Predictions** | Produced Session 17 |
+| D39   | (pending Zenodo) | Derivation of κ from PDL Axioms: the Indifference Lemma (OP1 D36 partial) | **Proof** | Produced Session 17 |
 
 ---
 
@@ -271,6 +292,20 @@ called D24). The table below is the authoritative reference.*
 [D36]  https://doi.org/10.5281/zenodo.19323033
        Proof_of_G_eff_N____sigma_N__G_PDL_from_the_Trace_Structure_of_K_4_and_Independence_of_Gravitational_Engagement.pdf
        Proof of G_eff(N)=σ(N)·G_PDL from Trace Structure of K₄ and Independence of Engagement
+
+[D37]  (pending Zenodo — produced Session 17)
+       D37_Surface_Entropy_PDL.pdf
+       Surface Locality of Relational Entropy and the PDL Area Law
+
+[D38]  (pending Zenodo — produced Session 17)
+       D38_BH_Entropy_PDL.pdf
+       Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling:
+       the 4π Identity, Surface Counting, and Primordial Black Hole Predictions
+
+[D39]  (pending Zenodo — produced Session 17)
+       D39_Kappa_Indifference_PDL.pdf
+       Derivation of κ = R_surf/R_tot from the PDL Axioms:
+       the Indifference Lemma and Partial Resolution of OP1 (D36)
 ```
 
 ---
@@ -331,6 +366,20 @@ D35 numerical checks (Session 15):
   √(σ(120)/σ(40)) = 1.085868 vs observed 1.085935 (residual 0.006%)
   κ_PDL(120)/κ_Newton = σ(120) = 0.99627 (deviation 0.373% from Newtonian)
   Gravitational redshift PDL hydrogen at N=120: Δν/ν₀ = −2.34×10⁻⁴⁴
+
+D38 numerical checks (Session 17):
+  C₀ = 4π·G_PDL·m_p²/(ħ·c) = 4π·(m_p/M_Planck)² = 7.4221×10⁻³⁸  [exact]
+  S_BH/k_B = 4π·(M_eff/M_Planck)²  [error < 10⁻¹⁵ over 10 decades of mass]
+  M_eff = σ(N)·N·m_p  (gravitationally active mass)
+  PBH threshold: M*_PDL = σ(40)^(−2/3)·M*_GR = 1.1189·M*_GR  (+11.89%)
+  Entropy suppression at CMB epoch: σ(40)² = 0.7139  (−28.6%)
+
+D39 numerical checks (Session 17):
+  κ = P₁·P₂ = (φ/3)·(r_val/R_tot) = 0.53934466 × 0.08441500 = 0.04552878  [error < 10⁻¹⁵]
+  κ = R_surf/R_tot: unique among all quintuplet fractions at 0.006% Hubble residual
+  Second-best candidate R_surf/(R_tot−R_e): 0.015% — factor 2.5 worse
+  C3 counterexample: edge (2,3) in graph {(0,1),(0,2),(1,2),(3,4),(3,5),(4,5),(2,3)}
+    satisfies C3 but participates in 0 triangles — asymmetric measure compatible with C3
 ```
 
 ---
@@ -513,6 +562,87 @@ precision). Independence must hold to δ < 0.0001.
 
 ---
 
+## D37 Summary (Session 17 — Area law as theorem)
+
+**Title:** Surface Locality of Relational Entropy and the PDL Area Law
+
+**Core result (BH-1 — unconditional theorem):** The information-theoretic entropy of a PDL
+closure is entirely carried by its active surface R_surf, not by R_tot.
+
+**Proof structure:**
+- Valence sector has Ω_val = 1 (D29 Lemma 2: unique (A)∧(B)-stable configuration)
+  => S_val = k_B ln 1 = 0
+- Sea excluded from stationary coupling (D29 Proposition) => S_sea = 0
+- Total entropy: S_PDL = k_B ln Ω_surf ∝ R_surf
+
+**Corollary (under Gate 3):** Macroscopic Bekenstein–Hawking area law S_BH ∝ A is a
+structural consequence of PDL axioms, not an independent postulate.
+
+**Open problems:** OP1 (coefficient 1/4, conditional on OP1 D36); OP2 (microstate count);
+OP3 (Hawking radiation from PDL pulsation).
+
+**Document:** D37 — produced Session 17, pending Zenodo.
+
+---
+
+## D38 Summary (Session 17 — BH-2 and PBH predictions)
+
+**Title:** Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling:
+the 4π Identity, Surface Counting, and Primordial Black Hole Predictions
+
+**Core result (BH-2 — algebraic theorem under Gate 3):**
+S_BH/k_B = 4π(M_eff/M_Planck)²  with  M_eff = σ(N)·N·m_p
+
+**Proof:** Substituting G_eff(N) = σ(N)·G_PDL into S_BH = k_B c³A/(4Għ) with A = 4π r_s².
+One net factor σ(N) survives. Identity exact (< 10⁻¹⁵ over 10 decades of mass).
+
+**Universal constant:** C₀ = 4π·G_PDL·m_p²/(ħ·c) = 4π(m_p/M_Planck)² = 7.4221×10⁻³⁸
+Contains no free parameter. Fixed by quintuplet (24,28,930,10087,11017) + Δm_iso.
+
+**Three falsifiable predictions (parameter-free):**
+1. Entropy suppression σ(N)² at epoch N: −28.6% at CMB epoch (σ(40)² = 0.7139)
+2. PBH survival threshold: M*_PDL = σ(40)^(−2/3)·M*_GR = 1.1189·M*_GR (+11.89%)
+   Testable by Fermi-LAT gamma-ray constraints
+3. S/E ratio ∝ σ(N(z)) in AGN populations — traceable in cosmic noon data
+
+**Conjecture BH-3 (open):** S_BH as theorem from C1–C4 without Schwarzschild geometry.
+This is OP1 of D38 — the ascending direction of the derivation.
+
+**Document:** D38 — produced Session 17, pending Zenodo.
+
+---
+
+## D39 Summary (Session 17 — OP1 D36 partial resolution)
+
+**Title:** Derivation of κ = R_surf/R_tot from the PDL Axioms:
+the Indifference Lemma and Partial Resolution of OP1 (D36)
+
+**Core result:** Systematic investigation of OP1 D36. Three main results.
+
+**Result 1 — Two-factor decomposition (algebraic identity):**
+κ = P₁·P₂ = (R_surf/r_val)·(r_val/R_tot) = (φ/3)·(r_val/R_tot)
+Error < 10⁻¹⁵. Separates OP1 D36 into two sub-problems:
+  P₁ = φ/3: resolved by D05 (C4 → golden ratio redistribution)
+  P₂ = r_val/R_tot: requires uniform measure on R_tot (H3)
+
+**Result 2 — Negative result (C3 alone insufficient):**
+Constructive counterexample: graph {(0,1),(0,2),(1,2),(3,4),(3,5),(4,5),(2,3)}.
+Satisfies C3 but edge (2,3) participates in 0 triangles — asymmetric measure
+compatible with C3. Therefore C3 alone does not imply uniform measure on R_tot.
+
+**Result 3 — H3 (Indifference Lemma) under C3∧C4∧S₄:**
+H3: uniform measure on R_tot is the natural measure seen by external K4.
+Proved: (i) consistent with C1–C4; (ii) unique under S₄-symmetry (D36 transitivity);
+(iii) constrained to ±0.22% by Hubble observable.
+Under H3 + D05 + D29: κ = 310φ/11017 by law of total probability.
+
+**Remaining open problem (OP1 D39):** Derive H3 from C1–C4 without invoking D36.
+This is the unique residual of OP1 D36.
+
+**Document:** D39 — produced Session 17, pending Zenodo.
+
+---
+
 ## Session History
 
 - **Session 1 (March 2026):** Full D21 rewrite V1→V2. Key discovery: ε_G is dynamical,
@@ -581,6 +711,32 @@ precision). Independence must hold to δ < 0.0001.
 
   **LaTeX convention established:** No spurious mid-sentence line breaks in .tex source.
   This applies to all future PDL documents.
+
+- **Session 17 (31 March 2026):** Black hole thermodynamics and OP1 D36 investigation.
+
+  **D37 (BH-1 — Area law as theorem):** The information-theoretic entropy of a PDL closure
+  is entirely carried by its active surface R_surf. Proof: valence sector has Ω_val = 1
+  (D29 Lemma 2 — unique (A)∧(B)-stable configuration), hence S_val = 0. Sea excluded
+  by D29. Area law S ∝ R_surf is an unconditional theorem of the PDL axioms. Under Gate 3,
+  macroscopic Bekenstein–Hawking area law S_BH ∝ A follows as corollary.
+
+  **D38 (BH-2 — 4π identity and PBH predictions):** From Gate 3 alone, algebraic derivation:
+  S_BH/k_B = 4π(M_eff/M_Planck)² with M_eff = σ(N)·N·m_p. Identity exact (< 10⁻¹⁵).
+  Universal constant C₀ = 4π(m_p/M_Planck)² = 7.4221×10⁻³⁸ contains no free parameter.
+  Three falsifiable predictions: (i) entropy suppressed by σ(N)² at epoch N (28.6% at CMB);
+  (ii) PBH survival threshold +11.89% = σ(40)^(−2/3), testable by Fermi-LAT;
+  (iii) S/E ratio ∝ σ(N(z)) in AGN populations.
+  Conjecture BH-3: S_BH as theorem from C1–C4 without geometry = OP1 D38.
+
+  **D39 (OP1 D36 partial — Indifference Lemma H3):** Systematic investigation of OP1 D36.
+  Two-factor decomposition: κ = P₁·P₂ = (R_surf/r_val)·(r_val/R_tot) = (φ/3)·(r_val/R_tot),
+  exact (error < 10⁻¹⁵). Negative result: C3 alone insufficient — constructive counterexample
+  (edge in 0 triangles satisfying C3, asymmetric measure compatible with C3). Hypothesis H3
+  (Indifference Lemma): uniform measure on R_tot is the natural measure seen by external K4.
+  H3 proved: (i) consistent with C1–C4; (ii) unique under S₄-symmetry (D36);
+  (iii) constrained to ±0.22% by Hubble observable. Under H3: κ = 310φ/11017 derived
+  by law of total probability from D05 + D29. OP1 D36 partially resolved.
+  Remaining: OP1 D39 = derive H3 from C1–C4 without invoking D36.
 
 ---
 
@@ -754,56 +910,67 @@ predictions and the explicit open-problem structure of PDL.
 
 ---
 
-## Open Problems (current status — Session 16)
+## Open Problems (current status — Session 17)
 
 1. **[RESOLVED — Session 7]** Topological proof of exponent 18 (D23)
 2. **[RESOLVED — Sessions 11–12]** Derivation of ε_G from first principles (D29, D30)
 3. **[RESOLVED — Session 10]** N_CMB identification (D27) — N_CMB = ⌊Γ_n⌋ = 40
 4. **[RESOLVED — Sessions 13+15]** G_eff(N) = σ(N)·G_PDL — Gate 3 (D31, D36)
    - D36 residual: H1 (κ = R_surf/R_tot from axioms C1–C4) → OP1 of D36
+   - D39 (Session 17): H1 partially resolved under H3 (Indifference Lemma)
 5. **[RESOLVED — Session 14]** Schrödinger dynamics from (A)∧(B) — OP6 D31 (D32)
 6. **[RESOLVED — Session 15]** Dirac equation from SL(2,ℂ) pulsation — OP4 D32 (D33)
 7. **[RESOLVED AT LEVEL 1 — Session 15]** Born rule — OP5 D32 (D34); Level 2 open
 8. **[RESOLVED — Session 16]** DM v11 — global mapping updated to reflect D01–D36
+9. **[RESOLVED — Session 17]** Area law S ∝ R_surf — BH-1 unconditional theorem (D37)
+10. **[RESOLVED — Session 17]** S_BH/k_B = 4π(M_eff/M_Pl)² — BH-2 theorem under Gate 3 (D38)
 
-9.  **[OPEN — HIGH — OP1 D36]** Derive H1 from axioms C1–C4
-    - Why is κ = R_surf/R_tot the gravitational engagement probability of a single proton?
-    - Sole remaining step to make Gate 3 fully unconditional.
+11. **[OPEN — HIGH — OP1 D39]** Derive H3 from axioms C1–C4
+    - H3: uniform measure on R_tot as seen by external K4
+    - C3 alone proved insufficient (D39 constructive counterexample)
+    - H3 proved consistent + unique under S₄-symmetry (D39)
+    - Remaining: show C3∧C4 forces uniformity without invoking D36 as external input
+    - This is the unique residual of OP1 D36
 
-10. **[OPEN — HIGH — OP1 D32]** Algebraic derivation of b without continuum action argument
+12. **[OPEN — HIGH — OP1 D38]** Derive S_BH from C1–C4 without Schwarzschild geometry
+    - Conjecture BH-3: ascending direction from axioms to Bekenstein–Hawking
+    - Requires: (a) OP1 D39 resolved; (b) combinatorial microstate count of R_surf
 
-11. **[OPEN — HIGH — OP1 D34]** Derivation of triangle weights α_τ from PDL axioms
+13. **[OPEN — HIGH — OP1 D32]** Algebraic derivation of b without continuum action argument
+
+14. **[OPEN — HIGH — OP1 D34]** Derivation of triangle weights α_τ from PDL axioms
     - Uniform weights give Heaviside (discrepancy = 1.00 exact, structural obstruction)
 
-12. **[OPEN — HIGH]** The 47 ppm residual in δμ
+15. **[OPEN — HIGH]** The 47 ppm residual in δμ
     - Structure: O(47 ppm) ≈ 2α·Δm_iso/m_p ≈ 39 ppm; identify factor g
 
-13. **[OPEN — HIGH]** Algebraic exclusion of G_sea (OP2 in D31, OP2 in D36)
+16. **[OPEN — HIGH]** Algebraic exclusion of G_sea (OP2 in D31, OP2 in D36)
 
-14. **[OPEN — MEDIUM — OP2 D35]** Full derivation of coherence tensor C_coh
+17. **[OPEN — MEDIUM — OP2 D35]** Full derivation of coherence tensor C_coh
 
-15. **[OPEN — MEDIUM — OP1 D35]** Cosmological constant Λ_PDL
+18. **[OPEN — MEDIUM — OP1 D35]** Cosmological constant Λ_PDL
     - Λ_PDL ~ C·η_L^18·(m_p c/ħ)²; ratio Λ_PDL/Λ_obs ~ 10^45 for C=1
     - Note E1: QQG shows such a derivation is achievable from a UV-complete framework.
 
-16. **[OPEN — MEDIUM — OP3 D36]** Structural derivation of N_local
-17. **[OPEN — MEDIUM — OP2 D32]** Linearity and unitarity from PDL optimisation functional
-18. **[OPEN — MEDIUM]** Multi-body extension — helium, Pauli exclusion (OP3 D32)
-19. **[OPEN — MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
-20. **[OPEN — MEDIUM]** Global uniqueness of proton quintuplet (OP2 D25)
-21. **[OPEN — FUTURE]** Test via lattice QCD — (m_d−m_u)_PDL = 2.532 MeV; ~5 years (FLAG)
-22. **[OPEN — FUTURE]** Test via μ precision — μ* = 1836.152670 at 0.002 ppm
-23. **[OPEN — MEDIUM]** Shell splitting from Δn=4 (OP1 D22)
-24. **[OPEN — MEDIUM]** Isotopic window width ΔN(Z) (OP2 D22)
-25. **[OPEN — MEDIUM]** Lacunae Z=43, Z=61 (OP3 D22)
-26. **[OPEN — FUTURE — E3]** Derive LLCP position (T_c ≈ 210 K, P_c ≈ 1,000 atm) from
+19. **[OPEN — MEDIUM — OP3 D36]** Structural derivation of N_local
+20. **[OPEN — MEDIUM — OP2 D32]** Linearity and unitarity from PDL optimisation functional
+21. **[OPEN — MEDIUM]** Multi-body extension — helium, Pauli exclusion (OP3 D32)
+22. **[OPEN — MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
+23. **[OPEN — MEDIUM]** Global uniqueness of proton quintuplet (OP2 D25)
+24. **[OPEN — FUTURE]** Test via lattice QCD — (m_d−m_u)_PDL = 2.532 MeV; ~5 years (FLAG)
+25. **[OPEN — FUTURE]** Test via μ precision — μ* = 1836.152670 at 0.002 ppm
+26. **[OPEN — FUTURE]** PBH threshold +11.89%: testable via Fermi-LAT (D38, Prediction 2)
+27. **[OPEN — MEDIUM]** Shell splitting from Δn=4 (OP1 D22)
+28. **[OPEN — MEDIUM]** Isotopic window width ΔN(Z) (OP2 D22)
+29. **[OPEN — MEDIUM]** Lacunae Z=43, Z=61 (OP3 D22)
+30. **[OPEN — FUTURE — E3]** Derive LLCP position (T_c ≈ 210 K, P_c ≈ 1,000 atm) from
     PDL closure parameters
-27. **[OPEN — LOW — E5]** Galaxy rotation curves from G_eff(N(r)) — dark matter without
+31. **[OPEN — LOW — E5]** Galaxy rotation curves from G_eff(N(r)) — dark matter without
     exotic particles as a PDL derivation target
 
 ---
 
-## Epistemic Status Summary — Session 16
+## Epistemic Status Summary — Session 17
 
 | Result | Status | Document |
 |--------|--------|----------|
@@ -844,14 +1011,53 @@ predictions and the explicit open-problem structure of PDL.
 | Born rule P₊ = |⟨+θ|ψ⟩|² | Level 1 proved (Gleason uniqueness) | D34 |
 | κ_PDL(N) = σ(N)·κ_Newton | Theorem (Gate 3) | D35 |
 | Gravitational redshift ∝ G_eff(N) | Consistent with D33 | D35 |
+| S ∝ R_surf (area law) | Unconditional theorem — BH-1 | D37 |
+| S_BH/k_B = 4π(M_eff/M_Pl)² | Algebraic theorem — BH-2 | D38 |
+| C₀ = 4π(m_p/M_Pl)², no free param | Corollary, verified < 10⁻¹⁵ | D38 |
+| PBH threshold +11.89% = σ(40)^(−2/3) | Falsifiable prediction (Fermi-LAT) | D38 |
+| κ = (φ/3)·(r_val/R_tot) | Algebraic identity, error < 10⁻¹⁵ | D39 |
+| C3 alone ⇏ uniform measure | Proved by counterexample | D39 |
+| H3 consistent + unique under S₄ | Proved (D39 + D36) | D39 |
+| κ = 310φ/11017 under H3 | Theorem under H3 | D39 |
+| Bridge Δr_val = ε_G·R·C, 0.004% residual | Structural theorem | D21, D25 |
+| G_PDL = 6.67448×10⁻¹¹, dev 27 ppm | Verified vs CODATA 2022 | D21 |
+| 18 = 6+5+4+3 proved | Topological theorem | D23 |
+| κ = R_surf/R_tot ∈ Q(√5), no free param | Derived | D24 |
+| σ(N) = 1-(1-κ)^N, exact | Proved from recurrence | D24, D26 |
+| G_eff(N) = σ(N)·G_PDL | Theorem under H1+H2 (D36) | D31, D36 |
+| S₄ transitivity on K₄ edges | Algebraic theorem | D31, D32 |
+| d₂_sat not S₄-equivariant | Physical obstruction theorem | D31 |
+| Δr_val(N) = σ(N)·Δr_val(∞) exactly | Algebraic identity (error < 10⁻¹²) | D31 |
+| Independence δ=0 between protons | Proved from (A)∧(B), exhaustive | D36 |
+| Tr(A)=0, β vanishes for any β | Combinatorial theorem | D36 |
+| N_CMB = ⌊Γ_n⌋ = 40 from D22 | Structural prediction | D27 |
+| H₀_CMB = 67.26 km/s/Mpc, 0.27σ Planck | Param-free prediction | D27 |
+| H₀ ratio = 1.085868, residual 0.006% | Quantitative prediction (updated) | D35 |
+| ε_G^B ∈ Q(√5), 17 ppm vs CODATA | Proved under minimal QCD interface | D28, D30 |
+| δμ = 155/11017·(1−2Δm_iso/m_p) | Proved (D29+D30) | D28–D30 |
+| (m_d−m_u)_PDL = 2.532 MeV | Quantitative prediction | D28 |
+| stable ⟺ (A)∧(B) for mixed triangles | Algebraic theorem | D29 |
+| r_val = 930 unique (charge+1, div R_e) | Algebraic theorem | D29 |
+| δμ⁽¹⁾ = 155/11017 from PDL axioms | Proved — Gate 1 | D29 |
+| coeff 2 = a = 2 from PDL axioms (C4) | Algebraic theorem | D30 |
+| G = (ħc/m_p²)·(ε_G^B)^18 | Proved — Gate 2 | D30 |
+| b = −iħΔt/(2mₑ(Δx)²), no free param | Derived from (B) + Compton | D32 |
+| Schrödinger eq. from (A)∧(B) | Theorem — OP6 resolved | D32 |
+| T = −iτ₂ unique, exhaustive | Algebraic theorem | D33 |
+| T² = −I₂ | Theorem from (T-a)∧(T-b) | D33 |
+| Clifford algebra {γμ,γν}=2ημνI₄ | Theorem (residual 0.00×10⁰) | D33 |
+| Period-4 = spin-½ double cover | Corollary, not postulate | D33 |
+| Dirac NR limit = D32 exactly | Internal consistency | D33 |
+| Born rule P₊ = |⟨+θ|ψ⟩|² | Level 1 proved (Gleason uniqueness) | D34 |
+| κ_PDL(N) = σ(N)·κ_Newton | Theorem (Gate 3) | D35 |
+| Gravitational redshift ∝ G_eff(N) | Consistent with D33 | D35 |
 
 ---
 
-## Epistemic Architecture (updated Session 16)
-
 **Layer 1 — Axioms → combinatorial results (fully rigorous):**
 K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
-(A)∧(B) criterion, T=−iτ₂ unique, Clifford algebra, period-4, independence δ=0, Tr(A)=0.
+(A)∧(B) criterion, T=−iτ₂ unique, Clifford algebra, period-4, independence δ=0, Tr(A)=0,
+Ω_val=1 (BH-1, D37), κ = (φ/3)·(r_val/R_tot) under H3 (D39).
 No free parameter, no external input. Mathematical theorems.
 
 **Layer 2 — QCD interface (minimal, forced):**
@@ -874,9 +1080,15 @@ targets (OP2, OP1 of D35).
 - (m_d−m_u)_PDL = 2.532 MeV (testable via FLAG lattice QCD, ~5 years)
 - H₀_CMB = 67.26 km/s/Mpc (testable via DESI/Euclid)
 
+**Layer 7 — Black hole thermodynamics (Sessions 17):**
+- BH-1 (D37): S ∝ R_surf — unconditional theorem from D29
+- BH-2 (D38): S_BH/k_B = 4π(M_eff/M_Pl)² — theorem under Gate 3
+- PBH threshold +11.89% — falsifiable prediction (Fermi-LAT)
+- κ two-factor decomposition (D39): κ = (φ/3)·(r_val/R_tot) under H3
+
 ---
 
-## Dependency Map (critical path — updated Session 16)
+## Dependency Map (critical path — updated Session 17)
 
 ```
 Proton quintuplet (24,28,930,10087,11017)
@@ -897,6 +1109,11 @@ Proton quintuplet (24,28,930,10087,11017)
     │                          ├── Independence δ=0 (D36) ─────── from (A)∧(B)
     │                          ├── Tr(A)=0 (D36) ──────────────── combinatorial
     │                          ├── H1: κ = R_surf/R_tot [D24, OP1 D36] △
+    │                          │        └── H3 (Indifference Lemma, D39): κ = P₁·P₂
+    │                          │                 ├── P₁ = φ/3 (D05, C4) ✓
+    │                          │                 ├── P(sea)=0 (D29) ✓
+    │                          │                 └── P(val) = r_val/R_tot (H3) △
+    │                          │                          └── OP1 D39: derive H3 from C1–C4
     │                          └── H₀_local/H₀_CMB = 1.085868 vs 1.085935 (0.006%)
     ├── Exponent 18 (Theorem, D23) ──────────────────── topological necessity
     ├── Nuclear stability (D22) ─────────────────────── N_crit=126.1
@@ -926,7 +1143,12 @@ Proton quintuplet (24,28,930,10087,11017)
              └── EINSTEIN (D35) ────────────────────── Gate 3 at GR level ✓
                       ├── κ_PDL(N) = σ(N)·κ_Newton (theorem)
                       ├── Gravitational redshift from G_eff(N)
-                      └── Hubble ratio 0.006% (0 free parameters)
+                      ├── Hubble ratio 0.006% (0 free parameters)
+                      └── BLACK HOLE THERMODYNAMICS (D37/D38) ── Session 17 ✓
+                               ├── BH-1: S ∝ R_surf (unconditional, D37) ✓
+                               ├── BH-2: S_BH/k_B = 4π(M_eff/M_Pl)² (D38) ✓
+                               ├── PBH threshold +11.89% (D38, Fermi-LAT testable)
+                               └── Conjecture BH-3: S_BH from axioms (OP1 D38)
 
 GATE 1 RESOLVED (D29): 155/11017 proved from PDL axioms
 GATE 2 RESOLVED (D30): ε_G^B proved; G fully combinatorial (+ Δm_iso)
@@ -934,33 +1156,47 @@ GATE 3 RESOLVED (D31/D36): G_eff(N) = σ(N)·G_PDL
   D31: theorem under linear bridge inversion hypothesis
   D36: independence δ=0 proved; Tr(A)=0 proved; hypothesis reduced to H1 (OP1 D36)
 
-OPEN FRONTIER (OP1 D36): derive H1 (κ = R_surf/R_tot) from axioms C1–C4
+BLACK HOLE THERMODYNAMICS (D37/D38/D39 — Session 17):
+  D37: S ∝ R_surf — unconditional theorem (area law)
+  D38: S_BH/k_B = 4π(M_eff/M_Pl)² — algebraic theorem under Gate 3
+  D39: κ = (φ/3)·(r_val/R_tot) — proved under H3 (Indifference Lemma)
+
+OPEN FRONTIERS:
+  OP1 D36 / OP1 D39: derive H3 (uniform measure on R_tot) from C1–C4 without D36
+  OP1 D38: derive S_BH from C1–C4 without Schwarzschild geometry (Conjecture BH-3)
+  OP1 D35: proportionality constant C in Λ_PDL
 ```
 
 ---
 
-## Next Actions (priority order — Session 16)
+## Next Actions (priority order — Session 17)
 
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
-2.  **[IMMEDIATE]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
-3.  **[HIGH]** OP1 (D36): Derive H1 — κ = R_surf/R_tot from axioms C1–C4
-4.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
-5.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
-6.  **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
-7.  **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
-8.  **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
-9.  **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
-10. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
-11. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
-12. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
-13. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
-14. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
-15. **[FUTURE]** Monitor μ precision measurements
-16. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
-17. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
+2.  **[IMMEDIATE]** Publish D37, D38, D39 on Zenodo; update corpus table with DOIs
+3.  **[IMMEDIATE]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
+4.  **[HIGH]** OP1 D39: Derive H3 from C1–C4 — the unique residual of OP1 D36
+    Strategy: show that C3∧C4 applied to the PDL proton forces the cross-edge measure
+    seen by K4 to be uniform on R_tot (S₄-invariance argument without invoking D36)
+5.  **[HIGH]** OP1 D38: Derive S_BH from C1–C4 without Schwarzschild geometry
+    (Conjecture BH-3 — the ascending direction)
+6.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
+7.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
+8.  **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
+9.  **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
+10. **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
+11. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
+12. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
+13. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
+14. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
+15. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
+16. **[MEDIUM]** Update DM (global mapping) to v12 incorporating D37–D39
+17. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
+18. **[FUTURE]** Monitor μ precision measurements
+19. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
+20. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
     (T_c, P_c) from PDL closure parameters
-18. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
-    alternative — requires H1 resolved first
+21. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
+    alternative — requires H3 resolved first
 
 ---
 
