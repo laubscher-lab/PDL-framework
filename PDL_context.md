@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 17 (31 March 2026)*
+*Last updated: Session 18 (31 March 2026)*
 
 ---
 
@@ -33,6 +33,24 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - Zenodo abstract for DM v10 updated to reflect Sessions 11–15 advances
 - External scientific vigilance: three papers analysed (see External Connections section)
 - LaTeX convention established: no spurious mid-sentence line breaks in .tex source
+
+**Session 18 — Documentation, dissemination, and website update (31 March 2026):**
+- DM v12 produced (complete LaTeX rewrite): covers D01–D39, 8-phase guided journey,
+  thirteen open problems, six falsifiable predictions, new section on black hole
+  thermodynamics, TikZ dependency diagram extended to BH-1/BH-2;
+  deposited on Zenodo (DOI: 10.5281/zenodo.19358464)
+- PDL_references_v12.bib produced: 39 corpus entries + all auxiliaries
+- Website cedriclaubscher.ch updated: guided journey restructured to 8 phases
+  (Phase VII = Black Hole Thermodynamics added), document table extended to D01–D39
+  with DOI-verified links, DM entry updated to v12, D31/D35/D36 descriptions updated
+  to mention H3 chain, The Crossing narrative updated (Indifference Lemma phrasing)
+- Zenodo description for DM v12 drafted and posted
+- Academia.edu posts: (i) black hole / D37-D38-D39 announcement (224 words);
+  (ii) DM v12 posting with teaser description (215 words);
+  (iii) comic strip post with accompanying text
+- External communication: response to Marlon Bulaquena on Academia clarifying
+  PDL is not a software universe ("logos" = Greek reason, not programming language)
+- LaTeX convention reminder: no spurious mid-sentence line breaks in .tex source
 
 **Session 17 — Black hole thermodynamics and OP1 D36 investigation (31 March 2026):**
 - D37: Surface locality of relational entropy — BH-1 proved unconditionally from D29
@@ -91,7 +109,7 @@ called D24). The table below is the authoritative reference.*
 | D21   | 10.5281/zenodo.19056994 | Universal Coherence Leakage V3 — Bridge G↔α | **Primary result** | Published |
 | DN    | 10.5281/zenodo.19076555 | Whatever We May Be — popular book EN | Vulgarisation | Published |
 | D22   | 10.5281/zenodo.19164084 | Nuclear stability, periodic table as closure hierarchies | Nuclei | Published |
-| DM    | 10.5281/zenodo.19335759 | D_Map v11 — Global Mapping of PDL | **Navigation** | Published |
+| DM    | 10.5281/zenodo.19358464 | D_Map v12 — Global Mapping of PDL | **Navigation** | Published |
 | D23   | 10.5281/zenodo.19197268 | Topological origin of exponent 18: K₄, S², periodic table v2 | Topology | Published |
 | D24   | 10.5281/zenodo.19206960 | Closure-density dependence of G_eff and Hubble tension | Cosmology | Published |
 | D25   | 10.5281/zenodo.19219858 | Parameter-free structural bridge α↔G | **Bridge α–G** | Published |
@@ -106,9 +124,9 @@ called D24). The table below is the authoritative reference.*
 | D34   | 10.5281/zenodo.19322776 | Born rule from (A)∧(B)-admissible amplitudes | **Proof** | Published |
 | D35   | 10.5281/zenodo.19322936 | Quantitative Einstein equation from G_eff(N) | Synthesis | Published |
 | D36   | 10.5281/zenodo.19323033 | Proof G_eff(N)=σ(N)·G_PDL, trace structure K₄ — Gate 3 strengthened | **Proof** | Published |
-| D37   | (pending Zenodo) | Surface Locality of Relational Entropy and the PDL Area Law | **Proof** | Produced Session 17 |
-| D38   | (pending Zenodo) | Bekenstein–Hawking Entropy from G_eff(N): the 4π Identity and PBH Predictions | **Proof+Predictions** | Produced Session 17 |
-| D39   | (pending Zenodo) | Derivation of κ from PDL Axioms: the Indifference Lemma (OP1 D36 partial) | **Proof** | Produced Session 17 |
+| D37   | 10.5281/zenodo.19354096 | Surface Locality of Relational Entropy and the PDL Area Law | **Proof** | Published |
+| D38   | 10.5281/zenodo.19354682 | Bekenstein–Hawking Entropy from G_eff(N): the 4π Identity and PBH Predictions | **Proof+Predictions** | Published |
+| D39   | 10.5281/zenodo.19354989 | Derivation of κ from PDL Axioms: the Indifference Lemma (OP1 D36 partial) | **Proof** | Published |
 
 ---
 
@@ -231,11 +249,13 @@ called D24). The table below is the authoritative reference.*
        Pdl_nuclear_stability_skeleton.pdf
        Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in PDL
 
-[DM]   https://doi.org/10.5281/zenodo.19335759
-       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v11.pdf
-       PDL Global Mapping of Structures, Results, and Open Problems (version 11)
-       *** Updated Session 16: complete rewrite covering D01-D36, 23 pages, 43 refs ***
-       *** Previous version (v10): https://doi.org/10.5281/zenodo.19194978 ***
+[DM]   https://doi.org/10.5281/zenodo.19358464
+       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v12.pdf
+       PDL Global Mapping of Structures, Results, and Open Problems (version 12)
+       *** Updated Session 18: complete rewrite covering D01-D39, 8-phase guided journey,
+           thirteen open problems, six falsifiable predictions, BH thermodynamics section ***
+       *** Previous version (v11): https://doi.org/10.5281/zenodo.19335759 ***
+       *** Version v10: https://doi.org/10.5281/zenodo.19194978 ***
 
 [D23]  https://doi.org/10.5281/zenodo.19197268
        PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
@@ -293,17 +313,17 @@ called D24). The table below is the authoritative reference.*
        Proof_of_G_eff_N____sigma_N__G_PDL_from_the_Trace_Structure_of_K_4_and_Independence_of_Gravitational_Engagement.pdf
        Proof of G_eff(N)=σ(N)·G_PDL from Trace Structure of K₄ and Independence of Engagement
 
-[D37]  (pending Zenodo — produced Session 17)
-       D37_Surface_Entropy_PDL.pdf
+[D37]  https://doi.org/10.5281/zenodo.19354096
+       Surface_Locality_of_Relational_Entropy_and_the_PDL_Area_Law.pdf
        Surface Locality of Relational Entropy and the PDL Area Law
 
-[D38]  (pending Zenodo — produced Session 17)
-       D38_BH_Entropy_PDL.pdf
+[D38]  https://doi.org/10.5281/zenodo.19354682
+       Bekenstein__Hawking_Entropy_from_the_PDL_Effective_Gravitational_Coupling.pdf
        Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling:
        the 4π Identity, Surface Counting, and Primordial Black Hole Predictions
 
-[D39]  (pending Zenodo — produced Session 17)
-       D39_Kappa_Indifference_PDL.pdf
+[D39]  https://doi.org/10.5281/zenodo.19354989
+       Derivation_of_kappa___R_surf___R_tot_from_the_PDL_Axioms.pdf
        Derivation of κ = R_surf/R_tot from the PDL Axioms:
        the Indifference Lemma and Partial Resolution of OP1 (D36)
 ```
@@ -407,6 +427,36 @@ discrepancies. The old internal numbering diverged from Zenodo for three documen
 | **D16b** | 10.5281/zenodo.18841166 | D16a and D17 | Combinatorial selection and local uniqueness of the proton architecture |
 
 *All references in this document use the Zenodo canonical numbering.*
+
+---
+
+## DM v12 Summary (Session 18 — Global Mapping rewrite)
+
+**Title:** PDL Global Mapping of Structures, Results, and Open Problems (version 12)
+**DOI:** https://doi.org/10.5281/zenodo.19358464
+**Published:** 31 March 2026
+
+**Scope:** Complete LaTeX rewrite covering D01–D39 plus all auxiliaries. Supersedes DM v11
+(10.5281/zenodo.19335759). Source files: PDL_Global_Mapping_v12.tex + PDL_references_v12.bib
+(39 corpus entries).
+
+**Key additions over v11:**
+- Three new documents (D37–D39) incorporated with full descriptions
+- New section 8: Black Hole Thermodynamics (BH-1 unconditional, BH-2 under H3,
+  three falsifiable predictions)
+- H3 (Indifference Lemma) introduced as new named hypothesis; H1 now a theorem under H3
+- OP1 updated: derivation of H3 (not H1) from C1–C4 is the unique residual
+- Thirteen numbered open problems (vs eleven in v11); OP12 = BH-3; OP13 = Hawking
+- Six parameter-free falsifiable predictions (vs three in v11):
+  added PBH threshold +11.9%, entropy suppression at CMB, S/E ratio in AGN
+- TikZ dependency diagram extended with BH-1 (unconditional) and BH-2 (under H3) nodes
+- Layer 5 of epistemic architecture updated with black hole results
+- Layer 6 updated with three new predictions
+- Guided reading journey restructured to 8 phases (Phase VII = Black Hole Thermodynamics)
+- Glossary: Indifference Lemma (H3) and Active surface updated with entropy property
+- Abstract updated to reflect D37–D39 and sole residual open problem (H3)
+
+**Zenodo abstract and Academia.edu description:** drafted and posted (Session 18).
 
 ---
 
@@ -712,6 +762,29 @@ This is the unique residual of OP1 D36.
   **LaTeX convention established:** No spurious mid-sentence line breaks in .tex source.
   This applies to all future PDL documents.
 
+- **Session 18 (31 March 2026):** Documentation, dissemination, and website update.
+
+  **DM v12 produced:** Complete LaTeX rewrite covering D01–D39. New section on black hole
+  thermodynamics (BH-1, BH-2, three PBH predictions). H3 (Indifference Lemma) introduced
+  as named hypothesis; H1 proved under H3 (D39); OP1 updated to derivation of H3 from C1–C4.
+  Thirteen open problems, six falsifiable predictions. Published on Zenodo
+  (DOI: 10.5281/zenodo.19358464). PDL_references_v12.bib (39 entries) produced.
+
+  **Website cedriclaubscher.ch updated:** Guided journey restructured to 8 phases
+  (Phase VII = Black Hole Thermodynamics, D37 + D38 added). Document table extended to
+  D37–D39 with DOI-verified links. DM entry updated to v12. D31/D35/D36 descriptions
+  updated to mention H3 chain. The Crossing narrative updated with Indifference Lemma
+  phrasing (Option 3 — "whether indifference is itself a logical necessity").
+
+  **Dissemination:** Three Academia.edu posts: (i) BH announcement for D37–D38–D39
+  (224 words, scientific accessible); (ii) DM v12 teaser description (215 words);
+  (iii) comic strip post with accompanying text. Zenodo abstracts updated for DM v12.
+
+  **External communication:** Response to Marlon Bulaquena clarifying PDL is not a
+  software universe — "logos" = Greek reason, not programming language. Clarified that
+  the proton's integers are not inputs to a simulation but solutions to a minimisation
+  problem, and that what comes out are theorems, not program outputs.
+
 - **Session 17 (31 March 2026):** Black hole thermodynamics and OP1 D36 investigation.
 
   **D37 (BH-1 — Area law as theorem):** The information-theoretic entropy of a PDL closure
@@ -874,6 +947,7 @@ Not a critical-path priority. A potential paper topic once H1 is resolved.
 | E2 | Chandra / Yu et al. (ApJ) | 24 Mar 2026 | L_Edd(N) = f(G_eff(N)); N(z) invertible from ṁ(z) | Low |
 | E3 | LLCP water / You et al. (Science) | 26 Mar 2026 | K₄ ↔ H₂O tetrahedron; C_p divergence ↔ OP1 D36 | Medium (long-term) |
 | E4 | Bulaquena RIS (Zenodo) | 2025/2026 | Superficial resemblance; no quantitative content; vigilance | Low (vigilance) |
+| E4b | Bulaquena (Academia) | 31 Mar 2026 | Direct engagement: PDL ≠ software universe; logos = Greek reason | Low (communication) |
 | E5 | Dark matter essay (anonymous) | 2010/2022 | G_eff(N) density-dependence ↔ galaxy rotation curves | Low (future direction) |
 
 ---
@@ -910,7 +984,7 @@ predictions and the explicit open-problem structure of PDL.
 
 ---
 
-## Open Problems (current status — Session 17)
+## Open Problems (current status — Session 18)
 
 1. **[RESOLVED — Session 7]** Topological proof of exponent 18 (D23)
 2. **[RESOLVED — Sessions 11–12]** Derivation of ε_G from first principles (D29, D30)
@@ -924,6 +998,7 @@ predictions and the explicit open-problem structure of PDL.
 8. **[RESOLVED — Session 16]** DM v11 — global mapping updated to reflect D01–D36
 9. **[RESOLVED — Session 17]** Area law S ∝ R_surf — BH-1 unconditional theorem (D37)
 10. **[RESOLVED — Session 17]** S_BH/k_B = 4π(M_eff/M_Pl)² — BH-2 theorem under Gate 3 (D38)
+11. **[RESOLVED — Session 18]** DM v12 — global mapping updated to reflect D01–D39
 
 11. **[OPEN — HIGH — OP1 D39]** Derive H3 from axioms C1–C4
     - H3: uniform measure on R_tot as seen by external K4
@@ -1064,8 +1139,8 @@ No free parameter, no external input. Mathematical theorems.
 Δm_iso = m_d−m_u is the unique irreducible external input. Forced by C1, not chosen.
 
 **Layer 3 — Cosmological coupling (theorem under named hypothesis):**
-G_eff(N) = σ(N)·G_PDL proved under H1 and H2. Independence and Tr(A)=0 follow
-algebraically. OP1 = derive H1 from C1–C4.
+G_eff(N) = σ(N)·G_PDL proved under H1 (D36). Independence and Tr(A)=0 follow
+algebraically. D39: H1 proved under H3 (Indifference Lemma). OP1 = derive H3 from C1–C4.
 
 **Layer 4 — Quantum dynamics (theorems under continuum limit):**
 Schrödinger (D32) and Dirac (D33) derived in continuum limit. Born rule (D34):
@@ -1169,34 +1244,40 @@ OPEN FRONTIERS:
 
 ---
 
-## Next Actions (priority order — Session 17)
+## Next Actions (priority order — Session 18)
 
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
-2.  **[IMMEDIATE]** Publish D37, D38, D39 on Zenodo; update corpus table with DOIs
-3.  **[IMMEDIATE]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
-4.  **[HIGH]** OP1 D39: Derive H3 from C1–C4 — the unique residual of OP1 D36
+2.  **[IMMEDIATE]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
+3.  **[HIGH]** OP1 D39: Derive H3 from C1–C4 — the unique residual of OP1 D36
     Strategy: show that C3∧C4 applied to the PDL proton forces the cross-edge measure
     seen by K4 to be uniform on R_tot (S₄-invariance argument without invoking D36)
-5.  **[HIGH]** OP1 D38: Derive S_BH from C1–C4 without Schwarzschild geometry
-    (Conjecture BH-3 — the ascending direction)
-6.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
-7.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
-8.  **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
-9.  **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
-10. **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
-11. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
-12. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
-13. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
-14. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
-15. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
-16. **[MEDIUM]** Update DM (global mapping) to v12 incorporating D37–D39
-17. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
-18. **[FUTURE]** Monitor μ precision measurements
-19. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
-20. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
+4.  **[HIGH]** OP1 D38: Derive S_BH from C1–C4 without Schwarzschild geometry
+    (Conjecture BH-3 — the ascending direction; requires OP1 D39 resolved first)
+5.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
+6.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
+7.  **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
+8.  **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
+9.  **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
+10. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
+11. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
+12. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
+13. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
+14. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
+15. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
+16. **[FUTURE]** Monitor μ precision measurements
+17. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
+18. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
     (T_c, P_c) from PDL closure parameters
-21. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
+19. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
     alternative — requires H3 resolved first
+
+**Completed in Session 17–18:**
+- ✓ D37, D38, D39 published on Zenodo (DOIs recorded above)
+- ✓ DM v12 produced and published on Zenodo (DOI: 10.5281/zenodo.19358464)
+- ✓ PDL_references_v12.bib produced
+- ✓ Website cedriclaubscher.ch updated (8-phase journey, D37–D39 added, The Crossing updated)
+- ✓ Zenodo abstracts updated
+- ✓ Academia.edu posts published (3 posts: BH announcement, DM v12, comic strip)
 
 ---
 
@@ -1227,4 +1308,4 @@ After each session, update:
   for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
 
 *All references in this document use the Zenodo canonical numbering
-(D01–D36 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+(D01–D39 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
