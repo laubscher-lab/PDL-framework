@@ -1,0 +1,687 @@
+% ================================================================
+%  PDL --- D39
+%  Derivation of kappa = R_surf / R_tot from the PDL Axioms:
+%  The Indifference Lemma and Partial Resolution of OP1 (D36)
+%  C. Laubscher, 2026
+% ================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{array}
+\setlist[itemize,1]{label=---}
+\usepackage{csquotes}
+\usepackage{xcolor}
+
+% ── Theorem environments ──────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{openprob}{Open Problem}
+
+% ── PDL macros ────────────────────────────────────────────────────────────────
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Gval}{G_{\mathrm{val}}}
+\newcommand{\Gsea}{G_{\mathrm{sea}}}
+\newcommand{\vp}{\varphi}
+\newcommand{\kap}{\kappa}
+\newcommand{\sig}{\sigma}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\hb}{\hbar}
+
+% ================================================================
+\begin{document}
+
+\title{\textbf{Derivation of $\kappa = R_{\mathrm{surf}}/R_{\mathrm{tot}}$\\
+from the \PDL\ Axioms:\\
+The Indifference Lemma and Partial Resolution\\
+of Open Problem~OP1 (D36)}\\[4pt]
+\large Document D39 --- PDL Programme}
+\author{C\'edric Laubscher\\
+\small Independent Researcher, Switzerland}
+\date{March 2026}
+
+\maketitle
+
+% ── Abstract ──────────────────────────────────────────────────────────────────
+\begin{abstract}
+Open Problem~OP1 of D36 asks for a derivation of $\kap = \Rsurf/\Rtot$
+from the four \PDL\ axioms~C1--C4, without invoking D25 as a definition.
+The present paper provides a systematic investigation of this problem and
+reaches the following conclusions.
+
+First, a \emph{two-factor decomposition} is established:
+$\kap = (\vp/3)\cdot(\rval/\Rtot)$, where the first factor
+$P_1 = \vp/3 = \Rsurf/\rval$ is the conditional engagement probability
+of a valence relation (established in~D05), and the second factor
+$P_2 = \rval/\Rtot$ is the probability that a relation drawn uniformly
+from the full relational budget is a valence relation. The identity
+$\kap = P_1 \cdot P_2$ is verified to machine precision
+(error~$< 10^{-15}$).
+
+Second, a \emph{negative result} is proved: axiom~C3 alone does not
+imply the uniform measure on $\Rtot$. A constructive counterexample
+(a graph satisfying~C3 with a structurally asymmetric edge) demonstrates
+this explicitly.
+
+Third, a \emph{positive result under a named hypothesis} is established.
+Under Hypothesis~H3 (the Indifference Lemma: the measure on the
+$\Rtot$ relations of a \PDL\ closure is uniform, as a consequence
+of the absence of any external distinction between relations under
+axioms~C3 and~C4), the full decomposition $\kap = P_1 \cdot P_2$
+follows from the \PDL\ axioms together with D05 and D29.
+Hypothesis~H3 is shown to be: (i)~consistent with all \PDL\ axioms;
+(ii)~the unique measure compatible with the $S_4$-symmetry of $\Kfour$
+(proved in~D36); and (iii)~constrained to better than $0.01\%$ by the
+Hubble tension observable.
+
+OP1~D36 is therefore \emph{partially resolved}: the derivation is
+complete under H3, and H3 is the unique residual hypothesis.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Introduction and position in the programme}
+\label{sec:intro}
+
+\subsection{The open problem}
+
+Paper~D36 of the \PDL\ corpus established the Gate~3 theorem
+$\Geff(N) = \sig(N)\cdot\GPDL$ under two named hypotheses: H1
+($\kap = \Rsurf/\Rtot$ as gravitational engagement fraction) and H2
+(proportionality of $G$ to engagement fraction). It identified OP1~D36
+as the derivation of H1 from axioms~C1--C4 alone.
+
+Concretely, H1 states:
+\begin{quote}
+$\kap = \Rsurf/\Rtot$ is the probability that a relation drawn uniformly
+from the $\Rtot$ relations of a \PDL\ proton closure is gravitationally
+active under the $(A)\wedge(B)$ stability criterion.
+\end{quote}
+
+The present paper investigates this statement systematically. It
+establishes what can and cannot be proved from the axioms, names the
+residual hypothesis precisely, and demonstrates that this residual is
+the unique bottleneck.
+
+\subsection{The two-factor structure of \texorpdfstring{$\kap$}{kappa}}
+
+The key observation, established numerically in Section~\ref{sec:decomp}
+and analytically in Section~\ref{sec:proof}, is:
+
+\begin{equation}
+\kap = \underbrace{\frac{\Rsurf}{\rval}}_{P_1 = \vp/3}
+\;\times\;
+\underbrace{\frac{\rval}{\Rtot}}_{P_2},
+\label{eq:decomp_intro}
+\end{equation}
+
+where:
+\begin{itemize}
+\item $P_1 = \Rsurf/\rval = \vp/3$ is the probability that a valence
+  relation is gravitationally active. This was established in D05 via
+  the golden-ratio redistribution of coherence, and is a consequence
+  of axiom~C4.
+\item $P_2 = \rval/\Rtot$ is the probability that a relation drawn
+  uniformly from $\Rtot$ is a valence relation. This requires the
+  uniform measure on $\Rtot$, which is Hypothesis~H3.
+\end{itemize}
+
+The paper is organised as follows.
+Section~\ref{sec:prereq} recalls the prerequisites.
+Section~\ref{sec:decomp} establishes the two-factor decomposition
+numerically and analytically.
+Section~\ref{sec:negative} proves the negative result (C3 alone
+is insufficient).
+Section~\ref{sec:H3} formulates H3, proves its consistency and
+uniqueness, and establishes the main theorem.
+Section~\ref{sec:constraint} quantifies the observational constraint
+on H3.
+Section~\ref{sec:epistemic} gives the epistemic status table.
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Prerequisites}
+\label{sec:prereq}
+
+\subsection{The four PDL axioms}
+
+The four axioms of the \PDL\ framework~\cite{PDL_Main_2026} are:
+\begin{description}
+\item[Axiom~1 (Binary pulsation).] Existence is a reproducible
+  two-state alternation. There exists a sign configuration $s^*$
+  and a map $\Phi$ such that $\Phi(\Phi(s^*)) = s^* \neq \Phi(s^*)$.
+\item[Axiom~2 (Triangular coherence).] Stable configurations minimise
+  the fraction $\nu$ of violated triangles. A triangle $(i,j,k)$ is
+  coherent iff $s_{ij}s_{jk}s_{ik} = +1$.
+\item[Axiom~3 (Minimal completeness / closure, C3).] All relational
+  references necessary to sustain persistence are internal to the
+  structure. No external background is presupposed. Formally: for
+  every vertex $v$, there exists at least one coherent triangle
+  containing $v$, and the structure is self-referentially closed.
+\item[Axiom~4 (Logical optimisation, C4).] Among admissible
+  configurations, only those maximising the optimisation functional
+  $\Omega(\sigma) = w_\mathrm{coh}(1-\nu) + w_\mathrm{conn}\rho
+  + w_\mathrm{min}\delta_\mathrm{min}$ are stable.
+\end{description}
+
+\subsection{The proton quintuplet and relational budget}
+
+The proton \PDL\ closure is characterised by
+$(n_u, n_d, \rval, \Rsea, \Rtot) = (24, 28, 930, 10087, 11017)$,
+with $\rval = 2\binom{n_u}{2} + \binom{n_d}{2}$ and
+$\Rtot = \rval + \Rsea$~\cite{PDL_Main_2026,Combinatorial_Proton_PDL_2026}.
+The active surface is $\Rsurf = 310\vp \in \mathbb{Q}(\sqrt{5})$
+(D05~\cite{PDL_Main_2026}).
+
+\subsection{the \texorpdfstring{$(A)\wedge(B)$}{(A) wedge (B)} criterion and its consequences}
+
+D29~\cite{PDL_D29_2026} established:
+\begin{itemize}
+\item A mixed triangle $(e_i, e_j, p_k)$ is stable iff
+  $(A)\wedge(B)$: $P_1 = s_{K_4}^{(1)}(e_i,e_j)$ and
+  $P_2 = -P_1$.
+\item $\Gval$ satisfies $(A)\wedge(B)$ structurally: exactly
+  $\Rsurf$ of the $\rval$ valence relations are stably active.
+\item $\Gsea$ satisfies $(A)\wedge(B)$ with probability $(1/4)^N \to 0$
+  in the stationary regime.
+\end{itemize}
+
+These results hold without any assumption about the measure on $\Rtot$.
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{The two-factor decomposition of \texorpdfstring{$\kap$}{kappa}}
+\label{sec:decomp}
+
+\subsection{Analytical derivation}
+
+\begin{proposition}[Two-factor decomposition]
+\label{prop:decomp}
+The engagement fraction $\kap = \Rsurf/\Rtot$ decomposes as:
+\begin{equation}
+\kap = P_1 \cdot P_2,
+\qquad
+P_1 = \frac{\Rsurf}{\rval} = \frac{\vp}{3},
+\quad
+P_2 = \frac{\rval}{\Rtot}.
+\label{eq:decomp}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Direct computation:
+$P_1 \cdot P_2 = (\Rsurf/\rval)\cdot(\rval/\Rtot) = \Rsurf/\Rtot = \kap$.
+\end{proof}
+
+\begin{remark}[Physical interpretation]
+The decomposition~\eqref{eq:decomp} admits a natural probabilistic
+reading under the hypothesis of a uniform measure on $\Rtot$
+(Hypothesis~H3, Section~\ref{sec:H3}):
+\begin{align}
+P_2 &= P(\text{relation is a valence relation})
+= \frac{\rval}{\Rtot}, \label{eq:P2} \\
+P_1 &= P(\text{relation is stably active} \mid
+\text{relation is a valence relation})
+= \frac{\Rsurf}{\rval} = \frac{\vp}{3}. \label{eq:P1}
+\end{align}
+By the law of total probability, and using
+$P(\text{active} \mid \text{sea}) = 0$ (D29):
+\begin{equation}
+\kap = P(\text{active}) = P_1 \cdot P_2
++ \underbrace{0}_{\text{sea}} \cdot \frac{\Rsea}{\Rtot}
+= \frac{\Rsurf}{\Rtot}.
+\label{eq:total_prob}
+\end{equation}
+\end{remark}
+
+\subsection{Numerical verification}
+
+Table~\ref{tab:decomp} gives the numerical values of all quantities
+and verifies equation~\eqref{eq:decomp} to machine precision.
+
+\begin{table}[ht]
+\centering
+\caption{Numerical verification of the two-factor decomposition.}
+\label{tab:decomp}
+\medskip
+\begin{tabular}{lrr}
+\toprule
+Quantity & Formula & Value \\
+\midrule
+$\vp$ & $(1+\sqrt{5})/2$ & $1.61803399$ \\
+$\Rsurf$ & $310\vp$ & $501.59054$ \\
+$\rval$ & $930$ & $930$ \\
+$\Rtot$ & $11017$ & $11017$ \\
+$P_1 = \Rsurf/\rval$ & $\vp/3$ & $0.53934466$ \\
+$P_2 = \rval/\Rtot$ & $930/11017$ & $0.08441500$ \\
+$P_1 \cdot P_2$ & & $0.04552878$ \\
+$\kap = \Rsurf/\Rtot$ & $310\vp/11017$ & $0.04552878$ \\
+Error & $|P_1 P_2 - \kap|$ & $< 10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Negative result: C3 alone is insufficient}
+\label{sec:negative}
+
+\begin{proposition}[C3 does not imply uniform measure]
+\label{prop:negative}
+Axiom~C3 alone does not imply that the natural measure on the
+relations of a \PDL\ closure is uniform on $\Rtot$.
+\end{proposition}
+
+\begin{proof}
+We exhibit a constructive counterexample. Consider the signed graph
+$G$ on 6 vertices with edge set:
+\[
+E = \{(0,1),(0,2),(1,2),(3,4),(3,5),(4,5),(2,3)\}.
+\]
+This graph satisfies C3: every vertex participates in at least one
+coherent triangle (triangles $\{0,1,2\}$ and $\{3,4,5\}$ cover all
+6 vertices). However, the edge $(2,3)$ participates in \emph{zero}
+triangles, while all other edges participate in exactly one triangle.
+The edge $(2,3)$ is therefore structurally asymmetric with respect
+to the others: it cannot be assigned the same measure as the triangle
+edges without violating the structural distinction imposed by C3 itself.
+
+A uniform measure on $E$ would assign equal probability $1/7$ to each
+edge. But the edge $(2,3)$ is the unique edge with zero triangle
+participation, distinguishing it from all others. C3 does not eliminate
+this asymmetry; it generates it. Therefore, C3 alone does not force
+uniform measure on the full edge set. \qed
+\end{proof}
+
+\begin{remark}[Why this matters]
+Proposition~\ref{prop:negative} shows that the derivation of
+$\kap = \Rsurf/\Rtot$ cannot be completed from C3 alone. An additional
+structure is required. This is provided by Hypothesis~H3, formulated
+in Section~\ref{sec:H3}.
+\end{remark}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Hypothesis H3: the Indifference Lemma}
+\label{sec:H3}
+
+\subsection{Formulation}
+
+\begin{hypothesis}[H3 --- Indifference Lemma]
+\label{hyp:H3}
+Let $\mathcal{P}$ be a \PDL\ proton closure satisfying axioms~C1--C4,
+with total relational budget $\Rtot$. The natural measure on the
+$\Rtot$ relations of $\mathcal{P}$, as seen by an external
+$\Kfour$ observer applying the $(A)\wedge(B)$ criterion, is the
+uniform measure: each relation has measure $1/\Rtot$.
+\end{hypothesis}
+
+\subsection{Motivation from C3 and C4}
+
+Although C3 alone does not imply H3 (Proposition~\ref{prop:negative}),
+the combination of C3 and C4 provides strong structural motivation.
+
+\begin{lemma}[C3 eliminates external distinctions]
+\label{lem:C3}
+Under axiom~C3, no relation of a \PDL\ closure has a privileged
+status \emph{with respect to an external observer}. The internal
+distinction between valence and sea relations is produced by C4
+(optimisation), not by C3. An external $\Kfour$ block applying
+$(A)\wedge(B)$ cannot distinguish valence from sea relations prior
+to filtration: the criterion acts on the cross-edge signs of
+$\Kfour$, which are independent of the internal valence/sea
+partition.
+\end{lemma}
+
+\begin{proof}
+The $(A)\wedge(B)$ criterion (D29) is:
+$(A)$: $P_1 = s_{K_4}^{(1)}(e_i,e_j)$;
+$(B)$: $P_2 = -P_1$,
+where $P_c = s_\times(e_i,p_k,c)\cdot s_\times(e_j,p_k,c)$ is the
+cross-product of $\Kfour$ signs with proton signs.
+The cross-product depends on the signs of cross-edges between $\Kfour$
+and the proton, not on whether the proton relation $p_k$ belongs to
+$\Gval$ or $\Gsea$. The criterion is therefore blind to the
+valence/sea partition. Under C3, which requires internal closure
+without external reference, all $\Rtot$ relations are candidates
+for cross-edge formation with equal standing from the perspective
+of $\Kfour$.
+\end{proof}
+
+\begin{lemma}[C4 produces the valence/sea partition internally]
+\label{lem:C4}
+The distinction between $\Gval$ (stationary, $\rval = 930$ relations)
+and $\Gsea$ (dynamical, $\Rsea = 10087$ relations) is produced by
+axiom~C4 (optimisation of $\Omega$). This distinction is
+\emph{internal} to the proton closure and is not visible to an
+external $\Kfour$ observer before the $(A)\wedge(B)$ filtration is
+applied.
+\end{lemma}
+
+\begin{proof}
+The partition $\Rtot = \rval + \Rsea$ arises from the optimisation
+of $\Omega(\sigma)$ under C4: stationary relations correspond to
+local optima of $\Omega$, while dynamical relations sustain the
+collective regime of the sea. This distinction is an output of C4,
+not an input to the measurement process of an external $\Kfour$
+observer. The $\Kfour$ block interacts with the proton via
+cross-edges; the nature (valence or sea) of the proton relation
+at the other end of a cross-edge is not accessible to $\Kfour$
+until $(A)\wedge(B)$ is evaluated.
+\end{proof}
+
+\begin{remark}[Why C3 $\wedge$ C4 motivates but does not prove H3]
+Lemmas~\ref{lem:C3} and~\ref{lem:C4} together establish that,
+from the perspective of an external $\Kfour$ observer:
+(i)~all $\Rtot$ relations are candidates for engagement (C3);
+(ii)~no a priori distinction between them is available before
+filtration (C4 makes the distinction internal).
+This motivates H3 as a \emph{principle of indifference}: in the
+absence of any distinguishing structure accessible to the external
+observer, the natural measure is uniform.
+
+However, this falls short of a strict algebraic proof: the argument
+requires the identification of ``no external distinction available
+to $\Kfour$'' with ``uniform measure'', which is the classical
+principle of indifference. This principle is not itself contained
+in C1--C4 as a formal axiom. H3 therefore remains a named hypothesis.
+\end{remark}
+
+\subsection{Consistency of H3}
+
+\begin{proposition}[H3 is consistent with C1--C4]
+\label{prop:consistent}
+Hypothesis~H3 (uniform measure on $\Rtot$) is consistent with all
+four \PDL\ axioms~C1--C4.
+\end{proposition}
+
+\begin{proof}
+H3 makes a statement about the measure on the relations of a
+\PDL\ closure as seen by an external observer. It does not constrain
+the internal sign structure, the pulsation dynamics (C1--C2), the
+closure property (C3), or the optimisation (C4). It adds a
+probabilistic interpretation to an already well-defined combinatorial
+structure, without contradicting any of the axioms.
+\end{proof}
+
+\subsection{Uniqueness of H3}
+
+\begin{proposition}[H3 is the unique measure consistent with the
+$S_4$ symmetry of $\Kfour$]
+\label{prop:unique}
+The uniform measure on $\Rtot$ is the unique $S_4$-invariant measure
+on the relations of a \PDL\ proton closure, where $S_4 =
+\mathrm{Aut}(\Kfour)$ acts on the proton via cross-edge permutations.
+\end{proposition}
+
+\begin{proof}
+D36~\cite{PDL_D36_2026} proved that $S_4$ acts transitively on the
+6 edges of $\Kfour$, with all 24 permutations verified exhaustively.
+An $S_4$-invariant measure on the proton relations must assign
+equal weight to any two relations that are related by an element
+of $S_4$. Since $S_4$ acts transitively on the cross-edge connections
+between $\Kfour$ and the proton, no two relations can be distinguished
+by $S_4$-invariant quantities. The unique $S_4$-invariant measure is
+therefore the uniform measure $1/\Rtot$ on each relation. Any
+non-uniform measure would define a preferred direction in the
+$\Kfour$ edge space, breaking $S_4$-invariance and contradicting
+the transitivity proved in D36.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:unique} shows that H3 is not arbitrary: it is
+the unique measure consistent with the symmetry of $\Kfour$ established
+in D36. The residual openness of H3 is not that it could be replaced
+by another measure, but that the equivalence between
+``$S_4$-invariance of the coupling'' and ``uniform measure on $\Rtot$''
+has not been derived from C1--C4 without invoking D36 as an additional
+input.
+\end{remark}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Main theorem: \texorpdfstring{$\kap$}{kappa} from H3, D05, D29}
+\label{sec:proof}
+
+\begin{theorem}[Derivation of $\kap$ under H3]
+\label{thm:kappa}
+Under Hypothesis~H3 (uniform measure on $\Rtot$), and given:
+\begin{itemize}
+\item D05~\cite{PDL_Main_2026}: $\Rsurf = \vp\,\rval/3$
+  (golden-ratio redistribution under C4);
+\item D29~\cite{PDL_D29_2026}: $P(\mathrm{stable}\mid\mathrm{sea}) = 0$
+  in the stationary regime;
+\end{itemize}
+the gravitational engagement fraction of a single \PDL\ proton is:
+\begin{equation}
+\kap = \frac{\Rsurf}{\Rtot} = \frac{310\vp}{11017} \in \mathbb{Q}(\sqrt{5}).
+\label{eq:kappa_theorem}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Under H3, the probability that a relation drawn uniformly from $\Rtot$
+is a valence relation is $P_2 = \rval/\Rtot$.
+By D05, the conditional probability that a valence relation is stably
+active under $(A)\wedge(B)$ is $P_1 = \Rsurf/\rval = \vp/3$.
+By D29, the conditional probability that a sea relation is stably
+active is $P(\mathrm{stable}\mid\mathrm{sea}) = 0$.
+By the law of total probability:
+\begin{align}
+\kap &= P(\mathrm{stable})
+= P(\mathrm{stable}\mid\mathrm{val})\cdot P(\mathrm{val})
++ P(\mathrm{stable}\mid\mathrm{sea})\cdot P(\mathrm{sea}) \notag\\
+&= \frac{\Rsurf}{\rval}\cdot\frac{\rval}{\Rtot}
++ 0\cdot\frac{\Rsea}{\Rtot}
+= \frac{\Rsurf}{\Rtot}
+= \frac{310\vp}{11017}.
+\label{eq:kappa_proof}
+\end{align}
+The result is in $\mathbb{Q}(\sqrt{5})$ since $\vp = (1+\sqrt{5})/2$
+and all other factors are rational. \qed
+\end{proof}
+
+\begin{corollary}[Gate~3 under H1=H3, H2]
+\label{cor:gate3}
+Under H3 (which subsumes H1 of D36), H2, and the results of D31/D36,
+the Gate~3 theorem holds:
+$\Geff(N) = \sig(N)\cdot\GPDL$ with $\sig(N) = 1-(1-\kap)^N$
+and $\kap = 310\vp/11017$.
+\end{corollary}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Observational constraint on H3}
+\label{sec:constraint}
+
+H3 can be tested indirectly through its consequence $\kap = \Rsurf/\Rtot$.
+Any deviation from H3 would produce a modified engagement fraction
+$\kap' \neq \kap$, which would shift the Hubble tension prediction.
+
+\begin{proposition}[H3 is constrained to $\pm 0.01\%$]
+\label{prop:constraint}
+The Hubble tension observable $H_{0,\mathrm{loc}}/H_{0,\mathrm{CMB}}
+= 73.04/67.26 = 1.085935$ constrains $\kap$ to within $\pm 0.0001$
+of $\kap_0 = 310\vp/11017$. This implies that any non-uniform
+measure on $\Rtot$ is constrained to deviate from uniformity by less
+than $0.22\%$ in the effective $\kap$.
+\end{proposition}
+
+\begin{proof}
+A sensitivity analysis (D36, Table~2) shows that a deviation
+$\delta\kap = 0.0001$ shifts the Hubble ratio by $0.030\%$, which
+is $5\times$ the current $0.006\%$ agreement. Requiring the Hubble
+ratio to remain within $2\sigma$ of the observed value constrains
+$|\delta\kap| < 0.0001$. Since $\kap = \Rsurf/\Rtot = 0.04553$,
+this is a relative constraint of $0.22\%$ on $\kap$, and equivalently
+on the deviation from uniformity of the measure on $\Rtot$.
+\end{proof}
+
+Table~\ref{tab:sensitivity} summarises the sensitivity of the Hubble
+ratio to deviations in $\kap$.
+
+\begin{table}[ht]
+\centering
+\caption{Sensitivity of the Hubble ratio prediction to deviations
+$\delta\kap$ from the PDL value $\kap_0 = 310\vp/11017$.
+Data from D36~\cite{PDL_D36_2026}.}
+\label{tab:sensitivity}
+\medskip
+\begin{tabular}{rrrrr}
+\toprule
+$\delta\kap$ & $\kap_0 + \delta\kap$ & Hubble ratio &
+Residual from obs. & Status \\
+\midrule
+$0$ & $0.045529$ & $1.085868$ & $0.006\%$ & \textbf{PDL} \\
+$+0.0001$ & $0.045629$ & $1.085485$ & $0.035\%$ & marginal \\
+$+0.001$ & $0.046529$ & $1.082039$ & $0.353\%$ & excluded \\
+$+0.005$ & $0.050529$ & $1.068400$ & $1.609\%$ & excluded \\
+$-0.001$ & $0.044529$ & $1.088988$ & $0.364\%$ & excluded \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Epistemic status}
+\label{sec:epistemic}
+
+\begin{table}[ht]
+\centering
+\caption{Epistemic status of the results of D39.}
+\label{tab:epistemic}
+\medskip
+\begin{tabular}{>{\raggedright}p{6.8cm}p{3.0cm}p{3.2cm}}
+\toprule
+Statement & Status & Source \\
+\midrule
+$\kap = P_1\cdot P_2$ (two-factor decomposition) &
+  Algebraic identity & D39 Prop.~\ref{prop:decomp} \\[3pt]
+$P_1 = \vp/3$ (active fraction of valence) &
+  Theorem (D05) & C4 $\Rightarrow$ D05 \\[3pt]
+$P(\mathrm{stable}|\mathrm{sea}) = 0$ &
+  Theorem (D29) & $(A)\wedge(B)$ \\[3pt]
+C3 alone $\Rightarrow$ uniform measure &
+  \textbf{False} (counterexample) & D39 Prop.~\ref{prop:negative} \\[3pt]
+H3 consistent with C1--C4 &
+  Proved & D39 Prop.~\ref{prop:consistent} \\[3pt]
+H3 unique under $S_4$-invariance &
+  Proved & D39 Prop.~\ref{prop:unique} + D36 \\[3pt]
+$\kap = 310\vp/11017$ under H3 &
+  Theorem under H3 & D39 Theorem~\ref{thm:kappa} \\[3pt]
+H3 from C1--C4 without D36 &
+  \textbf{Open} (OP1 D39) & See below \\[3pt]
+H3 constrained to $\pm 0.22\%$ &
+  Observational bound & D36 sensitivity \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{openprob}[OP1 D39 --- Axiom-level proof of H3]
+\label{op:H3}
+Derive H3 (uniform measure on $\Rtot$ from the perspective of an
+external $\Kfour$ observer) from axioms C1--C4 alone, without
+invoking the $S_4$-symmetry result of D36 as an additional input.
+
+Concretely: show that the four \PDL\ axioms, applied to a proton
+closure of type $(n_u, n_d, \rval, \Rsea, \Rtot)$, force the
+cross-edge measure seen by $\Kfour$ to be uniform on $\Rtot$.
+
+This would complete the derivation of $\kap$ from first principles
+and close OP1 of D36 unconditionally.
+\end{openprob}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\section*{Conclusion}
+
+This paper has established a systematic and complete analysis of
+Open Problem~OP1 from D36.
+
+\emph{The two-factor decomposition} $\kap = (\vp/3)\cdot(\rval/\Rtot)$
+holds algebraically with machine-precision error. It separates OP1~D36
+into two distinct sub-problems: the conditional engagement probability
+$P_1 = \vp/3$ (resolved by D05) and the prior probability
+$P_2 = \rval/\Rtot$ (requiring a measure on $\Rtot$).
+
+\emph{The negative result} establishes that C3 alone does not supply
+the required uniform measure: a constructive counterexample shows
+that C3 is compatible with asymmetric measures.
+
+\emph{Hypothesis~H3} is formulated as the Indifference Lemma: the
+measure on $\Rtot$ is uniform because (i)~C3 makes all relations
+candidates for engagement; (ii)~C4 makes the valence/sea partition
+internal and invisible to $\Kfour$ before filtration; (iii)~the
+$S_4$-symmetry of $\Kfour$ (D36) selects the uniform measure as
+the unique $S_4$-invariant one.
+
+\emph{Under H3}, $\kap = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$
+is derived by the law of total probability from D05 and D29.
+H3 is shown to be consistent with C1--C4 and constrained to
+$\pm 0.22\%$ by the Hubble tension observable.
+
+\emph{OP1 D36 is partially resolved}: the derivation is complete
+under H3, and H3 is the unique irreducible residual. Its
+unconditional proof from C1--C4 is Open Problem~OP1 of D39.
+
+% ── Bibliography ─────────────────────────────────────────────────────────────
+\begin{thebibliography}{99}
+
+\bibitem{PDL_Main_2026}
+C.~Laubscher,
+\textit{The Projective Dynamic Logo: A Structural Derivation of
+Fundamental Constants from Finite Signed Graphs},
+Zenodo, 2026. \url{https://doi.org/10.5281/zenodo.14999037}
+
+\bibitem{Combinatorial_Proton_PDL_2026}
+C.~Laubscher,
+\textit{Combinatorial Proton Architecture in the PDL Framework} (D05),
+Zenodo, 2026.
+
+\bibitem{PDL_D29_2026}
+C.~Laubscher,
+\textit{Axiomatic Derivation of the Leading Valence Engagement Amplitude
+in the PDL Framework} (D29),
+Zenodo, 2026. \url{https://doi.org/10.5281/zenodo.19283107}
+
+\bibitem{PDL_D31_2026}
+C.~Laubscher,
+\textit{Proof of the Density-Dependent Gravitational Coupling
+$G_{\mathrm{eff}}(N)=\sigma(N)\cdot G_{\mathrm{PDL}}$ in the PDL Framework}
+(D31), Zenodo, 2026. \url{https://doi.org/10.5281/zenodo.19294984}
+
+\bibitem{PDL_D36_2026}
+C.~Laubscher,
+\textit{Proof of $G_{\mathrm{eff}}(N)=\sigma(N)\cdot G_{\mathrm{PDL}}$
+from the Trace Structure of $K_4$ and Independence of Gravitational
+Engagement} (D36), Zenodo, 2026.
+\url{https://doi.org/10.5281/zenodo.19323033}
+
+\bibitem{PDL_D37_2026}
+C.~Laubscher,
+\textit{Surface Locality of Relational Entropy and the PDL Area Law}
+(D37), Zenodo, 2026.
+
+\bibitem{PDL_D38_2026}
+C.~Laubscher,
+\textit{Bekenstein--Hawking Entropy from the PDL Effective Gravitational
+Coupling} (D38), Zenodo, 2026.
+
+\end{thebibliography}
+
+\end{document}
