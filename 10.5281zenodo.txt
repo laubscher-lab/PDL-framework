@@ -1,0 +1,236 @@
+D01
+https://doi.org/10.5281/zenodo.18462686
+The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL)
+PDL.pdf
+
+D02 
+https://doi.org/10.5281/zenodo.18463130
+Introduction to the Projective Dynamic Logo (PDL)
+PDL_introduction.pdf
+
+D01F
+https://doi.org/10.5281/zenodo.18475542
+L'émergence de la réalité physique dans le cadre du Logo Dynamique Projectif (LDP)
+LPD.pdf
+
+D03
+https://doi.org/10.5281/zenodo.18509648
+The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo
+IMRad_PDL.pdf
+
+D04
+https://doi.org/10.5281/zenodo.18580925
+A Modal Dialogue between the Projective Dynamic Logo (PDL) and the Theory of Objectivity (TO)
+TO___PDL___Dialogue_article.pdf
+
+D05 
+https://doi.org/10.5281/zenodo.18581453
+A Minimal Relational Sketch for the Emergence of the Golden Ratio in PDL
+Emergence_of_the_Golden_Ratio_in_the_PDL_Proton_Surface.pdf
+
+D06
+https://doi.org/10.5281/zenodo.18581807
+Hierarchical Filtering of Coherence Leakage and Justification of the Exponent 18 in PDL
+Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL.pdf
+
+D07
+https://doi.org/10.5281/zenodo.18663156
+Gleason-Type Uniqueness of Born's Rule for Spin-1/2 in the PDL Framework
+Toward_a_Gleason_Type_Uniqueness_Theorem_for_Born_s_Rule_in_the_PDL_Framework.pdf
+
+D08
+https://doi.org/10.5281/zenodo.18664995
+Logical Leakage as Self-Maintained Probability: A Topological Reformulation in the Projective Dynamic Logo Framework
+A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework.pdf
+
+D09 
+https://doi.org/10.5281/zenodo.18675200
+Projective Dynamic Logo as a Foundational Research Programme: Current Status, Open Problems, and Interface with the Theory of Objectivity
+Position_paper_PDL.pdf
+
+D10 
+https://doi.org/10.5281/zenodo.18716526
+From Discrete Coherence Flux to Effective Fields: A Structured Programme within the PDL Framework
+Coherence_Effective_Fields_Gauss_Faraday_Structure_Triangle_Counts_Schrödinger_Dynamics_PDL_Framework.pdf
+
+D10a 
+https://doi.org/10.5281/zenodo.19329465
+Proper Time as Coherence-Cycle Counting, Emergent Metric, and Relational Distance in the Projective Dynamic Logo Framework 
+Proper_Time_as_Coherence_Cycle_Counting_and_Emergent_Metric_in_a_Relational_Graph_Framework_PDL.pdf 
+
+D11 
+https://doi.org/10.5281/zenodo.18725069
+Towards an Einstein--Dirac Unification from the Projective Dynamic Logo Framework 
+Towards_Einstein__Dirac_Unification_PDL.pdf
+
+D12 
+https://doi.org/10.5281/zenodo.18828183 
+A Structural Derivation of the Fine-Structure Constant from the Projective Dynamic Logo (PDL)
+Derivation_alpha_PDL_v2.pdf
+
+D13 
+https://doi.org/10.5281/zenodo.18831587 
+Compatibility of the Schrödinger Framework with the Projective Dynamic Logo (PDL) 
+Schodinger_PDL_v2.pdf
+
+D14 
+https://doi.org/10.5281/zenodo.18832069 
+Relational Emergence of Born's Rule and a Golden-Ratio Active Surface in PDL 
+Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL_v2.pdf
+
+D15 
+https://doi.org/10.5281/zenodo.18832542 
+Towards a Schrödinger–Type Dynamics from the Projective Dynamic Logo (PDL) A Relational Sketch Linking Coherence Cycles, Active Surfaces, and Effective Potentials 
+Sketch_derivation_Schroedinger_PDL_v2.pdf 
+
+D16 
+https://doi.org/10.5281/zenodo.18832953 
+On the Combinatorial Selection of the Proton Architecture in PDL, Axiomatic Constraints, Integer Structures, and a Uniqueness Conjecture 
+Combinatorial_Proton_Architecture_PDL_v2.pdf 
+
+D16a
+https://doi.org/10.5281/zenodo.18841034 
+Minimal Stationary Closures in the Projective Dynamic Logo Framework: Necessity of the (4,6) Block
+Minimal_Stationary_Closures_in_the_PDL_Framework_Necessity_of_the_4_6_Block.pdf 
+
+D16b
+https://doi.org/10.5281/zenodo.18841166 
+On the Combinatorial Selection and Local Uniqueness of the Proton Architecture in the PDL Framework 
+On_the_Combinatorial_Selection_and_Local_Uniqueness_of_the_PDL_Proton_Architecture.pdf 
+
+D17 
+https://doi.org/10.5281/zenodo.18841254 
+Coherence Leakage, Hierarchical Filtering, and the Exponent 18 in the Projective Dynamic Logo Framework 
+Coherence_Leakage_Hierarchical_Filtering_and_the_Exponent_18_in_the_PDLogo_Framework.pdf
+
+D18 
+https://doi.org/10.5281/zenodo.18854190 
+Discrete Cavity Modes and Logical Density of States in the PDL Framework 
+Discrete_Cavity_Modes_and_Logical_Density_of_States_in_the_PDL_Framework.pdf
+
+D19 
+https://doi.org/10.5281/zenodo.18854559 
+Existence as Pulsating Closure: An Ontological Meditation on the Projective Dynamic Logo Framework 
+Existence_as_Pulsating_Closure_An_Ontological_Meditation_on_the_PDL_Framework.pdf
+
+D20F 
+https://doi.org/10.5281/zenodo.18914532
+Qui que nous puissions être : Existence, cohérence et instruments vulnérables Une synthèse philosophique du cadre du Logo Dynamique Projectif 
+Qui_que_nous_puissions_etre_Existence_coherence_et_instruments_vulnerables_Une_synthese_philosophique_du_cadre_du_PDL.pdf
+
+D20 
+https://doi.org/10.5281/zenodo.18940047
+Whoever We May Be: Existence, Coherence, and Vulnerable Instruments – A Philosophical Synthesis of the PDL Framework_v2
+Whoever_We_May_Be_Existence__Coherence__and_Vulnerable_Instruments_A_Philosophical_Synthesis_of_the_PDL_Framework_v2.pdf
+
+D21
+https://doi.org/10.5281/zenodo.19056994 
+Universal Coherence Leakage: A Structural Bridge between the Gravitational and Electromagnetic Constants in the Projective Dynamic Logo Framework (Version 3) 
+Universal_Coherence_Leakage__Bridging_the_Gravitational_and_Fine_Structure_Constants_through_Discrete_Relational_Closures_V3.pdf
+
+DN 
+https://doi.org/10.5281/zenodo.19076555 
+Whatever We May Be — The Projective Dynamic Logo 
+Whoever_we_may_be___The_Projective_Dynamic_Logo_v2.pdf
+
+D22 
+https://doi.org/10.5281/zenodo.19164084
+Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in the Projective Dynamic Logo Framework 
+Pdl_nuclear_stability_skeleton.pdf 
+
+DM
+https://doi.org/10.5281/zenodo.19371866 
+Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 13) 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v13.pdf 
+
+D23 
+https://doi.org/10.5281/zenodo.19197268 
+Topological Origin of the Exponent 18 in the PDL Gravitational Coupling: K_4, S^2, and the Periodic Table (version 2)
+PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
+
+D24 
+https://doi.org/10.5281/zenodo.19206960 
+Closure-Density Dependence of the Effective Gravitational Coupling and the Structural Origin of the Hubble Tension 
+Closure_Density_Dependence_of_the_Effective_Gravitational_Coupling_and_the_Structural_Origin_of_the_Hubble_Tension.pdf 
+
+D25 
+https://doi.org/10.5281/zenodo.19219858 
+A Parameter-Free Structural Bridge between the Fine-Structure Constant and Newton's Gravitational Constant in the PDL Framework 
+A_Parameter_Free_Structural_Bridge_between_the_Fine_Structure_Constant_and_Newton_s_Gravitational_Constant.pdf 
+
+D26 
+https://doi.org/10.5281/zenodo.19221310 
+Cosmological Resolution via PDL: G as a Topology-Dependent Parameter and the Hubble Tension as a Scale-Transition Signature 
+Pdl_hubble_resolution.pdf 
+
+D27 
+https://doi.org/10.5281/zenodo.19281988 
+Structural Derivation of N_CMB from the PDL Neutron Architecture: A Parameter-Free Resolution of the Hubble Tension 
+Structural_Derivation_of_N_CMB_from_the_PDL_Neutron_Architecture_and_Parameter_Free_Resolution_of_the_Hubble_Tension.pdf 
+
+D28 
+https://doi.org/10.5281/zenodo.19282932 
+The PDL–QCD Boundary: Structural Derivation of the Proton–Electron Mass Ratio Correction and a Parameter-Free Conjecture for Newton's Constant 
+The_PDL__QCD_Boundary__Structural_Derivation_of_the_Proton__Electron_Mass_Ratio_Correction_and_a_Parameter_Free_Conjecture_for_Newton_s_Constant.pdf 
+
+D29 
+https://doi.org/10.5281/zenodo.19283107 
+Axiomatic Derivation of the Leading Valence Engagement Amplitude in the PDL Framework: Gate 1 Resolved 
+Axiomatic_Derivation_of_the_Leading_Valence_Engagement_Amplitude_in_the_PDL_Framework.pdf 
+
+D30 
+https://doi.org/10.5281/zenodo.19294449 
+Structural Derivation of the QCD Correction Coefficient in the PDL Mass Ratio Formula and Completion of the ε_G Conjecture: Gate 2 Resolved 
+Structural_Derivation_of_the_QCD_Correction_Coefficient_in_the_PDL_Mass_Ratio_Formula_and_Completion_of_the_epsilon_G_Conjecture.pdf 
+
+D31 
+https://doi.org/10.5281/zenodo.19294984 
+Proof of the Density-Dependent Gravitational Coupling G_eff(N) = σ(N)·G_PDL in the PDL Framework: Gate 3 Resolved 
+Proof_of_the_Density_Dependent_Gravitational_Coupling.pdf 
+
+D32 
+https://doi.org/10.5281/zenodo.19306269 
+Schrödinger Dynamics from the (A)∧(B) Coupling Criterion in the PDL Framework
+Schrödinger_Dynamics_from_the__A___B__Coupling_Criterion.pdf 
+
+D33 
+https://doi.org/10.5281/zenodo.19307249 
+Dirac Equation from the SL(2,ℂ) Pulsation of K₄ in the PDL Framework 
+Dirac_Equation_from_the_SL_2_C__Pulsation_of_K_4_in_the_PDL_Framework.pdf 
+
+D34 
+https://doi.org/10.5281/zenodo.19322776 
+Born Rule from (A)∧(B)-Admissible Amplitudes in the PDL Framework
+Born_Rule_from__A___B__Admissible_Amplitudes_in_the_PDL_Framework.pdf 
+
+D35 
+https://doi.org/10.5281/zenodo.19322936 
+Quantitative Einstein Equation from G_eff(N) = σ(N)·G_PDL in the PDL Framework 
+Quantitative_Einstein_Equation_from_G_eff_N____sigma_N__G_PDL_in_the_PDL_Framework.pdf 
+
+D36 
+https://doi.org/10.5281/zenodo.19323033 
+Proof of G_eff(N) = σ(N)·G_PDL from the Trace Structure of K₄ and Independence of Gravitational Engagement 
+Proof_of_G_eff_N____sigma_N__G_PDL_from_the_Trace_Structure_of_K_4_and_Independence_of_Gravitational_Engagement.pdf 
+
+D37 
+https://doi.org/10.5281/zenodo.19354096 
+Surface Locality of Relational Entropy and the PDL Area Law 
+Surface_Locality_of_Relational_Entropy_and_the_PDL_Area_Law.pdf 
+
+D38 
+https://doi.org/10.5281/zenodo.19354682 
+Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling: the 4π4\pi
+4π Identity, Surface Counting, and Primordial Black Hole Predictions 
+Bekenstein__Hawking_Entropy_from_the_PDL_Effective_Gravitational_Coupling.pdf 
+
+D39 
+https://doi.org/10.5281/zenodo.19354989 
+Derivation of κ=Rsurf/Rtot\kappa = R_{\mathrm{surf}}/R_{\mathrm{tot}}
+κ=Rsurf​/Rtot​ from the PDL Axioms: the Indifference Lemma and Partial Resolution of Open Problem OP1 (D36) 
+Derivation_of_kappa___R_surf___R_tot_from_the_PDL_Axioms.pdf 
+
+D40 
+https://doi.org/10.5281/zenodo.19371523
+Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms: Derivation of the Valley of Stability, Magic Numbers, and Assembly Rules
+Nuclear_Stability_PDL.pdf
