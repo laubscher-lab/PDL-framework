@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 19 (1 April 2026)*
+*Last updated: Session 19 — extended (2 April 2026)*
 
 ---
 
@@ -86,6 +86,30 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - Website cedriclaubscher.ch updated: D40 added to Phase II of guided journey (after D22),
   document table extended with D40 entry, DM entry updated to v13.
 
+**Session 19 — extended (2 April 2026): Nuclear spectroscopy confrontation, D41, DM v14:**
+- D41: First confrontation of PDL with a published nuclear spectroscopy experiment.
+  Experiment: Ha et al., *Nature Communications* 16, 10631 (2025) — abrupt structural
+  transition between ⁸⁴Mo (N=Z=42, intruder 8p-8h) and ⁸⁶Mo (N=Z+2=44).
+  Three independent observables from published source data (MOESM3) tested against the
+  structural identity T ≈ (Δn+1)² = 25:
+  (i) B(E2) ratio ⁸⁴Mo/⁸⁶Mo = 2.454 vs PDL prediction 2.021 (22% discrepancy, within
+      experimental uncertainty of +33% on ⁸⁴Mo);
+  (ii) Wave-function component ratio N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo) = 1.962 vs PDL 2.000
+      (2% discrepancy — strongest result of the session);
+  (iii) Shannon entropy difference ΔS_WF = 0.868 nats vs PDL ln 2 = 0.693 nats (25%).
+  Closure multiplicity conjecture H_B introduced: N_comp(k) ~ k for a kp-kh nucleus at
+  the boundary of an island of inversion, yielding N_comp(8)/N_comp(4) = 2 exactly.
+  ZBM3–PDL correspondence conjectured (OP16): pseudo-SU(3) ↔ u-core (n_u=24),
+  quasi-SU(3) ↔ d-core (n_d=28).
+  Two falsifiable predictions: B(E2)[⁸⁸Ru]/B(E2)[⁹⁰Ru] ≈ 2.02±25% and
+  B(E2)[⁹²Pd]/B(E2)[⁹⁴Pd] ≈ 2.02±25%, testable at FRIB and RIKEN.
+  Published on Zenodo (DOI: 10.5281/zenodo.19384396).
+- DM v14 produced: incorporates D41, adds nuclear spectroscopy confrontation section,
+  two new falsifiable predictions (P7, P8), OP16, R29, R30 in epistemic table, reading
+  guide updated with nuclear spectroscopy entry point.
+  Published on Zenodo (DOI: 10.5281/zenodo.19384997).
+- Contact with Ha et al. (F. Recchia or S.M. Lenzi) recommended after DOI confirmation.
+
 ---
 
 ## Corpus Table (Zenodo canonical order — updated Session 19)
@@ -125,7 +149,6 @@ called D24). The table below is the authoritative reference.*
 | D21   | 10.5281/zenodo.19056994 | Universal Coherence Leakage V3 — Bridge G↔α | **Primary result** | Published |
 | DN    | 10.5281/zenodo.19076555 | Whatever We May Be — popular book EN | Vulgarisation | Published |
 | D22   | 10.5281/zenodo.19164084 | Nuclear stability, periodic table as closure hierarchies | Nuclei | Published |
-| DM    | 10.5281/zenodo.19371866 | D_Map v13 — Global Mapping of PDL | **Navigation** | Published |
 | D23   | 10.5281/zenodo.19197268 | Topological origin of exponent 18: K₄, S², periodic table v2 | Topology | Published |
 | D24   | 10.5281/zenodo.19206960 | Closure-density dependence of G_eff and Hubble tension | Cosmology | Published |
 | D25   | 10.5281/zenodo.19219858 | Parameter-free structural bridge α↔G | **Bridge α–G** | Published |
@@ -144,6 +167,8 @@ called D24). The table below is the authoritative reference.*
 | D38   | 10.5281/zenodo.19354682 | Bekenstein–Hawking Entropy from G_eff(N): the 4π Identity and PBH Predictions | **Proof+Predictions** | Published |
 | D39   | 10.5281/zenodo.19354989 | Derivation of κ from PDL Axioms: the Indifference Lemma (OP1 D36 partial) | **Proof** | Published |
 | D40   | 10.5281/zenodo.19371523 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms | **Proof** | Published |
+| D41   | 10.5281/zenodo.19384396 | Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: PDL Analysis of ⁸⁴,⁸⁶Mo | **Confrontation + Predictions** | Published |
+| DM    | 10.5281/zenodo.19384997 | D_Map v14 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
 
@@ -266,15 +291,6 @@ called D24). The table below is the authoritative reference.*
        Pdl_nuclear_stability_skeleton.pdf
        Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in PDL
 
-[DM]   https://doi.org/10.5281/zenodo.19371866
-       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v13.pdf
-       PDL Global Mapping of Structures, Results, and Open Problems (version 13)
-       *** Updated Session 19: covers D01–D40, 8-phase guided journey, fourteen open problems,
-           nuclear stability section, connection OP14↔OP12 identified ***
-       *** Previous version (v12): https://doi.org/10.5281/zenodo.19358464 ***
-       *** Version v11: https://doi.org/10.5281/zenodo.19335759 ***
-       *** Version v10: https://doi.org/10.5281/zenodo.19194978 ***
-
 [D23]  https://doi.org/10.5281/zenodo.19197268
        PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
        Topological Origin of the Exponent 18 in PDL: K₄, S², and the Periodic Table (v2)
@@ -349,6 +365,20 @@ called D24). The table below is the authoritative reference.*
        Nuclear_Stability_PDL.pdf
        Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms:
        Derivation of the Valley of Stability, Magic Numbers, and Assembly Rules
+
+[D41]  https://doi.org/10.5281/zenodo.19384396
+       D41_PDL_island_of_inversion.pdf
+       Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion:
+       a PDL Analysis of ⁸⁴,⁸⁶Mo
+
+[DM]   https://doi.org/10.5281/zenodo.19384997
+       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v14.pdf
+       PDL Global Mapping of Structures, Results, and Open Problems (version 14)
+       *** Current version: covers D01–D41, 16 open problems, 8 falsifiable predictions ***
+       *** Previous version (v13): https://doi.org/10.5281/zenodo.19371866 ***
+       *** Version v12: https://doi.org/10.5281/zenodo.19358464 ***
+       *** Version v11: https://doi.org/10.5281/zenodo.19335759 ***
+       *** Version v10: https://doi.org/10.5281/zenodo.19194978 ***
 ```
 
 ---
@@ -436,6 +466,19 @@ D40 numerical checks (Session 19):
   Valley of stability: N_min(Z) reproduced at 100% for all Z = 1..82
   Filling rates: r_exc ∈ {0,1,2,3}, PDL spin–orbit splitting Δn/(2n_u) = 4/48 = 1/12
   B_pair = T_nn + T_pp/2 ≈ 39.603  [universal pairing energy — theorem]
+
+D41 numerical checks (Session 19 extended — 2 April 2026):
+  Source data: Ha et al., Nat. Comm. 16, 10631 (2025), MOESM3
+  B(E2)[⁸⁴Mo] = 1740 (+580/−430) e²fm⁴; B(E2)[⁸⁶Mo] = 707±71 e²fm⁴
+  Observed ratio B(E2)[⁸⁴Mo]/B(E2)[⁸⁶Mo] = 2.454
+  PDL prediction 2T/(Δn+1)² = 2×25.260/25 = 2.021  [22% discrepancy]
+  N_comp(⁸⁴Mo) = 53 (DNO-SM); N_comp(⁸⁶Mo) = 104
+  Observed ratio N_comp = 104/53 = 1.962; PDL prediction = 2.000  [2% discrepancy]
+  Shannon entropy: S(⁸⁴Mo) = 2.998 nats; S(⁸⁶Mo) = 3.866 nats
+  ΔS_WF = 0.868 nats; PDL heuristic ln 2 = 0.693 nats  [25% discrepancy]
+  B(E2) ratio at Z=32 (Ge): 410/197.5 = 2.076; PDL 2.021  [2.7% discrepancy]
+  PES: ⁸⁴Mo minimum at β=0.366, γ=22.2°; 72 points within 1 MeV of minimum
+  PES: ⁸⁶Mo minimum at β=0.268, γ=27.3°; 45 points within 1 MeV of minimum
 ```
 
 ---
@@ -578,7 +621,78 @@ algebraic category.
 
 ---
 
-## D39 Summary (Session 17 — OP1 D36 partial resolution)
+## D41 Summary (Session 19 extended — Nuclear spectroscopy confrontation)
+
+**Title:** Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion:
+a PDL Analysis of ⁸⁴,⁸⁶Mo
+
+**DOI:** https://doi.org/10.5281/zenodo.19384396
+**Published:** 2 April 2026
+
+**Experimental basis:** Ha, J. et al. (2025). *Nature Communications* 16, 10631.
+DOI: 10.1038/s41467-025-65621-2. Source data MOESM3 used directly.
+
+**Core results:**
+
+**Observable 1 — B(E2) ratio (22% discrepancy, within experimental uncertainty):**
+B(E2)[⁸⁴Mo] = 1740(+580/−430) e²fm⁴; B(E2)[⁸⁶Mo] = 707±71 e²fm⁴.
+Observed ratio = 2.454; PDL prediction 2T/(Δn+1)² = 2.021.
+Pattern: ratio ≈ 2 at island boundaries (Z=32: 2.076; Z=42: 2.454), not in bulk (Z=34–40).
+
+**Observable 2 — Wave-function component ratio (2% discrepancy — strongest result):**
+N_comp(⁸⁴Mo) = 53; N_comp(⁸⁶Mo) = 104.
+Observed ratio = 1.962; PDL prediction (closure multiplicity conjecture H_B) = 2.000 exactly.
+
+**Observable 3 — Shannon entropy difference (25% discrepancy — heuristic status):**
+ΔS_WF = S(⁸⁶Mo) − S(⁸⁴Mo) = 3.866 − 2.998 = 0.868 nats.
+PDL heuristic: ln 2 = 0.693 nats.
+
+**Closure multiplicity conjecture H_B:** For a nucleus at the boundary of an island of
+inversion dominated by a kp-kh configuration: N_comp(k) ~ k, yielding N_comp(8)/N_comp(4) = 2
+exactly. Status: conjecture, supported at 2% by source data.
+
+**ZBM3–PDL correspondence conjecture (OP16):** pseudo-SU(3) sub-space of ZBM3
+(orbitals 2p₃/₂, 2p₁/₂, 1f₅/₂) ↔ u-core sector (n_u=24); quasi-SU(3) sub-space
+(orbitals 1g₉/₂, 2d₅/₂, 3s₁/₂) ↔ d-core sector (n_d=28). Δn=4 as structural origin
+of pseudo/quasi-SU(3) splitting. Status: conjecture, unverified.
+
+**Falsifiable predictions (P7, P8):**
+- P7: B(E2)[⁸⁸Ru]/B(E2)[⁹⁰Ru] ≈ 2.02±25%. Refutation: ratio outside [1.5, 2.6].
+- P8: B(E2)[⁹²Pd]/B(E2)[⁹⁴Pd] ≈ 2.02±25%. Refutation: ratio outside [1.5, 2.6].
+Both testable at FRIB (USA) and RIBF/RIKEN (Japan).
+
+**Open problems in D41:**
+- OP-D41-1: Derive N_comp(k) ~ k rigorously from PDL signed-graph formalism
+- OP-D41-2: Derive entropy formula S_WF(k) ≈ ln(k·T) from closure multiplicity count
+- OP-D41-3: Extend to neutron-rich island of inversion (⁶⁴Cr, N=40) — test universality of H_B
+
+**Contact with Ha et al.:** Recommended action: send a short message to F. Recchia or
+S.M. Lenzi once the context file and website are updated, citing the 2% N_comp agreement
+and predictions P7/P8 with D41 DOI. No contact initiated yet.
+
+---
+
+## DM v14 Summary (Session 19 extended — Global Mapping update)
+
+**Title:** PDL Global Mapping of Structures, Results, and Open Problems (version 14)
+**DOI:** https://doi.org/10.5281/zenodo.19384997
+**Published:** 2 April 2026
+
+**Scope:** Covers D01–D41 plus all auxiliaries. Supersedes DM v13 (10.5281/zenodo.19371866).
+Source files: PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v14.tex.
+
+**Key additions over v13:**
+- D41 incorporated with full description in corpus table and new sub-section §8.5
+- New sub-section §8.5: Nuclear spectroscopy confrontation — three observables, conjecture H_B,
+  ZBM3–PDL correspondence, predictions P7/P8
+- New falsifiable predictions P7 and P8 added to predictions table (8 total, was 6)
+- R29 (N_comp ratio agreement, 2%) and R30 (ZBM3–PDL conjecture) added to epistemic table
+- OP16 (ZBM3–PDL correspondence) added to open-problem list (16 total, was 15)
+- Reading guide updated: new entry "Nuclear spectroscopy confrontation (D41)"
+- Entry points updated: nuclear spectroscopy branch added
+- Abstract updated to reflect D41 and two new predictions
+
+---
 
 **Title:** Derivation of κ = R_surf/R_tot from the PDL Axioms:
 the Indifference Lemma and Partial Resolution of OP1 (D36)
@@ -811,6 +925,29 @@ precision). Independence must hold to δ < 0.0001.
   **Website cedriclaubscher.ch updated:** D40 added to Phase II of guided journey (after D22);
   document table extended with D40 entry and DOI-verified link; DM entry updated to v13.
 
+- **Session 19 — extended (2 April 2026):** Nuclear spectroscopy confrontation (D41) and DM v14.
+
+  **Trigger:** Ha, J. et al., *Nature Communications* 16, 10631 (2025). Source data MOESM3
+  used directly (ROOT code + PES/WF txt files).
+
+  **D41 (Nuclear spectroscopy confrontation):** First direct test of PDL nuclear framework
+  against published experimental data. Three independent observables from the source data of
+  Ha et al. confronted with the structural identity T ≈ (Δn+1)² = 25:
+  — B(E2) ratio ⁸⁴Mo/⁸⁶Mo = 2.454 vs PDL 2.021 (22%, within exp. uncertainty);
+  — N_comp ratio 104/53 = 1.962 vs PDL 2.000 (2% — strongest result);
+  — ΔS_WF = 0.868 nats vs PDL ln 2 = 0.693 nats (25%).
+  Pattern: factor-of-two signal at island boundaries (Z=32, Z=42) only, not in bulk (Z=34–40).
+  PES analysis: ⁸⁴Mo — deep localised well (72 points within 1 MeV); ⁸⁶Mo — flat, diffuse.
+  Closure multiplicity conjecture H_B: N_comp(k) ~ k for kp-kh boundary nucleus.
+  ZBM3–PDL correspondence conjectured (OP16): pseudo-SU(3) ↔ u-core; quasi-SU(3) ↔ d-core.
+  Two falsifiable predictions (P7/P8) for ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd (FRIB/RIKEN testable).
+  Colab notebook produced: PDL_D40_BE2_analysis.ipynb.
+  Published on Zenodo (DOI: 10.5281/zenodo.19384396).
+
+  **DM v14 produced:** Incorporates D41, adds spectroscopy confrontation section (§8.5),
+  predictions P7/P8, R29/R30 in epistemic table, OP16, reading guide entry for D41.
+  Published on Zenodo (DOI: 10.5281/zenodo.19384997).
+
 ---
 
 ## Cosmological Framework
@@ -918,6 +1055,7 @@ Not a critical-path priority. Potential paper topic once H3 is resolved.
 | E4 | Bulaquena RIS (Zenodo) | 2025/2026 | Superficial resemblance; no quantitative content; vigilance | Low (vigilance) |
 | E4b | Bulaquena (Academia) | 31 Mar 2026 | Direct engagement: PDL ≠ software universe | Low (communication) |
 | E5 | Dark matter essay (anonymous) | 2010/2022 | G_eff(N) density-dependence ↔ galaxy rotation curves | Low (future direction) |
+| E6 | Ha et al. (Nat. Comm.) | Nov 2025 | N_comp ratio 1.962 vs PDL 2.000 (2%); B(E2) ratio 22%; predictions P7/P8 formulated | **High — D41 produced** |
 
 ---
 
@@ -955,8 +1093,10 @@ G at 27 ppm, μ* = 1836.152670, H₀ = 67.26 km/s/Mpc; the RHC derives no numeri
 11. **[RESOLVED — Session 18]** DM v12 — global mapping updated to reflect D01–D39
 12. **[RESOLVED — Session 19]** D40 — nuclear stability complete derivation; valley Z=1..82
 13. **[RESOLVED — Session 19]** DM v13 — global mapping updated to reflect D01–D40
+14. **[RESOLVED — Session 19 extended]** D41 — nuclear spectroscopy confrontation produced
+15. **[RESOLVED — Session 19 extended]** DM v14 — global mapping updated to reflect D01–D41
 
-14. **[OPEN — HIGH — OP1 D39]** Derive H3 from axioms C1–C4
+16. **[OPEN — HIGH — OP1 D39]** Derive H3 from axioms C1–C4
     - H3: uniform measure on R_tot as seen by external K4
     - C3 alone proved insufficient (D39 constructive counterexample)
     - H3 proved consistent + unique under S₄-symmetry (D39)
@@ -1004,6 +1144,20 @@ G at 27 ppm, μ* = 1836.152670, H₀ = 67.26 km/s/Mpc; the RHC derives no numeri
 
 29. **[OPEN — MEDIUM — OP3 D40]** Lacunae at Z=43 (technetium) and Z=61 (promethium):
     prove no stable isotope exists as a theorem within PDL coherence framework
+
+30. **[OPEN — MEDIUM — OP16]** ZBM3–PDL correspondence
+    - Conjecture: pseudo-SU(3) sub-space ↔ u-core (n_u=24); quasi-SU(3) ↔ d-core (n_d=28)
+    - If established: ZBM3 model space derived from PDL combinatorics, not phenomenological
+    - First step: identify explicit bijection between ZBM3 orbital blocks and PDL core sectors
+    - Documents: D22, D41
+
+31. **[OPEN — MEDIUM — OP-D41]** Derive N_comp(k) ~ k rigorously (closure multiplicity)
+    - Count maximal partial closures of a surface of size k·T triangles on p-n interface graph
+    - Documents: D41
+
+32. **[OPEN — FUTURE]** Test B(E2)[⁸⁸Ru]/B(E2)[⁹⁰Ru] ≈ 2.02±25% at FRIB/RIKEN (P7, D41)
+
+33. **[OPEN — FUTURE]** Test B(E2)[⁹²Pd]/B(E2)[⁹⁴Pd] ≈ 2.02±25% at FRIB/RIKEN (P8, D41)
 
 30. **[OPEN — FUTURE]** Test via lattice QCD — (m_d−m_u)_PDL = 2.532 MeV; ~5 years (FLAG)
 
@@ -1074,6 +1228,10 @@ G at 27 ppm, μ* = 1836.152670, H₀ = 67.26 km/s/Mpc; the RHC derives no numeri
 | Valley of stability Z=1..82, 100% accuracy | Descriptive theorem + data | D40 |
 | B_pair = T_nn + T_pp/2 universal | Theorem | D40 |
 | OP14 ↔ OP12: same algebraic category | Structural observation | D40 |
+| N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo) = 2.000 (PDL) vs 1.962 (obs.) | Conjecture H_B, 2% | D41 |
+| ZBM3 ↔ PDL u/d core sectors | Conjecture (OP16) | D41 |
+| B(E2)[⁸⁸Ru]/B(E2)[⁹⁰Ru] ≈ 2.02 | Falsifiable prediction P7 | D41 |
+| B(E2)[⁹²Pd]/B(E2)[⁹⁴Pd] ≈ 2.02 | Falsifiable prediction P8 | D41 |
 
 ---
 
@@ -1113,6 +1271,11 @@ targets (OP2, OP1 of D35).
 - D40: N_min(Z≤20)=Z exact; valley of stability 100% for Z=1..82
 - OP14 ↔ OP12: nuclear and black-hole open problems in same algebraic category
 
+**Layer 9 — Nuclear spectroscopy confrontation (Session 19 extended):**
+- D41: N_comp ratio 1.962 vs PDL 2.000 (2%); B(E2) ratio 2.454 vs PDL 2.021 (22%)
+- Conjecture H_B: N_comp(k) ~ k; ZBM3–PDL correspondence (OP16)
+- Predictions P7/P8: B(E2) ratios ≈ 2.02 for ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd (FRIB/RIKEN)
+
 ---
 
 ## Dependency Map (critical path — updated Session 19)
@@ -1151,7 +1314,14 @@ Proton quintuplet (24,28,930,10087,11017)
     │                 ├── N_min(Z≤20) = Z (exact theorem) ✓
     │                 ├── C(Z>20) = 190·T_pp (exact theorem) ✓
     │                 ├── Valley of stability 100% for Z=1..82 ✓
-    │                 └── OP14 (r_exc(Z) from axioms) ↔ OP12 (BH-3) △
+    │                 ├── OP14 (r_exc(Z) from axioms) ↔ OP12 (BH-3) △
+    │                 └── D41 ─────────────────────────── spectroscopy confrontation ✓
+    │                          ├── N_comp ratio 104/53 = 1.962 vs PDL 2.000  [2%] ✓
+    │                          ├── B(E2) ratio 2.454 vs PDL 2.021  [22%] ✓
+    │                          ├── Conjecture H_B: N_comp(k) ~ k △
+    │                          ├── OP16: ZBM3 ↔ PDL u/d cores △
+    │                          ├── P7: B(E2)[⁸⁸Ru]/B(E2)[⁹⁰Ru] ≈ 2.02 (FRIB) ○
+    │                          └── P8: B(E2)[⁹²Pd]/B(E2)[⁹⁴Pd] ≈ 2.02 (RIKEN) ○
     ├── δμ = 155/11017·(1−2Δm_iso/m_p) (D28–D30)
     │        ├── 155/11017: PROVED (D29) ✓
     │        ├── coeff 2 = a: PROVED (D30) ✓
@@ -1195,56 +1365,72 @@ BLACK HOLE THERMODYNAMICS (D37/D38/D39 — Session 17):
   D38: S_BH/k_B = 4π(M_eff/M_Pl)² — algebraic theorem under Gate 3
   D39: κ = (φ/3)·(r_val/R_tot) — proved under H3 (Indifference Lemma)
 
-NUCLEAR STABILITY (D22/D40 — Sessions 5 + 19):
+NUCLEAR STABILITY (D22/D40/D41 — Sessions 5 + 19):
   D22: Neutron quintuplet derived; N_crit,max=126.1; Z_sat≈20; N_CMB=40
   D40: N_min(Z≤20)=Z exact; C(Z>20)=190·T_pp exact; valley 100% for Z=1..82
+  D41: N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo)=1.962 vs PDL 2.000 (2%); B(E2) ratio 22%;
+       H_B conjecture; OP16 (ZBM3–PDL); predictions P7/P8 (FRIB/RIKEN)
 
 OPEN FRONTIERS:
   OP1 D39: derive H3 (uniform measure on R_tot) from C1–C4 — UNIQUE FOUNDATIONAL RESIDUAL
   OP12 / BH-3: derive S_BH from C1–C4 without Schwarzschild geometry
   OP14: derive r_exc(Z) filling rates analytically (connected to OP12 — D40)
+  OP16: ZBM3–PDL correspondence — bijection between orbital blocks and u/d cores (D41)
   OP1 D35: proportionality constant C in Λ_PDL
+  P7/P8: B(E2) ratios for ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd — untested (D41)
 ```
 
 ---
 
-## Next Actions (priority order — Session 19)
+## Next Actions (priority order — Session 19 extended)
 
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
-2.  **[IMMEDIATE]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
-3.  **[HIGH]** OP1 D39: Derive H3 from C1–C4 — the unique residual foundational open problem
+2.  **[IMMEDIATE]** Update website cedriclaubscher.ch: add D41 to Phase II of guided journey
+    (after D40), add D41 entry to document table (DOI: 10.5281/zenodo.19384396), update DM
+    entry to v14 (DOI: 10.5281/zenodo.19384997)
+3.  **[IMMEDIATE]** Contact Ha et al.: send short message to F. Recchia or S.M. Lenzi citing
+    the 2% N_comp agreement, the B(E2) pattern at island boundaries, and predictions P7/P8,
+    with D41 DOI. Two sentences maximum.
+4.  **[HIGH]** OP1 D39: Derive H3 from C1–C4 — the unique residual foundational open problem
     Strategy: show that C3∧C4 applied to the PDL proton forces the cross-edge measure
     seen by K4 to be uniform on R_tot (S₄-invariance argument without invoking D36)
-4.  **[HIGH]** OP14 / OP12 combined: the analytic derivation of r_exc(Z) and the derivation
-    of the Bekenstein–Hawking coefficient 1/4 are now in the same algebraic category (D40).
-    A single combinatorial argument counting coherent configurations on a collective PDL
-    surface would resolve both simultaneously. This is the programme's most structurally
-    significant open problem after OP1 D39.
-5.  **[HIGH]** OP1 D38: Derive S_BH from C1–C4 without Schwarzschild geometry
+5.  **[HIGH]** OP16: ZBM3–PDL correspondence — identify bijection between ZBM3 orbital blocks
+    and PDL u/d core sectors. First step: Colab notebook mapping the 6 orbitals of ZBM3 to
+    the combinatorial structure of the u-core (n_u=24) and d-core (n_d=28).
+6.  **[HIGH]** OP14 / OP12 combined: the analytic derivation of r_exc(Z) and the derivation
+    of the Bekenstein–Hawking coefficient 1/4 are in the same algebraic category (D40).
+7.  **[HIGH]** Submit D25 (bridge α↔G) to journal (Foundations of Physics or PRD)
+8.  **[HIGH]** OP1 D38: Derive S_BH from C1–C4 without Schwarzschild geometry
     (Conjecture BH-3 — requires OP1 D39 resolved first)
-6.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
-7.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
-8.  **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
-9.  **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
-10. **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
-11. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
-12. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
-13. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
-14. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
-15. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
-16. **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium)
-17. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
-18. **[FUTURE]** Monitor μ precision measurements
-19. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
-20. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
+9.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
+10. **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
+11. **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
+12. **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
+13. **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
+14. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
+15. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
+16. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
+17. **[MEDIUM]** OP3 (D32): Multi-body extension (helium, Pauli exclusion)
+18. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35)
+19. **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium)
+20. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u
+21. **[FUTURE]** Monitor μ precision measurements
+22. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd)
+23. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r (constraint r ≥ 0.01 from QQG)
+24. **[FUTURE — E3]** Formalise K₄ ↔ H₂O tetrahedron; long-term target: derive LLCP
     (T_c, P_c) from PDL closure parameters
-21. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
+25. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
     alternative — requires H3 resolved first
 
-**Completed in Session 19:**
+**Completed in Session 19 (1 April 2026):**
 - ✓ D40 produced and published on Zenodo (DOI: 10.5281/zenodo.19371523)
 - ✓ DM v13 produced and published on Zenodo (DOI: 10.5281/zenodo.19371866)
 - ✓ Website cedriclaubscher.ch updated (D40 in Phase II, DM updated to v13)
+
+**Completed in Session 19 extended (2 April 2026):**
+- ✓ D41 produced and published on Zenodo (DOI: 10.5281/zenodo.19384396)
+- ✓ DM v14 produced and published on Zenodo (DOI: 10.5281/zenodo.19384997)
+- ✓ PDL_context.md updated (this file)
 
 ---
 
@@ -1275,4 +1461,4 @@ After each session, update:
   for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
 
 *All references in this document use the Zenodo canonical numbering
-(D01–D40 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+(D01–D41 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
