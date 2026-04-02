@@ -139,7 +139,7 @@ Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in
 Pdl_nuclear_stability_skeleton.pdf 
 
 DM
-https://doi.org/10.5281/zenodo.19371866 
+https://doi.org/10.5281/zenodo.19384997 
 Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 13) 
 PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v13.pdf 
 
@@ -233,4 +233,9 @@ Derivation_of_kappa___R_surf___R_tot_from_the_PDL_Axioms.pdf
 D40 
 https://doi.org/10.5281/zenodo.19371523
 Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms: Derivation of the Valley of Stability, Magic Numbers, and Assembly Rules
-Nuclear_Stability_PDL.pdf
+Nuclear_Stability_PDL.pdf 
+
+D41 
+https://doi.org/10.5281/zenodo.19384396
+Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: a PDL Analysis of ⁸⁴,⁸⁶Mo
+D41_pdl_island_of_inversion.pdf
