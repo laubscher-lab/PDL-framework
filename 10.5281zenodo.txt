@@ -139,9 +139,9 @@ Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in
 Pdl_nuclear_stability_skeleton.pdf 
 
 DM
-https://doi.org/10.5281/zenodo.19384997 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 13) 
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v13.pdf 
+https://doi.org/10.5281/zenodo.19388995 
+Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 15) 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v15.pdf 
 
 D23 
 https://doi.org/10.5281/zenodo.19197268 
@@ -239,3 +239,8 @@ D41
 https://doi.org/10.5281/zenodo.19384396
 Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: a PDL Analysis of ⁸⁴,⁸⁶Mo
 D41_pdl_island_of_inversion.pdf
+
+D42 
+https://doi.org/10.5281/zenodo.19397315
+Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
+D42_Derivation_of_H3_from_C1_C4.pdf
