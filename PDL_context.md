@@ -130,7 +130,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   → Schrödinger / Dirac / Born / Einstein / Bekenstein–Hawking is complete without any
   residual hypothesis. Δm_iso = m_d − m_u remains the unique external parameter (forced
   by C1, not chosen). No open problem remains at the foundational axiomatic level.
-  Published on Zenodo (DOI: 10.5281/zenodo.19388880).
+  Published on Zenodo (DOI: 10.5281/zenodo.19397315).
 - DM v15 produced: incorporates D42, marks OP1 as RESOLVED, upgrades all results
   previously labelled "Theorem (H3)" to "Theorem" (unconditional), adds R31 (causal
   closure), updates H3 glossary entry, replaces "Proving OP1" entry point with
@@ -195,7 +195,7 @@ called D24). The table below is the authoritative reference.*
 | D39   | 10.5281/zenodo.19354989 | Derivation of κ from PDL Axioms: the Indifference Lemma (OP1 D36 partial) | **Proof** | Published |
 | D40   | 10.5281/zenodo.19371523 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms | **Proof** | Published |
 | D41   | 10.5281/zenodo.19384396 | Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: PDL Analysis of ⁸⁴,⁸⁶Mo | **Confrontation + Predictions** | Published |
-| D42   | 10.5281/zenodo.19388880 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
+| D42   | 10.5281/zenodo.19397315 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
 | DM    | 10.5281/zenodo.19388995 | D_Map v15 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
@@ -399,7 +399,7 @@ called D24). The table below is the authoritative reference.*
        Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion:
        a PDL Analysis of ⁸⁴,⁸⁶Mo
 
-[D42]  https://doi.org/10.5281/zenodo.19388880
+[D42]  https://doi.org/10.5281/zenodo.19397315
        D42_Derivation_of_H3_from_C1_C4.pdf
        Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
        *** OP1 FULLY RESOLVED — H3 is now an unconditional theorem of C1–C4 ***
@@ -557,7 +557,7 @@ discrepancies. The old internal numbering diverged from Zenodo for three documen
 
 **Title:** Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
 
-**DOI:** https://doi.org/10.5281/zenodo.19388880
+**DOI:** https://doi.org/10.5281/zenodo.19397315
 **Published:** 2 April 2026
 
 **Core result:** OP1 (D39) fully resolved. H3 (Indifference Lemma) is now a theorem of C1–C4.
@@ -1052,7 +1052,7 @@ OPEN FRONTIERS (updated Session 20):
 
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
 2.  **[IMMEDIATE]** Update website cedriclaubscher.ch: add D42 to Phase VII or new Phase IX,
-    add D42 entry to document table (DOI: 10.5281/zenodo.19388880), update DM entry to v15
+    add D42 entry to document table (DOI: 10.5281/zenodo.19397315), update DM entry to v15
     (DOI: 10.5281/zenodo.19388995), update The Crossing narrative (OP1 resolved)
 3.  **[IMMEDIATE]** Contact Ha et al.: send short message to F. Recchia or S.M. Lenzi citing
     the 2% N_comp agreement, the B(E2) pattern at island boundaries, and predictions P7/P8,
@@ -1088,7 +1088,7 @@ OPEN FRONTIERS (updated Session 20):
     alternative — now fully unconditioned (D42)
 
 **Completed in Session 20 (2 April 2026):**
-- ✓ D42 produced and published on Zenodo (DOI: 10.5281/zenodo.19388880)
+- ✓ D42 produced and published on Zenodo (DOI: 10.5281/zenodo.19397315)
 - ✓ DM v15 produced and published on Zenodo (DOI: 10.5281/zenodo.19388995)
 - ✓ PDL_context.md updated (this file — Session 20)
 
