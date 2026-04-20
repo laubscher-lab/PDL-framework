@@ -174,7 +174,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D40   | 10.5281/zenodo.19371523 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms | **Proof** | Published |
 | D41   | 10.5281/zenodo.19384396 | Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: PDL Analysis of ⁸⁴,⁸⁶Mo | **Confrontation + Predictions** | Published |
 | D42   | 10.5281/zenodo.19397315 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
-| D43   | 10.5281/zenodo.19670790 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter | **Synthesis v2 — ε_geom theorem, OP-B cartography** | Produced Session 23 |
+| D43   | 10.5281/zenodo.19670790 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter | **Synthesis v3 — ε_geom theorem, OP-B cartography** | Produced Session 23 |
 | DM    | 10.5281/zenodo.19388995 | D_Map v15 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
