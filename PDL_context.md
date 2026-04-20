@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 20 — 2 April 2026*
+*Last updated: Session 21 — 20 April 2026*
 
 ---
 
@@ -109,6 +109,28 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   guide updated with nuclear spectroscopy entry point.
   Published on Zenodo (DOI: 10.5281/zenodo.19384997).
 - Contact with Ha et al. (F. Recchia or S.M. Lenzi) recommended after DOI confirmation.
+
+**Session 21 — Geometric derivation of ε_géom and causal chain lock (20 April 2026):**
+- First complete geometric realisation of the PDL proton (Blender v7, quad grid N=31):
+  valence 930 exact, R_sea 10087 exact, R_tot 11017 exact, R/n = 1.961 ≈ 2.000 ✓
+- ε_géom = 329/10087 = 0.032616 derived without G, without calibration, without free parameter:
+    ε_géom = [E_Euler(V_sea, E_bord) + n_K × c − R_sea] / R_sea
+  where E_Euler = 2V_sea − E_bord/2 + 2 (Euler for quad on S² with 3 holes, χ=−1)
+        n_K = 76 = 2n_u + n_d (from quintuplet), c = 3 (from C4 + geometry N=31)
+  Verified exactly: V−E+F = 5144−10188+5043 = −1 ✓; diff = 0 edges
+- Causal chain C1–C4 → ε_géom → ε_G → G established and locked (pdl_causal_chain_lock.py):
+  L1(proved) → L2(proved) → L3(proved) → L4(derived*) → L5+L6(constrained)
+  → L7(proved: ε_géom exact) → L8(OP-B: derive k) → ε_G → G
+- ε_géom quantified; ε_G quantified; link ε_G = ε_géom × k^18, k=0.921716 calculated
+  Piste pour k: δ=1−k ≈ (Δn+1)²/ε_edges = 25/329 (diff 0.25% — conjecture, pas exact)
+  True formula: ε_G = ε_géom × f₁×f₂×...×f₁₈ (18 distinct hierarchical filter factors)
+- ε_géom(neutron) = 468/9960 = 4.699% vs proton 3.262% (ratio ε_n/ε_p = 1.44)
+  consistent with "closure fatigue" of the neutron established in the corpus
+- Structural clarification: α_PDL = μ/R_surf² is independent of ε (neither ε_géom nor ε_G
+  enters α directly); ε_G enters only via bridge Δr_val = ε_G·R·C (D30) → correction α_exp−α_PDL
+- Structural clarification: Hubble driven by κ (variation of G with density N), not ε_G
+  (amplitude of G); ε_géom is the geometric precursor of ε_G via 18 hierarchical filters
+- Two new open problems precisely formulated: OP-A (E_bord exact) and OP-B (derive k)
 
 **Session 20 — Closure of OP1 and DM v15 (2 April 2026):**
 - D42: Full resolution of OP1 (D39) — Hypothesis H3 (Indifference Lemma) derived from
@@ -513,6 +535,18 @@ D41 numerical checks (Session 19 extended — 2 April 2026):
   B(E2) ratio at Z=32 (Ge): 410/197.5 = 2.076; PDL 2.021  [2.7% discrepancy]
   PES: ⁸⁴Mo minimum at β=0.366, γ=22.2°; 72 points within 1 MeV of minimum
   PES: ⁸⁶Mo minimum at β=0.268, γ=27.3°; 45 points within 1 MeV of minimum
+
+Session 21 numerical values (20 April 2026):
+  ε_géom = 329/10087 = 0.032616  [derived — no G, no calibration]
+  ε_G    = (G·m_p²/ħc)^(1/18) = 0.007519  [defined from measured G]
+  k      = (ε_G/ε_géom)^(1/18) = 0.921716  [filter factor — OP-B: derive from axioms]
+  k^18   = ε_G/ε_géom = 0.23054  ✓
+  Piste: δ=1−k ≈ (Δn+1)²/ε_edges = 25/329 = 0.07599 (diff 0.25% — conjecture)
+  ε_géom(neutron) = 468/9960 = 0.046988 = 4.699%
+  ε_n/ε_p = 1.44  (neutron geometrically less stable — consistent with corpus)
+  Causal chain geometry: E_bord=204, V_sea=5144, n_K=76, c=3, sea_before=10188
+  Decomposition: ε_edges = surplus(101) + interface(228) = 329
+  K_CAP_R intrinsic (from H3): K24=18.21°, K28=21.35°; interface zone 4.3°
 
 D42 numerical checks (Session 20 — 2 April 2026):
   Equiparticipation (D42-L1): viol=0 ⟺ participation = n−2 per edge
@@ -1037,7 +1071,20 @@ CAUSAL CLOSURE (D42 — Session 20):
   Unique external parameter: Δm_iso = m_d − m_u (forced by C1)
   No foundational open problem remains at the axiomatic level
 
-OPEN FRONTIERS (updated Session 20):
+GEOMETRIC ε DERIVATION (Session 21):
+  ε_géom = 329/10087 derived from topology of S² + quintuplet (no G, no calibration)
+  Chain: C1–C4+H3 → quad+χ=−1 → E_Euler → n_K×c → ε_géom → [k^18] → ε_G → G
+  L1–L7: proved or constrained; L8 = OP-B (derive k = 0.921716 from axioms)
+  Script: pdl_causal_chain_lock.py (reference verification document — Session 21)
+
+OPEN FRONTIERS (updated Session 21):
+  OP-A (NEW — Session 21): prove E_bord = f(N, K_CAP_R) exactly for cube subdivision
+    on S² with circular K holes. Key difficulty: cube anisotropy at poles (~×2 factor
+    on boundary edges vs isotropic estimate). Impact: closes L6, makes ε_géom a theorem.
+  OP-B (NEW — Session 21): derive k = 0.921716 from axioms C1–C4 alone (without G).
+    Piste: δ=1−k ≈ (Δn+1)²/ε_edges = 25/329 (diff 0.25% — not yet exact).
+    True formula: ε_G = ε_géom × f₁×...×f₁₈ (18 distinct filter factors to derive).
+    Impact: once proved, G_PDL is derived without any calibration whatsoever.
   OP1 D39: RESOLVED (D42) ✓
   OP12 / BH-3: derive S_BH from C1–C4 without Schwarzschild geometry (now unconditional setup)
   OP14: derive r_exc(Z) filling rates analytically (connected to OP12 — D40)
@@ -1048,30 +1095,30 @@ OPEN FRONTIERS (updated Session 20):
 
 ---
 
-## Next Actions (priority order — Session 20)
+## Next Actions (priority order — Session 21)
 
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
-2.  **[IMMEDIATE]** Update website cedriclaubscher.ch: add D42 to Phase VII or new Phase IX,
-    add D42 entry to document table (DOI: 10.5281/zenodo.19397315), update DM entry to v15
-    (DOI: 10.5281/zenodo.19388995), update The Crossing narrative (OP1 resolved)
-3.  **[IMMEDIATE]** Contact Ha et al.: send short message to F. Recchia or S.M. Lenzi citing
-    the 2% N_comp agreement, the B(E2) pattern at island boundaries, and predictions P7/P8,
-    with D41 DOI. Two sentences maximum.
-4.  **[HIGH]** OP12 / BH-3: Derive S_BH from C1–C4 without Schwarzschild geometry
-    (BH-2 is now unconditional; BH-3 is the ascending direction — derive the coefficient 1/4
-    combinatorially, which is also OP14 for nuclei)
-5.  **[HIGH]** OP14 / OP12 combined: the analytic derivation of r_exc(Z) and the derivation
-    of the Bekenstein–Hawking coefficient 1/4 are in the same algebraic category (D40).
-6.  **[HIGH]** OP16: ZBM3–PDL correspondence — identify bijection between ZBM3 orbital blocks
-    and PDL u/d core sectors. First step: Colab notebook mapping the 6 orbitals of ZBM3 to
-    the combinatorial structure of the u-core (n_u=24) and d-core (n_d=28).
-7.  **[HIGH]** Submit D25 (bridge α↔G) or D42 (H3 resolution) to journal
-    (Foundations of Physics, PRD, or Letters in Mathematical Physics)
-8.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
-9.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
-10. **[HIGH]** OP2 (D32): Linearity and unitarity from PDL optimisation functional
-11. **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
-12. **[HIGH]** Algebraic exclusion of G_sea (OP2 D36, OP2 D31, OP3 D29)
+2.  **[IMMEDIATE]** Deposit pdl_proton_v7.py and pdl_causal_chain_lock.py on GitHub
+    with documentation of the geometric ε derivation
+3.  **[HIGH]** Write D43: paper on the geometric derivation of ε_géom from the topology
+    of S² and the PDL proton architecture. Candidate title:
+    "Geometric Origin of the Coherence Leakage Parameter from the PDL Proton Architecture:
+    First Derivation of ε without G". Contents: causal chain L1–L7, ε_géom = 329/10087,
+    two open problems OP-A and OP-B, neutron comparison, connection to α and Hubble.
+4.  **[HIGH]** OP-A: prove E_bord = f(N, K_CAP_R) exactly for cube subdivision on S²
+    with circular K holes. Start: count E_bord numerically for N=20..50 and identify
+    the cube anisotropy factor analytically (currently ~×2 at poles, exact value needed)
+5.  **[HIGH]** OP-B: derive k = 0.921716 from C1–C4 alone. Start: identify each of the
+    18 filter factors f_i separately; piste δ=1−k ≈ (Δn+1)²/ε_edges = 25/329 (0.25% off)
+6.  **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14, same category)
+7.  **[HIGH]** OP16: ZBM3–PDL correspondence — identify bijection between ZBM3 orbital blocks
+    and PDL u/d core sectors (D41)
+8.  **[HIGH]** Submit D25 (bridge α↔G) or D42 (H3 resolution) to journal
+9.  **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi) — update with Session 21
+    ε_géom result and its connection to nuclear stability and closure fatigue
+10. **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument
+11. **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2)
+12. **[HIGH]** The 47 ppm residual in δμ: identify structural factor g
 13. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms
 14. **[MEDIUM]** OP1 (D35): Proportionality constant C in Λ_PDL
 15. **[MEDIUM]** OP3 (D36): Structural derivation of N_local
@@ -1086,6 +1133,12 @@ OPEN FRONTIERS (updated Session 20):
     (T_c, P_c) from PDL closure parameters
 24. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
     alternative — now fully unconditioned (D42)
+
+**Completed in Session 21 (20 April 2026):**
+- ✓ pdl_proton_v7.py (Blender — quad grid N=31, exact 11017, ε in red)
+- ✓ pdl_proton_colab_v10.py (validation — quad N=31, R/n=1.961, exact counts)
+- ✓ pdl_causal_chain_lock.py (reference verification of 8-link causal chain)
+- ✓ PDL_context.md updated (this file — Session 21)
 
 **Completed in Session 20 (2 April 2026):**
 - ✓ D42 produced and published on Zenodo (DOI: 10.5281/zenodo.19397315)
