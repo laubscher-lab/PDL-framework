@@ -247,5 +247,5 @@ D42_Derivation_of_H3_from_C1_C4.pdf
 
 D43 
 https://doi.org/10.5281/zenodo.19670790 
-The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v2) 
+The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) 
 D43_causal_chain_v3.pdf
