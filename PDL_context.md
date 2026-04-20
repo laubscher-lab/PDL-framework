@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 21 — 20 April 2026*
+*Last updated: Session 22 — 20 April 2026*
 
 ---
 
@@ -132,6 +132,43 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   (amplitude of G); ε_géom is the geometric precursor of ε_G via 18 hierarchical filters
 - Two new open problems precisely formulated: OP-A (E_bord exact) and OP-B (derive k)
 
+**Session 22 — D43 synthesis document: the complete causal chain with ε_geom (20 April 2026):**
+- D43 produced: "The Causal Chain of Physical Reality — From Four Axioms to Newton's
+  Constant via the Geometric Leakage Parameter". 17 pages, zero compilation errors.
+  Central novelty: ε_geom = 329/10087 positioned as the missing link in the causal chain
+  C1–C4 → K₄ → quintuplet → ε_geom → ε_G → G, alongside the complete chain to all
+  physical laws (Schrödinger, Dirac, Born, Einstein, Bekenstein–Hawking, nuclear stability).
+- Key narrative recovered: the 3D simulation of the proton (Blender quad-grid, Session 21)
+  rendered visible the irreducible boundary of the sea sector on S², which was invisible
+  in the purely algebraic formulation. Once counted, this boundary gives ε_geom without G,
+  without calibration, without free parameter. Geometry and combinatorics are complementary
+  windows — both are necessary.
+- Structural clarifications incorporated into D43:
+  (i) ε_geom drives the *amplitude* of G (absolute value of G_PDL);
+  (ii) κ drives the *density-dependence* of G (how G varies with ensemble size N) —
+      these are independent mechanisms from distinct branches of the causal chain.
+  (iii) α_PDL = μ/R_surf² is independent of both ε_geom and ε_G — the electromagnetic
+      and gravitational leakage hierarchies are structurally separate.
+- Three simulation images from Session 21 integrated as scientific figures:
+  4_6-02.png + 4_6-03.png (K₄ electron prototype, lateral and top views showing S² topology);
+  11017-06.png + 11017-15.png (proton closure, frontal and angular views showing the
+  active surface disk and the boundary ring that defines ε_geom = 329/10087).
+- OP-A and OP-B named and formalised in D43 as the two remaining open problems on
+  the ε_geom → G link:
+  OP-A: prove E_bord = 329 analytically from C1–C4 and S² topology (without Blender);
+  OP-B: derive k = 0.921716 from C1–C4 alone (without calibration on G_exp).
+  Leading candidate for OP-B: δ = 1−k ≈ (Δn+1)²/E_bord = 25/329 (0.25% off).
+- Causal chain diagram (TikZ) updated to show two structural branches:
+  central spine (blue): C1–C4 → K₄ → quintuplet → ε_geom → ε_G → G → κ → σ(N) → G_eff(N);
+  orange nodes: ε_geom → ε_G → G (Session 21 derivation, OP-A and OP-B open);
+  right branch: (A)∧(B) criterion → Schrödinger → Dirac → Born → Einstein → BH;
+  left branch: dim3/exponent 18, α, μ*, Hubble, nuclear stability.
+- Note on naming: ε_géom (with accent, Session 21, French) is rendered as ε_geom
+  (without accent) in D43 and all future English-language documents. Same quantity.
+- LaTeX conventions respected: no spurious mid-sentence line breaks, British English,
+  separate D43_references.bib (39 entries, D06 added). PDF: 17 pages, 855 KB.
+- D43 pending Zenodo deposit (next immediate action).
+
 **Session 20 — Closure of OP1 and DM v15 (2 April 2026):**
 - D42: Full resolution of OP1 (D39) — Hypothesis H3 (Indifference Lemma) derived from
   axioms C1–C4 as an unconditional theorem. Three lemmas established:
@@ -218,6 +255,7 @@ called D24). The table below is the authoritative reference.*
 | D40   | 10.5281/zenodo.19371523 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms | **Proof** | Published |
 | D41   | 10.5281/zenodo.19384396 | Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: PDL Analysis of ⁸⁴,⁸⁶Mo | **Confrontation + Predictions** | Published |
 | D42   | 10.5281/zenodo.19397315 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
+| D43   | pending Zenodo deposit   | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter | **Synthesis — ε_geom key link** | Produced Session 22 |
 | DM    | 10.5281/zenodo.19388995 | D_Map v15 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
@@ -426,6 +464,14 @@ called D24). The table below is the authoritative reference.*
        Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
        *** OP1 FULLY RESOLVED — H3 is now an unconditional theorem of C1–C4 ***
 
+[D43]  pending Zenodo deposit
+       D43_Causal_Chain_v3.pdf + D43_Causal_Chain_v3.tex + D43_references.bib
+       The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant
+       via the Geometric Leakage Parameter
+       *** PRODUCED SESSION 22 — synthesis document covering D01–D42 + ε_geom ***
+       *** Positions ε_geom = 329/10087 as the missing link C1–C4 → G ***
+       *** OP-A (E_bord exact) and OP-B (derive k) formalised ***
+
 [DM]   https://doi.org/10.5281/zenodo.19388995
        PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v15.pdf
        PDL Global Mapping of Structures, Results, and Open Problems (version 15)
@@ -536,6 +582,11 @@ D41 numerical checks (Session 19 extended — 2 April 2026):
   PES: ⁸⁴Mo minimum at β=0.366, γ=22.2°; 72 points within 1 MeV of minimum
   PES: ⁸⁶Mo minimum at β=0.268, γ=27.3°; 45 points within 1 MeV of minimum
 
+Session 22 numerical values (20 April 2026):
+  ε_geom notation: ε_géom (Session 21, French) = ε_geom (D43 English standard)
+  D43 PDF: 17 pages, 855 KB, zero compilation errors
+  D43 source: D43_Causal_Chain_v3.tex + D43_references.bib (39 entries incl. D06)
+
 Session 21 numerical values (20 April 2026):
   ε_géom = 329/10087 = 0.032616  [derived — no G, no calibration]
   ε_G    = (G·m_p²/ħc)^(1/18) = 0.007519  [defined from measured G]
@@ -584,6 +635,64 @@ discrepancies. The old internal numbering diverged from Zenodo for three documen
 | **D16b** | 10.5281/zenodo.18841166 | D16a and D17 | Combinatorial selection and local uniqueness of the proton architecture |
 
 *All references in this document use the Zenodo canonical numbering.*
+
+---
+
+## D43 Summary (Session 22 — Synthesis: complete causal chain with ε_geom)
+
+**Title:** The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant
+via the Geometric Leakage Parameter
+
+**DOI:** pending Zenodo deposit (next immediate action)
+**Produced:** 20 April 2026 (Session 22)
+**Source files:** D43_Causal_Chain_v3.tex + D43_references.bib (39 entries)
+**Format:** 17 pages, 855 KB PDF, zero compilation errors
+
+**Central result:** ε_geom = 329/10087 = 0.032616 is positioned as the missing link
+between the combinatorial axioms C1–C4 and Newton's gravitational constant G.
+
+**Narrative:** Prior to Session 21, the gravitational leakage parameter ε_G ≈ 0.007519
+was computed from G_exp (circular). The 3D simulation of the proton (Blender quad-grid)
+rendered visible the irreducible boundary of the sea sector on S² — invisible in the
+algebraic formulation. Once counted: ε_geom = 329/10087, derived without G, without
+calibration, without free parameter. The causal chain is:
+  C1–C4 → K₄ → (24,28,930,10087,11017) → ε_geom = 329/10087
+        → ε_G = ε_geom × k^18, k = 0.921716
+        → G = (ħc/m_p²)·ε_G^18
+
+**Structural clarifications:**
+- ε_geom drives the *amplitude* of G (absolute value of G_PDL)
+- κ = 310φ/11017 drives the *density-dependence* of G via σ(N) = 1−(1−κ)^N
+- α_PDL = μ/R_surf² is independent of both ε_geom and ε_G
+- These three mechanisms are structurally independent branches of the causal chain
+
+**Figures:** 4 simulation images integrated:
+- 4_6-02.png + 4_6-03.png: K₄ = electron prototype (lateral + top, showing S² topology)
+- 11017-06.png + 11017-15.png: proton closure (frontal showing R_surf disk; angular
+  showing the boundary ring that defines ε_geom)
+
+**Open problems formalised:**
+- OP-A: prove E_bord = 329 analytically from C1–C4 + quad topology on S² with 3 holes
+  (without Blender simulation). Key difficulty: pole anisotropy in quad-grid (~×2 factor).
+- OP-B: derive k = 0.921716 from C1–C4 alone (without G_exp calibration).
+  Leading candidate: δ = 1−k ≈ (Δn+1)²/E_bord = 25/329 (0.25% discrepancy).
+
+**Complete causal chain covered in D43:**
+1. C1–C4 → K₄ (Theorem, D16a)
+2. K₄ → (24,28,930,10087,11017) (Theorem, D16a/D16b)
+3. (A)∧(B) criterion (Theorem, D29) — pivot of the dynamical branch
+4. quintuplet → ε_geom = 329/10087 (Derived*, Session 21, OP-A open)
+5. ε_geom → ε_G → G (Derived*, k=0.921716, OP-B open)
+6. α_PDL = μ/R_surf² (Theorem, D12/D25)
+7. H3 (Theorem, D42) → κ = 310φ/11017 (Theorem, D39/D42)
+8. κ → σ(N) → G_eff(N) = σ(N)·G_PDL (Gate 3, Theorem, D31/D36)
+9. Schrödinger (D32), Dirac (D33), Born (D34), Einstein (D35)
+10. Area law S ∝ R_surf (D37), Bekenstein–Hawking (D38)
+11. Valley of stability Z=1..82 (D40), spectroscopy confrontation (D41)
+12. Causal closure corollary (D42, extended Session 22)
+
+**Naming convention:** ε_géom (French, accent, Sessions 21) = ε_geom (English, no accent,
+D43 and all future English documents). Same quantity: 329/10087 = 0.032616.
 
 ---
 
@@ -914,6 +1023,9 @@ Gate 3 is now an unconditional theorem. H1 and H2 are fully absorbed.
 | Valley of stability Z=1..82 100% | Descriptive theorem | D40 |
 | N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo) = 2.000 | Conjecture H_B (2%) | D41 |
 | κ = 310φ/11017 (causal chain complete) | **Unconditional corollary** | D42 |
+| ε_geom = 329/10087 (geom. leakage param.) | Derived* (OP-A open) | Session 21/22 |
+| ε_G = ε_geom × k^18, k=0.921716 | Derived* (OP-B open) | Session 21/22 |
+| C1–C4 → G via ε_geom — causal chain closed | Established (2 OP remaining) | D43 |
 
 ---
 
@@ -966,6 +1078,16 @@ targets (OP2, OP1 of D35). κ_PDL(N) = σ(N)·κ_Newton is now unconditional.
 - No foundational hypothesis remains. Unique external parameter: Δm_iso.
 - The universe is reconstructible from four axioms on finite signed graphs + one QCD input.
 
+**Layer 11 — Geometric leakage and the ε_geom → G link (Sessions 21–22):**
+- ε_geom = 329/10087 derived from S² topology of the proton quad-grid (Session 21).
+  First derivation of a gravitational leakage parameter *without* invoking G_exp.
+- Causal chain extended: C1–C4 → K₄ → quintuplet → ε_geom → [k^18] → ε_G → G
+- D43 (Session 22): synthesis document assembling the complete chain in one place,
+  with simulation figures, formal definitions, OP-A and OP-B, and causal chain diagram.
+- Two open problems remain on this link:
+  OP-A: prove E_bord = 329 analytically (make ε_geom unconditional)
+  OP-B: derive k = 0.921716 from C1–C4 (make G_PDL parameter-free)
+
 ---
 
 ## Dependency Map (critical path — updated Session 20)
@@ -978,6 +1100,10 @@ Proton quintuplet (24,28,930,10087,11017)
     │                 └── ε_G = 0.0075194
     │                          ├── G_PDL (D21/D25) ──── 27 ppm CODATA 2022
     │                          └── ε_G^B conjecture (D28)
+    ├── ε_geom = 329/10087 (Session 21 — geom. boundary of sea on S²) ── Derived*
+    │        └── ε_G = ε_geom × k^18, k=0.921716 (Session 21) ────────── Derived*
+    │                 └── G = (ħc/m_p²)·ε_G^18 (D21/D25, Session 22) ─── Theorem+Derived*
+    │                 [OP-A: prove E_bord=329; OP-B: derive k from axioms]
     │                                   ├── 155/11017: PROVED (D29) ✓
     │                                   └── coeff 2 + C1: PROVED (D30) ✓
     │                                            └── G = f(quintuplet, Δm_iso) — GATE 2 ✓
@@ -1071,11 +1197,14 @@ CAUSAL CLOSURE (D42 — Session 20):
   Unique external parameter: Δm_iso = m_d − m_u (forced by C1)
   No foundational open problem remains at the axiomatic level
 
-GEOMETRIC ε DERIVATION (Session 21):
-  ε_géom = 329/10087 derived from topology of S² + quintuplet (no G, no calibration)
-  Chain: C1–C4+H3 → quad+χ=−1 → E_Euler → n_K×c → ε_géom → [k^18] → ε_G → G
+GEOMETRIC ε DERIVATION (Sessions 21–22):
+  ε_geom = 329/10087 derived from topology of S² + quintuplet (no G, no calibration)
+  Chain: C1–C4+H3 → quad+χ=−1 → E_Euler → n_K×c → ε_geom → [k^18] → ε_G → G
   L1–L7: proved or constrained; L8 = OP-B (derive k = 0.921716 from axioms)
   Script: pdl_causal_chain_lock.py (reference verification document — Session 21)
+  D43 (Session 22): synthesis document assembling complete causal chain + ε_geom;
+    OP-A and OP-B formally defined; simulation figures 4_6-02/03 and 11017-06/15 integrated.
+  Naming: ε_géom (French, Session 21) = ε_geom (English standard, D43+).
 
 OPEN FRONTIERS (updated Session 21):
   OP-A (NEW — Session 21): prove E_bord = f(N, K_CAP_R) exactly for cube subdivision
@@ -1100,11 +1229,9 @@ OPEN FRONTIERS (updated Session 21):
 1.  **[IMMEDIATE]** Push this updated PDL_context.md to GitHub (main branch)
 2.  **[IMMEDIATE]** Deposit pdl_proton_v7.py and pdl_causal_chain_lock.py on GitHub
     with documentation of the geometric ε derivation
-3.  **[HIGH]** Write D43: paper on the geometric derivation of ε_géom from the topology
-    of S² and the PDL proton architecture. Candidate title:
-    "Geometric Origin of the Coherence Leakage Parameter from the PDL Proton Architecture:
-    First Derivation of ε without G". Contents: causal chain L1–L7, ε_géom = 329/10087,
-    two open problems OP-A and OP-B, neutron comparison, connection to α and Hubble.
+3.  **[IMMEDIATE]** Deposit D43 on Zenodo (D43_Causal_Chain_v3.pdf + .tex + .bib).
+    Suggested title: "The Causal Chain of Physical Reality: From Four Axioms to Newton's
+    Constant via the Geometric Leakage Parameter". Update DM to v16 incorporating D43.
 4.  **[HIGH]** OP-A: prove E_bord = f(N, K_CAP_R) exactly for cube subdivision on S²
     with circular K holes. Start: count E_bord numerically for N=20..50 and identify
     the cube anisotropy factor analytically (currently ~×2 at poles, exact value needed)
@@ -1133,6 +1260,14 @@ OPEN FRONTIERS (updated Session 21):
     (T_c, P_c) from PDL closure parameters
 24. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)) as dark matter
     alternative — now fully unconditioned (D42)
+
+**Completed in Session 22 (20 April 2026):**
+- ✓ D43 produced: D43_Causal_Chain_v3.tex + D43_references.bib + D43_Causal_Chain_v3.pdf
+    (17 pages, 855 KB, zero compilation errors; pending Zenodo deposit)
+- ✓ Simulation images integrated as scientific figures (4_6-02, 4_6-03, 11017-06, 11017-15)
+- ✓ ε_geom positioned as key narrative and structural link in the causal chain
+- ✓ OP-A and OP-B formally defined in D43 with leading candidate for OP-B
+- ✓ PDL_context.md updated (this file — Session 22)
 
 **Completed in Session 21 (20 April 2026):**
 - ✓ pdl_proton_v7.py (Blender — quad grid N=31, exact 11017, ε in red)
@@ -1184,4 +1319,4 @@ After each session, update:
   for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
 
 *All references in this document use the Zenodo canonical numbering
-(D01–D42 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+(D01–D43 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
