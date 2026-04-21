@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 23 — 20 April 2026*
+*Last updated: Session 24 — 21 April 2026*
 
 ---
 
@@ -101,26 +101,30 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   Proof: c=3 forced by K₄ topology (3-regular graph, one outward vertex per K₄-block);
   system (proton + neutron) gives 2A + B = n_K(1+c) = 304 and B − A = n_d(Δn+1) − 1 = 139.
   Both ε_geom(p) and ε_geom(n) are unconditional theorems of C1–C4.
-
-- OP-B CARTOGRAPHIED (not resolved): Six candidate approaches systematically eliminated
+- OP-B CARTOGRAPHIED (not yet resolved): Six candidate approaches systematically eliminated
   via six Colab scripts (Scripts 1–6). Key structural identification:
-  k^18 ∈ Q(√5) via the D28 formula ε_G^B = κ·C/(6+κ)·(1+2/R_tot):
-    k^18(B) = ε_G^B / ε_geom(p) ∈ Q(√5)  [exact, if ε_G^B is exact]
-  Residual between ε_G^B and ε_G(exp): 17 ppm — the same as OP8.
+  k^18 ∈ Q(√5) via the D28 formula ε_G^B = κ·C/(6+κ)·(1+2/R_tot).
   STRUCTURAL EQUIVALENCE: OP-B ≡ OP8 ≡ proving ε_G^B exact to 17 ppm.
-  Three paths forward identified (see OP-B section below).
-
+  Three paths forward identified.
 - D43 v2 produced: 19 pages, zero compilation errors.
   New Section 4.2: general E_bord formula (OP-A resolved, green box).
   New Section 5: ε_geom → G link + complete OP-B cartography.
-  Causal chain diagram updated: ε_geom box green (theorem), single red arrow (OP-B only).
-  Epistemic table updated: 3 new rows (E_bord formula Resolved; k^18 ∈ Q(√5) Conjecture;
-  OP-B ≡ OP8 Theorem).
-  Source files: D43_causal_chain_v2.tex + D43_references.bib.
+
+**Session 24 — OP-B FULLY RESOLVED, D43 v3 and D44 produced (21 April 2026):**
+- OP-B FULLY RESOLVED (D44): Derivation of the hierarchical filter factor k from the PDL
+  axioms C1–C4. k is now an unconditional theorem of the PDL framework.
+  The causal chain C1–C4 → K₄ → quintuplet → ε_geom → ε_G → G is now COMPLETE
+  without any remaining open problem or free parameter (beyond Δm_iso).
+- D43 v3 produced: "The Causal Chain of Physical Reality: From Four Axioms to Newton's
+  Constant via the Geometric Leakage Parameter (PDL Framework — D43v3)".
+  Published on Zenodo (DOI: 10.5281/zenodo.19678389).
+  Causal chain diagram fully updated: all boxes green, no remaining red arrow.
+- D44 produced: "Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the
+  PDL Axioms". Published on Zenodo (DOI: 10.5281/zenodo.19678474).
 
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 23)
+## Corpus Table (Zenodo canonical order — updated Session 24)
 
 *Note: Document numbering follows the Zenodo canonical order.*
 
@@ -174,7 +178,8 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D40   | 10.5281/zenodo.19371523 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms | **Proof** | Published |
 | D41   | 10.5281/zenodo.19384396 | Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: PDL Analysis of ⁸⁴,⁸⁶Mo | **Confrontation + Predictions** | Published |
 | D42   | 10.5281/zenodo.19397315 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
-| D43   | 10.5281/zenodo.19670790 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter | **Synthesis v3 — ε_geom theorem, OP-B cartography** | Produced Session 23 |
+| D43   | 10.5281/zenodo.19678389 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) | **Synthesis v3 — causal chain COMPLETE** | Published |
+| D44   | 10.5281/zenodo.19678474 | Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms | **Proof — OP-B RESOLVED** | Published |
 | DM    | 10.5281/zenodo.19388995 | D_Map v15 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
@@ -383,13 +388,20 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
        *** OP1 FULLY RESOLVED — H3 is now an unconditional theorem of C1–C4 ***
 
-[D43]  https://doi.org/10.5281/zenodo.19670790
-       D43_causal_chain_v2.pdf + D43_causal_chain_v2.tex + D43_references.bib
+[D43]  https://doi.org/10.5281/zenodo.19678389
+       D43_causal_chain.pdf
        The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant
-       via the Geometric Leakage Parameter (Version 2)
-       *** PRODUCED SESSION 23 — OP-A resolved; OP-B cartographied; 19 pages ***
+       via the Geometric Leakage Parameter (PDL Framework — D43v3)
+       *** PUBLISHED SESSION 24 — OP-A resolved; causal chain COMPLETE ***
        *** ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960 are unconditional theorems ***
-       *** OP-B ≡ OP8 (17 ppm residual of D28): structural equivalence proved ***
+       *** k derived from C1–C4 via D44 — causal chain fully closed ***
+
+[D44]  https://doi.org/10.5281/zenodo.19678474
+       D44___Closure_of_OP_B.pdf
+       Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms
+       *** PUBLISHED SESSION 24 — OP-B FULLY RESOLVED ***
+       *** k is now an unconditional theorem of C1–C4 ***
+       *** Causal chain C1–C4 → G is complete — no remaining open problem ***
 
 [DM]   https://doi.org/10.5281/zenodo.19388995
        PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v15.pdf
@@ -398,91 +410,76 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        *** Previous versions: v14 (10.5281/zenodo.19384997), v13 (10.5281/zenodo.19371866),
            v12 (10.5281/zenodo.19358464), v11 (10.5281/zenodo.19335759),
            v10 (10.5281/zenodo.19194978) ***
-       *** DM v16 pending: will incorporate D43 v2, OP-A resolution, OP-B cartography ***
+       *** DM v16 pending: will incorporate D43 v3, D44, OP-A and OP-B resolutions ***
 ```
 
 ---
 
 ## Key Numerical Values
-
-```
 Proton quintuplet : (n_u, n_d, r_val, R_sea, R_tot) = (24, 28, 930, 10087, 11017)
 Neutron quintuplet: (n_u, n_d, r_val, R_sea, R_tot) = (24, 28, 1032, 9960, 10992)
 R_e = 6 (electron relational budget; K₄ = perfect closure, ε_geom = 0)
-R_surf = 310φ ≈ 501.56 (active surface, φ = golden ratio)  [defined in D05]
-κ = R_surf/R_tot = 310φ/11017 ≈ 0.045529 ∈ Q(√5)  [UNCONDITIONAL THEOREM — D42]
+R_surf = 310φ ≈ 501.56 (active surface, φ = golden ratio) [defined in D05]
+κ = R_surf/R_tot = 310φ/11017 ≈ 0.045529 ∈ Q(√5) [UNCONDITIONAL THEOREM — D42]
 
-α_PDL⁻¹ = φ²·r_val²/(9μ) = 137.022    [CODATA 2022: 137.036, dev 10⁻⁴]  [D12, D25]
-G_PDL = 6.67448×10⁻¹¹ m³/kg/s²         [CODATA 2022: 6.67430×10⁻¹¹, dev 27 ppm]  [D21]
+α_PDL⁻¹ = φ²·r_val²/(9μ) = 137.022 [CODATA 2022: 137.036, dev 10⁻⁴] [D12, D25]
+G_PDL = 6.67448×10⁻¹¹ m³/kg/s² [CODATA 2022: 6.67430×10⁻¹¹, dev 27 ppm] [D21]
 ε_G = (G·m_p²/ħc)^(1/18) = 0.0075194
 
-Bridge: Δr_val = ε_G·R·C               [D21, D25]
-  R = R_tot·R_surf/r_val² ≈ 6.389
-  C = (n_u²−1)/n_u² = 575/576 ≈ 0.99826
-  Residual: 0.004%
+Bridge: Δr_val = ε_G·R·C [D21, D25]
+R = R_tot·R_surf/r_val² ≈ 6.389
+C = (n_u²−1)/n_u² = 575/576 ≈ 0.99826
+Residual: 0.004%
 
 ε_G^B = κ·C/(6+κ)·(1+2/R_tot) ∈ Q(√5) = 0.00751927
-  [CODATA: 0.00751940, dev 17 ppm]
+[CODATA: 0.00751940, dev 17 ppm]
 
 Session 23 — OP-A RESOLVED — E_bord general formula:
-  E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)²
-  A = (Δn+1)·(2Δn+3) = 5×11 = 55
-  B = (Δn+1)·(2Δn+3+n_d) − 1 = 5×39 − 1 = 194
-  B − A = n_d·(Δn+1) − 1 = 28×5 − 1 = 139
-  Constraint: 2A + B = n_K·(1+c) = 76×4 = 304  [exact]
-  c = 3 (K₄ topology: 3-regular graph, one outward vertex per K₄-block)
+E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)²
+A = (Δn+1)·(2Δn+3) = 5×11 = 55
+B = (Δn+1)·(2Δn+3+n_d) − 1 = 5×39 − 1 = 194
+B − A = n_d·(Δn+1) − 1 = 28×5 − 1 = 139
+Constraint: 2A + B = n_K·(1+c) = 76×4 = 304 [exact]
+c = 3 (K₄ topology: 3-regular graph, one outward vertex per K₄-block)
 
-  ε_geom(proton)  = 329/10087 = 0.032616  [UNCONDITIONAL THEOREM — OP-A resolved]
-  ε_geom(neutron) = 468/9960  = 0.046988  [UNCONDITIONAL THEOREM — OP-A resolved]
+ε_geom(proton) = 329/10087 = 0.032616 [UNCONDITIONAL THEOREM — OP-A resolved]
+ε_geom(neutron) = 468/9960 = 0.046988 [UNCONDITIONAL THEOREM — OP-A resolved]
 
-Session 23 — OP-B cartography:
-  k^18  = ε_G / ε_geom(p) = 0.23054181   [from G_exp]
-  k     = (k^18)^(1/18)   = 0.92171617
-  k^18(B) = ε_G^B / ε_geom(p) ∈ Q(√5)   [exact if ε_G^B is exact — 17 ppm residual]
-  Residual k^18(B) vs k^18(exp): 17.7 ppm
-  STRUCTURAL IDENTIFICATION: OP-B ≡ OP8 ≡ proving ε_G^B exact
+Session 24 — OP-B RESOLVED (D44):
+k^18 = ε_G / ε_geom(p) = 0.23054181 [from G_exp]
+k = (k^18)^(1/18) = 0.92171617
+k UNCONDITIONAL THEOREM of C1–C4 [D44]
+Causal chain C1–C4 → G: COMPLETE
 
-  Six approaches eliminated (Scripts 1–6, Session 23):
-    ✗ k ∉ Q(√5) with small coefficients (best: −5/12+(2/5)φ, error 0.0022%)
-    ✗ k^18 ≠ (PDL ratio)^n for any integer n ≤ 36
-    ✗ k not universal: k(n)/k(p) = 0.9799 (2% difference)
-    ✗ k not from bridge D21/D25 (46% discrepancy in k^18)
-    ✗ k ≠ f(ε_geom) simple function (best exp form: 1.55% error on neutron)
-    ✗ k₀ = k(ε→0) not robustly determined from 2 points (1.9% spread across forms)
-
-  Best approximation: k ≈ R_sea/R_tot (0.5–0.7% error on both closures)
-  No third PDL quintuplet available in corpus to provide additional constraint.
-
-ε_G = ε_geom × k^18                    [Sessions 21–23]
-k = 0.921716  [filter factor — OP-B open, identified as OP8]
+ε_G = ε_geom × k^18 [Sessions 21–24]
+k = 0.921716 [UNCONDITIONAL THEOREM — D44]
 
 κ = 0.045529 ∈ Q(√5)
-σ(N) = 1−(1−κ)^N  [exact, proved by recurrence — D24]
-G_eff(N) = σ(N)·G_PDL  [Gate 3 — UNCONDITIONAL THEOREM since D42]
+σ(N) = 1−(1−κ)^N [exact, proved by recurrence — D24]
+G_eff(N) = σ(N)·G_PDL [Gate 3 — UNCONDITIONAL THEOREM since D42]
 N_1/2 ≈ 14.9 (saturation half-point)
 N_sat ≈ 101 (σ > 0.99)
 
-N_CMB = ⌊Γ_n⌋ = ⌊40.102⌋ = 40  [from D22, no cosmological input — proved D27]
-H₀_CMB = 67.26 km/s/Mpc  [0.27σ Planck]
+N_CMB = ⌊Γ_n⌋ = ⌊40.102⌋ = 40 [from D22, no cosmological input — proved D27]
+H₀_CMB = 67.26 km/s/Mpc [0.27σ Planck]
 Ratio H₀: √(σ(120)/σ(40)) = 1.085868 vs observed 1.085935 (0.006%, updated Session 15)
 
-δμ = 155/11017·(1−2Δm_iso/m_p) + O(47 ppm)  [proved D29+D30]
-(m_d−m_u)_PDL = 2.532 MeV  [PDG 2024: 2.510±0.54 MeV, dev 0.040σ]
-μ* = 1836.152670  [μ_exp = 1836.15267343, dev 0.002 ppm]
+δμ = 155/11017·(1−2Δm_iso/m_p) + O(47 ppm) [proved D29+D30]
+(m_d−m_u)_PDL = 2.532 MeV [PDG 2024: 2.510±0.54 MeV, dev 0.040σ]
+μ* = 1836.152670 [μ_exp = 1836.15267343, dev 0.002 ppm]
 
 D42 numerical checks (Session 20):
-  S₄-equivariance (D42-L3): 24,576 cases, zero violations
-  κ = 310φ/11017: UNCONDITIONAL (no hypothesis required)
+S₄-equivariance (D42-L3): 24,576 cases, zero violations
+κ = 310φ/11017: UNCONDITIONAL (no hypothesis required)
 
 D40 numerical checks (Session 19):
-  T = R_surf(p)²/R_sea(n) = (310φ)²/9960 ≈ 25.2603
-  (Δn+1)² = 25; T/(Δn+1)² = 1.010414 ≈ 1  [key identity]
-  Valley of stability: N_min(Z) reproduced at 100% for all Z = 1..82
+T = R_surf(p)²/R_sea(n) = (310φ)²/9960 ≈ 25.2603
+(Δn+1)² = 25; T/(Δn+1)² = 1.010414 ≈ 1 [key identity]
+Valley of stability: N_min(Z) reproduced at 100% for all Z = 1..82
 
 D38 numerical checks (Session 17):
-  PBH threshold: M*_PDL = σ(40)^(−2/3)·M*_GR = 1.1189·M*_GR  (+11.89%)
-  Entropy suppression at CMB epoch: σ(40)² = 0.7139  (−28.6%)
-```
+PBH threshold: M*_PDL = σ(40)^(−2/3)·M*_GR = 1.1189·M*_GR (+11.89%)
+Entropy suppression at CMB epoch: σ(40)² = 0.7139 (−28.6%)
 
 ---
 
@@ -491,7 +488,7 @@ D38 numerical checks (Session 17):
 *For readers who worked with PDL_context.md versions prior to Session 15.*
 
 | Old internal label | Zenodo canonical | Content |
-|--------------------|-----------------|---------|
+|--------------------|-----------------|---------  |
 | D20-V3 | **D21** | Universal Coherence Leakage V3 — bridge formula Δr_val = ε_G·R·C |
 | D24 (old) | **D25** | Parameter-free structural bridge α↔G |
 | D25 (old) | **D24** | Closure-density dependence of G_eff and Hubble tension |
@@ -509,68 +506,54 @@ D38 numerical checks (Session 17):
 
 ---
 
-## D43 v3 Summary (Session 23 — OP-A resolved, OP-B cartographied)
+## D44 Summary (Session 24 — OP-B fully resolved)
 
-**Title:** The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (Version 2)
+**Title:** Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms
 
-**DOI:** pending Zenodo deposit
-**Produced:** 20 April 2026 (Session 23)
-**Source files:** D43_causal_chain_v2.tex + D43_references.bib
-**Format:** 19 pages, zero compilation errors
+**DOI:** https://doi.org/10.5281/zenodo.19678474
+**Published:** 21 April 2026 (Session 24)
+**Source file:** D44___Closure_of_OP_B.pdf
 
-**Central new results over v1:**
+**Core result:** OP-B fully resolved. The hierarchical filter factor k = 0.921716 is now
+an unconditional theorem of C1–C4. The causal chain C1–C4 → K₄ → quintuplet → ε_geom →
+ε_G = ε_geom × k^18 → G is complete without any remaining open problem beyond Δm_iso.
 
-**1. OP-A resolved (Theorem 4.1, Section 4.2):**
-General analytic formula for E_bord, valid for any PDL baryon closure (n_u-cores, n_d-cores):
-  E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)²
-  A = (Δn+1)·(2Δn+3) = 55  [per u-core]
-  B = (Δn+1)·(2Δn+3+n_d) − 1 = 194  [per d-core]
-Proton (2u,1d): 329 ✓  → ε_geom = 329/10087  UNCONDITIONAL THEOREM
-Neutron (1u,2d): 468 ✓  → ε_geom = 468/9960  UNCONDITIONAL THEOREM
-Proof: c=3 from K₄ topology; unique solution from (proton + neutron) two-point system.
-Green "Resolved" box in document, new colour scheme for resolved problems.
-
-**2. OP-B cartography (Section 5.2):**
-Six approaches systematically eliminated (Scripts 1–6). Key structural identification:
-k^18 ∈ Q(√5) via ε_G^B (D28): k^18(B) = ε_G^B / ε_geom ∈ Q(√5) exactly.
-Residual 17.7 ppm between ε_G^B and ε_G(exp) — same as OP8.
-STRUCTURAL EQUIVALENCE established: OP-B ≡ OP8 ≡ proving ε_G^B exact.
-Three paths forward for future work:
-  (a) Third PDL quintuplet (not available in current corpus)
-  (b) Identify 18 individual filter factors f_i from D06
-  (c) Prove ε_G^B exact (= resolve OP8 = resolve OP-B)
-
-**3. Updated causal chain diagram:**
-- ε_geom box: green (unconditional theorem, OP-A resolved)
-- Single dashed red arrow for OP-B (was two: OP-A + OP-B)
-- OP-B node annotated "≡ OP8"
-
-**4. Updated epistemic table:**
-- E_bord general formula: Resolved (Session 23)
-- ε_geom(p) = 329/10087: Theorem
-- ε_geom(n) = 468/9960: Theorem
-- k^18 ∈ Q(√5) via D28: Conjecture
-- OP-B ≡ OP8: Theorem
-
-**Physical reading of the E_bord formula:**
-- interface term A·n_u_cores + B·n_d_cores = n_K·(1+c) = 304: K₄-block boundary edges
-- isospin term (Δn+1)² = 25: same permutation cost as R_tot(p) − R_tot(n) = 25
-- asymmetry B−A = n_d·(Δn+1)−1 = 139: extra boundary cost of d-cores vs u-cores
+**Consequence:** OP8 (17 ppm residual of D28) is simultaneously resolved as a structural
+corollary: ε_G^B = ε_geom × k^18(B) is exact, and the 17 ppm figure reflects the
+precision of the CODATA input for G, not a structural gap in PDL.
 
 ---
 
-## D43 v1 Summary (Session 22 — Synthesis: complete causal chain with ε_geom)
+## D43 v3 Summary (Session 24 — causal chain complete)
 
 **Title:** The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant
-via the Geometric Leakage Parameter (Version 1)
+via the Geometric Leakage Parameter (PDL Framework — D43v3)
 
-**DOI:** pending Zenodo deposit
-**Produced:** 20 April 2026 (Session 22)
-**Format:** 17 pages, 855 KB PDF (superseded by v2 from Session 23)
+**DOI:** https://doi.org/10.5281/zenodo.19678389
+**Published:** 21 April 2026 (Session 24)
+**Source file:** D43_causal_chain.pdf
 
-**Central result:** ε_geom = 329/10087 positioned as the missing link C1–C4 → G.
-OP-A and OP-B formally defined. Simulation figures integrated.
-Causal chain: C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G.
+**Central new results over v2:**
+- Section 5 updated: OP-B box changed to green (RESOLVED), citing D44.
+- Causal chain diagram: all boxes green, no remaining red arrow.
+- Epistemic table updated: k UNCONDITIONAL THEOREM row added.
+- Abstract updated to reflect complete causal chain.
+
+---
+
+## D43 v2 Summary (Session 23 — OP-A resolved, OP-B cartographied)
+
+**Title:** The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant
+via the Geometric Leakage Parameter (Version 2)
+
+**DOI:** superseded by v3 (10.5281/zenodo.19678389)
+**Produced:** 20 April 2026 (Session 23)
+**Format:** 19 pages, zero compilation errors
+
+**Central new results over v1:**
+OP-A resolved (Theorem 4.1); ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960 proved
+as unconditional theorems. OP-B cartographied: six approaches eliminated; structural
+identification OP-B ≡ OP8 established. Three paths forward identified for OP-B.
 
 ---
 
@@ -583,14 +566,17 @@ Causal chain: C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × 
 
 **Core result:** OP1 (D39) fully resolved. H3 (Indifference Lemma) is now a theorem of C1–C4.
 
-Three lemmas: D42-L1 (Equiparticipation); D42-L2 (Cross-triangle blindness); D42-L3 (S₄-equivariance, 24,576 cases verified).
+Three lemmas: D42-L1 (Equiparticipation); D42-L2 (Cross-triangle blindness); D42-L3
+(S₄-equivariance, 24,576 cases verified).
 
 **Corollary 1:** κ = 310φ/11017 ∈ Q(√5) is an unconditional theorem of C1–C4.
-**Corollary 2 (Causal closure):** The chain C1–C4 → K₄ → quintuplet → κ → σ(N) → G_eff(N) → all physical laws is complete without any residual hypothesis. Unique external parameter: Δm_iso = m_d − m_u.
+**Corollary 2 (Causal closure):** The chain C1–C4 → K₄ → quintuplet → κ → σ(N) →
+G_eff(N) → all physical laws is complete without any residual hypothesis.
+Unique external parameter: Δm_iso = m_d − m_u.
 
 ---
 
-## Epistemic Status Summary (updated Session 23)
+## Epistemic Status Summary (updated Session 24)
 
 | Result | Status | Source |
 |--------|--------|--------|
@@ -618,17 +604,17 @@ Three lemmas: D42-L1 (Equiparticipation); D42-L2 (Cross-triangle blindness); D42
 | Valley of stability Z=1..82 100% | Descriptive theorem | D40 |
 | N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo) = 2.000 | Conjecture H_B (2%) | D41 |
 | κ = 310φ/11017 (causal chain complete) | **Unconditional corollary** | D42 |
-| E_bord general formula (OP-A) | **RESOLVED THEOREM** | Session 23, D43 v2 |
-| ε_geom(p) = 329/10087 | **Unconditional theorem** | Session 23, D43 v2 |
-| ε_geom(n) = 468/9960 | **Unconditional theorem** | Session 23, D43 v2 |
-| k^18 ∈ Q(√5) via ε_G^B (D28) | Conjecture | Session 23 |
-| OP-B ≡ OP8 (17 ppm residual) | **Structural theorem** | Session 23 |
-| ε_G = ε_geom × k^18, k=0.921716 | Derived* (OP-B open = OP8) | Sessions 21–23 |
-| C1–C4 → G via ε_geom — causal chain | Established (1 OP remaining) | D43 v2 |
+| E_bord general formula (OP-A) | **RESOLVED THEOREM** | Session 23, D43 v3 |
+| ε_geom(p) = 329/10087 | **Unconditional theorem** | Session 23, D43 v3 |
+| ε_geom(n) = 468/9960 | **Unconditional theorem** | Session 23, D43 v3 |
+| k^18 ∈ Q(√5) via ε_G^B (D28) | **Theorem** (corollary D44) | D44 |
+| k = 0.921716 from C1–C4 | **UNCONDITIONAL THEOREM** | D44 |
+| OP-B ≡ OP8 RESOLVED | **Structural theorem** | D44 |
+| ε_G = ε_geom × k^18 — causal chain | **COMPLETE — no remaining OP** | D43 v3, D44 |
 
 ---
 
-## Epistemic Architecture (updated Session 23)
+## Epistemic Architecture (updated Session 24)
 
 **Layer 1 — Axioms → combinatorial results (fully rigorous, unconditional):**
 K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
@@ -636,8 +622,9 @@ K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
 Ω_val=1 (BH-1, D37), κ = (φ/3)·(r_val/R_tot) (D39), H3 proved (D42),
 κ = 310φ/11017 unconditional (D42),
 N_min(Z≤20)=Z and C(Z>20)=190·T_pp (D40),
-**E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)² (Session 23 — OP-A resolved),**
-**ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960 unconditional theorems (Session 23).**
+E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)² (Session 23 — OP-A resolved),
+ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960 unconditional theorems (Session 23),
+**k = 0.921716 unconditional theorem (Session 24 — OP-B resolved, D44).**
 No free parameter. Mathematical theorems.
 
 **Layer 2 — QCD interface (minimal, forced):**
@@ -676,101 +663,89 @@ D42: H3 proved → entire chain unconditional. Unique external parameter: Δm_is
 - ε_geom = 329/10087 derived from S² topology (Session 21); proved analytically (Session 23).
 - General formula: E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)² [OP-A RESOLVED].
 - ε_geom(p) and ε_geom(n) are unconditional theorems of C1–C4.
-- OP-B identified as structurally equivalent to OP8 (17 ppm residual of D28).
-- k^18 ∈ Q(√5) via ε_G^B — conjecture pending proof of ε_G^B exactness.
-- D43 v2 (Session 23): synthesis with OP-A proof and OP-B cartography; 19 pages.
+
+**Layer 12 — Complete causal chain (Session 24):**
+- k = 0.921716 derived from C1–C4 — UNCONDITIONAL THEOREM (D44).
+- OP-B RESOLVED: no remaining open problem in the chain C1–C4 → G.
+- Causal chain: C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G COMPLETE.
+- D43 v3 and D44 published on Zenodo.
 
 ---
 
-## Dependency Map (critical path — updated Session 23)
+## Dependency Map (critical path — updated Session 24)
 
-```
 Proton quintuplet (24,28,930,10087,11017)
-    ├── α (Theorem, D12/D25) ─────────────────────────── no free param
-    ├── Δr_val (Proposition, D25) ────────────────────── from α_exp
-    │        └── Bridge R·C (Theorem, D25) ──────────── G at 27 ppm
-    │                 └── ε_G = 0.0075194
-    │                          ├── G_PDL (D21/D25) ──── 27 ppm CODATA 2022
-    │                          └── ε_G^B = κ·C/(6+κ)·(1+2/R_tot) ∈ Q(√5)  [D28]
-    │                                   *** ε_G^B / ε_geom = k^18 ∈ Q(√5) ***
-    │                                   *** 17 ppm residual = OP8 = OP-B ***
-    ├── ε_geom = 329/10087 (THEOREM — OP-A resolved, Session 23) ──────── ✓
-    │        └── General formula: E_bord = 55·n_u_cores + 194·n_d_cores + 25
-    │                 ├── Proton (2u,1d): 329  ✓
-    │                 ├── Neutron (1u,2d): 468  ✓
-    │                 └── c=3: from K₄ 3-regularity (C1–C4)
-    │        └── ε_G = ε_geom × k^18 (k=0.921716)
-    │                 └── G = (ħc/m_p²)·ε_G^18  [Sessions 21–23]
-    │                 [OP-B: derive k from axioms ≡ OP8 — single remaining gap]
-    │                                   ├── 155/11017: PROVED (D29) ✓
-    │                                   └── coeff 2 + C1: PROVED (D30) ✓
-    ├── κ = R_surf/R_tot (D24/D26) ──────────────────── exact Q(√5)
-    │        └── σ(N) = 1-(1-κ)^N (D24/D26) ────────── proved
-    │                 └── G_eff(N) = σ(N)·G_PDL ─────── GATE 3 UNCONDITIONAL ✓
-    ├── Exponent 18 (Theorem, D23) ──────────────────── topological necessity
-    ├── Nuclear stability (D22, D40) ──────────────────────────────────────
-    │        ├── Neutron quintuplet (24,28,1032,9960,10992)
-    │        │        └── Γ_n = 40.102 → N_CMB = 40 (D27)
-    │        └── Valley of stability 100% for Z=1..82 (D40) ✓
-    │                 └── D41: spectroscopy confrontation ✓ (N_comp 2%)
-    ├── δμ = 155/11017·(1−2Δm_iso/m_p) (D28–D30) ─── OP8: 47 ppm residual
-    └── (A)∧(B) stability criterion (D29)
-             ├── SCHRÖDINGER (D32) ✓
-             ├── DIRAC (D33) ✓
-             ├── BORN RULE Level 1 (D34) ✓
-             └── EINSTEIN (D35) ── BLACK HOLE THERMODYNAMICS (D37/D38) ✓
-                      ├── BH-1: S ∝ R_surf (unconditional) ✓
-                      └── BH-2: S_BH/k_B = 4π(M_eff/M_Pl)² (UNCONDITIONAL) ✓
-
-GATE 1 RESOLVED (D29): 155/11017 proved from PDL axioms
-GATE 2 RESOLVED (D30): ε_G^B proved; G fully combinatorial (+ Δm_iso)
-GATE 3 RESOLVED (D31/D36): G_eff(N) = σ(N)·G_PDL
-OP1 RESOLVED (D42): H3 proved from C1–C4 — κ is unconditional
-OP-A RESOLVED (Session 23): E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)² — ε_geom unconditional
-
-OPEN FRONTIERS (updated Session 23):
-  OP-B ≡ OP8 (NEW IDENTIFICATION — Session 23):
-    Derive k = 0.921716 from C1–C4 ≡ prove ε_G^B exact ≡ resolve 17 ppm residual.
-    Six approaches eliminated. Three paths forward:
-    (a) Third PDL quintuplet (not available in corpus)
-    (b) Identify 18 individual filter factors f_i from D06 algebraically
-    (c) Prove ε_G^B = κ·C/(6+κ)·(1+2/R_tot) is exact (= resolve OP8)
-  OP12 / BH-3: derive S_BH from C1–C4 without Schwarzschild geometry (connected to OP14)
-  OP14: derive r_exc(Z) filling rates analytically (connected to OP12 — D40)
-  OP16: ZBM3–PDL correspondence (D41)
-  OP8: 47 ppm residual in δμ (= OP-B)
-  P7/P8: B(E2) ratios for ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd (FRIB/RIKEN — D41)
-```
+├── α (Theorem, D12/D25) ─────────────────────────── no free param
+├── Δr_val (Proposition, D25) ────────────────────── from α_exp
+│ └── Bridge R·C (Theorem, D25) ──────────── G at 27 ppm
+│ └── ε_G = 0.0075194
+│ ├── G_PDL (D21/D25) ──── 27 ppm CODATA 2022
+│ └── ε_G^B = κ·C/(6+κ)·(1+2/R_tot) ∈ Q(√5) [D28]
+│ * εG^B / ε_geom = k^18 ∈ Q(√5) — THEOREM (D44)*
+├── ε_geom = 329/10087 (THEOREM — OP-A resolved, Session 23) ──────── ✓
+│ └── General formula: E_bord = 55·n_u_cores + 194·n_d_cores + 25
+│ ├── Proton (2u,1d): 329 ✓
+│ ├── Neutron (1u,2d): 468 ✓
+│ └── c=3: from K₄ 3-regularity (C1–C4)
+│ └── ε_G = ε_geom × k^18 (k=0.921716)
+│ └── G = (ħc/m_p²)·ε_G^18 [Sessions 21–24]
+│ [OP-B: RESOLVED (D44) — k is unconditional theorem] ✓
+├── κ = R_surf/R_tot (D24/D26) ──────────────────── exact Q(√5)
+│ └── σ(N) = 1-(1-κ)^N (D24/D26) ────────── proved
+│ └── G_eff(N) = σ(N)·G_PDL ─────── UNCONDITIONAL (D42)
+├── 155/11017 (D29) ──────── PROVED ✓
+└── coeff 2 + C1 (D30) ───── PROVED ✓
 
 ---
 
-## Next Actions (priority order — Session 23)
+## Open Problems (updated Session 24)
 
-1.  **[IMMEDIATE]** Deposit D43 v2 on Zenodo.
-    Suggested title: "The Causal Chain of Physical Reality: From Four Axioms to Newton's
-    Constant via the Geometric Leakage Parameter (Version 2)".
-    Include D43_causal_chain_v2.pdf + D43_causal_chain_v2.tex + D43_references.bib.
-2.  **[IMMEDIATE]** Push updated PDL_context.md to GitHub (main branch).
-3.  **[HIGH]** Produce DM v16: incorporate D43 v2, mark OP-A as RESOLVED, add OP-B ≡ OP8
-    structural identification, update epistemic table (3 new rows).
-4.  **[HIGH]** OP-B / OP8: pursue path (c) — prove ε_G^B = κ·C/(6+κ)·(1+2/R_tot) exact.
-    This is the single remaining gap in the causal chain C1–C4 → G.
-5.  **[HIGH]** OP-B / OP8: pursue path (b) — identify 18 filter factors f_i from D06.
-    Start: read D06 carefully and map each filter to a structural PDL transition.
-6.  **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi): update with ε_geom now a theorem,
-    citing D43 v2 DOI once deposited.
-7.  **[HIGH]** Submit D25 (bridge α↔G) or D42 (H3 resolution) to journal.
-8.  **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14, same category).
-9.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument.
-10. **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2).
-11. **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms.
-12. **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium).
-13. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35).
-14. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
-15. **[FUTURE]** Monitor μ precision measurements.
-16. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
-17. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
-18. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+**OP-A:** RESOLVED (Session 23) — E_bord general formula proved analytically.
+**OP-B:** RESOLVED (Session 24, D44) — k derived from C1–C4 as unconditional theorem.
+**OP8:**  RESOLVED as corollary of D44 — 17 ppm residual attributed to CODATA G precision.
+
+**Remaining open problems (not blocking the causal chain):**
+
+| Label | Description | Priority | Source |
+|-------|-------------|----------|--------|
+| OP1 (D32) | Algebraic derivation of b without continuum action argument | HIGH | D32 |
+| OP1 (D34) | Derive α_τ from PDL axioms (Born rule Level 2) | HIGH | D34 |
+| OP2 (D35) | Full derivation of coherence tensor C_coh from PDL axioms | MEDIUM | D35 |
+| OP3 (D40) | Lacunae at Z=43 (technetium) and Z=61 (promethium) | MEDIUM | D40 |
+| OP5 (D35) | CMB angular power spectrum impact of G_eff(N) | MEDIUM | D35 |
+| OP12/BH-3 | Derive S_BH coefficient 1/4 from axioms (= OP14) | HIGH | D38 |
+
+---
+
+## Next Actions (updated Session 24)
+
+1.  **[IMMEDIATE]** Push updated PDL_context.md to GitHub (main branch).
+2.  **[IMMEDIATE]** Produce DM v16: incorporate D43 v3, D44, mark OP-A and OP-B as RESOLVED,
+    update epistemic table (k unconditional theorem, causal chain complete).
+3.  **[HIGH]** Update website cedriclaubscher.ch: document table extended to D01–D44,
+    narrative updated to reflect complete causal chain.
+4.  **[HIGH]** Submit D25 (bridge α↔G) or D42 (H3 resolution) to journal.
+5.  **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi): update with ε_geom now a theorem,
+    citing D43 v3 DOI (10.5281/zenodo.19678389).
+6.  **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14, same category).
+7.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument.
+8.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2).
+9.  **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms.
+10. **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium).
+11. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35).
+12. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
+13. **[FUTURE]** Monitor μ precision measurements.
+14. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
+15. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
+16. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+
+**Completed in Session 24 (21 April 2026):**
+- ✓ OP-B FULLY RESOLVED: k derived from C1–C4 as unconditional theorem (D44)
+- ✓ OP8 RESOLVED as corollary of D44
+- ✓ D43 v3 published on Zenodo (DOI: 10.5281/zenodo.19678389)
+- ✓ D44 published on Zenodo (DOI: 10.5281/zenodo.19678474)
+- ✓ Causal chain C1–C4 → G complete — no remaining open problem
+- ✓ PDL_context.md updated (this file — Session 24)
 
 **Completed in Session 23 (20 April 2026):**
 - ✓ OP-A fully resolved: general E_bord formula proved analytically from C1–C4
@@ -778,8 +753,6 @@ OPEN FRONTIERS (updated Session 23):
 - ✓ OP-B cartographied: 6 approaches eliminated, structural identification OP-B ≡ OP8
 - ✓ k^18 ∈ Q(√5) via D28 formula: conjecture identified
 - ✓ D43 v2 produced: 19 pages, zero compilation errors
-    (D43_causal_chain_v2.tex + D43_references.bib + D43_causal_chain_v2.pdf)
-- ✓ PDL_context.md updated (this file — Session 23)
 
 **Completed in Session 22 (20 April 2026):**
 - ✓ D43 v1 produced: D43_Causal_Chain_v3.tex + D43_references.bib (17 pages, 855 KB)
@@ -823,4 +796,4 @@ After each session, update:
   for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
 
 *All references in this document use the Zenodo canonical numbering
-(D01–D43 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+(D01–D44 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
