@@ -681,7 +681,8 @@ Proton quintuplet (24,28,930,10087,11017)
 │ └── ε_G = 0.0075194
 │ ├── G_PDL (D21/D25) ──── 27 ppm CODATA 2022
 │ └── ε_G^B = κ·C/(6+κ)·(1+2/R_tot) ∈ Q(√5) [D28]
-│ * εG^B / ε_geom = k^18 ∈ Q(√5) — THEOREM (D44)*
+│ * k^18 = εG^B / ε_geom ∈ Q(√5)*
+│ * THEOREM (D44) — OP-B ≡ OP8 RESOLVED*
 ├── ε_geom = 329/10087 (THEOREM — OP-A resolved, Session 23) ──────── ✓
 │ └── General formula: E_bord = 55·n_u_cores + 194·n_d_cores + 25
 │ ├── Proton (2u,1d): 329 ✓
@@ -692,9 +693,41 @@ Proton quintuplet (24,28,930,10087,11017)
 │ [OP-B: RESOLVED (D44) — k is unconditional theorem] ✓
 ├── κ = R_surf/R_tot (D24/D26) ──────────────────── exact Q(√5)
 │ └── σ(N) = 1-(1-κ)^N (D24/D26) ────────── proved
-│ └── G_eff(N) = σ(N)·G_PDL ─────── UNCONDITIONAL (D42)
-├── 155/11017 (D29) ──────── PROVED ✓
-└── coeff 2 + C1 (D30) ───── PROVED ✓
+│ └── G_eff(N) = σ(N)·G_PDL ─────── GATE 3 UNCONDITIONAL ✓
+├── Exponent 18 (Theorem, D23) ──────────────────── topological necessity
+├── Nuclear stability (D22, D40) ─────────────────────────────────────
+│ ├── Neutron quintuplet (24,28,1032,9960,10992)
+│ │ └── Γ_n = 40.102 → N_CMB = 40 (D27)
+│ └── Valley of stability 100% for Z=1..82 (D40) ✓
+│ └── D41: spectroscopy confrontation ✓ (N_comp 2%)
+├── δμ = 155/11017·(1−2Δm_iso/m_p) (D28–D30) ─── PROVED ✓
+│ ├── 155/11017: PROVED (D29) ✓
+│ └── coeff 2 + C1: PROVED (D30) ✓
+└── (A)∧(B) stability criterion (D29)
+├── SCHRÖDINGER (D32) ✓
+├── DIRAC (D33) ✓
+├── BORN RULE Level 1 (D34) ✓
+└── EINSTEIN (D35) ── BLACK HOLE THERMODYNAMICS (D37/D38) ✓
+├── BH-1: S ∝ R_surf (unconditional) ✓
+└── BH-2: S_BH/k_B = 4π(M_eff/M_Pl)² (UNCONDITIONAL) ✓
+
+GATE 1 RESOLVED (D29): 155/11017 proved from PDL axioms
+GATE 2 RESOLVED (D30): ε_G^B proved; G fully combinatorial (+ Δm_iso)
+GATE 3 RESOLVED (D31/D36): G_eff(N) = σ(N)·G_PDL
+OP1 RESOLVED (D42): H3 proved from C1–C4 — κ is unconditional
+OP-A RESOLVED (Session 23, D43v3): E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)²
+OP-B RESOLVED (Session 24, D44): k = 0.921716 derived from C1–C4 — unconditional theorem
+OP8 RESOLVED (Session 24, D44): 17 ppm residual attributed to CODATA G precision
+
+CAUSAL CHAIN COMPLETE (Session 24):
+C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G
+No remaining open problem in the chain. Unique external parameter: Δm_iso.
+
+OPEN FRONTIERS (not blocking the causal chain):
+OP12 / BH-3: derive S_BH coefficient 1/4 from axioms (connected to OP14)
+OP14: derive r_exc(Z) filling rates analytically (connected to OP12 — D40)
+OP16: ZBM3–PDL correspondence (D41)
+P7/P8: B(E2) ratios for ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd (FRIB/RIKEN — D41)
 
 ---
 
