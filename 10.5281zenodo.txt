@@ -246,6 +246,11 @@ Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closur
 D42_Derivation_of_H3_from_C1_C4.pdf
 
 D43 
-https://doi.org/10.5281/zenodo.19670790 
+https://doi.org/10.5281/zenodo.19678389
 The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) 
-D43_causal_chain_v3.pdf
+D43_causal_chain.pdf
+
+D44 
+https://doi.org/10.5281/zenodo.19678474 
+Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms 
+D44___Closure_of_OP_B.pdf
