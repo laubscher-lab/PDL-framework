@@ -180,7 +180,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D42   | 10.5281/zenodo.19397315 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
 | D43   | 10.5281/zenodo.19678389 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) | **Synthesis v3 — causal chain COMPLETE** | Published |
 | D44   | 10.5281/zenodo.19678474 | Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms | **Proof — OP-B RESOLVED** | Published |
-| DM    | 10.5281/zenodo.19388995 | D_Map v15 — Global Mapping of PDL | **Navigation** | Published |
+| DM    | 10.5281/zenodo.19697524 | D_Map v16 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
 
@@ -403,17 +403,14 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        *** k is now an unconditional theorem of C1–C4 ***
        *** Causal chain C1–C4 → G is complete — no remaining open problem ***
 
-[DM]   https://doi.org/10.5281/zenodo.19388995
-       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v15.pdf
-       PDL Global Mapping of Structures, Results, and Open Problems (version 15)
-       *** Current version: covers D01–D42, OP1 resolved, 15 open problems, 8 falsifiable predictions ***
-       *** Previous versions: v14 (10.5281/zenodo.19384997), v13 (10.5281/zenodo.19371866),
-           v12 (10.5281/zenodo.19358464), v11 (10.5281/zenodo.19335759),
-           v10 (10.5281/zenodo.19194978) ***
-       *** DM v16 pending: will incorporate D43 v3, D44, OP-A and OP-B resolutions ***
+[DM]   https://doi.org/10.5281/zenodo.19697524
+       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v16.pdf
+       PDL Global Mapping of Structures, Results, and Open Problems (version 16)
+       *** Current version: covers D01–D44, OP-A and OP-B resolved, causal chain COMPLETE ***
+       *** Previous versions: v15 (10.5281/zenodo.19388995), v14 (10.5281/zenodo.19384997),
+           v13 (10.5281/zenodo.19371866), v12 (10.5281/zenodo.19358464),
+           v11 (10.5281/zenodo.19335759), v10 (10.5281/zenodo.19194978) ***
 ```
-
----
 
 ## Key Numerical Values
 Proton quintuplet : (n_u, n_d, r_val, R_sea, R_tot) = (24, 28, 930, 10087, 11017)
