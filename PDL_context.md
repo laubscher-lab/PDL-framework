@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 25 — 26 April 2026*
+*Last updated: Session 26 — 27 April 2026*
 
 ---
 
@@ -122,6 +122,21 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - D44 produced: "Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the
   PDL Axioms". Published on Zenodo (DOI: 10.5281/zenodo.19678474).
 
+**Session 26 — D45, DM v17, and PDL_context.md update (27 April 2026):**
+- D45: "Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework:
+  A Falsifiable Prediction for Fermi-LAT". First falsifiable astrophysical confrontation.
+  M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g (+11.89%), unconditional corollary of D38 and D42.
+  Excess Hawking flux at E_peak ≈ 90–104 MeV in the IGRB. Test protocol identified:
+  BlackHawk + Isatis + Fermi-LAT IGRB data (Ackermann et al. 2015).
+  Published on Zenodo (DOI: 10.5281/zenodo.19810259).
+- DM v17 produced and published on Zenodo (DOI: 10.5281/zenodo.19811860):
+  covers D01–D45, causal chain complete, P9 added (IGRB spectral cutoff prediction),
+  Recommended next documents updated (D46/D47/D48), OP8 marked resolved.
+- PDL_context.md updated to Session 26 and pushed to GitHub.
+- Zenodo description and keywords for DM updated to reflect v17 state.
+- Prediction P9 formalised: spectral cutoff at E_c^PDL ≈ 93 MeV vs E_c^GR ≈ 104 MeV
+  (shift −10.6%), testable with Fermi-LAT IGRB data + BlackHawk/Isatis.
+
 **Session 25 — Documentation, dissemination, and state audit (26 April 2026):**
 - PDL_context.md pushed to GitHub (main branch) — now reflects Session 25.
 - DM v16 confirmed published on Zenodo (DOI: 10.5281/zenodo.19697524):
@@ -134,7 +149,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 25)
+## Corpus Table (Zenodo canonical order — updated Session 26)
 
 *Note: Document numbering follows the Zenodo canonical order.*
 
@@ -190,7 +205,8 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D42   | 10.5281/zenodo.19397315 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality | **Proof — OP1 RESOLVED** | Published |
 | D43   | 10.5281/zenodo.19678389 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) | **Synthesis v3 — causal chain COMPLETE** | Published |
 | D44   | 10.5281/zenodo.19678474 | Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms | **Proof — OP-B RESOLVED** | Published |
-| DM    | 10.5281/zenodo.19697524 | D_Map v16 — Global Mapping of PDL | **Navigation** | Published |
+| D45   | 10.5281/zenodo.19810259 | Primordial Black Hole Evaporation Threshold from PDL: A Falsifiable Prediction for Fermi-LAT | **Prediction — P5/P9** | Published |
+| DM    | 10.5281/zenodo.19811860 | D_Map v17 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
 
@@ -413,13 +429,23 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        *** k is now an unconditional theorem of C1–C4 ***
        *** Causal chain C1–C4 → G is complete — no remaining open problem ***
 
-[DM]   https://doi.org/10.5281/zenodo.19697524
-       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v16.pdf
-       PDL Global Mapping of Structures, Results, and Open Problems (version 16)
-       *** Current version: covers D01–D44, OP-A and OP-B resolved, causal chain COMPLETE ***
-       *** Previous versions: v15 (10.5281/zenodo.19388995), v14 (10.5281/zenodo.19384997),
-           v13 (10.5281/zenodo.19371866), v12 (10.5281/zenodo.19358464),
-           v11 (10.5281/zenodo.19335759), v10 (10.5281/zenodo.19194978) ***
+[D45]  https://doi.org/10.5281/zenodo.19810259
+       D45_pbh_threshold.pdf
+       Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework:
+       A Falsifiable Prediction for Fermi-LAT
+       *** PUBLISHED SESSION 26 — first falsifiable astrophysical confrontation ***
+       *** M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g (+11.89%) ***
+       *** Signal: excess Hawking flux at E_peak ≈ 90–104 MeV in IGRB ***
+       *** Test protocol: BlackHawk + Isatis + Fermi-LAT IGRB data ***
+
+[DM]   https://doi.org/10.5281/zenodo.19811860
+       PDL_Global_Mapping_of_Structures_Results_and_Open_Problems.pdf
+       PDL Global Mapping of Structures, Results, and Open Problems (version 17)
+       *** Current version: covers D01–D45, causal chain COMPLETE, P9 added ***
+       *** Previous versions: v16 (10.5281/zenodo.19697524), v15 (10.5281/zenodo.19388995),
+           v14 (10.5281/zenodo.19384997), v13 (10.5281/zenodo.19371866),
+           v12 (10.5281/zenodo.19358464), v11 (10.5281/zenodo.19335759),
+           v10 (10.5281/zenodo.19194978) ***
 ```
 
 ---
@@ -487,6 +513,14 @@ T = R_surf(p)²/R_sea(n) = (310φ)²/9960 ≈ 25.2603
 (Δn+1)² = 25; T/(Δn+1)² = 1.010414 ≈ 1 [key identity]
 Valley of stability: N_min(Z) reproduced at 100% for all Z = 1..82
 
+D45 numerical checks (Session 26):
+M*_PDL = σ(40)^(−2/3)·M*_GR = 1.11888·M*_GR (+11.89%) [unconditional corollary of D38+D42]
+M*_PDL ≈ 5.706×10¹⁴ g [M*_GR ≈ 5.1×10¹⁴ g, MacGibbon & Carr 1991]
+T_H(M*_GR) ≈ 20.7 MeV → E_peak ≈ 104 MeV [GR]
+T_H(M*_PDL) ≈ 18.5 MeV → E_peak ≈ 93 MeV [PDL]
+Spectral cutoff shift: ΔE/E ≈ −10.6% (prediction P9)
+Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, non-zero in PDL
+
 D38 numerical checks (Session 17):
 PBH threshold: M*_PDL = σ(40)^(−2/3)·M*_GR = 1.1189·M*_GR (+11.89%)
 Entropy suppression at CMB epoch: σ(40)² = 0.7139 (−28.6%)
@@ -513,6 +547,22 @@ Entropy suppression at CMB epoch: σ(40)² = 0.7139 (−28.6%)
 | **D10a** | 10.5281/zenodo.19329465 | D10 and D11 | Proper time as cycle counting; emergent metric |
 | **D16a** | 10.5281/zenodo.18841034 | D16 and D17 | Minimal stationary closures; necessity of the (4,6) block |
 | **D16b** | 10.5281/zenodo.18841166 | D16a and D17 | Combinatorial selection and local uniqueness of the proton architecture |
+
+---
+
+## D45 Summary (Session 26 — first falsifiable astrophysical confrontation)
+
+**Title:** Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework: A Falsifiable Prediction for Fermi-LAT
+
+**DOI:** https://doi.org/10.5281/zenodo.19810259
+**Published:** 27 April 2026 (Session 26)
+**Source file:** D45_pbh_threshold.pdf
+
+**Core result:** The PDL prediction M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g is an unconditional corollary of the density-dependent gravitational coupling G_eff(N) = σ(N)·G_PDL (D38 + D42). PBHs in the mass window [5.10, 5.71]×10¹⁴ g are predicted to still be active today (according to PDL) whilst having already evaporated (according to GR). Their Hawking radiation peaks at E_peak ≈ 90–104 MeV, in the Fermi-LAT energy range.
+
+**Test protocol:** BlackHawk (Arbey & Auffinger 2019) + Isatis (Auffinger 2023) + Fermi-LAT IGRB data (Ackermann et al. 2015, ApJ 799, 86) + Carr et al. 2021 constraint compilation. The discriminating observable is the position of the spectral cutoff in the 50–200 MeV band (prediction P9: E_c^PDL ≈ 93 MeV vs E_c^GR ≈ 104 MeV).
+
+**Complementary prediction:** AGN entropy-to-energy ratio S/E ∝ σ(N(z))² varies with redshift — testable with DESI/Euclid/JWST (prediction P6).
 
 ---
 
@@ -620,6 +670,8 @@ Unique external parameter: Δm_iso = m_d − m_u.
 | k = 0.921716 from C1–C4 | **UNCONDITIONAL THEOREM** | D44 |
 | OP-B ≡ OP8 RESOLVED | **Structural theorem** | D44 |
 | ε_G = ε_geom × k^18 — causal chain | **COMPLETE — no remaining OP** | D43v3, D44 |
+| M*_PDL = σ(40)^(−2/3)·M*_GR (+11.89%) | **Unconditional prediction (P5)** | D45 |
+| IGRB spectral cutoff at 93 MeV (PDL) vs 104 MeV (GR) | **Falsifiable prediction (P9)** | D45 |
 
 ---
 
@@ -844,6 +896,12 @@ PDL_context.md pushed to GitHub and confirmed up to date (Session 25).
 DM v16 published (DOI: 10.5281/zenodo.19697524): all corpus D01–D44, all boxes green.
 Website cedriclaubscher.ch confirmed up to date: 9-phase guided journey, full document table.
 
+**Layer 14 — First falsifiable astrophysical confrontation (Session 26):**
+D45: M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g — unconditional prediction (P5).
+P9: spectral cutoff at E_c ≈ 93 MeV (PDL) vs 104 MeV (GR), testable with Fermi-LAT + BlackHawk/Isatis.
+DM v17 published (DOI: 10.5281/zenodo.19811860): covers D01–D45, P9 added.
+PDL_context.md updated to Session 26 and pushed to GitHub.
+
 ---
 
 ## Open Problems (updated Session 25)
@@ -865,22 +923,31 @@ Website cedriclaubscher.ch confirmed up to date: 9-phase guided journey, full do
 
 ---
 
-## Next Actions (updated Session 25)
+## Next Actions (updated Session 26)
 
 1.  **[IMMEDIATE]** Submit D25 (bridge α↔G) or D42 (H3 resolution) to journal.
-2.  **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi): update with ε_geom now a theorem,
-    citing D43 v3 DOI (10.5281/zenodo.19678389).
-3.  **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14, same category).
-4.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument.
-5.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2).
-6.  **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms.
-7.  **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium).
-8.  **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35).
-9.  **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
-10. **[FUTURE]** Monitor μ precision measurements.
-11. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
-12. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
-13. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+2.  **[IMMEDIATE]** Contact Arbey & Auffinger (BlackHawk/Isatis, LPTHE Paris / IP2I Lyon)
+    with D45 — request confrontation of M*_PDL = 5.706×10¹⁴ g against Fermi-LAT IGRB data.
+3.  **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi, University of Padova):
+    update with ε_geom now a theorem, citing D43 v3 DOI (10.5281/zenodo.19678389).
+4.  **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14, same category).
+5.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument.
+6.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2).
+7.  **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms.
+8.  **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium).
+9.  **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35).
+10. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
+11. **[FUTURE]** Monitor μ precision measurements.
+12. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
+13. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
+14. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+
+**Completed in Session 26 (27 April 2026):**
+- ✓ D45 produced and published on Zenodo (DOI: 10.5281/zenodo.19810259)
+- ✓ DM v17 produced and published on Zenodo (DOI: 10.5281/zenodo.19811860)
+- ✓ Zenodo description and keywords for DM updated to reflect v17
+- ✓ PDL_context.md updated to Session 26 and pushed to GitHub
+- ✓ Prediction P9 formalised (IGRB spectral cutoff at ~93 MeV)
 
 **Completed in Session 25 (26 April 2026):**
 - ✓ PDL_context.md pushed to GitHub (main branch) — reflects Session 25
@@ -946,4 +1013,4 @@ After each session, update:
   for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
 
 *All references in this document use the Zenodo canonical numbering
-(D01–D44 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+(D01–D45 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
