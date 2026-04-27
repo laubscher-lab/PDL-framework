@@ -254,3 +254,8 @@ D44
 https://doi.org/10.5281/zenodo.19678474 
 Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms 
 D44___Closure_of_OP_B.pdf
+
+D45 
+https://doi.org/10.5281/zenodo.19810259 
+Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework: A Falsifiable Prediction for Fermi-LAT
+D45_pbh_threshold.pdf
