@@ -1,0 +1,392 @@
+% ============================================================
+% D45 — PDL Framework
+% Primordial Black Hole Evaporation Threshold from the
+% Projective Dynamic Logo Framework:
+% A Falsifiable Prediction for Fermi-LAT
+%
+% Author  : Cédric Laubscher
+% Date    : 26 April 2026
+% Licence : CC BY 4.0
+% ============================================================
+
+\documentclass[12pt, a4paper]{article}
+
+% ── Encoding and language ──────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{hyphenat}
+
+% ── Mathematics ───────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+
+% ── Layout ────────────────────────────────────────────────
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+
+% ── Hyperlinks and metadata ───────────────────────────────
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue]{hyperref}
+\hypersetup{
+  pdftitle  = {Primordial Black Hole Evaporation Threshold from PDL},
+  pdfauthor = {Cédric Laubscher}
+}
+
+% ── Bibliography ──────────────────────────────────────────
+\usepackage[numbers]{natbib}
+\bibliographystyle{unsrt}
+
+% ── Tables and figures ────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+% ── Theorem environments ──────────────────────────────────
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newenvironment{resolvedproblem}[1][]{%
+  \begin{tcolorbox}[colback=green!6, colframe=green!50!black,
+    title={\textbf{Resolved — #1}}, fonttitle=\bfseries]}
+  {\end{tcolorbox}}
+
+\newenvironment{openproblem}[1][]{%
+  \begin{tcolorbox}[colback=orange!8, colframe=orange!70!black,
+    title={\textbf{Open problem — #1}}, fonttitle=\bfseries]}
+  {\end{tcolorbox}}
+
+\newenvironment{prediction}[1][]{%
+  \begin{tcolorbox}[colback=blue!5, colframe=blue!50!black,
+    title={\textbf{Falsifiable prediction — #1}}, fonttitle=\bfseries]}
+  {\end{tcolorbox}}
+
+% ── Macros ────────────────────────────────────────────────
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Nsea}{R_{\mathrm{sea}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\GGR}{G_{\mathrm{GR}}}
+\newcommand{\sigN}{\sigma(N)}
+\newcommand{\kappaPDL}{\kappa_{\mathrm{PDL}}}
+\newcommand{\Mstar}{M^{*}}
+\newcommand{\MstarGR}{M^{*}_{\mathrm{GR}}}
+\newcommand{\MstarPDL}{M^{*}_{\mathrm{PDL}}}
+\newcommand{\tU}{t_{\mathrm{U}}}
+\newcommand{\NCMB}{N_{\mathrm{CMB}}}
+\newcommand{\epsg}{\varepsilon_G}
+\newcommand{\phigold}{\varphi}
+
+% ============================================================
+\begin{document}
+
+% ── Title block ───────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Primordial Black Hole Evaporation Threshold\\[4pt]
+   from the Projective Dynamic Logo Framework:\\[4pt]
+   A Falsifiable Prediction for Fermi-LAT}\\[18pt]
+  {\large Cédric Laubscher}\\[6pt]
+  {\normalsize Independent researcher, Switzerland}\\[4pt]
+  {\normalsize \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}
+   \quad|\quad
+   \href{https://zenodo.org/communities/pdl-framework}{zenodo.org/communities/pdl-framework}}\\[12pt]
+  {\normalsize 26 April 2026}\\[4pt]
+  {\small Document D45 of the PDL corpus \quad|\quad CC BY 4.0}
+\end{center}
+
+\vspace{6pt}
+\hrule
+\vspace{10pt}
+
+% ── Abstract ──────────────────────────────────────────────
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives all fundamental physical constants from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields~\cite{D01,D21,D43v3}. A central result of the framework is that the effective gravitational coupling is density-dependent: $\Geff(N) = \sigN \cdot \GPDL$, where $\sigN = 1-(1-\kappaPDL)^{N}$ and $\kappaPDL = 310\phigold/11017 \in \mathbb{Q}(\sqrt{5})$ is an unconditional theorem of the axioms~\cite{D36,D42}. At the epoch of primordial black hole (\textsc{pbh}) formation ($N = \NCMB = 40$, derived from the neutron quintuplet without cosmological input~\cite{D27}), this coupling suppression extends \textsc{pbh} lifetimes by a factor $\sigma(40)^{-2} = 1.4007$. The resulting shift in the \textsc{pbh} survival mass threshold is $\MstarPDL = \sigma(40)^{-2/3}\,\MstarGR = 1.1189\,\MstarGR$, corresponding to an upward shift of $+11.89\%$ relative to the standard general-relativistic value $\MstarGR \approx 5.1 \times 10^{14}$\,g. This prediction implies an excess of Hawking radiation flux in the isotropic gamma-ray background (\textsc{igrb}) at $E_{\mathrm{peak}} \approx 90$--$105$\,MeV from \textsc{pbh}s in the mass window $[5.10,\,5.71]\times10^{14}$\,g that are still active according to \PDL\ but are predicted to have already evaporated by standard general relativity. The prediction is fully determined by a single unconditional theorem ($\kappaPDL$) and contains no free parameter beyond the standard-model degrees of freedom entering the Hawking spectrum. We identify the precise observational test using the public codes \textsc{BlackHawk}~\cite{BlackHawk} and \textsc{Isatis}~\cite{Isatis} together with the Fermi-LAT \textsc{igrb} measurements of Ackermann et al.~\cite{FermiIGRB2015} and the constraint compilation of Carr et al.~\cite{Carr2021}, and invite the community to carry it out.
+\end{abstract}
+
+\clearpage
+
+\vspace{6pt}
+\hrule
+\vspace{14pt}
+
+% ── Epistemic status table ────────────────────────────────
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Item} & \textbf{Status} \\
+\midrule
+$\kappaPDL = 310\phigold/11017$ & Unconditional theorem of C1--C4~\cite{D39,D42} \\
+$\NCMB = 40$ & Theorem (neutron quintuplet, \\ & no cosmological input)~\cite{D27} \\
+$\sigma(40) = 1-(1-\kappaPDL)^{40}$ & Exact closed-form expression \\
+$\MstarPDL = \sigma(40)^{-2/3}\,\MstarGR$ & Unconditional corollary~\cite{D38} \\
+Numerical value $\MstarPDL = 5.7063\times10^{14}$\,g & Computed (this document, verified) \\
+Shift $+11.89\%$ & Computed (this document, verified) \\
+Excess flux at $\sim 100$\,MeV & Falsifiable prediction \\
+Test via \textsc{BlackHawk}/\textsc{Isatis} & To be performed by the community \\
+\bottomrule
+\end{tabular}
+\caption{Epistemic status of the main claims in this document.}
+\label{tab:epistemic}
+\end{table}
+
+\tableofcontents
+
+\newpage
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+The Projective Dynamic Logo (\PDL) framework~\cite{D01,D02} derives fundamental physical constants from four axioms on finite signed graphs without presupposing any background spacetime, particles, or fields. The minimal stationary closure under these axioms is the complete graph $K_4$ on four vertices and six edges~\cite{D16a}, identified with the electron prototype. The proton is the minimal hierarchical composite, characterised by the unique integer quintuplet $(n_u, n_d, \rval, \Nsea, \Rtot) = (24, 28, 930, 10087, 11017)$~\cite{D16b,D29}.
+
+A central structural result of the framework is the density-dependent effective gravitational coupling~\cite{D24,D31,D36}:
+\begin{equation}
+  \Geff(N) = \sigN \cdot \GPDL, \qquad \sigN \equiv 1 - \bigl(1 - \kappaPDL\bigr)^{N},
+  \label{eq:Geff}
+\end{equation}
+where $N$ is the number of coherent closure units in the local environment, and $\kappaPDL = 310\phigold/11017 \in \mathbb{Q}(\sqrt{5})$ is an unconditional theorem of the \PDL\ axioms~\cite{D39,D42}. Newton's gravitational constant $G_{\mathrm{Newton}}$ is recovered as the $N \to \infty$ limit $G_{\mathrm{Newton}} = \GPDL$, whilst at any finite density the coupling is suppressed by $\sigN < 1$.
+
+This density dependence has direct consequences for primordial black holes (\textsc{pbh}s), which formed at early cosmological epochs when the local closure density was characterised by $N = \NCMB = 40$~\cite{D27,D35}. Because the Hawking evaporation lifetime scales as $\tau_{\mathrm{BH}} \propto G^{-2}$, the suppression of the gravitational coupling at that epoch implies longer \textsc{pbh} lifetimes and hence a higher survival mass threshold than predicted by standard general relativity (\textsc{gr}).
+
+This document derives the \PDL\ prediction for the \textsc{pbh} survival threshold $\MstarPDL$, characterises the resulting observational signal in the isotropic gamma-ray background (\textsc{igrb}), and identifies the precise test that the community can perform with existing Fermi-LAT data and public spectral codes.
+
+% ============================================================
+\section{The PDL effective gravitational coupling at the PBH epoch}
+% ============================================================
+
+\subsection{The coupling suppression factor}
+
+The cosmological epoch relevant to \textsc{pbh} formation and early evolution is characterised in \PDL\ by the closure density $\NCMB = 40$, derived from the neutron quintuplet structure alone~\cite{D27}:
+\begin{equation}
+  \NCMB = \lfloor \Gamma_n \rfloor = \lfloor 40.102 \rfloor = 40,
+  \qquad \Gamma_n = 6\mu_n - \Rtot(n),
+\end{equation}
+where $\mu_n$ is the neutron's coherence cycle count and $\Rtot(n) = 10992$ is its total relational budget. No cosmological parameter is used as input.
+
+The \PDL\ surface fraction is $\kappaPDL = \Rsurf/\Rtot = 310\phigold/11017$, where $\phigold = (1+\sqrt{5})/2$ is the golden ratio. This is an unconditional theorem of axioms C1--C4~\cite{D42}. Numerically:
+\begin{equation}
+  \kappaPDL = \frac{310\,\phigold}{11017} \approx 0.045529.
+\end{equation}
+
+The suppression factor at the CMB epoch is therefore:
+\begin{equation}
+  \sigma(40) = 1 - \bigl(1 - \kappaPDL\bigr)^{40} \approx 0.844935,
+  \label{eq:sigma40}
+\end{equation}
+and the effective gravitational coupling at that epoch is:
+\begin{equation}
+  \Geff(\NCMB) = \sigma(40)\cdot\GPDL \approx 0.8449\,G_{\mathrm{Newton}}.
+\end{equation}
+
+\subsection{Impact on the Hawking evaporation lifetime}
+
+The Hawking evaporation lifetime of a Schwarzschild black hole of mass $M$ is~\cite{Hawking1975,MacGibbon1991}:
+\begin{equation}
+  \tau_{\mathrm{BH}}(M) = \frac{5120\,\pi\,G^2\,M^3}{\hbar\,c^4\,f(g^*)},
+  \label{eq:tau}
+\end{equation}
+where $f(g^*) \approx 3.8$ for the Standard Model degrees of freedom $g^* = 106.75$~\cite{Carr2021}. Because $\tau_{\mathrm{BH}} \propto G^2$, replacing $G$ by $\Geff(\NCMB) = \sigma(40)\cdot G$ yields:
+\begin{equation}
+  \tau_{\mathrm{PDL}}(M) = \frac{\tau_{\mathrm{GR}}(M)}{\sigma(40)^2},
+  \label{eq:tau_PDL}
+\end{equation}
+so \PDL\ lifetimes at the \textsc{pbh} epoch are longer than \textsc{gr} lifetimes by a factor:
+\begin{equation}
+  \frac{\tau_{\mathrm{PDL}}}{\tau_{\mathrm{GR}}} = \sigma(40)^{-2} = 1.4007.
+\end{equation}
+
+% ============================================================
+\section{The PDL survival threshold}
+% ============================================================
+
+\subsection{Derivation}
+
+The standard \textsc{gr} survival threshold $\MstarGR$ is defined by $\tau_{\mathrm{GR}}(\MstarGR) = \tU$, where $\tU \approx 13.8$\,Gyr is the age of the universe~\cite{Planck2018}. The canonical value is~\cite{MacGibbon1991,Carr2021}:
+\begin{equation}
+  \MstarGR \approx 5.1 \times 10^{14}\,\mathrm{g}.
+\end{equation}
+
+The \PDL\ threshold $\MstarPDL$ is defined by $\tau_{\mathrm{PDL}}(\MstarPDL) = \tU$. Using equation~\eqref{eq:tau_PDL}:
+\begin{equation}
+  \frac{\tau_{\mathrm{GR}}(\MstarPDL)}{\sigma(40)^2} = \tU
+  \quad\Rightarrow\quad
+  \tau_{\mathrm{GR}}(\MstarPDL) = \sigma(40)^2\,\tU.
+\end{equation}
+Since $\tau_{\mathrm{GR}} \propto M^3$, this gives:
+\begin{equation}
+  \frac{\MstarPDL}{\MstarGR} = \left(\frac{\tU}{\sigma(40)^2\,\tU}\right)^{1/3} = \sigma(40)^{-2/3}.
+  \label{eq:ratio}
+\end{equation}
+
+\begin{prediction}[\PDL\ survival threshold]
+\begin{equation}
+  \boxed{\MstarPDL = \sigma(40)^{-2/3}\,\MstarGR = 1.11888\,\MstarGR \approx 5.706 \times 10^{14}\,\mathrm{g}.}
+  \label{eq:MstarPDL}
+\end{equation}
+The shift relative to the \textsc{gr} value is $+11.89\%$, derived from a single unconditional theorem ($\kappaPDL$) with no free parameter.
+\end{prediction}
+
+\subsection{Numerical verification}
+
+All numerical values are derived from the exact expression $\kappaPDL = 310\phigold/11017 \in \mathbb{Q}(\sqrt{5})$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source} \\
+\midrule
+$\phigold$ & $(1+\sqrt{5})/2$ & exact \\
+$\kappaPDL$ & $310\phigold/11017 \approx 0.04552878$ & \cite{D42} \\
+$\sigma(40)$ & $1-(1-\kappaPDL)^{40} \approx 0.84493508$ & equation~\eqref{eq:sigma40} \\
+$\sigma(40)^{-2}$ & $1.400726$ & \\
+$\sigma(40)^{-2/3}$ & $1.118882$ & equation~\eqref{eq:ratio} \\
+$\MstarGR$ & $5.100\times10^{14}$\,g & \cite{MacGibbon1991,Carr2021} \\
+$\MstarPDL$ & $5.706\times10^{14}$\,g & equation~\eqref{eq:MstarPDL} \\
+$\Delta\Mstar / \MstarGR$ & $+11.89\%$ & \\
+\bottomrule
+\end{tabular}
+\caption{Numerical values entering the \PDL\ threshold prediction. All quantities flow from the single unconditional theorem $\kappaPDL = 310\phigold/11017$ and the derived value $\NCMB = 40$.}
+\label{tab:numerics}
+\end{table}
+
+\textit{Internal consistency check.} One may verify the coherence of the result: $(\MstarPDL/\MstarGR)^3 = \sigma(40)^{-2} = 1.400726$, confirming that the modified threshold indeed satisfies $\tau_{\mathrm{PDL}}(\MstarPDL) = \tU$ exactly.
+
+% ============================================================
+\section{The observational signature}
+% ============================================================
+
+\subsection{Physical picture}
+
+\textsc{pbh}s in the mass window $[\MstarGR, \MstarPDL] = [5.10, 5.71]\times10^{14}$\,g present the following behaviour under the two frameworks:
+\begin{itemize}
+  \item \emph{Standard \textsc{gr}}: $\tau_{\mathrm{GR}}(M) < \tU$ for all $M < \MstarGR$, so these \textsc{pbh}s have fully evaporated and contribute zero flux to the present-day \textsc{igrb}.
+  \item \emph{\PDL}: $\tau_{\mathrm{PDL}}(M) > \tU$ for all $M > \MstarPDL$. \textsc{pbh}s with $M \in [\MstarGR, \MstarPDL]$ have $\tau_{\mathrm{GR}}(M) < \tU$ yet $\tau_{\mathrm{PDL}}(M) > \tU$, so they are still active today and contribute positively to the \textsc{igrb}.
+\end{itemize}
+The \PDL\ prediction therefore implies an \emph{excess of present-day Hawking radiation flux} from the mass window $[\MstarGR, \MstarPDL]$ relative to the \textsc{gr} baseline.
+
+\subsection{Spectral localisation}
+
+The Hawking temperature of a black hole of mass $M$ is:
+\begin{equation}
+  T_H(M) = \frac{\hbar\,c^3}{8\pi\,G\,M\,k_B},
+\end{equation}
+which evaluates to:
+\begin{align}
+  T_H(\MstarGR)  &\approx 20.7\,\mathrm{MeV}, \\
+  T_H(\MstarPDL) &\approx 18.5\,\mathrm{MeV}.
+\end{align}
+The peak photon energy in the Hawking spectrum scales approximately as $E_{\mathrm{peak}} \sim 5\,T_H$~\cite{MacGibbon1991}, giving:
+\begin{equation}
+  E_{\mathrm{peak}} \approx 93\text{--}104\,\mathrm{MeV},
+\end{equation}
+which falls squarely within the Fermi-LAT energy range of 20\,MeV to 300\,GeV~\cite{Atwood2009}.
+
+\subsection{Nature of the signal}
+
+The signal is not a shift in the \emph{abundance} of \textsc{pbh}s, which \PDL\ does not predict. It is a shift in the \emph{survival threshold}: the lower spectral cutoff of the Hawking contribution to the \textsc{igrb} is displaced from $E_{\mathrm{peak}}(\MstarGR) \approx 104$\,MeV to $E_{\mathrm{peak}}(\MstarPDL) \approx 93$\,MeV. In practice, if the initial \textsc{pbh} abundance $f_{\mathrm{PBH}}$ is non-zero in the window $[\MstarGR, \MstarPDL]$, one expects:
+\begin{itemize}
+  \item An excess of \textsc{igrb} flux at $E \lesssim 104$\,MeV relative to the \textsc{gr} prediction.
+  \item The spectral shape of the excess follows the standard Hawking spectrum~\cite{MacGibbon1990} evaluated at $T_H \approx 19$--$21$\,MeV.
+  \item The fractional shift in the spectral cutoff is $\Delta E/E \approx 10.6\%$, comparable to the Fermi-LAT spectral resolution at 100\,MeV ($\sim 10$--$20\%$).
+\end{itemize}
+
+\subsection{Additional prediction: entropy suppression}
+
+A complementary prediction concerns the integrated entropy-to-energy ratio of \textsc{pbh}-seeded objects at high redshift. The \PDL\ suppression factor at epoch $N$ is $\sigma(N)^2$, so:
+\begin{equation}
+  \frac{S_{\mathrm{PDL}}}{E_{\mathrm{PDL}}} \propto \sigma(N(z))^2 \cdot \left(\frac{S}{E}\right)_{\mathrm{GR}},
+\end{equation}
+predicting a systematic redshift dependence of the entropy-to-energy ratio in AGN populations seeded by \textsc{pbh}s~\cite{D38}. At $z$ corresponding to $N = 40$ ($z \sim z_{\mathrm{CMB}}$), the suppression factor is $\sigma(40)^2 = 0.7139$, i.e.\ a 28.6\% reduction relative to the local value.
+
+% ============================================================
+\section{How to test this prediction}
+% ============================================================
+
+The \PDL\ prediction can be tested quantitatively using entirely public tools and data.
+
+\paragraph{Step 1 — Compute the Hawking spectra.} Use \textsc{BlackHawk}~\cite{BlackHawk} (v2.1 or later) to compute the differential photon flux $d\Phi_\gamma/dE$ for a monochromatic \textsc{pbh} mass distribution centred at $M = \MstarGR$ and at $M = \MstarPDL = 5.706\times10^{14}$\,g separately. The code integrates over all Standard Model degrees of freedom and includes both primary and secondary (fragmentation) contributions.
+
+\paragraph{Step 2 — Normalise to the IGRB constraints.} Use \textsc{Isatis}~\cite{Isatis} to compare the computed spectra against the Fermi-LAT \textsc{igrb} measurement of Ackermann et al.~\cite{FermiIGRB2015} and the constraint compilation of Carr et al.~\cite{Carr2021}. The relevant quantity is the upper limit on $f_{\mathrm{PBH}}(M)$ in the window $[5.10, 5.71]\times10^{14}$\,g.
+
+\paragraph{Step 3 — Identify the discriminating observable.} The discriminating quantity is the position of the spectral cutoff in the 50--200\,MeV band of the \textsc{igrb}. Under \textsc{gr}, this cutoff occurs at $E_c \approx 104$\,MeV; under \PDL, it is displaced to $E_c \approx 93$\,MeV. A fit to the Fermi-LAT \textsc{igrb} spectrum in this band with $E_c$ as a free parameter constitutes a direct test of the \PDL\ prediction.
+
+\paragraph{Step 4 — Complementary constraint from the entropy-to-energy ratio.} An independent test uses the redshift dependence of the entropy-to-energy ratio in AGN populations. The predicted scaling $S/E \propto \sigma(N(z))^2$ can be confronted with multi-epoch surveys such as those from DESI or Euclid.
+
+% ============================================================
+\section{Relation to the PDL causal chain}
+% ============================================================
+
+The \textsc{pbh} threshold prediction is not an isolated result but a corollary of the causal chain established in the \PDL\ corpus. The complete chain from axioms to the present prediction is:
+
+\begin{equation*}
+\begin{split}
+  &\mathrm{C1\text{--}C4}
+  \;\xrightarrow{\text{D16a}}\; K_4
+  \;\xrightarrow{\text{D16b, D29}}\; \text{quintuplet}
+  \;\xrightarrow{\text{D39, D42}}\; \kappaPDL 
+  \;\xrightarrow{\text{D24}}\; \\ &\sigN
+  \;\xrightarrow{\text{D31, D36, D42}}\; \Geff(N)
+  \;\xrightarrow{\text{D27}}\; N_{\mathrm{CMB}}=40
+  \;\xrightarrow{\text{D38}}\; \MstarPDL.
+\end{split}
+\end{equation*}
+
+Every arrow in this chain has been proved as an unconditional theorem of C1--C4 (see D43v3~\cite{D43v3} for the complete synthesis). The prediction $\MstarPDL$ inherits the unconditional character of each link; it contains no free parameter beyond the Standard Model degrees of freedom $g^*$ entering the Hawking spectrum, which are taken from the literature~\cite{Carr2021}.
+
+\paragraph{Position within the PDL corpus.} This document constitutes D45 of the PDL corpus. The global mapping of all documents, open problems, and resolved results is maintained in the D-Map~\cite{DM}, currently at version 16.
+
+% ============================================================
+\section{Discussion}
+% ============================================================
+
+\paragraph{What this prediction does and does not claim.}
+The \PDL\ framework predicts the \emph{position} of the \textsc{pbh} survival threshold, not the \emph{abundance} of \textsc{pbh}s in any mass window. The observational signal therefore depends on the initial \textsc{pbh} mass function, which is cosmological model-dependent and not determined by \PDL. If $f_{\mathrm{PBH}}$ is negligibly small in $[\MstarGR, \MstarPDL]$, the signal will be below any present detection threshold. In that case the prediction cannot be confirmed, but it is also not falsified. Falsification would require demonstrating that the \textsc{igrb} spectral cutoff is definitively located at $E_c^{\mathrm{GR}} \approx 104$\,MeV rather than at $E_c^{\mathrm{PDL}} \approx 93$\,MeV, together with a non-negligible $f_{\mathrm{PBH}}$ in the relevant window.
+
+\paragraph{Comparison with other modified-gravity scenarios.}
+Several alternative frameworks also predict modifications to the Hawking evaporation rate, including models with extra dimensions~\cite{Anchordoqui2022}, memory-burden effects~\cite{Thoss2024}, and dark charges~\cite{Korwar2023}. The \PDL\ prediction is distinguished by three features: (i) the shift is derived from a single unconditional combinatorial theorem ($\kappaPDL \in \mathbb{Q}(\sqrt{5})$), not from a new adjustable parameter; (ii) the same framework simultaneously derives $G$, $\alpha$, $\mu^*$, and the Hubble tension resolution; (iii) the shift is positive (heavier threshold) and of a specific magnitude ($+11.89\%$) that does not depend on any model tuning.
+
+\paragraph{Sensitivity requirements.}
+The spectral displacement $\Delta E/E \approx 10.6\%$ is at the boundary of current Fermi-LAT sensitivity at 100\,MeV. A dedicated analysis using the full 15+ years of Fermi-LAT data, focusing on the \textsc{igrb} spectrum in the 50--200\,MeV window, would provide the most constraining test. Next-generation MeV telescopes such as AMEGO-X~\cite{AMEGO} and e-ASTROGAM~\cite{eASTROGAM} would improve the sensitivity substantially, potentially resolving the spectral cutoff position to better than 5\%.
+
+% ============================================================
+\section{Conclusion}
+% ============================================================
+
+The \PDL\ framework predicts that the primordial black hole survival mass threshold is shifted upward by $+11.89\%$ relative to the standard \textsc{gr} value, giving:
+\begin{equation}
+  \MstarPDL = \sigma(40)^{-2/3}\,\MstarGR \approx 5.706 \times 10^{14}\,\mathrm{g}.
+\end{equation}
+This prediction is an unconditional corollary of the density-dependent effective gravitational coupling $\Geff(N) = \sigN\cdot\GPDL$, itself proved from the \PDL\ axioms C1--C4 without any free parameter. The resulting observable is a shift of $\approx 11$\,MeV in the spectral cutoff of the Hawking contribution to the isotropic gamma-ray background, in the $\sim 90$--$105$\,MeV range accessible to Fermi-LAT.
+
+The test requires computing the Hawking photon spectrum with \textsc{BlackHawk} at $M = 5.706\times10^{14}$\,g and comparing it with the Fermi-LAT \textsc{igrb} data using \textsc{Isatis}. This is a standard numerical procedure well within the capacity of existing codes and data. We invite the community to perform this test and report the result, whether confirmatory or falsifying.
+
+\begin{prediction}[Summary]
+\textbf{PDL prediction D45:} The \textsc{pbh} survival mass threshold satisfies $\MstarPDL = \sigma(40)^{-2/3}\,\MstarGR = 5.706\times10^{14}$\,g. The Hawking flux from \textsc{pbh}s in the window $[5.10,\,5.71]\times10^{14}$\,g contributes a non-zero signal to the present-day \textsc{igrb} at $E_{\mathrm{peak}} \approx 93$--$104$\,MeV. This signal is absent in standard \textsc{gr}. It can be tested with \textsc{BlackHawk} + \textsc{Isatis} + Fermi-LAT \textsc{igrb} data.
+\end{prediction}
+
+% ── Acknowledgements ──────────────────────────────────────
+\section*{Acknowledgements}
+
+This work is part of the PDL research programme, conducted independently. All corpus documents are open-access on Zenodo under the PDL community (\url{https://zenodo.org/communities/pdl-framework}) and on GitHub (\url{https://github.com/laubscher-lab/PDL-framework}).
+
+% ── Bibliography ──────────────────────────────────────────
+\bibliography{D45_references}
+
+\end{document}
