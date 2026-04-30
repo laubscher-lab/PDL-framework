@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 27 — 29 April 2026*
+*Last updated: Session 28 — 30 April 2026*
 
 ---
 
@@ -138,9 +138,62 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   chain (resolved by D42), and that its necessity follows from the absence of any discriminating
   structure in the PDL framework (ontological argument complementary to D42 proof).
 
+**Session 28 — Exploration computationnelle : résonance de cohérence nucléaire (30 April 2026):**
+- Exploration exploratoire D-exp-NCR (non publiée) : five computational notebooks (v1–v5)
+  investigating whether PDL structural quantities predict material properties of pure elements.
+- Materials Project API (mp-api + pymatgen) used for crystal structure data (coordinances
+  via CrystalNN, volumes, symmetry groups).
+- Four approaches tested systematically, all yielding negative results (properly bounded):
+
+  **v1/v2 — ρ_mode (arithmetic resonance of R_tot):**
+  Condition: divisibility of R_tot(Z,N_n) = Z·11017 + N_n·10992 by 4S (mode periods from D18).
+  Result: signal is an artefact of the arithmetic richness of R_tot. C-12, Fe-56, Pb-208
+  have R_tot = 2 × (large prime) → Φ = 0, which is anti-correlated with their physical
+  stability. Negative result: the D18 resonance condition does not transfer to nuclear
+  architectures without axiomatic derivation of the commensurability criterion.
+
+  **v3b — σ(N_coord) and dσ/dN:**
+  σ(N) = 1−(1−κ)^N evaluated at N = crystallographic coordination number (FCC=12, BCC=8,
+  diamond=4, graphene=3). Correlations with kth, T_Debye, E_coh, B_mod tested.
+  Result: all signal comes from N_coord (lattice type). κ(Z,N_n) varies over ~10⁻⁴ between
+  elements — too small to discriminate at fixed N_coord. Residual correlation (κ vs E_coh
+  in covalent group) proved spurious via Z regression (r_residual = 0.245, p = 0.640).
+  Negative result: σ(N_coord) is a proxy for lattice topology, not a PDL signal proper.
+
+  **v4 — B_PDL = N_c · R_surf(Z,N_n)² / R_tot(Z,N_n):**
+  R_surf(Z,N_n) = Z·310φ + N_n·R_surf_n grows with Z over two orders of magnitude.
+  Best correlation: B_PDL vs T_Debye, r = −0.641, p = 0.0006 (MP coordinances).
+  Residual test (hors A): r = −0.354, p = 0.083 for T_Debye; r = −0.434, p = 0.030
+  for E_coh. Regression slope B_PDL/A vs E_coh: pente = −0.54 ≠ 1 (not linear).
+  Negative result: B_PDL ∝ Z²·N_c — all correlations are confounded with Z and N_c.
+
+  **v5 — Collective PDL cavity on crystal lattices:**
+  Crystal mailles (FCC, BCC, diamond, graphene) constructed as signed graphs. Signs assigned
+  by greedy 2-colouring. Evolution rule: circular rotation over neighbours (deterministic).
+  Result: N_min = 2 for all lattices (trivial binary pulsation). ε(t) structured only for FCC
+  (odd cycles present); BCC/diamond/graphene are bipartite → ε = 0 always.
+  Negative result: the circular-rotation evolution rule is degenerate. It cannot discriminate
+  lattice topologies because it visits only one edge per step. The D18 rule encodes (nₓ,n_y,nz)
+  triple indexing — this cannot be trivially transposed to an arbitrary coordination graph
+  without deriving the rule from C1–C4 for variable-coordination graphs.
+
+- **Structural conclusion of Session 28 exploration:**
+  PDL at the single-nucleon / nearest-neighbour scale does not produce discriminating
+  predictions for bulk material properties with currently available tools. The reasons
+  are structural: (i) κ(Z,N_n) has ~10⁻⁴ dynamic range between elements; (ii) R_surf ∝ Z
+  is confounded with Z; (iii) the D18 evolution rule requires axiomatic derivation for
+  arbitrary graphs before it can be applied to crystal cavities.
+
+- **The correct next step (identified, not yet formalised):**
+  The collective PDL cavity approach (v5) is conceptually correct but requires deriving
+  the mode-indexing rule from C1–C4 for graphs of arbitrary coordination. This is a
+  corpus-level question, not an exploratory one. It should be pursued as a formal
+  document once the programme's dissemination priorities (journal submission, HAL
+  moderation, Arbey/Auffinger response) are addressed.
+
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 27)
+## Corpus Table (Zenodo canonical order — updated Session 28)
 
 *Note: Document numbering follows the Zenodo canonical order.*
 
@@ -324,47 +377,48 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 [D21]  https://doi.org/10.5281/zenodo.19056994
        Universal_Coherence_Leakage_V3.pdf
-       Universal Coherence Leakage and the Bridge Formula Δr_val = ε_G·R·C
+       Universal Coherence Leakage: A Structural Bridge between G and α in PDL (V3)
+       *** PRIMARY RESULT: bridge formula Δr_val = ε_G·R·C ***
 
 [DN]   https://doi.org/10.5281/zenodo.19076555
-       Whatever_We_May_Be_book.pdf
-       Whatever We May Be — The Projective Dynamic Logo: A Journey to the Foundations of Physical Reality
+       Whoever_we_may_be___The_Projective_Dynamic_Logo_v2.pdf
+       Whatever We May Be — The Projective Dynamic Logo (popular book, EN)
 
 [D22]  https://doi.org/10.5281/zenodo.19164084
-       Nuclear_Stability_Closure_Hierarchies.pdf
-       Nuclear Stability and the Periodic Table as Closure Hierarchies in PDL
+       Pdl_nuclear_stability_skeleton.pdf
+       Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in PDL
 
 [D23]  https://doi.org/10.5281/zenodo.19197268
-       Topological_Origin_Exponent_18.pdf
-       Topological Origin of the Exponent 18: K₄, S², and the Periodic Table
+       PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
+       Topological Origin of the Exponent 18 in PDL: K₄, S², and the Periodic Table (v2)
 
 [D24]  https://doi.org/10.5281/zenodo.19206960
-       Closure_Density_Dependence_G_eff.pdf
+       Closure_Density_Dependence_of_the_Effective_Gravitational_Coupling_and_the_Structural_Origin_of_the_Hubble_Tension.pdf
        Closure-Density Dependence of G_eff and the Structural Origin of the Hubble Tension
 
 [D25]  https://doi.org/10.5281/zenodo.19219858
-       Parameter_Free_Bridge_alpha_G.pdf
-       A Parameter-Free Structural Bridge between α and G in the PDL Framework
+       A_ParSchodinger_PDL_v2.tex
+       Parameter-Free Structural Bridge Between α and G in the PDL Framework (v2)
 
 [D26]  https://doi.org/10.5281/zenodo.19221310
-       Cosmological_Resolution_Hubble_PDL.pdf
-       Cosmological Resolution of the Hubble Tension via the PDL Framework
+       Pdl_hubble_resolution.pdf
+       Cosmological Resolution of the Hubble Tension via PDL Closure-Density Dependence
 
 [D27]  https://doi.org/10.5281/zenodo.19281988
-       N_CMB_Neutron_Architecture.pdf
-       N_CMB from the Neutron Architecture: a Parameter-Free Hubble Prediction
+       Structural_Derivation_of_N_CMB.pdf
+       Structural Derivation of N_CMB from the PDL Neutron Architecture and Parameter-Free Resolution of the Hubble Tension
 
 [D28]  https://doi.org/10.5281/zenodo.19282932
-       PDL_QCD_Boundary.pdf
-       PDL–QCD Boundary, Mass Ratio Correction, and the ε_G Conjecture
+       PDL_QCD_boundary.pdf
+       The PDL–QCD Boundary: Mass Ratio Correction and ε_G Structural Conjecture
 
 [D29]  https://doi.org/10.5281/zenodo.19283107
-       Axiomatic_Derivation_155_11017.pdf
-       Axiomatic Derivation of 155/11017 from C1–C4 — Gate 1 Resolved
+       D29_Gate1.pdf
+       Axiomatic Derivation of 155/11017 from C1–C4: Gate 1 Resolved
 
 [D30]  https://doi.org/10.5281/zenodo.19294449
-       QCD_Coefficient_a2.pdf
-       The QCD Coefficient a=2 is Structurally Forced — Gate 2 Resolved
+       D30_Gate2.pdf
+       QCD Coefficient a=2 Structurally Forced: Gate 2 Resolved
 
 [D31]  https://doi.org/10.5281/zenodo.19294984
        G_eff_Gate3_preliminary.pdf
@@ -517,6 +571,15 @@ T_H(M*_PDL) ≈ 18.5 MeV → E_peak ≈ 93 MeV [PDL]
 Spectral cutoff shift: ΔE/E ≈ −10.6% (prediction P9)
 Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, non-zero in PDL
 
+Session 28 — D-exp-NCR numerical results (exploratory, not published):
+κ_p = 310φ/11017 ≈ 0.04552878; κ_n = R_surf_n/R_tot_n ≈ 0.04534415
+R_surf_n = R_surf_p·√(R_sea_n/R_sea_p) ≈ 498.42 [Convention A, not yet axiomatically derived]
+T_PDL = R_surf_p²/R_sea_n ≈ 25.260 ≈ (Δn+1)² [D40 identity]
+σ(N_coord): FCC(N=12)=0.4283, BCC(N=8)=0.3112, diamond(N=4)=0.1701, graphene(N=3)=0.1305
+dσ/dN: graphene=0.03959, diamond=0.03779, BCC=0.03136, FCC=0.02603
+Best observed correlation (all approaches): B_PDL vs T_Debye, r=−0.641, p=0.0006 (confounded with Z)
+Residual signal after Z-regression: absent (r<0.35) for all approaches
+
 ---
 
 ## Numbering Corrections Log
@@ -598,7 +661,7 @@ Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, no
 
 ---
 
-## Epistemic Status Summary (updated Session 27)
+## Epistemic Status Summary (updated Session 28)
 
 | Result | Status | Source |
 |--------|--------|--------|
@@ -634,10 +697,11 @@ Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, no
 | ε_G = ε_geom × k^18 — causal chain | **COMPLETE — no remaining OP** | D43v3, D44 |
 | M*_PDL = σ(40)^(−2/3)·M*_GR (+11.89%) | **Unconditional prediction (P5)** | D45 |
 | IGRB spectral cutoff at 93 MeV (PDL) vs 104 MeV (GR) | **Falsifiable prediction (P9)** | D45 |
+| PDL quantities discriminate bulk crystal properties | **Negative result (bounded)** | Session 28, D-exp-NCR |
 
 ---
 
-## Open Problems (updated Session 27)
+## Open Problems (updated Session 28)
 
 **OP-A:** RESOLVED (Session 23) — E_bord general formula proved analytically.
 **OP-B:** RESOLVED (Session 24, D44) — k derived from C1–C4 as unconditional theorem.
@@ -653,10 +717,11 @@ Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, no
 | OP3 (D40) | Lacunae at Z=43 (technetium) and Z=61 (promethium) | MEDIUM | D40 |
 | OP5 (D35) | CMB angular power spectrum impact of G_eff(N) | MEDIUM | D35 |
 | OP12/BH-3 | Derive S_BH coefficient 1/4 from axioms (= OP14) | HIGH | D38 |
+| OP-NCR | Derive D18 evolution rule from C1–C4 for arbitrary-coordination graphs | FUTURE | Session 28 |
 
 ---
 
-## Next Actions (updated Session 27)
+## Next Actions (updated Session 28)
 
 1.  **[IMMEDIATE]** Await response from Arbey & Auffinger (email sent Session 27).
 2.  **[IMMEDIATE]** Confirm HAL identifiers for D42, D43v3, D44, DM v17, DN once moderation complete. Update affiliation if needed.
@@ -669,11 +734,26 @@ Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, no
 9.  **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms.
 10. **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium).
 11. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35).
-12. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
-13. **[FUTURE]** Monitor μ precision measurements.
-14. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
-15. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
-16. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+12. **[FUTURE]** OP-NCR: Derive D18 mode-indexing rule from C1–C4 for graphs of arbitrary
+    coordination. Prerequisite for collective PDL cavity approach to crystal physics.
+    Not a priority until dissemination programme is stabilised.
+13. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
+14. **[FUTURE]** Monitor μ precision measurements.
+15. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
+16. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
+17. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+
+**Completed in Session 28 (30 April 2026):**
+- ✓ Exploratory investigation D-exp-NCR: five computational notebooks (v1–v5) on
+  PDL nuclear coherence resonance and crystal physics — Materials Project API used
+- ✓ Four approaches tested and closed with negative results (properly bounded):
+  ρ_mode arithmetic resonance (v1/v2), σ(N_coord) engagement fraction (v3b),
+  B_PDL = N_c·R_surf²/R_tot energy coupling (v4), collective PDL cavity on crystal
+  lattices with signed-graph evolution (v5)
+- ✓ Structural conclusion documented: PDL at single-nucleon scale does not discriminate
+  bulk material properties with current tools; κ dynamic range ~10⁻⁴ is insufficient
+- ✓ Correct next step identified: OP-NCR (derive D18 rule for arbitrary graphs, corpus-level)
+- ✓ PDL_context.md updated to Session 28
 
 **Completed in Session 27 (29 April 2026):**
 - ✓ D45 deposited on HAL (hal-05605947v1) — En modération
@@ -731,7 +811,7 @@ Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, no
 
 ---
 
-## Dependency Map — Critical Path (updated Session 27)
+## Dependency Map — Critical Path (updated Session 28)
 
 Reading guide: the map is organised in strict logical layers.
 [✓] = unconditional theorem from C1–C4.   [?] = open frontier (non-blocking).
@@ -847,7 +927,16 @@ Each layer depends entirely on the layers above it.
   HAL: D42, D43v3, D44, D45, DM v17, DN — En modération (Session 27)
   Email: Arbey + Auffinger (IP2I Lyon) — sent 29 April 2026
   arXiv: pending HAL → arXiv transfer (D42 candidate, math-ph)
-  Journal submission: NEXT PRIORITY
+  Journal submission: HIGH PRIORITY
+
+  ═══════════════════════════════════════════════════════════════════
+  LAYER 12 — EXPLORATORY (Session 28 — non-blocking, not published)
+  ═══════════════════════════════════════════════════════════════════
+
+  D-exp-NCR: PDL nuclear coherence resonance — crystal physics
+  Result: NEGATIVE (properly bounded) — four approaches closed
+  Open question: OP-NCR — D18 rule for arbitrary-coordination graphs
+  [?] OP-NCR: derive mode-indexing from C1–C4 for variable N_coord graphs
 ```
 
 **Resolved milestones:**
@@ -876,11 +965,12 @@ OP2  (D35) : full derivation of coherence tensor C_coh from axioms         [MEDI
 OP3  (D40) : lacunae at Z=43 (technetium) and Z=61 (promethium)           [MEDIUM]
 OP5  (D35) : CMB angular power spectrum impact of G_eff(N)                 [MEDIUM]
 P7/P8      : B(E2) ratios ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd — FRIB/RIKEN          [FUTURE]
+OP-NCR     : derive D18 mode-indexing rule for arbitrary-coord. graphs     [FUTURE]
 ```
 
 ---
 
-## Epistemic Architecture (updated Session 27)
+## Epistemic Architecture (updated Session 28)
 
 **Layer 1 — Axioms → combinatorial results (fully rigorous, unconditional):**
 K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
@@ -951,6 +1041,14 @@ D42, D43v3, D44, D45, DM v17, DN deposited on HAL — En modération.
 Email sent to Arbey & Auffinger (IP2I Lyon) — first direct external contact.
 HAL → arXiv transfer possible for D42 (math-ph, pending .bbl + sources).
 Next priority: journal submission (Physical Review D or European Physical Journal C).
+
+**Layer 16 — Exploratory frontier: crystal physics (Session 28):**
+D-exp-NCR: five computational notebooks tested four approaches to PDL predictions for
+bulk material properties of pure elements (Materials Project API used for crystal data).
+Result: NEGATIVE (all four approaches properly bounded). Structural reason: κ dynamic
+range ~10⁻⁴ is insufficient for discrimination; B_PDL confounded with Z; D18 evolution
+rule not axiomatically derivable for arbitrary-coordination graphs without new corpus work.
+OP-NCR identified as the correct next step (corpus-level, not exploratory).
 
 ---
 
