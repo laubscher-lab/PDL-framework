@@ -259,3 +259,13 @@ D45
 https://doi.org/10.5281/zenodo.19810259 
 Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework: A Falsifiable Prediction for Fermi-LAT
 D45_pbh_threshold.pdf
+
+DN-fr
+https://doi.org/10.5281/zenodo.19924230 
+Quoi que nous soyons — Le Logo Dynamique Projectif 
+Quoi_que_nous_soyons___Le_Logo_Dynamique_Projectif_v2.pdf 
+
+D46 
+https://doi.org/10.5281/zenodo.19956932
+Born's Rule Level 2: Derivation of U(1) Phase Freedom from the K₄ Pulsation Structure in the PDL Framework
+D46___Born_s_Rule_Level_2.pdf 
