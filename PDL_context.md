@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 28 — 30 April 2026*
+*Last updated: Session 29 — 1 May 2026*
 
 ---
 
@@ -132,8 +132,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - DN deposited on HAL — Ouvrage. Status: En modération.
 - Email sent to Alexandre Arbey (arbey@in2p3.fr) and Jérémy Auffinger
   (j.auffinger@ipnl.in2p3.fr), IP2I Lyon, requesting confrontation of M*_PDL = 5.706×10¹⁴ g
-  against Fermi-LAT IGRB data using BlackHawk + Isatis. Subject: "A parameter-free PBH
-  evaporation threshold prediction testable with BlackHawk and Isatis."
+  against Fermi-LAT IGRB data using BlackHawk + Isatis.
 - H3 / Indifférence Lemma discussed: confirmed that H3 is not an open problem in the causal
   chain (resolved by D42), and that its necessity follows from the absence of any discriminating
   structure in the PDL framework (ontological argument complementary to D42 proof).
@@ -141,59 +140,52 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 **Session 28 — Exploration computationnelle : résonance de cohérence nucléaire (30 April 2026):**
 - Exploration exploratoire D-exp-NCR (non publiée) : five computational notebooks (v1–v5)
   investigating whether PDL structural quantities predict material properties of pure elements.
-- Materials Project API (mp-api + pymatgen) used for crystal structure data (coordinances
-  via CrystalNN, volumes, symmetry groups).
+- Materials Project API (mp-api + pymatgen) used for crystal structure data.
 - Four approaches tested systematically, all yielding negative results (properly bounded):
+  ρ_mode arithmetic resonance (v1/v2), σ(N_coord) engagement fraction (v3b),
+  B_PDL energy coupling (v4), collective PDL cavity on crystal lattices (v5).
+- Structural conclusion: PDL at single-nucleon / nearest-neighbour scale does not produce
+  discriminating predictions for bulk material properties with currently available tools.
+  κ dynamic range ~10⁻⁴ is insufficient; R_surf ∝ Z confounded with Z; D18 evolution rule
+  requires axiomatic derivation for arbitrary graphs before application to crystal cavities.
+- Correct next step identified: OP-NCR (derive D18 mode-indexing rule from C1–C4 for
+  variable-coordination graphs) — corpus-level question, not exploratory.
 
-  **v1/v2 — ρ_mode (arithmetic resonance of R_tot):**
-  Condition: divisibility of R_tot(Z,N_n) = Z·11017 + N_n·10992 by 4S (mode periods from D18).
-  Result: signal is an artefact of the arithmetic richness of R_tot. C-12, Fe-56, Pb-208
-  have R_tot = 2 × (large prime) → Φ = 0, which is anti-correlated with their physical
-  stability. Negative result: the D18 resonance condition does not transfer to nuclear
-  architectures without axiomatic derivation of the commensurability criterion.
+**Session 29 — D46 produced; OP14 numerically resolved; D48 preparation (1 May 2026):**
+- D46 produced and compiled on Overleaf: "Born's Rule Level 2: Derivation of U(1) Phase
+  Freedom from the K₄ Pulsation Structure in the PDL Framework". Resolves OP4 of DM v17.
+  Three propositions with complete proofs: (P1) global sign equivalence s ∼ −s generates
+  the Hopf fibration S¹ ↪ S³ → S²; (P2) (A)∧(B) is U(1)-invariant, verified over all 8
+  K₄ configurations, Table 2; (P3) unique U(1)-equivariant extension of Born Level 1 is the
+  round measure on S³, yielding P = |⟨θ|ψ⟩|². Remark on superconductivity and Ginzburg–Landau
+  condensate added (Section 7, Remark 7.7). DOI: pending Zenodo deposit.
+  Depends: D29, D32, D33, D34. Resolves: OP4. Opens: OP1-D46, OP2-D46.
 
-  **v3b — σ(N_coord) and dσ/dN:**
-  σ(N) = 1−(1−κ)^N evaluated at N = crystallographic coordination number (FCC=12, BCC=8,
-  diamond=4, graphene=3). Correlations with kth, T_Debye, E_coh, B_mod tested.
-  Result: all signal comes from N_coord (lattice type). κ(Z,N_n) varies over ~10⁻⁴ between
-  elements — too small to discriminate at fixed N_coord. Residual correlation (κ vs E_coh
-  in covalent group) proved spurious via Z regression (r_residual = 0.245, p = 0.640).
-  Negative result: σ(N_coord) is a proxy for lattice topology, not a PDL signal proper.
+- OP4 RESOLVED: The U(1) phase freedom of quantum mechanics is not a postulate but a
+  structural consequence of the K₄ binary pulsation. The quantum dynamics layer is now
+  complete: Schrödinger (D32), Dirac (D33), Born Level 1 (D34), Born Level 2 (D46),
+  spin-½ double cover (D33), U(1) gauge freedom (D46) — all from C1–C4.
 
-  **v4 — B_PDL = N_c · R_surf(Z,N_n)² / R_tot(Z,N_n):**
-  R_surf(Z,N_n) = Z·310φ + N_n·R_surf_n grows with Z over two orders of magnitude.
-  Best correlation: B_PDL vs T_Debye, r = −0.641, p = 0.0006 (MP coordinances).
-  Residual test (hors A): r = −0.354, p = 0.083 for T_Debye; r = −0.434, p = 0.030
-  for E_coh. Regression slope B_PDL/A vs E_coh: pente = −0.54 ≠ 1 (not linear).
-  Negative result: B_PDL ∝ Z²·N_c — all correlations are confounded with Z and N_c.
+- OP14 NUMERICALLY RESOLVED (31/31, 32/32, zero exception):
+  r_exc(Z) = Δpos_n(Z) for Z = 20 to 80. N_min(Z) reproduced Z = 2–82 at 100%,
+  zero free parameters. Truth table (k_p, ell_p, so_p) → r_exc: 31 entries verified.
+  Structure by regimes: 22/22, r = (a·k_p + b·pos_n + c) mod M.
+  Law on M: M ∈ {Δn−1, Δn, Δn+1} = {3,4,5} derived from Δn = 4 (axiom C1).
+  Constant c per regime: determined by filling trajectory history, not a closed-form
+  spectral function (established exhaustively in Phase 6 of numerical work).
+  Epistemic status: THEOREM (31/31) for r_exc = Δpos_n; VERIFIED LAW (22/22) for
+  regime structure; CONJECTURE for analytic derivation of c from (A)∧(B).
 
-  **v5 — Collective PDL cavity on crystal lattices:**
-  Crystal mailles (FCC, BCC, diamond, graphene) constructed as signed graphs. Signs assigned
-  by greedy 2-colouring. Evolution rule: circular rotation over neighbours (deterministic).
-  Result: N_min = 2 for all lattices (trivial binary pulsation). ε(t) structured only for FCC
-  (odd cycles present); BCC/diamond/graphene are bipartite → ε = 0 always.
-  Negative result: the circular-rotation evolution rule is degenerate. It cannot discriminate
-  lattice topologies because it visits only one edge per step. The D18 rule encodes (nₓ,n_y,nz)
-  triple indexing — this cannot be trivially transposed to an arbitrary coordination graph
-  without deriving the rule from C1–C4 for variable-coordination graphs.
-
-- **Structural conclusion of Session 28 exploration:**
-  PDL at the single-nucleon / nearest-neighbour scale does not produce discriminating
-  predictions for bulk material properties with currently available tools. The reasons
-  are structural: (i) κ(Z,N_n) has ~10⁻⁴ dynamic range between elements; (ii) R_surf ∝ Z
-  is confounded with Z; (iii) the D18 evolution rule requires axiomatic derivation for
-  arbitrary graphs before it can be applied to crystal cavities.
-
-- **The correct next step (identified, not yet formalised):**
-  The collective PDL cavity approach (v5) is conceptually correct but requires deriving
-  the mode-indexing rule from C1–C4 for graphs of arbitrary coordination. This is a
-  corpus-level question, not an exploratory one. It should be pursued as a formal
-  document once the programme's dissemination priorities (journal submission, HAL
-  moderation, Arbey/Auffinger response) are addressed.
+- D48 PREPARATION: three items identified before drafting:
+  (1) Formal causal chain C1–C4 → U(1) (D46) → H_cyc → σ·L → HO-PDL → splitting
+      1/12 → truth table — each arrow must be a named proposition.
+  (2) Explicit epistemic stratification table (theorem / verified law / conjecture).
+  (3) Targeted verification of lacunae Z=43 (technetium) and Z=61 (promethium) —
+      Python script ~20 lines, ~5 minutes.
 
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 28)
+## Corpus Table (Zenodo canonical order — updated Session 29)
 
 *Note: Document numbering follows the Zenodo canonical order.*
 
@@ -250,6 +242,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D43   | 10.5281/zenodo.19678389 | The Causal Chain of Physical Reality — From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) | **Synthesis v3 — causal chain COMPLETE** | Published |
 | D44   | 10.5281/zenodo.19678474 | Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms | **Proof — OP-B RESOLVED** | Published |
 | D45   | 10.5281/zenodo.19810259 | Primordial Black Hole Evaporation Threshold from PDL: A Falsifiable Prediction for Fermi-LAT | **Prediction — P5/P9** | Published |
+| D46   | pending Zenodo deposit | Born's Rule Level 2: Derivation of U(1) Phase Freedom from the K₄ Pulsation Structure | **Proof — OP4 RESOLVED** | Compiled — deposit pending |
 | DM    | 10.5281/zenodo.19811860 | D_Map v17 — Global Mapping of PDL | **Navigation** | Published |
 
 ---
@@ -397,7 +390,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        Closure-Density Dependence of G_eff and the Structural Origin of the Hubble Tension
 
 [D25]  https://doi.org/10.5281/zenodo.19219858
-       A_ParSchodinger_PDL_v2.tex
+       A_Parameter_Free_Structural_Bridge.pdf
        Parameter-Free Structural Bridge Between α and G in the PDL Framework (v2)
 
 [D26]  https://doi.org/10.5281/zenodo.19221310
@@ -441,7 +434,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        Quantitative Einstein Equation from G_eff(N)=σ(N)·G_PDL in the PDL Framework
 
 [D36]  https://doi.org/10.5281/zenodo.19323033
-       Proof_of_G_eff_N____sigma_N__G_PDL_from_the_Trace_Structure_of_K_4_and_Independence_of_Gravitational_Engagement.pdf
+       Proof_of_G_eff_N____sigma_N__G_PDL_from_the_Trace_Structure_of_K_4.pdf
        Proof of G_eff(N)=σ(N)·G_PDL from Trace Structure of K₄ and Independence of Engagement
 
 [D37]  https://doi.org/10.5281/zenodo.19354096
@@ -479,7 +472,6 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        via the Geometric Leakage Parameter (PDL Framework — D43v3)
        *** PUBLISHED SESSION 24 — OP-A resolved; causal chain COMPLETE ***
        *** ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960 are unconditional theorems ***
-       *** k derived from C1–C4 via D44 — causal chain fully closed ***
 
 [D44]  https://doi.org/10.5281/zenodo.19678474
        D44___Closure_of_OP_B.pdf
@@ -494,8 +486,14 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
        A Falsifiable Prediction for Fermi-LAT
        *** PUBLISHED SESSION 26 — first falsifiable astrophysical confrontation ***
        *** M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g (+11.89%) ***
-       *** Signal: excess Hawking flux at E_peak ≈ 90–104 MeV in IGRB ***
-       *** Test protocol: BlackHawk + Isatis + Fermi-LAT IGRB data ***
+
+[D46]  DOI pending Zenodo deposit
+       D46_Born_Level2_U1_Phase.tex + D46_references.bib
+       Born's Rule Level 2: Derivation of U(1) Phase Freedom
+       from the K₄ Pulsation Structure in the PDL Framework
+       *** SESSION 29 — OP4 FULLY RESOLVED ***
+       *** U(1) phase freedom = structural consequence of K₄ pulsation ***
+       *** Quantum dynamics layer COMPLETE (D32+D33+D34+D46) ***
 
 [DM]   https://doi.org/10.5281/zenodo.19811860
        PDL_Global_Mapping_of_Structures_Results_and_Open_Problems.pdf
@@ -505,6 +503,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
            v14 (10.5281/zenodo.19384997), v13 (10.5281/zenodo.19371866),
            v12 (10.5281/zenodo.19358464), v11 (10.5281/zenodo.19335759),
            v10 (10.5281/zenodo.19194978) ***
+       NOTE: DM v18 to be produced after D46 Zenodo deposit to incorporate OP4 resolution.
 ```
 
 ---
@@ -569,14 +568,28 @@ M*_PDL ≈ 5.706×10¹⁴ g [M*_GR ≈ 5.1×10¹⁴ g, MacGibbon & Carr 1991]
 T_H(M*_GR) ≈ 20.7 MeV → E_peak ≈ 104 MeV [GR]
 T_H(M*_PDL) ≈ 18.5 MeV → E_peak ≈ 93 MeV [PDL]
 Spectral cutoff shift: ΔE/E ≈ −10.6% (prediction P9)
-Excess Hawking flux window: [5.10, 5.71]×10¹⁴ g — zero according to GR, non-zero in PDL
+
+Session 29 — OP14 numerical resolution:
+HO-PDL splitting: s = Δn/(2n_u) = 4/48 = 1/12 (exact, from axiom C1 quintuplet)
+Magic numbers reproduced: {2, 8, 20, 28, 50, 82, 126} — 7/7
+r_exc(Z) = Δpos_n(Z): verified 31/31, zero exception
+N_min(Z) reproduced Z=2–82: 100%, zero free parameters
+Structure by regimes: 22/22, M ∈ {3,4,5} derived from Δn=4
+
+Truth table (k_p, ell_p, so_p) → r_exc [31 entries, verified 31/31]:
+(0,0,+1):2, (0,1,-1):1,
+(0,1,+1):2, (1,1,+1):2,
+(0,2,-1):2, (1,2,-1):0,
+(0,2,+1):3, (1,2,+1):1, (2,2,+1):2,
+(0,3,-1):1, (1,3,-1):2, (2,3,-1):2,
+(0,3,+1):2, (1,3,+1):1, (2,3,+1):1, (3,3,+1):1,
+(0,4,-1):3, (1,4,-1):1, (2,4,-1):2, (3,4,-1):2,
+(0,4,+1):0, (1,4,+1):1, (2,4,+1):2, (3,4,+1):1, (4,4,+1):2,
+(0,5,+1):2, (1,5,+1):2, (2,5,+1):1,
+(3,5,+1):2, (4,5,+1):2, (5,5,+1):3
 
 Session 28 — D-exp-NCR numerical results (exploratory, not published):
-κ_p = 310φ/11017 ≈ 0.04552878; κ_n = R_surf_n/R_tot_n ≈ 0.04534415
-R_surf_n = R_surf_p·√(R_sea_n/R_sea_p) ≈ 498.42 [Convention A, not yet axiomatically derived]
-T_PDL = R_surf_p²/R_sea_n ≈ 25.260 ≈ (Δn+1)² [D40 identity]
-σ(N_coord): FCC(N=12)=0.4283, BCC(N=8)=0.3112, diamond(N=4)=0.1701, graphene(N=3)=0.1305
-dσ/dN: graphene=0.03959, diamond=0.03779, BCC=0.03136, FCC=0.02603
+κ_p = 310φ/11017 ≈ 0.04552878; κ_n ≈ 0.04534415
 Best observed correlation (all approaches): B_PDL vs T_Debye, r=−0.641, p=0.0006 (confounded with Z)
 Residual signal after Z-regression: absent (r<0.35) for all approaches
 
@@ -605,19 +618,34 @@ Residual signal after Z-regression: absent (r<0.35) for all approaches
 
 ---
 
+## D46 Summary (Session 29 — OP4 resolved)
+
+**Title:** Born's Rule Level 2: Derivation of U(1) Phase Freedom from the K₄ Pulsation Structure in the PDL Framework
+
+**DOI:** pending Zenodo deposit
+**Compiled:** 1 May 2026 (Session 29)
+**Source files:** D46_Born_Level2_U1_Phase.tex + D46_references.bib
+
+**Core result:** OP4 fully resolved. The U(1) phase freedom ψ → e^{iα}ψ of quantum mechanics is a structural consequence of the K₄ binary pulsation, not a postulate. Three propositions with complete proofs: (P1) global sign equivalence s ∼ −s, combined with T² = −I₂ (D33), generates the Hopf fibration S¹ ↪ S³ → S²; (P2) the (A)∧(B) criterion is U(1)-invariant — verified over all 8 coherent K₄ configurations (Table 2); (P3) the unique U(1)-equivariant extension of the Level 1 Gleason measure to S³ is the round measure, yielding P = |⟨θ|ψ⟩|².
+
+**Remark 7.7:** Connection to superconductivity — the φ coordinate of the Ginzburg–Landau order parameter Ψ = |Ψ|e^{iφ} is the fibre coordinate of the Hopf bundle generated by the K₄ pulsation. Long-range phase coherence in a superconductor = rigidity of this U(1) fibre across a macroscopic volume.
+
+**Consequence:** The quantum dynamics layer is complete. Schrödinger (D32), Dirac (D33), Born Level 1 (D34), Born Level 2 (D46), spin-½ double cover (D33), U(1) gauge freedom (D46) — all follow from C1–C4 without additional postulates or free parameters.
+
+**Opens:**
+- OP1-D46: derive triangle weights α_τ from C1–C4 (residual of OP1-D34)
+- OP2-D46: compute holonomy from proton quintuplet; establish link to α_PDL
+
+---
+
 ## D45 Summary (Session 26 — first falsifiable astrophysical confrontation)
 
 **Title:** Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework: A Falsifiable Prediction for Fermi-LAT
 
 **DOI:** https://doi.org/10.5281/zenodo.19810259
 **Published:** 27 April 2026 (Session 26)
-**Source file:** D45_pbh_threshold.pdf
 
-**Core result:** The PDL prediction M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g is an unconditional corollary of the density-dependent gravitational coupling G_eff(N) = σ(N)·G_PDL (D38 + D42). PBHs in the mass window [5.10, 5.71]×10¹⁴ g are predicted to still be active today (according to PDL) whilst having already evaporated (according to GR). Their Hawking radiation peaks at E_peak ≈ 90–104 MeV, in the Fermi-LAT energy range.
-
-**Test protocol:** BlackHawk (Arbey & Auffinger 2019) + Isatis (Auffinger 2023) + Fermi-LAT IGRB data (Ackermann et al. 2015, ApJ 799, 86) + Carr et al. 2021 constraint compilation. The discriminating observable is the position of the spectral cutoff in the 50–200 MeV band (prediction P9: E_c^PDL ≈ 93 MeV vs E_c^GR ≈ 104 MeV).
-
-**Complementary prediction:** AGN entropy-to-energy ratio S/E ∝ σ(N(z))² varies with redshift — testable with DESI/Euclid/JWST (prediction P6).
+**Core result:** M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g (+11.89%) is an unconditional corollary of D38 + D42. PBHs in the mass window [5.10, 5.71]×10¹⁴ g are predicted still active today (PDL) whilst having already evaporated (GR). Test protocol: BlackHawk + Isatis + Fermi-LAT IGRB data. Discriminating observable: spectral cutoff position in the 50–200 MeV band (P9: E_c^PDL ≈ 93 MeV vs E_c^GR ≈ 104 MeV).
 
 ---
 
@@ -627,23 +655,8 @@ Residual signal after Z-regression: absent (r<0.35) for all approaches
 
 **DOI:** https://doi.org/10.5281/zenodo.19678474
 **Published:** 21 April 2026 (Session 24)
-**Source file:** D44___Closure_of_OP_B.pdf
 
-**Core result:** OP-B fully resolved. The hierarchical filter factor k = 0.921716 is now an unconditional theorem of C1–C4. The causal chain C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G is complete without any remaining open problem beyond Δm_iso.
-
-**Consequence:** OP8 (17 ppm residual of D28) is simultaneously resolved as a structural corollary: ε_G^B = ε_geom × k^18(B) is exact, and the 17 ppm figure reflects the precision of the CODATA input for G, not a structural gap in PDL.
-
----
-
-## D43 v3 Summary (Session 24 — causal chain complete)
-
-**Title:** The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3)
-
-**DOI:** https://doi.org/10.5281/zenodo.19678389
-**Published:** 21 April 2026 (Session 24)
-**Source file:** D43_causal_chain.pdf
-
-**Central new results over v2:** Section 5 updated: OP-B box changed to green (RESOLVED), citing D44. Causal chain diagram: all boxes green, no remaining red arrow. Epistemic table updated: k UNCONDITIONAL THEOREM row added. Abstract updated to reflect complete causal chain.
+**Core result:** OP-B fully resolved. k = 0.921716 is an unconditional theorem of C1–C4. The causal chain C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G is complete. OP8 (17 ppm residual) simultaneously resolved: reflects CODATA G precision, not a structural gap.
 
 ---
 
@@ -654,14 +667,11 @@ Residual signal after Z-regression: absent (r<0.35) for all approaches
 **DOI:** https://doi.org/10.5281/zenodo.19397315
 **Published:** 2 April 2026
 
-**Core result:** OP1 (D39) fully resolved. H3 (Indifference Lemma) is now a theorem of C1–C4. Three lemmas: D42-L1 (Equiparticipation); D42-L2 (Cross-triangle blindness); D42-L3 (S₄-equivariance, 24,576 cases verified).
-
-**Corollary 1:** κ = 310φ/11017 ∈ Q(√5) is an unconditional theorem of C1–C4.
-**Corollary 2 (Causal closure):** The chain C1–C4 → K₄ → quintuplet → κ → σ(N) → G_eff(N) → all physical laws is complete without any residual hypothesis. Unique external parameter: Δm_iso = m_d − m_u.
+**Core result:** OP1 (D39) fully resolved. H3 (Indifference Lemma) is a theorem of C1–C4. Three lemmas: D42-L1 (Equiparticipation); D42-L2 (Cross-triangle blindness); D42-L3 (S₄-equivariance, 24,576 cases verified). κ = 310φ/11017 ∈ Q(√5) is an unconditional theorem of C1–C4. Causal chain C1–C4 → G complete. Unique external parameter: Δm_iso.
 
 ---
 
-## Epistemic Status Summary (updated Session 28)
+## Epistemic Status Summary (updated Session 29)
 
 | Result | Status | Source |
 |--------|--------|--------|
@@ -678,6 +688,8 @@ Residual signal after Z-regression: absent (r<0.35) for all approaches
 | Schrödinger equation from (A)∧(B) | Theorem | D32 |
 | Dirac equation from SL(2,ℂ) | Theorem | D33 |
 | Born rule Level 1 (Gleason) | Theorem | D34 |
+| Born rule Level 2 (U(1) phase) | **THEOREM** (D46) | D46 |
+| U(1) phase freedom from K₄ pulsation | **THEOREM** (D46) | D46 |
 | Einstein coupling κ_PDL(N) = σ(N)·κ_Newton | **Unconditional theorem** | D35, D42 |
 | N_CMB = 40 from neutron architecture | Theorem | D27 |
 | Hubble tension resolved at 0.006% | **Unconditional theorem** | D35, D42 |
@@ -691,127 +703,119 @@ Residual signal after Z-regression: absent (r<0.35) for all approaches
 | E_bord general formula (OP-A) | **RESOLVED THEOREM** | Session 23, D43v3 |
 | ε_geom(p) = 329/10087 | **Unconditional theorem** | Session 23, D43v3 |
 | ε_geom(n) = 468/9960 | **Unconditional theorem** | Session 23, D43v3 |
-| k^18 ∈ Q(√5) via ε_G^B (D28) | **Theorem** (corollary D44) | D44 |
 | k = 0.921716 from C1–C4 | **UNCONDITIONAL THEOREM** | D44 |
-| OP-B ≡ OP8 RESOLVED | **Structural theorem** | D44 |
-| ε_G = ε_geom × k^18 — causal chain | **COMPLETE — no remaining OP** | D43v3, D44 |
+| ε_G = ε_geom × k^18 — causal chain | **COMPLETE** | D43v3, D44 |
 | M*_PDL = σ(40)^(−2/3)·M*_GR (+11.89%) | **Unconditional prediction (P5)** | D45 |
 | IGRB spectral cutoff at 93 MeV (PDL) vs 104 MeV (GR) | **Falsifiable prediction (P9)** | D45 |
+| r_exc(Z) = Δpos_n(Z) — 31/31 | **Verified theorem** (0 exception) | Session 29 |
+| N_min(Z) reproduced Z=2–82 — 100% | **Verified theorem** | Session 29 |
+| r = (a·k_p + b·pos_n + c) mod M — 22/22 | **Verified structural law** | Session 29 |
+| M ∈ {3,4,5} from Δn=4 | **Derived law** | Session 29 |
+| Constant c from (A)∧(B) analytically | **Conjecture** (open) | Session 29 |
 | PDL quantities discriminate bulk crystal properties | **Negative result (bounded)** | Session 28, D-exp-NCR |
 
 ---
 
-## Open Problems (updated Session 28)
+## Open Problems (updated Session 29)
 
 **OP-A:** RESOLVED (Session 23) — E_bord general formula proved analytically.
 **OP-B:** RESOLVED (Session 24, D44) — k derived from C1–C4 as unconditional theorem.
 **OP8:**  RESOLVED as corollary of D44 — 17 ppm residual attributed to CODATA G precision.
+**OP4:**  RESOLVED (Session 29, D46) — U(1) phase freedom derived from K₄ pulsation.
 
 **Remaining open problems (not blocking the causal chain):**
 
 | Label | Description | Priority | Source |
 |-------|-------------|----------|--------|
 | OP1 (D32) | Algebraic derivation of b without continuum action argument | HIGH | D32 |
-| OP1 (D34) | Derive α_τ from PDL axioms (Born rule Level 2) | HIGH | D34 |
+| OP1 (D34) | Derive α_τ from PDL axioms (triangle weights) | HIGH | D34 |
+| OP1 (D46) | Derive triangle weights α_τ from C1–C4 (= OP1 D34) | HIGH | D46 |
+| OP2 (D46) | Compute holonomy of Hopf connection from proton quintuplet | MEDIUM | D46 |
 | OP2 (D35) | Full derivation of coherence tensor C_coh from PDL axioms | MEDIUM | D35 |
 | OP3 (D40) | Lacunae at Z=43 (technetium) and Z=61 (promethium) | MEDIUM | D40 |
 | OP5 (D35) | CMB angular power spectrum impact of G_eff(N) | MEDIUM | D35 |
 | OP12/BH-3 | Derive S_BH coefficient 1/4 from axioms (= OP14) | HIGH | D38 |
+| OP14 (analytic) | Derive constant c per regime from (A)∧(B) analytically | HIGH | Session 29 |
 | OP-NCR | Derive D18 evolution rule from C1–C4 for arbitrary-coordination graphs | FUTURE | Session 28 |
 
 ---
 
-## Next Actions (updated Session 28)
+## Next Actions (updated Session 29)
 
-1.  **[IMMEDIATE]** Await response from Arbey & Auffinger (email sent Session 27).
-2.  **[IMMEDIATE]** Confirm HAL identifiers for D42, D43v3, D44, DM v17, DN once moderation complete. Update affiliation if needed.
-3.  **[IMMEDIATE]** Check whether HAL → arXiv transfer activated for D42 (math-ph domain + LaTeX sources required: .tex + .bbl + figures).
-4.  **[HIGH]** Submit D42 or D45 to journal (Physical Review D, European Physical Journal C, or Foundations of Physics).
-5.  **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi, University of Padova): update with ε_geom now a theorem, citing D43v3 DOI (10.5281/zenodo.19678389).
-6.  **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14, same category).
-7.  **[HIGH]** OP1 (D32): Algebraic derivation of b without continuum action argument.
-8.  **[HIGH]** OP1 (D34): Derive α_τ from PDL axioms (Born rule Level 2).
-9.  **[MEDIUM]** OP2 (D35): Full derivation of coherence tensor C_coh from PDL axioms.
-10. **[MEDIUM]** OP3 D40: Lacunae at Z=43 (technetium) and Z=61 (promethium).
-11. **[MEDIUM]** CMB angular power spectrum impact of G_eff(N) (OP5 D35).
-12. **[FUTURE]** OP-NCR: Derive D18 mode-indexing rule from C1–C4 for graphs of arbitrary
-    coordination. Prerequisite for collective PDL cavity approach to crystal physics.
-    Not a priority until dissemination programme is stabilised.
-13. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
-14. **[FUTURE]** Monitor μ precision measurements.
-15. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
-16. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
-17. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+1.  **[IMMEDIATE]** Deposit D46 on Zenodo. Update corpus table with DOI.
+2.  **[IMMEDIATE]** Push this PDL_context.md to GitHub (main branch).
+3.  **[IMMEDIATE]** Await response from Arbey & Auffinger (email sent Session 27).
+4.  **[IMMEDIATE]** Confirm HAL identifiers for D42, D43v3, D44, DM v17, DN once moderation complete.
+5.  **[HIGH — next session]** Run lacunae verification Z=43, Z=61 (Python ~20 lines).
+6.  **[HIGH — next session]** Write formal causal chain for D48: C1–C4 → U(1) (D46) →
+    H_cyc → σ·L → HO-PDL levels → splitting 1/12 → truth table.
+7.  **[HIGH — next session]** Write epistemic stratification table for D48
+    (theorem / verified law / conjecture).
+8.  **[HIGH — next session]** Draft D48 once items 5–7 complete.
+9.  **[HIGH]** Submit D42 or D45 to journal (Physical Review D, European Physical Journal C,
+    or Foundations of Physics).
+10. **[HIGH]** Contact Ha et al. (F. Recchia or S.M. Lenzi, University of Padova):
+    update with ε_geom now a theorem, citing D43v3 DOI (10.5281/zenodo.19678389).
+11. **[HIGH]** OP12/BH-3: derive S_BH coefficient 1/4 from axioms (= OP14).
+12. **[HIGH]** OP14 (analytic): derive constant c per regime from (A)∧(B).
+13. **[MEDIUM]** D47: derive C_coh isotropic form from D10 + D42 S₄-symmetry.
+    C_coh^{00} ∝ σ(N)/R_tot accessible; full non-isotropic form remains open (OP2 D35).
+14. **[MEDIUM]** OP3 D40: Lacunae Z=43 (technetium) and Z=61 (promethium).
+15. **[MEDIUM]** Produce DM v18 after D46 Zenodo deposit to incorporate OP4 resolution.
+16. **[FUTURE]** D49/D50: superconductivity and Ginzburg–Landau from PDL axioms,
+    building on D46 Remark 7.7.
+17. **[FUTURE]** Monitor FLAG/lattice QCD updates on m_d−m_u.
+18. **[FUTURE]** Monitor μ precision measurements.
+19. **[FUTURE]** Test P7 and P8 at FRIB/RIKEN (B(E2) ratios for ⁸⁸Ru and ⁹²Pd).
+20. **[FUTURE — E1]** Monitor tensor-to-scalar ratio r.
+21. **[FUTURE — E5]** Explore galaxy rotation curves via G_eff(N(r)).
+
+**Completed in Session 29 (1 May 2026):**
+- ✓ D46 produced: Born Level 2, OP4 resolved, 3 propositions with complete proofs
+- ✓ U(1) fibre from K₄ pulsation established (Hopf fibration)
+- ✓ (A)∧(B) U(1)-invariance verified over all 8 K₄ configurations
+- ✓ Born's rule extended to total space S³ (Proposition 3)
+- ✓ Remark 7.7: connection to Ginzburg–Landau superconductivity
+- ✓ OP14 numerically resolved: r_exc(Z) = Δpos_n(Z), 31/31, zero exception
+- ✓ Structure by regimes established: 22/22, M ∈ {3,4,5} derived from Δn=4
+- ✓ Truth table (31 entries) documented in Key Numerical Values
+- ✓ D48 preparation: three items identified (lacunae, causal chain, stratification)
+- ✓ PDL_context.md updated to Session 29
 
 **Completed in Session 28 (30 April 2026):**
-- ✓ Exploratory investigation D-exp-NCR: five computational notebooks (v1–v5) on
-  PDL nuclear coherence resonance and crystal physics — Materials Project API used
-- ✓ Four approaches tested and closed with negative results (properly bounded):
-  ρ_mode arithmetic resonance (v1/v2), σ(N_coord) engagement fraction (v3b),
-  B_PDL = N_c·R_surf²/R_tot energy coupling (v4), collective PDL cavity on crystal
-  lattices with signed-graph evolution (v5)
-- ✓ Structural conclusion documented: PDL at single-nucleon scale does not discriminate
-  bulk material properties with current tools; κ dynamic range ~10⁻⁴ is insufficient
-- ✓ Correct next step identified: OP-NCR (derive D18 rule for arbitrary graphs, corpus-level)
+- ✓ Exploratory investigation D-exp-NCR: five computational notebooks (v1–v5)
+- ✓ Four approaches tested and closed with negative results (properly bounded)
+- ✓ Structural conclusion documented: PDL at single-nucleon scale insufficient for
+  bulk material property discrimination with current tools
+- ✓ Correct next step identified: OP-NCR (corpus-level, not exploratory)
 - ✓ PDL_context.md updated to Session 28
 
 **Completed in Session 27 (29 April 2026):**
-- ✓ D45 deposited on HAL (hal-05605947v1) — En modération
-- ✓ D42 deposited on HAL — En modération
-- ✓ D43v3 deposited on HAL — En modération
-- ✓ D44 deposited on HAL — En modération
-- ✓ DM v17 deposited on HAL — En modération
-- ✓ DN deposited on HAL — En modération
-- ✓ Email sent to Arbey (arbey@in2p3.fr) and Auffinger (j.auffinger@ipnl.in2p3.fr)
-- ✓ H3 ontological argument discussed: indifference as structural necessity of PDL
+- ✓ D45, D42, D43v3, D44, DM v17, DN deposited on HAL — En modération
+- ✓ Email sent to Arbey and Auffinger (IP2I Lyon)
+- ✓ H3 ontological argument discussed
 - ✓ PDL_context.md updated to Session 27
 
 **Completed in Session 26 (27 April 2026):**
-- ✓ D45 produced and published on Zenodo (DOI: 10.5281/zenodo.19810259)
-- ✓ DM v17 produced and published on Zenodo (DOI: 10.5281/zenodo.19811860)
-- ✓ Zenodo description and keywords for DM updated to reflect v17
+- ✓ D45 published on Zenodo (DOI: 10.5281/zenodo.19810259)
+- ✓ DM v17 published on Zenodo (DOI: 10.5281/zenodo.19811860)
 - ✓ PDL_context.md updated to Session 26 and pushed to GitHub
-- ✓ Prediction P9 formalised (IGRB spectral cutoff at ~93 MeV)
 
 **Completed in Session 25 (26 April 2026):**
-- ✓ PDL_context.md pushed to GitHub (main branch) — reflects Session 25
-- ✓ DM v16 confirmed published on Zenodo (DOI: 10.5281/zenodo.19697524)
-- ✓ Website cedriclaubscher.ch confirmed up to date (D01–D44, DM v16, 9-phase journey)
-- ✓ Programme state audit completed — causal chain sealed, open frontiers identified
-- ✓ Dependency map restructured in strict logical layers for optimal machine readability
+- ✓ PDL_context.md pushed to GitHub — reflects Session 25
+- ✓ DM v16 confirmed published (DOI: 10.5281/zenodo.19697524)
+- ✓ Website cedriclaubscher.ch confirmed up to date
+- ✓ Programme state audit completed — causal chain sealed
 
 **Completed in Session 24 (21 April 2026):**
-- ✓ OP-B FULLY RESOLVED: k derived from C1–C4 as unconditional theorem (D44)
-- ✓ OP8 RESOLVED as corollary of D44
-- ✓ D43 v3 published on Zenodo (DOI: 10.5281/zenodo.19678389)
-- ✓ D44 published on Zenodo (DOI: 10.5281/zenodo.19678474)
-- ✓ Causal chain C1–C4 → G complete — no remaining open problem
-- ✓ PDL_context.md updated (Session 24)
-
-**Completed in Session 23 (20 April 2026):**
-- ✓ OP-A fully resolved: general E_bord formula proved analytically from C1–C4
-- ✓ ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960: unconditional theorems
-- ✓ OP-B cartographied: 6 approaches eliminated, structural identification OP-B ≡ OP8
-- ✓ k^18 ∈ Q(√5) via D28 formula: conjecture identified
-- ✓ D43 v2 produced: 19 pages, zero compilation errors
-
-**Completed in Session 22 (20 April 2026):**
-- ✓ D43 v1 produced: D43_Causal_Chain_v3.tex + D43_references.bib (17 pages, 855 KB)
-- ✓ Simulation images integrated as scientific figures
-- ✓ OP-A and OP-B formally defined in D43 v1
-
-**Completed in Session 21 (20 April 2026):**
-- ✓ pdl_proton_v7.py (Blender — quad grid N=31, exact 11017, ε in red)
-- ✓ pdl_proton_colab_v10.py (validation — quad N=31, R/n=1.961, exact counts)
-- ✓ pdl_causal_chain_lock.py (reference verification of 8-link causal chain)
-
-**Completed in Session 20 (2 April 2026):**
-- ✓ D42 produced and published on Zenodo (DOI: 10.5281/zenodo.19397315)
-- ✓ DM v15 produced and published on Zenodo (DOI: 10.5281/zenodo.19388995)
+- ✓ OP-B FULLY RESOLVED: k derived from C1–C4 (D44)
+- ✓ D43 v3 published (DOI: 10.5281/zenodo.19678389)
+- ✓ D44 published (DOI: 10.5281/zenodo.19678474)
+- ✓ Causal chain C1–C4 → G complete
 
 ---
 
-## Dependency Map — Critical Path (updated Session 28)
+## Dependency Map — Critical Path (updated Session 29)
 
 Reading guide: the map is organised in strict logical layers.
 [✓] = unconditional theorem from C1–C4.   [?] = open frontier (non-blocking).
@@ -880,15 +884,18 @@ Each layer depends entirely on the layers above it.
   Δm_iso = m_d − m_u = 2.532 MeV  (forced by C1)
 
   ═══════════════════════════════════════════════════════════════════
-  LAYER 7 — DYNAMICAL EQUATIONS   (from (A)∧(B))
+  LAYER 7 — DYNAMICAL EQUATIONS   (from (A)∧(B) + K₄ pulsation)
   ═══════════════════════════════════════════════════════════════════
 
   Schrödinger equation                                 [✓] D32
   Dirac equation                                       [✓] D33
+  T² = −I₂ → spin-½ double cover                      [✓] D33
   Born rule (Level 1)                                  [✓] D34
+  U(1) fibre from s ∼ −s → Hopf fibration             [✓] D46 — OP4 RESOLVED
+  Born rule (Level 2) — complete                       [✓] D46
   Einstein equation                                    [✓] D35, D42
   [?] OP1-D32: algebraic derivation of b
-  [?] OP1-D34: derive α_τ from axioms (Born rule Level 2)
+  [?] OP1-D34/D46: derive α_τ and triangle weights from axioms
 
   ═══════════════════════════════════════════════════════════════════
   LAYER 8 — COSMOLOGY   (from G_eff(N) + neutron quintuplet)
@@ -906,8 +913,13 @@ Each layer depends entirely on the layers above it.
   N_min(Z≤20) = Z                                      [✓] D40
   C(Z>20) = 190·T_pp                                   [✓] D40
   Valley of stability Z=1..82 at 100%                  [✓] D40
-  N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo) = 2.000          [conjecture H_B, 2%] D41
+  HO-PDL splitting 1/12 from Δn=4                      [✓] Session 29
+  Magic numbers {2,8,20,28,50,82,126}                  [✓] Session 29
+  r_exc(Z) = Δpos_n(Z) — truth table 31/31             [✓] Session 29 — OP14 NUM. RESOLVED
+  N_min(Z) reproduced Z=2–82 at 100%                   [✓] Session 29
+  N_comp(⁸⁶Mo)/N_comp(⁸⁴Mo) = 2.000       [conjecture H_B, 2%] D41
   [?] OP3-D40: lacunae at Z=43 (Tc) and Z=61 (Pm)
+  [?] OP14 analytic: derive c per regime from (A)∧(B)
   [?] P7/P8: B(E2) ratios ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd — testable FRIB/RIKEN
 
   ═══════════════════════════════════════════════════════════════════
@@ -917,13 +929,13 @@ Each layer depends entirely on the layers above it.
   BH-1: S ∝ R_surf  (area law)                        [✓] D37
   BH-2: S_BH/k_B = 4π(M_eff/M_Pl)²                   [✓] D38, D42
   PBH threshold: M*_PDL = σ(40)^(−2/3)·M*_GR (+11.89%) [✓] D45 — P5/P9
-  [?] OP12/BH-3: derive S_BH coefficient 1/4 from axioms (≡ OP14)
+  [?] OP12/BH-3: derive S_BH coefficient 1/4 from axioms (≡ OP14 analytic)
 
   ═══════════════════════════════════════════════════════════════════
-  LAYER 11 — DISSEMINATION   (Session 27)
+  LAYER 11 — DISSEMINATION   (Sessions 26–27)
   ═══════════════════════════════════════════════════════════════════
 
-  Zenodo: D01–D45 + DM v17 published (open access, CC BY 4.0)
+  Zenodo: D01–D46 published (D46 pending deposit)
   HAL: D42, D43v3, D44, D45, DM v17, DN — En modération (Session 27)
   Email: Arbey + Auffinger (IP2I Lyon) — sent 29 April 2026
   arXiv: pending HAL → arXiv transfer (D42 candidate, math-ph)
@@ -935,8 +947,7 @@ Each layer depends entirely on the layers above it.
 
   D-exp-NCR: PDL nuclear coherence resonance — crystal physics
   Result: NEGATIVE (properly bounded) — four approaches closed
-  Open question: OP-NCR — D18 rule for arbitrary-coordination graphs
-  [?] OP-NCR: derive mode-indexing from C1–C4 for variable N_coord graphs
+  [?] OP-NCR: derive D18 rule for arbitrary-coordination graphs
 ```
 
 **Resolved milestones:**
@@ -949,28 +960,37 @@ OP1   RESOLVED (D42)   : H3 proved from C1–C4 — κ unconditional
 OP-A  RESOLVED (D43v3) : E_bord = 55·n_u + 194·n_d + 25 — analytic theorem
 OP-B  RESOLVED (D44)   : k = 0.921716 — unconditional theorem of C1–C4
 OP8   RESOLVED (D44)   : 17 ppm residual = CODATA G precision, not structural gap
+OP4   RESOLVED (D46)   : U(1) phase freedom from K₄ pulsation — quantum dynamics COMPLETE
+OP14  NUM. RESOLVED    : r_exc(Z) = Δpos_n(Z), 31/31, N_min(Z) 100% — D48 pending
 
 CAUSAL CHAIN COMPLETE (Session 24):
 C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G
 No remaining open problem in the chain. Unique external parameter: Δm_iso.
+
+QUANTUM DYNAMICS LAYER COMPLETE (Session 29):
+Schrödinger (D32) + Dirac (D33) + Born Level 1 (D34) + Born Level 2 (D46)
++ spin-½ double cover (D33) + U(1) gauge freedom (D46)
+All from C1–C4, zero free parameters, zero additional postulates.
 ```
 
 **Open frontiers (non-blocking):**
 
 ```
-OP1  (D32) : algebraic derivation of b without continuum action argument  [HIGH]
-OP1  (D34) : derive α_τ from PDL axioms — Born rule Level 2               [HIGH]
-OP12/BH-3  : derive S_BH coefficient 1/4 from axioms (≡ OP14)             [HIGH]
-OP2  (D35) : full derivation of coherence tensor C_coh from axioms         [MEDIUM]
-OP3  (D40) : lacunae at Z=43 (technetium) and Z=61 (promethium)           [MEDIUM]
-OP5  (D35) : CMB angular power spectrum impact of G_eff(N)                 [MEDIUM]
-P7/P8      : B(E2) ratios ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd — FRIB/RIKEN          [FUTURE]
-OP-NCR     : derive D18 mode-indexing rule for arbitrary-coord. graphs     [FUTURE]
+OP1  (D32)    : algebraic derivation of b without continuum action argument  [HIGH]
+OP1  (D34/46) : derive α_τ and triangle weights from PDL axioms              [HIGH]
+OP2  (D46)    : compute holonomy of Hopf connection from proton quintuplet   [MEDIUM]
+OP12/BH-3     : derive S_BH coefficient 1/4 from axioms (≡ OP14 analytic)   [HIGH]
+OP14 analytic : derive constant c per regime from (A)∧(B)                   [HIGH]
+OP2  (D35)    : full derivation of coherence tensor C_coh from axioms        [MEDIUM]
+OP3  (D40)    : lacunae at Z=43 (technetium) and Z=61 (promethium)          [MEDIUM]
+OP5  (D35)    : CMB angular power spectrum impact of G_eff(N)                [MEDIUM]
+P7/P8         : B(E2) ratios ⁸⁸Ru/⁹⁰Ru and ⁹²Pd/⁹⁴Pd — FRIB/RIKEN         [FUTURE]
+OP-NCR        : derive D18 mode-indexing rule for arbitrary-coord. graphs    [FUTURE]
 ```
 
 ---
 
-## Epistemic Architecture (updated Session 28)
+## Epistemic Architecture (updated Session 29)
 
 **Layer 1 — Axioms → combinatorial results (fully rigorous, unconditional):**
 K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
@@ -979,7 +999,9 @@ K₄ unique, n_u=24 unique, 18=6+5+4+3, r_val=930 unique, a=2, σ(N)=1-(1-κ)^N,
 κ = 310φ/11017 unconditional (D42), N_min(Z≤20)=Z and C(Z>20)=190·T_pp (D40),
 E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)² (Session 23 — OP-A resolved),
 ε_geom(p) = 329/10087 and ε_geom(n) = 468/9960 unconditional theorems (Session 23),
-k = 0.921716 unconditional theorem (Session 24 — OP-B resolved, D44).
+k = 0.921716 unconditional theorem (Session 24 — OP-B resolved, D44),
+U(1) fibre from K₄ pulsation — Hopf fibration (Session 29 — OP4 resolved, D46),
+r_exc(Z) = Δpos_n(Z) 31/31, N_min(Z) 100% Z=2–82 (Session 29 — OP14 num. resolved).
 No free parameter. Mathematical theorems.
 
 **Layer 2 — QCD interface (minimal, forced):**
@@ -988,8 +1010,9 @@ No free parameter. Mathematical theorems.
 **Layer 3 — Cosmological coupling (UNCONDITIONAL since Session 20):**
 G_eff(N) = σ(N)·G_PDL proved unconditionally (D42). No named hypothesis remains.
 
-**Layer 4 — Quantum dynamics (theorems under continuum limit):**
-Schrödinger (D32) and Dirac (D33) derived in continuum limit. Born rule Level 1 proved (D34).
+**Layer 4 — Quantum dynamics (COMPLETE since Session 29):**
+Schrödinger (D32), Dirac (D33), Born Level 1 (D34), Born Level 2 + U(1) (D46).
+All derived in continuum limit from C1–C4. No remaining postulate in quantum dynamics.
 
 **Layer 5 — Gravitational dynamics (UNCONDITIONAL since Session 20):**
 PDL Einstein equation. κ_PDL(N) = σ(N)·κ_Newton is unconditional.
@@ -1023,38 +1046,33 @@ General formula: E_bord = A·n_u_cores + B·n_d_cores + (Δn+1)² [OP-A RESOLVED
 k = 0.921716 derived from C1–C4 — UNCONDITIONAL THEOREM (D44).
 OP-B RESOLVED: no remaining open problem in the chain C1–C4 → G.
 Causal chain: C1–C4 → K₄ → quintuplet → ε_geom → ε_G = ε_geom × k^18 → G COMPLETE.
-D43 v3 and D44 published on Zenodo.
 
 **Layer 13 — Documentation and dissemination (Session 25):**
-PDL_context.md pushed to GitHub and confirmed up to date (Session 25).
-DM v16 published (DOI: 10.5281/zenodo.19697524): all corpus D01–D44, all boxes green.
-Website cedriclaubscher.ch confirmed up to date: 9-phase guided journey, full document table.
+PDL_context.md pushed to GitHub and confirmed up to date.
+DM v16 published (DOI: 10.5281/zenodo.19697524).
+Website cedriclaubscher.ch confirmed up to date: 9-phase guided journey.
 
 **Layer 14 — First falsifiable astrophysical confrontation (Session 26):**
 D45: M*_PDL = σ(40)^(−2/3)·M*_GR ≈ 5.706×10¹⁴ g — unconditional prediction (P5).
-P9: spectral cutoff at E_c ≈ 93 MeV (PDL) vs 104 MeV (GR), testable with Fermi-LAT + BlackHawk/Isatis.
-DM v17 published (DOI: 10.5281/zenodo.19811860): covers D01–D45, P9 added.
-PDL_context.md updated to Session 26 and pushed to GitHub.
+DM v17 published (DOI: 10.5281/zenodo.19811860).
 
 **Layer 15 — HAL dissemination and first external contact (Session 27):**
 D42, D43v3, D44, D45, DM v17, DN deposited on HAL — En modération.
 Email sent to Arbey & Auffinger (IP2I Lyon) — first direct external contact.
-HAL → arXiv transfer possible for D42 (math-ph, pending .bbl + sources).
-Next priority: journal submission (Physical Review D or European Physical Journal C).
 
 **Layer 16 — Exploratory frontier: crystal physics (Session 28):**
-D-exp-NCR: five computational notebooks tested four approaches to PDL predictions for
-bulk material properties of pure elements (Materials Project API used for crystal data).
-Result: NEGATIVE (all four approaches properly bounded). Structural reason: κ dynamic
-range ~10⁻⁴ is insufficient for discrimination; B_PDL confounded with Z; D18 evolution
-rule not axiomatically derivable for arbitrary-coordination graphs without new corpus work.
-OP-NCR identified as the correct next step (corpus-level, not exploratory).
+D-exp-NCR: negative result (properly bounded). OP-NCR identified.
+
+**Layer 17 — Quantum dynamics complete + OP14 numerical resolution (Session 29):**
+D46: OP4 resolved — U(1) phase freedom from K₄ pulsation. Quantum dynamics layer complete.
+OP14 numerically resolved: r_exc(Z) = Δpos_n(Z), 31/31. Structure by regimes 22/22.
+M ∈ {3,4,5} derived from Δn=4. D48 preparation underway.
 
 ---
 
 ## External Scientific Connections — Veille
 
-*Recent external results with structural connections to PDL. These do not modify the critical path but constitute validation anchors and future research directions.*
+*Recent external results with structural connections to PDL.*
 
 ### E1 — Quadratic Quantum Gravity / Inflation (Afshordi et al., PRL, 18 March 2026)
 
@@ -1069,6 +1087,12 @@ OP-NCR identified as the correct next step (corpus-level, not exploratory).
 **Reference:** Z. Yu, N. Brandt, F. Zou et al., *ApJ* (2026).
 
 **Connection:** AGN S/E ratio redshift trend (PDL prediction P6) — observational template for the σ(N(z))² suppression factor.
+
+### E3 — Ding et al. (PRL 2026) on magic numbers and spin-orbit splitting
+
+**Reference:** Ding, Mengoni et al., "From Spin to Pseudospin Symmetry: The Origin of Magic Numbers," *Phys. Rev. Lett.* (2026).
+
+**Connection:** PDL derives spin-orbit splitting axiomatically at 1/12 = Δn/(2n_u) from the proton quintuplet; Ding et al. derive it via renormalisation-group flow from a many-body Hamiltonian. The two approaches are complementary: PDL fixes the splitting axiomatically and derives the geometric (U(1)) structure (D46); Ding et al. derive the splitting dynamically within a fixed geometric framework. Direct experimental confrontation feasible.
 
 ---
 
@@ -1099,4 +1123,4 @@ After each session, update:
   for large mono-author corpora (plainnat overflows the alphabet at 27+ entries)
 
 *All references in this document use the Zenodo canonical numbering
-(D01–D45 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
+(D01–D46 + D10a, D16a, D16b, DN, DM, D01F, D20F).*
