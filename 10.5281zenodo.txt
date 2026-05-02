@@ -269,3 +269,8 @@ D46
 https://doi.org/10.5281/zenodo.19956932
 Born's Rule Level 2: Derivation of U(1) Phase Freedom from the K₄ Pulsation Structure in the PDL Framework
 D46___Born_s_Rule_Level_2.pdf 
+
+D47 
+https://doi.org/10.5281/zenodo.19967918 
+Derivation of the Sub-Shell Filling Rates and the Periodic Table from the PDL Axioms: Resolution of OP13 and OP14 
+D47___Shell_Filling.pdf
