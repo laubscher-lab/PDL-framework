@@ -274,3 +274,8 @@ D47
 https://doi.org/10.5281/zenodo.19967918 
 Derivation of the Sub-Shell Filling Rates and the Periodic Table from the PDL Axioms: Resolution of OP13 and OP14 
 D47___Shell_Filling.pdf
+
+D48
+https://doi.org/10.5281/zenodo.19969831 
+Derivation of the Coherence Stress-Energy Tensor from the PDL Axioms: Explicit Form of C_coh and Resolution of OP2 (D35) 
+D48___Coherence_Tensor.pdf 
