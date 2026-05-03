@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 30 — 2 May 2026*
+*Last updated: Session 31 — 3 May 2026*
 
 ---
 
@@ -93,9 +93,20 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   D48 = OP2-D35 partiel C_coh (publié Session 30)
   D49 = prochain document (OP1-D35 ou OP-London ou autre selon avancement)
 
+**Session 31 — DM v18 produit et publié (3 May 2026):**
+- DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
+  Quantum dynamics layer et nuclear stability layer marqués COMPLETE.
+  Nouvelle section 8 : The Coherence Stress-Energy Tensor (D48).
+  Huit couches épistémiques (vs sept en v17). Trois nouveaux problèmes ouverts (OP1-D35, OP-pressure, OP-London).
+  TikZ dependency map étendue avec nœuds D46, D47, D48, C_coh, OP-London.
+  Publié sur Zenodo (DOI: 10.5281/zenodo.20008823).
+- DM v18 .bib mis à jour : 51 entrées corpus + Ha2025 + DN-fr.
+- PDL_context.md mis à jour Session 31 — prêt pour GitHub push.
+- Zenodo metadata DM v18 : titre, descriptif et mots-clés rédigés (Session 31).
+
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 30)
+## Corpus Table (Zenodo canonical order — updated Session 31)
 
 | Label | DOI | Title (abbreviated) | Nature | Status |
 |-------|-----|---------------------|--------|--------|
@@ -127,7 +138,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D21   | 10.5281/zenodo.19056994 | Universal Coherence Leakage V3 — Bridge G↔α | **Primary result** | Published |
 | DN    | 10.5281/zenodo.19076555 | Whatever We May Be — popular book EN | Vulgarisation | Published |
 | D22   | 10.5281/zenodo.19164084 | Nuclear stability as closure hierarchies | Nuclei | Published |
-| DM    | 10.5281/zenodo.19811860 | D_Map v17 — Global Mapping | **Navigation** | Published — DM v18 à produire |
+| DM    | 10.5281/zenodo.20008823 | D_Map v18 — Global Mapping | **Navigation** | Published |
 | D23   | 10.5281/zenodo.19197268 | Topological origin exponent 18: K₄, S² | Topology | Published |
 | D24   | 10.5281/zenodo.19206960 | Closure-density dependence G_eff, Hubble | Cosmology | Published |
 | D25   | 10.5281/zenodo.19219858 | Parameter-free bridge α↔G | **Bridge α–G** | Published |
@@ -184,7 +195,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D19]  10.5281/zenodo.18854559    [D20F] 10.5281/zenodo.18914532
 [D20]  10.5281/zenodo.18940047    [D21]  10.5281/zenodo.19056994
 [DN]   10.5281/zenodo.19076555    [D22]  10.5281/zenodo.19164084
-[DM]   10.5281/zenodo.19811860    [D23]  10.5281/zenodo.19197268
+[DM]   10.5281/zenodo.20008823    [D23]  10.5281/zenodo.19197268
 [D24]  10.5281/zenodo.19206960    [D25]  10.5281/zenodo.19219858
 [D26]  10.5281/zenodo.19221310    [D27]  10.5281/zenodo.19281988
 [D28]  10.5281/zenodo.19282932    [D29]  10.5281/zenodo.19283107
@@ -234,7 +245,7 @@ C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open
 
 ---
 
-## Epistemic Status Summary (updated Session 30)
+## Epistemic Status Summary (updated Session 31)
 
 | Result | Status | Source |
 |--------|--------|--------|
@@ -270,7 +281,7 @@ C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open
 
 ---
 
-## Open Problems (updated Session 30)
+## Open Problems (updated Session 31)
 
 **Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48)
 
@@ -293,42 +304,29 @@ C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open
 
 ---
 
-## Next Actions (updated Session 30)
+## Next Actions (updated Session 31)
 
-1. **[HIGH — IMMEDIATE]** Pousser PDL_context.md sur GitHub (main branch)
-2. **[HIGH — IMMEDIATE]** Produire DM v18 : D46 (OP4) + D47 (OP13+OP14) + D48 (OP2-D35 partiel)
-3. **[HIGH]** Mettre à jour cedriclaubscher.ch : D46, D47, D48 + guided journey
-4. **[HIGH]** Academia.edu : posts D47 + D48
+1. **[HIGH — IMMEDIATE]** Pousser PDL_context.md (Session 31) sur GitHub (main branch)
+2. **[HIGH]** Mettre à jour le .bib DM v18 dans GitHub : clé DMapv10 → DOI 10.5281/zenodo.20008823
+3. **[HIGH]** Mettre à jour cedriclaubscher.ch : D46, D47, D48, DM v18 + guided journey
+4. **[HIGH]** Academia.edu : posts D47 + D48 (+ DM v18)
 5. **[HIGH]** Contact Ha et al. (Recchia/Lenzi, Padova) : update avec D47 + Lemme miroir
 6. **[HIGH]** OP1-D35 : dériver C depuis C1–C4 (constante cosmologique PDL)
 7. **[HIGH]** OP12/BH-3 : coefficient 1/4 de S_BH
-8. **[HIGH]** OP14 analytique : constante c par régime depuis (A)∧(B)
-9. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
-10. **[MEDIUM]** OP-London : équation de London depuis C^(orb)+D46+D12
-11. **[MEDIUM]** OP-pressure : équation d'état w
+8. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
+9. **[MEDIUM]** OP-London : équation de London depuis C^(orb)+D46+D12
+10. **[MEDIUM]** OP-pressure : équation d'état w
 
-**Completed in Session 30 (2 May 2026):**
-- ✓ OP13 RÉSOLU : Δn=4 discriminant 149² (D47)
-- ✓ Lemme miroir prouvé (D47)
-- ✓ Nombres magiques 7/7 (D47)
-- ✓ OP14 RÉSOLU : r_exc(Z) analytique 31/31 (D47)
-- ✓ N_min(Z) Z=1..82 théorème inconditionnel (D47)
-- ✓ Tableau périodique = corollaire de C1–C4 (D47)
-- ✓ D47 compilé et publié (DOI: 10.5281/zenodo.19967918)
-- ✓ V_C doublement forcé 1.00000000 (D48)
-- ✓ ρ_coh(N) dérivée (D48)
-- ✓ C^(mass) THÉORÈME INCONDITIONNEL (D48)
-- ✓ C^(spin), C^(orb) théorèmes corrections (D48)
-- ✓ C^(leak) partiel, C borné obs. (D48)
-- ✓ Équation d'Einstein PDL source explicite (D48-Cor.9.1)
-- ✓ Connexion London/Meissner via D46+D48 documentée
-- ✓ D48 compilé et publié (DOI: 10.5281/zenodo.19969831)
-- ✓ Scripts Colab : TestA v2, TestB v2, TestC, D47 Mirror Lemma, D48 Ccoh, D48 VC
-- ✓ PDL_context.md mis à jour Session 30
+**Completed in Session 31 (3 May 2026):**
+- ✓ DM v18 .tex produit (couvre D01–D48 + auxiliaires)
+- ✓ DM v18 .bib produit (51 entrées + Ha2025 + DN-fr)
+- ✓ DM v18 publié sur Zenodo (DOI: 10.5281/zenodo.20008823)
+- ✓ Titre, descriptif et mots-clés Zenodo DM v18 rédigés
+- ✓ PDL_context.md mis à jour Session 31
 
 ---
 
-## Dependency Map — Critical Path (updated Session 30)
+## Dependency Map — Critical Path (updated Session 31)
 
 ```
 LAYER 0 — AXIOMS : C1 (pulsation), C2 (cohérence), C3 (complétude), C4 (optimisation)
@@ -355,9 +353,9 @@ LAYER 5 — GRAVITATIONAL COUPLING
 LAYER 6 — QCD INTERFACE
   Δm_iso = 2.532 MeV (forced by C1)
 
-LAYER 7 — DYNAMICAL EQUATIONS
+LAYER 7 — DYNAMICAL EQUATIONS — COMPLETE
   Schrödinger [✓]D32 | Dirac [✓]D33 | Born L1 [✓]D34
-  U(1) Hopf fibration [✓]D46 — OP4 | Born L2 [✓]D46
+  U(1) Hopf fibration [✓]D46 — OP4 RESOLVED | Born L2 [✓]D46
   Einstein equation [✓]D35,D42
   [?]OP1-D32/D34/D46
 
@@ -389,7 +387,7 @@ LAYER 11 — COHERENCE TENSOR — PARTIAL
   [?]OP1-D35 dériver C | [?]OP-pressure | [?]OP-London
 
 LAYER 12 — DISSEMINATION
-  Zenodo: D01–D48 + auxiliaires (DM v18 à produire)
+  Zenodo: D01–D48 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
   HAL: D42,D43v3,D44,D45,DM v17,DN — En modération
   Email: Arbey+Auffinger (IP2I Lyon) — 29 Apr 2026
 ```
@@ -405,6 +403,7 @@ CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
 NUCLEAR STABILITY LAYER : COMPLETE (Session 30, D47)
 COHERENCE TENSOR LAYER : PARTIAL (Session 30, D48) — constant C open
+DM v18 : PUBLISHED (Session 31, DOI: 10.5281/zenodo.20008823)
 ```
 
 ---
