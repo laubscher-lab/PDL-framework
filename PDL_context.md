@@ -104,7 +104,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - PDL_context.md mis à jour Session 31 — prêt pour GitHub push.
 - Zenodo metadata DM v18 : titre, descriptif et mots-clés rédigés (Session 31).
 
-**Session 32 — Exploration numérique OP-London ; résultats structurels nouveaux (4 May 2026):**
+**Session 32 — Exploration numérique OP-London ; conjectures nouvelles (4 May 2026):**
 
 - COLAB-LONDON-1 [C^(orb) et isotropie] :
   Niveaux HO-PDL avec s=1/12 vérifiés : 7/7 nombres magiques reproduits exactement
@@ -115,16 +115,14 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   Statut : théorèmes inconditionnels confirmés.
 
 - COLAB-LONDON-2 [Structure des paires de pulsation K₄] :
-  RÉSULTAT STRUCTURAL NOUVEAU (non documenté dans le corpus avant cette session) :
-  Parmi les 8 configurations triangulairement cohérentes de K₄ (au sens de C2),
-  aucune paire exacte (s, −s) n'existe — le flip global s → −s d'une configuration
-  cohérente C2 produit systématiquement une configuration anti-cohérente (produit
-  triangulaire = −1). Vérifié exhaustivement sur les 8 configurations.
-  Ce fait est cohérent avec D46 Lemme 1 (−s n'est pas cohérent C2), mais n'était
-  pas énoncé comme résultat autonome dans le corpus.
-  Conséquence pour OP-London : la pulsation PDL (s ~ −s) vit dans H_cyc via
-  T² = −I₂, PAS au niveau des signes C2. La phase U(1) est une propriété de
-  l'espace des amplitudes, pas des configurations de signes.
+  Redérivation numérique exhaustive de D46 Lemme 1 (prouvé algébriquement dans D46) :
+  le flip global s → −s d'une configuration cohérente C2 produit une configuration
+  anti-cohérente (produit triangulaire = −1). Vérifié sur les 8 configurations.
+  Ce résultat est documenté dans D46 Lemme 1 et la Remarque qui suit — il n'est
+  pas nouveau mais sa redérivation numérique clarifie la stratégie pour OP-London.
+  Conséquence (conforme à D46) : la pulsation PDL vit dans H_cyc via T² = −I₂,
+  pas au niveau des signes C2. La phase U(1) est une propriété de l'espace des
+  amplitudes (D46 Prop.1), pas des configurations de signes (C2).
 
 - COLAB-LONDON-3 [Holonomie de Hopf et condition de London] :
   Connexion de Hopf : γ_B(C) = −(1/2)·Ω(C) calculée explicitement pour
@@ -334,7 +332,7 @@ Coût Berry résiduel ~ α_PDL² ≈ 5.3×10⁻⁵ [conjecture Ω* = 2π·α_PDL
 | PDL Einstein eq. avec source explicite | **COROLLAIRE** | D48-Cor.9.1 |
 | Instabilité Z=43 (Tc) et Z=61 (Pm) | **Conjecture qualitative** | Session 30, OP3-D40 |
 | C^(orb)_ij ∝ δ_ij (isotropie Wigner) | **Théorème standard confirmé** | Session 32, Colab-London-1 |
-| Pulsation s ~ −s dans H_cyc, pas dans C2 | **Fait structural nouveau** | Session 32, Colab-London-2 |
+| Pulsation s ~ −s dans H_cyc, pas dans C2 | **Théorème D46 Lemme 1** (redérivé numériquement) | D46 + Session 32, Colab-London-2 |
 | London PDL sous hypothèse coût Berry | **Conjecture fondée** | Session 32, Colab-London-3 |
 | Ω* = 2π·α_PDL | **Conjecture quantitative** | Session 32, Colab-London-3 |
 
