@@ -92,8 +92,8 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   D47 = OP13+OP14 nucléaire (publié Session 30)
   D48 = OP2-D35 partiel C_coh (publié Session 30)
   D49 = London equation — OP-London RÉSOLU (publié Session 33)
-  D50 = coefficient 1/4 de S_BH — OP12/BH-3 (en préparation Session 33)
-
+  D50 = coefficient 1/4 de S_BH — OP12/BH-3 RÉSOLU (publié Session 33)
+  
 **Session 31 — DM v18 produit et publié (3 May 2026):**
 - DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
   Quantum dynamics layer et nuclear stability layer marqués COMPLETE.
@@ -237,7 +237,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D48   | 10.5281/zenodo.19969831 | Coherence Tensor C_coh — OP2-D35 partial | **Proof (partial)** | Published |
 | DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons — LDP | Vulgarisation FR | Published |
 | D49   | 10.5281/zenodo.20025166 | London Equation from PDL Axioms — OP-London | **Proof** | Published |
-| D50   | (à déposer) | BH Coefficient 1/4 from PDL Axioms — OP12 | **Proof** | En préparation |
+| D50   | 10.5281/zenodo.20029777 | BH Coefficient 1/4 from PDL Axioms — OP12/BH-3 | **Proof** | Published |
 
 ---
 
@@ -281,7 +281,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D44]  10.5281/zenodo.19678474    [D45]  10.5281/zenodo.19810259
 [D46]  10.5281/zenodo.19956932    [D47]  10.5281/zenodo.19967918
 [D48]  10.5281/zenodo.19969831    [DN-fr] 10.5281/zenodo.19924230
-[D49]  10.5281/zenodo.20025166
+[D49]  10.5281/zenodo.20025166    [D50]  10.5281/zenodo.20029777
 ```
 
 ---
@@ -380,7 +380,7 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 
 ## Open Problems (updated Session 33)
 
-**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 partial (Session 33 — formalisation D50)
+**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50))
 
 | Label | Description | Priority |
 |-------|-------------|----------|
@@ -488,7 +488,7 @@ LAYER 11 — COHERENCE TENSOR — PARTIAL
   [?]OP1-D35 dériver C | [?]OP-pressure
 
 LAYER 12 — DISSEMINATION
-  Zenodo: D01–D49 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
+  Zenodo: D01–D50 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
   HAL: D42,D43v3,D44,D45,DM v17,DN — En modération
   Email: Arbey+Auffinger (IP2I Lyon) — 29 Apr 2026
 ```
@@ -499,14 +499,14 @@ GATE 1 (D29) | GATE 2 (D30) | GATE 3 (D36, unconditional D42)
 OP1 (D42) H3 | OP-A (D43v3) E_bord | OP-B (D44) k
 OP8 (D44) 17ppm | OP4 (D46) U(1) | OP13 (D47) Δn=4
 OP14 (D47) r_exc | OP2-D35 partial (D48) C^(mass),C^(spin),C^(orb)
-OP-LONDON (D49) London equation | OP12/BH-3 partial (Session 33, D50 en préparation)
+OP-LONDON (D49) London equation | OP12/BH-3 (D50, DOI: 10.5281/zenodo.20029777)
 
 CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
 NUCLEAR STABILITY LAYER : COMPLETE (Session 30, D47)
 COHERENCE TENSOR LAYER : PARTIAL (Session 30, D48) — constant C open
 LONDON EQUATION : THEOREM (Session 33, D49, DOI: 10.5281/zenodo.20025166)
-BH COEFFICIENT 1/4 : THEOREM (Session 33, Colabs BH-1+BH-2) — D50 à formaliser
+BH COEFFICIENT 1/4 : THEOREM (D50, DOI: 10.5281/zenodo.20029777)
 DM v18 : PUBLISHED (Session 31, DOI: 10.5281/zenodo.20008823)
 ```
 
@@ -536,4 +536,4 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - Epistemic status table with p{} fixed-width columns
 - All HTML links: target="_blank" rel="noopener"
 
-*All references use Zenodo canonical numbering D01–D49 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
+*All references use Zenodo canonical numbering D01–D50 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
