@@ -279,3 +279,8 @@ D48
 https://doi.org/10.5281/zenodo.19969831 
 Derivation of the Coherence Stress-Energy Tensor from the PDL Axioms: Explicit Form of C_coh and Resolution of OP2 (D35) 
 D48___Coherence_Tensor.pdf 
+
+D49 
+https://doi.org/10.5281/zenodo.20025166 
+Derivation of the London Equation from the PDL Axioms: Resolution of OP-London 
+D49___London_Equation.pdf 
