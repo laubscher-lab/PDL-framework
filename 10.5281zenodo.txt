@@ -284,3 +284,8 @@ D49
 https://doi.org/10.5281/zenodo.20025166 
 Derivation of the London Equation from the PDL Axioms: Resolution of OP-London 
 D49___London_Equation.pdf 
+
+D50 
+https://doi.org/10.5281/zenodo.20029777
+Derivation of the Bekenstein–Hawking One-Quarter Coefficient from the PDL Axioms: Resolution of OP12/BH-3 
+D50___BH_Quarter.pdf
