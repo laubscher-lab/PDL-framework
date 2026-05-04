@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 31 — 3 May 2026*
+*Last updated: Session 32 — 4 May 2026*
 
 ---
 
@@ -91,7 +91,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   D46 = Born Level 2 U(1) (publié Session 29)
   D47 = OP13+OP14 nucléaire (publié Session 30)
   D48 = OP2-D35 partiel C_coh (publié Session 30)
-  D49 = prochain document (OP1-D35 ou OP-London ou autre selon avancement)
+  D49 = prochain document (OP-London prioritaire selon Colabs Session 32)
 
 **Session 31 — DM v18 produit et publié (3 May 2026):**
 - DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
@@ -103,6 +103,56 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - DM v18 .bib mis à jour : 51 entrées corpus + Ha2025 + DN-fr.
 - PDL_context.md mis à jour Session 31 — prêt pour GitHub push.
 - Zenodo metadata DM v18 : titre, descriptif et mots-clés rédigés (Session 31).
+
+**Session 32 — Exploration numérique OP-London ; résultats structurels nouveaux (4 May 2026):**
+
+- COLAB-LONDON-1 [C^(orb) et isotropie] :
+  Niveaux HO-PDL avec s=1/12 vérifiés : 7/7 nombres magiques reproduits exactement
+  en arithmétique de fractions (D47 Theorem 4.1 confirmé).
+  Identité de Wigner : ⟨m_j²⟩/(2j+1) = j(j+1)/3, ratio = 1.000000 exact pour les 16
+  premiers niveaux (jusqu'au cumulatif 82).
+  C^(orb)_ij ∝ δ_ij établi numériquement — condition nécessaire pour London confirmée.
+  Statut : théorèmes inconditionnels confirmés.
+
+- COLAB-LONDON-2 [Structure des paires de pulsation K₄] :
+  RÉSULTAT STRUCTURAL NOUVEAU (non documenté dans le corpus avant cette session) :
+  Parmi les 8 configurations triangulairement cohérentes de K₄ (au sens de C2),
+  aucune paire exacte (s, −s) n'existe — le flip global s → −s d'une configuration
+  cohérente C2 produit systématiquement une configuration anti-cohérente (produit
+  triangulaire = −1). Vérifié exhaustivement sur les 8 configurations.
+  Ce fait est cohérent avec D46 Lemme 1 (−s n'est pas cohérent C2), mais n'était
+  pas énoncé comme résultat autonome dans le corpus.
+  Conséquence pour OP-London : la pulsation PDL (s ~ −s) vit dans H_cyc via
+  T² = −I₂, PAS au niveau des signes C2. La phase U(1) est une propriété de
+  l'espace des amplitudes, pas des configurations de signes.
+
+- COLAB-LONDON-3 [Holonomie de Hopf et condition de London] :
+  Connexion de Hopf : γ_B(C) = −(1/2)·Ω(C) calculée explicitement pour
+  Ω ∈ {0, π/2, π, 2π, 4π}.
+  Coût de cohérence |1 − e^{iγ_B}|² = 0 exactement à Ω = 0 (jauge de London).
+  C4 (optimisation) sélectionne Ω = 0 via minimisation du coût — conjecture fondée.
+  Conjecture quantitative nouvelle : Ω* = 2π·α_PDL ≈ 4.586×10⁻² rad,
+  γ_B* ≈ −π·α_PDL ≈ −2.293×10⁻² rad, coût résiduel ~ α_PDL² ≈ 5.3×10⁻⁵.
+  => London exact à l'ordre 0 en α_PDL ; correction d'ordre α_PDL² négligeable.
+  Longueur de pénétration PDL calculée numériquement :
+  λ_L,PDL(N=40) ≈ 7.25×10⁻¹⁵ m (fluide de cohérence de protons, pas d'électrons).
+
+- VERDICT OP-LONDON (Session 32) :
+  OP-London est un THÉORÈME SOUS UNE UNIQUE HYPOTHÈSE :
+    "Le coût de cohérence PDL associé à une phase de Berry γ_B est
+     proportionnel à |1 − e^{iγ_B}|²."
+  Si cette identification est prouvée depuis C1–C4, alors :
+    j^i_s = −(n_coh · e²/m_p c) · A^i  avec  n_coh = ρ_coh/m_p
+  est un théorème inconditionnel.
+  Statut de l'hypothèse : conjecture fondée — à prouver dans D49.
+
+- STRUCTURE DE D49 IDENTIFIÉE :
+  Theorem 1 : γ_B = −(1/2)·Ω (D46 Eq.Berry, reformulé)
+  Theorem 2 : C4 force Ω = 0 via minimisation du coût de cohérence
+              [sous l'hypothèse coût PDL = |1 − e^{iγ_B}|²]
+  Proposition : j^i_s = −(n_coh·e²/m_p c)·A^i  (London PDL)
+  Conjecture : Ω* = 2π·α_PDL  (OP2-D46, relié à D12)
+  Open problem : démonstration formelle de l'identification du coût depuis C1–C4.
 
 ---
 
@@ -243,9 +293,14 @@ C^(spin)/C^(mass) ∼ 10⁻¹²
 η_L = ε_G^B | η_L^18 = 5.904×10⁻³⁹ [THEOREM — D17, D30]
 C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open]
 
+Valeurs Session 32 (OP-London) :
+λ_C = ħ/(m_pc) = 2.103×10⁻¹⁶ m | λ_L,PDL(N=40) ≈ 7.25×10⁻¹⁵ m
+Ω* = 2π·α_PDL ≈ 4.586×10⁻² rad | γ_B* ≈ −2.293×10⁻² rad
+Coût Berry résiduel ~ α_PDL² ≈ 5.3×10⁻⁵ [conjecture Ω* = 2π·α_PDL]
+
 ---
 
-## Epistemic Status Summary (updated Session 31)
+## Epistemic Status Summary (updated Session 32)
 
 | Result | Status | Source |
 |--------|--------|--------|
@@ -278,10 +333,14 @@ C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open
 | C ≈ 8.16×10⁻⁴⁶ | **Borne observationnelle** | D48, Planck 2020 |
 | PDL Einstein eq. avec source explicite | **COROLLAIRE** | D48-Cor.9.1 |
 | Instabilité Z=43 (Tc) et Z=61 (Pm) | **Conjecture qualitative** | Session 30, OP3-D40 |
+| C^(orb)_ij ∝ δ_ij (isotropie Wigner) | **Théorème standard confirmé** | Session 32, Colab-London-1 |
+| Pulsation s ~ −s dans H_cyc, pas dans C2 | **Fait structural nouveau** | Session 32, Colab-London-2 |
+| London PDL sous hypothèse coût Berry | **Conjecture fondée** | Session 32, Colab-London-3 |
+| Ω* = 2π·α_PDL | **Conjecture quantitative** | Session 32, Colab-London-3 |
 
 ---
 
-## Open Problems (updated Session 31)
+## Open Problems (updated Session 32)
 
 **Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48)
 
@@ -290,11 +349,11 @@ C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open
 | OP1-D35 | Dériver C dans C^(leak) depuis C1–C4 | HIGH |
 | OP1 (D32) | Algebraic derivation of b | HIGH |
 | OP1 (D34/D46) | Derive α_τ and triangle weights | HIGH |
-| OP2 (D46) | Holonomy of Hopf connection | MEDIUM |
+| OP2 (D46) | Holonomy of Hopf connection — relié à Ω* = 2π·α_PDL (Session 32) | MEDIUM |
 | OP12/BH-3 | S_BH coefficient 1/4 | HIGH |
 | OP14 analytic | Constant c per regime from (A)∧(B) | HIGH |
 | OP-pressure | Équation d'état w du fluide de cohérence | MEDIUM |
-| OP-London | Équation de London depuis C^(orb)+D46+D12 | MEDIUM |
+| OP-London | Prouver identification coût PDL = |1−e^{iγ_B}|² depuis C1–C4 | MEDIUM |
 | OP3 (D40) | Tc/Pm instability | MEDIUM |
 | OP5 (D35) | CMB angular power spectrum | MEDIUM |
 | OP15 | Superheavy nuclei Z>82 | MEDIUM |
@@ -304,29 +363,33 @@ C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open
 
 ---
 
-## Next Actions (updated Session 31)
+## Next Actions (updated Session 32)
 
-1. **[HIGH — IMMEDIATE]** Pousser PDL_context.md (Session 31) sur GitHub (main branch)
+**Complétées en Session 32 (4 May 2026) :**
+- ✓ Colab-London-1 : isotropie C^(orb), 7/7 nombres magiques confirmés
+- ✓ Colab-London-2 : résultat structural — pulsation dans H_cyc, pas dans C2
+- ✓ Colab-London-3 : holonomie de Hopf, conjecture Ω* = 2π·α_PDL, London sous hypothèse
+- ✓ PDL_context.md mis à jour Session 32
+
+**À faire — administratif (en attente depuis Session 31) :**
+1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 32) sur GitHub (main branch)
 2. **[HIGH]** Mettre à jour le .bib DM v18 dans GitHub : clé DMapv10 → DOI 10.5281/zenodo.20008823
 3. **[HIGH]** Mettre à jour cedriclaubscher.ch : D46, D47, D48, DM v18 + guided journey
 4. **[HIGH]** Academia.edu : posts D47 + D48 (+ DM v18)
 5. **[HIGH]** Contact Ha et al. (Recchia/Lenzi, Padova) : update avec D47 + Lemme miroir
-6. **[HIGH]** OP1-D35 : dériver C depuis C1–C4 (constante cosmologique PDL)
-7. **[HIGH]** OP12/BH-3 : coefficient 1/4 de S_BH
-8. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
-9. **[MEDIUM]** OP-London : équation de London depuis C^(orb)+D46+D12
-10. **[MEDIUM]** OP-pressure : équation d'état w
+6. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
 
-**Completed in Session 31 (3 May 2026):**
-- ✓ DM v18 .tex produit (couvre D01–D48 + auxiliaires)
-- ✓ DM v18 .bib produit (51 entrées + Ha2025 + DN-fr)
-- ✓ DM v18 publié sur Zenodo (DOI: 10.5281/zenodo.20008823)
-- ✓ Titre, descriptif et mots-clés Zenodo DM v18 rédigés
-- ✓ PDL_context.md mis à jour Session 31
+**À faire — recherche :**
+7. **[HIGH]** D49 — OP-London : prouver coût PDL = |1−e^{iγ_B}|² depuis C1–C4
+   Point d'entrée : structure de C4 sur les 768 configurations de D29 ;
+   calculer le coût de cohérence effectif par transition et tester 4sin²(γ_B/2).
+8. **[HIGH]** OP12/BH-3 : coefficient 1/4 de S_BH
+9. **[HIGH]** OP1-D35 : dériver C depuis C1–C4 (constante cosmologique PDL)
+10. **[MEDIUM]** OP-pressure : équation d'état w du fluide de cohérence
 
 ---
 
-## Dependency Map — Critical Path (updated Session 31)
+## Dependency Map — Critical Path (updated Session 32)
 
 ```
 LAYER 0 — AXIOMS : C1 (pulsation), C2 (cohérence), C3 (complétude), C4 (optimisation)
@@ -382,9 +445,11 @@ LAYER 11 — COHERENCE TENSOR — PARTIAL
   C^(mass)=ρ_coh·c²·u_μu_ν [✓]D48 THEOREM
   C^(spin)∼ħ²·ρ²/(m_pc²) [✓]D48 correction 10⁻¹²
   C^(orb)=m_p·⟨jj⟩/ρ_coh [✓]D48 depuis D32
+  C^(orb)_ij ∝ δ_ij [✓] isotropie Wigner — Session 32 Colab-London-1
   C^(leak)=−C·η_L^18·(m_pc/ħ)²·g [η_L^18 ✓ ; C ?]D48
   Einstein PDL source explicite [✓]D48-Cor.9.1
-  [?]OP1-D35 dériver C | [?]OP-pressure | [?]OP-London
+  [?]OP1-D35 dériver C | [?]OP-pressure
+  [?]OP-London : prouver coût PDL = |1−e^{iγ_B}|² → London PDL [Session 32]
 
 LAYER 12 — DISSEMINATION
   Zenodo: D01–D48 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
@@ -404,6 +469,7 @@ QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
 NUCLEAR STABILITY LAYER : COMPLETE (Session 30, D47)
 COHERENCE TENSOR LAYER : PARTIAL (Session 30, D48) — constant C open
 DM v18 : PUBLISHED (Session 31, DOI: 10.5281/zenodo.20008823)
+OP-LONDON STRUCTURE IDENTIFIED (Session 32) — D49 en préparation
 ```
 
 ---
