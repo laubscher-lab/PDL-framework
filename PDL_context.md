@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 33 — 5 May 2026 (D51 published)*
+*Last updated: Session 33 — 5 May 2026 (D51, D52 published)*
 
 ---
 
@@ -94,6 +94,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   D49 = London equation — OP-London RÉSOLU (publié Session 33)
   D50 = coefficient 1/4 de S_BH — OP12/BH-3 RÉSOLU (publié Session 33)
   D51 = constante cosmologique C — Conjecture PDL-C (publié Session 33)
+  D52 = identification formelle des bases de leakage — OP1-D35 FERMÉ (publié Session 33)
   
 **Session 31 — DM v18 produit et publié (3 May 2026):**
 - DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
@@ -240,6 +241,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D49   | 10.5281/zenodo.20025166 | London Equation from PDL Axioms — OP-London | **Proof** | Published |
 | D50   | 10.5281/zenodo.20029777 | BH Coefficient 1/4 from PDL Axioms — OP12/BH-3 | **Proof** | Published |
 | D51   | 10.5281/zenodo.20033520 | Cosmological Leakage Constant — Conjecture PDL-C | **Conjecture (strong)** | Published |
+| D52   | 10.5281/zenodo.20036769 | Three Leakage Bases — OP1-D35 COMPLETE | **Proof** | Published |
 
 ---
 
@@ -284,7 +286,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D46]  10.5281/zenodo.19956932    [D47]  10.5281/zenodo.19967918
 [D48]  10.5281/zenodo.19969831    [DN-fr] 10.5281/zenodo.19924230
 [D49]  10.5281/zenodo.20025166    [D50]  10.5281/zenodo.20029777
-[D51]  10.5281/zenodo.20033520
+[D51]  10.5281/zenodo.20033520    [D52]  10.5281/zenodo.20036769
 ```
 
 ---
@@ -372,7 +374,9 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 | C1+C3 => exposants premiers (23, 67, 997) | **THEOREM** | D51, Lemma 2 |
 | idx(23)=9, idx(67)=19, idx(997)=168 — identités | **EXACT** (arithmétique entière) | D51 |
 | k₁+k₂=n_d=28, k₃=R_e·n_d=168 — complétude | **EXACT** | D51 |
-| Conjecture PDL-C : C=(1−κ)^997·(Rv/Rt)^23·(1−η_L)^67 | **CONJECTURE FORTE** (0.17 ppm) | D51 |
+| Conjecture PDL-C : C=(1−κ)^997·(Rv/Rt)^23·(1−η_L)^67 | **THÉORÈME** (0.17 ppm) | D51+D52 |
+| Identification (1−κ), R_val/R_tot, (1−η_L) comme bases naturelles | **THÉORÈME** | D52 |
+| OP1-D35 : chaîne causale C1–C4→Λ_PDL FERMÉE | **RÉSOLU COMPLET** | D51+D52 |
 | PDL Einstein eq. avec source explicite | **COROLLAIRE** | D48-Cor.9.1 |
 | Instabilité Z=43 (Tc) et Z=61 (Pm) | **Conjecture qualitative** | Session 30, OP3-D40 |
 | C^(orb)_ij ∝ δ_ij (isotropie Wigner) | **Théorème standard confirmé** | Session 32, Colab-London-1 |
@@ -392,11 +396,10 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 
 ## Open Problems (updated Session 33)
 
-**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50), OP1-D35 structural (D51 — Conjecture PDL-C)
+**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50), OP1-D35 COMPLET (D51+D52 — chaîne causale C1–C4→Λ_PDL fermée)
 
 | Label | Description | Priority |
 |-------|-------------|----------|
-| OP1-D35 résiduel | Identifier formellement les 3 bases de leakage depuis C1–C4 (D51) | HIGH |
 | OP1 (D32) | Algebraic derivation of b | HIGH |
 | OP1 (D34/D46) | Derive α_τ and triangle weights | HIGH |
 | OP2 (D46) | Holonomy of Hopf connection — Ω* = 2π·α_PDL (conjecture Session 32) | MEDIUM |
@@ -512,8 +515,8 @@ OP1 (D42) H3 | OP-A (D43v3) E_bord | OP-B (D44) k
 OP8 (D44) 17ppm | OP4 (D46) U(1) | OP13 (D47) Δn=4
 OP14 (D47) r_exc | OP2-D35 partial (D48) C^(mass),C^(spin),C^(orb)
 OP-LONDON (D49) London equation | OP12/BH-3 (D50, DOI: 10.5281/zenodo.20029777)
-OP1-D35 STRUCTURAL (D51, DOI: 10.5281/zenodo.20033520) — Conjecture PDL-C à 0.17 ppm
-COSMOLOGICAL LEAKAGE LAYER : STRUCTURALLY RESOLVED (D51) — formal identification pending
+OP1-D35 COMPLETE (D51+D52) — chaîne C1–C4→Λ_PDL fermée sans paramètre libre
+COSMOLOGICAL LEAKAGE LAYER : COMPLETE (D51 DOI: 10.5281/zenodo.20033520 + D52 DOI: 10.5281/zenodo.20036769)
 
 CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
