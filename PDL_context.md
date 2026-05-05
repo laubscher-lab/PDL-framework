@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 33 — 4 May 2026*
+*Last updated: Session 33 — 5 May 2026 (D51 published)*
 
 ---
 
@@ -93,6 +93,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   D48 = OP2-D35 partiel C_coh (publié Session 30)
   D49 = London equation — OP-London RÉSOLU (publié Session 33)
   D50 = coefficient 1/4 de S_BH — OP12/BH-3 RÉSOLU (publié Session 33)
+  D51 = constante cosmologique C — Conjecture PDL-C (publié Session 33)
   
 **Session 31 — DM v18 produit et publié (3 May 2026):**
 - DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
@@ -238,6 +239,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons — LDP | Vulgarisation FR | Published |
 | D49   | 10.5281/zenodo.20025166 | London Equation from PDL Axioms — OP-London | **Proof** | Published |
 | D50   | 10.5281/zenodo.20029777 | BH Coefficient 1/4 from PDL Axioms — OP12/BH-3 | **Proof** | Published |
+| D51   | 10.5281/zenodo.20033520 | Cosmological Leakage Constant — Conjecture PDL-C | **Conjecture (strong)** | Published |
 
 ---
 
@@ -282,6 +284,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D46]  10.5281/zenodo.19956932    [D47]  10.5281/zenodo.19967918
 [D48]  10.5281/zenodo.19969831    [DN-fr] 10.5281/zenodo.19924230
 [D49]  10.5281/zenodo.20025166    [D50]  10.5281/zenodo.20029777
+[D51]  10.5281/zenodo.20033520
 ```
 
 ---
@@ -314,7 +317,11 @@ V_geom/V_C = 1.00000000 [float64]
 C^(mass)_00(N=40) = 1.484×10³⁵ J/m³ | limite N→∞ = 1.757×10³⁵ J/m³
 C^(spin)/C^(mass) ∼ 10⁻¹²
 η_L = ε_G^B | η_L^18 = 5.904×10⁻³⁹ [THEOREM — D17, D30]
-C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 open]
+C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35]
+Conjecture PDL-C (D51) : C = (1−κ)^997 × (930/11017)^23 × (1−η_L)^67 [0.17 ppm]
+Indices : k₁=n_d−n_u+R_e−1=9 (p₉=23), k₂=n_u−R_e+1=19 (p₁₉=67), k₃=R_e·n_d=168 (p₁₆₈=997)
+k₁+k₂=n_d=28 [EXACT] | k₃=R_e·n_d=168 [EXACT] — identités théorèmes
+λ_PDL-C = η_L^18·(m_pc/ħ)²·(1−κ)^997·(930/11017)^23·(1−η_L)^67 ≈ 1.089000×10⁻⁵² m⁻²
 
 Valeurs D49 (OP-London RÉSOLU) :
 n_coh(N) = σ(N)·R_surf/(V_C·R_tot) ∈ Q(√5) [THEOREM — D49, D48]
@@ -359,8 +366,13 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 | C^(spin)_μν ∼ ħ²·ρ_coh²/(m_pc²) | **THEOREM** (correction ħ²) | D48 |
 | C^(orb)_μν = m_p·⟨j_μj_ν⟩/ρ_coh | **THEOREM** (état-dépendant) | D48 |
 | η_L^18 dans C^(leak) | **THEOREM** | D17, D30, D48 |
-| Constante C dans C^(leak) | **Conjecture** — OP1-D35 | D48 |
+| Constante C dans C^(leak) | **Conjecture PDL-C** — OP1-D35 | D48, D51 |
 | C ≈ 8.16×10⁻⁴⁶ | **Borne observationnelle** | D48, Planck 2020 |
+| β₁(K₄)=3 => 3 cycles de leakage irréductibles | **THEOREM** (topologie) | D23, D51 |
+| C1+C3 => exposants premiers (23, 67, 997) | **THEOREM** | D51, Lemma 2 |
+| idx(23)=9, idx(67)=19, idx(997)=168 — identités | **EXACT** (arithmétique entière) | D51 |
+| k₁+k₂=n_d=28, k₃=R_e·n_d=168 — complétude | **EXACT** | D51 |
+| Conjecture PDL-C : C=(1−κ)^997·(Rv/Rt)^23·(1−η_L)^67 | **CONJECTURE FORTE** (0.17 ppm) | D51 |
 | PDL Einstein eq. avec source explicite | **COROLLAIRE** | D48-Cor.9.1 |
 | Instabilité Z=43 (Tc) et Z=61 (Pm) | **Conjecture qualitative** | Session 30, OP3-D40 |
 | C^(orb)_ij ∝ δ_ij (isotropie Wigner) | **Théorème standard confirmé** | Session 32, Colab-London-1 |
@@ -380,11 +392,11 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 
 ## Open Problems (updated Session 33)
 
-**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50))
+**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50), OP1-D35 structural (D51 — Conjecture PDL-C)
 
 | Label | Description | Priority |
 |-------|-------------|----------|
-| OP1-D35 | Dériver C dans C^(leak) depuis C1–C4 | HIGH |
+| OP1-D35 résiduel | Identifier formellement les 3 bases de leakage depuis C1–C4 (D51) | HIGH |
 | OP1 (D32) | Algebraic derivation of b | HIGH |
 | OP1 (D34/D46) | Derive α_τ and triangle weights | HIGH |
 | OP2 (D46) | Holonomy of Hopf connection — Ω* = 2π·α_PDL (conjecture Session 32) | MEDIUM |
@@ -488,7 +500,7 @@ LAYER 11 — COHERENCE TENSOR — PARTIAL
   [?]OP1-D35 dériver C | [?]OP-pressure
 
 LAYER 12 — DISSEMINATION
-  Zenodo: D01–D50 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
+  Zenodo: D01–D51 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
   HAL: D42,D43v3,D44,D45,DM v17,DN — En modération
   Email: Arbey+Auffinger (IP2I Lyon) — 29 Apr 2026
 ```
@@ -500,6 +512,8 @@ OP1 (D42) H3 | OP-A (D43v3) E_bord | OP-B (D44) k
 OP8 (D44) 17ppm | OP4 (D46) U(1) | OP13 (D47) Δn=4
 OP14 (D47) r_exc | OP2-D35 partial (D48) C^(mass),C^(spin),C^(orb)
 OP-LONDON (D49) London equation | OP12/BH-3 (D50, DOI: 10.5281/zenodo.20029777)
+OP1-D35 STRUCTURAL (D51, DOI: 10.5281/zenodo.20033520) — Conjecture PDL-C à 0.17 ppm
+COSMOLOGICAL LEAKAGE LAYER : STRUCTURALLY RESOLVED (D51) — formal identification pending
 
 CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
@@ -536,4 +550,4 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - Epistemic status table with p{} fixed-width columns
 - All HTML links: target="_blank" rel="noopener"
 
-*All references use Zenodo canonical numbering D01–D50 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
+*All references use Zenodo canonical numbering D01–D51 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
