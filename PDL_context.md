@@ -230,7 +230,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D39   | 10.5281/zenodo.19354989 | Derivation κ — Indifference Lemma | **Proof** | Published |
 | D40   | 10.5281/zenodo.19371523 | Nuclear Stability from PDL Axioms | **Proof** | Published |
 | D41   | 10.5281/zenodo.19384396 | PDL Analysis ⁸⁴,⁸⁶Mo — Island of Inversion | **Confrontation+Pred.** | Published |
-| D42   | 10.5281/zenodo.19397315 | H3 from C1–C4 — OP1 RESOLVED | **Proof** | Published |
+| D42   | 10.5281/zenodo.20041348 | H3 from C1–C4 — OP1 RESOLVED | **Proof** | Published |
 | D43   | 10.5281/zenodo.19678389 | Causal Chain — Four Axioms to Newton's G | **Synthesis v3** | Published |
 | D44   | 10.5281/zenodo.19678474 | Hierarchical Filter Factor k — OP-B RESOLVED | **Proof** | Published |
 | D45   | 10.5281/zenodo.19810259 | PBH Threshold — Fermi-LAT Prediction | **Prediction P5/P9** | Published |
@@ -281,7 +281,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D36]  10.5281/zenodo.19323033    [D37]  10.5281/zenodo.19354096
 [D38]  10.5281/zenodo.19354682    [D39]  10.5281/zenodo.19354989
 [D40]  10.5281/zenodo.19371523    [D41]  10.5281/zenodo.19384396
-[D42]  10.5281/zenodo.19397315    [D43]  10.5281/zenodo.19678389
+[D42]  10.5281/zenodo.20041348    [D43]  10.5281/zenodo.19678389
 [D44]  10.5281/zenodo.19678474    [D45]  10.5281/zenodo.19810259
 [D46]  10.5281/zenodo.19956932    [D47]  10.5281/zenodo.19967918
 [D48]  10.5281/zenodo.19969831    [DN-fr] 10.5281/zenodo.19924230
