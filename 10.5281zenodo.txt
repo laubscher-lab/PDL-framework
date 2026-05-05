@@ -289,3 +289,8 @@ D50
 https://doi.org/10.5281/zenodo.20029777
 Derivation of the Bekenstein–Hawking One-Quarter Coefficient from the PDL Axioms: Resolution of OP12/BH-3 
 D50___BH_Quarter.pdf
+
+D51 
+https://doi.org/10.5281/zenodo.20033520 
+The Cosmological Leakage Constant from the PDL Axioms: A Structural Derivation of C and Resolution of OP1-D35 
+D51_leakage_constant.pdf 
