@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 33 — 5 May 2026 (D51, D52 published)*
+*Last updated: Session 33 — 5 May 2026 (D51, D52, DM v19 published)*
 
 ---
 
@@ -210,7 +210,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D21   | 10.5281/zenodo.19056994 | Universal Coherence Leakage V3 — Bridge G↔α | **Primary result** | Published |
 | DN    | 10.5281/zenodo.19076555 | Whatever We May Be — popular book EN | Vulgarisation | Published |
 | D22   | 10.5281/zenodo.19164084 | Nuclear stability as closure hierarchies | Nuclei | Published |
-| DM    | 10.5281/zenodo.20008823 | D_Map v18 — Global Mapping | **Navigation** | Published |
+| DM    | 10.5281/zenodo.20039860 | D_Map v19 — Global Mapping | **Navigation** | Published |
 | D23   | 10.5281/zenodo.19197268 | Topological origin exponent 18: K₄, S² | Topology | Published |
 | D24   | 10.5281/zenodo.19206960 | Closure-density dependence G_eff, Hubble | Cosmology | Published |
 | D25   | 10.5281/zenodo.19219858 | Parameter-free bridge α↔G | **Bridge α–G** | Published |
@@ -271,7 +271,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D19]  10.5281/zenodo.18854559    [D20F] 10.5281/zenodo.18914532
 [D20]  10.5281/zenodo.18940047    [D21]  10.5281/zenodo.19056994
 [DN]   10.5281/zenodo.19076555    [D22]  10.5281/zenodo.19164084
-[DM]   10.5281/zenodo.20008823    [D23]  10.5281/zenodo.19197268
+[DM]   10.5281/zenodo.20039860    [D23]  10.5281/zenodo.19197268
 [D24]  10.5281/zenodo.19206960    [D25]  10.5281/zenodo.19219858
 [D26]  10.5281/zenodo.19221310    [D27]  10.5281/zenodo.19281988
 [D28]  10.5281/zenodo.19282932    [D29]  10.5281/zenodo.19283107
