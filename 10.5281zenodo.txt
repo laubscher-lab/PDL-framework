@@ -241,7 +241,7 @@ Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: a
 D41_pdl_island_of_inversion.pdf
 
 D42 
-https://doi.org/10.5281/zenodo.19397315
+https://doi.org/10.5281/zenodo.20041348
 Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
 D42_Derivation_of_H3_from_C1_C4.pdf
 
