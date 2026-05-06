@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 34 — 6 May 2026 (D53 produced and published)*
+*Last updated: Session 33 — 5 May 2026 (D51, D52, DM v19 published)*
 
 ---
 
@@ -95,13 +95,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   D50 = coefficient 1/4 de S_BH — OP12/BH-3 RÉSOLU (publié Session 33)
   D51 = constante cosmologique C — Conjecture PDL-C (publié Session 33)
   D52 = identification formelle des bases de leakage — OP1-D35 FERMÉ (publié Session 33)
-  D53 = synthèse et vérification computationnelle C1–C4→Λ (produit Session 34)
-
-**Session 34 — D53 produit et publié (6 May 2026):**
-- D53 : document de synthèse et de clôture causale C1–C4 → Λ_PDL. Présente la chaîne complète en un seul texte linéaire auto-contenu, avec vérification numérique indépendante à 50 décimales (trois cellules Colab). Déviation structurelle : 0.41 ppm vs D51 ; déviation apparente 8.17 ppm expliquée entièrement par un offset métrologique de 8.6 ppm sur (m_pc/ħ)² entre versions CODATA. Robustesse primale : tout remplacement d'un exposant premier par un composite voisin dégrade l'accord d'au moins 4 ordres de grandeur. DOI : 10.5281/zenodo.20052558.
-- Fermeture causale documentée sur 7 couches : combinatoire → architecture de matière → constantes de structure → dynamique quantique → gravitation → thermodynamique → cosmologie (57 ordres de grandeur).
-- Vérification en session de la déviation structurelle 0.41 ppm et du diagnostic métrologique.
-
+  
 **Session 31 — DM v18 produit et publié (3 May 2026):**
 - DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
   Quantum dynamics layer et nuclear stability layer marqués COMPLETE.
@@ -248,7 +242,6 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D50   | 10.5281/zenodo.20029777 | BH Coefficient 1/4 from PDL Axioms — OP12/BH-3 | **Proof** | Published |
 | D51   | 10.5281/zenodo.20033520 | Cosmological Leakage Constant — Conjecture PDL-C | **Conjecture (strong)** | Published |
 | D52   | 10.5281/zenodo.20036769 | Three Leakage Bases — OP1-D35 COMPLETE | **Proof** | Published |
-| D53   | 10.5281/zenodo.20052558 | From Four Axioms to Λ — Causal Closure Synthesis | **Synthesis+Verification** | Published |
 
 ---
 
@@ -294,7 +287,6 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 [D48]  10.5281/zenodo.19969831    [DN-fr] 10.5281/zenodo.19924230
 [D49]  10.5281/zenodo.20025166    [D50]  10.5281/zenodo.20029777
 [D51]  10.5281/zenodo.20033520    [D52]  10.5281/zenodo.20036769
-[D53]  10.5281/zenodo.20052558
 ```
 
 ---
@@ -328,11 +320,10 @@ C^(mass)_00(N=40) = 1.484×10³⁵ J/m³ | limite N→∞ = 1.757×10³⁵ J/m³
 C^(spin)/C^(mass) ∼ 10⁻¹²
 η_L = ε_G^B | η_L^18 = 5.904×10⁻³⁹ [THEOREM — D17, D30]
 C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35]
-Conjecture PDL-C (D51) : C = (1−κ)^997 × (930/11017)^23 × (1−η_L)^67 [0.17 ppm vs D51 ; 0.41 ppm vérification indépendante D53]
+Conjecture PDL-C (D51) : C = (1−κ)^997 × (930/11017)^23 × (1−η_L)^67 [0.17 ppm]
 Indices : k₁=n_d−n_u+R_e−1=9 (p₉=23), k₂=n_u−R_e+1=19 (p₁₉=67), k₃=R_e·n_d=168 (p₁₆₈=997)
 k₁+k₂=n_d=28 [EXACT] | k₃=R_e·n_d=168 [EXACT] — identités théorèmes
-λ_PDL-C = η_L^18·(m_pc/ħ)²·(1−κ)^997·(930/11017)^23·(1−η_L)^67 ≈ 1.089009×10⁻⁵² m⁻²
-Offset métrologique (m_pc/ħ)² : 8.6 ppm entre CODATA D51 et CODATA 2022 — sans signification structurelle [D53]
+λ_PDL-C = η_L^18·(m_pc/ħ)²·(1−κ)^997·(930/11017)^23·(1−η_L)^67 ≈ 1.089000×10⁻⁵² m⁻²
 
 Valeurs D49 (OP-London RÉSOLU) :
 n_coh(N) = σ(N)·R_surf/(V_C·R_tot) ∈ Q(√5) [THEOREM — D49, D48]
@@ -386,9 +377,6 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 | Conjecture PDL-C : C=(1−κ)^997·(Rv/Rt)^23·(1−η_L)^67 | **THÉORÈME** (0.17 ppm) | D51+D52 |
 | Identification (1−κ), R_val/R_tot, (1−η_L) comme bases naturelles | **THÉORÈME** | D52 |
 | OP1-D35 : chaîne causale C1–C4→Λ_PDL FERMÉE | **RÉSOLU COMPLET** | D51+D52 |
-| Vérification indépendante C_PDL : 0.41 ppm vs D51 | **VÉRIFIÉ** | D53 |
-| Offset métrologique 8.6 ppm (m_pc/ħ)² sans portée structurelle | **DIAGNOSTIC** | D53 |
-| Synthèse causale C1–C4→Λ en document unique | **SYNTHÈSE** | D53 |
 | PDL Einstein eq. avec source explicite | **COROLLAIRE** | D48-Cor.9.1 |
 | Instabilité Z=43 (Tc) et Z=61 (Pm) | **Conjecture qualitative** | Session 30, OP3-D40 |
 | C^(orb)_ij ∝ δ_ij (isotropie Wigner) | **Théorème standard confirmé** | Session 32, Colab-London-1 |
@@ -408,7 +396,7 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 
 ## Open Problems (updated Session 33)
 
-**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50), OP1-D35 COMPLET (D51+D52 — chaîne causale C1–C4→Λ_PDL fermée), D53 SYNTHÈSE PUBLIÉE
+**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50), OP1-D35 COMPLET (D51+D52 — chaîne causale C1–C4→Λ_PDL fermée)
 
 | Label | Description | Priority |
 |-------|-------------|----------|
@@ -426,26 +414,27 @@ P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
 
 ---
 
-## Next Actions (updated Session 34)
+## Next Actions (updated Session 33)
 
-**Complétées en Session 34 (6 May 2026) :**
-- ✓ D53 produit (LaTeX + .bib complets)
-- ✓ D53 publié sur Zenodo (DOI: 10.5281/zenodo.20052558)
-- ✓ Vérification numérique indépendante : déviation structurelle 0.41 ppm confirmée
-- ✓ Diagnostic métrologique offset (m_pc/ħ)² 8.6 ppm documenté dans D53
-- ✓ PDL_context.md mis à jour Session 34
+**Complétées en Session 33 (4 May 2026) :**
+- ✓ D49 publié sur Zenodo (DOI: 10.5281/zenodo.20025166) — OP-London RÉSOLU
+- ✓ Colab-BH-1 : fraction 1/4 identifiée comme coefficient BH
+- ✓ Colab-BH-2 : indépendance prouvée via H3 — 30 720 cas, zéro violation
+- ✓ Structure de D50 complète — prêt pour rédaction LaTeX
+- ✓ PDL_context.md mis à jour Session 33
 
 **À faire — immédiat :**
-1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 34) sur GitHub (main branch)
-2. **[HIGH]** Mettre à jour cedriclaubscher.ch : D53 + guided journey Phase X (synthèse causale)
-3. **[HIGH]** Academia.edu : post D53 (causal chain C1–C4 → Λ)
-4. **[HIGH]** DM v19 : vérifier si D53 est déjà incorporé ; sinon préparer DM v20
-5. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
+1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 33) sur GitHub (main branch)
+2. **[HIGH]** Rédiger et déposer D50 sur Zenodo (coefficient 1/4 de S_BH — OP12/BH-3)
+3. **[HIGH]** Mettre à jour cedriclaubscher.ch : D49 + guided journey
+4. **[HIGH]** Academia.edu : post D49 (London equation from PDL axioms)
+5. **[HIGH]** Contact Ha et al. (Recchia/Lenzi, Padova) : update avec D47 + D49
+6. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
 
 **À faire — recherche :**
-6. **[HIGH]** OP-pressure : équation d'état w du fluide de cohérence
-7. **[HIGH]** SU(2) via fibration de Hopf (D46 comme point d'entrée) — D54 potentiel
-8. **[MEDIUM]** OP2 (D46) : prouver Ω* = 2π·α_PDL depuis D12
+7. **[HIGH]** OP1-D35 : dériver C depuis C1–C4 (constante cosmologique PDL)
+8. **[MEDIUM]** OP-pressure : équation d'état w du fluide de cohérence (esquissé dans D49)
+9. **[MEDIUM]** OP2 (D46) : prouver Ω* = 2π·α_PDL depuis D12
 
 ---
 
@@ -514,7 +503,7 @@ LAYER 11 — COHERENCE TENSOR — PARTIAL
   [?]OP1-D35 dériver C | [?]OP-pressure
 
 LAYER 12 — DISSEMINATION
-  Zenodo: D01–D53 + auxiliaires — DM v19 publié (10.5281/zenodo.20039860)
+  Zenodo: D01–D51 + auxiliaires — DM v18 publié (10.5281/zenodo.20008823)
   HAL: D42,D43v3,D44,D45,DM v17,DN — En modération
   Email: Arbey+Auffinger (IP2I Lyon) — 29 Apr 2026
 ```
@@ -528,7 +517,6 @@ OP14 (D47) r_exc | OP2-D35 partial (D48) C^(mass),C^(spin),C^(orb)
 OP-LONDON (D49) London equation | OP12/BH-3 (D50, DOI: 10.5281/zenodo.20029777)
 OP1-D35 COMPLETE (D51+D52) — chaîne C1–C4→Λ_PDL fermée sans paramètre libre
 COSMOLOGICAL LEAKAGE LAYER : COMPLETE (D51 DOI: 10.5281/zenodo.20033520 + D52 DOI: 10.5281/zenodo.20036769)
-D53 SYNTHÈSE : PUBLISHED (Session 34, DOI: 10.5281/zenodo.20052558) — vérification indépendante 0.41 ppm
 
 CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
@@ -565,4 +553,4 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - Epistemic status table with p{} fixed-width columns
 - All HTML links: target="_blank" rel="noopener"
 
-*All references use Zenodo canonical numbering D01–D53 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
+*All references use Zenodo canonical numbering D01–D51 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
