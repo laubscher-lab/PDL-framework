@@ -299,3 +299,8 @@ D52
 https://doi.org/10.5281/zenodo.20036769 
 Formal Identification of the Three Leakage Bases as Natural Representatives of the Three Cycles of β₁(K₄) = 3: Completion of the Proof of Conjecture PDL-C 
 D52_leakage_bases.pdf
+
+D53 
+https://doi.org/10.5281/zenodo.20052558 
+From Four Axioms to the Cosmological Constant: Causal Closure of the Chain C1–C4 to Λ — A Synthesis and Computational Verification (PDL Framework — D53)
+D53___causal_closure_lambda.pdf 
