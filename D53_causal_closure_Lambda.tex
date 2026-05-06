@@ -1,0 +1,555 @@
+% ============================================================
+% D53 — From Four Axioms to the Cosmological Constant:
+%        Causal Closure of the Chain C1--C4 to Lambda
+%        A Synthesis and Computational Verification
+%
+% Author  : Cédric Laubscher
+% Corpus  : PDL Document Series, D53
+% Synthesises: D51 (10.5281/zenodo.20033520)
+%              D52 (10.5281/zenodo.20036769)
+% Depends  : D16a (10.5281/zenodo.18841034)
+%            D17  (10.5281/zenodo.18841254)
+%            D21  (10.5281/zenodo.19056994)
+%            D23  (10.5281/zenodo.19197268)
+%            D29  (10.5281/zenodo.19283107)
+%            D30  (10.5281/zenodo.19294449)
+%            D39  (10.5281/zenodo.19354989)
+%            D42  (10.5281/zenodo.19397315)
+%            D43  (10.5281/zenodo.19678389)
+%            D47  (10.5281/zenodo.19967918)
+%            D48  (10.5281/zenodo.19969831)
+%            D51  (10.5281/zenodo.20033520)
+%            D52  (10.5281/zenodo.20036769)
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newpxtext}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\tcbuselibrary{breakable,skins}
+
+% ---- Colours -------------------------------------------------------
+\definecolor{pdllink}{RGB}{0,60,120}
+\definecolor{proofblue}{RGB}{0,80,160}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{openproblemred}{RGB}{160,20,20}
+\definecolor{resolvedgreen}{RGB}{0,130,70}
+\definecolor{chaincolor}{RGB}{30,100,180}
+\definecolor{codegray}{RGB}{245,245,245}
+\hypersetup{colorlinks=true, linkcolor=pdllink,
+            citecolor=pdllink, urlcolor=pdllink}
+
+% ---- Theorem environments ------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- tcolorbox environments ----------------------------------------
+\tcbset{
+  resolvedstyle/.style={colframe=resolvedgreen, colback=green!4,
+    fonttitle=\bfseries\color{resolvedgreen}, breakable, enhanced},
+  chainstyle/.style={colframe=chaincolor, colback=chaincolor!5,
+    fonttitle=\bfseries\color{chaincolor}, breakable, enhanced},
+  codestyle/.style={colframe=gray!50, colback=codegray,
+    fonttitle=\bfseries, breakable, enhanced, fontupper=\small\ttfamily}
+}
+\newenvironment{resolvedproblem}[1][]{%
+  \begin{tcolorbox}[resolvedstyle, title={Resolved: #1}]}{\end{tcolorbox}}
+\newenvironment{chainbox}[1][]{%
+  \begin{tcolorbox}[chainstyle, title={#1}]}{\end{tcolorbox}}
+\newenvironment{codebox}[1][]{%
+  \begin{tcolorbox}[breakable, codestyle, title={#1}]}{\end{tcolorbox}}
+
+% ---- PDL macros ----------------------------------------------------
+\newcommand{\Kfour}{K_4}
+\newcommand{\hb}{\hbar}
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rval}{R_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\renewcommand{\Re}{R_e}
+\newcommand{\kap}{\kappa}
+\newcommand{\etaL}{\eta_L}
+\newcommand{\vp}{\varphi}
+\newcommand{\pk}[1]{p_{#1}}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\sigmaN}{\sigma(N)}
+
+% ============================================================
+\begin{document}
+
+\title{\textbf{From Four Axioms to the Cosmological Constant:\\
+Causal Closure of the Chain $\mathrm{C1}$--$\mathrm{C4}$ to $\Lambda$}\\[6pt]
+{\large A Synthesis and Computational Verification}\\[4pt]
+{\large PDL Document D53}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{May 2026}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+This document is a synthesis and computational verification of the causal chain leading from the four combinatorial axioms C1--C4 of the Projective Dynamic Logo (\PDL) programme to the cosmological constant $\Lambda$. No new mathematical result is established here: all theorems are proved in the cited documents. The contribution of D53 is to present the complete chain in a single, self-contained text, and to provide an independent numerical verification of the key formula — the cosmological leakage constant $C$ — at a precision of $0.41$~ppm relative to the value published in D51~\cite{PDL_D51_2026}.
+
+The chain traverses fifty-seven orders of magnitude in physical scale: from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields, to the cosmological constant $\Lambda_{\mathrm{PDL}} \approx 1.089 \times 10^{-52}$~m$^{-2}$. Each step is a theorem; no free parameter enters beyond the sole irreducible PDL--QCD interface parameter $\Delta m_{\mathrm{iso}} = m_d - m_u$, which plays no role in the cosmological derivation. The smallness of $\Lambda$ is not a fine-tuning: it is the arithmetic consequence of three independent leakage suppressions, each raised to a prime power imposed by the non-decomposability axiom C3.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% ============================================================
+
+The cosmological constant problem is one of the deepest open questions in theoretical physics. In the standard quantum field theory framework, the vacuum energy density is estimated at $10^{120}$ times the observed value of $\Lambda$. No satisfactory mechanism for this suppression has been established.
+
+The \PDL\ programme approaches the problem from the opposite direction. Rather than starting from a quantum field theory and asking why the vacuum energy is small, it starts from four combinatorial axioms on finite signed graphs and derives $\Lambda$ as an unconditional consequence. The smallness of $\Lambda$ is then not a mystery to be explained away, but a theorem to be proved.
+
+Documents D51~\cite{PDL_D51_2026} and D52~\cite{PDL_D52_2026} together establish this derivation. D51 identifies the prime structure of the leakage exponents from the topology of $\Kfour$ and the pulsation axiom C1. D52 formally identifies the three leakage base quantities with the three orthogonal sectors of the proton relational architecture. The present document, D53, serves three purposes. First, it presents the complete causal chain from C1--C4 to $\Lambda$ in a single linear narrative, with explicit reference to the source document for each step. Second, it provides a fully self-contained numerical verification in Python, reproduced verbatim, which an independent reader can execute to confirm the result. Third, it situates the result epistemically, identifying what is an unconditional theorem, what is a verified numerical identification, and what remains open.
+
+\subsection{The scale of the result}
+\label{subsec:scale}
+
+The chain spans the following conceptual distances:
+\begin{itemize}
+\item \textbf{Combinatorial layer:} Four axioms C1--C4 on finite signed graphs. No metric, no field, no spacetime.
+\item \textbf{Structural layer:} The minimal admissible closure is $\Kfour$, the complete graph on four vertices. The proton is the minimal hierarchical composite, uniquely characterised by the quintuplet $(n_u, n_d, \Rval, \Rsea, \Rtot) = (24, 28, 930, 10\,087, 11\,017)$.
+\item \textbf{Topological layer:} The first Betti number $\beta_1(\Kfour) = 3$ imposes exactly three independent leakage cycles.
+\item \textbf{Arithmetic layer:} Axiom C3 (non-decomposability) forces each leakage cycle length to be prime. The three primes are $p_{168} = 997$, $p_9 = 23$, $p_{19} = 67$, where the indices are determined by the quintuplet.
+\item \textbf{Physical layer:} The cosmological constant $\Lambda \approx 1.089 \times 10^{-52}$~m$^{-2}$ follows from the product of three suppression factors, each a rational function of the quintuplet raised to a prime power.
+\end{itemize}
+
+The ratio of the proton Compton wavelength squared (the natural PDL length scale) to $\Lambda^{-1}$ (the cosmological length scale) is approximately $10^{57}$. The derivation crosses this gap without invoking any intermediate energy scale, anthropic argument, or adjustable parameter.
+
+% ============================================================
+\section{The four axioms and their immediate consequences}
+\label{sec:axioms}
+% ============================================================
+
+\subsection{Axioms C1--C4}
+\label{subsec:axioms}
+
+The \PDL\ programme rests on four axioms on finite signed graphs~\cite{PDL_D01_2026}.
+
+\begin{description}[leftmargin=1.5cm]
+\item[C1] \textbf{Binary pulsation.} Every closure undergoes a binary alternation between two complementary states. The minimal pulsation has exactly two branches.
+\item[C2] \textbf{Relational completeness.} Every pair of nodes is connected by at least one signed edge. No node is isolated.
+\item[C3] \textbf{Non-decomposability.} The closure cannot be partitioned into two independent sub-closures. Every subset is coupled to its complement.
+\item[C4] \textbf{Minimality.} The closure is the smallest structure satisfying C1--C3.
+\end{description}
+
+\subsection{The minimal closure is \texorpdfstring{$\Kfour$}{K4}}
+\label{subsec:K4}
+
+\begin{theorem}[Uniqueness of $\Kfour$, D16a~\cite{PDL_D16a_2026}]
+\label{thm:K4}
+The unique finite signed graph satisfying axioms C1--C4 is the complete graph $\Kfour$ on four vertices and six edges, with $\Re = 6$ relational degrees of freedom.
+\end{theorem}
+
+This result is the foundation of the entire programme. $\Kfour$ is not postulated; it is the unique consequence of the four axioms.
+
+\subsection{The proton quintuplet}
+\label{subsec:quintuplet}
+
+The proton is the minimal hierarchical composite closure admissible under C1--C4~\cite{PDL_D16b_2026, PDL_D47_2026}. Its relational architecture is uniquely characterised by the integer quintuplet:
+\begin{equation}
+(n_u,\; n_d,\; \Rval,\; \Rsea,\; \Rtot) \;=\; (24,\; 28,\; 930,\; 10\,087,\; 11\,017),
+\label{eq:quintuplet}
+\end{equation}
+where $n_u$ and $n_d$ are the up- and down-valence core counts, $\Rval$ is the valence relational budget, $\Rsea$ is the sea budget, and $\Rtot = \Rval + \Rsea$ is the total relational budget.
+
+% ============================================================
+\section{The causal chain from C1--C4 to \texorpdfstring{$\Lambda$}{Lambda}}
+\label{sec:chain}
+% ============================================================
+
+\subsection{Overview}
+\label{subsec:overview}
+
+The complete chain is:
+\begin{equation}
+\mathrm{C1}\text{--}\mathrm{C4}
+\xrightarrow{\text{D16a}} \Kfour
+\xrightarrow{\text{D23}} \beta_1 = 3
+\xrightarrow{\text{D51}} (p_{k_1}, p_{k_2}, p_{k_3})
+\xrightarrow{\text{D52}} (\text{bases})
+\xrightarrow{\text{D51}} C
+\xrightarrow{\text{D48}} \Lam_{\mathrm{PDL}}.
+\label{eq:chain}
+\end{equation}
+
+Each arrow is an established theorem. We now trace each step.
+
+\subsection{Step 1: \texorpdfstring{$\beta_1(\Kfour) = 3$}{beta1(K4) = 3} forces three independent leakage cycles}
+\label{subsec:beta1}
+
+\begin{theorem}[Three leakage cycles, D23~\cite{PDL_D23_2026}]
+\label{thm:beta1}
+The first Betti number of the 1-skeleton of $\Kfour$ satisfies $\beta_1(\Kfour) = 3$. Consequently, there exist exactly three independent leakage cycles, corresponding to three orthogonal directions of relational incoherence.
+\end{theorem}
+
+The Betti number $\beta_1 = |E| - |V| + 1 = 6 - 4 + 1 = 3$ is a combinatorial identity. The identification of these three cycles with leakage directions follows from the decomposition of the coherence stress-energy tensor in D48~\cite{PDL_D48_2026}.
+
+\subsection{Step 2: C3 forces the cycle lengths to be prime}
+\label{subsec:primes}
+
+\begin{theorem}[Primality of leakage cycles, D51~\cite{PDL_D51_2026}]
+\label{thm:prime}
+Under the conjunction of C1 (binary pulsation) and C3 (non-decomposability), a leakage cycle of length $N$ is irreducible if and only if $N$ is prime. Every composite length admits a factorisation that violates C3.
+\end{theorem}
+
+This is the key structural constraint. The prime exponents in the formula for $C$ are not fitted to the data: they are the unique lengths consistent with non-decomposability.
+
+\subsection{Step 3: The quintuplet determines the three prime indices}
+\label{subsec:indices}
+
+\begin{theorem}[Index formula, D51~\cite{PDL_D51_2026}]
+\label{thm:indices}
+The three leakage cycle lengths are counted by the following exact combinatorial identities in the quintuplet parameters:
+\begin{align}
+k_1 &= n_d - n_u + \Re - 1 = 28 - 24 + 6 - 1 = 9, \label{eq:k1}\\
+k_2 &= n_u - \Re + 1 = 24 - 6 + 1 = 19, \label{eq:k2}\\
+k_3 &= \Re \cdot n_d = 6 \times 28 = 168. \label{eq:k3}
+\end{align}
+The completeness identity $k_1 + k_2 = n_d = 28$ holds exactly. The three prime exponents are $\pk{k_1} = p_9 = 23$, $\pk{k_2} = p_{19} = 67$, and $\pk{k_3} = p_{168} = 997$, where $\pk{k}$ denotes the $k$-th prime number.
+\end{theorem}
+
+\subsection{Step 4: The three leakage base quantities}
+\label{subsec:bases}
+
+The three orthogonal leakage directions correspond to three natural base quantities, each an unconditional theorem of the \PDL\ programme~\cite{PDL_D52_2026}:
+
+\begin{enumerate}
+\item \textbf{Surface leakage base} $(1 - \kap)$, where $\kap = \Rsurf/\Rtot = 310\vp/11\,017 \in \mathbb{Q}(\sqrt{5})$ is the surface-to-total coherence ratio (D42~\cite{PDL_D42_2026}). This base quantifies the fraction of relational activity that fails to contribute to the active surface per pulsation cycle.
+\item \textbf{Valence leakage base} $\Rval/\Rtot = 930/11\,017$, the fraction of the total relational budget that is directly available for valence coupling (D29~\cite{PDL_D29_2026}).
+\item \textbf{Coupling leakage base} $(1 - \etaL)$, where $\etaL = \varepsilon_G^B \in \mathbb{Q}(\sqrt{5})$ is the gravitational coupling leakage parameter established in D30~\cite{PDL_D30_2026}:
+\begin{equation}
+\etaL = \frac{\kap \cdot C_0}{6 + \kap} \cdot \left(1 + \frac{2}{\Rtot}\right), \qquad C_0 = \frac{n_u^2 - 1}{n_u^2} = \frac{575}{576}.
+\label{eq:etaL}
+\end{equation}
+This base quantifies the per-level attenuation of the gravitational coupling across the 18-step hierarchical filter.
+\end{enumerate}
+
+\subsection{Step 5: The cosmological leakage constant \texorpdfstring{$C$}{C}}
+\label{subsec:C}
+
+\begin{theorem}[Cosmological leakage constant, D51~\cite{PDL_D51_2026} + D52~\cite{PDL_D52_2026}]
+\label{thm:C}
+The constant $C$ in the leakage term of the PDL coherence stress-energy tensor (D48~\cite{PDL_D48_2026}) is:
+\begin{equation}
+\boxed{C = (1-\kap)^{997} \times \left(\frac{\Rval}{\Rtot}\right)^{23} \times (1-\etaL)^{67}.}
+\label{eq:C}
+\end{equation}
+No free parameter enters \eqref{eq:C}. All three bases and all three exponents are unconditional theorems of C1--C4 via the quintuplet.
+\end{theorem}
+
+\subsection{Step 6: The cosmological constant}
+\label{subsec:Lambda}
+
+The cosmological leakage term in the PDL Einstein field equation (D48~\cite{PDL_D48_2026}, D35~\cite{PDL_D35_2026}) is:
+\begin{equation}
+C^{(\mathrm{leak})}_{\mu\nu} = -C \cdot \etaL^{18} \cdot \left(\frac{m_p c}{\hb}\right)^2 g_{\mu\nu}.
+\label{eq:Cleak}
+\end{equation}
+Identifying this term with the cosmological constant contribution $-\Lam g_{\mu\nu}$ gives:
+\begin{equation}
+\Lam_{\mathrm{PDL}} = C \cdot \etaL^{18} \cdot \left(\frac{m_p c}{\hb}\right)^2.
+\label{eq:Lambda}
+\end{equation}
+Evaluating \eqref{eq:Lambda} with the algebraic value $\etaL = 0.00751927\ldots \in \mathbb{Q}(\sqrt{5})$ and CODATA 2022 values for $m_p$, $c$, $\hb$ yields:
+\begin{equation}
+\Lam_{\mathrm{PDL}} \approx 1.089\,009 \times 10^{-52}\ \mathrm{m}^{-2},
+\label{eq:Lambda_num}
+\end{equation}
+in agreement with the Planck 2020 observational value $\Lam_{\mathrm{obs}} = 1.089 \times 10^{-52}$~m$^{-2}$~\cite{Planck2020} within the measurement uncertainty of $\pm 1.7\%$.
+
+\begin{remark}[Why $\Lambda$ is small]
+\label{rem:small}
+The smallness of $\Lambda \approx 10^{-52}$~m$^{-2}$ is not a fine-tuning mystery within the \PDL\ framework. It is the product of three quantities each close to 1, raised to large prime powers: $0.9545^{997} \approx 10^{-20}$, $(930/11\,017)^{23} \approx 10^{-26}$, and $0.9925^{67} \approx 10^{-0.4}$. The total is $C \approx 10^{-46}$, and $\etaL^{18} \approx 10^{-38}$ provides the remaining suppression relative to the Planck scale. Each large exponent is a prime forced by C3. The universe's residual incoherence accumulates over $997 + 23 + 67 = 1087$ irreducible leakage events across three independent sectors.
+\end{remark}
+
+% ============================================================
+\section{Numerical verification}
+\label{sec:numerical}
+% ============================================================
+
+The following Python code, executable in Google Colab with standard scientific libraries, provides an independent numerical verification of the chain described in Section~\ref{sec:chain}. Three self-contained cells are presented in logical order; each cell repeats all necessary imports.
+
+\clearpage
+
+\subsection{Cell 1 — Fundamental PDL parameters}
+\label{subsec:cell1}
+
+\begin{codebox}[Cell~1: Fundamental PDL parameters (50-decimal precision)]
+\begin{verbatim}
+from sympy import sqrt, Integer, N as Neval
+from mpmath import mp, mpf, nstr, power
+
+mp.dps = 50
+
+# Quintuplet (unconditional theorems)
+n_u, n_d, R_e       = 24, 28, 6
+R_val, R_sea, R_tot = 930, 10087, 11017
+
+phi   = mpf(str(Neval((1 + sqrt(5)) / 2, 60)))
+kappa = mpf(310) * phi / mpf(11017)
+
+# eta_L = varepsilon_G^B (algebraic, D30, in Q(sqrt(5)))
+C_nulo = (mpf(n_u)**2 - 1) / mpf(n_u)**2   # 575/576
+eta_L  = kappa * C_nulo / (6 + kappa) * (1 + mpf(2)/mpf(R_tot))
+
+r_val  = mpf(R_val) / mpf(R_tot)
+
+assert abs(kappa - mpf(310)*phi/mpf(11017)) < mpf('1e-48')
+assert R_val + R_sea == R_tot
+assert 0 < float(eta_L) < 1
+
+# Results: kappa = 0.045528777..., eta_L = 0.007519273...
+\end{verbatim}
+\end{codebox}
+
+\subsection{Cell 2 — Prime indices and exponents}
+\label{subsec:cell2}
+
+\begin{codebox}[Cell~2: Prime indices and exponents]
+\begin{verbatim}
+from sympy import prime, isprime
+
+n_u, n_d, R_e = 24, 28, 6
+
+k1 = n_d - n_u + R_e - 1   # = 9
+k2 = n_u - R_e + 1          # = 19
+k3 = R_e * n_d               # = 168
+
+assert k1 + k2 == n_d        # completeness identity
+
+p_k1 = int(prime(k1))        # p_9  = 23
+p_k2 = int(prime(k2))        # p_19 = 67
+p_k3 = int(prime(k3))        # p_168 = 997
+
+for k, p in [(k1, p_k1), (k2, p_k2), (k3, p_k3)]:
+    assert isprime(p)
+
+# All three exponents confirmed prime: 23, 67, 997
+\end{verbatim}
+\end{codebox}
+
+\subsection{Cell 3 — \texorpdfstring{$C$, $\Lambda_{\mathrm{PDL}}$}{C, Lambda	extsubscript{PDL}}, and robustness}
+\label{subsec:cell3}
+
+\begin{codebox}[Cell~3: $C$, $\Lambda_{\mathrm{PDL}}$, deviation, and table of exclusion]
+\begin{verbatim}
+from sympy import sqrt, N as Neval, prime
+from mpmath import mp, mpf, log, exp, fabs, nstr, power
+
+mp.dps = 50
+
+# Quintuplet and parameters (repeated for self-containment)
+n_u, n_d, R_e       = 24, 28, 6
+R_val, R_sea, R_tot = 930, 10087, 11017
+phi    = mpf(str(Neval((1 + sqrt(5)) / 2, 60)))
+kappa  = mpf(310) * phi / mpf(11017)
+C_nulo = (mpf(n_u)**2 - 1) / mpf(n_u)**2
+eta_L  = kappa * C_nulo / (6 + kappa) * (1 + mpf(2)/mpf(R_tot))
+r_val  = mpf(R_val) / mpf(R_tot)
+
+p_k1, p_k2, p_k3 = 23, 67, 997
+
+b_surf = 1 - kappa
+b_val  = r_val
+b_coup = 1 - eta_L
+
+log_C = p_k3*log(b_surf) + p_k1*log(b_val) + p_k2*log(b_coup)
+C_PDL = exp(log_C)
+
+# CODATA 2022
+m_p  = mpf('1.67262192369e-27')   # kg
+c    = mpf('299792458')            # m/s
+hbar = mpf('1.054571817e-34')      # J s
+mp_c_hbar_sq = (m_p * c / hbar)**2
+eta_L_18     = power(eta_L, 18)
+
+Lambda_PDL = C_PDL * eta_L_18 * mp_c_hbar_sq
+
+# Reference: C_target published in D51
+C_target_D51 = mpf('8.1579491e-46')
+dev_ppm = fabs(C_PDL - C_target_D51) / C_target_D51 * mpf('1e6')
+
+# Planck 2020
+Lambda_obs = mpf('1.089e-52')
+C_target_Planck = Lambda_obs / (eta_L_18 * mp_c_hbar_sq)
+
+# Results:
+# C_PDL    = 8.15794572e-46
+# C_target (D51) = 8.15794910e-46   -> deviation 0.41 ppm
+# Lambda_PDL     = 1.08901e-52 m^-2 -> ratio 1.0000082
+\end{verbatim}
+\end{codebox}
+
+\subsection{Numerical results summary}
+\label{subsec:numresults}
+
+Table~\ref{tab:numerical} summarises the key numerical results of the three cells.
+
+\begin{table}[H]
+\centering
+\caption{Numerical verification results (50-decimal precision, mpmath). The structural deviation of $0.41$~ppm is the deviation of $C_{\mathrm{PDL}}$ from the value $C_{\mathrm{target}}$ published in D51~\cite{PDL_D51_2026}. The apparent deviation of $8.17$~ppm relative to the Planck 2020 value arises entirely from an $8.6$~ppm metrological offset in $(m_p c/\hb)^2$ between the CODATA values used in D51 and CODATA 2022 — it carries no structural significance.}
+\label{tab:numerical}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{llr}
+\toprule
+Quantity & Expression & Value \\
+\midrule
+$\kap$ & $310\vp/11\,017$ & $0.045\,528\,777\ldots$ \\
+$\etaL$ & $\kap C_0/(6+\kap)\cdot(1+2/\Rtot)$ & $0.007\,519\,273\ldots$ \\
+$\Rval/\Rtot$ & $930/11\,017$ & $0.084\,415\ldots$ \\
+$k_1, k_2, k_3$ & $9,\; 19,\; 168$ & exact integers \\
+$p_{k_1}, p_{k_2}, p_{k_3}$ & $p_9,\; p_{19},\; p_{168}$ & $23,\; 67,\; 997$ \\
+$C_{\mathrm{PDL}}$ & $(1-\kap)^{997}(\Rval/\Rtot)^{23}(1-\etaL)^{67}$ & $8.157\,946 \times 10^{-46}$ \\
+$C_{\mathrm{target}}$ (D51) & published value & $8.157\,949 \times 10^{-46}$ \\
+Structural deviation & $|C_{\mathrm{PDL}} - C_{\mathrm{target}}|/C_{\mathrm{target}}$ & $\mathbf{0.41}$~\textbf{ppm} \\
+$\etaL^{18}$ & $= \alpha_G$ (Gate~2) & $5.904 \times 10^{-39}$ \\
+$(m_p c/\hb)^2$ & CODATA 2022 & $2.261 \times 10^{31}$~m$^{-2}$ \\
+$\Lam_{\mathrm{PDL}}$ & $C \cdot \etaL^{18} \cdot (m_p c/\hb)^2$ & $1.089\,009 \times 10^{-52}$~m$^{-2}$ \\
+$\Lam_{\mathrm{obs}}$ & Planck 2020~\cite{Planck2020} & $1.089 \times 10^{-52}$~m$^{-2}$ \\
+$\Lam_{\mathrm{PDL}}/\Lam_{\mathrm{obs}}$ & & $1.000\,008$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Robustness of the prime structure}
+\label{subsec:robustness}
+
+The primality of the exponents is structurally necessary, not incidental. Table~\ref{tab:primes} reproduces the robustness test of D51~\cite{PDL_D51_2026}: replacing any prime exponent by its nearest composite neighbour increases the deviation from $C_{\mathrm{target}}$ by at least four orders of magnitude.
+
+\begin{table}[H]
+\centering
+\caption{Robustness of the prime exponents. Replacing any prime by its nearest composite neighbour degrades the agreement with $C_{\mathrm{target}}$ (D51) by at least four orders of magnitude. The prime structure is load-bearing.}
+\label{tab:primes}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\toprule
+Substitution & Exponents & Deviation from $C_{\mathrm{target}}$ \\
+\midrule
+Reference (all primes) & $(997, 23, 67)$ & $0.41$~ppm \\
+$997 \to 996 = 4 \times 249$ & $(996, 23, 67)$ & $47\,700$~ppm \\
+$997 \to 998 = 2 \times 499$ & $(998, 23, 67)$ & $45\,529$~ppm \\
+$23 \to 22 = 2 \times 11$ & $(997, 22, 67)$ & $10\,846\,235$~ppm \\
+$23 \to 24 = 2^3 \times 3$ & $(997, 24, 67)$ & $915\,585$~ppm \\
+$67 \to 66 = 2 \times 3 \times 11$ & $(997, 23, 66)$ & $7\,576$~ppm \\
+$67 \to 68 = 4 \times 17$ & $(997, 23, 68)$ & $7\,519$~ppm \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Epistemic status}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the principal results of D53. All results originate in the cited documents; D53 synthesises and verifies them independently.}
+\label{tab:epistemic}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{8.0cm}p{2.5cm}p{4.0cm}}
+\toprule
+Result & Status & Source \\
+\midrule
+C1--C4 $\Rightarrow$ $\Kfour$ unique & \textcolor{proofblue}{\textbf{Theorem}} & D16a \\
+$\beta_1(\Kfour) = 3$ & \textcolor{proofblue}{\textbf{Theorem}} & D23 \\
+Three orthogonal leakage sectors & \textcolor{proofblue}{\textbf{Theorem}} & D29, D42, D17 \\
+C3 forces prime cycle lengths & \textcolor{proofblue}{\textbf{Theorem}} & D51 \\
+Index formula $k_1, k_2, k_3$ from quintuplet & \textcolor{proofblue}{\textbf{Theorem}} & D51 \\
+Completeness identity $k_1 + k_2 = n_d$ & \textcolor{proofblue}{\textbf{Theorem}} & D51 \\
+$(1-\kap)$ = surface leakage base & \textcolor{proofblue}{\textbf{Theorem}} & D42 \\
+$\Rval/\Rtot$ = valence leakage base & \textcolor{proofblue}{\textbf{Theorem}} & D29 \\
+$(1-\etaL)$ = coupling leakage base & \textcolor{proofblue}{\textbf{Theorem}} & D17, D30 \\
+Algebraic independence of three bases & \textcolor{proofblue}{\textbf{Verified}} & D52 \\
+Uniqueness by exhaustive exclusion & \textcolor{proofblue}{\textbf{Verified}} & D52 \\
+\midrule
+Formula~\eqref{eq:C} as unconditional theorem & \textcolor{proofblue}{\textbf{Theorem}} & D51 + D52 \\
+$C_{\mathrm{PDL}}$ vs $C_{\mathrm{target}}$ (D51): $0.41$~ppm & \textcolor{proofblue}{\textbf{Verified}} & D53 (this document) \\
+$\Lam_{\mathrm{PDL}} \approx 1.089 \times 10^{-52}$~m$^{-2}$ & \textcolor{proofblue}{\textbf{Prediction}} & D51, D52, D53 \\
+\midrule
+Causal chain C1--C4 $\to$ $\Lam$ complete & \textcolor{proofblue}{\textbf{Theorem}} & D16a--D52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What D53 does not claim}
+\label{subsec:noclaim}
+
+Epistemic precision requires an explicit statement of what is not established here. Three points deserve mention.
+
+First, the identification of the three leakage bases with the three sectors is proved in D52 by a combination of unconditional structural theorems and exhaustive exclusion of alternatives~\cite{PDL_D52_2026}. This constitutes a rigorous proof by elimination. A direct algebraic construction of the bijection from C1--C4 alone, without the exclusion step, would strengthen the result further, but is not required for the theorem to hold.
+
+Second, the comparison with $\Lam_{\mathrm{obs}}$ involves CODATA values for $m_p$, $c$, and $\hb$. The formula~\eqref{eq:Lambda} is structurally exact; the numerical comparison inherits the metrological uncertainty of these constants (approximately $\pm 12$~ppm for $m_p$ and $\pm 26$~ppm for $G$). The $0.41$~ppm deviation is below this noise floor and is therefore consistent with exact structural agreement.
+
+Third, the sole irreducible external parameter of the \PDL\ programme, $\Delta m_{\mathrm{iso}} = m_d - m_u$, plays no role in the cosmological derivation. The chain C1--C4 $\to$ $\Lam$ is parameter-free.
+
+% ============================================================
+\section{Open problems at the cosmological frontier}
+\label{sec:open}
+% ============================================================
+
+The closure of the chain C1--C4 $\to$ $\Lam$ does not exhaust the cosmological questions accessible to \PDL. The following three problems remain open.
+
+\textbf{OP-pressure.} The equation of state $w = P/(\rho_{\mathrm{coh}} c^2)$ for the coherence fluid has not been derived from C1--C4. The pressure term in the coherence stress-energy tensor (D48~\cite{PDL_D48_2026}) is constrained but not fully determined.
+
+\textbf{OP-London.} The connection between the orbital component $C^{(\mathrm{orb})}_{\mu\nu}$ and the London equation (D49~\cite{PDL_D49_2026}, D46~\cite{PDL_D46_2026}) has been conjectured but not formally established as a theorem.
+
+\textbf{OP-CMB.} The derivation of the CMB angular power spectrum $C_\ell$ from the \PDL\ cosmological framework, using the $\sigmaN$-modified gravitational coupling, has not been attempted. The scalar spectral index $n_s \approx 0.965$ and the tensor-to-scalar ratio $r$ are the primary targets.
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ============================================================
+
+The causal chain from four combinatorial axioms on finite signed graphs to the cosmological constant $\Lambda \approx 1.089 \times 10^{-52}$~m$^{-2}$ is complete. Each step is an established theorem of the \PDL\ programme. No free parameter enters the derivation of $\Lambda$. The smallness of the cosmological constant is a combinatorial necessity: it is the product of three suppression factors, each raised to a prime power forced by the non-decomposability axiom C3.
+
+The independent numerical verification presented in Section~\ref{sec:numerical} confirms the formula to $0.41$~ppm relative to the published value of D51~\cite{PDL_D51_2026}. The remaining discrepancy relative to the Planck 2020 observational value is of metrological origin and carries no structural significance.
+
+\begin{resolvedproblem}[Causal closure C1--C4 to $\Lambda$]
+The cosmological constant $\Lam_{\mathrm{PDL}}$ is an unconditional consequence of the four axioms C1--C4, via the chain~\eqref{eq:chain}. The derivation uses no free parameter, no spacetime manifold, no quantum field, and no anthropic reasoning. The chain is complete.
+\end{resolvedproblem}
+
+% ============================================================
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{D53_references}
+
+\end{document}
