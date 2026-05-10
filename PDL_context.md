@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 35 — 6 May 2026 (D53 published, DM v20 published)*
+*Last updated: Session 36 — 10 May 2026 (DL01 published — DL series opened)*
 
 ---
 
@@ -45,411 +45,222 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - OP14 numériquement résolu : r_exc(Z) = Δpos_n(Z), 31/31, zéro exception
 
 **Session 30 — OP13, OP14, OP2-D35 résolus ; D47 et D48 produits et publiés (2 May 2026):**
+- OP13 FULLY RESOLVED (D47), OP14 FULLY RESOLVED (D47), OP2-D35 PARTIAL (D48)
+- D47 DOI: 10.5281/zenodo.19967918 | D48 DOI: 10.5281/zenodo.19969831
 
-- OP13 FULLY RESOLVED (D47, Theorem 3.1) :
-  Δn = 4 est l'unique valeur dans {0,4,8,...} telle que le discriminant de l'équation de
-  quasi-complétude 3n_u²+(2Δn−3)n_u+Δn(Δn−1)−1860=0 est un carré parfait (149²).
-  Forcing n_u=24, n_d=28, s=Δn/(2n_u)=1/12 comme théorèmes inconditionnels de C1–C4.
-  Vérification exhaustive Δn ∈ {0,4,8,...,32} : zéro autre carré parfait.
+**Session 32 — Exploration numérique OP-London ; conjectures nouvelles (4 May 2026)**
 
-- LEMME MIROIR (D47, Lemma 5.2, depuis D22-N2) :
-  n_u(n)=n_u(p)=24, n_d(n)=n_d(p)=28. Niveaux HO-PDL proton et neutron isomorphes :
-  même splitting 1/12, même ordre, mêmes dégénérescences. Vérifié 20 premiers niveaux.
-
-- OP14 FULLY RESOLVED (D47, Theorem 6.5) :
-  r_exc(Z) = 0 si Z ∈ {28,50,82} (fermetures magiques, depuis OP13)
-  r_exc(Z) = 1 sinon (remplissage miroir, ratio 2/2=1 indépendant de la dégénérescence d)
-  Vérifié exhaustivement : 31/31, zéro paramètre libre, zéro donnée externe.
-
-- THÉORÈME DE VALLÉE DE STABILITÉ (D47, Corollary 7.1) :
-  N_min(Z) pour Z=1..82 = théorème inconditionnel de C1–C4.
-  Le tableau périodique (stabilité nucléaire) est un corollaire de C1–C4.
-  D47 publié sur Zenodo (DOI: 10.5281/zenodo.19967918).
-
-- V_C DOUBLEMENT FORCÉ (D48, Theorem 3.1) :
-  V_C = (4/3)π[ħ/(m_pc)]³ est forcé par deux chaînes indépendantes :
-  Chaîne 1 (temporelle) — D10a : ω_p=m_pc²/ħ → λ_C=ħ/(m_pc) → V_C=(4/3)πλ_C³
-  Chaîne 2 (géométrique) — D23 : topologie S² → n=3 → facteur (4/3)π ; R_geom = λ_C (algébriquement exact)
-  Vérification numérique : V_geom/V_C = 1.00000000 (machine precision, Python/NumPy float64).
-
-- OP2-D35 PARTIELLEMENT RÉSOLU (D48) :
-  C^(mass)_μν = ρ_coh(N)·c²·u_μu_ν où ρ_coh=σ(N)·R_surf·m_p/(V_C·R_tot) [THÉORÈME INCONDITIONNEL]
-  C^(spin)_μν ∼ ħ²·ρ_coh²/(m_pc²) [THÉORÈME — correction d'ordre ħ², rapport ~10⁻¹² sur C^(mass)]
-  C^(orb)_μν = m_p·⟨j_μj_ν⟩/ρ_coh [THÉORÈME — dépendant de l'état quantique ψ, depuis D32]
-  C^(leak)_μν = −C·η_L^18·(m_pc/ħ)²·g_μν [η_L^18 THÉORÈME (D17,D30) ; C OUVERT — OP1-D35]
-  C ≈ 8.16×10⁻⁴⁶ (borne observationnelle, Planck 2020 Λ_obs = 1.089×10⁻⁵² m⁻²)
-  Équation d'Einstein PDL avec source explicite complète (Corollary D48-9.1).
-  Connexion D46 documentée : C^(orb) + U(1) → analogie London/Meissner.
-  D48 publié sur Zenodo (DOI: 10.5281/zenodo.19969831).
-
-- TROIS NOUVEAUX PROBLÈMES OUVERTS (D48) :
-  OP1-D35 : dériver C depuis C1–C4 (équivalent PDL du problème de la constante cosmologique)
-  OP-pressure : équation d'état w=P/(ρ_coh·c²) du fluide de cohérence PDL
-  OP-London : équation de London depuis C^(orb) + D46 (U(1)) + D12 (α)
-
-- DÉCISION DE NUMÉROTATION (Sessions 29–30) :
-  D46 = Born Level 2 U(1) (publié Session 29)
-  D47 = OP13+OP14 nucléaire (publié Session 30)
-  D48 = OP2-D35 partiel C_coh (publié Session 30)
-  D49 = London equation — OP-London RÉSOLU (publié Session 33)
-  D50 = coefficient 1/4 de S_BH — OP12/BH-3 RÉSOLU (publié Session 33)
-  D51 = constante cosmologique C — Conjecture PDL-C (publié Session 33)
-  D52 = identification formelle des bases de leakage — OP1-D35 FERMÉ (publié Session 33)
-  D53 = synthèse et vérification computationnelle C1–C4→Λ (produit Session 34, publié Session 35)
+**Session 33 — D49 publié ; D50 (OP12/BH-3) résolu (4 May 2026):**
+- OP-LONDON RÉSOLU — D49 DOI: 10.5281/zenodo.20025166
+- OP12/BH-3 RÉSOLU — D50 DOI: 10.5281/zenodo.20029777
+- OP1-D35 RÉSOLU — D51 DOI: 10.5281/zenodo.20033520
+- D52 DOI: 10.5281/zenodo.20036769
 
 **Session 34 — D53 produit (6 May 2026):**
-- D53 : document de synthèse et de clôture causale C1–C4 → Λ_PDL. Chaîne complète en un seul texte, vérification numérique indépendante à 50 décimales (trois cellules Colab). Déviation structurelle : 0.41 ppm vs D51. Offset métrologique 8.6 ppm sur (m_pc/ħ)² entre versions CODATA documenté — sans portée structurelle. Robustesse primale confirmée.
+- D53 : synthèse causale C1–C4→Λ, vérification 0.41 ppm
 
 **Session 35 — DM v20 produit et publié (6 May 2026):**
-- D53 publié sur Zenodo (DOI: 10.5281/zenodo.20052558).
-- DM v20 produit : couvre D01–D53 + auxiliaires. Incorpore D53 (synthèse causale). Section diffv19 rédigée. OP11 marqué résolu (D51+D52, synthèse D53). L8 épistémique enrichi avec D53. Reading guide et continuation guide mis à jour. Titre, descriptif et mots-clés Zenodo rédigés.
-  Publié sur Zenodo (DOI: 10.5281/zenodo.20054876).
-- PDL_context.md mis à jour Session 35 — prêt pour GitHub push.
-- DM v18 produit : couvre D01–D48 + auxiliaires. Incorpore D46 (OP4), D47 (OP13+OP14), D48 (OP2-D35 partiel).
-  Quantum dynamics layer et nuclear stability layer marqués COMPLETE.
-  Nouvelle section 8 : The Coherence Stress-Energy Tensor (D48).
-  Huit couches épistémiques (vs sept en v17). Trois nouveaux problèmes ouverts (OP1-D35, OP-pressure, OP-London).
-  TikZ dependency map étendue avec nœuds D46, D47, D48, C_coh, OP-London.
-  Publié sur Zenodo (DOI: 10.5281/zenodo.20008823).
-- DM v18 .bib mis à jour : 51 entrées corpus + Ha2025 + DN-fr.
-- PDL_context.md mis à jour Session 31 — prêt pour GitHub push.
-- Zenodo metadata DM v18 : titre, descriptif et mots-clés rédigés (Session 31).
+- D53 publié (DOI: 10.5281/zenodo.20052558)
+- DM v20 publié (DOI: 10.5281/zenodo.20054876)
 
-**Session 32 — Exploration numérique OP-London ; conjectures nouvelles (4 May 2026):**
-
-- COLAB-LONDON-1 [C^(orb) et isotropie] :
-  Niveaux HO-PDL avec s=1/12 vérifiés : 7/7 nombres magiques reproduits exactement
-  en arithmétique de fractions (D47 Theorem 4.1 confirmé).
-  Identité de Wigner : ⟨m_j²⟩/(2j+1) = j(j+1)/3, ratio = 1.000000 exact pour les 16
-  premiers niveaux (jusqu'au cumulatif 82).
-  C^(orb)_ij ∝ δ_ij établi numériquement — condition nécessaire pour London confirmée.
-  Statut : théorèmes inconditionnels confirmés.
-
-- COLAB-LONDON-2 [Structure des paires de pulsation K₄] :
-  Redérivation numérique exhaustive de D46 Lemme 1 (prouvé algébriquement dans D46) :
-  le flip global s → −s d'une configuration cohérente C2 produit une configuration
-  anti-cohérente (produit triangulaire = −1). Vérifié sur les 8 configurations.
-  Ce résultat est documenté dans D46 Lemme 1 et la Remarque qui suit — il n'est
-  pas nouveau mais sa redérivation numérique clarifie la stratégie pour OP-London.
-  Conséquence (conforme à D46) : la pulsation PDL vit dans H_cyc via T² = −I₂,
-  pas au niveau des signes C2. La phase U(1) est une propriété de l'espace des
-  amplitudes (D46 Prop.1), pas des configurations de signes (C2).
-
-- COLAB-LONDON-3 [Holonomie de Hopf et condition de London] :
-  Connexion de Hopf : γ_B(C) = −(1/2)·Ω(C) calculée explicitement.
-  Coût de cohérence |1 − e^{iγ_B}|² = 0 exactement à Ω = 0 (jauge de London).
-  Conjecture quantitative : Ω* = 2π·α_PDL, γ_B* ≈ −π·α_PDL, coût résiduel ~ α_PDL².
-  λ_L,PDL(N=40) ≈ 7.25×10⁻¹⁵ m calculée numériquement.
-
-- COLAB-LONDON-4 [Identification coût PDL = |1−e^{iγ_B}|²] :
-  L'identification est une identité trigonométrique exacte, pas une hypothèse non triviale.
-  La vraie hypothèse reformulée : métrique PDL entre K4 voisins = métrique hermitienne de H_cyc.
-
-- COLAB-LONDON-5 [Preuve de l'identification — 768 configurations] :
-  THÉORÈME PROUVÉ : ν(transition) = (1/4)·‖ψ₁ − T^k ψ₁‖²_{H_cyc}
-  Vérifié exhaustivement sur 768/768 configurations de D29.
-  k ∈ {0,1,2} correspond exactement aux types de violation {stable, demi-violation, totale}.
-  P(e1 stable ET e2 stable) = 1/16 = (1/4)² exactement — indépendance confirmée.
-  => C4 minimise ν = (1/4)‖ψ₁−ψ₂‖² => ψ₁=ψ₂ => φ=cste => jauge de London.
-
-**Session 33 — D49 publié ; D50 (OP12/BH-3) en cours (4 May 2026) :**
-
-- OP-LONDON RÉSOLU — D49 PUBLIÉ (DOI: 10.5281/zenodo.20025166) :
-  Lemme 1 : ν = (1/4)‖ψ₁ − T^k ψ₁‖²_{H_cyc} [théorème, 768/768, D29+D33+D46]
-  Theorem 1 : C4 force ψ_j = ψ₁ sur V_C (connectivité C3) => φ = cste => London gauge
-  Corollary : j^i_s = −(n_coh·e²/m_p c)·A^i avec n_coh = σ(N)·R_surf/(V_C·R_tot) ∈ Q(√5)
-  Résultat physique : λ_L,PDL(N=40) ≈ 7.25×10⁻¹⁵ m ≈ 34·λ_C
-  Analogie Meissner : screening de A^i sur λ_L,PDL sans input de physique condensée.
-  Conjecture résiduelle : Ω* = 2π·α_PDL (OP2-D46, relié à D12) — non requis pour D49.
-
-- OP12/BH-3 EN COURS — COLABS BH-1 ET BH-2 COMPLÉTÉS :
-
-  COLAB-BH-1 [Fraction 1/4 et coefficient de Bekenstein-Hawking] :
-  Fraction stable par relation de R_surf = 4/16 = 1/4 [D29, exhaustif, exact].
-  Si les R_surf relations sont indépendantes :
-    Omega_surf = 4^R_surf => S_surf = k_B · R_surf · ln(4)
-  Connexion structurelle avec S_BH = k_B · A/(4·l_P²) :
-    le coefficient 1/4 est la fraction stable par relation de surface.
-  Hypothèse résiduelle identifiée : indépendance des couplages de R_surf.
-
-  COLAB-BH-2 [Preuve d'indépendance via H3 — zéro violation] :
-  D42-L1 : équiparticipation — chaque arête de K4 dans exactement 2 triangles. [6/6]
-  D42-L2 : aveuglement — 4 configs stables/16 indépendamment de la nature de p_k. [universelle]
-  D42-L3 : S4-équivariance — zéro violation sur 24 576 cas. [exhaustif]
-  Indépendance : P(e1 stable ET e2 stable) = 1920/30720 = 1/16 = (1/4)² exact. [OK]
-  => H3 (théorème D42) garantit l'indépendance des couplages.
-  => Omega_surf = 4^R_surf est un théorème inconditionnel de C1–C4.
-  => S_surf = k_B · R_surf · ln(4) = k_B · 1003.18 bits.
-  => Coefficient 1/4 = fraction stable ≡ coefficient de Bekenstein-Hawking.
-  Connexion structurelle S_surf = S_BH : vérifiée numériquement pour N = 1, 40, 120.
-  Statut OP12/BH-3 : RÉSOLU sous réserve de formalisation dans D50.
+**Session 36 — DL01 produit et publié (10 May 2026):**
+- Ouverture du volet vie et conscience : série DL inaugurée
+- DL01 : PDL-V conjecture, opérateur de lifting L, opérateur de structure de contraintes S(Γ),
+  relation d'auto-représentation R^k(Γ). Cinq scripts computationnels. Illustration synaptique.
+- Résultats computationnels établis :
+  S(K₄) ≅ K₄ pour 8/8 configurations cohérentes (théorème computationnel inconditionnel)
+  R¹_weak forcée à 100% pour tout n ≥ 4 (vérifié n=4..7, 8/8 à 64/64)
+  δ* = 1/2 — variation optimale de lignée = demi-pulsation de K₄
+  Loi de rareté exacte : f(n) = 2^(n+1−C(n,2)) — exposants = −T_{n-2} (nombres triangulaires)
+- DL01 publié sur Zenodo (DOI: 10.5281/zenodo.20114140)
+- Numérotation série DL établie : DLxx pour tous les documents vie/conscience
 
 ---
 
-## Corpus Table (Zenodo canonical order — updated Session 33)
+## Corpus Table (D01–D53 + DL01 + auxiliaires)
 
-| Label | DOI | Title (abbreviated) | Nature | Status |
-|-------|-----|---------------------|--------|--------|
-| D01   | 10.5281/zenodo.18462686 | The Emergence of Physical Reality (PDL) | Main article | Published |
-| D02   | 10.5281/zenodo.18463130 | Introduction to the PDL | Introduction | Published |
-| D01F  | 10.5281/zenodo.18475542 | Émergence de la réalité physique (LDP) | Translation | Published |
-| D03   | 10.5281/zenodo.18509648 | IMRad format PDL | Format journal | Published |
-| D04   | 10.5281/zenodo.18580925 | Dialogue PDL / Theory of Objectivity | Philosophy | Published |
-| D05   | 10.5281/zenodo.18581453 | Golden ratio in PDL proton surface | Structure | Published |
-| D06   | 10.5281/zenodo.18581807 | Hierarchical filtering, exponent 18 | Coupling G | Published |
-| D07   | 10.5281/zenodo.18663156 | Gleason-type Born's rule for spin-½ | QM | Published |
-| D08   | 10.5281/zenodo.18664995 | Topological reformulation in PDL | Topology | Published |
-| D09   | 10.5281/zenodo.18675200 | Position paper / open problems | Programme | Published |
-| D10   | 10.5281/zenodo.18716526 | Discrete coherence flux to effective fields | Dynamics | Published |
-| D10a  | 10.5281/zenodo.19329465 | Proper time as coherence-cycle counting | Metric/time | Published |
-| D11   | 10.5281/zenodo.18725069 | Towards Einstein–Dirac unification | Synthesis | Published |
-| D12   | 10.5281/zenodo.18828183 | Derivation of fine-structure constant α | α | Published |
-| D13   | 10.5281/zenodo.18831587 | Schrödinger compatibility with PDL | QM | Published |
-| D14   | 10.5281/zenodo.18832069 | Born's rule + golden-ratio active surface | QM | Published |
-| D15   | 10.5281/zenodo.18832542 | Schrödinger-type dynamics sketch | QM | Published |
-| D16   | 10.5281/zenodo.18832953 | Combinatorial proton architecture | Proton | Published |
-| D16a  | 10.5281/zenodo.18841034 | Minimal stationary closures — (4,6) block | Foundations | Published |
-| D16b  | 10.5281/zenodo.18841166 | Combinatorial selection, uniqueness of proton | Proton | Published |
-| D17   | 10.5281/zenodo.18841254 | Coherence leakage and exponent 18 | Coupling G | Published |
-| D18   | 10.5281/zenodo.18854190 | Discrete cavity modes, density of states | Stat. phys. | Published |
-| D19   | 10.5281/zenodo.18854559 | Existence as pulsating closure | Philosophy | Published |
-| D20F  | 10.5281/zenodo.18914532 | Qui que nous puissions être — FR | Philo/vulg. | Published |
-| D20   | 10.5281/zenodo.18940047 | Whoever We May Be — Philosophical Synthesis | Philo/vulg. | Published |
-| D21   | 10.5281/zenodo.19056994 | Universal Coherence Leakage V3 — Bridge G↔α | **Primary result** | Published |
-| DN    | 10.5281/zenodo.19076555 | Whatever We May Be — popular book EN | Vulgarisation | Published |
-| D22   | 10.5281/zenodo.19164084 | Nuclear stability as closure hierarchies | Nuclei | Published |
-| DM    | 10.5281/zenodo.20054876 | D_Map v20 — Global Mapping | **Navigation** | Published |
-| D23   | 10.5281/zenodo.19197268 | Topological origin exponent 18: K₄, S² | Topology | Published |
-| D24   | 10.5281/zenodo.19206960 | Closure-density dependence G_eff, Hubble | Cosmology | Published |
-| D25   | 10.5281/zenodo.19219858 | Parameter-free bridge α↔G | **Bridge α–G** | Published |
-| D26   | 10.5281/zenodo.19221310 | Cosmological resolution via PDL | Cosmology | Published |
-| D27   | 10.5281/zenodo.19281988 | N_CMB from neutron architecture | Cosmology | Published |
-| D28   | 10.5281/zenodo.19282932 | PDL–QCD boundary; mass ratio correction | QCD boundary | Published |
-| D29   | 10.5281/zenodo.19283107 | 155/11017 from C1–C4 — Gate 1 | **Proof** | Published |
-| D30   | 10.5281/zenodo.19294449 | QCD coefficient a=2 — Gate 2 | **Proof** | Published |
-| D31   | 10.5281/zenodo.19294984 | G_eff(N)=σ(N)·G_PDL — Gate 3 (prél.) | Proof | Published |
-| D32   | 10.5281/zenodo.19306269 | Schrödinger from (A)∧(B) | **Proof** | Published |
-| D33   | 10.5281/zenodo.19307249 | Dirac from SL(2,ℂ) pulsation K₄ | **Proof** | Published |
-| D34   | 10.5281/zenodo.19322776 | Born rule from (A)∧(B) amplitudes | **Proof** | Published |
-| D35   | 10.5281/zenodo.19322936 | Quantitative Einstein equation | Synthesis | Published |
-| D36   | 10.5281/zenodo.19323033 | G_eff(N) from trace structure K₄ | **Proof** | Published |
-| D37   | 10.5281/zenodo.19354096 | Surface Locality — PDL Area Law | **Proof** | Published |
-| D38   | 10.5281/zenodo.19354682 | Bekenstein–Hawking Entropy + PBH Predictions | **Proof+Pred.** | Published |
-| D39   | 10.5281/zenodo.19354989 | Derivation κ — Indifference Lemma | **Proof** | Published |
-| D40   | 10.5281/zenodo.19371523 | Nuclear Stability from PDL Axioms | **Proof** | Published |
-| D41   | 10.5281/zenodo.19384396 | PDL Analysis ⁸⁴,⁸⁶Mo — Island of Inversion | **Confrontation+Pred.** | Published |
-| D42   | 10.5281/zenodo.20041348 | H3 from C1–C4 — OP1 RESOLVED | **Proof** | Published |
-| D43   | 10.5281/zenodo.19678389 | Causal Chain — Four Axioms to Newton's G | **Synthesis v3** | Published |
-| D44   | 10.5281/zenodo.19678474 | Hierarchical Filter Factor k — OP-B RESOLVED | **Proof** | Published |
-| D45   | 10.5281/zenodo.19810259 | PBH Threshold — Fermi-LAT Prediction | **Prediction P5/P9** | Published |
-| D46   | 10.5281/zenodo.19956932 | Born Level 2: U(1) Phase Freedom — OP4 | **Proof** | Published |
-| D47   | 10.5281/zenodo.19967918 | Sub-Shell Filling + Periodic Table — OP13+OP14 | **Proof** | Published |
-| D48   | 10.5281/zenodo.19969831 | Coherence Tensor C_coh — OP2-D35 partial | **Proof (partial)** | Published |
-| DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons — LDP | Vulgarisation FR | Published |
-| D49   | 10.5281/zenodo.20025166 | London Equation from PDL Axioms — OP-London | **Proof** | Published |
-| D50   | 10.5281/zenodo.20029777 | BH Coefficient 1/4 from PDL Axioms — OP12/BH-3 | **Proof** | Published |
-| D51   | 10.5281/zenodo.20033520 | Cosmological Leakage Constant — Conjecture PDL-C | **Conjecture (strong)** | Published |
-| D52   | 10.5281/zenodo.20036769 | Three Leakage Bases — OP1-D35 COMPLETE | **Proof** | Published |
-| D53   | 10.5281/zenodo.20052558 | Causal Closure C1–C4→Λ — Synthesis + Verification | **Synthesis** | Published |
-
----
-
-## HAL Deposits (updated Session 27)
-
-| Document | HAL identifier | Statut |
-|----------|---------------|--------|
-| D45 | hal-05605947v1 | En modération |
-| D42, D43v3, D44, DM v17, DN | à confirmer | En modération |
+| Doc | DOI | Titre abrégé |
+|-----|-----|--------------|
+| D01 | 10.5281/zenodo.18462686 | Emergence of Physical Reality (PDL) |
+| D02 | 10.5281/zenodo.18463130 | Introduction to PDL |
+| D01F | 10.5281/zenodo.18475542 | Émergence réalité physique (FR) |
+| D03 | 10.5281/zenodo.18509648 | PDL IMRaD |
+| D04 | 10.5281/zenodo.18580925 | PDL–TO Dialogue |
+| D05 | 10.5281/zenodo.18581453 | Golden Ratio in PDL |
+| D06 | 10.5281/zenodo.18581807 | Exponent 18 (sketch) |
+| D07 | 10.5281/zenodo.18663156 | Gleason Born's Rule |
+| D08 | 10.5281/zenodo.18664995 | Topological Reformulation |
+| D09 | 10.5281/zenodo.18675200 | Position Paper |
+| D10 | 10.5281/zenodo.18716526 | Coherence Effective Fields |
+| D10a | 10.5281/zenodo.19329465 | Proper Time as Coherence Counting |
+| D11 | 10.5281/zenodo.18725069 | Einstein–Dirac Unification |
+| D12 | 10.5281/zenodo.18828183 | Fine-Structure Constant |
+| D13 | 10.5281/zenodo.18831587 | Schrödinger Compatibility |
+| D14 | 10.5281/zenodo.18832069 | Born's Rule + Golden Ratio |
+| D15 | 10.5281/zenodo.18832542 | Schrödinger Dynamics Sketch |
+| D16 | 10.5281/zenodo.18832953 | Proton Architecture |
+| D16a | 10.5281/zenodo.18841034 | Minimal Closures (4,6) |
+| D16b | 10.5281/zenodo.18841166 | Proton Local Uniqueness |
+| D17 | 10.5281/zenodo.18841254 | Exponent 18 (full) |
+| D18 | 10.5281/zenodo.18854190 | Discrete Cavity Modes |
+| D19 | 10.5281/zenodo.18854559 | Existence as Pulsating Closure |
+| D20F | 10.5281/zenodo.18914532 | Synthèse philosophique (FR) |
+| D20 | 10.5281/zenodo.18940047 | Philosophical Synthesis (EN) |
+| D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
+| DN | 10.5281/zenodo.19076555 | Whatever We May Be |
+| D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
+| DM | 10.5281/zenodo.20054876 | Global Mapping v20 |
+| D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
+| D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
+| D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
+| D26 | 10.5281/zenodo.19221310 | Cosmological Resolution PDL |
+| D27 | 10.5281/zenodo.19281988 | N_CMB Derivation |
+| D28 | 10.5281/zenodo.19282932 | PDL–QCD Boundary |
+| D29 | 10.5281/zenodo.19283107 | Gate 1 — (A)∧(B) |
+| D30 | 10.5281/zenodo.19294449 | Gate 2 — ε_G |
+| D31 | 10.5281/zenodo.19294984 | Gate 3 — G_eff(N) |
+| D32 | 10.5281/zenodo.19306269 | Schrödinger from (A)∧(B) |
+| D33 | 10.5281/zenodo.19307249 | Dirac from K₄ |
+| D34 | 10.5281/zenodo.19322776 | Born Rule Level 1 |
+| D35 | 10.5281/zenodo.19322936 | Einstein Equation |
+| D36 | 10.5281/zenodo.19323033 | G_eff Trace Structure |
+| D37 | 10.5281/zenodo.19354096 | Area Law BH-1 |
+| D38 | 10.5281/zenodo.19354682 | Bekenstein–Hawking BH-2 |
+| D39 | 10.5281/zenodo.19354989 | κ Derivation + H3 partial |
+| D40 | 10.5281/zenodo.19371523 | Nuclear Stability Z=1..82 |
+| D41 | 10.5281/zenodo.19384396 | ⁸⁴,⁸⁶Mo Island of Inversion |
+| D42 | 10.5281/zenodo.20041348 | H3 from C1–C4 |
+| D43 | 10.5281/zenodo.19678389 | Causal Chain C1–C4→G |
+| D44 | 10.5281/zenodo.19678474 | OP-B: Filter Factor k |
+| D45 | 10.5281/zenodo.19810259 | PBH Threshold Fermi-LAT |
+| DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (FR) |
+| D46 | 10.5281/zenodo.19956932 | Born Level 2 + U(1) |
+| D47 | 10.5281/zenodo.19967918 | Shell Filling + Periodic Table |
+| D48 | 10.5281/zenodo.19969831 | Coherence Tensor C_coh |
+| D49 | 10.5281/zenodo.20025166 | London Equation |
+| D50 | 10.5281/zenodo.20029777 | BH Coefficient 1/4 |
+| D51 | 10.5281/zenodo.20033520 | Cosmological Leakage Constant C |
+| D52 | 10.5281/zenodo.20036769 | Leakage Bases β₁(K₄)=3 |
+| D53 | 10.5281/zenodo.20052558 | Causal Closure C1–C4→Λ (Synthesis) |
+| **DL01** | **10.5281/zenodo.20114140** | **From Axioms to Life — PDL-V Conjecture** |
 
 ---
 
-## Complete Bibliography with Zenodo DOIs
+## Key Numerical Values (unchanged from Session 35)
 
 ```
-[D01]  10.5281/zenodo.18462686    [D02]  10.5281/zenodo.18463130
-[D01F] 10.5281/zenodo.18475542    [D03]  10.5281/zenodo.18509648
-[D04]  10.5281/zenodo.18580925    [D05]  10.5281/zenodo.18581453
-[D06]  10.5281/zenodo.18581807    [D07]  10.5281/zenodo.18663156
-[D08]  10.5281/zenodo.18664995    [D09]  10.5281/zenodo.18675200
-[D10]  10.5281/zenodo.18716526    [D10a] 10.5281/zenodo.19329465
-[D11]  10.5281/zenodo.18725069    [D12]  10.5281/zenodo.18828183
-[D13]  10.5281/zenodo.18831587    [D14]  10.5281/zenodo.18832069
-[D15]  10.5281/zenodo.18832542    [D16]  10.5281/zenodo.18832953
-[D16a] 10.5281/zenodo.18841034    [D16b] 10.5281/zenodo.18841166
-[D17]  10.5281/zenodo.18841254    [D18]  10.5281/zenodo.18854190
-[D19]  10.5281/zenodo.18854559    [D20F] 10.5281/zenodo.18914532
-[D20]  10.5281/zenodo.18940047    [D21]  10.5281/zenodo.19056994
-[DN]   10.5281/zenodo.19076555    [D22]  10.5281/zenodo.19164084
-[DM]   10.5281/zenodo.20054876    [D23]  10.5281/zenodo.19197268
-[D24]  10.5281/zenodo.19206960    [D25]  10.5281/zenodo.19219858
-[D26]  10.5281/zenodo.19221310    [D27]  10.5281/zenodo.19281988
-[D28]  10.5281/zenodo.19282932    [D29]  10.5281/zenodo.19283107
-[D30]  10.5281/zenodo.19294449    [D31]  10.5281/zenodo.19294984
-[D32]  10.5281/zenodo.19306269    [D33]  10.5281/zenodo.19307249
-[D34]  10.5281/zenodo.19322776    [D35]  10.5281/zenodo.19322936
-[D36]  10.5281/zenodo.19323033    [D37]  10.5281/zenodo.19354096
-[D38]  10.5281/zenodo.19354682    [D39]  10.5281/zenodo.19354989
-[D40]  10.5281/zenodo.19371523    [D41]  10.5281/zenodo.19384396
-[D42]  10.5281/zenodo.20041348    [D43]  10.5281/zenodo.19678389
-[D44]  10.5281/zenodo.19678474    [D45]  10.5281/zenodo.19810259
-[D46]  10.5281/zenodo.19956932    [D47]  10.5281/zenodo.19967918
-[D48]  10.5281/zenodo.19969831    [DN-fr] 10.5281/zenodo.19924230
-[D49]  10.5281/zenodo.20025166    [D50]  10.5281/zenodo.20029777
-[D51]  10.5281/zenodo.20033520    [D52]  10.5281/zenodo.20036769
-[D53]  10.5281/zenodo.20052558    [DM]   10.5281/zenodo.20054876
+μ* = 1836.152670 (proton/electron mass ratio, 27 ppm)
+G_PDL = 6.6742e-11 m³ kg⁻¹ s⁻²
+α_PDL = 1/137.036
+Λ_PDL ≈ 1.089×10⁻⁵² m⁻² (0.41 ppm vs D51, D53 verified)
+M*_PDL = 1.1189 × M*_GR (+11.89% PBH threshold, D45)
+V_C = (4/3)π[ħ/(m_p c)]³ — doublement forcé, ratio = 1.00000000
+δ* = 1/2 (variation optimale de lignée, DL01 Script 3)
+f(n) = 2^(n+1−C(n,2)) (loi de rareté exacte, DL01 Script 3)
 ```
 
 ---
 
-## Key Numerical Values
+## Epistemic Status Summary (updated Session 36)
 
-Proton quintuplet : (n_u, n_d, r_val, R_sea, R_tot) = (24, 28, 930, 10087, 11017)
-Neutron quintuplet: (n_u, n_d, r_val, R_sea, R_tot) = (24, 28, 1032, 9960, 10992)
-R_e = 6 | R_surf = 310φ ≈ 501.59 | φ = (1+√5)/2
-κ = 310φ/11017 ≈ 0.045529 ∈ Q(√5) [UNCONDITIONAL THEOREM — D42]
+**Unconditional theorems (C1–C4 alone):**
+- K₄ as minimal admissible closure (D16a)
+- Proton quintuplet (24,28,930,10087,11017) (D16b, D29)
+- S(K₄) ≅ K₄ for 8/8 coherent configurations (DL01 Script 1)
+- R¹_weak forced at 100% for n ≥ 4 (DL01 Script 5)
+- δ* = 1/2 optimal inter-generational variation (DL01 Script 3)
+- Rarity law f(n) = 2^(n+1−C(n,2)) exact (DL01 Script 3)
+- G_eff(N) = σ(N)·G_PDL (D31, D36, D42)
+- Schrödinger, Dirac, Born (D32, D33, D34, D46)
+- Einstein equation (D35, D42)
+- Periodic table + magic numbers (D40, D47)
+- London equation (D49)
+- BH coefficient 1/4 (D50)
+- Λ_PDL (D51, D52, D53)
 
-α_PDL⁻¹ = 137.022 [dev 10⁻⁴] | G_PDL = 6.67448×10⁻¹¹ m³/kg/s² [dev 27 ppm]
-ε_G^B = 0.00751927 [CODATA: 0.00751940, dev 17 ppm]
-ε_geom(p) = 329/10087 | ε_geom(n) = 468/9960 [UNCONDITIONAL THEOREMS — D43v3]
-k = 0.921716 [UNCONDITIONAL THEOREM — D44]
+**Structured conjectures (DL series):**
+- Scale-invariance of C1–C4 through hierarchical levels (DL01)
+- Existence of n*_life forced by C4 (PDL-V Part 1, DL01)
+- C4 selects R¹_active at lineage scale (PDL-V Part 2, DL01)
+- Death forced by C4 at lineage scale (PDL-V Part 3, DL01)
+- Finite thermodynamic ceiling n*_max (PDL-V Part 4, DL01)
 
-σ(N) = 1−(1−κ)^N | G_eff(N) = σ(N)·G_PDL [UNCONDITIONAL — D42]
-N_CMB = 40 | H₀_CMB = 67.26 km/s/Mpc
-Hubble ratio: √(σ(120)/σ(40)) = 1.085868 vs observed 1.085935 (0.006%)
-μ* = 1836.152670 [dev 0.002 ppm] | (m_d−m_u) = 2.532 MeV
-M*_PDL ≈ 5.706×10¹⁴ g (+11.89%) | E_peak ≈ 93 MeV [PDL] vs 104 MeV [GR]
-
-OP13 (D47): Discriminant 22201 = 149² unique | n_u=24, n_d=28, s=1/12 THEOREMS
-OP14 (D47): r_exc(Z)=0 aux {28,50,82}, r_exc(Z)=1 sinon [31/31]
-Magic numbers {2,8,20,28,50,82,126} — 7/7 depuis s=1/12
-
-V_C = (4/3)π[ħ/(m_pc)]³ = 3.8964×10⁻⁴⁷ m³ [DOUBLEMENT FORCÉ — D48]
-V_geom/V_C = 1.00000000 [float64]
-ρ_coh(N) = σ(N)·R_surf·m_p/(V_C·R_tot) [THEOREM — D48]
-C^(mass)_00(N=40) = 1.484×10³⁵ J/m³ | limite N→∞ = 1.757×10³⁵ J/m³
-C^(spin)/C^(mass) ∼ 10⁻¹²
-η_L = ε_G^B | η_L^18 = 5.904×10⁻³⁹ [THEOREM — D17, D30]
-C (leakage constant) ≈ 8.16×10⁻⁴⁶ [observational bound — OP1-D35 RESOLVED D51+D52]
-Théorème PDL-C (D51+D52) : C = (1−κ)^997 × (930/11017)^23 × (1−η_L)^67 [0.17 ppm D51 ; 0.41 ppm vérif. indép. D53]
-Indices : k₁=n_d−n_u+R_e−1=9 (p₉=23), k₂=n_u−R_e+1=19 (p₁₉=67), k₃=R_e·n_d=168 (p₁₆₈=997)
-k₁+k₂=n_d=28 [EXACT] | k₃=R_e·n_d=168 [EXACT] — identités théorèmes
-λ_PDL-C = η_L^18·(m_pc/ħ)²·(1−κ)^997·(930/11017)^23·(1−η_L)^67 ≈ 1.089009×10⁻⁵² m⁻²
-Offset métrologique (m_pc/ħ)² : 8.6 ppm entre CODATA D51 et CODATA 2022 [D53 — sans portée structurelle]
-
-Valeurs D49 (OP-London RÉSOLU) :
-n_coh(N) = σ(N)·R_surf/(V_C·R_tot) ∈ Q(√5) [THEOREM — D49, D48]
-λ_L,PDL(N=40) ≈ 7.25×10⁻¹⁵ m ≈ 34·λ_C [DERIVED — D49]
-j^i_s = −(n_coh·e²/m_p c)·A^i [THEOREM — D49]
-Ω* = 2π·α_PDL ≈ 4.586×10⁻² rad [CONJECTURE — OP2-D46]
-
-Valeurs D50 (OP12/BH-3 en cours) :
-Fraction stable par relation de R_surf = 4/16 = 1/4 [THEOREM — D29, exhaustif]
-Omega_surf = 4^R_surf [THEOREM — D42+D29, indépendance via H3]
-S_surf/k_B = R_surf·ln(4) = 695.352 nats = R_surf·2 bits = 1003.181 bits [THEOREM — D50]
-P(e1 stable ET e2 stable) = 1/16 = (1/4)² [VÉRIFIÉ — Colab-BH-2, 30720 cas]
+**Sole external parameter:** Δm_iso = m_d − m_u (forced at PDL–QCD boundary, D30)
 
 ---
 
-## Epistemic Status Summary (updated Session 35)
+## Open Problems (updated Session 36)
 
-| Result | Status | Source |
-|--------|--------|--------|
-| K₄ unique minimal closure | Theorem | D16a |
-| Proton quintuplet (24,28,930,10087,11017) | Theorem | D16a, D16b, D29 |
-| α_PDL, G_PDL, μ* | Theorems | D12, D21, D25, D29, D30 |
-| H3 (uniform measure) | **THEOREM** | D42 |
-| κ = 310φ/11017 | **Unconditional theorem** | D39+D42 |
-| G_eff(N) = σ(N)·G_PDL | **Unconditional theorem** | D31, D36, D42 |
-| Schrödinger, Dirac, Einstein equations | Theorems | D32, D33, D35 |
-| Born rule Level 1 (Gleason) | Theorem | D34 |
-| Born rule Level 2 (U(1) phase) | **THEOREM — OP4** | D46 |
-| Hubble tension resolved 0.006% | **Unconditional theorem** | D35, D42 |
-| BH-1 (area law), BH-2 (S_BH formula) | **Unconditional theorems** | D37, D38, D42 |
-| PBH threshold +11.89% | **Unconditional prediction** | D45 |
-| N_min(Z≤20) = Z, C(Z>20) = 190·T_pp | Exact theorems | D40 |
-| Δn = 4 unique — discriminant 149² (OP13) | **THEOREM** | D47 |
-| s = 1/12, magic numbers {2,8,20,28,50,82,126} | **THEOREMS** | D47 |
-| Mirror Lemma (OP14 component) | **THEOREM** | D22-N2 + D47 |
-| r_exc(Z) — 31/31 (OP14) | **THEOREM** | D47 |
-| N_min(Z) Z=1..82 (valley of stability) | **UNCONDITIONAL THEOREM** | D40+D47 |
-| Periodic table as theorem of C1–C4 | **COROLLARY** | D47 |
-| V_C = (4/3)π[ħ/(m_pc)]³ doublement forcé | **THEOREM** | D48 |
-| ρ_coh(N) = σ(N)·R_surf·m_p/(V_C·R_tot) | **THEOREM** | D48 |
-| C^(mass)_μν = ρ_coh·c²·u_μu_ν | **THEOREM INCONDITIONNEL** | D48 |
-| C^(spin)_μν ∼ ħ²·ρ_coh²/(m_pc²) | **THEOREM** (correction ħ²) | D48 |
-| C^(orb)_μν = m_p·⟨j_μj_ν⟩/ρ_coh | **THEOREM** (état-dépendant) | D48 |
-| η_L^18 dans C^(leak) | **THEOREM** | D17, D30, D48 |
-| Constante C dans C^(leak) | **THÉORÈME PDL-C** — OP1-D35 RÉSOLU | D51+D52 |
-| β₁(K₄)=3 => 3 cycles de leakage irréductibles | **THEOREM** (topologie) | D23, D51 |
-| C1+C3 => exposants premiers (23, 67, 997) | **THEOREM** | D51, Lemma 2 |
-| idx(23)=9, idx(67)=19, idx(997)=168 — identités | **EXACT** (arithmétique entière) | D51 |
-| k₁+k₂=n_d=28, k₃=R_e·n_d=168 — complétude | **EXACT** | D51 |
-| C=(1−κ)^997·(Rv/Rt)^23·(1−η_L)^67 | **THÉORÈME INCONDITIONNEL** (0.17 ppm) | D51+D52 |
-| Identification (1−κ), R_val/R_tot, (1−η_L) comme bases naturelles | **THÉORÈME** | D52 |
-| OP1-D35 : chaîne causale C1–C4→Λ_PDL FERMÉE | **RÉSOLU COMPLET** | D51+D52 |
-| C_PDL vérifié indépendamment : 0.41 ppm vs D51 | **VÉRIFIÉ** (50 décimales) | D53 |
-| Offset métrologique (m_pc/ħ)² 8.6 ppm — sans portée structurelle | **DIAGNOSTIC** | D53 |
-| Chaîne C1–C4→Λ en document unique auto-contenu | **SYNTHÈSE** | D53 |
-| PDL Einstein eq. avec source explicite | **COROLLAIRE** | D48-Cor.9.1 |
-| Instabilité Z=43 (Tc) et Z=61 (Pm) | **Conjecture qualitative** | Session 30, OP3-D40 |
-| C^(orb)_ij ∝ δ_ij (isotropie Wigner) | **Théorème standard confirmé** | Session 32, Colab-London-1 |
-| ν = (1/4)‖ψ₁−T^k ψ₁‖² (768/768) | **THÉORÈME EXHAUSTIF** | Session 32, Colab-London-5 |
-| London gauge φ=cste forcé par C4 | **THEOREM** | D49, Theorem 1 |
-| j^i_s = −(n_coh·e²/m_p c)·A^i — OP-London | **THEOREM INCONDITIONNEL** | D49 |
-| λ_L,PDL(N=40) ≈ 7.25×10⁻¹⁵ m | **DERIVED** | D49, Remark 4.1 |
-| Fraction stable 1/4 par relation de R_surf | **THEOREM** | D29 + D42-L2 |
-| Omega_surf = 4^R_surf | **THEOREM** | D42+D29, Colab-BH-2 |
-| S_surf = k_B·R_surf·ln(4) | **THEOREM** | D50 |
-| Coefficient 1/4 = fraction stable — OP12/BH-3 | **THEOREM** | D50 |
-| Ω* = 2π·α_PDL | **Conjecture quantitative** | Session 32, OP2-D46 |
-
----
-
-## Open Problems (updated Session 35)
-
-**Resolved:** OP-A, OP-B, OP8, OP4 (D46), OP13 (D47), OP14 (D47), OP2-D35 partial (D48), OP-London (D49), OP12/BH-3 (D50), OP1-D35 COMPLET (D51+D52), OP11 (D51+D52+D53 — Λ dérivée)
-
-| Label | Description | Priority |
-|-------|-------------|----------|
-| OP1 (D32) | Algebraic derivation of b | HIGH |
-| OP1 (D34/D46) | Derive α_τ and triangle weights | HIGH |
-| OP2 (D46) | Holonomy of Hopf connection — Ω* = 2π·α_PDL (conjecture Session 32) | MEDIUM |
-| OP14 analytic | Constant c per regime from (A)∧(B) | HIGH |
-| OP-pressure | Équation d'état w du fluide de cohérence | MEDIUM |
+| ID | Description | Priority |
+|----|-------------|----------|
+| OP-pressure | Équation d'état w du fluide de cohérence | HIGH |
+| OP2 (D46) | Prouver Ω* = 2π·α_PDL depuis D12 | HIGH |
+| SU(2) | Dérivation SU(2) via fibration de Hopf (D46 point d'entrée) | HIGH |
+| n*_life | Valeur explicite du seuil de vie (DL02 cible) | HIGH |
+| C4 advantage | Dérivation formelle avantage de coût R¹_active (DL03 cible) | HIGH |
+| OP1-D32 | Dérivation algébrique de b | HIGH |
+| OP1-D34 | Dériver α_τ depuis C1–C4 | HIGH |
 | OP3 (D40) | Tc/Pm instability | MEDIUM |
 | OP5 (D35) | CMB angular power spectrum | MEDIUM |
 | OP15 | Superheavy nuclei Z>82 | MEDIUM |
-| OP4 (D40) | Block III — electronic shell structure | LOW |
+| R²_active | Seuil de conscience n*_consciousness (DL04+ cible) | FUTURE |
 | P7/P8 | B(E2) at FRIB/RIKEN | FUTURE |
 | OP-NCR | D18 rule for arbitrary-coordination graphs | FUTURE |
 
 ---
 
-## Next Actions (updated Session 35)
+## DL Series — Programme Vie et Conscience
 
-**Complétées en Sessions 34–35 (6 May 2026) :**
-- ✓ D53 produit (LaTeX + .bib, trois cellules Colab, vérification 0.41 ppm)
-- ✓ D53 publié sur Zenodo (DOI: 10.5281/zenodo.20052558)
-- ✓ DM v20 produit (D01–D53, OP11 résolu, L8 enrichi)
-- ✓ DM v20 publié sur Zenodo (DOI: 10.5281/zenodo.20054876)
-- ✓ PDL_context.md mis à jour Session 35
+**Numérotation :** DLxx pour tous les documents du volet vie et conscience.
 
-**À faire — immédiat :**
-1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 35) sur GitHub (main branch)
-2. **[HIGH]** Mettre à jour cedriclaubscher.ch : D53 + DM v20 + guided journey Phase X (synthèse causale)
-3. **[HIGH]** Academia.edu : post D53 (causal chain C1–C4 → Λ, 57 ordres de grandeur)
-4. **[HIGH]** Academia.edu : post DM v20 (navigation document updated)
-5. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
-6. **[MEDIUM]** Contact Recchia/Lenzi (Padova) : update avec D47 + D53
+**DL01** — Publié (DOI: 10.5281/zenodo.20114140)
+Fondations de la conjecture PDL-V. Opérateur L, S(Γ), R^k(Γ). Scripts 1–5.
+Illustration synaptique. Stratification épistémique complète.
 
-**À faire — recherche :**
-7. **[HIGH]** OP-pressure : équation d'état w du fluide de cohérence
-8. **[HIGH]** SU(2) via fibration de Hopf (D46 comme point d'entrée) — D54 potentiel
-9. **[MEDIUM]** OP2 (D46) : prouver Ω* = 2π·α_PDL depuis D12
+**DL02** — Planifié
+Dérivation formelle de l'avantage de coût C4 pour les clôtures R¹_active.
+Première estimation de n*_life depuis la loi de rareté et la fonction de gain marginal.
+
+**DL03** — Planifié
+Le cycle naissance–mort comme théorème : preuve que les clôtures immortelles ont
+un coût de lignée strictement supérieur aux lignées à durée finie avec δ = δ*.
+Dérivation de δ* depuis C1–C4 à niveau arbitraire.
+
+**DL04** — Planifié
+Mécanisme synaptique comme application formelle de L au niveau neuronal.
+Dérivation de la règle de Hebb et de la STDP depuis C4.
+Premiers pas formels vers R²_active.
+
+**DL05+** — Horizon ouvert
+Seuil de conscience. n*_max comme entier combinatoire calculable.
 
 ---
 
-## Dependency Map — Critical Path (updated Session 35)
+## Next Actions (updated Session 36)
+
+**Complétées en Session 36 (10 May 2026) :**
+- ✓ DL01 produit (LaTeX + .bib, cinq scripts computationnels)
+- ✓ DL01 publié sur Zenodo (DOI: 10.5281/zenodo.20114140)
+- ✓ PDL_context.md mis à jour Session 36
+
+**À faire — immédiat :**
+1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 36) sur GitHub (main branch)
+2. **[HIGH]** Mettre à jour cedriclaubscher.ch : DL01 + série DL inaugurée
+3. **[HIGH]** Academia.edu : post DL01 (PDL-V conjecture, vie et conscience depuis C1–C4)
+4. **[HIGH]** Mettre à jour cedriclaubscher.ch : D53 + DM v20 (si pas encore fait)
+5. **[MEDIUM]** Academia.edu : post D53 + DM v20 (si pas encore fait)
+6. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
+7. **[MEDIUM]** Contact Recchia/Lenzi (Padova) : update avec D47 + D53
+
+**À faire — recherche :**
+8. **[HIGH]** DL02 : dérivation formelle avantage de coût R¹_active
+9. **[HIGH]** SU(2) via fibration de Hopf (D46 comme point d'entrée)
+10. **[HIGH]** OP-pressure : équation d'état w du fluide de cohérence
+11. **[MEDIUM]** OP2 (D46) : prouver Ω* = 2π·α_PDL depuis D12
+
+---
+
+## Dependency Map — Critical Path (updated Session 36)
 
 ```
 LAYER 0 — AXIOMS : C1 (pulsation), C2 (cohérence), C3 (complétude), C4 (optimisation)
@@ -519,8 +330,18 @@ LAYER 12 — COSMOLOGICAL LEAKAGE — COMPLETE
   Λ_PDL≈1.089×10⁻⁵² m⁻² [✓]D51+D52
   Synthèse et vérification indépendante 0.41 ppm [✓]D53
 
-LAYER 13 — DISSEMINATION
-  Zenodo: D01–D53 + auxiliaires — DM v20 publié (10.5281/zenodo.20054876)
+LAYER 13 — LIFE AND CONSCIOUSNESS — OPENED (Session 36)
+  L (lifting operator) [✓]DL01 — définition formelle
+  S(K₄) ≅ K₄ [✓]DL01 Script 1 — 8/8 théorème computationnel
+  R¹_weak forced n≥4 [✓]DL01 Script 5 — 100% n=4..7
+  δ* = 1/2 [✓]DL01 Script 3 — variation optimale de lignée
+  f(n) = 2^(n+1−C(n,2)) [✓]DL01 Script 3 — loi exacte
+  [?]n*_life — DL02 cible
+  [?]C4 selects R¹_active — DL03 cible
+  [?]n*_consciousness — DL04+ cible
+
+LAYER 14 — DISSEMINATION
+  Zenodo: D01–D53 + DL01 + auxiliaires — DM v20 (10.5281/zenodo.20054876)
   HAL: D42,D43v3,D44,D45,DM v17,DN — En modération
   Email: Arbey+Auffinger (IP2I Lyon) — 29 Apr 2026
 ```
@@ -531,12 +352,13 @@ GATE 1 (D29) | GATE 2 (D30) | GATE 3 (D36, unconditional D42)
 OP1 (D42) H3 | OP-A (D43v3) E_bord | OP-B (D44) k
 OP8 (D44) 17ppm | OP4 (D46) U(1) | OP13 (D47) Δn=4
 OP14 (D47) r_exc | OP2-D35 partial (D48) C^(mass),C^(spin),C^(orb)
-OP-LONDON (D49) London equation | OP12/BH-3 (D50, DOI: 10.5281/zenodo.20029777)
+OP-LONDON (D49) London equation | OP12/BH-3 (D50)
 OP1-D35 COMPLETE (D51+D52) — chaîne C1–C4→Λ_PDL fermée sans paramètre libre
-OP11 RESOLVED (D51+D52+D53) — Λ dérivée, OP11 ex-"dark energy" clos
+OP11 RESOLVED (D51+D52+D53) — Λ dérivée
 COSMOLOGICAL LEAKAGE LAYER : COMPLETE (D51+D52+D53)
 D53 SYNTHESIS : PUBLISHED (Session 35, DOI: 10.5281/zenodo.20052558)
 DM v20 : PUBLISHED (Session 35, DOI: 10.5281/zenodo.20054876)
+DL01 : PUBLISHED (Session 36, DOI: 10.5281/zenodo.20114140) — DL SERIES OPENED
 
 CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
@@ -545,6 +367,7 @@ COHERENCE TENSOR LAYER : PARTIAL (Session 30, D48) — OP-pressure open
 LONDON EQUATION : THEOREM (Session 33, D49)
 BH COEFFICIENT 1/4 : THEOREM (Session 33, D50)
 CAUSAL CHAIN C1–C4→Λ : COMPLETE (Sessions 33–35, D51+D52+D53)
+LIFE AND CONSCIOUSNESS LAYER : OPENED (Session 36, DL01)
 ```
 
 ---
@@ -573,4 +396,10 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - Epistemic status table with p{} fixed-width columns
 - All HTML links: target="_blank" rel="noopener"
 
-*All references use Zenodo canonical numbering D01–D53 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
+**DL series conventions (Session 36):**
+- Numérotation DLxx pour tous les documents vie/conscience
+- Même discipline épistémique que D-series : stratification explicite obligatoire
+- Scripts Python/Colab avant toute rédaction LaTeX
+- Distinction analogie/dérivation formelle obligatoire dans chaque section illustrative
+
+*All references use Zenodo canonical numbering D01–D53 + DL01 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
