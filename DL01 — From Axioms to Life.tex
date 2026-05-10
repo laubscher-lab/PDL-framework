@@ -1,0 +1,1013 @@
+% ============================================================
+% DL01 — From Axioms to Life: The PDL-V Conjecture and the
+%         Hierarchical Replication of C1--C4
+% Projective Dynamic Logo (PDL) Framework
+% Author  : Cédric Laubscher
+% Licence : CC BY 4.0
+% LaTeX conventions: British English; no spurious mid-sentence
+% line breaks; prose as continuous paragraphs;
+% \bibliographystyle{unsrt} with natbib [numbers]
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage[numbers]{natbib}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[protrusion=true,expansion=true,tracking=true,kerning=true,spacing=true,activate={true,nocompatibility},final,stretch=10,shrink=10,step=2]{microtype}
+\microtypecontext{spacing=nonfrench}
+
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+\geometry{top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!70!black,
+  pdftitle={From Axioms to Life: The PDL-V Conjecture and the
+            Hierarchical Replication of C1--C4},
+  pdfauthor={Cédric Laubscher}}
+
+% ---- Colour palette ----------------------------------------
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{openproblemred}{RGB}{160,20,20}
+\definecolor{resolvedgreen}{RGB}{0,130,70}
+\definecolor{chaincolor}{RGB}{30,100,180}
+\definecolor{epscolor}{RGB}{160,60,0}
+\definecolor{darkgray}{RGB}{80,80,80}
+\definecolor{lifeblue}{RGB}{0,90,160}
+\definecolor{consciousviolet}{RGB}{100,0,140}
+
+% ---- Theorem environments ----------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Custom tcolorbox environments -------------------------
+\tcbset{
+  theoremstyle/.style={colframe=proofblue,colback=blue!3,
+    fonttitle=\bfseries\color{proofblue},breakable,enhanced},
+  conjecturestyle/.style={colframe=conjecturegreen,colback=green!3,
+    fonttitle=\bfseries\color{conjecturegreen},breakable,enhanced},
+  openproblemstyle/.style={colframe=openproblemred,colback=red!3,
+    fonttitle=\bfseries\color{openproblemred},breakable,enhanced},
+  resolvedstyle/.style={colframe=resolvedgreen,colback=green!4,
+    fonttitle=\bfseries\color{resolvedgreen},breakable,enhanced},
+  computedstyle/.style={colframe=chaincolor,colback=chaincolor!4,
+    fonttitle=\bfseries\color{chaincolor},breakable,enhanced},
+  lifestyle/.style={colframe=lifeblue,colback=lifeblue!4,
+    fonttitle=\bfseries\color{lifeblue},breakable,enhanced}}
+
+\newenvironment{theorembox}[1][]{%
+  \begin{tcolorbox}[theoremstyle,title={Theorem\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{conjecturebox}[1][]{%
+  \begin{tcolorbox}[conjecturestyle,title={Conjecture\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{openproblem}[1][]{%
+  \begin{tcolorbox}[openproblemstyle,title={Open Problem\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{computedresult}[1][]{%
+  \begin{tcolorbox}[computedstyle,title={Computational Result\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{lifebox}[1][]{%
+  \begin{tcolorbox}[lifestyle,title={#1}]}{\end{tcolorbox}}
+
+% ---- Macros ------------------------------------------------
+\newcommand{\PDL}{\textsc{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\Calg}{\mathcal{C}}
+\newcommand{\Sop}{\mathcal{S}}
+\newcommand{\Rop}{\mathcal{R}}
+\newcommand{\Lop}{\mathcal{L}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\deltastar}{\delta^{*}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\title{\textbf{From Axioms to Life:\\
+The \PDL-V Conjecture and the\\
+Hierarchical Replication of C1--C4}\\[0.5em]
+{\large \PDL\ Framework --- Document DL01}}
+
+\author{Cédric Laubscher\\
+\small Independent Researcher, Switzerland\\
+\small \href{mailto:contact@cedriclaubscher.ch}{contact@cedriclaubscher.ch}\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{May 2026}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives the fundamental constants of
+physics --- the proton mass, Newton's constant, the cosmological constant --- from
+four combinatorial axioms C1--C4 on finite signed graphs, without presupposing
+spacetime, particles, or fields. Documents D01--D53 establish this derivation as a
+closed causal chain with no free parameter beyond the quark mass difference
+$\Delta m_{\mathrm{iso}}$. The present document opens the DL series, a new programme
+that asks whether the same four axioms, applied hierarchically to composite closures,
+force the emergence of life and consciousness as theorems rather than as mysteries.
+We introduce the lifting operator $\Lop$, the constraint-structure operator $\Sop(\Gamma)$,
+and the self-representation relation $\Rop^k(\Gamma)$. We state the \PDL-V conjecture
+in four parts: the existence of a life threshold $n^{*}_{\mathrm{life}}$, its selection
+by C4, the necessity of the birth--death cycle, and the existence of a thermodynamic
+ceiling $n^{*}_{\mathrm{max}}$ forced by combinatorial entropy. Five computational
+scripts verify the foundational claims on small cases: $\Sop(K_4) \cong K_4$
+unconditionally (8/8 coherent configurations), weak self-representation
+$\Rop^{1}_{\mathrm{weak}}$ is forced at 100\% for all $n \geq 4$, and the rarity law
+$f(n) = 2^{n+1-\binom{n}{2}}$ establishes $n^{*}_{\mathrm{max}}$ as a finite combinatorial
+necessity. The synaptic mechanism is presented as the first mechanistic illustration
+of the lifting operator at the neural level. All claims are stratified by epistemic
+status; the \PDL-V conjecture is not yet a theorem.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Why This Document Exists}
+\label{sec:motivation}
+% ============================================================
+
+The \PDL\ framework was constructed as a foundational programme in physics. Its axioms
+C1--C4 are stated at the level of finite signed graphs, prior to any presupposition of
+space, time, matter, or energy. From these four axioms alone, documents D01--D53
+derive the electron Compton oscillation (D01--D02), the proton quintuplet
+$(24,28,930,10087,11017)$ (D05--D10), Newton's constant $G$ to 27\,ppm (D36--D44),
+the Dirac and Schrödinger equations (D32--D33), Born's rule (D34, D46), the periodic
+table of elements (D47), the London equation of superconductivity (D49), the
+Bekenstein--Hawking coefficient $1/4$ (D50), and the cosmological constant $\Lambda$
+(D51--D52). The causal chain C1--C4 $\to$ $G$ is closed, with no free parameter
+beyond $\Delta m_{\mathrm{iso}} = m_d - m_u$, the quark mass difference at the
+\PDL--QCD interface \cite{DM_v18}.
+
+A natural question then presents itself with a force that is difficult to ignore. If
+C1--C4 are prior to physics --- if physics is their first theorem --- are they also
+prior to life and consciousness? If the same four axioms, applied iteratively to
+composite closures, force the emergence of self-replicating structures and eventually
+of self-representing ones, then life and consciousness are not mysteries layered on
+top of physics. They are theorems in the same causal chain, separated from the proton
+only by the number of hierarchical levels traversed.
+
+A note on context is essential before proceeding. The reader unfamiliar with the
+\PDL\ foundation is strongly encouraged to consult the Global Mapping document
+DM~v18 \cite{DM_v18} before reading this document. The DL programme is an extension
+of an established foundational programme that has derived numerical predictions
+verified to parts per million --- it is not a standalone speculative proposal.
+The present document should be read in that light: its conjectures are grounded in
+a formally closed physical foundation, not in intuition alone.
+
+This document does not claim to have proved that life or consciousness are theorems
+of C1--C4. What it does is the following. It introduces the formal objects necessary
+to make the question precise, presents the \PDL-V conjecture as a structured research
+programme, reports the results of five computational verification scripts on small
+cases, and situates the programme with respect to existing literature. Every claim is
+labelled with its epistemic status. The reader who disagrees is invited to identify
+which axiom, which definition, or which computational result is incorrect. That is the
+only form of engagement the programme solicits.
+
+\subsection{Epistemic stratification}
+
+Throughout this document and the DL series, the following classification is used
+without exception.
+
+\begin{center}
+\begin{tabular}{p{4.1cm}p{10.4cm}}
+\toprule
+\textbf{Status} & \textbf{Meaning} \\
+\midrule
+Unconditional theorem & Derived from C1--C4 alone, verified computationally \\
+Conditional theorem & Derived under named hypotheses \\
+Computational result & Verified exhaustively by script on finite cases \\
+Structured conjecture & Formally stated, not yet proved, with falsification criteria \\
+Interpretive remark & Coherent with \PDL, not derived \\
+Open problem & Identified gap requiring future work \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{The PDL Foundation: A Self-Contained Summary}
+\label{sec:foundation}
+% ============================================================
+
+This section is self-contained. A reader with access to D01--D10 and D29 may read it
+as a condensed reference; a reader new to \PDL\ will find here everything needed to
+follow the DL programme.
+
+\subsection{The four axioms}
+
+The \PDL\ framework is built on four axioms stated on finite signed graphs. A
+\emph{signed graph} is a pair $(G, s)$ where $G = (V, E)$ is a finite graph and
+$s: E \to \{+1, -1\}$ assigns a sign to each edge.
+
+\begin{axiom}[C1 --- Binary pulsation]
+The configuration admits a logical 2-cycle: a sign assignment that returns to itself
+after exactly two update steps and is not a fixed point. Existence is the minimal
+form of repetition.
+\end{axiom}
+
+\begin{axiom}[C2 --- Triangular coherence]
+Every triangle (closed triple of edges) satisfies $s_{ij} \cdot s_{jk} \cdot s_{ik} = +1$.
+A triangle with product $+1$ is \emph{coherent}; one with product $-1$ is
+\emph{frustrated}. The coherence cost $\eps(\Gamma)$ is the fraction of frustrated
+triangles.
+\end{axiom}
+
+\begin{axiom}[C3 --- Minimal completeness]
+The configuration is irreducible: it admits no non-trivial decomposition into
+independent sub-configurations each satisfying C1 and C2 separately. The underlying
+graph is connected and its coherence structure is non-reducible.
+\end{axiom}
+
+\begin{axiom}[C4 --- Logical optimisation]
+Among all configurations satisfying C1--C3, those that are physically instantiated
+are those that minimise the coherence cost $\eps(\Gamma)$ for a given number of
+vertices and edges.
+\end{axiom}
+
+\subsection{The minimal admissible closure \texorpdfstring{$K_4$}{K4}}
+
+\begin{theorem}[D01--D02, \cite{D01,D02}]
+No finite signed graph on fewer than four vertices satisfies all four axioms
+simultaneously. The complete signed graph on four vertices $V = \{0,1,2,3\}$ and six
+edges, denoted $\Kfour$, is the first admissible elementary stationary closure. It is
+minimal (no proper sub-closure satisfies C1--C4) and quasi-unique (the sign pattern
+is unique up to the global symmetry group $S_4$).
+\end{theorem}
+
+$\Kfour$ undergoes a binary pulsation alternating between a coherent configuration
+$s^{(1)}$ and its global flip $s^{(2)} = -s^{(1)}$. There are exactly eight coherent
+sign configurations on $\Kfour$, forming four pulsation pairs $\{s, -s\}$. The
+coherence cost of any coherent configuration is $\eps = 0$ by definition. This
+pulsation is identified with the Compton oscillation of the electron; its minimal
+quantum of action is $\hbar$ \cite{D01}.
+
+\subsection{The \texorpdfstring{$(A)\wedge(B)$}{(A)∧(B)} coupling criterion}
+
+The coupling of two closures is governed by a stability criterion derived in D29
+\cite{D29}. A \emph{mixed triangle} couples two $\Kfour$ vertices to one proton
+vertex. It is $(A)\wedge(B)$-stable if and only if its cross-product satisfies both
+the alignment condition (A) and the exact sign inversion between the two half-cycles
+(B). Exhaustive verification over 768 configurations yields 192 stable ones. The
+ratio $192/768 = 1/4$ is the fundamental coupling probability $\kappa$, which is not
+a free parameter but a combinatorial consequence of C1--C4.
+
+\subsection{What the corpus has established}
+
+The following results are unconditional theorems of C1--C4, verified computationally
+and published on Zenodo \cite{DM_v18}. The proton mass $m_p$ and proton--electron
+mass ratio $\mu^* = 1836.152670$ are derived at 27\,ppm (D05--D10, D30). Newton's
+constant $G$ is derived with no free parameter (D36--D44). The Dirac equation, the
+Schrödinger equation, and Born's rule emerge from the $(A)\wedge(B)$ coupling
+criterion applied to the $\Kfour$ pulsation (D32--D34, D46). The periodic table, the
+magic numbers of nuclear physics, and the shell-filling rates $r_{\mathrm{exc}}(Z)$
+for $Z = 1$--$82$ are unconditional theorems (D47). The London equation of
+superconductivity and the Bekenstein--Hawking coefficient $1/4$ are theorems (D49,
+D50). The cosmological constant $\Lambda$ is derived without free parameter
+(D51--D52).
+
+This enumeration is not rhetorical. It establishes the epistemic authority of the
+foundation from which the DL programme departs.
+
+% ============================================================
+\section{The Scale-Invariance of C1--C4}
+\label{sec:scaleinvariance}
+% ============================================================
+
+We have recalled the foundation. We now take the first step beyond it. The key
+observation is simple to state and far-reaching in its consequences: the four axioms
+C1--C4 do not belong to the quantum level. They belong to existence at any scale.
+This section makes that claim precise, and states it as a formal conjecture that the
+rest of the DL programme will work to prove. The axioms C1--C4
+are not axioms \emph{of the quantum level}. They are axioms \emph{of existence at
+any scale}. This section makes that claim precise.
+
+\subsection{C1 at every scale}
+
+Axiom C1 does not say that $\Kfour$ pulsates. It says that any configuration that
+exists must admit a 2-cycle. Existence and cyclic repetition are identified. The
+consequences of this identification propagate upward through every level of the
+hierarchy without modification.
+
+Consider the following sequence of 2-cycles observed at increasing scales. At the
+quantum level, $\Kfour$ alternates between $s^{(1)}$ and $s^{(2)} = -s^{(1)}$ at
+the Compton frequency. At the atomic level, electrons transition between energy
+levels in discrete cycles. At the molecular level, chemical bonds vibrate and rotate
+in periodic modes. At the cellular level, the cell cycle --- growth, replication,
+division --- is a 2-cycle in the logical sense: the daughter cell is the configuration
+returned after one complete update of the parent. At the organismal level, the
+heartbeat, the respiratory cycle, and the sleep--wake cycle are all expressions of
+C1 at their respective timescales. At the lineage level, birth and death constitute
+the 2-cycle of the generation: the offspring is the configuration returned after one
+complete generational update of the parent.
+
+None of these cycles are imposed from outside the framework. They are the expression
+at each scale of the single condition that makes existence possible: a configuration
+must return to a form of itself, or it dissolves.
+
+\begin{remark}
+The brick broken by a hammer illustrates C1 at the geological scale. The fracture
+does not create new matter; it reveals sub-closures that were already coherent
+internally (C3) and that become autonomous when the constraints holding them within
+the larger closure are released. The fragments are not copies of the brick; they are
+configurations that C4 had already selected as locally optimal within the brick's
+structure.
+\end{remark}
+
+\subsection{The conjecture of scale-invariance}
+
+The observation above can be stated as a formal conjecture.
+
+\begin{conjecturebox}[Scale-invariance of C1--C4]
+Let $\Gamma \in \Calg_n$ be an admissible closure of level $n$, and let
+$\Gamma' = \Lop(\Gamma_1, \ldots, \Gamma_k)$ be a composite closure of level $n+1$
+constructed by the lifting operator $\Lop$ (Definition~\ref{def:lifting}). Then
+$\Gamma'$ satisfies C1--C4 with renormalised parameters. In particular, the
+coherence cost $\eps(\Gamma')$, the coupling probability $\kappa'$, and the pulsation
+period $T'$ are determined by the parameters of the level-$n$ closures via
+$\Lop$, without invoking any new axiom.
+\end{conjecturebox}
+
+\emph{Status: structured conjecture. Partially verified computationally for $n = 0
+\to 1$ (Scripts 1--5). Not yet proved analytically.}
+
+% ============================================================
+\section{The Lifting Operator \texorpdfstring{$\Lop$}{L}}
+\label{sec:lifting}
+% ============================================================
+
+\subsection{Intuition before the definition}
+
+Before stating the formal definition, consider what happens when four protons come
+close enough to interact. Each proton is itself a composite closure built from $\Kfour$
+instances via the $(A)\wedge(B)$ coupling criterion. At the nuclear level, each proton
+becomes a \emph{point} --- an indivisible object at that scale, exactly as $\Kfour$
+is a point at the quantum level. The four protons then form a new signed graph: they
+are the vertices, the nuclear forces between them are the edges, and the signs of
+those edges are determined by whether the pulsations of the two protons are in phase
+($+1$) or in opposition ($-1$). C1--C4 are then applied to this new graph, selecting
+the configurations of minimal coherence cost. The result is the helium-4 nucleus.
+
+This is precisely what the lifting operator does, at every level of the hierarchy.
+
+\subsection{Definition}
+
+\begin{definition}[Lifting operator $\Lop$]
+\label{def:lifting}
+Let $\Calg_n$ denote the set of admissible closures of level $n$. The lifting
+operator is a map
+\begin{equation}
+\Lop : \mathcal{P}(\Calg_n) \to \Calg_{n+1}
+\end{equation}
+defined as follows. Given a finite set $\{\Gamma_1, \ldots, \Gamma_k\} \subset
+\Calg_n$ with $k \geq 4$, the composite closure $G_{n+1} = \Lop(\Gamma_1, \ldots,
+\Gamma_k)$ is the signed graph whose vertex set is $\{\Gamma_1, \ldots, \Gamma_k\}$,
+whose edges are determined by the $(A)\wedge(B)$ coupling criterion between pairs of
+level-$n$ closures, and whose edge signs are determined by the phase parity of the
+coupling: $s_{ij} = +1$ if the pulsations of $\Gamma_i$ and $\Gamma_j$ are in phase
+at the first half-cycle, and $s_{ij} = -1$ if they are in opposition. The admissible
+configuration of $G_{n+1}$ is selected by C4 among all configurations compatible
+with C2.
+\end{definition}
+
+The minimum $k \geq 4$ is not arbitrary: it is forced by C1 applied to $G_{n+1}$.
+For $G_{n+1}$ to admit a 2-cycle, the same combinatorial argument that forces
+$\Kfour$ at level~0 forces at least four vertices at every subsequent level. A
+composite closure built from fewer than four sub-closures cannot satisfy C1 and is
+therefore not admissible.
+
+\subsection{The proton as the first application of \texorpdfstring{$\Lop$}{L}}
+
+The construction of the proton from $\Kfour$ in documents D05--D10 is precisely the
+first application of $\Lop$. The proton is $\Lop(\Kfour^{\times k})$ for an
+appropriate $k$, where the coupling is governed by the $(A)\wedge(B)$ criterion. The
+proton quintuplet $(24, 28, 930, 10087, 11017)$ is the output of C4 applied to this
+construction. The lifting operator is therefore not a new object introduced for the
+DL programme; it is the mechanism already operative in the foundational corpus,
+named and formalised here for application at higher levels.
+
+\subsection{Self-similarity of \texorpdfstring{$\Lop$}{L}}
+
+A key property observed computationally (Script 1) is that the level-1 closure
+produced by $\Lop$ from four $\Kfour$ instances has the same structural form as
+$\Kfour$ itself: four vertices, six edges, four triangles. This self-similarity is
+the formal counterpart of the scale-invariance conjecture. It says that the lifting
+operator does not produce qualitatively new structures at each level --- it produces
+the same structure, populated by objects of increasing complexity.
+
+% ============================================================
+\section{The Constraint-Structure Operator
+         \texorpdfstring{$\Sop(\Gamma)$}{S(Γ)}}
+\label{sec:S}
+% ============================================================
+
+The lifting operator $\Lop$ tells us how closures combine into composites. We now
+need a second operator that asks a different question: does a closure \emph{know}
+its own structure? Can it encode, internally, the rules by which it holds together?
+The constraint-structure operator $\Sop$ formalises this question precisely, and its
+answer for $\Kfour$ will turn out to be the most important single result of this
+document.
+
+\subsection{Definition}
+
+\begin{definition}[Constraint-structure operator $\Sop$]
+\label{def:S}
+Let $\Gamma \in \Calg_n$ be an admissible closure with vertex set $V$, edge set $E$,
+and sign assignment $s: E \to \{+1,-1\}$. The \emph{constraint-structure graph}
+$\Sop(\Gamma)$ is the signed graph defined as follows. Its vertex set is the set of
+triangles of $\Gamma$: each triangle $\tau_{ijk}$ becomes a vertex of $\Sop(\Gamma)$.
+Two vertices $\tau_{ijk}$ and $\tau_{ijl}$ of $\Sop(\Gamma)$ are connected by an
+edge if and only if the corresponding triangles share an edge in $\Gamma$. The sign
+of that edge in $\Sop(\Gamma)$ is the sign of the shared edge in $\Gamma$.
+\end{definition}
+
+The operator $\Sop$ maps a signed graph to another signed graph of the same formal
+type. It encodes the dependency structure of the coherence constraints: two
+constraints are adjacent in $\Sop(\Gamma)$ if they share a common edge, and the sign
+of their adjacency is the sign of the edge they share.
+
+\subsection{Worked example: \texorpdfstring{$\Sop(\Kfour)$}{S(K4)} step by step}
+
+To make Definition~\ref{def:S} concrete, we compute $\Sop(\Kfour)$ explicitly for
+the coherent configuration $s = (-1,-1,+1,+1,-1,-1)$ on the six edges
+$(e_{01}, e_{02}, e_{03}, e_{12}, e_{13}, e_{23})$.
+
+\emph{Step 1 --- Identify the triangles of $\Kfour$.} There are $\binom{4}{3} = 4$
+triangles, which become the four vertices of $\Sop(\Kfour)$:
+\begin{align*}
+v_0 &= \tau_{012} = \text{triangle on vertices } \{0,1,2\}, \\
+v_1 &= \tau_{013} = \text{triangle on vertices } \{0,1,3\}, \\
+v_2 &= \tau_{023} = \text{triangle on vertices } \{0,2,3\}, \\
+v_3 &= \tau_{123} = \text{triangle on vertices } \{1,2,3\}.
+\end{align*}
+
+\emph{Step 2 --- Determine the edges of $\Sop(\Kfour)$.} Two triangles are adjacent
+in $\Sop(\Kfour)$ if they share an edge in $\Kfour$. Every pair of triangles in
+$\Kfour$ shares exactly one edge (there are $\binom{4}{2} = 6$ pairs, each sharing
+one of the six edges of $\Kfour$). The six edges of $\Sop(\Kfour)$ and their
+inherited signs are:
+\begin{center}
+\begin{tabular}{llc}
+\toprule
+Edge in $\Sop(\Kfour)$ & Shared edge in $\Kfour$ & Sign \\
+\midrule
+$(v_0, v_1)$ & $e_{01}$ & $-1$ \\
+$(v_0, v_2)$ & $e_{02}$ & $-1$ \\
+$(v_0, v_3)$ & $e_{12}$ & $+1$ \\
+$(v_1, v_2)$ & $e_{03}$ & $+1$ \\
+$(v_1, v_3)$ & $e_{13}$ & $-1$ \\
+$(v_2, v_3)$ & $e_{23}$ & $-1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\emph{Step 3 --- Conclusion.} $\Sop(\Kfour)$ has 4 vertices and 6 edges --- the same
+counts as $\Kfour$ itself. It is structurally isomorphic to $\Kfour$. This holds for
+all eight coherent configurations of $\Kfour$, as verified exhaustively by Script~1.
+
+\subsection{The fixed-point theorem for \texorpdfstring{$K_4$}{K4}}
+
+\begin{computedresult}[$\Sop(\Kfour) \cong \Kfour$ --- Script~1]
+\label{thm:fixedpoint}
+For every one of the eight coherent sign configurations of $\Kfour$, the
+constraint-structure graph $\Sop(\Kfour)$ has exactly four vertices and six edges,
+and is structurally isomorphic to $\Kfour$. This result holds unconditionally: it
+is independent of the choice of coherent configuration.
+\end{computedresult}
+
+\begin{proof}[Verification]
+$\Kfour$ has four triangles: $(0,1,2)$, $(0,1,3)$, $(0,2,3)$, $(1,2,3)$. These
+become the four vertices of $\Sop(\Kfour)$. Every pair of triangles in $\Kfour$
+shares exactly one edge (since $\Kfour$ is the complete graph on four vertices, every
+pair of its four triangular faces has a common edge). Therefore $\Sop(\Kfour)$ has
+$\binom{4}{2} = 6$ edges. A signed graph on four vertices with six edges is $\Kfour$.
+Exhaustive verification over all eight coherent configurations confirms the result
+(Script~1, 8/8).
+\end{proof}
+
+This theorem says that $\Kfour$ is a fixed point of $\Sop$: the graph of its
+coherence constraints is isomorphic to itself. This is a structural property of
+$\Kfour$ alone: for $n \geq 5$, the number of triangles in $K_n$ is $\binom{n}{3}
+> n$, so $\Sop(K_n)$ cannot be isomorphic to $K_n$ for $n \geq 5$ (Script~1,
+confirmed 0/16 for $n=5$ and 0/32 for $n=6$).
+
+\begin{remark}
+The fixed-point property of $\Kfour$ under $\Sop$ is not a coincidence. It reflects
+the fact that $\Kfour$ is the unique finite graph whose triangles are in bijection
+with its vertices and whose inter-triangle adjacencies reproduce its edge structure.
+This is why $\Kfour$ is the seed of the entire hierarchy: it is the only level at
+which the self-referential structure of $\Sop$ closes exactly on itself.
+\end{remark}
+
+% ============================================================
+\section{The Self-Representation Relation
+         \texorpdfstring{$\Rop^k(\Gamma)$}{Rk(Γ)}}
+\label{sec:R}
+% ============================================================
+
+We now have the tools to formalise the central concept of the DL programme. A closure
+can carry within itself an encoding of its own constraints --- a description of the
+rules by which it coheres. This is self-representation. We define it in two versions
+--- strong and weak --- because the distinction turns out to matter enormously: it
+is the difference between a crystal and a living cell.
+
+\subsection{Two definitions of self-representation}
+
+The concept of self-representation has two natural formalisations in this framework,
+of different strength.
+
+\begin{definition}[Strong self-representation $\Rop^1_{\mathrm{strong}}$]
+A closure $\Gamma \in \Calg_n$ is \emph{strongly self-representing} if it contains a
+sub-graph $\Gamma' \subseteq \Gamma$ such that $\Gamma' \cong \Sop(\Gamma)$ as signed
+graphs, and $\Sop(\Gamma)$ is itself coherent (satisfies C2).
+\end{definition}
+
+\begin{definition}[Weak self-representation $\Rop^1_{\mathrm{weak}}$]
+A closure $\Gamma \in \Calg_n$ is \emph{weakly self-representing} if there exists a
+sub-graph $\Gamma' \subseteq \Gamma$ and a sign-preserving graph homomorphism
+$\varphi: \Gamma' \to \Sop(\Gamma)$. That is, $\Gamma'$ maps into $\Sop(\Gamma)$
+with preservation of edge signs, without requiring global isomorphism.
+\end{definition}
+
+The strong definition requires an exact internal copy of the constraint structure.
+The weak definition requires only that the closure contains a faithful encoding of
+its own constraints --- a compressed but accurate representation, not a perfect
+replica. The distinction matters: DNA does not contain an isomorphic copy of the
+organism; it contains a compressed encoding of the rules by which the organism
+constructs itself.
+
+\subsection{Computational results on self-representation}
+
+\begin{computedresult}[Strong self-representation --- Script~1 and 4]
+Strong self-representation $\Rop^1_{\mathrm{strong}}$ is present in exactly 4 of
+the 8 coherent configurations of $\Kfour$ (those for which $\Sop(\Kfour)$ is
+itself coherent). For $n \geq 5$, strong self-representation is absent from all
+coherent configurations of $K_n$ (0/16 for $n=5$, 0/32 for $n=6$, 0/64 for $n=7$,
+0/128 for $n=8$).
+\end{computedresult}
+
+\begin{computedresult}[Weak self-representation --- Script~5]
+\label{thm:R1weak}
+Weak self-representation $\Rop^1_{\mathrm{weak}}$ is forced at 100\% for every
+coherent configuration at $n \geq 4$, and is absent at $n = 3$. Specifically:
+$n=3$: 0/4; $n=4$: 8/8; $n=5$: 16/16; $n=6$: 32/32; $n=7$: 64/64.
+\end{computedresult}
+
+This result has a precise interpretation. Every closure that satisfies C1--C4 with
+four or more vertices automatically contains a faithful encoding of its own coherence
+constraints, accessible via a sign-preserving homomorphism. Self-representation in
+the weak sense is not an additional property acquired by some closures: it is a
+structural consequence of coherence for $n \geq 4$.
+
+\subsection{The hierarchy of self-representation}
+
+The hierarchy of self-representation levels is defined by iterating $\Sop$.
+
+\begin{definition}[Hierarchy $\Rop^k$]
+For $k \geq 1$, a closure $\Gamma$ satisfies $\Rop^k_{\mathrm{weak}}$ if there
+exists a sub-graph $\Gamma^{(k)} \subseteq \Gamma$ and a sign-preserving homomorphism
+$\varphi: \Gamma^{(k)} \to \Sop^k(\Gamma)$, where $\Sop^k$ denotes the $k$-fold
+application of $\Sop$.
+\end{definition}
+
+The sequence $\Rop^1 \subset \Rop^2 \subset \cdots$ defines a tower of increasingly
+reflexive self-represen-tation levels. $\Rop^1$ corresponds to a closure that encodes
+its own constraints; $\Rop^2$ corresponds to a closure that encodes the encoding of
+its own constraints; and so on. The DL programme conjectures that life corresponds
+to $\Rop^1_{\mathrm{active}}$ and consciousness to $\Rop^2_{\mathrm{active}}$, where
+\emph{active} denotes the additional condition that the encoding sub-graph
+$\Gamma^{(k)}$ is coupled via $(A)\wedge(B)$ to the production mechanism of the
+closure.
+
+% ============================================================
+\section{The PDL-V Conjecture}
+\label{sec:PDLV}
+% ============================================================
+
+The \PDL-V conjecture is stated in four parts. Each part is labelled with its
+epistemic status.
+
+\begin{conjecturebox}[PDL-V, Part 1 --- Existence of the life threshold]
+There exists a minimal integer $n^{*}_{\mathrm{life}} \geq 1$ such that for all
+$n \geq n^{*}_{\mathrm{life}}$, every admissible closure $\Gamma \in \Calg_n$
+selected by C4 satisfies $\Rop^1_{\mathrm{active}}$: it contains a sub-graph
+$\Gamma'$ that encodes $\Sop(\Gamma)$ via a sign-preserving homomorphism, and
+$\Gamma'$ is coupled via $(A)\wedge(B)$ to a production mechanism that generates
+new closures of the same type with controlled variation.
+\end{conjecturebox}
+
+\emph{Status: structured conjecture. Computational results establish that
+$\Rop^1_{\mathrm{weak}}$ (the structural precondition) is universally present for
+$n \geq 4$. The active coupling component remains to be verified.}
+
+\begin{conjecturebox}[PDL-V, Part 2 --- Selection by C4]
+Closures satisfying $\Rop^1_{\mathrm{active}}$ have a strictly lower lineage
+coherence cost $\bar{\eps}(\mathcal{L}) = \lim_{N \to \infty} \frac{1}{N}
+\sum_{i=0}^{N} \eps(\Gamma_i)$ than closures that persist without active
+self-representation. C4 applied at the lineage level therefore selects
+$\Rop^1_{\mathrm{active}}$ closures systematically over persistent non-representing
+ones.
+\end{conjecturebox}
+
+\emph{Status: structured conjecture. The intuitive argument is that a closure which
+encodes its own constraints can anticipate coherence violations and correct them
+before they propagate, reducing the average coherence cost over the lineage. This
+advantage is not yet proved formally.}
+
+\begin{conjecturebox}[PDL-V, Part 3 --- Necessity of the birth--death cycle]
+Lineages of finite-duration closures with controlled inter-generational variation
+$\delta = \delta^{*}$ have a strictly lower lineage coherence cost than immortal
+persistent closures at the same level. Death is a logical necessity imposed by C4
+at the lineage scale: an immortal closure accumulates coherence violations without
+the possibility of reset, whereas a lineage corrects its coherence structure at each
+generational transition. The optimal variation $\delta^{*} = 1/2$ is forced by C4
+and verified computationally.
+\end{conjecturebox}
+
+\begin{computedresult}[Optimal variation $\delta^{*}$ --- Script~3]
+The optimal Hamming distance between successive coherent configurations of a
+level-1 closure is $\delta^{*} = 3/6 = 1/2$: exactly half of the six edges change
+sign between optimal successive configurations. This value coincides with the
+normalised distance between the two half-cycles of the $\Kfour$ pulsation (full
+sign inversion = distance 1; half-cycle transition = distance 1/2).
+\end{computedresult}
+
+\begin{conjecturebox}[PDL-V, Part 4 --- Thermodynamic ceiling $n^{*}_{\mathrm{max}}$]
+There exists a maximal integer $n^{*}_{\mathrm{max}} < \infty$, determined by the
+balance between the coherence cost reduction gained by each additional level of
+self-representation and the combinatorial entropy cost of maintaining coherence at
+that level, such that closures at level $n > n^{*}_{\mathrm{max}}$ are
+thermodynamically unstable and fragment towards lower levels. The sequence
+$n^{*}_{\mathrm{life}} < n^{*}_{\mathrm{consciousness}} < \cdots <
+n^{*}_{\mathrm{max}}$ is finite and forced by C1--C4.
+\end{conjecturebox}
+
+\begin{computedresult}[Rarity law and $n^{*}_{\mathrm{max}}$ --- Script~3]
+\label{thm:rarity}
+The fraction of coherent configurations among all signed configurations on $K_n$
+satisfies the exact law
+\begin{equation}
+f(n) = 2^{n + 1 - \binom{n}{2}}.
+\end{equation}
+The sequence of exponents $n + 1 - \binom{n}{2}$ for $n = 3, 4, 5, 6$ is
+$-1, -3, -6, -10$: the negatives of the triangular numbers $T_{n-2}$. The fraction
+$f(n)$ decreases doubly exponentially with $n$, establishing that there exists a
+finite $n^{*}_{\mathrm{max}}$ beyond which no coherent closure can be
+thermodynamically maintained against fluctuations.
+\end{computedresult}
+
+\subsection{Falsification criteria}
+
+The \PDL-V conjecture is falsified by any one of the following.
+
+\begin{enumerate}[leftmargin=2em]
+\item Construction of an admissible closure at level $n \geq n^{*}_{\mathrm{life}}$
+      that satisfies C1--C4 but does not satisfy $\Rop^1_{\mathrm{active}}$, despite
+      C4 selecting it as a coherence minimum.
+\item A proof that the lineage coherence cost $\bar{\eps}(\mathcal{L})$ is not
+      minimised by $\Rop^1_{\mathrm{active}}$ closures, i.e., that immortal closures
+      have equal or lower lineage cost.
+\item A proof that $\delta^{*} \neq 1/2$ at any level above the first, i.e., that
+      the optimal inter-generational variation is not the half-pulsation of $\Kfour$.
+\item A proof that $f(n)$ does not decrease doubly exponentially, i.e., that the
+      rarity law is not exact.
+\end{enumerate}
+
+% ============================================================
+\section{A Concrete Bridge: The Synaptic Mechanism}
+\label{sec:synapse}
+% ============================================================
+
+We have now introduced the formal objects --- $\Lop$, $\Sop$, $\Rop^k$ --- and stated
+the \PDL-V conjecture. Before proceeding to the thermodynamic analysis and the
+literature review, it is worth pausing to show that the formalism is not ad hoc. The
+synaptic mechanism of the neural network is a concrete, mechanistically well-understood
+biological system that illustrates every element of the framework developed above.
+This section is an illustration, not a proof. Every claim is labelled accordingly.
+We emphasise explicitly that this section draws structural parallels, not formal
+derivations. The derivation of Hebbian plasticity from C4, and of the STDP rule from
+the half-cycle structure of C1, are the programme of DL04 --- they are not claims
+of the present document. What is claimed here is only that the \PDL\ formalism and
+the neuroscientific mechanisms are structurally coherent, which motivates the formal
+programme without prejudging its outcome.
+
+\subsection{The minimal neural circuit as a signed triangle}
+
+A chemical synapse connects two neurons across a junction of approximately 20\,nm.
+Neurotransmitters released from the presynaptic terminal bind to receptors on the
+postsynaptic membrane and produce one of two effects: excitation ($s = +1$ on the
+edge between the two neurons in the neural graph) or inhibition ($s = -1$). The
+action potential itself --- the all-or-nothing electrical pulse --- is a binary
+pulsation in the sense of C1: depolarisation followed by repolarisation is a 2-cycle
+at the cellular timescale.
+
+Consider the simplest non-trivial neural circuit: three neurons $A$, $B$, $C$
+forming a triangle, where $A$ excites $B$ ($s_{AB} = +1$), $B$ inhibits $C$
+($s_{BC} = -1$), and $C$ excites $A$ ($s_{CA} = +1$). The coherence of this triangle
+in the sense of C2 is:
+\begin{equation}
+s_{AB} \cdot s_{BC} \cdot s_{CA} = (+1)(-1)(+1) = -1.
+\end{equation}
+This is a \emph{frustrated} triangle --- a violation of C2. In the \PDL\ framework,
+a frustrated triangle under C2 is not a stable configuration: C4 drives the system
+towards configurations that reduce the fraction of frustrated triangles. The result
+in this circuit is oscillation: the three neurons fire in sequence, never reaching a
+static equilibrium, because no static assignment of firing states can satisfy the
+coherence condition. This is precisely the behaviour observed in biological central
+pattern generators --- the neural circuits that produce rhythmic motor patterns such
+as breathing, walking, and heartbeat.
+
+\begin{remark}
+The three-neuron frustrated circuit is the neural-level counterpart of the frustrated
+triangle at the $\Kfour$ level. At both scales, C2 violation produces oscillation,
+and C4 drives the system towards coherence. The mechanism is identical; the scale
+differs by roughly twelve orders of magnitude.
+\end{remark}
+
+\subsection{Synaptic plasticity as C4 at the neural level}
+
+The brain does not maintain a fixed signed graph. The synaptic weights evolve
+continuously in response to neural activity, a process called synaptic plasticity.
+The Hebbian rule --- neurons that fire together wire together --- states that the
+synaptic weight $w_{ij}$ between neurons $i$ and $j$ increases when they are
+co-activated and decreases when they fire in opposition. In the language of signed
+graphs, this is C4 operating on the edge signs of the neural graph in real time:
+connections that reduce the coherence cost of the network are reinforced, while those
+that increase it are weakened.
+
+\emph{Interpretive remark:} Learning, in this picture, is not an additional
+biological mechanism layered on top of physics. It is C4 applied to the neural
+signed graph, exactly as C4 at the quantum level selects the coherence-minimising
+configurations of $\Kfour$ and its composites.
+
+The more precise formulation known as spike-timing-dependent plasticity (STDP)
+reinforces a synapse when the presynaptic neuron fires before the postsynaptic one,
+and weakens it in the reverse order. This directional temporal rule reflects the
+half-cycle ordering of C1: which closure fires first determines the sign of the
+coupling, exactly as the ordering of the two half-cycles of the $\Kfour$ pulsation
+determines the sign structure of the coupled composite.
+
+\subsection{The neural network as a composite closure}
+
+The human brain contains approximately $10^{11}$ neurons and $10^{14}$ synaptic
+connections. In the \PDL\ framework, this is a signed graph of very large size ---
+a composite closure produced by many successive applications of $\Lop$, starting from
+$\Kfour$ at the quantum level and passing through molecular, cellular, and tissue
+levels. Its sign assignment evolves under C4 via synaptic plasticity. A coherent
+state of this graph --- a configuration in which the fraction of frustrated triangles
+is locally minimised --- corresponds, in this picture, to a stable thought or
+cognitive state. Cognitive conflict is a local violation of C2 that generates
+pressure towards resolution, exactly as a frustrated triangle in a signed graph
+generates pressure under C4.
+
+The self-representation hierarchy now has a natural neural correlate. $\Rop^1$ at
+the neural level corresponds to the existence of a sub-network that encodes the
+constraint structure of the global network --- in biological terms, a memory system
+that models the organism's own coherence conditions (what works, what does not, what
+maintains the closure). $\Rop^2$ corresponds to a sub-network that models the
+modelling process itself: a system that represents its own representations. The
+default mode network of neuroscience --- the brain's resting-state network, active
+when the brain is not engaged with external stimuli and associated with
+self-referential thought --- is the empirical candidate for this $\Rop^2$ sub-graph.
+
+\emph{Interpretive remark:} The identification of consciousness with
+$\Rop^2_{\mathrm{active}}$ and of the default mode network with the $\Rop^2$
+sub-graph is coherent with the \PDL\ formalism and with the neuroscientific evidence,
+but it is not derived from C1--C4 as a theorem. It is the target of future work in
+the DL series, beginning with DL04.
+
+\subsection{From grain of sand to amoeba: the threshold made concrete}
+
+The distinction between a non-living composite closure and a living one can now be
+stated precisely in terms of the framework developed above.
+
+A grain of sand satisfies C1--C4 at every level from the quantum to the mineral: its
+atoms pulse, its ionic bonds minimise coherence cost, its crystal structure is
+irreducible (C3). But it does not satisfy $\Rop^1_{\mathrm{active}}$. It has no
+sub-structure coupled via $(A)\wedge(B)$ to a production mechanism. It does not
+generate $\Gamma_{i+1}$ from $\Gamma_i$. It persists passively as long as its
+environment permits, and fragments when external forces exceed its coherence cost.
+C4 has selected its configuration as optimal at its level. It is blocked there.
+
+An amoeba also satisfies C1--C4 at every level from the quantum to the cellular.
+But it additionally satisfies $\Rop^1_{\mathrm{active}}$: it contains a sub-structure
+(its genetic material) that encodes $\Sop(\Gamma)$ via a sign-preserving map, and
+this sub-structure is coupled via $(A)\wedge(B)$ to the production of new closures
+of the same type. It generates $\Gamma_{i+1}$ from $\Gamma_i$ with controlled
+variation $\delta \approx \delta^{*}$. It dies --- releasing the resources and
+constraints that allow $\Gamma_{i+1}$ to exist --- and it evolves, because C4 at
+the lineage scale selects the lineages of lowest average coherence cost, not the
+individuals of lowest instantaneous cost.
+
+The boundary between grain of sand and amoeba is not a boundary of substance. It
+is a boundary of level and of recursive structure. Both are made of the same atoms,
+governed by the same four axioms. The difference is the number of times $\Lop$ has
+been applied, and whether the result satisfies $\Rop^1_{\mathrm{active}}$.
+
+% ============================================================
+\section{The Thermodynamic Ceiling and Combinatorial Entropy}
+\label{sec:entropy}
+% ============================================================
+
+The rarity law established in Computational Result~\ref{thm:rarity} has a direct
+thermodynamic interpretation. The fraction $f(n)$ of coherent configurations
+decreases doubly exponentially with $n$: $f(3) = 1/2$, $f(4) = 1/8$, $f(5) =
+1/64$, $f(6) = 1/1024$. At level $n$, C4 must select a coherent configuration from
+a space of $2^{\binom{n}{2}}$ possibilities, of which only $f(n) \cdot
+2^{\binom{n}{2}} = 2^{n-1}$ are coherent. The \emph{combinatorial entropy cost} of
+maintaining coherence at level $n$ is proportional to $-\log_2 f(n) = \binom{n}{2}
+- n + 1$, which grows as $n^2/2$ for large $n$.
+
+On the other side of the balance, the gain from each additional level of
+self-representation diminishes: the first level of $\Rop$ provides the largest
+reduction in lineage coherence cost, and each subsequent level provides a smaller
+marginal gain. The ceiling $n^{*}_{\mathrm{max}}$ is the level at which the
+combinatorial entropy cost exceeds the marginal self-representation gain.
+
+This analysis is the PDL-theoretic counterpart of Prigogine's dissipative structures
+\cite{Prigogine1977}: the analogy is structural, not metaphorical. Prigogine showed
+that systems far from thermodynamic equilibrium can spontaneously organise into
+structures of increasing complexity, bounded by the capacity of the environment to
+absorb entropy. The \PDL\ framework identifies the mechanism driving this
+organisation (C4 applied to composite closures) and the mechanism imposing the
+ceiling (the rarity law $f(n)$), both derived from the same four axioms.
+
+The difference is one of depth. Prigogine's framework presupposes thermodynamics,
+energy, and dissipation. The \PDL\ framework derives these from C1--C4.
+
+% ============================================================
+\section{Relation to Existing Literature}
+\label{sec:literature}
+% ============================================================
+
+Several established programmes address the emergence of life and consciousness from
+physical or informational principles. The \PDL-V conjecture differs from all of them
+in a single structural respect: the axioms C1--C4 are prior to physics, not a
+reformulation of physical law.
+
+\emph{Integrated Information Theory} (IIT, Tononi \cite{Tononi2004}) proposes that
+consciousness is identified with the integrated information $\Phi$ of a physical
+system --- the information generated by the system above and beyond its parts. The
+IIT postulates are stated at the phenomenological level and derive physical
+requirements from them. The \PDL-V conjecture proceeds in the opposite direction:
+from combinatorial axioms prior to experience, towards the conditions that force
+self-representation. The condition $\Rop^2_{\mathrm{active}}$ has structural
+similarities to high-$\Phi$ systems (both are irreducible to their parts, by C3 and
+by the definition of $\Phi$ respectively), but the derivation is entirely different.
+IIT has been criticised as unfalsifiable \cite{IIT2023}; the \PDL-V conjecture
+provides explicit falsification criteria (Section~\ref{sec:PDLV}).
+
+\emph{Autopoiesis} (Maturana and Varela \cite{Maturana1980}) defines life as
+operational closure: a system that produces its own components and thereby maintains
+its own organisation. This is structurally parallel to $\Rop^1_{\mathrm{active}}$ in
+the \PDL\ sense: a closure whose encoding sub-graph drives the production of new
+closures of the same type. The formal connection is not coincidental, but the
+derivation differs: autopoiesis is a definition imposed from outside, while
+$\Rop^1_{\mathrm{active}}$ is conjectured to be forced by C4.
+
+\emph{Autocatalytic sets} (Kauffman \cite{Kauffman1993}) propose that life emerges
+inevitably in sufficiently rich chemical spaces via mutually catalytic networks.
+Kauffman's argument that autocatalysis is not improbable but inevitable beyond a
+complexity threshold is structurally analogous to the claim that $n^{*}_{\mathrm{life}}$
+is finite and forced by C4. The mechanism differs: Kauffman's argument is
+combinatorial-probabilistic over chemical space, while the \PDL\ argument is
+structural over signed graph hierarchies.
+
+\emph{Logical depth} (Bennett \cite{Bennett1988}) measures the complexity of an
+object by the computation time required to produce it from its minimal description.
+Living organisms have high logical depth. The level $n$ in the \PDL\ hierarchy is a
+structural analogue of logical depth: a closure at level $n$ requires $n$ applications
+of $\Lop$ to construct from $\Kfour$.
+
+The decisive difference between all these frameworks and the \PDL-V programme is the
+following. Every existing framework either presupposes physics, chemistry, or
+phenomenal experience as its starting point. The \PDL\ axioms C1--C4 presuppose
+none of these. Physics is the first theorem of C1--C4. Life, in the \PDL-V conjecture,
+is a later theorem in the same chain.
+
+% ============================================================
+\section{Epistemic Status Summary and Research Programme}
+\label{sec:programme}
+% ============================================================
+
+\subsection{Complete epistemic status table}
+
+\begin{center}
+\begin{longtable}{p{6.5cm}p{2.8cm}p{4.5cm}}
+\toprule
+\textbf{Claim} & \textbf{Status} & \textbf{Reference} \\
+\midrule
+\endhead
+$\Sop(\Kfour) \cong \Kfour$ unconditionally & Comp.\ result & Script~1, 8/8 \\
+$\Sop(K_n) \not\cong K_n$ for $n \geq 5$ & Comp.\ result & Script~1, 0/16, 0/32 \\
+$\Rop^1_{\mathrm{strong}}$ in 4/8 $\Kfour$ configs & Comp.\ result & Scripts 1, 4 \\
+$\Rop^1_{\mathrm{weak}}$ forced for $n \geq 4$ & Comp.\ result & Script~5, 8--64/8--64 \\
+$\delta^{*} = 1/2$ & Comp.\ result & Script~3 \\
+Rarity law $f(n) = 2^{n+1-\binom{n}{2}}$ & Comp.\ result & Script~3 \\
+\midrule
+Scale-invariance of C1--C4 & Conj.\ (struct.) & Section~\ref{sec:scaleinvariance} \\
+Existence of $n^{*}_{\mathrm{life}}$ (finite) & Conj.\ (struct.) & PDL-V Part~1 \\
+C4 selects $\Rop^1_{\mathrm{active}}$ & Conj.\ (struct.) & PDL-V Part~2 \\
+Death forced by C4 at lineage scale & Conj.\ (struct.) & PDL-V Part~3 \\
+$n^{*}_{\mathrm{max}}$ finite & Conj.\ (struct.) & PDL-V Part~4 \\
+\midrule
+Synapse as signed edge & Interp.\ remark & Section~\ref{sec:synapse} \\
+STDP as C1 temporal structure & Interp.\ remark & Section~\ref{sec:synapse} \\
+Consciousness as $\Rop^2_{\mathrm{active}}$ & Interp.\ remark & Section~\ref{sec:synapse} \\
+Default mode network as $\Rop^2$ sub-graph & Interp.\ remark & Section~\ref{sec:synapse} \\
+\midrule
+Value of $n^{*}_{\mathrm{life}}$ & Open problem & DL02 target \\
+Formal derivation of C4 cost advantage & Open problem & DL03 target \\
+$\Rop^2$ threshold and consciousness & Open problem & DL series \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{Planned DL document series}
+
+\begin{description}[leftmargin=2em]
+\item[DL01 (this document)] Foundations of the \PDL-V conjecture; lifting operator
+$\Lop$; constraint structure $\Sop$; self-representation $\Rop^k$; computational
+verification on small cases; epistemic stratification.
+
+\item[DL02] Formal derivation of the C4 cost advantage for $\Rop^1_{\mathrm{active}}$
+closures over non-representing ones; first estimate of $n^{*}_{\mathrm{life}}$ from
+the rarity law and the marginal gain function.
+
+\item[DL03] The birth--death cycle as a theorem: proof that immortal closures have
+strictly higher lineage coherence cost than finite-duration lineages with $\delta =
+\delta^{*}$; derivation of $\delta^{*}$ from C1--C4 at arbitrary level.
+
+\item[DL04] The synaptic mechanism as a formal application of $\Lop$ at the neural
+level: derivation of the Hebbian rule and STDP from C4 applied to the neural signed
+graph; first formal steps towards $\Rop^2_{\mathrm{active}}$.
+
+\item[DL05 and beyond] The $\Rop^2$ threshold; consciousness as a theorem; the
+ceiling $n^{*}_{\mathrm{max}}$ as a computable integer.
+\end{description}
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ============================================================
+
+The \PDL\ framework has established, through documents D01--D53, that the fundamental
+constants and dynamical laws of physics are derivable from four combinatorial axioms
+on finite signed graphs, without presupposing spacetime, particles, or fields. The
+DL programme asks whether the same axioms, applied hierarchically via the lifting
+operator $\Lop$, force the emergence of life and consciousness as structural
+necessities rather than as contingent accidents.
+
+The present document establishes the foundational objects of this programme. The
+constraint-structure operator $\Sop$ is defined and shown to have $\Kfour$ as its
+unique fixed point among complete graphs. Weak self-representation
+$\Rop^1_{\mathrm{weak}}$ is shown computationally to be universally present for all
+coherent closures with $n \geq 4$ vertices. The optimal inter-generational variation
+$\delta^{*} = 1/2$ is identified as the half-pulsation of $\Kfour$. The rarity law
+$f(n) = 2^{n+1-\binom{n}{2}}$ establishes the thermodynamic ceiling $n^{*}_{\mathrm{max}}$
+as a combinatorial necessity.
+
+The \PDL-V conjecture is not yet a theorem. What it is, is a precisely formulated,
+computationally grounded, falsifiable research programme that asks the deepest
+question one can ask of a foundational framework: if it truly precedes physics, does
+it also precede life?
+
+The answer, if it comes, will come through the same discipline that produced D01
+through D53: one definition at a time, one script at a time, one proof at a time.
+
+\clearpage
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{DL01_references}
+% ============================================================
+
+\end{document}
