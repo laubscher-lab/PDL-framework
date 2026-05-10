@@ -304,3 +304,8 @@ D53
 https://doi.org/10.5281/zenodo.20052558 
 From Four Axioms to the Cosmological Constant: Causal Closure of the Chain C1–C4 to Λ — A Synthesis and Computational Verification (PDL Framework — D53)
 D53___causal_closure_lambda.pdf 
+
+DL01 
+https://doi.org/10.5281/zenodo.20114140 
+From Axioms to Life: The PDL-V Conjecture and the Hierarchical Replication of C1–C4 (Projective Dynamic Logo Framework, Document DL01)
+DL01___From_Axioms_to_Life.pdf
