@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 36 — 10 May 2026 (DL01 published — DL series opened)*
+*Last updated: Session 37 — 12 May 2026 (DL02 published — DOI DL01 corrigé)*
 
 ---
 
@@ -72,12 +72,22 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   R¹_weak forcée à 100% pour tout n ≥ 4 (vérifié n=4..7, 8/8 à 64/64)
   δ* = 1/2 — variation optimale de lignée = demi-pulsation de K₄
   Loi de rareté exacte : f(n) = 2^(n+1−C(n,2)) — exposants = −T_{n-2} (nombres triangulaires)
-- DL01 publié sur Zenodo (DOI: 10.5281/zenodo.20114140)
+- DL01 publié sur Zenodo (DOI: 10.5281/zenodo.20132166 — correction mineure post-publication)
 - Numérotation série DL établie : DLxx pour tous les documents vie/conscience
+
+**Session 37 — DL02 produit et publié (12 May 2026):**
+- DL02 : trois théorèmes analytiques sur la hiérarchie des seuils vie/conscience
+- Théorème 1 : K₄ seul point fixe de S — C(4,3) = 4 est l'unique solution entière positive de (n-1)(n-2) = 6
+- Théorème 2 : Séparation n*_vie < n*_conscience — structurellement forcée pour n ≥ 5 depuis |S¹| ≠ |S²|
+- Théorème 3 : Finitude de n*_max — depuis f(n) = 2^(n+1−C(n,2)) doublement exponentielle
+- Hiérarchie 4 < n*_vie < n*_conscience < n*_max < ∞ établie comme théorème analytique
+- δ* = 1/2 confirmé invariant d'échelle
+- Scripts computationnels DL : Scripts 1–13 produits et vérifiés
+- DL02 publié sur Zenodo (DOI: 10.5281/zenodo.20132228)
 
 ---
 
-## Corpus Table (D01–D53 + DL01 + auxiliaires)
+## Corpus Table (D01–D53 + DL01 + DL02 + auxiliaires)
 
 | Doc | DOI | Titre abrégé |
 |-----|-----|--------------|
@@ -142,11 +152,12 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D51 | 10.5281/zenodo.20033520 | Cosmological Leakage Constant C |
 | D52 | 10.5281/zenodo.20036769 | Leakage Bases β₁(K₄)=3 |
 | D53 | 10.5281/zenodo.20052558 | Causal Closure C1–C4→Λ (Synthesis) |
-| **DL01** | **10.5281/zenodo.20114140** | **From Axioms to Life — PDL-V Conjecture** |
+| **DL01** | **10.5281/zenodo.20132166** | **From Axioms to Life — PDL-V Conjecture** |
+| **DL02** | **10.5281/zenodo.20132228** | **Existence, Separation, Finiteness — Thresholds PDL-V** |
 
 ---
 
-## Key Numerical Values (unchanged from Session 35)
+## Key Numerical Values (updated Session 37)
 
 ```
 μ* = 1836.152670 (proton/electron mass ratio, 27 ppm)
@@ -155,20 +166,21 @@ G_PDL = 6.6742e-11 m³ kg⁻¹ s⁻²
 Λ_PDL ≈ 1.089×10⁻⁵² m⁻² (0.41 ppm vs D51, D53 verified)
 M*_PDL = 1.1189 × M*_GR (+11.89% PBH threshold, D45)
 V_C = (4/3)π[ħ/(m_p c)]³ — doublement forcé, ratio = 1.00000000
-δ* = 1/2 (variation optimale de lignée, DL01 Script 3)
+δ* = 1/2 (variation optimale de lignée, DL01 Script 3, invariant d'échelle DL02)
 f(n) = 2^(n+1−C(n,2)) (loi de rareté exacte, DL01 Script 3)
+C(4,3) = 4 (identité arithmétique exacte — point fixe unique de S, DL02 Theorem 1)
 ```
 
 ---
 
-## Epistemic Status Summary (updated Session 36)
+## Epistemic Status Summary (updated Session 37)
 
 **Unconditional theorems (C1–C4 alone):**
 - K₄ as minimal admissible closure (D16a)
 - Proton quintuplet (24,28,930,10087,11017) (D16b, D29)
 - S(K₄) ≅ K₄ for 8/8 coherent configurations (DL01 Script 1)
 - R¹_weak forced at 100% for n ≥ 4 (DL01 Script 5)
-- δ* = 1/2 optimal inter-generational variation (DL01 Script 3)
+- δ* = 1/2 optimal inter-generational variation, invariant d'échelle (DL01 Script 3, DL02)
 - Rarity law f(n) = 2^(n+1−C(n,2)) exact (DL01 Script 3)
 - G_eff(N) = σ(N)·G_PDL (D31, D36, D42)
 - Schrödinger, Dirac, Born (D32, D33, D34, D46)
@@ -178,34 +190,54 @@ f(n) = 2^(n+1−C(n,2)) (loi de rareté exacte, DL01 Script 3)
 - BH coefficient 1/4 (D50)
 - Λ_PDL (D51, D52, D53)
 
+**Analytical theorems DL series (DL02):**
+- K₄ seul point fixe de S parmi K_n : C(4,3)=4 unique solution entière de (n-1)(n-2)=6
+- |S^k(K_n)| strictement croissant pour n ≥ 5 : C(n,3) > n pour n ≥ 5
+- Séparation n*_vie < n*_conscience : conditions R¹ et R² structurellement distinctes pour n ≥ 5
+- Finitude n*_max : f(n) → 0 doublement exponentielle, condition f(n) > κ^R_surf échoue à n fini
+- Hiérarchie 4 < n*_vie < n*_conscience < n*_max < ∞ — théorème analytique de C1–C4 et κ=1/4
+
 **Structured conjectures (DL series):**
 - Scale-invariance of C1–C4 through hierarchical levels (DL01)
-- Existence of n*_life forced by C4 (PDL-V Part 1, DL01)
+- Existence of n*_life forced by C4 — finitude reste à prouver (PDL-V Part 1, DL01 ; DL03 cible)
 - C4 selects R¹_active at lineage scale (PDL-V Part 2, DL01)
 - Death forced by C4 at lineage scale (PDL-V Part 3, DL01)
-- Finite thermodynamic ceiling n*_max (PDL-V Part 4, DL01)
 
 **Sole external parameter:** Δm_iso = m_d − m_u (forced at PDL–QCD boundary, D30)
 
 ---
 
-## Open Problems (updated Session 36)
+## Open Problems — Corpus D (updated Session 37)
 
-| ID | Description | Priority |
-|----|-------------|----------|
-| OP-pressure | Équation d'état w du fluide de cohérence | HIGH |
-| OP2 (D46) | Prouver Ω* = 2π·α_PDL depuis D12 | HIGH |
-| SU(2) | Dérivation SU(2) via fibration de Hopf (D46 point d'entrée) | HIGH |
-| n*_life | Valeur explicite du seuil de vie (DL02 cible) | HIGH |
-| C4 advantage | Dérivation formelle avantage de coût R¹_active (DL03 cible) | HIGH |
-| OP1-D32 | Dérivation algébrique de b | HIGH |
-| OP1-D34 | Dériver α_τ depuis C1–C4 | HIGH |
-| OP3 (D40) | Tc/Pm instability | MEDIUM |
-| OP5 (D35) | CMB angular power spectrum | MEDIUM |
-| OP15 | Superheavy nuclei Z>82 | MEDIUM |
-| R²_active | Seuil de conscience n*_consciousness (DL04+ cible) | FUTURE |
-| P7/P8 | B(E2) at FRIB/RIKEN | FUTURE |
-| OP-NCR | D18 rule for arbitrary-coordination graphs | FUTURE |
+Problèmes ouverts actifs dans le corpus fondationnel D, par priorité :
+
+| ID | Description | Documents | Priorité |
+|----|-------------|-----------|----------|
+| OP-pressure | Équation d'état w du fluide de cohérence — lien entre C_coh et p = wρc² | D48, D35 | HIGH |
+| OP2-D46 | Prouver Ω* = 2π·α_PDL depuis D12 — lien U(1) et structure fine | D46, D12 | HIGH |
+| SU(2) | Dérivation SU(2) via fibration de Hopf — D46 comme point d'entrée vers SM | D46 | HIGH |
+| OP1-D32 | Dérivation algébrique du coefficient b dans l'équation de Schrödinger PDL | D32 | HIGH |
+| OP1-D34 | Dériver α_τ depuis C1–C4 — paramètre résiduel de Born Level 1 | D34 | HIGH |
+| OP5-D35 | Spectre de puissance angulaire CMB depuis σ(N) | D35, D27 | MEDIUM |
+| OP3-D40 | Instabilité Tc/Pm — explication PDL de l'absence dans la vallée | D40 | MEDIUM |
+| OP15 | Noyaux superlourds Z > 82 — extension du modèle PDL | D47 | MEDIUM |
+| OP-NCR | Règle D18 pour graphes à coordination arbitraire | D18 | LOW |
+| P7/P8 | Prédictions B(E2) à FRIB/RIKEN — confrontation expérimentale D47 | D47, D41 | FUTURE |
+| P5/P9 | Confrontation PBH Fermi-LAT — seuil +11.89% | D45 | FUTURE |
+
+---
+
+## Open Problems — DL Series (updated Session 37)
+
+| ID | Description | Cible | Priorité |
+|----|-------------|-------|----------|
+| DL-OP1 | Existence et finitude de n*_vie — preuve que C4 sélectionne R¹_active à niveau fini | DL03 | HIGH |
+| DL-OP2 | Valeur numérique explicite de n*_vie depuis structure exacte des composites | DL03 | HIGH |
+| DL-OP3 | Fonction de gain de cohérence de R¹_active — forme analytique | DL03 | HIGH |
+| DL-OP4 | Valeur numérique de n*_conscience | DL04–05 | MEDIUM |
+| DL-OP5 | Valeur explicite de n*_max depuis condition f(n) > κ^R_surf | DL02 Open | MEDIUM |
+| DL-OP6 | Dérivation formelle de la règle de Hebb depuis C4 — niveau neuronal | DL04 | MEDIUM |
+| DL-OP7 | R²_active au niveau neuronal — réseau par défaut comme sous-graphe R² | DL04–05 | FUTURE |
 
 ---
 
@@ -213,54 +245,62 @@ f(n) = 2^(n+1−C(n,2)) (loi de rareté exacte, DL01 Script 3)
 
 **Numérotation :** DLxx pour tous les documents du volet vie et conscience.
 
-**DL01** — Publié (DOI: 10.5281/zenodo.20114140)
+**DL01** — Publié (DOI: 10.5281/zenodo.20132166)
 Fondations de la conjecture PDL-V. Opérateur L, S(Γ), R^k(Γ). Scripts 1–5.
 Illustration synaptique. Stratification épistémique complète.
 
-**DL02** — Planifié
-Dérivation formelle de l'avantage de coût C4 pour les clôtures R¹_active.
-Première estimation de n*_life depuis la loi de rareté et la fonction de gain marginal.
+**DL02** — Publié (DOI: 10.5281/zenodo.20132228)
+Trois théorèmes analytiques : point fixe unique de S (C(4,3)=4), séparation
+n*_vie < n*_conscience (|S¹| ≠ |S²| pour n ≥ 5), finitude n*_max (f(n) doublement
+exponentielle). Hiérarchie 4 < n*_vie < n*_conscience < n*_max < ∞ établie.
+Scripts computationnels DL : Scripts 6–13 produits.
 
 **DL03** — Planifié
-Le cycle naissance–mort comme théorème : preuve que les clôtures immortelles ont
-un coût de lignée strictement supérieur aux lignées à durée finie avec δ = δ*.
-Dérivation de δ* depuis C1–C4 à niveau arbitraire.
+Existence et finitude de n*_vie : preuve que C4 sélectionne R¹_active à niveau fini.
+Fonction de gain de cohérence de R¹_active — forme analytique depuis (A)∧(B).
+Première valeur numérique encadrée de n*_vie.
 
 **DL04** — Planifié
 Mécanisme synaptique comme application formelle de L au niveau neuronal.
-Dérivation de la règle de Hebb et de la STDP depuis C4.
+Dérivation formelle de la règle de Hebb et de la STDP depuis C4.
 Premiers pas formels vers R²_active.
 
 **DL05+** — Horizon ouvert
-Seuil de conscience. n*_max comme entier combinatoire calculable.
+Valeur de n*_conscience. n*_max comme entier combinatoire calculable.
+Conscience comme théorème de C1–C4.
 
 ---
 
-## Next Actions (updated Session 36)
+## Next Actions (updated Session 37)
 
-**Complétées en Session 36 (10 May 2026) :**
-- ✓ DL01 produit (LaTeX + .bib, cinq scripts computationnels)
-- ✓ DL01 publié sur Zenodo (DOI: 10.5281/zenodo.20114140)
-- ✓ PDL_context.md mis à jour Session 36
+**Complétées en Session 37 (12 May 2026) :**
+- ✓ DL02 produit (LaTeX + .bib, trois théorèmes analytiques)
+- ✓ DL02 publié sur Zenodo (DOI: 10.5281/zenodo.20132228)
+- ✓ Scripts DL 6–13 produits et vérifiés
+- ✓ DOI DL01 corrigé : 10.5281/zenodo.20132166
+- ✓ PDL_context.md mis à jour Session 37
 
 **À faire — immédiat :**
-1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 36) sur GitHub (main branch)
-2. **[HIGH]** Mettre à jour cedriclaubscher.ch : DL01 + série DL inaugurée
-3. **[HIGH]** Academia.edu : post DL01 (PDL-V conjecture, vie et conscience depuis C1–C4)
-4. **[HIGH]** Mettre à jour cedriclaubscher.ch : D53 + DM v20 (si pas encore fait)
-5. **[MEDIUM]** Academia.edu : post D53 + DM v20 (si pas encore fait)
-6. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
-7. **[MEDIUM]** Contact Recchia/Lenzi (Padova) : update avec D47 + D53
+1. **[HIGH — IMMÉDIAT]** Pousser PDL_context.md (Session 37) sur GitHub (main branch)
+2. **[HIGH]** Mettre à jour cedriclaubscher.ch : DL02 + scripts DL 6–13
+3. **[HIGH]** Academia.edu : post DL02 (séparation vie/conscience — théorème analytique)
+4. **[MEDIUM]** Academia.edu : post DL01 (si pas encore fait avec nouveau DOI)
+5. **[MEDIUM]** Vérifier statuts HAL (D42, D43v3, D44, D45, DM v17, DN)
+6. **[MEDIUM]** Contact Recchia/Lenzi (Padova) : update avec D47 + DL01 + DL02
 
-**À faire — recherche :**
-8. **[HIGH]** DL02 : dérivation formelle avantage de coût R¹_active
-9. **[HIGH]** SU(2) via fibration de Hopf (D46 comme point d'entrée)
-10. **[HIGH]** OP-pressure : équation d'état w du fluide de cohérence
-11. **[MEDIUM]** OP2 (D46) : prouver Ω* = 2π·α_PDL depuis D12
+**À faire — recherche corpus D :**
+7. **[HIGH]** OP-pressure : équation d'état w du fluide de cohérence (D48 → D54 candidat)
+8. **[HIGH]** SU(2) via fibration de Hopf (D46 comme point d'entrée)
+9. **[HIGH]** OP2 (D46) : prouver Ω* = 2π·α_PDL depuis D12
+10. **[MEDIUM]** OP1-D32 : dérivation algébrique du coefficient b (Schrödinger PDL)
+
+**À faire — recherche DL :**
+11. **[HIGH]** DL03 : fonction de gain de cohérence R¹_active — forme analytique
+12. **[HIGH]** DL03 : encadrement numérique de n*_vie
 
 ---
 
-## Dependency Map — Critical Path (updated Session 36)
+## Dependency Map — Critical Path (updated Session 37)
 
 ```
 LAYER 0 — AXIOMS : C1 (pulsation), C2 (cohérence), C3 (complétude), C4 (optimisation)
@@ -292,7 +332,7 @@ LAYER 7 — DYNAMICAL EQUATIONS — COMPLETE
   U(1) Hopf fibration [✓]D46 — OP4 RESOLVED | Born L2 [✓]D46
   Einstein equation [✓]D35,D42
   London equation [✓]D49 — OP-LONDON RESOLVED
-  [?]OP1-D32/D34/D46
+  [?]OP1-D32 (b) | [?]OP1-D34 (α_τ) | [?]OP2-D46 (Ω*)
 
 LAYER 8 — COSMOLOGY
   N_CMB=40 [✓]D27 | Hubble 0.006% [✓]D35,D42
@@ -321,7 +361,7 @@ LAYER 11 — COHERENCE TENSOR — PARTIAL
   London : j^i_s=−(n_coh·e²/m_p c)·A^i [✓]D49 — OP-LONDON RESOLVED
   C^(leak)=−C·η_L^18·(m_pc/ħ)²·g [✓]D51+D52 — C THEOREM
   Einstein PDL source explicite [✓]D48-Cor.9.1
-  [?]OP-pressure
+  [?]OP-pressure — équation d'état w → D54 candidat
 
 LAYER 12 — COSMOLOGICAL LEAKAGE — COMPLETE
   β₁(K₄)=3 [✓]D23 | C1+C3 => primes (23,67,997) [✓]D51
@@ -330,20 +370,28 @@ LAYER 12 — COSMOLOGICAL LEAKAGE — COMPLETE
   Λ_PDL≈1.089×10⁻⁵² m⁻² [✓]D51+D52
   Synthèse et vérification indépendante 0.41 ppm [✓]D53
 
-LAYER 13 — LIFE AND CONSCIOUSNESS — OPENED (Session 36)
+LAYER 13 — LIFE AND CONSCIOUSNESS (updated Session 37)
   L (lifting operator) [✓]DL01 — définition formelle
   S(K₄) ≅ K₄ [✓]DL01 Script 1 — 8/8 théorème computationnel
   R¹_weak forced n≥4 [✓]DL01 Script 5 — 100% n=4..7
-  δ* = 1/2 [✓]DL01 Script 3 — variation optimale de lignée
+  δ* = 1/2 [✓]DL01 Script 3 — invariant d'échelle
   f(n) = 2^(n+1−C(n,2)) [✓]DL01 Script 3 — loi exacte
-  [?]n*_life — DL02 cible
-  [?]C4 selects R¹_active — DL03 cible
-  [?]n*_consciousness — DL04+ cible
+  K₄ seul point fixe de S [✓]DL02 Theorem 1 — C(4,3)=4 unique
+  |S^k(K_n)| croissant pour n≥5 [✓]DL02 Theorem 2
+  n*_vie < n*_conscience [✓]DL02 Theorem 3 — SÉPARATION ANALYTIQUE
+  n*_max < ∞ [✓]DL02 Theorem 4 — FINITUDE ANALYTIQUE
+  Hiérarchie 4 < n*_vie < n*_conscience < n*_max < ∞ [✓]DL02 — THÉORÈME
+  Scripts computationnels DL : Scripts 1–13 [✓]
+  [?]DL-OP1 : existence et finitude n*_vie — DL03 cible
+  [?]DL-OP2 : valeur numérique n*_vie — DL03 cible
+  [?]DL-OP4 : valeur numérique n*_conscience — DL04+ cible
+  [?]DL-OP5 : valeur explicite n*_max — calcul direct
 
 LAYER 14 — DISSEMINATION
-  Zenodo: D01–D53 + DL01 + auxiliaires — DM v20 (10.5281/zenodo.20054876)
+  Zenodo: D01–D53 + DL01 + DL02 + auxiliaires — DM v20 (10.5281/zenodo.20054876)
   HAL: D42,D43v3,D44,D45,DM v17,DN — En modération
   Email: Arbey+Auffinger (IP2I Lyon) — 29 Apr 2026
+  Scripts DL: Scripts 1–13 produits et vérifiés
 ```
 
 **Resolved milestones:**
@@ -358,16 +406,22 @@ OP11 RESOLVED (D51+D52+D53) — Λ dérivée
 COSMOLOGICAL LEAKAGE LAYER : COMPLETE (D51+D52+D53)
 D53 SYNTHESIS : PUBLISHED (Session 35, DOI: 10.5281/zenodo.20052558)
 DM v20 : PUBLISHED (Session 35, DOI: 10.5281/zenodo.20054876)
-DL01 : PUBLISHED (Session 36, DOI: 10.5281/zenodo.20114140) — DL SERIES OPENED
+DL01 : PUBLISHED (Session 36, DOI: 10.5281/zenodo.20132166) — DL SERIES OPENED
+DL02 : PUBLISHED (Session 37, DOI: 10.5281/zenodo.20132228)
+  → K₄ UNIQUE FIXED POINT OF S : THEOREM (C(4,3)=4)
+  → SEPARATION n*_life < n*_consciousness : THEOREM (|S¹|≠|S²| for n≥5)
+  → FINITENESS n*_max : THEOREM (f(n) doubly exponential)
+  → HIERARCHY 4 < n*_life < n*_consciousness < n*_max < ∞ : THEOREM
 
 CAUSAL CHAIN C1–C4→G : COMPLETE (Session 24, D44)
 QUANTUM DYNAMICS LAYER : COMPLETE (Session 29, D46)
 NUCLEAR STABILITY LAYER : COMPLETE (Session 30, D47)
-COHERENCE TENSOR LAYER : PARTIAL (Session 30, D48) — OP-pressure open
+COHERENCE TENSOR LAYER : PARTIAL (Session 30, D48) — OP-pressure open → D54
 LONDON EQUATION : THEOREM (Session 33, D49)
 BH COEFFICIENT 1/4 : THEOREM (Session 33, D50)
 CAUSAL CHAIN C1–C4→Λ : COMPLETE (Sessions 33–35, D51+D52+D53)
 LIFE AND CONSCIOUSNESS LAYER : OPENED (Session 36, DL01)
+LIFE/CONSCIOUSNESS HIERARCHY : ANALYTICAL THEOREM (Session 37, DL02)
 ```
 
 ---
@@ -399,7 +453,7 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 **DL series conventions (Session 36):**
 - Numérotation DLxx pour tous les documents vie/conscience
 - Même discipline épistémique que D-series : stratification explicite obligatoire
-- Scripts Python/Colab avant toute rédaction LaTeX
+- Scripts Python/Colab avant toute rédaction LaTeX (sauf résultats purement analytiques)
 - Distinction analogie/dérivation formelle obligatoire dans chaque section illustrative
 
-*All references use Zenodo canonical numbering D01–D53 + DL01 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
+*All references use Zenodo canonical numbering D01–D53 + DL01 + DL02 + auxiliaires (D10a, D16a, D16b, DN, DN-fr, DM, D01F, D20F).*
