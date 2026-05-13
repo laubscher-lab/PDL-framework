@@ -276,9 +276,9 @@ Derivation of the Sub-Shell Filling Rates and the Periodic Table from the PDL Ax
 D47___Shell_Filling.pdf
 
 D48
-https://doi.org/10.5281/zenodo.19969831 
-Derivation of the Coherence Stress-Energy Tensor from the PDL Axioms: Explicit Form of C_coh and Resolution of OP2 (D35) 
-D48___Coherence_Tensor.pdf 
+https://doi.org/10.5281/zenodo.20151380 
+Derivation of the Coherence Stress-Energy Tensor from the PDL Axioms: Explicit Form of C_coh, Resolution of OP2 (D35) and OP-spin (PDL Framework, D48 — Version 3, Corrected) 
+D48___Coherence_Tensorv3.pdf
 
 D49 
 https://doi.org/10.5281/zenodo.20025166 
