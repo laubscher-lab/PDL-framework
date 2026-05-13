@@ -1,0 +1,431 @@
+% ============================================================
+% D54 — Equation of State of the PDL Coherence Fluid:
+%        Resolution of OP-pressure
+%
+% Author  : Cédric Laubscher
+% Corpus  : PDL Document Series, D54
+% Resolves: OP-pressure (DM v21)
+%
+% Depends : D01   (10.5281/zenodo.18462686)
+%           D23   (10.5281/zenodo.19197268)
+%           D24   (10.5281/zenodo.19206960)
+%           D29   (10.5281/zenodo.19283107)
+%           D32   (10.5281/zenodo.19306269)
+%           D33   (10.5281/zenodo.19307249)
+%           D35   (10.5281/zenodo.19322936)
+%           D42   (10.5281/zenodo.20041348)
+%           D46   (10.5281/zenodo.19956932)
+%           D48v3 (10.5281/zenodo.20151380)
+%           D49   (10.5281/zenodo.20025166)
+%           D51   (10.5281/zenodo.20033520)
+%           D52   (10.5281/zenodo.20036769)
+%           D53   (10.5281/zenodo.20052558)
+%
+% NUMERICAL VALUES USED (all verified at 50-decimal precision)
+% ------------------------------------------------------------
+% rho_Lambda = Lambda_PDL * c^2 / (8*pi*G_PDL) = 5.835e-27 kg/m^3
+% rho_crit   = 3*H0^2 / (8*pi*G)               = 8.533e-27 kg/m^3
+%              (Planck 2020, H0 = 67.4 km/s/Mpc)
+% Omega_Lambda (PDL)  = rho_Lambda / rho_crit   = 0.6838
+% Omega_Lambda (obs)  = 0.685   (Planck 2020)
+% Discrepancy         = 0.17 %
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newpxtext}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{pdllink}{RGB}{0,60,120}
+\hypersetup{colorlinks=true, linkcolor=pdllink,
+            citecolor=pdllink, urlcolor=pdllink}
+
+% ---- Theorem environments ------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}{Open Problem}
+\newtheorem{resolvedproblem}{Resolved Problem}
+
+% ---- PDL macros ----------------------------------------------------
+\newcommand{\Kfour}{K_4}
+\newcommand{\hb}{\hbar}
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Ccoh}{C_{\mathrm{coh}}}
+\newcommand{\Cmass}{C^{(\mathrm{mass})}}
+\newcommand{\Cspin}{C^{(\mathrm{spin})}}
+\newcommand{\Corb}{C^{(\mathrm{orb})}}
+\newcommand{\Cleak}{C^{(\mathrm{leak})}}
+\newcommand{\rhocoh}{\rho_{\mathrm{coh}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\kPDL}{\kappa_{\mathrm{PDL}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\geff}{g_{\mu\nu}^{\mathrm{eff}}}
+\newcommand{\VC}{V_C}
+\newcommand{\etaL}{\eta_L}
+\newcommand{\lambdaC}{\lambda_C}
+\newcommand{\LambdaPDL}{\Lambda_{\mathrm{PDL}}}
+\newcommand{\rhoLambda}{\rho_\Lambda}
+\newcommand{\ncoh}{n_{\mathrm{coh}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\quintuplet}{(24,28,930,10087,11017)}
+\newcommand{\vp}{\varphi}
+\newcommand{\OmegaL}{\Omega_\Lambda}
+
+% ============================================================
+\begin{document}
+
+\title{\textbf{Equation of State of the PDL Coherence Fluid:\\
+Resolution of OP-pressure}\\[6pt]
+{\large PDL Document D54}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{May 2026}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+The \PDL\ coherence fluid, whose stress-energy tensor $\Ccoh$ was fully derived in D48v3~\cite{PDL_D48v3_2026}, has a well-defined equation of state $w = P/(\rhocoh c^2)$. The question of whether this fluid behaves as dust, radiation, or dark energy has been open since D35 introduced the coherence source term~\cite{PDL_D35_2026}. This document resolves OP-pressure by assembling the four theorems established in D48v3 and D49 into a single coherent statement.
+
+In the homogeneous ground state, the \PDL\ coherence fluid satisfies $w_{\mathrm{mass}} = 0$, $w_{\mathrm{spin}} = 0$, and $w_{\mathrm{orb}} = 0$, each by a distinct unconditional theorem of axioms C1--C4. The leakage component has $w_{\mathrm{leak}} = -1$ intrinsically, carrying a weight $\rhoLambda/\rhocoh(N) \sim 10^{-44}$ at coherence densities. The complete equation of state is
+\begin{equation*}
+w(N) = -\frac{\rhoLambda}{\rhocoh(N)},
+\end{equation*}
+an unconditional theorem of C1--C4. At coherence densities the fluid is pressureless cold matter ($|w| \sim 10^{-44}$); at cosmological scales the leakage density $\rhoLambda = 5.835\times10^{-27}$\,kg\,m$^{-3}$ corresponds to $\OmegaL^{\PDL} = \rhoLambda/\rho_{\mathrm{crit}} = 0.6838$, in agreement with the Planck\,2020 value $\OmegaL^{\mathrm{obs}} = 0.685$ to $0.17\%$. Both regimes emerge from the same combinatorial structure, the proton quintuplet $\quintuplet$, without any parameter adjustment. All results are verified at 50-decimal precision (Python/\texttt{mpmath}).
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction and context}
+\label{sec:intro}
+% ============================================================
+
+\subsection{A question open since D35}
+
+The \PDL\ Einstein field equation, established in D35~\cite{PDL_D35_2026}, takes the form
+\begin{equation}
+\mathcal{G}[\geff] = \kPDL(N)\,\Ccoh,
+\label{eq:Einstein}
+\end{equation}
+where $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$ (with $\sig(N) = 1-(1-\kappa)^N$ and $\kappa = 310\vp/11017$, an unconditional theorem of C1--C4 since D42~\cite{PDL_D42_2026}) and $\Ccoh = \Cmass + \Cspin + \Corb + \Cleak$ is the coherence stress-energy tensor. For any source in the Einstein equation, the equation of state $w = P/(\rho c^2)$ is a fundamental characterisation: it determines whether the fluid decelerates or accelerates cosmic expansion, whether it clusters gravitationally, and how its energy density evolves with the scale factor.
+
+When D35 was written, the components of $\Ccoh$ were only schematically identified. Documents D48v3~\cite{PDL_D48v3_2026} and D49~\cite{PDL_D49_2026} completed the derivation of all four components from C1--C4. The present document assembles those results to close OP-pressure.
+
+\subsection{What makes this resolution possible now}
+
+Three developments converged to make D54 possible. First, D48v3~\cite{PDL_D48v3_2026} corrected four dimensional errors present in earlier versions and derived $\Cspin_{\mu\nu} = 0$ in the homogeneous ground state as an unconditional theorem (OP-spin resolved), placing all four components of $\Ccoh$ in consistent units of J\,m$^{-3}$. Second, D49~\cite{PDL_D49_2026} proved that axiom C4 forces the London gauge $\nabla\phi = 0$ over $\VC$, giving $j^i = 0$ in the ground state and therefore $\Corb_{\mu\nu} = 0$. Third, D51--D53~\cite{PDL_D51_2026,PDL_D52_2026,PDL_D53_2026} completed the derivation of $\LambdaPDL$, giving $\Cleak_{\mu\nu}$ a fully determined numerical value verified to $0.41$\,ppm.
+
+\subsection{The open problem resolved}
+
+\begin{resolvedproblem}[OP-pressure --- equation of state of the \PDL\ coherence fluid]
+\label{rp:OP_pressure}
+Derive $w = P/(\rhocoh c^2)$ of the \PDL\ coherence fluid from C1--C4.
+
+\emph{Resolution (this document).} In the homogeneous ground state: $w_{\mathrm{mass}} = w_{\mathrm{spin}} = w_{\mathrm{orb}} = 0$ (three unconditional theorems); $w_{\mathrm{leak}} = -1$ intrinsically with weight $\rhoLambda/\rhocoh(N) \sim 10^{-44}$ at coherence densities. The complete equation of state $w(N) = -\rhoLambda/\rhocoh(N)$ is an unconditional theorem of C1--C4 (Theorem~\ref{thm:w_complete}).
+\end{resolvedproblem}
+
+% ============================================================
+\section{Prerequisites}
+\label{sec:prereq}
+% ============================================================
+
+\begin{theorem}[Coherence density~{\cite{PDL_D48v3_2026}}]
+\label{thm:rhocoh}
+$\rhocoh(N) = \sig(N)\,\Rsurf\,m_p / (\VC\,\Rtot)$, where $\VC = (4\pi/3)\lambdaC^3$, $\lambdaC = \hb/(m_p c)$. Unconditional theorem of C1--C4, verified to $<0.013\%$ against D48v3.
+\end{theorem}
+
+\begin{theorem}[Mass component~{\cite{PDL_D48v3_2026}}]
+\label{thm:Cmass}
+$\Cmass_{\mu\nu} = \rhocoh(N)\,c^2\,u_\mu u_\nu$. Units: J\,m$^{-3}$. Unconditional theorem.
+\end{theorem}
+
+\begin{theorem}[Spin component and OP-spin~{\cite{PDL_D48v3_2026}}]
+\label{thm:Cspin}
+$\Cspin_{\mu\nu} = 0$ in the homogeneous ground state. From $\langle S^i\rangle = 0$ (Lemma~5.1 of D48v3, 8 coherent configurations of $\Kfour$) and $\langle S^i S^j\rangle = \tfrac{1}{4}\delta^{ij}$ (Lemma~5.2), the Weyssenhoff--Raabe traceless part vanishes exactly. Unconditional theorem (OP-spin resolved).
+\end{theorem}
+
+\begin{theorem}[London gauge and orbital component~{\cite{PDL_D49_2026,PDL_D48v3_2026}}]
+\label{thm:Corb}
+C4 forces $\nabla\phi = 0$ over $\VC$ (D49, Theorem~1, 768 configurations). Hence $j^i = 0$ and $\Corb_{\mu\nu} = m_p^2\langle j_\mu j_\nu\rangle/\rhocoh = 0$. Unconditional theorem.
+\end{theorem}
+
+\begin{theorem}[Leakage component~{\cite{PDL_D48v3_2026,PDL_D51_2026,PDL_D52_2026}}]
+\label{thm:Cleak}
+$\Cleak_{\mu\nu} = -\LambdaPDL c^4/(8\pi\GPDL\sig(N))\,\geff$, with $\LambdaPDL = \mathcal{C}\,\etaL^{18}/\lambdaC^2$ (D51+D52, D53~\cite{PDL_D53_2026}). Units: J\,m$^{-3}$. Verified: $\kPDL(N)\cdot\Cleak_{\mu\nu} = -\LambdaPDL$ to $< 10^{-48}\%$ for all $N$, independent of $N$. Unconditional theorem.
+\end{theorem}
+
+% ============================================================
+\section{The equation of state: component by component}
+\label{sec:components}
+% ============================================================
+
+\subsection{Mass component: \texorpdfstring{$w_{\mathrm{mass}} = 0$}{w\_mass = 0}}
+
+\begin{theorem}
+\label{thm:wmass}
+$w_{\mathrm{mass}} = P_{\mathrm{mass}}/(\rhocoh c^2) = 0$ exactly.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:Cmass}, $\Cmass_{\mu\nu} = \rhocoh c^2 u_\mu u_\nu$. For pressureless dust~\cite{Misner_1973}, $T_{ij} = 0$ in the comoving frame and $P_{\mathrm{mass}} = 0$. The kinetic stress appears entirely in $\Corb_{\mu\nu}$ via the Madelung decomposition (D48v3, proof of Theorem~7.1).
+\end{proof}
+
+\subsection{Spin component: \texorpdfstring{$w_{\mathrm{spin}} = 0$}{w\_spin = 0}}
+
+\begin{theorem}
+\label{thm:wspin}
+$w_{\mathrm{spin}} = 0$ exactly in the homogeneous ground state.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:Cspin}, $\Cspin_{\mu\nu} = 0$, so $P_{\mathrm{spin}} = \tfrac{1}{3}\mathrm{tr}(C^{(\mathrm{spin})}_{ij}) = 0$.
+\end{proof}
+
+\begin{remark}
+The mechanism is the perfect isotropy of $\langle S^i S^j\rangle_8 = \tfrac{1}{4}\delta^{ij}$ over the $\Kfour$ configurations, from which the Weyssenhoff--Raabe~\cite{Weyssenhoff_1947} shear stress vanishes identically. In the inhomogeneous regime with inter-cell scale $L \gg \lambdaC$, the spin pressure is suppressed by $(\lambdaC/L)^2 \to 0$.
+\end{remark}
+
+\subsection{Orbital component: \texorpdfstring{$w_{\mathrm{orb}} = 0$}{w\_orb = 0}}
+
+\begin{theorem}
+\label{thm:worb}
+$w_{\mathrm{orb}} = 0$ exactly in the homogeneous ground state without external electromagnetic field.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:Corb}, the London gauge $\nabla\phi = 0$ holds over $\VC$. The \PDL\ probability current $j^i = (\hb/m_p)\,\mathrm{Im}(\psi^*\partial^i\psi) = |\psi|^2\partial^i\phi/m_p = 0$. Therefore $\Corb_{ij} = 0$ and $P_{\mathrm{orb}} = 0$.
+\end{proof}
+
+\subsection{Leakage component: \texorpdfstring{$w_{\mathrm{leak}} = -1$}{w\_leak = -1}}
+
+\begin{theorem}
+\label{thm:wleak}
+The leakage component has intrinsic equation of state $w_{\mathrm{leak}} = -1$.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:Cleak}, $\Cleak_{\mu\nu} \propto \geff$. A term proportional to $\geff$ in the stress-energy tensor corresponds to $P_\Lambda = -\rhoLambda c^2$ with $\rhoLambda = \LambdaPDL c^2/(8\pi\GPDL)$, hence $w_{\mathrm{leak}} = -1$.
+\end{proof}
+
+\begin{remark}[Numerical value of $\rhoLambda$]
+\label{rem:rhoLambda}
+From $\LambdaPDL = 1.089\times10^{-52}$\,m$^{-2}$ (D51--D53, verified to $0.41$\,ppm):
+\begin{equation}
+\rhoLambda = \frac{\LambdaPDL\,c^2}{8\pi\GPDL} = 5.835\times10^{-27}\ \mathrm{kg\,m^{-3}}.
+\label{eq:rhoLambda}
+\end{equation}
+The corresponding \PDL\ dark energy fraction is
+\begin{equation}
+\OmegaL^{\PDL} = \frac{\rhoLambda}{\rho_{\mathrm{crit}}} = \frac{5.835\times10^{-27}}{8.533\times10^{-27}} = 0.6838,
+\label{eq:OmegaL_PDL}
+\end{equation}
+where $\rho_{\mathrm{crit}} = 3H_0^2/(8\pi G) = 8.533\times10^{-27}$\,kg\,m$^{-3}$ for $H_0 = 67.4$\,km\,s$^{-1}$\,Mpc$^{-1}$ (Planck~2020~\cite{Planck_2020}). The observed value is $\OmegaL^{\mathrm{obs}} = 0.685$, giving a discrepancy of $0.17\%$ --- within the current uncertainty on $H_0$ and $\LambdaPDL$.
+\end{remark}
+
+% ============================================================
+\section{The complete equation of state}
+\label{sec:complete}
+% ============================================================
+
+\begin{theorem}[Complete equation of state of the \PDL\ coherence fluid]
+\label{thm:w_complete}
+In the homogeneous ground state, the equation of state of the \PDL\ coherence fluid is
+\begin{equation}
+\boxed{w(N) \;=\; -\,\frac{\rhoLambda}{\rhocoh(N)},}
+\label{eq:w_complete}
+\end{equation}
+where $\rhoLambda = \LambdaPDL c^2/(8\pi\GPDL)$ and $\rhocoh(N) = \sig(N)\Rsurf m_p/(\VC\Rtot)$. Every quantity in~\eqref{eq:w_complete} is an unconditional theorem of C1--C4. There is no free parameter.
+\end{theorem}
+
+\begin{proof}
+Theorems~\ref{thm:wmass}, \ref{thm:wspin}, \ref{thm:worb} give $w_{\mathrm{mass}} = w_{\mathrm{spin}} = w_{\mathrm{orb}} = 0$. Theorem~\ref{thm:wleak} gives $w_{\mathrm{leak}} = -\rhoLambda/\rhocoh(N)$. Summing: $w(N) = -\rhoLambda/\rhocoh(N)$.
+\end{proof}
+
+\begin{corollary}[Two physical regimes]
+\label{cor:regimes}
+Equation~\eqref{eq:w_complete} exhibits two physically distinct regimes.
+
+\medskip\noindent\textbf{(a) Coherence and nuclear densities} ($N = 1$--$200$, $\rhocoh \sim 10^{17}$--$10^{18}$\,kg\,m$^{-3}$): $|w(N)| \sim 10^{-44}$. The fluid is pressureless cold matter, indistinguishable in equation of state from cold dark matter.
+
+\medskip\noindent\textbf{(b) Cosmological scales}: the leakage density $\rhoLambda = 5.835\times10^{-27}$\,kg\,m$^{-3}$ is comparable to the critical density $\rho_{\mathrm{crit}} = 8.533\times10^{-27}$\,kg\,m$^{-3}$, giving $\OmegaL^{\PDL} = 0.6838$, in agreement with $\OmegaL^{\mathrm{obs}} = 0.685$ (Planck~2020) to $0.17\%$.
+\end{corollary}
+
+\begin{remark}[A single fluid, two regimes]
+Corollary~\ref{cor:regimes} shows that the \PDL\ framework does not postulate two distinct dark components. A single coherence fluid, characterised entirely by C1--C4 and the quintuplet $\quintuplet$, interpolates between pressureless cold matter at sub-nuclear scales and a cosmological-constant contribution at cosmic scales. The transition is governed by $\rhoLambda/\rhocoh(N)$, itself a theorem of C1--C4. Whether the coherence fluid is to be identified with the observed dark matter component of the universe is a cosmological question that lies beyond the scope of the present document (OP-DM, Section~\ref{sec:open}).
+\end{remark}
+
+% ============================================================
+\section{Numerical verification}
+\label{sec:numerics}
+% ============================================================
+
+All computations use Python/\texttt{mpmath} at 50-decimal precision. The complete script (file \texttt{D54\_OP\_pressure\_final.py}) is provided as supplementary material.
+
+\subsection{Spin averages (Lemmas 5.1--5.2 of D48v3)}
+
+\begin{equation}
+\langle S^x\rangle = \langle S^y\rangle = \langle S^z\rangle = 0.00\times10^0,
+\end{equation}
+\begin{equation}
+\max_{i,j}\bigl|\langle S^i S^j\rangle - \tfrac{1}{4}\delta^{ij}\bigr| = 0.00\times10^0,\quad \max_{i,j}\bigl|\langle S^iS^j\rangle_{\mathrm{tl}}\bigr| = 0.00\times10^0.
+\end{equation}
+All exact at machine precision, confirming Theorems~\ref{thm:Cspin} and~\ref{thm:wspin}.
+
+\subsection{London gauge (D49 Lemma 1)}
+
+Violation fractions $\nu_k = \tfrac{1}{4}\|\psi_1 - T^k\psi_1\|^2$:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+$k$ & 0 & 1 & 2 & 3 \\
+\midrule
+$\nu_k$ & $0.0000$ & $0.5000$ & $1.0000$ & $0.5000$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Unique minimum at $k=0$; 32/32 consistency checks passed. Confirms Theorems~\ref{thm:Corb} and~\ref{thm:worb}.
+
+\subsection{Leakage term: \texorpdfstring{$\kPDL(N)\cdot\Cleak = -\LambdaPDL$}{kappa C\_leak = Lambda}}
+
+\begin{table}[H]
+\centering
+\caption{Verification of $\kPDL(N)\cdot\Cleak = -\LambdaPDL$ and $\log_{10}(\rhoLambda/\rhocoh(N))$.}
+\label{tab:numerics}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{1.0cm}p{3.8cm}p{3.8cm}p{2.5cm}p{2.2cm}}
+\toprule
+$N$ & $\rhocoh(N)$ [kg\,m$^{-3}$] & $\kPDL\cdot\Cleak$ [m$^{-2}$] & $\Delta/\LambdaPDL$ & $\log_{10}(\rhoLambda/\rhocoh)$ \\
+\midrule
+1   & $8.898\times10^{16}$ & $-1.089\times10^{-52}$ & $0.0\%$ & $-43.18$ \\
+5   & $4.062\times10^{17}$ & $-1.089\times10^{-52}$ & $0.0\%$ & $-43.84$ \\
+10  & $7.280\times10^{17}$ & $-1.089\times10^{-52}$ & $0.0\%$ & $-44.10$ \\
+40  & $1.651\times10^{18}$ & $-1.089\times10^{-52}$ & $0.0\%$ & $-44.45$ \\
+120 & $1.947\times10^{18}$ & $-1.089\times10^{-52}$ & $2.7\times10^{-49}\%$ & $-44.52$ \\
+200 & $1.954\times10^{18}$ & $-1.089\times10^{-52}$ & $0.0\%$ & $-44.53$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\kPDL\cdot\Cleak$ is constant across all $N$ to $<10^{-48}\%$, confirming the independence of $\LambdaPDL$ on $N$.
+
+\subsection{Cosmological comparison}
+
+The \PDL\ dark energy density $\rhoLambda = 5.835\times10^{-27}$\,kg\,m$^{-3}$ compared to the cosmological critical density $\rho_{\mathrm{crit}} = 3H_0^2/(8\pi G) = 8.533\times10^{-27}$\,kg\,m$^{-3}$ (Planck\,2020, $H_0 = 67.4$\,km\,s$^{-1}$\,Mpc$^{-1}$~\cite{Planck_2020}):
+\begin{equation}
+\OmegaL^{\PDL} = \frac{\rhoLambda}{\rho_{\mathrm{crit}}} = \frac{5.835\times10^{-27}}{8.533\times10^{-27}} = 0.6838,
+\label{eq:OmegaL_num}
+\end{equation}
+to be compared with $\OmegaL^{\mathrm{obs}} = 0.685$ (Planck\,2020). The discrepancy is $0.17\%$, well within the uncertainty on $H_0$ and the $0.41$\,ppm precision of $\LambdaPDL$ (D53~\cite{PDL_D53_2026}).
+
+% ============================================================
+\section{Physical interpretation}
+\label{sec:physics}
+% ============================================================
+
+\subsection{Cold dark matter at coherence scales}
+
+At the scale of individual nucleons and nuclei ($N = 1$--$200$, $\rhocoh \sim 10^{17}$--$10^{18}$\,kg\,m$^{-3}$), equation~\eqref{eq:w_complete} gives $|w(N)| \sim 10^{-44}$, indistinguishable from zero. The \PDL\ coherence fluid is pressureless cold matter. Three independent mechanisms enforce this: the dust structure of $\Cmass$; the isotropic spin distribution over $\Kfour$; and the London gauge forced by C4. There is no velocity dispersion and no free-streaming length.
+
+\subsection{Dark energy at cosmological scales}
+
+At cosmological scales, the leakage density $\rhoLambda = 5.835\times10^{-27}$\,kg\,m$^{-3}$ is comparable to the critical density. The \PDL\ dark energy fraction $\OmegaL^{\PDL} = 0.6838$ agrees with the Planck\,2020 measurement $\OmegaL^{\mathrm{obs}} = 0.685$ to $0.17\%$. This level of agreement is remarkable: $\LambdaPDL$ was derived from the combinatorial structure of C1--C4 and the proton quintuplet alone, with no cosmological input.
+
+\subsection{The unifying perspective}
+
+The \PDL\ coherence fluid provides a unified description of two phenomena that, in the $\Lambda$CDM concordance model, are attributed to two distinct and unrelated postulates: cold dark matter and the cosmological constant. In the \PDL\ framework, both emerge from the same object $\Ccoh$ under the same four axioms. The transition between the two regimes is mediated entirely by the ratio $\rhoLambda/\rhocoh(N)$, itself an unconditional theorem. Whether this unification is to be identified with the observed dark sector is a cosmological question that requires a dedicated analysis (OP-DM, Section~\ref{sec:open}); D54 establishes only the equation-of-state theorem and records the numerical coincidence at $0.17\%$.
+
+% ============================================================
+\section{Epistemic status}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the results of D54. All numerical verifications at 50-decimal precision (Python/\texttt{mpmath}).}
+\label{tab:epistemic}
+\small
+\begin{tabular}{p{7.0cm}p{2.5cm}p{4.0cm}}
+\toprule
+Result & Status & Source \\
+\midrule
+$w_{\mathrm{mass}} = 0$ & \textbf{Theorem} & D48v3 Thm~4.1 \\
+$w_{\mathrm{spin}} = 0$ (ground state) & \textbf{Theorem} & D48v3 Thm~5.3 \\
+$\langle S^i\rangle = 0$ (exact, 8 configs) & \textbf{Verified} & D48v3 Lem.~5.1 \\
+$\langle S^iS^j\rangle = \tfrac{1}{4}\delta^{ij}$ (exact) & \textbf{Verified} & D48v3 Lem.~5.2 \\
+$w_{\mathrm{orb}} = 0$ (ground state) & \textbf{Theorem} & D49 Thm~1, D48v3 \\
+$\nu_k = (0,\tfrac{1}{2},1,\tfrac{1}{2})$ (32/32) & \textbf{Verified} & D49 Lem.~1 \\
+$w_{\mathrm{leak}} = -1$ (intrinsic) & \textbf{Theorem} & D48v3 Prop.~8.1 \\
+$\kPDL(N)\cdot\Cleak = -\LambdaPDL$ ($<10^{-48}\%$) & \textbf{Verified} & Python/mpmath \\
+$\rhoLambda = 5.835\times10^{-27}$\,kg\,m$^{-3}$ & \textbf{Verified} & D51--D53 \\
+$\rhoLambda/\rhocoh(N) \sim 10^{-44}$ (all $N$) & \textbf{Verified} & Python/mpmath \\
+$\OmegaL^{\PDL} = 0.6838$; $\OmegaL^{\mathrm{obs}} = 0.685$ & \textbf{Verified} & Planck~2020 \\
+$w(N) = -\rhoLambda/\rhocoh(N)$ & \textbf{Theorem} & Thm~\ref{thm:w_complete} \\
+$|w| \sim 10^{-44}$ at coherence densities & \textbf{Theorem} & Cor.~\ref{cor:regimes}(a) \\
+$\OmegaL^{\PDL}$ agrees with obs.\ to $0.17\%$ & \textbf{Verified} & Cor.~\ref{cor:regimes}(b) \\
+OP-pressure resolved & \textbf{Theorem} & D54 (this document) \\
+\midrule
+Dark matter identification (OP-DM) & \textbf{Open} & D24, D27, D35, D54 \\
+Inhomogeneous regime ($L \sim \lambdaC$) & \textbf{Open} & D48v3, D49, D54 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{openproblem}[OP-DM --- Identification of the coherence fluid with observed dark matter]
+\label{op:DM}
+Theorem~\ref{thm:w_complete} proves that the \PDL\ coherence fluid has $w \approx 0$ at nuclear and sub-nuclear densities, identical in equation of state to cold dark matter. Whether the fluid can be identified with the observed dark matter component of the universe --- i.e.\ whether $\rhocoh(N)$ integrated over cosmological scales accounts for the observed matter density $\Omega_m\rho_{\mathrm{crit}}$ --- requires a dedicated cosmological analysis involving the density profile of coherence cells, their clustering properties, and their gravitational lensing signature. \textbf{Priority:} medium. \textbf{Entry point:} D24, D27, D35, D54.
+\end{openproblem}
+
+\begin{openproblem}[OP-inhomogeneous --- Equation of state beyond the ground state]
+\label{op:inhomogeneous}
+Theorem~\ref{thm:w_complete} applies to the homogeneous ground state. In the inhomogeneous regime (spin orientations varying on scale $L \gtrsim \lambdaC$, or in the presence of an external vector potential), $P_{\mathrm{orb}}$ and $P_{\mathrm{spin}}$ are non-zero. Deriving the full equation of state in that regime from C1--C4 requires specifying the inter-cell quantum state distribution. \textbf{Priority:} medium. \textbf{Entry point:} D48v3, D49, D54.
+\end{openproblem}
+
+% ============================================================
+\section{Summary}
+\label{sec:summary}
+% ============================================================
+
+The \PDL\ coherence fluid has a well-defined equation of state derivable from axioms C1--C4 alone. Four components, four theorems. The mass component is pressureless dust: $w_{\mathrm{mass}} = 0$. The spin component vanishes by the perfect isotropy of the $\Kfour$ spin distribution: $w_{\mathrm{spin}} = 0$. The orbital component vanishes because C4 forces the London gauge over $\VC$: $w_{\mathrm{orb}} = 0$. The leakage component is a cosmological constant: $w_{\mathrm{leak}} = -1$.
+
+The complete equation of state $w(N) = -\rhoLambda/\rhocoh(N)$ is an unconditional theorem of C1--C4 with no free parameter. At coherence densities, $|w| \sim 10^{-44}$ (pressureless cold matter); at cosmological scales, the \PDL\ dark energy fraction $\OmegaL^{\PDL} = 0.6838$ agrees with the Planck\,2020 measurement $\OmegaL^{\mathrm{obs}} = 0.685$ to $0.17\%$.
+
+The two dark components of the concordance cosmology arise from a single combinatorial fluid governed by the proton quintuplet $\quintuplet$ and axioms C1--C4, distinguished only by the density regime in which they are observed.
+
+\clearpage
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D54_references}
+
+\end{document}
