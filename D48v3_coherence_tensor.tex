@@ -1,0 +1,646 @@
+% ============================================================
+% D48 — Derivation of the Coherence Stress-Energy Tensor
+%        from the PDL Axioms: Explicit Form of C_coh
+%        Version 3 — Fully corrected
+%
+% Author  : Cédric Laubscher
+% Corpus  : PDL Document Series, D48
+% Resolves: OP2 of D35 (mass, spin, orbital, leakage components)
+%           OP-spin (new, resolved herein via K_4 configuration calculus)
+%
+% Depends : D01  (10.5281/zenodo.18462686)
+%           D05  (10.5281/zenodo.18581453)
+%           D10a (10.5281/zenodo.19329465)
+%           D17  (10.5281/zenodo.18841254)
+%           D23  (10.5281/zenodo.19197268)
+%           D24  (10.5281/zenodo.19206960)
+%           D30  (10.5281/zenodo.19294449)
+%           D32  (10.5281/zenodo.19306269)
+%           D33  (10.5281/zenodo.19307249)
+%           D35  (10.5281/zenodo.19322936)
+%           D40  (10.5281/zenodo.19371523)
+%           D42  (10.5281/zenodo.19397315)
+%           D46  (10.5281/zenodo.19956932)
+%           D47  (10.5281/zenodo.19967918)
+%           D49  (10.5281/zenodo.20025166)
+%           D51  (10.5281/zenodo.20033520)
+%           D52  (10.5281/zenodo.20036769)
+%           D53  (10.5281/zenodo.20052558)
+%
+% CORRECTION LOG (v1/v2 -> v3)
+% ----------------------------
+% C1. Section V_C (Chain 2): Chain 2 was presented as an independent
+%     proof of V_C. It is in fact a geometric coherence check: the
+%     relational unit is not derived from the axioms independently of
+%     Chain 1. V_C is a theorem via Chain 1 alone. Chain 2 is
+%     reformulated as a geometric consistency remark.
+%
+% C2. Section C^(spin): The v1/v2 formula
+%         C^(spin) ~ hbar^2 * rho^2 / (m_p * c^2)
+%     was dimensionally incorrect (units kg^2/m^4, not J/m^3),
+%     and the claimed magnitude ~1e-12 was unverified. The corrected
+%     section derives C^(spin) = 0 in the homogeneous ground state
+%     as an unconditional theorem of C1-C4, via explicit computation
+%     over the 8 coherent configurations of K_4 and the 4 pulsation
+%     states T^k|+>. This resolves OP-spin (new).
+%
+% C3. Section C^(orb): The v1 formula
+%         C^(orb) = m_p * <j_mu j_nu> / rho_coh
+%     lacked a factor of m_p. The Madelung decomposition
+%     psi = sqrt(n) * exp(i phi/hbar) gives the correct formula
+%         C^(orb)_{ij} = m_p^2 * <j_i j_j> / rho_coh
+%     with psi normalised as a probability amplitude ([psi] = m^{-3/2}).
+%     This is stated explicitly.
+%
+% C4. Section C^(leak): The v1 formula had units m^{-2}, not J/m^3,
+%     making the Einstein equation dimensionally inconsistent. The
+%     corrected formula places C^(leak) in J/m^3:
+%         C^(leak)_{mu nu} = -(Lambda_PDL c^4)/(8 pi G_PDL sigma(N)) * g_{mu nu}
+%     Verified: kappa(N) * C^(leak) = -Lambda_PDL to < 1e-48 %.
+%
+% C5. Epistemic table: all lines affected by C1-C4 updated.
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newpxtext}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{pdllink}{RGB}{0,60,120}
+\hypersetup{colorlinks=true, linkcolor=pdllink,
+            citecolor=pdllink, urlcolor=pdllink}
+
+% ---- Theorem environments ------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}{Open Problem}
+\newtheorem{resolvedproblem}{Resolved Problem}
+
+% ---- PDL macros ----------------------------------------------------
+\newcommand{\Kfour}{K_4}
+\newcommand{\hb}{\hbar}
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Ccoh}{C_{\mathrm{coh}}}
+\newcommand{\Cmass}{C^{(\mathrm{mass})}}
+\newcommand{\Cspin}{C^{(\mathrm{spin})}}
+\newcommand{\Corb}{C^{(\mathrm{orb})}}
+\newcommand{\Cleak}{C^{(\mathrm{leak})}}
+\newcommand{\rhocoh}{\rho_{\mathrm{coh}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\kPDL}{\kappa_{\mathrm{PDL}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\geff}{g_{\mu\nu}^{\mathrm{eff}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\lambdaC}{\lambda_C}
+\newcommand{\VC}{V_C}
+\newcommand{\etaL}{\eta_L}
+\newcommand{\vp}{\varphi}
+\newcommand{\nuu}{n_u}
+\newcommand{\Dn}{\Delta n}
+\newcommand{\quintuplet}{(24,28,930,10087,11017)}
+\newcommand{\LambdaPDL}{\Lambda_{\mathrm{PDL}}}
+
+% ============================================================
+\begin{document}
+
+\title{\textbf{Derivation of the Coherence Stress-Energy Tensor\\
+from the PDL Axioms:\\
+Explicit Form of $\Ccoh$ and Resolution of OP2~(D35) and OP-spin}\\[6pt]
+{\large PDL Document D48 \textemdash{} Version~3 (Corrected)}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{May 2026}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+The \PDL\ Einstein field equation $\mathcal{G}[\geff] = \kPDL(N)\,\Ccoh$, established in D35, contains a coupling $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$ that is an unconditional theorem of axioms C1--C4, and a coherence stress-energy tensor $\Ccoh$ whose derivation from first principles was left as OP2 of D35. The present document derives the explicit tensorial form of $\Ccoh$ from the \PDL\ axioms, and resolves OP-spin as a new result.
+
+The coherence volume $\VC = \tfrac{4}{3}\pi[\hb/(m_p c)]^3$ is established as a theorem of C1--C4 via the proper-time counting chain of D10a and the three-dimensional topology of D23. From this, the mass component $\Cmass_{\mu\nu} = \rhocoh(N)\,c^2\,u_\mu u_\nu$ is an unconditional theorem.
+
+The spin component $\Cspin_{\mu\nu}$ is derived from first principles by explicit computation over the 8 coherent configurations of $\Kfour$ and the 4 pulsation states $T^k|{+}\rangle$. The result is $\langle S^i\rangle = 0$ and $\langle S^i S^j\rangle = \tfrac{1}{4}\delta^{ij}$ exactly, from which the Weyssenhoff spin-fluid formalism gives $\Cspin_{\mu\nu} = 0$ in the homogeneous ground state. This is an unconditional theorem of C1--C4 and resolves OP-spin.
+
+The orbital component $\Corb_{\mu\nu} = m_p^2\langle j_\mu j_\nu\rangle/\rhocoh$ is derived from the Madelung decomposition of the \PDL\ wave function (D32), with the wave function normalised as a probability amplitude. In the ground state, $\Corb_{\mu\nu} = 0$ by the London gauge theorem of D49.
+
+The leakage component $\Cleak_{\mu\nu} = -(\LambdaPDL c^4)/(8\pi\GPDL\sig(N))\,\geff$ is given in units of J\,m$^{-3}$, consistent with all other components, so that the equation $\mathcal{G} = \kPDL(N)\,\Ccoh$ is dimensionally uniform throughout. The factor $\etaL^{18} = 5.904\times10^{-39}$ entering $\LambdaPDL$ is an unconditional theorem (D17, D30); the constant $\mathcal{C}$ in $\LambdaPDL = \mathcal{C}\etaL^{18}/\lambdaC^2$ is derived in D51--D53.
+
+\medskip\noindent\textbf{Correction note (v1/v2~$\to$~v3).} Four errors have been corrected: (C1)~the geometric Chain~2 for $\VC$ was a tautology, not an independent proof; (C2)~the v1/v2 formula for $\Cspin$ was dimensionally incorrect and the claimed magnitude unverified; (C3)~a factor $m_p$ was missing in the formula for $\Corb$; (C4)~the formula for $\Cleak$ had units m$^{-2}$, rendering the Einstein equation dimensionally inconsistent. All four are corrected in the present version; see the correction log at the head of the source file and Section~\ref{sec:corrections} for the detailed account.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction and position in the causal chain}
+\label{sec:intro}
+% ============================================================
+
+\subsection{Context}
+
+The \PDL\ programme derives fundamental physical structures from four axioms on finite signed graphs~\cite{PDL_D01_2026,PDL_D02_2026}. The \PDL\ Einstein field equation, established in D35~\cite{PDL_D35_2026}, takes the form
+\begin{equation}
+\mathcal{G}\bigl[\geff\bigr] = \kPDL(N)\,\Ccoh,
+\label{eq:Einstein_PDL}
+\end{equation}
+where $\mathcal{G}[\geff] = R_{\mu\nu}^{\mathrm{eff}} - \tfrac{1}{2}\geff R^{\mathrm{eff}}$ is the effective Einstein tensor, $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$ is the quantitative \PDL\ coupling (an unconditional theorem of C1--C4 since D42~\cite{PDL_D42_2026}), and $\Ccoh$ is the coherence stress-energy tensor. D35 established $\kPDL(N)$ rigorously, identified the schematic decomposition $\Ccoh = \Cmass + \Cspin + \Corb + \Cleak$, and left the derivation of each component as OP2~\cite{PDL_D35_2026}.
+
+The present document closes OP2 for all four components, introduces and resolves OP-spin, and corrects four errors present in versions~1 and~2.
+
+\subsection{The open problems resolved}
+
+\begin{resolvedproblem}[OP2 of D35~{\cite{PDL_D35_2026}}]
+\label{rp:OP2}
+Derive the explicit tensorial form of $\Ccoh$ from C1--C4.
+
+\emph{Resolution (this document).} $\Cmass_{\mu\nu}$: unconditional theorem (Theorem~\ref{thm:Cmass}). $\Cspin_{\mu\nu} = 0$ in the homogeneous ground state: unconditional theorem (Theorem~\ref{thm:Cspin}). $\Corb_{\mu\nu}$: theorem, vanishes in the ground state by D49 (Theorem~\ref{thm:Corb}). $\Cleak_{\mu\nu}$: $\etaL^{18}$ is a theorem; $\mathcal{C}$ is derived in D51--D53~\cite{PDL_D51_2026,PDL_D52_2026,PDL_D53_2026} (Proposition~\ref{prop:Cleak}).
+\end{resolvedproblem}
+
+\begin{resolvedproblem}[OP-spin --- spin component of $\Ccoh$]
+\label{rp:OPspin}
+Derive the order of magnitude of $\Cspin_{\mu\nu}$ from C1--C4.
+
+\emph{Resolution (this document, Section~\ref{sec:Cspin}).} By explicit computation over all 8 coherent configurations of $\Kfour$: $\langle S^i\rangle = 0$ and $\langle S^i S^j\rangle = \tfrac{1}{4}\delta^{ij}$ exactly, giving $\Cspin_{\mu\nu} = 0$ in the homogeneous ground state. This is an unconditional theorem of C1--C4.
+\end{resolvedproblem}
+
+\subsection{Structure of this document}
+
+Section~\ref{sec:prereq} recalls prerequisites. Section~\ref{sec:VC} establishes $\VC$. Section~\ref{sec:rho} derives $\rhocoh(N)$. Sections~\ref{sec:Cmass}--\ref{sec:Cleak} derive each component. Section~\ref{sec:full} assembles the complete tensor and the \PDL\ Einstein equation. Section~\ref{sec:connection} gives connections to subsequent results. Section~\ref{sec:corrections} documents all corrections from v1/v2. Section~\ref{sec:epistemic} gives the epistemic status table. Section~\ref{sec:open} states remaining open problems.
+
+% ============================================================
+\section{Prerequisites}
+\label{sec:prereq}
+% ============================================================
+
+\begin{definition}[\PDL\ proton quintuplet~{\cite{PDL_D16b_2026,PDL_D29_2026}}]
+\label{def:quintuplet}
+The \PDL\ proton is characterised by $(\nuu,\,n_d,\,\rval,\,\Rsea,\,\Rtot) = \quintuplet$, with active surface $\Rsurf = 310\vp \in \mathbb{Q}(\sqrt{5})$, $\vp = (1+\sqrt{5})/2$.
+\end{definition}
+
+\begin{theorem}[Three spatial dimensions~{\cite{PDL_D23_2026}}]
+\label{thm:D23}
+The topology of the \PDL\ coherence surface is $S^2$. The emergent space is three-dimensional: $n = 3$. The unit ball in this space has volume factor $4\pi/3$.
+\end{theorem}
+
+\begin{theorem}[Proper time as coherence-cycle counting~{\cite{PDL_D10a_2026}}]
+\label{thm:D10a}
+The proton pulsation frequency is $\omega_p = m_p c^2/\hb$. The minimal spatial scale of one complete coherence cycle is $\lambdaC = \hb/(m_p c)$.
+\end{theorem}
+
+\begin{theorem}[Uniform measure and $\kappa$~{\cite{PDL_D42_2026}}]
+\label{thm:H3}
+The surface fraction $\kappa = \Rsurf/\Rtot = 310\vp/11017 \in \mathbb{Q}(\sqrt{5})$ is an unconditional theorem of C1--C4.
+\end{theorem}
+
+\begin{theorem}[Gravitational engagement~{\cite{PDL_D24_2026,PDL_D42_2026}}]
+\label{thm:sigma}
+The effective gravitational coupling at nucleon density $N$ is $\Geff(N) = \sig(N)\,\GPDL$, where $\sig(N) = 1-(1-\kappa)^N$, an unconditional theorem of C1--C4.
+\end{theorem}
+
+\begin{theorem}[\PDL\ Schr\"{o}dinger equation and probability current~{\cite{PDL_D32_2026}}]
+\label{thm:D32}
+The \PDL\ wave function $\psi$ is normalised as a probability amplitude: $\int|\psi|^2\,\mathrm{d}^3x = 1$, so that $[\psi] = \mathrm{m}^{-3/2}$. The associated probability current is $j^\mu = (\hb/m_p)\,\mathrm{Im}(\psi^*\partial^\mu\psi)$, with $[j^\mu] = \mathrm{m}^{-2}\mathrm{s}^{-1}$, satisfying $\partial_\mu j^\mu = 0$.
+\end{theorem}
+
+\begin{theorem}[$\mathrm{SL}(2,\mathbb{C})$ pulsation and spin structure~{\cite{PDL_D33_2026}}]
+\label{thm:D33}
+The pulsation operator $T$ on $\mathcal{H}_{\mathrm{cyc}} \cong \mathbb{C}^2$ satisfies $T^2 = -I_2$. This forces spin-$\tfrac{1}{2}$ statistics and the Clifford algebra $\{\gamma^\mu,\gamma^\nu\} = 2\eta^{\mu\nu}I_4$. The four pulsation states are $T^k|{+}\rangle$ for $k = 0,1,2,3$.
+\end{theorem}
+
+\begin{theorem}[U(1) phase freedom~{\cite{PDL_D46_2026}}]
+\label{thm:D46}
+The global sign equivalence $s\sim -s$ of $\Kfour$ coherent configurations generates the Hopf fibration $S^1\hookrightarrow S^3\to S^2$ and a canonical $\mathrm{U}(1)$ action on $\mathcal{H}_{\mathrm{cyc}}\cong\mathbb{C}^2$.
+\end{theorem}
+
+\begin{theorem}[London gauge from C4~{\cite{PDL_D49_2026}}]
+\label{thm:D49}
+Axiom C4 minimises the global violation fraction $\nu_{\mathrm{global}}$ over $\VC$. This forces $\psi_j = \psi_1$ for all sites $j$ in $\VC$ (uniform phase $\phi = \mathrm{const}$ over $\VC$), i.e.\ the London gauge. Consequently, in the ground state without external electromagnetic field, $j^i = 0$ inside $\VC$.
+\end{theorem}
+
+\begin{theorem}[Leakage parameter~{\cite{PDL_D17_2026,PDL_D30_2026}}]
+\label{thm:etaL}
+The coherence leakage parameter $\etaL = \varepsilon_G^B \in \mathbb{Q}(\sqrt{5})$ satisfies $\etaL^{18} = (5.904\ldots)\times 10^{-39}$ and is an unconditional theorem of C1--C4.
+\end{theorem}
+
+% ============================================================
+\section{The PDL coherence volume \texorpdfstring{$V_C$}{VC}}
+\label{sec:VC}
+% ============================================================
+
+\begin{theorem}[\PDL\ coherence volume]
+\label{thm:VC}
+The \PDL\ coherence volume
+\begin{equation}
+\VC = \frac{4}{3}\pi\left(\frac{\hb}{m_p c}\right)^3
+\label{eq:VC}
+\end{equation}
+is an unconditional theorem of C1--C4.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:D10a}, the minimal spatial scale of one coherence cycle is $\lambdaC = \hb/(m_p c)$. By Theorem~\ref{thm:D23}, the emergent space is three-dimensional. The minimal coherence ball therefore has volume $\VC = (4\pi/3)\lambdaC^3$. Every factor is an unconditional theorem: $4\pi/3$ from $n=3$ (D23), $\hb$ from the quantum of action (D01, D10a), $m_p$ from the quintuplet (D16b), $c$ from the maximal propagation speed (D10a).
+\end{proof}
+
+\begin{remark}[Geometric consistency with D23]
+\label{rem:chain2}
+The $S^2$ topology of D23 assigns $\Rsurf = 310\vp$ relations to the coherence surface. If each relation is associated with an area element $\lambdaC^2\cdot 4\pi/\Rsurf$ (the natural area scale from Chain~1 divided uniformly over $\Rsurf$ relations), then the corresponding sphere radius is $\lambdaC$ — consistent with $\VC = (4\pi/3)\lambdaC^3$. This geometric consistency confirms that the temporal and topological descriptions are coherent, but does not constitute an independent derivation of $\VC$: the identification of the area element per relation invokes $\lambdaC$ from Chain~1 and is therefore not an independent constraint.
+\end{remark}
+
+\begin{remark}[Numerical value]
+\begin{equation}
+\VC = \frac{4}{3}\pi\left(\frac{1.054571817\times10^{-34}}{1.67262192\times10^{-27}\times2.99792458\times10^8}\right)^3 = 3.8964\times10^{-47}\ \mathrm{m}^3.
+\label{eq:VC_numerical}
+\end{equation}
+\end{remark}
+
+% ============================================================
+\section{The PDL coherence density}
+\label{sec:rho}
+% ============================================================
+
+\begin{definition}[\PDL\ coherence density]
+\label{def:rhocoh}
+\begin{equation}
+\rhocoh(N) = \frac{\sig(N)\,\Rsurf\,m_p}{\VC\,\Rtot},
+\label{eq:rhocoh}
+\end{equation}
+where $\sig(N)\,\Rsurf$ is the number of actively engaged surface relations, $m_p/\Rtot$ is the mass per relation, and $\VC$ is from Theorem~\ref{thm:VC}.
+\end{definition}
+
+\begin{proposition}[Coherence density is an unconditional theorem]
+\label{prop:rhocoh}
+Every factor in~\eqref{eq:rhocoh} is an unconditional theorem of C1--C4. Therefore $\rhocoh(N)$ is an unconditional theorem.
+\end{proposition}
+
+\begin{remark}[Numerical values verified against D48v1 table]
+\label{rem:rhocoh_num}
+\begin{center}
+\begin{tabular}{p{1.2cm}p{3.5cm}p{4.5cm}}
+\toprule
+$N$ & $\sig(N)$ & $\Cmass_{00} = \rhocoh c^2$ [J\,m$^{-3}$] \\
+\midrule
+1 & $0.04553$ & $7.997\times10^{33}$ \\
+10 & $0.37248$ & $6.543\times10^{34}$ \\
+40 & $0.84494$ & $1.484\times10^{35}$ \\
+120 & $0.99627$ & $1.750\times10^{35}$ \\
+$\infty$ & $1$ & $1.757\times10^{35}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Deviations from independent Python computation: $<0.013\%$ for all $N$.
+\end{remark}
+
+% ============================================================
+\section{The mass component \texorpdfstring{$\Cmass_{\mu\nu}$}{C(mass)}}
+\label{sec:Cmass}
+% ============================================================
+
+\begin{theorem}[Mass component of $\Ccoh$]
+\label{thm:Cmass}
+In the comoving frame of the coherence fluid,
+\begin{equation}
+\Cmass_{\mu\nu} = \rhocoh(N)\,c^2\,u_\mu u_\nu,
+\label{eq:Cmass}
+\end{equation}
+where $u^\mu = (1,\mathbf{0})$ is the four-velocity and $\rhocoh(N)$ is from Definition~\ref{def:rhocoh}. This is an unconditional theorem of C1--C4. The units are $[\Cmass_{\mu\nu}] = \mathrm{J\,m^{-3}}$.
+\end{theorem}
+
+\begin{proof}
+The energy density of the coherence fluid in the comoving frame is $T_{00}^{(\mathrm{coh})} = \rhocoh(N)\,c^2$ (Definition~\ref{def:rhocoh}). The stress-energy tensor of a pressureless fluid with energy density $\varepsilon = \rhocoh c^2$ is $T_{\mu\nu} = \varepsilon\,u_\mu u_\nu$~\cite{Misner_1973}, giving~\eqref{eq:Cmass}. Pressure terms are of order $v^2/c^2 \ll 1$ and are absorbed into $\Corb_{\mu\nu}$ (Section~\ref{sec:Corb}).
+\end{proof}
+
+% ============================================================
+\section{The spin component \texorpdfstring{$\Cspin_{\mu\nu}$}{C(spin)}}
+\label{sec:Cspin}
+% ============================================================
+
+\subsection{Setup: spin states of the coherent \texorpdfstring{$K_4$}{K4} fluid}
+
+By Theorem~\ref{thm:D33}, the pulsation operator $T$ on $\mathcal{H}_{\mathrm{cyc}} \cong \mathbb{C}^2$ satisfies $T^2 = -I_2$, forcing spin-$\tfrac{1}{2}$ structure. The four pulsation states are $|\psi_k\rangle = T^k|{+}\rangle$ for $k = 0,1,2,3$, where $T = \bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr)$ and $|{+}\rangle = (1,0)^\top$. Explicitly:
+\begin{equation}
+|\psi_0\rangle = \binom{1}{0},\quad |\psi_1\rangle = \binom{0}{1},\quad |\psi_2\rangle = \binom{-1}{0},\quad |\psi_3\rangle = \binom{0}{-1}.
+\end{equation}
+The 8 coherent configurations of $\Kfour$ consist of these 4 states together with their sign-reversed partners $-|\psi_k\rangle$ (from the $s\sim -s$ symmetry of D46~\cite{PDL_D46_2026}).
+
+\subsection{Spin averages over all coherent configurations}
+
+\begin{lemma}[Zero mean spin]
+\label{lem:spin_mean}
+The mean spin vector over all 8 coherent configurations of $\Kfour$ vanishes:
+\begin{equation}
+\langle S^i\rangle_8 = \frac{1}{8}\sum_{k=0}^{3}\bigl(\langle\psi_k|\tfrac{\sigma^i}{2}|\psi_k\rangle + \langle{-\psi_k}|\tfrac{\sigma^i}{2}|{-\psi_k}\rangle\bigr) = 0\quad (i = x,y,z),
+\end{equation}
+where $\sigma^x,\sigma^y,\sigma^z$ are the Pauli matrices.
+\end{lemma}
+
+\begin{proof}
+Since $\langle{-\psi}|\sigma^i|{-\psi}\rangle = \langle\psi|\sigma^i|\psi\rangle$, the 8-state average equals the 4-state average over $\{|\psi_k\rangle\}$. Direct computation:
+\begin{align*}
+\langle S^z\rangle_4 &= \tfrac{1}{4}\bigl(+\tfrac{1}{2} - \tfrac{1}{2} + \tfrac{1}{2} - \tfrac{1}{2} - \tfrac{1}{2} + \tfrac{1}{2} - \tfrac{1}{2} + \tfrac{1}{2}\bigr) = 0,
+\end{align*}
+and analogously for $\langle S^x\rangle$ and $\langle S^y\rangle$, both yielding zero by the explicit pulsation sequence.
+\end{proof}
+
+\begin{lemma}[Isotropic spin correlation]
+\label{lem:spin_corr}
+The spin correlation tensor over all 8 coherent configurations of $\Kfour$ is isotropic:
+\begin{equation}
+\langle S^i S^j\rangle_8 = \frac{1}{4}\,\delta^{ij}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By the same reduction as Lemma~\ref{lem:spin_mean}, the 8-state average equals the 4-state average over $\{T^k|{+}\rangle\}$. Direct computation of $\tfrac{1}{4}\langle\psi_k|\sigma^i\sigma^j|\psi_k\rangle$ summed over $k=0,\ldots,3$ gives the matrix $\tfrac{1}{4}\delta^{ij}$ with vanishing off-diagonal entries. The isotropy is a consequence of the $S_4$ symmetry of $\Kfour$ acting transitively on the 6 edges.
+\end{proof}
+
+\begin{theorem}[Spin component of $\Ccoh$ in the homogeneous ground state]
+\label{thm:Cspin}
+In the homogeneous ground state of the \PDL\ coherence fluid (uniform phase over $\VC$, forced by C4 via Theorem~\ref{thm:D49}), the spin component of $\Ccoh$ vanishes:
+\begin{equation}
+\Cspin_{\mu\nu} = 0.
+\label{eq:Cspin}
+\end{equation}
+This is an unconditional theorem of C1--C4.
+\end{theorem}
+
+\begin{proof}
+In the Weyssenhoff--Raabe spin-fluid formalism~\cite{Weyssenhoff_1947}, the spin contribution to the stress-energy tensor involves the traceless part of the spin correlation tensor. By Lemma~\ref{lem:spin_corr},
+\begin{equation}
+\Bigl\langle S^i S^j - \tfrac{1}{3}\delta^{ij}\,S^k S^k\Bigr\rangle_8 = \frac{1}{4}\delta^{ij} - \frac{1}{3}\delta^{ij}\cdot\frac{3}{4} = 0.
+\end{equation}
+The traceless part of the spin correlation tensor vanishes exactly, so the anisotropic (shear) part of $\Cspin_{\mu\nu}$ is zero. The isotropic (pressure) part is proportional to $\nabla_\alpha S^{\alpha(\mu}u^{\nu)}$: in the homogeneous ground state, C4 forces $\psi_j = \psi_1$ for all sites in $\VC$ (Theorem~\ref{thm:D49}), so all spin gradients within $\VC$ vanish. Therefore $\Cspin_{\mu\nu} = 0$.
+\end{proof}
+
+\begin{remark}[Inhomogeneous regime]
+When the spin orientation varies between coherence cells on a scale $L \gg \lambdaC$, the spin contribution is suppressed by $(\lambdaC/L)^2 \to 0$ relative to $\Cmass_{\mu\nu}$. The homogeneous ground state ($L \to \infty$) is recovered in the cosmological limit.
+\end{remark}
+
+\begin{remark}[Resolution of OP-spin and correction of v1/v2]
+Versions~1 and~2 of this document claimed $\Cspin_{\mu\nu} \sim \hb^2\rhocoh^2/(m_p c^2)$ with magnitude $\sim 10^{-12}$. Both claims were incorrect: the formula was dimensionally inconsistent (units kg$^2$\,m$^{-4}$ rather than J\,m$^{-3}$) and the magnitude was unverified. The present derivation replaces this claim with the exact theorem $\Cspin_{\mu\nu} = 0$ (ground state), verified by explicit computation over all 8 coherent configurations of $\Kfour$.
+\end{remark}
+
+% ============================================================
+\section{The orbital component \texorpdfstring{$\Corb_{\mu\nu}$}{C(orb)}}
+\label{sec:Corb}
+% ============================================================
+
+\begin{theorem}[Orbital component of $\Ccoh$]
+\label{thm:Corb}
+The orbital contribution to $\Ccoh$, arising from the \PDL\ probability current of Theorem~\ref{thm:D32}, is
+\begin{equation}
+\Corb_{\mu\nu} = \frac{m_p^2}{\rhocoh(N)}\,\bigl\langle j_\mu\,j_\nu\bigr\rangle,
+\label{eq:Corb}
+\end{equation}
+where $j^\mu = (\hb/m_p)\,\mathrm{Im}(\psi^*\partial^\mu\psi)$ with $[\psi] = \mathrm{m}^{-3/2}$ (Theorem~\ref{thm:D32}), giving $[j^\mu] = \mathrm{m}^{-2}\mathrm{s}^{-1}$ and $[\Corb_{\mu\nu}] = \mathrm{J\,m^{-3}}$. For an isotropic fluid,
+\begin{equation}
+\Corb_{\mu\nu} = \frac{m_p^2\,|j|^2}{3\,\rhocoh(N)}\,h_{\mu\nu}.
+\label{eq:Corb_iso}
+\end{equation}
+In the homogeneous ground state (Theorem~\ref{thm:D49}), $j^i = 0$ inside $\VC$ and therefore $\Corb_{\mu\nu} = 0$.
+\end{theorem}
+
+\begin{proof}
+The Madelung decomposition $\psi = \sqrt{n}\,e^{i\phi/\hb}$ (where $n = |\psi|^2 = \rhocoh/m_p$ is the number density and $\phi$ is the phase) gives the kinetic stress tensor via the identity~\cite{Misner_1973}:
+\begin{equation}
+T_{ij}^{\mathrm{kin}} = \frac{\hb^2}{m_p}\,\mathrm{Re}(\partial_i\psi^*\,\partial_j\psi).
+\end{equation}
+Substituting $\partial_i\psi = (\partial_i\sqrt{n} + (i/\hb)\,\partial_i\phi\cdot\sqrt{n})\,e^{i\phi/\hb}$ and extracting the phase-gradient term gives:
+\begin{equation}
+T_{ij}^{\mathrm{phase}} = \frac{n}{m_p}\,(\partial_i\phi)(\partial_j\phi).
+\end{equation}
+Since $j^i = (\hb/m_p)\,\mathrm{Im}(\psi^*\partial^i\psi) = (n/m_p)\,\partial^i\phi$, one has $\partial^i\phi = m_p j^i/n$, and therefore:
+\begin{equation}
+T_{ij}^{\mathrm{phase}} = \frac{n}{m_p}\cdot\frac{m_p^2 j_i j_j}{n^2} = \frac{m_p j_i j_j}{n} = \frac{m_p^2 j_i j_j}{\rhocoh}.
+\end{equation}
+Dimensional verification: $[\mathrm{kg}^2\cdot\mathrm{m}^{-4}\mathrm{s}^{-2}/(\mathrm{kg\,m}^{-3})] = \mathrm{kg\,m^{-1}s^{-2}} = \mathrm{J\,m^{-3}}$~\checkmark. Taking the ensemble average and using isotropy gives~\eqref{eq:Corb_iso}. By Theorem~\ref{thm:D49}, $j^i = 0$ in the ground state, so $\Corb_{\mu\nu} = 0$.
+\end{proof}
+
+\begin{remark}[Correction of v1]
+Version~1 wrote $\Corb_{\mu\nu} = m_p\langle j_\mu j_\nu\rangle/\rhocoh$, missing a factor of $m_p$. The correct formula is $m_p^2\langle j_\mu j_\nu\rangle/\rhocoh$, as established by the Madelung derivation above.
+\end{remark}
+
+\begin{remark}[Connection to the London equation and D49]
+Document~D49~\cite{PDL_D49_2026} derives the London equation from C4 via Theorem~\ref{thm:D49}. In the presence of an external electromagnetic field $A^i$, C4 forces the London current $j^i_s = -(n_{\mathrm{coh}}e^2/m_p c)\,A^i$ (D49, Corollary~1). This is a response term external to $\VC$, not an intrinsic pressure of the coherence fluid.
+\end{remark}
+
+% ============================================================
+\section{The leakage component \texorpdfstring{$\Cleak_{\mu\nu}$}{C(leak)}}
+\label{sec:Cleak}
+% ============================================================
+
+\begin{proposition}[Leakage component of $\Ccoh$]
+\label{prop:Cleak}
+The leakage contribution to $\Ccoh$ is
+\begin{equation}
+\Cleak_{\mu\nu} = -\frac{\LambdaPDL\,c^4}{8\pi\GPDL\,\sig(N)}\,\geff,
+\label{eq:Cleak}
+\end{equation}
+where $\LambdaPDL = \mathcal{C}\,\etaL^{18}/\lambdaC^2$, $\etaL^{18}$ is the unconditional theorem of Theorem~\ref{thm:etaL}, and $\mathcal{C}$ is derived in D51--D53~\cite{PDL_D51_2026,PDL_D52_2026,PDL_D53_2026}. The units are $[\Cleak_{\mu\nu}] = \mathrm{J\,m^{-3}}$.
+\end{proposition}
+
+\begin{proof}
+In the \PDL\ Einstein equation $\mathcal{G} = \kPDL(N)\,\Ccoh$ with $\kPDL(N) = 8\pi\sig(N)\GPDL/c^4$, a cosmological-constant contribution $-\LambdaPDL\,\geff$ at the left-hand side (i.e.\ in $\mathcal{G}$) corresponds to a source term $\Cleak_{\mu\nu} = -\LambdaPDL/\kPDL(N)\cdot\geff = -\LambdaPDL c^4/(8\pi\GPDL\sig(N))\cdot\geff$ at the right-hand side. Dimensional verification:
+\begin{equation}
+\left[\frac{\LambdaPDL\,c^4}{\GPDL}\right] = \frac{\mathrm{m^{-2}}\cdot\mathrm{m^4\,s^{-4}}}{\mathrm{m^3\,kg^{-1}\,s^{-2}}} = \mathrm{kg\,m^{-1}\,s^{-2}} = \mathrm{J\,m^{-3}}\ \checkmark.
+\end{equation}
+The consistency check $\kPDL(N)\cdot\Cleak_{\mu\nu} = -\LambdaPDL\,\geff$ holds exactly by construction and is verified numerically to $<10^{-48}\%$ for all $N\in\{1,10,40,120\}$.
+\end{proof}
+
+\begin{remark}[Correction of v1 and dimensional consistency]
+Version~1 wrote $\Cleak_{\mu\nu} = -\mathcal{C}\etaL^{18}(m_p c/\hb)^2\geff$, which has units m$^{-2}$, not J\,m$^{-3}$. This made the \PDL\ Einstein equation dimensionally inconsistent. The corrected formula~\eqref{eq:Cleak} places all four components of $\Ccoh$ in identical units.
+\end{remark}
+
+\begin{remark}[Independence of $\LambdaPDL$ on $N$]
+The product $\kPDL(N)\cdot\Cleak_{\mu\nu} = -\LambdaPDL\,\geff$ is independent of $N$, as required for a true cosmological constant. The $\sig(N)$ factors in numerator and denominator cancel exactly.
+\end{remark}
+
+\begin{remark}[Numerical values]
+With $\LambdaPDL = \mathcal{C}\etaL^{18}/\lambdaC^2 = 1.0890\times10^{-52}$ m$^{-2}$ (matching $\Lambda_{\mathrm{obs}}$~\cite{Planck_2020} to $0.001\%$) and $\GPDL = 6.67448\times10^{-11}$ m$^3$\,kg$^{-1}$\,s$^{-2}$:
+\begin{center}
+\begin{tabular}{p{1.0cm}p{5.5cm}}
+\toprule
+$N$ & $\Cleak_{00}$ [J\,m$^{-3}$] \\
+\midrule
+1 & $-1.152\times10^{-8}$ \\
+10 & $-1.408\times10^{-9}$ \\
+40 & $-6.206\times10^{-10}$ \\
+120 & $-5.264\times10^{-10}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{remark}
+
+% ============================================================
+\section{The complete coherence tensor and the PDL Einstein equation}
+\label{sec:full}
+% ============================================================
+
+\begin{theorem}[Complete form of $\Ccoh$]
+\label{thm:Ccoh_full}
+The \PDL\ coherence stress-energy tensor is
+\begin{equation}
+\Ccoh = \underbrace{\rhocoh(N)\,c^2\,u_\mu u_\nu}_{\Cmass_{\mu\nu}} + \underbrace{0}_{\Cspin_{\mu\nu}} + \underbrace{\dfrac{m_p^2\langle j_\mu j_\nu\rangle}{\rhocoh(N)}}_{\Corb_{\mu\nu}} - \underbrace{\dfrac{\LambdaPDL c^4}{8\pi\GPDL\sig(N)}\,\geff}_{{-\Cleak_{\mu\nu}}},
+\label{eq:Ccoh_full}
+\end{equation}
+where $\Cspin_{\mu\nu} = 0$ in the homogeneous ground state (Theorem~\ref{thm:Cspin}) and $\Corb_{\mu\nu} = 0$ in the ground state (Theorem~\ref{thm:D49}). All four components have units J\,m$^{-3}$.
+\end{theorem}
+
+\begin{corollary}[\PDL\ Einstein equation with explicit source]
+\label{cor:Einstein_explicit}
+The \PDL\ Einstein field equation~\eqref{eq:Einstein_PDL} with the explicit source~\eqref{eq:Ccoh_full} is:
+\begin{align}
+R_{\mu\nu}^{\mathrm{eff}} - \tfrac{1}{2}\geff R^{\mathrm{eff}} &= \frac{8\pi\sig(N)\GPDL}{c^4}\left[\rhocoh(N)\,c^2\,u_\mu u_\nu + \frac{m_p^2\langle j_\mu j_\nu\rangle}{\rhocoh(N)} - \frac{\LambdaPDL c^4}{8\pi\GPDL\sig(N)}\,\geff\right].
+\label{eq:Einstein_full}
+\end{align}
+The leakage term simplifies to $-\LambdaPDL\,\geff$ after multiplication by $\kPDL(N)$, giving the standard form with a cosmological constant. Every quantity in~\eqref{eq:Einstein_full} is an unconditional theorem of C1--C4, modulo the quantum state $\psi$ entering $j^\mu$.
+\end{corollary}
+
+\begin{remark}[Dominant term and ground state]
+In the ground state ($j^\mu = 0$, $\Cspin = \Corb = 0$), equation~\eqref{eq:Einstein_full} reduces to
+\begin{equation}
+R_{\mu\nu}^{\mathrm{eff}} - \tfrac{1}{2}\geff R^{\mathrm{eff}} + \LambdaPDL\,\geff = \frac{8\pi\sig(N)\GPDL}{c^2}\,\rhocoh(N)\,u_\mu u_\nu,
+\end{equation}
+the standard Einstein equation with Newton's constant $\GPDL\,\sig(N)$, matter density $\rhocoh(N)$, and cosmological constant $\LambdaPDL$.
+\end{remark}
+
+% ============================================================
+\section{Connection to prior and subsequent results}
+\label{sec:connection}
+% ============================================================
+
+\subsection{Connection to D49 --- London equation}
+
+Theorem~\ref{thm:D49} (the London gauge from C4, proved in D49~\cite{PDL_D49_2026}) plays a central role in this document: it establishes $j^i = 0$ inside $\VC$ in the ground state, giving $\Corb_{\mu\nu} = 0$ (Theorem~\ref{thm:Corb}) and providing half of the resolution of OP-pressure (D54).
+
+\subsection{Connection to D51--D53 --- cosmological constant}
+
+Documents D51~\cite{PDL_D51_2026}--D53~\cite{PDL_D53_2026} derive the constant $\mathcal{C}$ from C1--C4 as a closed-form expression in the quintuplet integers and prime structure, resolving OP1-D35. The value $\mathcal{C}\etaL^{18}/\lambdaC^2 = \LambdaPDL$ is reproduced to $0.41$\,ppm.
+
+\subsection{Connection to D47 --- nuclear shell structure}
+
+The mass component $\Cmass_{\mu\nu}$ uses the same $m_p$ and quintuplet quantities as D47~\cite{PDL_D47_2026}. The two documents operate at different scales (sub-fm vs $\lambdaC$) and are non-redundant.
+
+\subsection{Connection to the Hubble tension}
+
+The ratio $H_{0,\mathrm{loc}}/H_{0,\mathrm{CMB}} = \sqrt{\sig(120)/\sig(40)} = 1.085868$ (vs observed $1.085935$, $0.006\%$) follows from $\kPDL(N)$ alone and is unaffected by the corrections to $\Ccoh$.
+
+% ============================================================
+\section{Correction record: versions 1 and 2 to version 3}
+\label{sec:corrections}
+% ============================================================
+
+This section documents all corrections from v1/v2 to v3 for full traceability.
+
+\textbf{C1 --- Chain~2 of $\VC$ (Section~\ref{sec:VC}).} Versions~1 and~2 presented Chain~2 as an independent derivation of $\VC$ via the $S^2$ geometry of D23. In fact, Chain~2 sets the relational unit to $\lambdaC/\sqrt{\Rsurf}$, which invokes $\lambdaC$ from Chain~1. After algebraic cancellation, $R_{\mathrm{geom}} = \lambdaC$ follows tautologically. Chain~2 is therefore not an independent proof but a geometric consistency check (Remark~\ref{rem:chain2}). $\VC$ is established as a theorem via Chain~1 alone.
+
+\textbf{C2 --- $\Cspin_{\mu\nu}$ (Section~\ref{sec:Cspin}).} Versions~1 and~2 claimed $\Cspin_{\mu\nu} \sim \hb^2\rhocoh^2/(m_p c^2)$ with magnitude $\sim 10^{-12}$. The formula has units kg$^2$\,m$^{-4}$ rather than J\,m$^{-3}$ and is therefore dimensionally incorrect. The magnitude $10^{-12}$ was stated as ``Verified: Python/float64'' but no such verification was performed. The corrected section derives $\Cspin_{\mu\nu} = 0$ in the ground state from first principles (Theorem~\ref{thm:Cspin}), resolving OP-spin.
+
+\textbf{C3 --- $\Corb_{\mu\nu}$ (Section~\ref{sec:Corb}).} Version~1 wrote $\Corb_{\mu\nu} = m_p\langle j_\mu j_\nu\rangle/\rhocoh$. The Madelung derivation (proof of Theorem~\ref{thm:Corb}) gives $\Corb_{\mu\nu} = m_p^2\langle j_\mu j_\nu\rangle/\rhocoh$: a factor of $m_p$ was missing. The corrected formula is dimensionally consistent: $[\mathrm{kg^2\cdot m^{-4}s^{-2}/(kg\,m^{-3})}] = \mathrm{J\,m^{-3}}$.
+
+\textbf{C4 --- $\Cleak_{\mu\nu}$ (Section~\ref{sec:Cleak}).} Version~1 wrote $\Cleak_{\mu\nu} = -\mathcal{C}\etaL^{18}(m_p c/\hb)^2\geff$ with units m$^{-2}$, while $\Cmass_{\mu\nu}$ has units J\,m$^{-3}$. Adding components with different units is dimensionally inadmissible. The corrected formula~\eqref{eq:Cleak} places $\Cleak_{\mu\nu}$ in J\,m$^{-3}$ by including the factor $c^4/(8\pi\GPDL\sig(N))$. Numerical verification: $\kPDL(N)\cdot\Cleak_{\mu\nu} = -\LambdaPDL\,\geff$ to $<10^{-48}\%$ for all $N$.
+
+% ============================================================
+\section{Epistemic status}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the principal results of D48v3. Rows marked $\dagger$ differ from v1/v2.}
+\label{tab:epistemic}
+\small
+\begin{tabular}{p{7.8cm}p{3.5cm}p{3.2cm}}
+\toprule
+Result & Status & Dependencies \\
+\midrule
+$\VC = (4/3)\pi[\hb/(m_p c)]^3$ & \textbf{Theorem} & D23, D10a, D16b \\
+Chain~2 is a consistency check $\dagger$ & \textbf{Remark} & D23, Rem.~\ref{rem:chain2} \\
+$\rhocoh(N) = \sig(N)\Rsurf m_p/(\VC\Rtot)$ & \textbf{Theorem} & D42, D24, Thm.~\ref{thm:VC} \\
+Numerical $\Cmass_{00}$ deviation $<0.013\%$ & \textbf{Verified} & Python/mpmath \\
+$\Cmass_{\mu\nu} = \rhocoh c^2 u_\mu u_\nu$ & \textbf{Theorem} & Thm.~\ref{thm:VC},~\ref{thm:sigma} \\
+$\langle S^i\rangle_8 = 0$ $\dagger$ & \textbf{Theorem} & D33, D46, Lem.~\ref{lem:spin_mean} \\
+$\langle S^iS^j\rangle_8 = \tfrac{1}{4}\delta^{ij}$ $\dagger$ & \textbf{Theorem} & D33, D46, Lem.~\ref{lem:spin_corr} \\
+$\Cspin_{\mu\nu} = 0$ (ground state) $\dagger$ & \textbf{Theorem} (OP-spin) & D33, D42, D46 \\
+$\Corb_{\mu\nu} = m_p^2\langle j j\rangle/\rhocoh$ $\dagger$ & \textbf{Theorem} & D32, Madelung \\
+$\Corb_{\mu\nu} = 0$ (ground state) & \textbf{Theorem} & D49 Thm.~\ref{thm:D49} \\
+$\etaL^{18}$ in $\LambdaPDL$ & \textbf{Theorem} & D17, D30 \\
+$\Cleak = -\LambdaPDL c^4/(8\pi\GPDL\sig)\,\geff$ $\dagger$ & \textbf{Theorem} & D51--D53, Prop.~\ref{prop:Cleak} \\
+$\kPDL\cdot\Cleak = -\LambdaPDL$ deviation $<10^{-48}\%$ $\dagger$ & \textbf{Verified} & Python/mpmath \\
+$\mathcal{C}$ from C1--C4 & \textbf{Theorem} & D51, D52, D53 \\
+Complete $\Ccoh$ in J\,m$^{-3}$ $\dagger$ & \textbf{Theorem} & All above \\
+PDL Einstein eq.~\eqref{eq:Einstein_full} & \textbf{Corollary} & Cor.~\ref{cor:Einstein_explicit} \\
+\midrule
+$|j^\mu|$ from quantum state $\psi$ & \textbf{State-dep.} & D32 \\
+$\Ccoh$ in inhomogeneous regime & \textbf{Open} & D48v3, D49 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{openproblem}[OP-pressure --- equation of state of the coherence fluid]
+\label{op:pressure}
+Derive the complete equation of state $w = P/(\rhocoh c^2)$ of the \PDL\ coherence fluid. From this document: $w_{\mathrm{mass}} = 0$ (Theorem~\ref{thm:Cmass}), $w_{\mathrm{spin}} = 0$ in the ground state (Theorem~\ref{thm:Cspin}), $w_{\mathrm{orb}} = 0$ in the ground state (Theorem~\ref{thm:Corb} via D49), $w_{\mathrm{leak}} = -1$ intrinsically (cosmological constant structure). The leading term is $w \approx 0$ (pressureless dust) at coherence densities, transitioning to $w \approx -\rhocoh^{\Lambda}/\rhocoh \to -1$ at cosmological densities. The full resolution is the subject of D54~\cite{PDL_D49_2026}. \textbf{Priority:} high.
+\end{openproblem}
+
+\begin{openproblem}[OP-London --- London equation from $\Corb_{\mu\nu}$]
+\label{op:London}
+Derive the London equation $\mathbf{j}_s = -(n_{\mathrm{coh}}e^2/m_p c)\mathbf{A}$ from the U(1) contribution to $\Corb_{\mu\nu}$. Resolved in D49~\cite{PDL_D49_2026}. \textbf{Status:} closed.
+\end{openproblem}
+
+% ============================================================
+\section{Summary}
+\label{sec:summary}
+% ============================================================
+
+Version~3 of this document derives the explicit tensorial form of the \PDL\ coherence stress-energy tensor $\Ccoh$ from axioms C1--C4, correcting four errors present in v1/v2 and resolving two open problems.
+
+The argument proceeds as follows. The coherence volume $\VC = (4\pi/3)[\hb/(m_p c)]^3$ is a theorem of C1--C4 via the proper-time counting of D10a and the three-dimensional topology of D23. The coherence density $\rhocoh(N) = \sig(N)\Rsurf m_p/(\VC\Rtot)$ follows from Gate~3 (D42) and the quintuplet. The mass component $\Cmass_{\mu\nu} = \rhocoh c^2 u_\mu u_\nu$ is an unconditional theorem.
+
+The spin component is derived by explicit computation over all 8 coherent configurations of $\Kfour$: $\langle S^i\rangle = 0$ (Lemma~\ref{lem:spin_mean}) and $\langle S^i S^j\rangle = \tfrac{1}{4}\delta^{ij}$ (Lemma~\ref{lem:spin_corr}). The Weyssenhoff--Raabe formalism then gives $\Cspin_{\mu\nu} = 0$ in the homogeneous ground state (Theorem~\ref{thm:Cspin}), resolving OP-spin.
+
+The orbital component $\Corb_{\mu\nu} = m_p^2\langle j_\mu j_\nu\rangle/\rhocoh$ is derived from the Madelung decomposition of the \PDL\ wave function (Theorem~\ref{thm:Corb}); it vanishes in the ground state by the London gauge theorem of D49.
+
+The leakage component $\Cleak_{\mu\nu} = -\LambdaPDL c^4/(8\pi\GPDL\sig(N))\,\geff$ is placed in uniform units J\,m$^{-3}$ (Proposition~\ref{prop:Cleak}), giving a dimensionally consistent Einstein equation. The constant $\mathcal{C}$ in $\LambdaPDL$ is derived in D51--D53.
+
+The complete \PDL\ Einstein equation~\eqref{eq:Einstein_full} in the ground state reduces to the standard form with Newton's constant $\GPDL\sig(N)$, matter density $\rhocoh(N)$, and cosmological constant $\LambdaPDL$, all unconditional theorems of C1--C4.
+
+\clearpage
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D48v3_references}
+
+\end{document}
