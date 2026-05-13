@@ -314,3 +314,8 @@ DL02
 https://doi.org/10.5281/zenodo.20132228 
 Existence, Separation, and Finiteness of the Life and Consciousness Thresholds in the PDL-V Programme (Projective Dynamic Logo Framework, Document DL02) 
 DL02___Existence_Separation.pdf 
+
+D54 
+https://doi.org/10.5281/zenodo.20157203
+Equation of State of the PDL Coherence Fluid: Resolution of OP-pressure (Projective Dynamic Logo Framework, Document D54) 
+D54___Equation_of_State.pdf
