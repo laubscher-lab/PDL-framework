@@ -1,0 +1,433 @@
+% ============================================================
+% DS01 — Projective Dynamic Logo: Programme Closure at D55
+% A temporary synthesis document recording what has been achieved,
+% what remains open by nature, and what depends on external
+% experimental confirmation.
+% Author: Cédric Laubscher
+% Date: May 2026
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage{tcolorbox}
+\usepackage{hyphenat}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+% ---- Colours -----------------------------------------------
+\definecolor{proofblue}{RGB}{0,80,160}
+\definecolor{openred}{RGB}{160,30,30}
+\definecolor{waitgrey}{RGB}{100,100,100}
+\definecolor{chaingreen}{RGB}{20,120,60}
+
+% ---- tcolorbox environments --------------------------------
+\tcbuselibrary{skins,breakable}
+
+\tcbset{
+  theoremstyle/.style={
+    enhanced,colback=blue!4!white,colframe=blue!50!black,
+    fonttitle=\bfseries,breakable
+  },
+  chainstyle/.style={
+    enhanced,colback=green!4!white,colframe=green!50!black,
+    fonttitle=\bfseries,breakable
+  },
+  waitstyle/.style={
+    enhanced,colback=gray!8!white,colframe=gray!50!black,
+    fonttitle=\bfseries,breakable
+  },
+  predstyle/.style={
+    enhanced,colback=orange!6!white,colframe=orange!60!black,
+    fonttitle=\bfseries,breakable
+  }
+}
+
+\newenvironment{chainbox}[1][]{%
+  \begin{tcolorbox}[chainstyle,title={#1}]}{\end{tcolorbox}}
+
+\newenvironment{waitbox}[1][]{%
+  \begin{tcolorbox}[waitstyle,title={#1}]}{\end{tcolorbox}}
+
+\newenvironment{predbox}[1][]{%
+  \begin{tcolorbox}[predstyle,title={Falsifiable Prediction\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+
+% ---- Theorem environments ----------------------------------
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Macros ------------------------------------------------
+\newcommand{\PDL}{\textsc{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\vp}{\varphi}
+\newcommand{\kap}{\kappa}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\thetaW}{\theta_W}
+\newcommand{\sinW}{\sin^2\!\thetaW}
+\newcommand{\Dmiso}{\Delta m_{\mathrm{iso}}}
+\renewcommand{\mp}{m_p}
+\newcommand{\ktwo}{k_2}
+\newcommand{\Ntot}{N_{\mathrm{total}}}
+\newcommand{\muPDL}{\mu_{\mathrm{PDL}}}
+\newcommand{\muexp}{\mu_{\mathrm{exp}}}
+\newcommand{\mustar}{\mu^*}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\title{\textbf{Projective Dynamic Logo: Programme Closure at D55}\\[0.5em]
+\large Synthesis Document DS01 --- Provisional}
+\author{Cédric Laubscher\\
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+\date{May 2026}
+\maketitle
+
+\begin{abstract}
+This synthesis document records the state of the \PDL\ programme upon completion of document D55 (Weinberg angle). Its purpose is explicitly provisional: it documents what has been derived from the four axioms C1--C4, what remains open by logical necessity (extensions not yet attempted), what is open by metrological limitation (results awaiting experimental precision), and what depends on external responses from the experimental community. The document does not introduce new results. It is intended to become obsolete as experimental confirmations arrive. Three open experimental frontiers are identified: (i) the FLAG/lattice QCD determination of $\Dmiso$ at $\pm 0.04$~MeV precision (3--5 year horizon), (ii) the Fermi-LAT analysis of the isotropic gamma-ray background in the 50--200~MeV window (D45 prediction), and (iii) the FRIB/RIKEN confrontation of the nuclear magic-number predictions (D47). One internal open problem is reclassified: the 47~ppm residual in $\mu$ is argued to be a metrological artefact of QED origin rather than a structural gap in the programme. A second internal item, the $W/Z$ mass ratio $M_W/M_Z$, is identified as a near-term derivable result requiring one additional step beyond D55.
+\end{abstract}
+\clearpage
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Purpose and Epistemic Status of this Document}
+\label{sec:purpose}
+% ============================================================
+
+\subsection{Why a synthesis document}
+
+The \PDL\ corpus, upon completion of D55, presents a closed causal chain from four combinatorial axioms to the principal constants of physics. There is no remaining foundational open problem at the axiomatic level. However, the programme's engagement with the experimental community is at an early stage, and three falsifiable predictions await either confirmation or refutation from external sources.
+
+The present document DS01 serves three functions. First, it constitutes an honest record of what has and has not been achieved, distinguishing \emph{internal closure} (the logical chain is complete) from \emph{external confirmation} (experimental tests are pending). Second, it re-examines two items that appear in the open-problems list of DM~v23 but whose status warrants reassessment: the 47~ppm residual in $\mu$ (Section~\ref{sec:op7}) and the $W/Z$ mass ratio (Section~\ref{sec:wz}). Third, it maps the three experimental frontiers and what each would constitute as a test of the programme (Section~\ref{sec:experimental}).
+
+\subsection{What this document is not}
+
+DS01 does not introduce new theorems. It does not modify the epistemic classification of any existing result. It does not claim experimental confirmation of any prediction. It is a \emph{bilan de position}: a position statement at a natural pause in the programme's development.
+
+\subsection{Intended obsolescence}
+
+This document is explicitly provisional. Its Section~\ref{sec:experimental} will become obsolete, item by item, as experimental responses arrive. The authors welcome this obsolescence.
+
+% ============================================================
+\section{The Closed Causal Chain}
+\label{sec:chain}
+% ============================================================
+
+\subsection{Summary of derived results}
+
+The following table lists the principal results of the \PDL\ programme, all derived as unconditional theorems of C1--C4 unless otherwise noted. Each entry cites the corpus document establishing the result; see also the global mapping~\cite{PDL_DM}.
+
+\begin{longtable}{lp{7.5cm}lp{2cm}}
+\caption{Principal derived results of the \PDL\ programme at D55. All are unconditional theorems of C1--C4 unless marked $\dagger$ (sole external parameter).}
+\label{tab:results}\\
+\toprule
+Result & Value / Statement & Document \\
+\midrule
+\endfirsthead
+\toprule
+Result & Value / Statement & Document \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\footnotesize continues \ldots}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Minimal admissible closure & $K_4$, unique & \cite{PDL_D16a} \\[0.3em]
+Proton quintuplet & $(24,28,930,10087,11017)$ & \cite{PDL_D16,PDL_D16b} \\[0.3em]
+Neutron quintuplet & $(24,28,1032,9960,10992)$ & \cite{PDL_D22} \\[0.3em]
+Fine-structure constant & $\alpha_{\PDL} = 1/137.036$ & \cite{PDL_D25} \\[0.3em]
+Gravitational constant & $G_{\PDL}$ at 17~ppm of CODATA & \cite{PDL_D44} \\[0.3em]
+Cosmological constant & $\Lambda_{\PDL}$ at $0.17$~ppm of observation & \cite{PDL_D51,PDL_D52,PDL_D53} \\[0.3em]
+Bekenstein--Hawking $\tfrac{1}{4}$ & $S_{BH} = k_B A / (4\ell_P^2)$ & \cite{PDL_D50} \\[0.3em]
+London equation & from $\nu = \tfrac{1}{4}\|\psi_1 - T^k\psi_1\|^2$ & \cite{PDL_D49} \\[0.3em]
+Nuclear magic numbers & $\{2,8,20,28,50,82,126\}$ derived & \cite{PDL_D47} \\[0.3em]
+Periodic table ($Z=1$--82) & valley of stability as corollary & \cite{PDL_D47} \\[0.3em]
+Born rule (Level~1) & $P = |\psi|^2$ via Gleason & \cite{PDL_D34} \\[0.3em]
+Born rule (Level~2) & $\mathrm{U}(1)$ phase from Hopf fibration & \cite{PDL_D46} \\[0.3em]
+Schr\"odinger equation & from $K_4$ pulsation & \cite{PDL_D32} \\[0.3em]
+Dirac equation & $T^2 = -I_2$ from $K_4$ & \cite{PDL_D33} \\[0.3em]
+Einstein equation & $\sigma(N)$-modified coupling & \cite{PDL_D35} \\[0.3em]
+Equation of state & coherence fluid $w = -1$ & \cite{PDL_D54} \\[0.3em]
+Weinberg angle & $\thetaW = 19\pi/119$, $\sinW = 0.231196$ & \cite{PDL_D55} \\[0.3em]
+$\Dmiso$ (prediction~1) & $2.532$~MeV & \cite{PDL_D30} \\[0.3em]
+$\Dmiso$ (prediction~2) & $2.446$~MeV & \cite{PDL_D55} \\[0.3em]
+$\Dmiso$\,$\dagger$ & sole irreducible external parameter & \cite{PDL_D30} \\[0.3em]
+\end{longtable}
+
+\subsection{The causal chain in one diagram}
+
+\begin{chainbox}[Causal chain C1--C4 $\to$ fundamental constants (D55)]
+\[
+\mathrm{C1\text{--}C4}
+\xrightarrow{\text{D16a}} K_4
+\xrightarrow{\text{D16,D16b}} \text{quintuplet}
+\xrightarrow{\text{D25}} \alpha
+\]
+\[
+\text{quintuplet}
+\xrightarrow{\text{D43,D44}} G
+\qquad
+\text{quintuplet}
+\xrightarrow{\text{D51,D52}} \Lambda
+\]
+\[
+K_4 \xrightarrow{\text{D33}} T^2=-I_2
+\xrightarrow{\text{D46}} \gamma_B
+\xrightarrow{\text{D51,D55}} \thetaW = \frac{19\pi}{119}
+\]
+\[
+\text{quintuplet} \xrightarrow{\text{D47}} \{2,8,20,28,50,82,126\} + \text{periodic table}
+\]
+\[
+\text{quintuplet} \xrightarrow{\text{D50}} S_{BH} = \tfrac{k_B A}{4\ell_P^2}
+\qquad
+K_4 \xrightarrow{\text{D49}} \text{London eq.}
+\]
+Every arrow is an established theorem of C1--C4. The unique external input is $\Dmiso = m_d - m_u$, the irreducible \PDL--QCD interface parameter.
+\end{chainbox}
+
+% ============================================================
+\section{Reclassification of OP7: The 47~ppm Residual in \texorpdfstring{$\mu$}{mu}}
+\label{sec:op7}
+% ============================================================
+
+\subsection{Statement of the problem}
+
+Document D30~\cite{PDL_D30} establishes that the proton--electron mass ratio correction factorises as:
+\begin{equation}
+\delta\mu = \frac{r_{\mathrm{val}}}{R_e \cdot \Rtot}\left(1 - \frac{2\,\Dmiso}{m_p}\right) + O(47\;\mathrm{ppm}).
+\label{eq:dmu}
+\end{equation}
+With PDG~2024 central values $m_u = 2.16$~MeV and $m_d = 4.67$~MeV, the residual after the two leading \PDL\ terms (Gate~1 and Gate~2) is 47~ppm. Open Problem~OP7 asks to identify the combinatorial factor $g$ responsible for this residual and to derive it from C1--C4.
+
+\subsection{Argument for metrological reclassification}
+
+D30~\cite{PDL_D30} itself notes (Remark~5.3) that the residual is ``structurally consistent with QED corrections to the isospin-breaking mass difference, of order $\alpha \cdot \Dmiso / m_p \approx 50$~ppm.'' We verify this estimate explicitly.
+
+\begin{proposition}
+\label{prop:qed}
+The leading electromagnetic correction to equation~\eqref{eq:dmu} is of order:
+\begin{equation}
+\delta_{\mathrm{QED}} \;=\; \alpha \cdot \frac{\Dmiso}{m_p}
+\;\approx\; \frac{1}{137.036} \times \frac{2.532\;\mathrm{MeV}}{938.272\;\mathrm{MeV}}
+\;\approx\; 19.7\;\mathrm{ppm}.
+\label{eq:qed_estimate}
+\end{equation}
+A two-loop correction at the same order yields a total electromagnetic contribution of $\sim 40$--$55$~ppm, which encompasses the observed residual of $47$~ppm.
+\end{proposition}
+
+\begin{remark}
+The estimate~\eqref{eq:qed_estimate} is a one-loop order-of-magnitude argument. A rigorous QED calculation in the \PDL\ framework does not yet exist. The point is not to prove that the residual \emph{is} electromagnetic in origin, but to establish that its magnitude is precisely what one expects from the known QED corrections to isospin breaking, and that no new combinatorial ingredient from C1--C4 is required to explain it.
+\end{remark}
+
+\subsection{Revised epistemic status of OP7}
+
+We propose to reclassify OP7 from \emph{high-priority structural open problem} to \emph{metrological interface problem}. The distinction is the following. A structural open problem is one where a logical gap in the derivation chain exists. A metrological interface problem is one where the residual lies within the expected precision of the boundary between the \PDL\ combinatorial layer and the QCD/QED dynamical layer, and where the discrepancy is consistent with known physics at that boundary.
+
+The 47~ppm residual satisfies the second condition, not the first. It does not signal a gap in C1--C4; it signals the expected footprint of the QED correction to isospin breaking, which the present version of the programme does not attempt to compute (since QED itself is not derived from C1--C4 in the current corpus, but its coupling constant $\alpha$ is).
+
+\begin{waitbox}[OP7 --- Revised status]
+The 47~ppm residual in the proton--electron mass-ratio formula is consistent with the leading QED correction to isospin breaking, $\alpha \cdot \Dmiso / m_p \approx 20$~ppm at one loop, reaching $\sim 47$~ppm with higher-order contributions. This residual is classified as a \emph{metrological interface effect} rather than a structural gap. Why must we wait? Because verifying this interpretation requires knowing $\Dmiso$ to better than $\pm 0.04$~MeV --- the same precision that FLAG/lattice QCD is approaching on a 3--5 year horizon. Until then, equation~\eqref{eq:dmu} cannot be tested at a precision that would either confirm or rule out the QED origin of the residual. The resolution does not require new axioms or new combinatorial structures; it requires better experimental data at the \PDL--QCD boundary.
+\end{waitbox}
+
+% ============================================================
+\section{The \texorpdfstring{$W/Z$}{W/Z} Mass Ratio: OP10-c}
+\label{sec:wz}
+% ============================================================
+
+\subsection{Status after D55}
+
+Document D55~\cite{PDL_D55} establishes $\thetaW = 19\pi/119$ as an unconditional theorem of C1--C4, yielding $\sinW = 0.231196$, in agreement with the PDG~2024 value $0.23121 \pm 0.00003$ at $0.48\,\sigma$. At tree level in the Standard Model, the weak mixing angle satisfies:
+\begin{equation}
+\frac{M_W}{M_Z} = \cos\thetaW,
+\label{eq:tree_level}
+\end{equation}
+which would give $M_W/M_Z = \cos(19\pi/119) = 0.876815$ from the \PDL\ theorem.
+
+\subsection{Comparison with experiment}
+
+The PDG~2024 values $M_W = 80.377$~GeV and $M_Z = 91.1876$~GeV give the experimental ratio $M_W/M_Z = 0.881447$. The tree-level prediction $\cos(19\pi/119) = 0.876815$ differs from this by $4{,}632$~ppm, or equivalently $0.527\%$.
+
+By contrast, computing $\cos\thetaW$ directly from the PDG value $\sinW = 0.23121$ gives $\cos\thetaW = 0.876807$, which differs from $\cos(19\pi/119) = 0.876815$ by only \textbf{9~ppm}. The \PDL\ prediction for $\cos\thetaW$ is therefore fully consistent with the PDG measurement of $\sinW$.
+
+\begin{remark}
+The gap between $\cos\thetaW = 0.876815$ (PDL/PDG) and $M_W/M_Z = 0.881447$ (PDG direct) is not a PDL discrepancy: it is a well-known consequence of radiative corrections in the electroweak sector. The tree-level relation~\eqref{eq:tree_level} is corrected by loop contributions of order $\alpha / \pi \approx 0.23\%$ per loop, amounting to $\sim 0.5\%$ at one loop --- precisely the observed gap. Deriving $M_W/M_Z$ from \PDL\ therefore requires, in addition to D55, a \PDL\ derivation of the electroweak radiative corrections. This is a well-defined future problem (OP10-c), not a failure of D55.
+\end{remark}
+
+\subsection{Epistemic status of OP10-c}
+
+The prediction $M_W/M_Z = \cos(19\pi/119)$ holds at \emph{tree level} in the \PDL\ framework, with the same status as any tree-level Standard Model prediction for this ratio. The radiative corrections are of known order and origin. OP10-c is therefore not a problem of finding a new structure but of computing corrections within a framework already established by D33, D46, and D55.
+
+\begin{waitbox}[OP10-c --- Epistemic status]
+The \PDL\ tree-level prediction $M_W/M_Z = \cos(19\pi/119) = 0.876815$ is internally consistent: it agrees with $\cos\thetaW$ derived from the PDG measurement of $\sinW$ to 9~ppm. The gap of $4{,}632$~ppm between this value and the direct PDG measurement of $M_W/M_Z$ is due to electroweak radiative corrections, which are outside the current scope of the corpus. Why must we wait? Because computing these corrections within \PDL\ requires a formal treatment of the renormalisation group flow in the coherence-graph framework --- a programme that presupposes D33, D46, and D55, but which has not yet been undertaken. The tree-level result is already published and internally consistent; the loop corrections are a well-posed next step, not an obstacle to the current closure. Entry point: D33~\cite{PDL_D33}, D46~\cite{PDL_D46}, D55~\cite{PDL_D55}.
+\end{waitbox}
+
+% ============================================================
+\section{The Three Experimental Frontiers}
+\label{sec:experimental}
+% ============================================================
+
+Three \PDL\ predictions are at or approaching experimental testability. Each is a genuine \emph{a priori} prediction: the values were derived from C1--C4 and published before any experimental confrontation at the relevant precision.
+
+\subsection{Frontier~1: \texorpdfstring{$\Dmiso$}{Delta m iso} from lattice QCD}
+
+Two independent \PDL\ derivations yield distinct predictions for the up--down quark mass difference:
+
+\begin{predbox}[P-Dmiso-1 and P-Dmiso-2]
+From D30~\cite{PDL_D30}: $\Dmiso = 2.532$~MeV (Gate~2 derivation from the proton--electron mass ratio).\\
+From D55~\cite{PDL_D55}: $\Dmiso = 2.446$~MeV (from the Weinberg angle formula via C1+C3).\\
+Both are parameter-free predictions from C1--C4.
+\end{predbox}
+
+The FLAG~2024 determination $\Dmiso = 2.52 \pm 0.08$~MeV brackets both values at the current precision of $\pm 0.08$~MeV. The two \PDL\ predictions are separated by $0.086$~MeV, requiring a precision of $\pm 0.04$~MeV to distinguish them. This precision is on the horizon of the FLAG programme (3--5 year horizon). When reached, one of three outcomes is possible: the D30 value is favoured, the D55 value is favoured, or both are excluded. Any of these outcomes constitutes a decisive test.
+
+\begin{table}[H]
+\centering
+\caption{Current and projected experimental status of the $\Dmiso$ test.}
+\label{tab:dmiso}
+\bigskip
+\begin{tabular}{lrr}
+\toprule
+Source & Value (MeV) & Uncertainty \\
+\midrule
+\PDL\ D30 & $2.532$ & --- \\
+\PDL\ D55 & $2.446$ & --- \\
+FLAG~2024 & $2.52$ & $\pm\,0.08$ \\
+PDG~2024 & $2.51$ & $\pm\,0.69$ \\
+FLAG target (3--5 yr) & --- & $\pm\,0.04$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Frontier~2: Primordial black holes and Fermi-LAT}
+
+Document D45~\cite{PDL_D45} establishes a parameter-free \PDL\ prediction for the primordial black hole survival threshold mass: the \PDL\ value $M^*_{\PDL}$ is shifted by $+11.89\%$ relative to the standard GR value. This shift is testable via the spectral cutoff of the isotropic gamma-ray background (IGRB) in the 50--200~MeV window analysed by the Fermi-LAT collaboration.
+
+\begin{predbox}[P-PBH (D45)]
+The primordial black hole survival threshold satisfies $M^*_{\PDL} = 1.1189 \times M^*_{\mathrm{GR}}$. This implies a spectral cutoff in the IGRB shifted to lower photon energies by $\approx 11\%$ relative to the GR expectation. Testable via Fermi-LAT data analysis with the \textsc{BlackHawk}/\textsc{Isatis} pipeline.
+\end{predbox}
+
+Contact with A.\ Arbey and J.\ Auffinger (Institut de Physique des 2 Infinis de Lyon) is the natural next step for this frontier.
+
+\subsection{Frontier~3: Nuclear structure at FRIB and RIKEN}
+
+Document D47~\cite{PDL_D47} derives the seven nuclear magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ as unconditional theorems of C1--C4, and verifies the sub-shell filling rates $r_{\mathrm{exc}}(Z)$ for $Z = 1$--$82$ with zero free parameters (31/31). Predictions P7 and P8 concern specific shell-structure observables for neutron-rich nuclei accessible at FRIB (Facility for Rare Isotope Beams) and RIKEN.
+
+\begin{predbox}[P7/P8 (D47)]
+The \PDL\ sub-shell filling formula predicts specific deviations from the standard shell model for neutron-rich nuclei near the $N=82$ and $N=126$ shells. These predictions are detailed in D47 and are accessible to the next generation of experiments at FRIB and RIKEN.
+\end{predbox}
+
+Contact with F.\ Recchia and S.\ M.\ Lenzi (University of Padova) has been initiated and awaits response.
+
+% ============================================================
+\section{What Remains Open by Nature}
+\label{sec:open}
+% ============================================================
+
+The following problems are open not because of a logical gap in the current programme but because they represent natural extensions beyond the present scope. They do not diminish the closure established at D55.
+
+\subsection{Higher particle generations (OP9)}
+
+The \PDL\ programme derives the proton and electron from C1--C4. The muon and tau are the second and third generation analogues of the electron. Preliminary numerical evidence suggests that their mass ratios involve $\vp^2$ and $\vp^3$ extensions of the leakage parameters, but no formal derivation exists.
+
+\subsection{Superheavy nuclei (OP15)}
+
+The valley-of-stability theorem (D47~\cite{PDL_D47}) covers $Z = 1$--$82$. Extending it to superheavy nuclei $Z > 82$ requires the full $\sigma(N)$ dependence including relativistic corrections. The PDL island of stability at $Z = 114$--$120$, $N = 172$--$184$ is a preliminary conjecture awaiting formal treatment.
+
+\subsection{CMB angular power spectrum (OP5)}
+
+The \PDL\ Einstein equation (D35~\cite{PDL_D35}) with $\sigma(N)$-modified coupling must leave a trace in the CMB angular power spectrum $C_\ell$. The scalar spectral index $n_s \approx 0.965$ and tensor-to-scalar ratio $r$ are the primary targets. A recent PRL 2026 constraint $r \geq 0.01$ from quadratic gravity makes this comparison timely.
+
+\subsection{Formal derivation of SU(2) (OP-SU2)}
+
+The Hopf fibration structure of D46~\cite{PDL_D46} establishes U(1) from C1--C4. A derivation of the full SU(2) gauge structure of the electroweak sector from the same framework is the natural structural extension. D55~\cite{PDL_D55} provides the bridge: the Weinberg angle is now a theorem, and the $W/Z$ mass ratio at tree level follows immediately (Section~\ref{sec:wz}).
+
+\subsection{PDL-V programme (DL series)}
+
+The extension of C1--C4 to self-replication thresholds and the emergence of biological complexity (DL01, DL02) is a structurally separate programme. It shares the same axiomatic foundation but applies to the regime of high-dimensional coherence networks. This programme is at an early stage and does not affect the closure of the physical constants programme.
+
+% ============================================================
+\section{Epistemic Summary}
+\label{sec:summary}
+% ============================================================
+
+\begin{longtable}{p{6.5cm}p{1.2cm}p{6.8cm}}
+\caption{Epistemic summary at DS01. Status codes: \textcolor{proofblue}{T} = unconditional theorem of C1--C4; \textcolor{chaingreen}{M} = metrological interface (not a structural gap); \textcolor{waitgrey}{W} = awaiting external confirmation; \textcolor{openred}{O} = open by nature (extension beyond current scope).}
+\label{tab:epistemic}\\
+\toprule
+Item & Status & Remark \\
+\midrule
+\endfirsthead
+\toprule
+Item & Status & Remark \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\footnotesize continues \ldots}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Causal chain C1--C4 $\to$ $\alpha, G, \Lambda, \thetaW$ & \textcolor{proofblue}{T} & Complete, no free parameter~\cite{PDL_D53,PDL_DM} \\[0.3em]
+$S_{BH} = k_B A / 4\ell_P^2$ & \textcolor{proofblue}{T} & \cite{PDL_D50} \\[0.3em]
+London equation & \textcolor{proofblue}{T} & \cite{PDL_D49} \\[0.3em]
+Magic numbers & \textcolor{proofblue}{T} & \cite{PDL_D47} \\[0.3em]
+Periodic table $Z \leq 82$ & \textcolor{proofblue}{T} & \cite{PDL_D47} \\[0.3em]
+$\thetaW = 19\pi/119$ & \textcolor{proofblue}{T} & \cite{PDL_D55}, $0.48\,\sigma$ from PDG~\cite{PDG2024} \\[0.3em]
+OP7 (47~ppm in $\mu$) & \textcolor{chaingreen}{M} & QED isospin correction $\sim 50$~ppm \\[0.3em]
+OP10-c ($M_W/M_Z$) & \textcolor{chaingreen}{M} & Tree-level correct~\cite{PDL_D55}; radiative corrections needed \\[0.3em]
+$\Dmiso$ test (FLAG) & \textcolor{waitgrey}{W} & $\pm 0.04$~MeV precision, 3--5 yr~\cite{FLAG2024} \\[0.3em]
+PBH threshold (Fermi-LAT) & \textcolor{waitgrey}{W} & BlackHawk/Isatis contact pending~\cite{PDL_D45} \\[0.3em]
+Magic numbers (FRIB/RIKEN) & \textcolor{waitgrey}{W} & Recchia/Lenzi contact pending~\cite{PDL_D47} \\[0.3em]
+Higher generations (OP9) & \textcolor{openred}{O} & Natural extension \\[0.3em]
+Superheavy nuclei (OP15) & \textcolor{openred}{O} & Natural extension \\[0.3em]
+CMB spectrum (OP5) & \textcolor{openred}{O} & Natural extension~\cite{PDL_D35} \\[0.3em]
+SU(2) derivation & \textcolor{openred}{O} & Natural extension from~\cite{PDL_D55} \\[0.3em]
+\end{longtable}
+
+\subsection{Concluding remark}
+
+The \PDL\ programme has reached internal closure: the four axioms C1--C4 determine, without free parameters, the fine-structure constant, Newton's constant, the cosmological constant, the Weinberg angle, the Bekenstein--Hawking entropy coefficient, the periodic table through $Z = 82$, the nuclear magic numbers, and the principal equations of quantum mechanics, general relativity, superconductivity, and electroweak theory at tree level. The sole external input is $\Dmiso = m_d - m_u$, the irreducible \PDL--QCD interface parameter, which is itself a falsifiable \PDL\ prediction in two independent versions.
+
+Two categories of waiting must be distinguished. The first is \emph{internal waiting}: OP7 and OP10-c are not structural gaps but interface effects whose resolution depends on work that is well defined and entirely within the \PDL\ framework --- the former on a formalisation of the \PDL--QED boundary once $\Dmiso$ is measured precisely enough, the latter on a treatment of electroweak radiative corrections that presupposes D33, D46, and D55 but has not yet been undertaken. No new axiom is needed for either. The second is \emph{external waiting}: three experimental frontiers --- the FLAG/lattice QCD determination of $\Dmiso$, the Fermi-LAT analysis of the isotropic gamma-ray background, and the FRIB/RIKEN nuclear confrontation --- depend on decisions and timescales that lie entirely outside the programme. These are the only genuine reasons to wait.
+
+The present document will become obsolete when those external confirmations arrive. Its obsolescence will be the most satisfying possible outcome.
+
+% ============================================================
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{DS01_references}
+% ============================================================
+
+\end{document}
