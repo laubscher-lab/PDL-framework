@@ -324,3 +324,8 @@ D55
 https://doi.org/10.5281/zenodo.20179924
 Derivation of the Weinberg Angle from the PDL Axioms: Dephasing Sequencing, Lemma D, and a New Prediction for Δm_iso 
 D55___The_Weinberg_Angle.pdf
+
+DS01 
+https://doi.org/10.5281/zenodo.20187274
+Projective Dynamic Logo: Programme Closure at D55 — A Provisional Synthesis (DS01)
+DS01_____Programme_Closure_at_D55.pdf 
