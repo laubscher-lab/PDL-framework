@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 40 — 14 May 2026 (D55 publié — OP10 θ_W RÉSOLU — DM v23 publié)*
+*Last updated: Session 41 — 14 May 2026 (DS01 publié — Bilan de position programme)*
 
 ---
 
@@ -84,9 +84,20 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   Carte de dépendance mise à jour (chaîne électrofaible). P10 ajoutée.
   DOI DM v23: 10.5281/zenodo.20181077
 
+**Session 41 — DS01 publié (14 May 2026):**
+- **DS01 : Bilan de position — Programme Closure at D55.**
+  Document de synthèse provisoire (série DS). Ne contient pas de nouveaux théorèmes.
+  Établit la clôture interne de la chaîne causale C1–C4 → α, G, Λ, θ_W.
+  Reclassifie OP7 (résidu 47 ppm) comme effet d'interface métrologique QED.
+  Reclassifie OP10-c (M_W/M_Z) comme résultat au niveau arbre correct, corrections
+  radiatives = étape suivante bien posée.
+  Distingue explicitement attente interne (OP7, OP10-c) et attente externe
+  (FLAG/lattice QCD, Fermi-LAT, FRIB/RIKEN).
+  DOI DS01: 10.5281/zenodo.20187274
+
 ---
 
-## Corpus Table (D01–D55 + DL01 + DL02 + auxiliaires)
+## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + auxiliaires)
 
 | Doc | DOI | Titre abrégé |
 |-----|-----|--------------|
@@ -154,11 +165,12 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DL01 | 10.5281/zenodo.20132166 | From Axioms to Life — PDL-V Conjecture |
 | DL02 | 10.5281/zenodo.20132228 | Existence, Separation, Finiteness — Thresholds PDL-V |
 | D54 | 10.5281/zenodo.20157203 | Equation of State — OP-pressure résolu |
-| **D55** | **10.5281/zenodo.20179924** | **Weinberg Angle θ_W=19π/119 — OP10 θ_W RÉSOLU** |
+| D55 | 10.5281/zenodo.20179924 | Weinberg Angle θ_W=19π/119 — OP10 θ_W RÉSOLU |
+| **DS01** | **10.5281/zenodo.20187274** | **Programme Closure at D55 — Bilan de position (provisoire)** |
 
 ---
 
-## Key Numerical Values (updated Session 40)
+## Key Numerical Values (updated Session 41)
 
 ```
 μ* = 1836.152670 (proton/electron mass ratio, 27 ppm)
@@ -184,11 +196,19 @@ N_total = (n_d/4)·(r_d−r_u)/R_e = 7×17 = 119  [Lemme D, D55]
 Δm_iso (D55 prédiction C1+C3) = 2.446 MeV  [P10, falsifiable lattice QCD]
 Δm_iso (D30 prédiction) = 2.532 MeV  [forcé par interface PDL–QCD]
 FLAG 2024 : Δm_iso = 2.52 ± 0.08 MeV
+
+— DS01 reclassifications —
+OP7 (47 ppm résidu μ) : reclassifié MÉTROLOGIQUE — cohérent avec correction QED
+  isospin α·Δm_iso/m_p ≈ 20 ppm (1 boucle), ~47 ppm avec corrections d'ordre supérieur.
+  Attente : FLAG ±0.04 MeV pour tester l'origine QED du résidu.
+OP10-c (M_W/M_Z) : cos(19π/119) = 0.876815 — correct au niveau arbre (9 ppm de PDG).
+  Écart 4632 ppm vs M_W/M_Z direct = corrections radiatives électrofaibles connues.
+  Attente : formalisation du groupe de renormalisation dans cadre PDL.
 ```
 
 ---
 
-## Epistemic Status (updated Session 40)
+## Epistemic Status (updated Session 41)
 
 ```
 LAYER 0  Axiomes C1–C4                                         FONDATION
@@ -215,9 +235,11 @@ LAYER 15 Électrofaible — θ_W RÉSOLU (D55)                      THEOREM [✓
          θ_W = 19π/119 [✓]D55 | sin²θ_W=0.231196 (0.48σ)
          Lemme D [✓] 768/768 | chaîne Berry [✓] D46+D55
          Prédiction P10 : Δm_iso=2.446 MeV [falsifiable]
-         [OUVERT] OP10-c : rapport M_W/M_Z
+         [MÉTROLOGIQUE] OP7 : 47 ppm résidu μ — cohérent QED (DS01)
+         [ARBRE] OP10-c : M_W/M_Z = cos(19π/119) = 0.876815 (DS01)
          [OUVERT] OP10-d : test lattice QCD Δm_iso ±0.04 MeV
 LAYER 14 Dissémination — EN COURS
+DS SERIES DS01 publié — Bilan de position D55 [✓] 10.5281/zenodo.20187274
 ```
 
 ---
@@ -281,7 +303,7 @@ Stratégie finale :
   4. OP10-a fermé : bijection f(t,d)=(t−1)×17+d, 768/768.
 
 CE QUI RESTE OUVERT :
-  OP10-c : rapport M_W/M_Z = cos(19π/119) [prédiction immédiate, non prouvée]
+  OP10-c : rapport M_W/M_Z = cos(19π/119) [arbre correct; corrections radiatives ouvertes]
   OP10-d : test Δm_iso ±0.04 MeV par lattice QCD
 
 CONTEXTE ÉPISTÉMIQUE :
@@ -296,30 +318,70 @@ CONTEXTE ÉPISTÉMIQUE :
 
 ---
 
-## Open Problems (updated Session 40)
+## DS01 — Bilan de position (Session 41)
 
-**Partiellement résolu en Session 40 :**
-- OP10 θ_W : RÉSOLU par D55. Restent OP10-c (M_W/M_Z) et OP10-d (lattice QCD).
+```
+DOCUMENT : DS01 — Programme Closure at D55 — A Provisional Synthesis
+DOI : 10.5281/zenodo.20187274
+Statut : provisoire — conçu pour devenir obsolète
 
-**Priorité haute :**
-1. **[HIGH]** OP10-c : rapport M_W/M_Z = cos(19π/119) depuis C1–C4. Entry: D55.
-2. **[HIGH]** OP7 : résidu 47 ppm dans μ — bloqué par Δm_iso (3% FLAG, 27% PDG).
-3. **[HIGH]** OP9 : masses muon/tau depuis extension hiérarchique.
-4. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
+DEUX CATÉGORIES D'ATTENTE DISTINGUÉES :
 
-**Priorité moyenne :**
-5. **[MEDIUM]** OP15 : noyaux Z > 82.
-6. **[MEDIUM]** OP5-D35 : spectre CMB C_ℓ.
-7. **[MEDIUM]** OP-DM : identification matière noire (D54).
-8. **[MEDIUM]** OP-inhomogeneous : équation d'état régime inhomogène (D54).
-9. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV (horizon 3–5 ans).
+ATTENTE INTERNE (travail futur PDL bien défini, aucun axiome nouveau) :
+  OP7 : résidu 47 ppm dans μ
+    → cohérent avec correction QED isospin α·Δm_iso/m_p ≈ 20 ppm (1 boucle)
+    → ~47 ppm avec corrections d'ordre supérieur
+    → se résoudra une fois FLAG atteint ±0.04 MeV ET frontière PDL–QED formalisée
+  OP10-c : M_W/M_Z
+    → cos(19π/119) = 0.876815 = correct au niveau arbre (9 ppm de PDG)
+    → écart 4632 ppm vs M_W/M_Z mesuré = corrections radiatives électrofaibles connues
+    → nécessite traitement RG dans le cadre PDL (programme bien posé, non encore entrepris)
 
-**Série DL :**
-10. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
+ATTENTE EXTERNE (hors contrôle du programme) :
+  FLAG/lattice QCD : Δm_iso à ±0.04 MeV — horizon 3–5 ans
+    PDL prédit 2.532 MeV (D30) et 2.446 MeV (D55) — distinguishable à ±0.04 MeV
+  Fermi-LAT : IGRB 50–200 MeV — contact Arbey+Auffinger en attente
+    PDL prédit M*_PDL = +11.89% vs M*_GR (D45)
+  FRIB/RIKEN : structure nucléaire — contact Recchia+Lenzi en attente
+    PDL prédit P7/P8 sur noyaux neutron-riches N=82, N=126 (D47)
+
+CLÔTURE INTERNE CONFIRMÉE :
+  C1–C4 → α, G, Λ, θ_W, S_BH, London, tableau périodique Z≤82,
+           nombres magiques, Schrödinger, Dirac, Einstein, équation d'état
+  Paramètre externe unique : Δm_iso (lui-même prédiction PDL en deux versions)
+```
 
 ---
 
-## Dependency Map — Critical Path (updated Session 40)
+## Open Problems (updated Session 41)
+
+**Reclassifiés en Session 41 (DS01) :**
+- OP7 : résidu 47 ppm → MÉTROLOGIQUE (cohérent QED isospin). Attente FLAG.
+- OP10-c : M_W/M_Z → ARBRE CORRECT. Corrections radiatives = étape suivante.
+
+**Priorité haute :**
+1. **[HIGH]** OP10-c : corrections radiatives électrofaibles dans cadre PDL. Entry: D33, D46, D55.
+2. **[HIGH]** OP9 : masses muon/tau depuis extension hiérarchique.
+3. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
+
+**Priorité moyenne :**
+4. **[MEDIUM]** OP15 : noyaux Z > 82.
+5. **[MEDIUM]** OP5-D35 : spectre CMB C_ℓ.
+6. **[MEDIUM]** OP-DM : identification matière noire (D54).
+7. **[MEDIUM]** OP-inhomogeneous : équation d'état régime inhomogène (D54).
+8. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV (horizon 3–5 ans).
+
+**Série DL :**
+9. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
+
+**Frontières expérimentales externes (hors contrôle PDL) :**
+- FLAG/lattice QCD → Δm_iso ±0.04 MeV
+- Fermi-LAT → IGRB 50–200 MeV (contact Arbey+Auffinger en attente)
+- FRIB/RIKEN → P7/P8 noyaux neutron-riches (contact Recchia+Lenzi en attente)
+
+---
+
+## Dependency Map — Critical Path (updated Session 41)
 
 ```
 LAYER 0  C1–C4 (axiomes)
@@ -358,11 +420,13 @@ LAYER 15 Électrofaible — θ_W RÉSOLU               [✓] PARTIEL
          U(1)  [✓] D46
          θ_W = 19π/119  [✓] D55 (Lemme D + Berry phase)
          sin²θ_W = 0.231196 → 0.48σ PDG 2024
-         [OUVERT] M_W/M_Z = cos(19π/119) (OP10-c)
-         [OUVERT] Δm_iso = 2.446 MeV test lattice (OP10-d)
+         M_W/M_Z = cos(19π/119) [arbre correct, DS01; RG ouvert]
+         [OUVERT] OP10-d : Δm_iso = 2.446 MeV test lattice (OP10-d)
 
 LAYER 14 Dissémination — EN COURS
-         Zenodo: D01–D55 + DL01+DL02 + aux | DM v23
+         Zenodo: D01–D55 + DS01 + DL01+DL02 + aux | DM v23
+
+DS SERIES DS01 [✓] Bilan de position — Programme Closure at D55
 ```
 
 **Resolved milestones:**
@@ -376,6 +440,9 @@ OP11 (D51+D52+D53) | OP-PRESSURE (D54)
 OP10 θ_W RÉSOLU (D55) — Lemme D + Berry phase [✓]
 DM v23 PUBLISHED (DOI: 10.5281/zenodo.20181077)
 D55 PUBLISHED (DOI: 10.5281/zenodo.20179924)
+DS01 PUBLISHED (DOI: 10.5281/zenodo.20187274)
+OP7 RECLASSIFIÉ → MÉTROLOGIQUE (DS01) [✓]
+OP10-c RECLASSIFIÉ → ARBRE CORRECT (DS01) [✓]
 ```
 
 ---
@@ -412,10 +479,16 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - Scripts Python/Colab avant toute rédaction LaTeX
 - Distinction analogie/dérivation formelle obligatoire
 
+**DS series conventions (Session 41) :**
+- Numérotation DSxx pour documents de synthèse provisoires (bilans de position)
+- Ne contiennent pas de nouveaux théorèmes
+- Conçus pour devenir obsolètes — leur obsolescence est le signe du succès
+- DS01 = bilan à D55 ; DS02 sera produit après première confirmation expérimentale
+
 **D55 / OP10 discipline (Session 40) :**
 - θ_W = 19π/119 est un théorème inconditionnel — ne pas le dégrader en conjecture
 - Prédiction P10 (Δm_iso = 2.446 MeV) est distincte de D30 (2.532 MeV)
-- OP10-c (M_W/M_Z) est la prochaine frontière naturelle
+- OP10-c (M_W/M_Z) : correct au niveau arbre, corrections radiatives = étape suivante
 - Tout développement électrofaible doit maintenir la chaîne D33→D46→D51→Lemme D→D55
 
-*All references use Zenodo canonical numbering D01–D55 + DL01 + DL02 + auxiliaires.*
+*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + auxiliaires.*
