@@ -319,3 +319,8 @@ D54
 https://doi.org/10.5281/zenodo.20157203
 Equation of State of the PDL Coherence Fluid: Resolution of OP-pressure (Projective Dynamic Logo Framework, Document D54) 
 D54___Equation_of_State.pdf
+
+D55 
+https://doi.org/10.5281/zenodo.20179924
+Derivation of the Weinberg Angle from the PDL Axioms: Dephasing Sequencing, Lemma D, and a New Prediction for Δm_iso 
+D55___The_Weinberg_Angle.pdf
