@@ -329,3 +329,8 @@ DS01
 https://doi.org/10.5281/zenodo.20187274
 Projective Dynamic Logo: Programme Closure at D55 — A Provisional Synthesis (DS01)
 DS01_____Programme_Closure_at_D55.pdf 
+
+D-exp-SP2 
+https://doi.org/10.5281/zenodo.20242505 
+D-exp-SP2: Topological Optimality Criterion for Coherent Photon-to-Electron Conversion — PDL Framework Exploratory Document
+D_exp_SP2_Photon_to_Electron.pdf
