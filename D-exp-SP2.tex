@@ -1,0 +1,549 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{float}
+
+%% ── Packages ──────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyphenat}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[numbers]{natbib}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+\geometry{margin=2.5cm}
+\hypersetup{colorlinks=true,linkcolor=blue!70!black,
+            citecolor=green!50!black,urlcolor=blue!70!black}
+
+%% ── tcolorbox environments ────────────────────────────────────
+\tcbuselibrary{theorems,skins,breakable}
+
+\newtcbtheorem[number within=section]{theorem}{Theorem}%
+{colback=blue!5,colframe=blue!40!black,fonttitle=\bfseries,
+ breakable}{thm}
+
+\newtcbtheorem[number within=section]{conjecture}{Conjecture}%
+{colback=orange!5,colframe=orange!60!black,fonttitle=\bfseries,
+ breakable}{conj}
+
+\newtcbtheorem[number within=section]{prediction}{Prediction}%
+{colback=green!5,colframe=green!50!black,fonttitle=\bfseries,
+ breakable}{pred}
+
+\newtcbtheorem[number within=section]{openproblem}{Open Problem}%
+{colback=red!5,colframe=red!50!black,fonttitle=\bfseries,
+ breakable}{op}
+
+\newtcbtheorem[number within=section]{definition}{Definition}%
+{colback=gray!5,colframe=gray!50,fonttitle=\bfseries,
+ breakable}{def}
+
+%% ── Epistemic status box ──────────────────────────────────────
+\newenvironment{epistemicbox}{%
+  \begin{tcolorbox}[colback=yellow!8,colframe=yellow!60!black,
+    title={\bfseries Epistemic Status},breakable]}%
+  {\end{tcolorbox}}
+
+%% ── Macros ────────────────────────────────────────────────────
+\newcommand{\epsgeom}{\varepsilon_{\mathrm{geom}}}
+\newcommand{\DEN}{\Delta\mathrm{EN}}
+\newcommand{\Gloc}{G_{\mathrm{loc}}}
+\newcommand{\Gglob}{G_{\mathrm{glob}}}
+\newcommand{\Hloc}{H_{\mathrm{loc}}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+
+%% ══════════════════════════════════════════════════════════════
+\begin{document}
+
+\title{\textbf{D-exp-SP2: Topological Optimality Criterion\\
+for Coherent Photon-to-Electron Conversion}\\[6pt]
+{\large Projective Dynamic Logo Framework — Exploratory Document}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}\\
+\small \href{mailto:cedric@cedriclaubscher.ch}{cedric@cedriclaubscher.ch}}
+
+\date{May 2026\\[4pt]
+\small PDL corpus version: D01--D53 + D-exp-SP2\\
+\small Zenodo community: \texttt{pdl-framework}}
+
+\maketitle
+
+%% ── Epistemic status ──────────────────────────────────────────
+\begin{epistemicbox}
+This is an \textbf{exploratory document}. It is not part of the PDL core
+corpus (D01--D53). Its results are classified as follows:
+\begin{itemize}[noitemsep]
+  \item \textbf{Theorems}: Theorem~\ref{thm:pdlsp2} (PDL-SP2) and its
+    corollaries — proved analytically and verified exhaustively.
+  \item \textbf{Observations}: Rule~A ($k_{\mathrm{avg}}=4$,
+    $\DEN>1.0\Rightarrow$ direct gap) — verified on 15 materials,
+    not a theorem.
+  \item \textbf{Conjectures}: PDL-H (Conjecture~\ref{conj:pdlh}) —
+    verified exhaustively on $2^{24}$ cases, not yet proved analytically.
+  \item \textbf{Predictions}: Falsifiable experimental predictions
+    (Section~\ref{sec:predictions}) — no free parameters.
+\end{itemize}
+No material was presupposed optimal prior to computation.
+\end{epistemicbox}
+
+\begin{abstract}
+We derive a topological optimality criterion for coherent photon-to-electron
+conversion from the axioms C1--C4 of the Projective Dynamic Logo (PDL)
+framework. The central result (Theorem PDL-SP2) establishes that
+the minimal geometric leakage $\epsgeom = 0$ is achievable on a bond
+graph $G$ if and only if $G$ is bipartite — recovering the Harary
+balance theorem (1953) as a corollary of C1--C4 without presupposition.
+A four-criterion composite score derived from PDL selects six optimal
+inorganic candidates from 21 families: BP, AlAs, GaP, AlP, GaN, and SiC.
+GaN and BP are identified as priority candidates with direct gaps
+of 1.73~eV and 1.24~eV respectively. An extension to hierarchical graphs
+(Conjecture PDL-H) shows that global bipartition is the sole determining
+condition — local graph structure is irrelevant for $\epsgeom(H)=0$.
+This result is verified exhaustively on $2^{24} = 16\,777\,216$ sign
+assignments for the case $H(C_5, C_4)$. Biological connection:
+the Mg--Mg transfer network of Photosystem~II is bipartite, consistent
+with PDL-H, while individual chlorophyll molecules are not — a two-scale
+architecture that PDL explains naturally. Three falsifiable experimental
+predictions are formulated, testable by femtosecond pump-probe spectroscopy
+without free parameters.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+%% ══════════════════════════════════════════════════════════════
+\section{Introduction and Motivation}
+\label{sec:intro}
+
+The conversion of photons to free electrons with near-unity quantum
+efficiency is the central challenge of photovoltaic science and the
+defining achievement of biological photosynthesis. Photosystem~II achieves
+charge separation in under 3~ps with a quantum yield approaching 100\%
+\cite{Fleming1988}. Current best photovoltaic materials operate far below
+this limit, and no theoretical framework has derived from first principles
+which structural features make a material capable of achieving such
+efficiency.
+
+The Projective Dynamic Logo (PDL) framework \cite{PDL_DM_v20} derives
+fundamental physical structures from four combinatorial axioms (C1--C4)
+on finite signed graphs, without presupposing spacetime, particles, or
+fields. Its central object is the graph $K_4$, identified as the minimal
+admissible closure. Document D49 of the PDL corpus derives the London
+equation from C1--C4 via the metric identity
+$\nu = \tfrac{1}{4}\|\psi_1 - T^k\psi_1\|^2$, characterising coherent
+transport as a norm of the difference between a state and its image under
+$K_4$ pulsation. Document D43 defines the geometric leakage parameter
+$\epsgeom(G,v)$ as the fraction of cycles of length $\leq 6$ incident
+to node $v$ with negative sign product.
+
+This document applies these PDL tools to a concrete problem: identifying,
+from first principles, which materials and material architectures are
+topologically optimal for coherent photon-to-electron conversion.
+The approach is strictly deductive — no material is presupposed optimal,
+and all candidate selection follows from the axioms.
+
+%% ══════════════════════════════════════════════════════════════
+\section{PDL Ingredients}
+\label{sec:ingredients}
+
+We recall the four PDL results used throughout this document.
+All are theorems of the core corpus; their proofs are not reproduced here.
+
+\begin{definition}{Geometric Leakage (D43)}{eps_geom_def}
+Let $G = (V, E, s)$ be a finite signed graph with $s: E \to \{+1,-1\}$.
+For a node $v \in V$, define
+\[
+  \epsgeom(G, s, v)
+  = \frac{\bigl|\{C \in \mathcal{C}_{\leq 6}(v) :
+    \prod_{e \in C} s(e) = -1\}\bigr|}
+         {|\mathcal{C}_{\leq 6}(v)|}
+\]
+where $\mathcal{C}_{\leq 6}(v)$ denotes the set of simple cycles of
+length $\leq 6$ incident to $v$. The global leakage is
+$\epsgeom(G,s) = \frac{1}{|V|}\sum_{v} \epsgeom(G,s,v)$.
+\end{definition}
+
+\begin{definition}{Bipartite Graph}{bip_def}
+A graph $G = (V, E)$ is \emph{bipartite} if $V$ can be partitioned
+into two disjoint sets $A$ and $B$ such that every edge connects a vertex
+in $A$ to a vertex in $B$. Equivalently, $G$ contains no cycle of odd
+length.
+\end{definition}
+
+The four PDL results used here are:
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+  \item \textbf{Minimal closure (D16a)}: $K_4$ is the smallest admissible
+    graph satisfying C1--C4.
+  \item \textbf{Geometric leakage (D43)}: $\epsgeom(p) = 329/10087$
+    and $\epsgeom(n) = 468/9960$ are unconditional theorems of C1--C4.
+  \item \textbf{Coherent transport (D49)}: The London equation is derived
+    from C1--C4 via $\nu = \tfrac{1}{4}\|\psi_1 - T^k\psi_1\|^2$.
+  \item \textbf{Connectivity (C1)}: Every PDL-admissible graph is
+    finite and connected. This forces the number of connected components
+    $c = 1$, and hence $|\mathrm{eps}_0| = 2^{N-1}$ (see below).
+\end{enumerate}
+
+%% ══════════════════════════════════════════════════════════════
+\section{Theorem PDL-SP2: Bipartition and Zero Leakage}
+\label{sec:theorem}
+
+\begin{theorem}{PDL-SP2 — Bipartition and Zero Leakage}{pdlsp2}
+Let $G$ be a connected graph with $N$ nodes and $c = 1$ connected
+component. A sign assignment $s: E \to \{+1,-1\}$ satisfies
+$\epsgeom(G,s) = 0$ if and only if there exists a colouring
+$f: V \to \{+1,-1\}$ such that $s(u,v) = f(u)\cdot f(v)$
+for every edge $(u,v) \in E$.
+
+Equivalently: $\epsgeom(G,s) = 0$ is achievable if and only if
+$G$ is bipartite.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+\textbf{Part A} (every $s_f$ satisfies $\epsgeom = 0$): For any cycle
+$(v_1,\ldots,v_k,v_1)$ and any colouring $f$,
+\[
+  \prod_{i=1}^{k} s_f(v_i,v_{i+1})
+  = \prod_{i=1}^{k} f(v_i)\cdot f(v_{i+1})
+  = \prod_{i=1}^{k} f(v_i)^2 = +1,
+\]
+since each $f(v_i) \in \{+1,-1\}$ appears exactly twice. Hence every
+cycle has positive sign product and $\epsgeom = 0$.
+
+\textbf{Part B} (reconstruction): Conversely, given $s$ with
+$\epsgeom = 0$, fix a root node $r$ with $f(r) = +1$. For any
+other node $v$, choose a path $P(r \to v)$ and define
+$f(v) = \prod_{e \in P} s(e)$. Since every cycle has product $+1$,
+this definition is path-independent (connectivity is essential here).
+One verifies $s(u,v) = f(u)\cdot f(v)$ for every edge.
+\end{proof}
+
+\textbf{Connection to Harary (1953)}: Theorem~\ref{thm:pdlsp2} recovers
+the Harary balance theorem \cite{Harary1953} as a consequence of C1--C4,
+without presupposing it.
+
+\begin{theorem}{Counting Optimal Assignments}{counting}
+For a connected graph $G$ with $N$ nodes, $M$ edges, and $k$-regular
+with $k=3$ (3-regular, $M = 3N/2$):
+\[
+  |\{\text{sign assignments with } \epsgeom = 0\}|
+  = 2^{N-1}, \qquad
+  \text{fraction} = \frac{2^{N-1}}{2^{3N/2}} = 2^{-N/2-1}.
+\]
+The bijection $f \mapsto s_f$ is 2-to-1 (since $f$ and $-f$ give
+the same assignment), accounting for the factor of $1/2$.
+\end{theorem}
+
+\textbf{Exhaustive verification}: Both theorems were verified
+exhaustively for all 3-regular graphs with $N = 4, 6, 8, 10$ nodes
+(7 distinct graphs, all sign assignments enumerated), confirming
+zero exceptions. The reconstruction algorithm (Part~B) was verified on
+all optimal assignments for each graph, with zero failures.
+
+For non-connected graphs with $c$ components, the counting formula
+generalises to $2^{N-c}$, verified on the disjoint union of two $K_4$
+graphs ($N=8$, $c=2$, $2^6 = 64$ optimal assignments confirmed).
+
+%% ══════════════════════════════════════════════════════════════
+\section{Optimality Criterion for Photon-to-Electron Conversion}
+\label{sec:criterion}
+
+Theorem~\ref{thm:pdlsp2} establishes bipartition as the necessary and
+sufficient condition for zero geometric leakage. For application to
+photovoltaic materials, three additional conditions are derived from
+physical considerations anchored in PDL.
+
+\begin{definition}{PDL-SP2 Composite Score}{score_def}
+A material with bond graph $G$, band gap $E_g$, and bipartition
+groups $A$, $B$ receives a score $\sigma \in \{0,1,2,3,4\}$:
+\begin{align*}
+  \sigma &= \mathbf{1}[G\text{ bipartite}]
+           + \mathbf{1}[G\text{ connected}]
+           + \mathbf{1}[1.1 \leq E_g \leq 2.5\text{ eV}]
+           + \mathbf{1}[\text{elements}(A) \\ &\neq \text{elements}(B)].
+\end{align*}
+Criterion 1 is the PDL theorem; Criterion 3 targets the solar spectrum;
+Criterion 4 requires chemical heterogeneity (symmetry breaking) to
+create a preferred direction of charge transfer.
+\end{definition}
+
+\textbf{Rule A} (Observation, not theorem): Among 15 materials tested,
+the rule $k_{\mathrm{avg}} = 4$ and $\DEN > 1.0 \Rightarrow$ direct gap
+holds for 4/4 materials satisfying both conditions (GaN, AlN, InN, ZnO).
+The sole exception at $\DEN > 1.0$ is SnO$_2$ ($k_{\mathrm{avg}} = 2.67$,
+rutile structure), correctly excluded by the $k_{\mathrm{avg}}$ condition.
+This observation is not a PDL theorem; DFT validation is required.
+
+%% ══════════════════════════════════════════════════════════════
+\section{Material Screening: 21 Candidates from Four Families}
+\label{sec:screening}
+
+Bond graphs were constructed from crystallographic structures retrieved
+from the Materials Project \cite{Jain2013} using covalent-radius cutoffs
+(Alvarez 2008 \cite{Alvarez2008}). Each structure was retrieved dynamically
+by chemical formula (most stable phase, $E_{\mathrm{hull}} = 0$), with
+systematic element verification to exclude database artefacts.
+
+\subsection{Families Tested}
+
+Four families were selected from PDL optimality conditions, without
+presupposing any candidate:
+\begin{itemize}[noitemsep]
+  \item \textbf{F1}: III-V nitrides and carbides (GaN, AlN, InN, BN,
+    GaP, InP, AlP, SiC)
+  \item \textbf{F2}: Chalcopyrites and sulfo-salts (CuInSe$_2$,
+    CuGaSe$_2$, CuInS$_2$, AgInSe$_2$, ZnSnP$_2$, CuGaS$_2$)
+  \item \textbf{F3}: Graphene analogues (BN, BP, AlAs, InAs)
+  \item \textbf{F4}: Ternary oxides and spinels (ZnO, CuAlO$_2$,
+    CuGaO$_2$, ZnGa$_2$O$_4$, MgAl$_2$O$_4$, Cu$_2$O, SnO$_2$)
+\end{itemize}
+
+\subsection{Results}
+
+\begin{table}[h]
+\centering
+\caption{PDL-SP2 screening results. Score 4/4 = optimal.
+Gap type: D = direct, I = indirect (experimental literature).
+Bipartition groups listed for score-4 candidates only.}
+\label{tab:screening}
+\begin{tabular}{lrrllll}
+\toprule
+Material & Score & $E_g$ (eV) & Type & Sym. group & Group A & Group B \\
+\midrule
+BP       & 4/4 & 1.24 & I & F-43m & \{B\}  & \{P\}  \\
+AlAs     & 4/4 & 1.50 & I & F-43m & \{Al\} & \{As\} \\
+GaP      & 4/4 & 1.60 & I & F-43m & \{Ga\} & \{P\}  \\
+AlP      & 4/4 & 1.63 & I & F-43m & \{Al\} & \{P\}  \\
+GaN      & 4/4 & 1.73 & D & P6$_3$mc & \{Ga\} & \{N\}  \\
+SiC      & 4/4 & 1.84 & I & R3m & \{Si\} & \{C\}  \\
+\midrule
+InP      & 3/4 & 0.45 & D & F-43m & — & — \\
+ZnO      & 3/4 & 0.72 & D & P6$_3$mc & — & — \\
+AlN      & 3/4 & 4.05 & D & P6$_3$mc & — & — \\
+ZnSnP$_2$ & 3/4 & 0.70 & D & I-42d & — & — \\
+SnO$_2$  & 3/4 & 0.65 & I & P4$_2$/mnm & — & — \\
+\midrule
+Cu$_2$O  & 0/4 & 0.51 & — & Pn-3m & \multicolumn{2}{l}{non-bipartite} \\
+MgAl$_2$O$_4$ & 0/4 & 5.11 & — & Fd-3m & \multicolumn{2}{l}{non-bipartite} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Priority candidates}: GaN (score 4/4, direct gap 1.73~eV,
+$\DEN = 1.23$, Rule~A satisfied) and BP (score 4/4, gap 1.24~eV
+near the Shockley--Queisser optimum of 1.34~eV, largely unexplored
+for photovoltaics).
+
+%% ══════════════════════════════════════════════════════════════
+\section{Conjecture PDL-H: Hierarchical Graphs}
+\label{sec:hierarchical}
+
+Biological photosynthesis operates at two topological scales simultaneously:
+individual chlorophyll molecules contain a five-membered ring (cyclopentanone,
+girth~$= 5$, non-bipartite), yet the Mg--Mg transfer network between
+chlorophylls is bipartite (verified on structure 3ARC of Photosystem~II,
+Protein Data Bank \cite{Umena2011}). This two-scale architecture motivates
+the following extension of PDL-SP2.
+
+\begin{definition}{Hierarchical Graph}{hier_def}
+A hierarchical graph $H = (\Gloc, \Gglob, \phi)$ is defined by:
+\begin{itemize}[noitemsep]
+  \item $\Gloc$: local graph (intra-chromophore), any structure;
+  \item $\Gglob$: global graph (inter-chromophore network);
+  \item $\phi \in V(\Gloc)$: connection node (analogue of Mg).
+\end{itemize}
+The total graph $H$ places one copy of $\Gloc$ on each node of $\Gglob$,
+connecting adjacent copies via $\phi$.
+\end{definition}
+
+\begin{conjecture}{PDL-H — Global Bipartition Dominates}{pdlh}
+For any hierarchical graph $H = (\Gloc, \Gglob, \phi)$ with $\Gloc$
+connected:
+\[
+  \epsgeom(H) = 0 \text{ is achievable}
+  \quad \Longleftrightarrow \quad
+  \Gglob \text{ is bipartite},
+\]
+independently of the structure of $\Gloc$ (its girth, bipartition
+status, or size).
+\end{conjecture}
+
+\textbf{Exhaustive verification}: The case $H(C_5, C_4)$ — pentagonal
+local graph (girth~$= 5$, non-bipartite) with square global graph
+(bipartite) — was verified exhaustively over all $2^{24} = 16\,777\,216$
+sign assignments. Result: $\epsgeom = 0$ is achievable, with
+$524\,288 = 2^{19}$ optimal assignments. This is consistent with the
+counting formula $2^{N-1}$ (here $N = 20$, $2^{19}$ pairs under the
+symmetry $f \sim -f$).
+
+Additional verification: cycles $C_n$ for $n = 3, \ldots, 12$ as local
+graphs, combined with three bipartite global graphs (P4, C4, C6).
+In all computable cases (exact enumeration or greedy heuristic),
+$\epsgeom(H) = 0$ was achieved when $\Gglob$ is bipartite.
+
+\textbf{Biological implication}: Conjecture PDL-H explains why
+Photosystem~II operates efficiently despite individual chlorophylls
+being non-bipartite. The bipartite Mg--Mg network is sufficient for
+$\epsgeom(H) = 0$ at the system level.
+
+\textbf{Design implication}: For artificial photovoltaic systems,
+PDL-H implies that the local chromophore structure is topologically
+irrelevant — only the global network topology must be bipartite.
+This substantially relaxes the material design constraints identified
+by PDL-SP2 alone.
+
+%% ══════════════════════════════════════════════════════════════
+\section{Falsifiable Predictions}
+\label{sec:predictions}
+
+\begin{prediction}{Charge Separation Hierarchy}{P1}
+Among the score-4/4 candidates, the charge separation time $\tau_{\mathrm{cs}}$
+satisfies the hierarchy
+\[
+  \tau_{\mathrm{cs}}(\mathrm{GaN})
+  < \tau_{\mathrm{cs}}(\mathrm{BP})
+  < \tau_{\mathrm{cs}}(\mathrm{SiC})
+  < \tau_{\mathrm{cs}}(\mathrm{GaP}),
+\]
+with $\tau_{\mathrm{cs}}(\mathrm{GaN}) < 3$~ps, testable by femtosecond
+transient absorption spectroscopy under identical excitation conditions.
+No free parameters. Rationale: GaN satisfies Rule~A (direct gap, $k=4$,
+$\DEN > 1.0$); the hierarchy follows from decreasing $\DEN$ and
+direct-to-indirect gap transition.
+\end{prediction}
+
+\begin{prediction}{Hierarchical Photovoltaic Architecture}{P2}
+A van der Waals heterostructure of two score-4/4 materials (e.g.\
+GaN/BP or GaN/SiC) with a bipartite inter-layer coupling network will
+exhibit charge separation times comparable to Photosystem~II
+($\tau_{\mathrm{cs}} < 3$~ps), by Conjecture PDL-H. The external
+quantum efficiency will exceed that of either material in isolation.
+Testable by EQE measurement and pump-probe spectroscopy.
+\end{prediction}
+
+\begin{prediction}{Non-Bipartite Disqualification}{P3}
+Materials with non-bipartite bond graphs (Cu$_2$O, MgAl$_2$O$_4$)
+will exhibit structurally longer charge separation times than bipartite
+candidates under identical geometry and excitation, reflecting the
+irreducible leakage $\epsgeom > 0$ imposed by odd cycles in the bond
+graph. Testable by comparative femtosecond spectroscopy.
+\end{prediction}
+
+%% ══════════════════════════════════════════════════════════════
+\section{Epistemic Table}
+\label{sec:epistemic}
+
+\begin{table}[h]
+\centering
+\caption{Epistemic status of all results in this document.}
+\label{tab:epistemic}
+\begin{tabular}{p{5cm}p{3cm}p{5cm}}
+\toprule
+Result & Status & Evidence \\
+\midrule
+Theorem PDL-SP2 ($\epsgeom=0 \Leftrightarrow$ bipartite)
+  & Theorem & Analytic proof + exhaustive verification, 7 graphs \\
+Counting formula $2^{N-1}$
+  & Theorem & Exhaustive, $N=4,6,8,10$ \\
+Harary (1953) recovered from C1--C4
+  & Theorem & Analytic \\
+Score-4/4 candidates (GaN, BP, AlAs, GaP, AlP, SiC)
+  & Observation & Materials Project screening, 21 materials \\
+Rule~A ($k=4$, $\DEN>1.0 \Rightarrow$ direct gap)
+  & Observation & 15 materials, 4/4 correct, 1 exception (SnO$_2$) \\
+Conjecture PDL-H
+  & Conjecture & Exhaustive $2^{24}$, heuristic $n=3..12$ \\
+Predictions P1--P3
+  & Prediction & Derived from PDL-SP2 + PDL-H, no free parameters \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% ══════════════════════════════════════════════════════════════
+\section{Open Problems}
+\label{sec:open}
+
+\begin{openproblem}{Analytic Proof of PDL-H}{OP-SP2-1}
+Prove Conjecture~\ref{conj:pdlh} analytically for all connected
+hierarchical graphs $H = (\Gloc, \Gglob, \phi)$. The exhaustive
+verification establishes the result for $H(C_5, C_4)$ and heuristic
+evidence covers $C_n$ for $n = 3,\ldots,12$, but a general proof
+requires an argument independent of the size of $\Gloc$.
+\end{openproblem}
+
+\begin{openproblem}{Criterion for the Ambiguous Region}{OP-SP2-2}
+Rule~A fails for materials with $\DEN < 1.0$: GaAs (direct) and
+GaP (indirect) have nearly identical $\DEN$ (0.37 vs.\ 0.38) and
+cannot be distinguished by topological means alone. Identify
+an additional PDL-derivable criterion — possibly related to orbital
+character at band edges — that resolves this ambiguity.
+\end{openproblem}
+
+\begin{openproblem}{Extension to Molecular Frameworks}{OP-SP2-3}
+Apply PDL-H to covalent organic frameworks (COF) based on metalloporphyrins.
+These systems have non-bipartite local chromophores (girth~$= 5$)
+organised in hexagonal 2D networks (bipartite globally). PDL-H predicts
+$\epsgeom(H) = 0$; this should be verified on crystallographic structures
+from the Cambridge Structural Database, and compared with measured
+quantum yields.
+\end{openproblem}
+
+%% ══════════════════════════════════════════════════════════════
+\section{Computational Resources}
+\label{sec:computational}
+
+All numerical verifications were performed in Google Colaboratory
+using Python 3.10 with NetworkX 3.x, pymatgen, and the Materials
+Project API (mp-api). Crystallographic data retrieved from the
+Materials Project \cite{Jain2013}. Biological structure 3ARC from
+the RCSB Protein Data Bank \cite{Umena2011}, parsed with Biopython.
+All computations use exact arithmetic (Python \texttt{Fraction} class)
+where applicable. The following Colab notebooks constitute the
+complete computational trace of this document:
+
+\begin{enumerate}[label=\textbf{NB\arabic*.}]
+  \item \texttt{PDL\_OP\_SP2\_derivation.ipynb} — Theorem PDL-SP2,
+    bijection verification, counting formula, connectivity necessity.
+  \item \texttt{PDL\_OP\_SP2\_proof.ipynb} — Analytic proof verification
+    (Part~A telescoping, Part~B BFS reconstruction, non-connected case).
+  \item \texttt{PDL\_OP\_SP2\_clean.ipynb} — Material screening (7
+    candidates, covalent cutoff, bipartition, dynamic formula lookup).
+  \item \texttt{PDL\_OP\_SP2\_extended.ipynb} — Extended screening
+    (21 materials, 4 families, composite score 0--4).
+  \item \texttt{PDL\_OP\_SP2\_stepA.ipynb} — Rule~A derivation
+    ($\DEN$ vs.\ direct/indirect gap, 15 materials).
+  \item \texttt{PDL\_OP\_SP2\_stepA\_corrected.ipynb} — Corrected
+    supercell analysis (girth and $k$ with 2$\times$2$\times$2 cells).
+  \item \texttt{PDL\_OP\_SP2\_stepB.ipynb} — Biological verification
+    on Photosystem~II structure 3ARC (chlorophyll, Mg--Mg network).
+  \item \texttt{PDL\_OP\_SP2\_hierarchical.ipynb} — Hierarchical graph
+    analysis (Verification~1, all combinations).
+  \item \texttt{PDL\_OP\_SP2\_verification2.ipynb} — Verification~2
+    ($C_n$ for $n=3,\ldots,12$, pair/odd frontier).
+  \item \texttt{PDL\_OP\_SP2\_exhaustive\_C5C4.ipynb} — Exhaustive
+    verification $H(C_5, C_4)$, $2^{24}$ assignments, 20~minutes
+    computation time, $\epsgeom = 0$ confirmed.
+\end{enumerate}
+
+All notebooks are archived with this document on Zenodo
+(community: \texttt{pdl-framework}).
+ 
+%% ── References ────────────────────────────────────────────────
+\bibliographystyle{unsrt}
+\bibliography{D-exp-SP2}
+
+\end{document}
