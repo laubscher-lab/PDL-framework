@@ -1,336 +1,489 @@
-D01
-https://doi.org/10.5281/zenodo.18462686
-The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL)
-PDL.pdf
-
-D02 
-https://doi.org/10.5281/zenodo.18463130
-Introduction to the Projective Dynamic Logo (PDL)
-PDL_introduction.pdf
-
-D01F
-https://doi.org/10.5281/zenodo.18475542
-L'émergence de la réalité physique dans le cadre du Logo Dynamique Projectif (LDP)
-LPD.pdf
-
-D03
-https://doi.org/10.5281/zenodo.18509648
-The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo
-IMRad_PDL.pdf
-
-D04
-https://doi.org/10.5281/zenodo.18580925
-A Modal Dialogue between the Projective Dynamic Logo (PDL) and the Theory of Objectivity (TO)
-TO___PDL___Dialogue_article.pdf
-
-D05 
-https://doi.org/10.5281/zenodo.18581453
-A Minimal Relational Sketch for the Emergence of the Golden Ratio in PDL
-Emergence_of_the_Golden_Ratio_in_the_PDL_Proton_Surface.pdf
-
-D06
-https://doi.org/10.5281/zenodo.18581807
-Hierarchical Filtering of Coherence Leakage and Justification of the Exponent 18 in PDL
-Hierarchical_Coherence_Filtering_and_the_Exponent_18_in_PDL.pdf
-
-D07
-https://doi.org/10.5281/zenodo.18663156
-Gleason-Type Uniqueness of Born's Rule for Spin-1/2 in the PDL Framework
-Toward_a_Gleason_Type_Uniqueness_Theorem_for_Born_s_Rule_in_the_PDL_Framework.pdf
-
-D08
-https://doi.org/10.5281/zenodo.18664995
-Logical Leakage as Self-Maintained Probability: A Topological Reformulation in the Projective Dynamic Logo Framework
-A_Topological_Reformulation_in_the_Projective_Dynamic_Logo_Framework.pdf
-
-D09 
-https://doi.org/10.5281/zenodo.18675200
-Projective Dynamic Logo as a Foundational Research Programme: Current Status, Open Problems, and Interface with the Theory of Objectivity
-Position_paper_PDL.pdf
-
-D10 
-https://doi.org/10.5281/zenodo.18716526
-From Discrete Coherence Flux to Effective Fields: A Structured Programme within the PDL Framework
-Coherence_Effective_Fields_Gauss_Faraday_Structure_Triangle_Counts_Schrödinger_Dynamics_PDL_Framework.pdf
-
-D10a 
-https://doi.org/10.5281/zenodo.19329465
-Proper Time as Coherence-Cycle Counting, Emergent Metric, and Relational Distance in the Projective Dynamic Logo Framework 
-Proper_Time_as_Coherence_Cycle_Counting_and_Emergent_Metric_in_a_Relational_Graph_Framework_PDL.pdf 
-
-D11 
-https://doi.org/10.5281/zenodo.18725069
-Towards an Einstein--Dirac Unification from the Projective Dynamic Logo Framework 
-Towards_Einstein__Dirac_Unification_PDL.pdf
-
-D12 
-https://doi.org/10.5281/zenodo.18828183 
-A Structural Derivation of the Fine-Structure Constant from the Projective Dynamic Logo (PDL)
-Derivation_alpha_PDL_v2.pdf
-
-D13 
-https://doi.org/10.5281/zenodo.18831587 
-Compatibility of the Schrödinger Framework with the Projective Dynamic Logo (PDL) 
-Schodinger_PDL_v2.pdf
-
-D14 
-https://doi.org/10.5281/zenodo.18832069 
-Relational Emergence of Born's Rule and a Golden-Ratio Active Surface in PDL 
-Relational_Emergence_of_Born_s_Rule_and_a_Golden_Ratio_Active_Surface_in_PDL_v2.pdf
-
-D15 
-https://doi.org/10.5281/zenodo.18832542 
-Towards a Schrödinger–Type Dynamics from the Projective Dynamic Logo (PDL) A Relational Sketch Linking Coherence Cycles, Active Surfaces, and Effective Potentials 
-Sketch_derivation_Schroedinger_PDL_v2.pdf 
-
-D16 
-https://doi.org/10.5281/zenodo.18832953 
-On the Combinatorial Selection of the Proton Architecture in PDL, Axiomatic Constraints, Integer Structures, and a Uniqueness Conjecture 
-Combinatorial_Proton_Architecture_PDL_v2.pdf 
-
-D16a
-https://doi.org/10.5281/zenodo.18841034 
-Minimal Stationary Closures in the Projective Dynamic Logo Framework: Necessity of the (4,6) Block
-Minimal_Stationary_Closures_in_the_PDL_Framework_Necessity_of_the_4_6_Block.pdf 
-
-D16b
-https://doi.org/10.5281/zenodo.18841166 
-On the Combinatorial Selection and Local Uniqueness of the Proton Architecture in the PDL Framework 
-On_the_Combinatorial_Selection_and_Local_Uniqueness_of_the_PDL_Proton_Architecture.pdf 
-
-D17 
-https://doi.org/10.5281/zenodo.18841254 
-Coherence Leakage, Hierarchical Filtering, and the Exponent 18 in the Projective Dynamic Logo Framework 
-Coherence_Leakage_Hierarchical_Filtering_and_the_Exponent_18_in_the_PDLogo_Framework.pdf
-
-D18 
-https://doi.org/10.5281/zenodo.18854190 
-Discrete Cavity Modes and Logical Density of States in the PDL Framework 
-Discrete_Cavity_Modes_and_Logical_Density_of_States_in_the_PDL_Framework.pdf
-
-D19 
-https://doi.org/10.5281/zenodo.18854559 
-Existence as Pulsating Closure: An Ontological Meditation on the Projective Dynamic Logo Framework 
-Existence_as_Pulsating_Closure_An_Ontological_Meditation_on_the_PDL_Framework.pdf
-
-D20F 
-https://doi.org/10.5281/zenodo.18914532
-Qui que nous puissions être : Existence, cohérence et instruments vulnérables Une synthèse philosophique du cadre du Logo Dynamique Projectif 
-Qui_que_nous_puissions_etre_Existence_coherence_et_instruments_vulnerables_Une_synthese_philosophique_du_cadre_du_PDL.pdf
-
-D20 
-https://doi.org/10.5281/zenodo.18940047
-Whoever We May Be: Existence, Coherence, and Vulnerable Instruments – A Philosophical Synthesis of the PDL Framework_v2
-Whoever_We_May_Be_Existence__Coherence__and_Vulnerable_Instruments_A_Philosophical_Synthesis_of_the_PDL_Framework_v2.pdf
-
-D21
-https://doi.org/10.5281/zenodo.19056994 
-Universal Coherence Leakage: A Structural Bridge between the Gravitational and Electromagnetic Constants in the Projective Dynamic Logo Framework (Version 3) 
-Universal_Coherence_Leakage__Bridging_the_Gravitational_and_Fine_Structure_Constants_through_Discrete_Relational_Closures_V3.pdf
-
-DN 
-https://doi.org/10.5281/zenodo.19076555 
-Whatever We May Be — The Projective Dynamic Logo 
-Whoever_we_may_be___The_Projective_Dynamic_Logo_v2.pdf
-
-D22 
-https://doi.org/10.5281/zenodo.19164084
-Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in the Projective Dynamic Logo Framework 
-Pdl_nuclear_stability_skeleton.pdf 
-
-DM
-https://doi.org/10.5281/zenodo.20181077 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 23)
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v23.pdf 
-
-D23 
-https://doi.org/10.5281/zenodo.19197268 
-Topological Origin of the Exponent 18 in the PDL Gravitational Coupling: K_4, S^2, and the Periodic Table (version 2)
-PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
-
-D24 
-https://doi.org/10.5281/zenodo.19206960 
-Closure-Density Dependence of the Effective Gravitational Coupling and the Structural Origin of the Hubble Tension 
-Closure_Density_Dependence_of_the_Effective_Gravitational_Coupling_and_the_Structural_Origin_of_the_Hubble_Tension.pdf 
-
-D25 
-https://doi.org/10.5281/zenodo.19219858 
-A Parameter-Free Structural Bridge between the Fine-Structure Constant and Newton's Gravitational Constant in the PDL Framework 
-A_Parameter_Free_Structural_Bridge_between_the_Fine_Structure_Constant_and_Newton_s_Gravitational_Constant.pdf 
-
-D26 
-https://doi.org/10.5281/zenodo.19221310 
-Cosmological Resolution via PDL: G as a Topology-Dependent Parameter and the Hubble Tension as a Scale-Transition Signature 
-Pdl_hubble_resolution.pdf 
-
-D27 
-https://doi.org/10.5281/zenodo.19281988 
-Structural Derivation of N_CMB from the PDL Neutron Architecture: A Parameter-Free Resolution of the Hubble Tension 
-Structural_Derivation_of_N_CMB_from_the_PDL_Neutron_Architecture_and_Parameter_Free_Resolution_of_the_Hubble_Tension.pdf 
-
-D28 
-https://doi.org/10.5281/zenodo.19282932 
-The PDL–QCD Boundary: Structural Derivation of the Proton–Electron Mass Ratio Correction and a Parameter-Free Conjecture for Newton's Constant 
-The_PDL__QCD_Boundary__Structural_Derivation_of_the_Proton__Electron_Mass_Ratio_Correction_and_a_Parameter_Free_Conjecture_for_Newton_s_Constant.pdf 
-
-D29 
-https://doi.org/10.5281/zenodo.19283107 
-Axiomatic Derivation of the Leading Valence Engagement Amplitude in the PDL Framework: Gate 1 Resolved 
-Axiomatic_Derivation_of_the_Leading_Valence_Engagement_Amplitude_in_the_PDL_Framework.pdf 
-
-D30 
-https://doi.org/10.5281/zenodo.19294449 
-Structural Derivation of the QCD Correction Coefficient in the PDL Mass Ratio Formula and Completion of the ε_G Conjecture: Gate 2 Resolved 
-Structural_Derivation_of_the_QCD_Correction_Coefficient_in_the_PDL_Mass_Ratio_Formula_and_Completion_of_the_epsilon_G_Conjecture.pdf 
-
-D31 
-https://doi.org/10.5281/zenodo.19294984 
-Proof of the Density-Dependent Gravitational Coupling G_eff(N) = σ(N)·G_PDL in the PDL Framework: Gate 3 Resolved 
-Proof_of_the_Density_Dependent_Gravitational_Coupling.pdf 
-
-D32 
-https://doi.org/10.5281/zenodo.19306269 
-Schrödinger Dynamics from the (A)∧(B) Coupling Criterion in the PDL Framework
-Schrödinger_Dynamics_from_the__A___B__Coupling_Criterion.pdf 
-
-D33 
-https://doi.org/10.5281/zenodo.19307249 
-Dirac Equation from the SL(2,ℂ) Pulsation of K₄ in the PDL Framework 
-Dirac_Equation_from_the_SL_2_C__Pulsation_of_K_4_in_the_PDL_Framework.pdf 
-
-D34 
-https://doi.org/10.5281/zenodo.19322776 
-Born Rule from (A)∧(B)-Admissible Amplitudes in the PDL Framework
-Born_Rule_from__A___B__Admissible_Amplitudes_in_the_PDL_Framework.pdf 
-
-D35 
-https://doi.org/10.5281/zenodo.19322936 
-Quantitative Einstein Equation from G_eff(N) = σ(N)·G_PDL in the PDL Framework 
-Quantitative_Einstein_Equation_from_G_eff_N____sigma_N__G_PDL_in_the_PDL_Framework.pdf 
-
-D36 
-https://doi.org/10.5281/zenodo.19323033 
-Proof of G_eff(N) = σ(N)·G_PDL from the Trace Structure of K₄ and Independence of Gravitational Engagement 
-Proof_of_G_eff_N____sigma_N__G_PDL_from_the_Trace_Structure_of_K_4_and_Independence_of_Gravitational_Engagement.pdf 
-
-D37 
-https://doi.org/10.5281/zenodo.19354096 
-Surface Locality of Relational Entropy and the PDL Area Law 
-Surface_Locality_of_Relational_Entropy_and_the_PDL_Area_Law.pdf 
-
-D38 
-https://doi.org/10.5281/zenodo.19354682 
-Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling: the 4π4\pi
-4π Identity, Surface Counting, and Primordial Black Hole Predictions 
-Bekenstein__Hawking_Entropy_from_the_PDL_Effective_Gravitational_Coupling.pdf 
-
-D39 
-https://doi.org/10.5281/zenodo.19354989 
-Derivation of κ=Rsurf/Rtot\kappa = R_{\mathrm{surf}}/R_{\mathrm{tot}}
-κ=Rsurf​/Rtot​ from the PDL Axioms: the Indifference Lemma and Partial Resolution of Open Problem OP1 (D36) 
-Derivation_of_kappa___R_surf___R_tot_from_the_PDL_Axioms.pdf 
-
-D40 
-https://doi.org/10.5281/zenodo.19371523
-Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms: Derivation of the Valley of Stability, Magic Numbers, and Assembly Rules
-Nuclear_Stability_PDL.pdf 
-
-D41 
-https://doi.org/10.5281/zenodo.19384396
-Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: a PDL Analysis of ⁸⁴,⁸⁶Mo
-D41_pdl_island_of_inversion.pdf
-
-D42 
-https://doi.org/10.5281/zenodo.20041348
-Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
-D42_Derivation_of_H3_from_C1_C4.pdf
-
-D43 
-https://doi.org/10.5281/zenodo.19678389
-The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3) 
-D43_causal_chain.pdf
-
-D44 
-https://doi.org/10.5281/zenodo.19678474 
-Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms 
-D44___Closure_of_OP_B.pdf
-
-D45 
-https://doi.org/10.5281/zenodo.19810259 
-Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework: A Falsifiable Prediction for Fermi-LAT
-D45_pbh_threshold.pdf
-
-DN-fr
-https://doi.org/10.5281/zenodo.19924230 
-Quoi que nous soyons — Le Logo Dynamique Projectif 
-Quoi_que_nous_soyons___Le_Logo_Dynamique_Projectif_v2.pdf 
-
-D46 
-https://doi.org/10.5281/zenodo.19956932
-Born's Rule Level 2: Derivation of U(1) Phase Freedom from the K₄ Pulsation Structure in the PDL Framework
-D46___Born_s_Rule_Level_2.pdf 
-
-D47 
-https://doi.org/10.5281/zenodo.19967918 
-Derivation of the Sub-Shell Filling Rates and the Periodic Table from the PDL Axioms: Resolution of OP13 and OP14 
-D47___Shell_Filling.pdf
-
-D48
-https://doi.org/10.5281/zenodo.20151380 
-Derivation of the Coherence Stress-Energy Tensor from the PDL Axioms: Explicit Form of C_coh, Resolution of OP2 (D35) and OP-spin (PDL Framework, D48 — Version 3, Corrected) 
-D48___Coherence_Tensorv3.pdf
-
-D49 
-https://doi.org/10.5281/zenodo.20025166 
-Derivation of the London Equation from the PDL Axioms: Resolution of OP-London 
-D49___London_Equation.pdf 
-
-D50 
-https://doi.org/10.5281/zenodo.20029777
-Derivation of the Bekenstein–Hawking One-Quarter Coefficient from the PDL Axioms: Resolution of OP12/BH-3 
-D50___BH_Quarter.pdf
-
-D51 
-https://doi.org/10.5281/zenodo.20033520 
-The Cosmological Leakage Constant from the PDL Axioms: A Structural Derivation of C and Resolution of OP1-D35 
-D51_leakage_constant.pdf 
-
-D52 
-https://doi.org/10.5281/zenodo.20036769 
-Formal Identification of the Three Leakage Bases as Natural Representatives of the Three Cycles of β₁(K₄) = 3: Completion of the Proof of Conjecture PDL-C 
-D52_leakage_bases.pdf
-
-D53 
-https://doi.org/10.5281/zenodo.20052558 
-From Four Axioms to the Cosmological Constant: Causal Closure of the Chain C1–C4 to Λ — A Synthesis and Computational Verification (PDL Framework — D53)
-D53___causal_closure_lambda.pdf 
-
-DL01 
-https://doi.org/10.5281/zenodo.20132166
-From Axioms to Life: The PDL-V Conjecture and the Hierarchical Replication of C1–C4 (Projective Dynamic Logo Framework, Document DL01)
-DL01___From_Axioms_to_Life.pdf
-
-DL02 
-https://doi.org/10.5281/zenodo.20132228 
-Existence, Separation, and Finiteness of the Life and Consciousness Thresholds in the PDL-V Programme (Projective Dynamic Logo Framework, Document DL02) 
-DL02___Existence_Separation.pdf 
-
-D54 
-https://doi.org/10.5281/zenodo.20157203
-Equation of State of the PDL Coherence Fluid: Resolution of OP-pressure (Projective Dynamic Logo Framework, Document D54) 
-D54___Equation_of_State.pdf
-
-D55 
-https://doi.org/10.5281/zenodo.20179924
-Derivation of the Weinberg Angle from the PDL Axioms: Dephasing Sequencing, Lemma D, and a New Prediction for Δm_iso 
-D55___The_Weinberg_Angle.pdf
-
-DS01 
-https://doi.org/10.5281/zenodo.20187274
-Projective Dynamic Logo: Programme Closure at D55 — A Provisional Synthesis (DS01)
-DS01_____Programme_Closure_at_D55.pdf 
-
-D-exp-SP2 
-https://doi.org/10.5281/zenodo.20242505 
-D-exp-SP2: Topological Optimality Criterion for Coherent Photon-to-Electron Conversion — PDL Framework Exploratory Document
-D_exp_SP2_Photon_to_Electron.pdf
+# PDL Programme — Context and State
+
+*Last updated: Session 42 — 16 May 2026 (D-exp-SP2 publié — Critère topologique photon→électron)*
+
+---
+
+## Programme Summary
+
+The Projective Dynamic Logo (PDL) programme derives fundamental physical constants and structures from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields. The minimal admissible closure under these axioms is the complete graph K₄ on four vertices and six edges, identified with the electron prototype (R_e = 6). The proton is the minimal hierarchical composite, uniquely characterised by the integer quintuplet (24, 28, 930, 10087, 11017).
+
+**Three Gates resolved (Sessions 11–13):**
+- Gate 1 (D29): 155/11017 proved from PDL axioms alone
+- Gate 2 (D30): ε_G^B conjecture proved; G fully combinatorial (+ Δm_iso)
+- Gate 3 (D31): G_eff(N) = σ(N)·G_PDL proved
+
+**Session 14:** D32 — Schrödinger from (A)∧(B)
+
+**Session 15:** D33 (Dirac), D34 (Born Level 1), D35 (Einstein equation), D36 (Gate 3 strengthened)
+
+**Session 16:** DM v11; website update; LaTeX conventions established
+
+**Session 17:** D37 (area law BH-1), D38 (Bekenstein–Hawking BH-2), D39 (H3 partial)
+
+**Session 18:** DM v12; website update
+
+**Session 19:** D40 (nuclear stability Z=1..82), D41 (⁸⁴,⁸⁶Mo confrontation, P7/P8)
+
+**Session 20:** D42 (H3 proved from C1–C4 — OP1 RESOLVED); DM v15
+
+**Sessions 21–23:** ε_geom geometric derivation; OP-A RESOLVED; D43 v1–v2
+
+**Session 24:** D43v3 + D44 — OP-B RESOLVED; causal chain C1–C4→G COMPLETE
+
+**Session 25:** Documentation and audit; DM v16; GitHub push
+
+**Session 26:** D45 (PBH threshold Fermi-LAT prediction); DM v17
+
+**Session 27:** HAL deposits (D42, D43v3, D44, D45, DM v17, DN); email Arbey + Auffinger
+
+**Session 28:** Exploration D-exp-NCR — résultat négatif borné; OP-NCR identifié
+
+**Session 29 — D46 produit et publié (1 May 2026):**
+- D46: OP4 RÉSOLU — U(1) phase freedom depuis K₄ pulsation. DOI: 10.5281/zenodo.19956932
+- Quantum dynamics layer COMPLETE
+
+**Session 30 — D47 et D48v1 publiés (2 May 2026):**
+- OP13 FULLY RESOLVED (D47), OP14 FULLY RESOLVED (D47)
+- D47 DOI: 10.5281/zenodo.19967918
+
+**Session 33 — D49, D50, D51, D52 publiés (4 May 2026):**
+- OP-LONDON RÉSOLU (D49), OP12/BH-3 RÉSOLU (D50), OP1-D35 RÉSOLU (D51+D52)
+
+**Session 34 — D53 produit (6 May 2026):**
+- D53 : synthèse causale C1–C4→Λ, vérification 0.41 ppm. DOI: 10.5281/zenodo.20052558
+
+**Session 35 — DM v20 publié (6 May 2026):**
+- DM v20 DOI: 10.5281/zenodo.20054876
+
+**Session 36 — DL01 publié (10 May 2026):**
+- Série DL inaugurée. DOI: 10.5281/zenodo.20132166
+
+**Session 37 — DL02 publié (12 May 2026):**
+- Hiérarchie 4 < n*_vie < n*_conscience < n*_max < ∞ : théorème analytique.
+- DOI: 10.5281/zenodo.20132228
+
+**Session 38 — D48v3 et DM v21 (13 May 2026):**
+- Audit D48v1/v2 : quatre erreurs corrigées. OP-spin RÉSOLU.
+- D48v3 DOI: 10.5281/zenodo.20151380 | DM v21 DOI: 10.5281/zenodo.20154945
+
+**Session 39 — D54 publié ; OP10 exploré (13 May 2026):**
+- OP-PRESSURE RÉSOLU — D54 : w(N) = −ρ_Λ/ρ_coh(N), théorème inconditionnel C1–C4.
+  Ω_Λ^PDL = 0.6838 vs Ω_Λ^obs = 0.685 → accord 0.17%.
+  DOI: 10.5281/zenodo.20157203
+- OP10 (angle de Weinberg) : exploration approfondie.
+  Piste du séquençage de déphasage identifiée en fin de session.
+
+**Session 40 — D55 + DM v23 publiés (14 May 2026):**
+- **OP10 θ_W RÉSOLU** — D55 : θ_W = 19π/119, théorème inconditionnel C1–C4.
+  Lemme D prouvé exhaustivement (768 configurations (A)∧(B), 0 contre-exemple).
+  sin²θ_W = 0.231196 vs PDG 2024 : 0.23121 ± 0.00003 → accord 0.48σ.
+  Nouvelle prédiction P10 : Δm_iso = 2.446 MeV (FLAG 2024 : 0.92σ).
+  DOI D55: 10.5281/zenodo.20179924
+- **DM v23 publié** — corpus D01–D55 + DL01+DL02 + auxiliaires.
+  Carte de dépendance mise à jour (chaîne électrofaible). P10 ajoutée.
+  DOI DM v23: 10.5281/zenodo.20181077
+
+**Session 41 — DS01 publié (14 May 2026):**
+- **DS01 : Bilan de position — Programme Closure at D55.**
+  Document de synthèse provisoire (série DS). Ne contient pas de nouveaux théorèmes.
+  Établit la clôture interne de la chaîne causale C1–C4 → α, G, Λ, θ_W.
+  Reclassifie OP7 (résidu 47 ppm) comme effet d'interface métrologique QED.
+  Reclassifie OP10-c (M_W/M_Z) comme résultat au niveau arbre correct.
+  DOI DS01: 10.5281/zenodo.20187274
+
+**Session 42 — D-exp-SP2 produit et publié (16 May 2026):**
+- **D-exp-SP2 : Critère topologique pour la conversion cohérente photon→électron.**
+  Document exploratoire — hors corpus central D01–D55, statut épistémique explicite.
+  DOI: 10.5281/zenodo.20242505
+
+  **Théorème PDL-SP2 (démontré analytiquement + vérifié exhaustivement) :**
+  ε_geom(G,s) = 0 atteignable ⟺ G est bipartite.
+  Récupère le théorème d'équilibre de Harary (1953) depuis C1–C4 sans présupposé.
+  Formule de comptage : |eps0| = 2^(N−1), fraction = 2^(−N/2−1) pour k=3.
+  Vérifié exhaustivement sur 7 graphes 3-réguliers N=4..10, zéro exception.
+  Cas non connexe : |eps0| = 2^(N−c), vérifié sur deux K₄ disjoints.
+
+  **Screening de 21 matériaux (4 familles, sans présupposé) :**
+  6 candidats score 4/4 : BP (1.24 eV), AlAs (1.50 eV), GaP (1.60 eV),
+  AlP (1.63 eV), GaN (1.73 eV), SiC (1.84 eV).
+  Candidats prioritaires : GaN (gap direct, ΔEN=1.23, Règle A satisfaite)
+  et BP (gap quasi-idéal Shockley–Queisser, quasi-inexploré en PV).
+
+  **Règle A (observation, non théorème) :**
+  k_moy=4 ET ΔEN>1.0 ⟹ gap direct. Vérifié 4/4, exception SnO₂ (k=2.67).
+
+  **Conjecture PDL-H (vérifiée exhaustivement 2²⁴ cas) :**
+  Pour tout graphe hiérarchique H=(G_loc, G_glob), ε_geom(H)=0 atteignable
+  ⟺ G_glob est bipartite — indépendamment de la structure de G_loc.
+  Vérification exhaustive H(C₅,C₄) : 16 777 216 assignations, ε_geom=0 confirmé,
+  524 288 = 2¹⁹ assignations optimales (cohérent avec 2^(N−1), N=20).
+  Implication biologique : réseau Mg–Mg de Photosystème II bipartite (PDB 3ARC) —
+  PDL-H explique l'architecture à deux échelles de la photosynthèse naturelle.
+
+  **3 prédictions falsifiables sans paramètre libre :**
+  P1 : hiérarchie τ_cs(GaN) < τ_cs(BP) < τ_cs(SiC) < τ_cs(GaP),
+       τ_cs(GaN) < 3 ps — testable par spectroscopie pompe-sonde femtoseconde.
+  P2 : hétérostructure vdW de deux candidats 4/4 → EQE supérieure aux composants.
+  P3 : matériaux non bipartites (Cu₂O, MgAl₂O₄) → τ_cs structurellement plus long.
+
+  **10 notebooks Colab archivés avec le document sur Zenodo.**
+
+  **Problèmes ouverts introduits :**
+  OP-SP2-1 : preuve analytique de PDL-H pour tout H connexe.
+  OP-SP2-2 : critère pour la région ambiguë ΔEN < 1.0.
+  OP-SP2-3 : extension aux COF à métalloporphyrines (PDB + CSD).
+
+---
+
+## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + auxiliaires)
+
+| Doc | DOI | Titre abrégé |
+|-----|-----|--------------|
+| D01 | 10.5281/zenodo.18462686 | Emergence of Physical Reality (PDL) |
+| D02 | 10.5281/zenodo.18463130 | Introduction to PDL |
+| D01F | 10.5281/zenodo.18475542 | Émergence réalité physique (FR) |
+| D03 | 10.5281/zenodo.18509648 | PDL IMRaD |
+| D04 | 10.5281/zenodo.18580925 | PDL–TO Dialogue |
+| D05 | 10.5281/zenodo.18581453 | Golden Ratio in PDL |
+| D06 | 10.5281/zenodo.18581807 | Exponent 18 (sketch) |
+| D07 | 10.5281/zenodo.18663156 | Gleason Born's Rule |
+| D08 | 10.5281/zenodo.18664995 | Topological Reformulation |
+| D09 | 10.5281/zenodo.18675200 | Position Paper |
+| D10 | 10.5281/zenodo.18716526 | Coherence Effective Fields |
+| D10a | 10.5281/zenodo.19329465 | Proper Time as Coherence Counting |
+| D11 | 10.5281/zenodo.18725069 | Einstein–Dirac Unification |
+| D12 | 10.5281/zenodo.18828183 | Fine-Structure Constant |
+| D13 | 10.5281/zenodo.18831587 | Schrödinger Compatibility |
+| D14 | 10.5281/zenodo.18832069 | Born's Rule + Golden Ratio |
+| D15 | 10.5281/zenodo.18832542 | Schrödinger Dynamics Sketch |
+| D16 | 10.5281/zenodo.18832953 | Proton Architecture |
+| D16a | 10.5281/zenodo.18841034 | Minimal Closures (4,6) |
+| D16b | 10.5281/zenodo.18841166 | Proton Local Uniqueness |
+| D17 | 10.5281/zenodo.18841254 | Exponent 18 (full) |
+| D18 | 10.5281/zenodo.18854190 | Discrete Cavity Modes |
+| D19 | 10.5281/zenodo.18854559 | Existence as Pulsating Closure |
+| D20F | 10.5281/zenodo.18914532 | Synthèse philosophique (FR) |
+| D20 | 10.5281/zenodo.18940047 | Philosophical Synthesis (EN) |
+| D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
+| DN | 10.5281/zenodo.19076555 | Whatever We May Be |
+| D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
+| DM | 10.5281/zenodo.20181077 | Global Mapping v23 |
+| D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
+| D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
+| D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
+| D26 | 10.5281/zenodo.19221310 | Cosmological Resolution PDL |
+| D27 | 10.5281/zenodo.19281988 | N_CMB Derivation |
+| D28 | 10.5281/zenodo.19282932 | PDL–QCD Boundary |
+| D29 | 10.5281/zenodo.19283107 | Gate 1 — (A)∧(B) |
+| D30 | 10.5281/zenodo.19294449 | Gate 2 — ε_G |
+| D31 | 10.5281/zenodo.19294984 | Gate 3 — G_eff(N) |
+| D32 | 10.5281/zenodo.19306269 | Schrödinger from (A)∧(B) |
+| D33 | 10.5281/zenodo.19307249 | Dirac from K₄ |
+| D34 | 10.5281/zenodo.19322776 | Born Rule Level 1 |
+| D35 | 10.5281/zenodo.19322936 | Einstein Equation |
+| D36 | 10.5281/zenodo.19323033 | G_eff Trace Structure |
+| D37 | 10.5281/zenodo.19354096 | Area Law BH-1 |
+| D38 | 10.5281/zenodo.19354682 | Bekenstein–Hawking BH-2 |
+| D39 | 10.5281/zenodo.19354989 | κ Derivation + H3 partial |
+| D40 | 10.5281/zenodo.19371523 | Nuclear Stability Z=1..82 |
+| D41 | 10.5281/zenodo.19384396 | ⁸⁴,⁸⁶Mo Island of Inversion |
+| D42 | 10.5281/zenodo.20041348 | H3 from C1–C4 |
+| D43 | 10.5281/zenodo.19678389 | Causal Chain C1–C4→G |
+| D44 | 10.5281/zenodo.19678474 | OP-B: Filter Factor k |
+| D45 | 10.5281/zenodo.19810259 | PBH Threshold Fermi-LAT |
+| DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (FR) |
+| D46 | 10.5281/zenodo.19956932 | Born Level 2 + U(1) |
+| D47 | 10.5281/zenodo.19967918 | Shell Filling + Periodic Table |
+| D48 | 10.5281/zenodo.20151380 | Coherence Tensor C_coh v3 — OP-spin résolu |
+| D49 | 10.5281/zenodo.20025166 | London Equation |
+| D50 | 10.5281/zenodo.20029777 | BH Coefficient 1/4 |
+| D51 | 10.5281/zenodo.20033520 | Cosmological Leakage Constant C |
+| D52 | 10.5281/zenodo.20036769 | Leakage Bases β₁(K₄)=3 |
+| D53 | 10.5281/zenodo.20052558 | Causal Closure C1–C4→Λ (Synthesis) |
+| DL01 | 10.5281/zenodo.20132166 | From Axioms to Life — PDL-V Conjecture |
+| DL02 | 10.5281/zenodo.20132228 | Existence, Separation, Finiteness — Thresholds PDL-V |
+| D54 | 10.5281/zenodo.20157203 | Equation of State — OP-pressure résolu |
+| D55 | 10.5281/zenodo.20179924 | Weinberg Angle θ_W=19π/119 — OP10 θ_W RÉSOLU |
+| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 — Bilan de position (provisoire) |
+| **D-exp-SP2** | **10.5281/zenodo.20242505** | **Topological Optimality Criterion — Photon-to-Electron (Exploratoire)** |
+
+---
+
+## Key Numerical Values (updated Session 42)
+
+```
+μ* = 1836.152670 (proton/electron mass ratio, 27 ppm)
+G_PDL = 6.6742e-11 m³ kg⁻¹ s⁻²
+α_PDL = 1/137.036
+Λ_PDL ≈ 1.089×10⁻⁵² m⁻² (0.41 ppm vs D51, D53 verified)
+θ_W = 19π/119 → sin²θ_W = 0.231196 (0.48σ PDG 2024)
+Δm_iso = 2.446 MeV (D55, P10) / 2.532 MeV (D30) — distinguishable à ±0.04 MeV
+Ω_Λ^PDL = 0.6838 (0.17% vs obs)
+M*_PDL = +11.89% vs M*_GR (D45, Fermi-LAT prediction)
+
+D-exp-SP2 (Session 42) :
+|eps0| = 2^(N−1) pour graphes connexes k-réguliers
+Fraction optimale = 2^(−N/2−1) pour k=3
+Vérification exhaustive H(C₅,C₄) : 2^24 assignations, ε_geom=0 confirmé
+6 candidats PV score 4/4 : BP(1.24eV), AlAs(1.50), GaP(1.60),
+                            AlP(1.63), GaN(1.73), SiC(1.84)
+```
+
+---
+
+## D-exp-SP2 — Détail Session 42
+
+```
+DOCUMENT : D-exp-SP2 — Topological Optimality Criterion for Coherent
+           Photon-to-Electron Conversion
+DOI : 10.5281/zenodo.20242505
+Statut : exploratoire — hors corpus central D01–D55
+Langue : anglais
+
+THÉORÈME PDL-SP2 (analytique + exhaustif) :
+  ε_geom(G,s) = 0 atteignable ⟺ G bipartite
+  Preuve A : télescopage algébrique — tout cycle a produit +1
+  Preuve B : reconstruction BFS depuis racine — connexité nécessaire
+  Connexion Harary (1953) : récupéré depuis C1–C4 sans présupposé
+  Comptage : |eps0| = 2^(N−1), fraction = 2^(−N/2−1) pour k=3
+  Vérification : 7 graphes, N=4..10, exhaustif, zéro exception
+  Cas non connexe : |eps0| = 2^(N−c), vérifié 2K₄ (N=8,c=2,|eps0|=64)
+
+SCREENING 21 MATÉRIAUX :
+  Méthode : Materials Project API, cutoff covalent par paire,
+            formule chimique dynamique (pas d'ID codé en dur),
+            vérification des éléments systématique
+  Score composite 0–4 : bipartition + connexité + gap solaire + hétérogénéité
+  Résultats 4/4 : BP, AlAs, GaP, AlP, GaN, SiC
+  GaN : gap direct 1.73 eV, k=4, ΔEN=1.23, Règle A satisfaite → priorité 1
+  BP  : gap direct 1.24 eV (quasi-idéal SQ), quasi-inexploré PV → priorité 2
+
+RÈGLE A (observation, N=15) :
+  k_moy=4 ET ΔEN>1.0 ⟹ gap direct
+  4/4 corrects, exception SnO₂ (k=2.67, structure rutile)
+  Frontière ΔEN<1.0 : ambiguë — GaAs(0.37,direct) vs GaP(0.38,indirect)
+  OP-SP2-2 : critère manquant pour région ambiguë
+
+CONJECTURE PDL-H :
+  H=(G_loc,G_glob,φ) — G_loc quelconque, φ = nœud de connexion
+  ε_geom(H)=0 atteignable ⟺ G_glob bipartite (indépendant de G_loc)
+  V1 : tous C_n (n=3..12) × G_glob (P4,C4,C6,C3,C5,K4) — heuristique
+  V2 : H(C₅,C₄) exhaustif 2^24 = 16 777 216 assignations
+       ε_geom=0 CONFIRMÉ, 524 288 = 2^19 optimales (cohérent 2^(N-1), N=20)
+  Durée calcul : ~20 min sur Colab
+  OP-SP2-1 : preuve analytique ouverte
+
+CONNEXION BIOLOGIQUE :
+  Structure 3ARC (PDB) — Photosystème II T. elongatus, 1.9 Å
+  Chlorophylle isolée : non bipartite, girth=5 (pentagone cyclopentanone)
+  Réseau Mg–Mg (chaîne A, cutoff 15 Å) : bipartite ✓
+  PDL-H explique architecture deux échelles : local non-bipartite,
+  global bipartite → ε_geom(H)=0 au niveau système
+  OP-SP2-3 : extension aux COF métalloporphyrines ouverte
+
+3 PRÉDICTIONS FALSIFIABLES :
+  P1 : τ_cs(GaN)<τ_cs(BP)<τ_cs(SiC)<τ_cs(GaP), τ_cs(GaN)<3 ps
+       → spectroscopie pompe-sonde femtoseconde
+  P2 : hétérostructure vdW deux candidats 4/4 → EQE supérieure
+  P3 : Cu₂O, MgAl₂O₄ → τ_cs structurellement plus long
+
+10 NOTEBOOKS COLAB ARCHIVÉS :
+  NB1 : PDL_OP_SP2_derivation.ipynb — Théorème PDL-SP2, bijection, comptage
+  NB2 : PDL_OP_SP2_proof.ipynb — Preuve analytique, cas non connexe
+  NB3 : PDL_OP_SP2_clean.ipynb — Screening 7 matériaux
+  NB4 : PDL_OP_SP2_extended.ipynb — Screening 21 matériaux, score 0–4
+  NB5 : PDL_OP_SP2_stepA.ipynb — Règle A, ΔEN vs gap direct/indirect
+  NB6 : PDL_OP_SP2_stepA_corrected.ipynb — Supercellules 2×2×2
+  NB7 : PDL_OP_SP2_stepB.ipynb — Vérification biologique PDB 3ARC
+  NB8 : PDL_OP_SP2_hierarchical.ipynb — Graphes hiérarchiques V1
+  NB9 : PDL_OP_SP2_verification2.ipynb — C_n n=3..12, frontière pair/impair
+  NB10 : exhaustive H(C₅,C₄), 2^24 assignations, ~20 min
+```
+
+---
+
+## DS01 — Bilan de position (Session 41)
+
+```
+DOCUMENT : DS01 — Programme Closure at D55 — A Provisional Synthesis
+DOI : 10.5281/zenodo.20187274
+Statut : provisoire — conçu pour devenir obsolète
+
+DEUX CATÉGORIES D'ATTENTE DISTINGUÉES :
+
+ATTENTE INTERNE (travail futur PDL bien défini, aucun axiome nouveau) :
+  OP7 : résidu 47 ppm → MÉTROLOGIQUE (cohérent QED isospin)
+  OP10-c : M_W/M_Z → ARBRE CORRECT. Corrections radiatives = étape suivante.
+
+ATTENTE EXTERNE (hors contrôle du programme) :
+  FLAG/lattice QCD : Δm_iso à ±0.04 MeV — horizon 3–5 ans
+  Fermi-LAT : IGRB 50–200 MeV — contact Arbey+Auffinger en attente
+  FRIB/RIKEN : structure nucléaire — contact Recchia+Lenzi en attente
+
+CLÔTURE INTERNE CONFIRMÉE :
+  C1–C4 → α, G, Λ, θ_W, S_BH, London, tableau périodique Z≤82,
+           nombres magiques, Schrödinger, Dirac, Einstein, équation d'état
+  Paramètre externe unique : Δm_iso (lui-même prédiction PDL en deux versions)
+```
+
+---
+
+## Open Problems (updated Session 42)
+
+**Reclassifiés en Session 41 (DS01) :**
+- OP7 : résidu 47 ppm → MÉTROLOGIQUE. Attente FLAG.
+- OP10-c : M_W/M_Z → ARBRE CORRECT. Corrections radiatives = étape suivante.
+
+**Nouveaux — D-exp-SP2 (Session 42) :**
+- **[MEDIUM]** OP-SP2-1 : preuve analytique de PDL-H pour tout H connexe.
+- **[MEDIUM]** OP-SP2-2 : critère pour région ambiguë ΔEN < 1.0 (gap direct/indirect).
+- **[LOW]** OP-SP2-3 : extension aux COF métalloporphyrines (CSD + DFT).
+
+**Priorité haute :**
+1. **[HIGH]** OP10-c : corrections radiatives électrofaibles dans cadre PDL.
+2. **[HIGH]** OP9 : masses muon/tau depuis extension hiérarchique.
+3. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
+
+**Priorité moyenne :**
+4. **[MEDIUM]** OP15 : noyaux Z > 82.
+5. **[MEDIUM]** OP5-D35 : spectre CMB C_ℓ.
+6. **[MEDIUM]** OP-DM : identification matière noire (D54).
+7. **[MEDIUM]** OP-inhomogeneous : équation d'état régime inhomogène (D54).
+8. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV.
+9. **[MEDIUM]** OP-SP2-1 : preuve analytique PDL-H.
+10. **[MEDIUM]** OP-SP2-2 : critère région ambiguë.
+
+**Série DL :**
+11. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
+
+**Frontières expérimentales externes :**
+- FLAG/lattice QCD → Δm_iso ±0.04 MeV
+- Fermi-LAT → IGRB 50–200 MeV (contact Arbey+Auffinger en attente)
+- FRIB/RIKEN → P7/P8 noyaux neutron-riches (contact Recchia+Lenzi en attente)
+- EPFL/EPFZ → validation expérimentale D-exp-SP2 (à initier)
+
+---
+
+## Dependency Map — Critical Path (updated Session 42)
+
+```
+LAYER 0  C1–C4 (axiomes)
+
+LAYER 1  K₄, n=3, exponent 18                     [✓] D16a, D23
+
+LAYER 2  Quintuplet, R_surf, H3, κ                 [✓] D16b, D05, D42
+
+LAYER 3  (A)∧(B), Gates 1–3, Δm_iso               [✓] D29, D30, D31
+
+LAYER 4  ε_geom, k, ε_G                            [✓] D43v3, D44
+
+LAYER 5  G_PDL, α, μ*                              [✓] D21, D12, D25
+
+LAYER 6  QCD interface Δm_iso = 2.532 MeV          FORCED
+
+LAYER 7  Dynamiques — COMPLETE                     [✓] D32–D35, D42, D46, D49
+
+LAYER 8  Cosmologie                                [✓] D27, D35, D42
+
+LAYER 9  Stabilité nucléaire — COMPLETE            [✓] D40, D47
+
+LAYER 10 Trous noirs — COMPLETE                    [✓] D37, D38, D42, D45, D50
+
+LAYER 11 Tenseur de cohérence — COMPLETE           [✓] D48v3, D49, D51–D52
+         OP-spin résolu | OP-pressure résolu (D54)
+         Ω_Λ^PDL = 0.6838 (0.17%)
+
+LAYER 12 Λ_PDL — COMPLETE                         [✓] D51, D52, D53
+
+LAYER 13 Vie/conscience                            [✓] DL01, DL02
+         [?] DL03 (n*_vie numérique)
+
+LAYER 15 Électrofaible — θ_W RÉSOLU               [✓] PARTIEL
+         SU(2) [✓] D33 | U(1) [✓] D46
+         θ_W = 19π/119 [✓] D55
+         M_W/M_Z = cos(19π/119) [arbre correct, DS01; RG ouvert]
+
+LAYER 16 Applications exploratoires               [D-exp-SP2]
+         PDL-SP2 : bipartition ⟺ ε_geom=0 [✓ théorème]
+         PDL-H : G_glob bipartite ⟺ ε_H=0 [conjecture, 2^24 vérifié]
+         6 candidats PV score 4/4 [observation]
+         3 prédictions falsifiables [à valider EPFL/EPFZ]
+
+LAYER 14 Dissémination — EN COURS
+         Zenodo: D01–D55 + DS01 + DL01+DL02 + D-exp-SP2 + aux | DM v23
+```
+
+**Resolved milestones:**
+```
+GATE 1 (D29) | GATE 2 (D30) | GATE 3 (D36, unconditional D42)
+OP1 (D42) H3 | OP-A (D43v3) | OP-B (D44) | OP8 (D44)
+OP4 (D46) U(1) | OP13 (D47) Δn=4 | OP14 (D47) r_exc
+OP2-D35 COMPLETE (D48v3) | OP-SPIN RESOLVED (D48v3)
+OP-LONDON (D49) | OP12/BH-3 (D50) | OP1-D35 (D51+D52)
+OP11 (D51+D52+D53) | OP-PRESSURE (D54)
+OP10 θ_W RÉSOLU (D55) — Lemme D + Berry phase [✓]
+DM v23 PUBLISHED (DOI: 10.5281/zenodo.20181077)
+D55 PUBLISHED (DOI: 10.5281/zenodo.20179924)
+DS01 PUBLISHED (DOI: 10.5281/zenodo.20187274)
+OP7 RECLASSIFIÉ → MÉTROLOGIQUE (DS01) [✓]
+OP10-c RECLASSIFIÉ → ARBRE CORRECT (DS01) [✓]
+D-exp-SP2 PUBLISHED (DOI: 10.5281/zenodo.20242505)
+  Théorème PDL-SP2 [✓] | Conjecture PDL-H [2^24 vérifié]
+  6 candidats PV score 4/4 | 3 prédictions falsifiables
+```
+
+---
+
+## External Scientific Connections
+
+**E1** — Afshordi et al. PRL 2026: r ≥ 0.01 (quadratic gravity). PDL inflationary extension must be compatible.
+
+**E2** — Yu et al. ApJ 2026: AGN S/E ratio — observational template for σ(N(z))² (PDL prediction P6).
+
+**E3** — Ding et al. PRL 2026: magic numbers from spin-orbit splitting via RG flow. PDL dérive s=1/12 axiomatiquement (D47 OP13). Complémentaires.
+
+**E4** — FLAG 2024: Δm_iso = 2.52 ± 0.08 MeV. PDL prédit 2.446 MeV (D55) et 2.532 MeV (D30). Distinguishable à ±0.04 MeV.
+
+**E5** — D-exp-SP2 (Session 42) : connexion Harary (1953) retrouvée depuis C1–C4. Connexion Shockley–Queisser (1961) : BP à 1.24 eV quasi-idéal. Connexion Fleming et al. Nature 1988 : τ_cs < 3 ps comme prédiction P1. Validation expérimentale à initier (EPFL Chergui / Marzari).
+
+---
+
+## Instructions for Next Session
+
+Start by saying: *"Read PDL_context.md and the corpus files from the project."*
+
+Update after each session: Programme Summary, Corpus Table, Key Numerical Values, Epistemic Status, Open Problems, Dependency Map.
+
+**LaTeX conventions (Session 16):**
+- No spurious mid-sentence line breaks in .tex source
+- British English throughout
+- \bibliographystyle{unsrt} with \usepackage[numbers]{natbib}
+- theorem/proof/definition/conjecture/openproblem/resolvedproblem environments
+- Epistemic status table with p{} fixed-width columns
+- All HTML links: target="_blank" rel="noopener"
+
+**DL series conventions (Session 36):**
+- Numérotation DLxx pour tous les documents vie/conscience
+- Même discipline épistémique que D-series : stratification explicite obligatoire
+- Scripts Python/Colab avant toute rédaction LaTeX
+- Distinction analogie/dérivation formelle obligatoire
+
+**DS series conventions (Session 41) :**
+- Numérotation DSxx pour documents de synthèse provisoires (bilans de position)
+- Ne contiennent pas de nouveaux théorèmes
+- Conçus pour devenir obsolètes — leur obsolescence est le signe du succès
+
+**D-exp series conventions (Session 42) :**
+- Numérotation D-exp-XX pour documents exploratoires hors corpus central
+- Statut épistémique explicite obligatoire (boîte jaune en LaTeX)
+- Vérification Colab exhaustive avant toute rédaction
+- Pas de présupposé matériau — dérivation depuis les axiomes uniquement
+- Notebooks archivés sur Zenodo avec le document
+
+**D55 / OP10 discipline (Session 40) :**
+- θ_W = 19π/119 est un théorème inconditionnel — ne pas dégrader en conjecture
+- Prédiction P10 (Δm_iso = 2.446 MeV) est distincte de D30 (2.532 MeV)
+- OP10-c (M_W/M_Z) : correct au niveau arbre, corrections radiatives = étape suivante
+
+*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + auxiliaires.*
