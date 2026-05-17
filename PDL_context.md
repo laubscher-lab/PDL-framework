@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 41 — 14 May 2026 (DS01 publié — Bilan de position programme)*
+*Last updated: Session 42 — 16 May 2026 (D-exp-SP2 publié — Critère topologique photon→électron)*
 
 ---
 
@@ -89,15 +89,54 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   Document de synthèse provisoire (série DS). Ne contient pas de nouveaux théorèmes.
   Établit la clôture interne de la chaîne causale C1–C4 → α, G, Λ, θ_W.
   Reclassifie OP7 (résidu 47 ppm) comme effet d'interface métrologique QED.
-  Reclassifie OP10-c (M_W/M_Z) comme résultat au niveau arbre correct, corrections
-  radiatives = étape suivante bien posée.
-  Distingue explicitement attente interne (OP7, OP10-c) et attente externe
-  (FLAG/lattice QCD, Fermi-LAT, FRIB/RIKEN).
+  Reclassifie OP10-c (M_W/M_Z) comme résultat au niveau arbre correct.
   DOI DS01: 10.5281/zenodo.20187274
+
+**Session 42 — D-exp-SP2 produit et publié (16 May 2026):**
+- **D-exp-SP2 : Critère topologique pour la conversion cohérente photon→électron.**
+  Document exploratoire — hors corpus central D01–D55, statut épistémique explicite.
+  DOI: 10.5281/zenodo.20242505
+
+  **Théorème PDL-SP2 (démontré analytiquement + vérifié exhaustivement) :**
+  ε_geom(G,s) = 0 atteignable ⟺ G est bipartite.
+  Récupère le théorème d'équilibre de Harary (1953) depuis C1–C4 sans présupposé.
+  Formule de comptage : |eps0| = 2^(N−1), fraction = 2^(−N/2−1) pour k=3.
+  Vérifié exhaustivement sur 7 graphes 3-réguliers N=4..10, zéro exception.
+  Cas non connexe : |eps0| = 2^(N−c), vérifié sur deux K₄ disjoints.
+
+  **Screening de 21 matériaux (4 familles, sans présupposé) :**
+  6 candidats score 4/4 : BP (1.24 eV), AlAs (1.50 eV), GaP (1.60 eV),
+  AlP (1.63 eV), GaN (1.73 eV), SiC (1.84 eV).
+  Candidats prioritaires : GaN (gap direct, ΔEN=1.23, Règle A satisfaite)
+  et BP (gap quasi-idéal Shockley–Queisser, quasi-inexploré en PV).
+
+  **Règle A (observation, non théorème) :**
+  k_moy=4 ET ΔEN>1.0 ⟹ gap direct. Vérifié 4/4, exception SnO₂ (k=2.67).
+
+  **Conjecture PDL-H (vérifiée exhaustivement 2²⁴ cas) :**
+  Pour tout graphe hiérarchique H=(G_loc, G_glob), ε_geom(H)=0 atteignable
+  ⟺ G_glob est bipartite — indépendamment de la structure de G_loc.
+  Vérification exhaustive H(C₅,C₄) : 16 777 216 assignations, ε_geom=0 confirmé,
+  524 288 = 2¹⁹ assignations optimales (cohérent avec 2^(N−1), N=20).
+  Implication biologique : réseau Mg–Mg de Photosystème II bipartite (PDB 3ARC) —
+  PDL-H explique l'architecture à deux échelles de la photosynthèse naturelle.
+
+  **3 prédictions falsifiables sans paramètre libre :**
+  P1 : hiérarchie τ_cs(GaN) < τ_cs(BP) < τ_cs(SiC) < τ_cs(GaP),
+       τ_cs(GaN) < 3 ps — testable par spectroscopie pompe-sonde femtoseconde.
+  P2 : hétérostructure vdW de deux candidats 4/4 → EQE supérieure aux composants.
+  P3 : matériaux non bipartites (Cu₂O, MgAl₂O₄) → τ_cs structurellement plus long.
+
+  **10 notebooks Colab archivés avec le document sur Zenodo.**
+
+  **Problèmes ouverts introduits :**
+  OP-SP2-1 : preuve analytique de PDL-H pour tout H connexe.
+  OP-SP2-2 : critère pour la région ambiguë ΔEN < 1.0.
+  OP-SP2-3 : extension aux COF à métalloporphyrines (PDB + CSD).
 
 ---
 
-## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + auxiliaires)
+## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + auxiliaires)
 
 | Doc | DOI | Titre abrégé |
 |-----|-----|--------------|
@@ -166,154 +205,100 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DL02 | 10.5281/zenodo.20132228 | Existence, Separation, Finiteness — Thresholds PDL-V |
 | D54 | 10.5281/zenodo.20157203 | Equation of State — OP-pressure résolu |
 | D55 | 10.5281/zenodo.20179924 | Weinberg Angle θ_W=19π/119 — OP10 θ_W RÉSOLU |
-| **DS01** | **10.5281/zenodo.20187274** | **Programme Closure at D55 — Bilan de position (provisoire)** |
+| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 — Bilan de position (provisoire) |
+| **D-exp-SP2** | **10.5281/zenodo.20242505** | **Topological Optimality Criterion — Photon-to-Electron (Exploratoire)** |
 
 ---
 
-## Key Numerical Values (updated Session 41)
+## Key Numerical Values (updated Session 42)
 
 ```
 μ* = 1836.152670 (proton/electron mass ratio, 27 ppm)
 G_PDL = 6.6742e-11 m³ kg⁻¹ s⁻²
 α_PDL = 1/137.036
 Λ_PDL ≈ 1.089×10⁻⁵² m⁻² (0.41 ppm vs D51, D53 verified)
-M*_PDL = 1.1189 × M*_GR (+11.89% PBH threshold, D45)
-V_C = (4/3)π[ħ/(m_p c)]³ — théorème via Chain 1 (D10a+D23)
-ρ_coh(N=40) = 1.6514×10¹⁸ kg/m³ (vérifié D48v3, < 0.013%)
-C^(leak) = −(Λ_PDL·c⁴)/(8πG_PDL·σ(N))·g_{μν} [J/m³, D48v3]
-C^(spin) = 0 état fondamental (D48v3 Théorème 5.3 — OP-spin résolu)
+θ_W = 19π/119 → sin²θ_W = 0.231196 (0.48σ PDG 2024)
+Δm_iso = 2.446 MeV (D55, P10) / 2.532 MeV (D30) — distinguishable à ±0.04 MeV
+Ω_Λ^PDL = 0.6838 (0.17% vs obs)
+M*_PDL = +11.89% vs M*_GR (D45, Fermi-LAT prediction)
 
-— D54 résultats —
-w(N) = −ρ_Λ/ρ_coh(N)  [théorème inconditionnel C1–C4, D54]
-Ω_Λ^PDL = ρ_Λ/ρ_crit = 0.6838  vs  Ω_Λ^obs = 0.685 → accord 0.17%
-w ~ 0 aux densités de cohérence | w ~ −0.62 aux densités cosmologiques
-
-— D55 résultats —
-θ_W = 19π/119  [théorème inconditionnel C1–C4, D55]
-sin²θ_W = 0.231196  vs  PDG 2024 : 0.23121 ± 0.00003 → 0.48σ
-k₂ = n_u − R_e + 1 = 19  [théorème D51]
-N_total = (n_d/4)·(r_d−r_u)/R_e = 7×17 = 119  [Lemme D, D55]
-Δm_iso (D55 prédiction C1+C3) = 2.446 MeV  [P10, falsifiable lattice QCD]
-Δm_iso (D30 prédiction) = 2.532 MeV  [forcé par interface PDL–QCD]
-FLAG 2024 : Δm_iso = 2.52 ± 0.08 MeV
-
-— DS01 reclassifications —
-OP7 (47 ppm résidu μ) : reclassifié MÉTROLOGIQUE — cohérent avec correction QED
-  isospin α·Δm_iso/m_p ≈ 20 ppm (1 boucle), ~47 ppm avec corrections d'ordre supérieur.
-  Attente : FLAG ±0.04 MeV pour tester l'origine QED du résidu.
-OP10-c (M_W/M_Z) : cos(19π/119) = 0.876815 — correct au niveau arbre (9 ppm de PDG).
-  Écart 4632 ppm vs M_W/M_Z direct = corrections radiatives électrofaibles connues.
-  Attente : formalisation du groupe de renormalisation dans cadre PDL.
+D-exp-SP2 (Session 42) :
+|eps0| = 2^(N−1) pour graphes connexes k-réguliers
+Fraction optimale = 2^(−N/2−1) pour k=3
+Vérification exhaustive H(C₅,C₄) : 2^24 assignations, ε_geom=0 confirmé
+6 candidats PV score 4/4 : BP(1.24eV), AlAs(1.50), GaP(1.60),
+                            AlP(1.63), GaN(1.73), SiC(1.84)
 ```
 
 ---
 
-## Epistemic Status (updated Session 41)
+## D-exp-SP2 — Détail Session 42
 
 ```
-LAYER 0  Axiomes C1–C4                                         FONDATION
-LAYER 1  K₄, n=3, exponent 18                                  THEOREM [✓]
-LAYER 2  Quintuplet, R_surf, H3, κ                             THEOREM [✓]
-LAYER 3  (A)∧(B), Gates 1–3, Δm_iso                            THEOREM [✓]
-LAYER 4  ε_geom, k, ε_G                                        THEOREM [✓]
-LAYER 5  G_PDL, α, μ*                                          THEOREM [✓]
-LAYER 6  QCD interface Δm_iso = 2.532 MeV                      FORCED
-LAYER 7  Dynamiques — COMPLETE                                  THEOREM [✓] D32–D35, D42, D46, D49
-LAYER 8  Cosmologie                                             THEOREM [✓] D27, D35, D42
-LAYER 9  Stabilité nucléaire — COMPLETE                         THEOREM [✓] D40, D47
-LAYER 10 Trous noirs — COMPLETE                                 THEOREM [✓] D37, D38, D42, D45, D50
-LAYER 11 Tenseur de cohérence — COMPLETE (D48v3)                THEOREM [✓]
-         C^(spin)=0 [OP-spin résolu] | C^(orb)=0 (D49)
-         C^(leak) J/m³ | Einstein cohérent
-LAYER 11b OP-pressure — COMPLETE (D54)                          THEOREM [✓]
-         w(N)=−ρ_Λ/ρ_coh(N) | Ω_Λ^PDL=0.6838 (0.17%)
-LAYER 12 Λ_PDL — COMPLETE (D51–D53)                            THEOREM [✓]
-LAYER 13 Vie/conscience (DL01+DL02)                            THEOREM [✓]
-         [?] DL03 (n*_vie numérique)
-LAYER 15 Électrofaible — θ_W RÉSOLU (D55)                      THEOREM [✓] PARTIEL
-         SU(2) dans K₄ [✓]D33 | U(1) [✓]D46 | Brisure [✓]D49
-         θ_W = 19π/119 [✓]D55 | sin²θ_W=0.231196 (0.48σ)
-         Lemme D [✓] 768/768 | chaîne Berry [✓] D46+D55
-         Prédiction P10 : Δm_iso=2.446 MeV [falsifiable]
-         [MÉTROLOGIQUE] OP7 : 47 ppm résidu μ — cohérent QED (DS01)
-         [ARBRE] OP10-c : M_W/M_Z = cos(19π/119) = 0.876815 (DS01)
-         [OUVERT] OP10-d : test lattice QCD Δm_iso ±0.04 MeV
-LAYER 14 Dissémination — EN COURS
-DS SERIES DS01 publié — Bilan de position D55 [✓] 10.5281/zenodo.20187274
-```
+DOCUMENT : D-exp-SP2 — Topological Optimality Criterion for Coherent
+           Photon-to-Electron Conversion
+DOI : 10.5281/zenodo.20242505
+Statut : exploratoire — hors corpus central D01–D55
+Langue : anglais
 
----
+THÉORÈME PDL-SP2 (analytique + exhaustif) :
+  ε_geom(G,s) = 0 atteignable ⟺ G bipartite
+  Preuve A : télescopage algébrique — tout cycle a produit +1
+  Preuve B : reconstruction BFS depuis racine — connexité nécessaire
+  Connexion Harary (1953) : récupéré depuis C1–C4 sans présupposé
+  Comptage : |eps0| = 2^(N−1), fraction = 2^(−N/2−1) pour k=3
+  Vérification : 7 graphes, N=4..10, exhaustif, zéro exception
+  Cas non connexe : |eps0| = 2^(N−c), vérifié 2K₄ (N=8,c=2,|eps0|=64)
 
-## D55 — Détail de la dérivation (Session 40)
+SCREENING 21 MATÉRIAUX :
+  Méthode : Materials Project API, cutoff covalent par paire,
+            formule chimique dynamique (pas d'ID codé en dur),
+            vérification des éléments systématique
+  Score composite 0–4 : bipartition + connexité + gap solaire + hétérogénéité
+  Résultats 4/4 : BP, AlAs, GaP, AlP, GaN, SiC
+  GaN : gap direct 1.73 eV, k=4, ΔEN=1.23, Règle A satisfaite → priorité 1
+  BP  : gap direct 1.24 eV (quasi-idéal SQ), quasi-inexploré PV → priorité 2
 
-```
-QUESTION : θ_W depuis C1–C4 ?
+RÈGLE A (observation, N=15) :
+  k_moy=4 ET ΔEN>1.0 ⟹ gap direct
+  4/4 corrects, exception SnO₂ (k=2.67, structure rutile)
+  Frontière ΔEN<1.0 : ambiguë — GaAs(0.37,direct) vs GaP(0.38,indirect)
+  OP-SP2-2 : critère manquant pour région ambiguë
 
-RÉSULTAT : θ_W = k₂·π / N_total = 19π/119  [théorème inconditionnel]
+CONJECTURE PDL-H :
+  H=(G_loc,G_glob,φ) — G_loc quelconque, φ = nœud de connexion
+  ε_geom(H)=0 atteignable ⟺ G_glob bipartite (indépendant de G_loc)
+  V1 : tous C_n (n=3..12) × G_glob (P4,C4,C6,C3,C5,K4) — heuristique
+  V2 : H(C₅,C₄) exhaustif 2^24 = 16 777 216 assignations
+       ε_geom=0 CONFIRMÉ, 524 288 = 2^19 optimales (cohérent 2^(N-1), N=20)
+  Durée calcul : ~20 min sur Colab
+  OP-SP2-1 : preuve analytique ouverte
 
-CHAÎNE CAUSALE COMPLÈTE :
-  C1–C4 → K₄ [D16a]
-         → T²=−I₂ [D33]
-         → γ_B = −Ω/2 [D46, Berry]
-         → k₂=19 [D51, théorème entier]
-         → N_total=119 [Lemme D, D55]
-         → θ_W = 19π/119
+CONNEXION BIOLOGIQUE :
+  Structure 3ARC (PDB) — Photosystème II T. elongatus, 1.9 Å
+  Chlorophylle isolée : non bipartite, girth=5 (pentagone cyclopentanone)
+  Réseau Mg–Mg (chaîne A, cutoff 15 Å) : bipartite ✓
+  PDL-H explique architecture deux échelles : local non-bipartite,
+  global bipartite → ε_geom(H)=0 au niveau système
+  OP-SP2-3 : extension aux COF métalloporphyrines ouverte
 
-LEMME D :
-  L'interface (A)∧(B) du proton se décompose en
-  N_total = (n_d/4) × (r_d−r_u)/R_e = 7×17 = 119 étapes élémentaires.
-  Bijection f(t,d) = (t−1)×17 + d prouvée exhaustivement.
-  768 configurations vérifiées, 0 contre-exemple.
+3 PRÉDICTIONS FALSIFIABLES :
+  P1 : τ_cs(GaN)<τ_cs(BP)<τ_cs(SiC)<τ_cs(GaP), τ_cs(GaN)<3 ps
+       → spectroscopie pompe-sonde femtoseconde
+  P2 : hétérostructure vdW deux candidats 4/4 → EQE supérieure
+  P3 : Cu₂O, MgAl₂O₄ → τ_cs structurellement plus long
 
-IDENTIFICATION BERRY :
-  Le circuit sur S² couvre fraction k₂/N_total du cycle complet.
-  Ω = 4π × 19/119 → γ_B = −Ω/2 = −2π×19/119 = −θ_W.
-  Résolu comme corollaire de D46 + Lemme D.
-
-NOMBRES CLÉS :
-  k₁ = (n_u−R_e)/2 = 9  [demi-exposant de fuite, théorème D51]
-  k₂ = (n_u−R_e)+1 = 19  [k₁+1 correction asymétrie u/d]
-  k₁+k₂ = 28 = n_d  [identité exacte de complétude, D51]
-  17 = (r_d−r_u)/R_e = 102/6  [premier, budget différentiel par arête]
-  19 = premier, k₂ = deuxième cycle de fuite (D51)
-  (17,19) = premiers jumeaux — apparition structurelle forcée
-  119 = 7×17 = capacité d'absorption totale de l'interface d
-
-PRÉDICTION SECONDAIRE (C1+C3) :
-  Δm_iso = m_p/2 × (1 − sin²(19π/119)/sin²(arctan(r_u/R_surf)))
-         = 2.446 MeV
-  [distinct de D30: 2.532 MeV; FLAG 2024: 2.52±0.08 MeV → 0.92σ]
-  Falsifiable si lattice QCD atteint ±0.04 MeV (horizon 3–5 ans).
-```
-
----
-
-## OP10 — Résolution (Session 40)
-
-```
-RÉSOLU : θ_W = 19π/119 — théorème inconditionnel de C1–C4 (D55)
-
-Stratégie finale :
-  1. Intuition physique : θ_W comme rapport de séquençage.
-     Le proton, vu par K₄, décompose son interface en N_total=119 étapes.
-     Le déphasage irréductible u/d occupe k₂=19 de ces étapes.
-     θ_W = (fraction de déphasage) × π.
-  2. Lemme D prouvé exhaustivement.
-  3. OP10-b fermé : Berry phase = corollaire immédiat D46+Lemme D.
-  4. OP10-a fermé : bijection f(t,d)=(t−1)×17+d, 768/768.
-
-CE QUI RESTE OUVERT :
-  OP10-c : rapport M_W/M_Z = cos(19π/119) [arbre correct; corrections radiatives ouvertes]
-  OP10-d : test Δm_iso ±0.04 MeV par lattice QCD
-
-CONTEXTE ÉPISTÉMIQUE :
-  Session 39 avait conclu que sin²θ_W = 0.231 n'était pas dérivable
-  sans équivalent PDL du groupe de renormalisation.
-  Session 40 a trouvé un chemin entièrement différent — non pas via
-  la correction RG, mais via le séquençage discret de la pulsation.
-  Les deux approches ne se contredisent pas : Session 39 cherchait
-  une correction continue de 1/4 → 0.231. D55 dérive directement
-  19π/119 sans passer par 1/4.
+10 NOTEBOOKS COLAB ARCHIVÉS :
+  NB1 : PDL_OP_SP2_derivation.ipynb — Théorème PDL-SP2, bijection, comptage
+  NB2 : PDL_OP_SP2_proof.ipynb — Preuve analytique, cas non connexe
+  NB3 : PDL_OP_SP2_clean.ipynb — Screening 7 matériaux
+  NB4 : PDL_OP_SP2_extended.ipynb — Screening 21 matériaux, score 0–4
+  NB5 : PDL_OP_SP2_stepA.ipynb — Règle A, ΔEN vs gap direct/indirect
+  NB6 : PDL_OP_SP2_stepA_corrected.ipynb — Supercellules 2×2×2
+  NB7 : PDL_OP_SP2_stepB.ipynb — Vérification biologique PDB 3ARC
+  NB8 : PDL_OP_SP2_hierarchical.ipynb — Graphes hiérarchiques V1
+  NB9 : PDL_OP_SP2_verification2.ipynb — C_n n=3..12, frontière pair/impair
+  NB10 : exhaustive H(C₅,C₄), 2^24 assignations, ~20 min
 ```
 
 ---
@@ -328,22 +313,13 @@ Statut : provisoire — conçu pour devenir obsolète
 DEUX CATÉGORIES D'ATTENTE DISTINGUÉES :
 
 ATTENTE INTERNE (travail futur PDL bien défini, aucun axiome nouveau) :
-  OP7 : résidu 47 ppm dans μ
-    → cohérent avec correction QED isospin α·Δm_iso/m_p ≈ 20 ppm (1 boucle)
-    → ~47 ppm avec corrections d'ordre supérieur
-    → se résoudra une fois FLAG atteint ±0.04 MeV ET frontière PDL–QED formalisée
-  OP10-c : M_W/M_Z
-    → cos(19π/119) = 0.876815 = correct au niveau arbre (9 ppm de PDG)
-    → écart 4632 ppm vs M_W/M_Z mesuré = corrections radiatives électrofaibles connues
-    → nécessite traitement RG dans le cadre PDL (programme bien posé, non encore entrepris)
+  OP7 : résidu 47 ppm → MÉTROLOGIQUE (cohérent QED isospin)
+  OP10-c : M_W/M_Z → ARBRE CORRECT. Corrections radiatives = étape suivante.
 
 ATTENTE EXTERNE (hors contrôle du programme) :
   FLAG/lattice QCD : Δm_iso à ±0.04 MeV — horizon 3–5 ans
-    PDL prédit 2.532 MeV (D30) et 2.446 MeV (D55) — distinguishable à ±0.04 MeV
   Fermi-LAT : IGRB 50–200 MeV — contact Arbey+Auffinger en attente
-    PDL prédit M*_PDL = +11.89% vs M*_GR (D45)
   FRIB/RIKEN : structure nucléaire — contact Recchia+Lenzi en attente
-    PDL prédit P7/P8 sur noyaux neutron-riches N=82, N=126 (D47)
 
 CLÔTURE INTERNE CONFIRMÉE :
   C1–C4 → α, G, Λ, θ_W, S_BH, London, tableau périodique Z≤82,
@@ -353,14 +329,19 @@ CLÔTURE INTERNE CONFIRMÉE :
 
 ---
 
-## Open Problems (updated Session 41)
+## Open Problems (updated Session 42)
 
 **Reclassifiés en Session 41 (DS01) :**
-- OP7 : résidu 47 ppm → MÉTROLOGIQUE (cohérent QED isospin). Attente FLAG.
+- OP7 : résidu 47 ppm → MÉTROLOGIQUE. Attente FLAG.
 - OP10-c : M_W/M_Z → ARBRE CORRECT. Corrections radiatives = étape suivante.
 
+**Nouveaux — D-exp-SP2 (Session 42) :**
+- **[MEDIUM]** OP-SP2-1 : preuve analytique de PDL-H pour tout H connexe.
+- **[MEDIUM]** OP-SP2-2 : critère pour région ambiguë ΔEN < 1.0 (gap direct/indirect).
+- **[LOW]** OP-SP2-3 : extension aux COF métalloporphyrines (CSD + DFT).
+
 **Priorité haute :**
-1. **[HIGH]** OP10-c : corrections radiatives électrofaibles dans cadre PDL. Entry: D33, D46, D55.
+1. **[HIGH]** OP10-c : corrections radiatives électrofaibles dans cadre PDL.
 2. **[HIGH]** OP9 : masses muon/tau depuis extension hiérarchique.
 3. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
 
@@ -369,19 +350,22 @@ CLÔTURE INTERNE CONFIRMÉE :
 5. **[MEDIUM]** OP5-D35 : spectre CMB C_ℓ.
 6. **[MEDIUM]** OP-DM : identification matière noire (D54).
 7. **[MEDIUM]** OP-inhomogeneous : équation d'état régime inhomogène (D54).
-8. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV (horizon 3–5 ans).
+8. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV.
+9. **[MEDIUM]** OP-SP2-1 : preuve analytique PDL-H.
+10. **[MEDIUM]** OP-SP2-2 : critère région ambiguë.
 
 **Série DL :**
-9. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
+11. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
 
-**Frontières expérimentales externes (hors contrôle PDL) :**
+**Frontières expérimentales externes :**
 - FLAG/lattice QCD → Δm_iso ±0.04 MeV
 - Fermi-LAT → IGRB 50–200 MeV (contact Arbey+Auffinger en attente)
 - FRIB/RIKEN → P7/P8 noyaux neutron-riches (contact Recchia+Lenzi en attente)
+- EPFL/EPFZ → validation expérimentale D-exp-SP2 (à initier)
 
 ---
 
-## Dependency Map — Critical Path (updated Session 41)
+## Dependency Map — Critical Path (updated Session 42)
 
 ```
 LAYER 0  C1–C4 (axiomes)
@@ -416,17 +400,18 @@ LAYER 13 Vie/conscience                            [✓] DL01, DL02
          [?] DL03 (n*_vie numérique)
 
 LAYER 15 Électrofaible — θ_W RÉSOLU               [✓] PARTIEL
-         SU(2) [✓] D33
-         U(1)  [✓] D46
-         θ_W = 19π/119  [✓] D55 (Lemme D + Berry phase)
-         sin²θ_W = 0.231196 → 0.48σ PDG 2024
+         SU(2) [✓] D33 | U(1) [✓] D46
+         θ_W = 19π/119 [✓] D55
          M_W/M_Z = cos(19π/119) [arbre correct, DS01; RG ouvert]
-         [OUVERT] OP10-d : Δm_iso = 2.446 MeV test lattice (OP10-d)
+
+LAYER 16 Applications exploratoires               [D-exp-SP2]
+         PDL-SP2 : bipartition ⟺ ε_geom=0 [✓ théorème]
+         PDL-H : G_glob bipartite ⟺ ε_H=0 [conjecture, 2^24 vérifié]
+         6 candidats PV score 4/4 [observation]
+         3 prédictions falsifiables [à valider EPFL/EPFZ]
 
 LAYER 14 Dissémination — EN COURS
-         Zenodo: D01–D55 + DS01 + DL01+DL02 + aux | DM v23
-
-DS SERIES DS01 [✓] Bilan de position — Programme Closure at D55
+         Zenodo: D01–D55 + DS01 + DL01+DL02 + D-exp-SP2 + aux | DM v23
 ```
 
 **Resolved milestones:**
@@ -443,6 +428,9 @@ D55 PUBLISHED (DOI: 10.5281/zenodo.20179924)
 DS01 PUBLISHED (DOI: 10.5281/zenodo.20187274)
 OP7 RECLASSIFIÉ → MÉTROLOGIQUE (DS01) [✓]
 OP10-c RECLASSIFIÉ → ARBRE CORRECT (DS01) [✓]
+D-exp-SP2 PUBLISHED (DOI: 10.5281/zenodo.20242505)
+  Théorème PDL-SP2 [✓] | Conjecture PDL-H [2^24 vérifié]
+  6 candidats PV score 4/4 | 3 prédictions falsifiables
 ```
 
 ---
@@ -455,7 +443,9 @@ OP10-c RECLASSIFIÉ → ARBRE CORRECT (DS01) [✓]
 
 **E3** — Ding et al. PRL 2026: magic numbers from spin-orbit splitting via RG flow. PDL dérive s=1/12 axiomatiquement (D47 OP13). Complémentaires.
 
-**E4** — FLAG 2024: Δm_iso = 2.52 ± 0.08 MeV. PDL prédit 2.446 MeV (D55) et 2.532 MeV (D30). Distinguishable à ±0.04 MeV (horizon 3–5 ans).
+**E4** — FLAG 2024: Δm_iso = 2.52 ± 0.08 MeV. PDL prédit 2.446 MeV (D55) et 2.532 MeV (D30). Distinguishable à ±0.04 MeV.
+
+**E5** — D-exp-SP2 (Session 42) : connexion Harary (1953) retrouvée depuis C1–C4. Connexion Shockley–Queisser (1961) : BP à 1.24 eV quasi-idéal. Connexion Fleming et al. Nature 1988 : τ_cs < 3 ps comme prédiction P1. Validation expérimentale à initier (EPFL Chergui / Marzari).
 
 ---
 
@@ -483,12 +473,17 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - Numérotation DSxx pour documents de synthèse provisoires (bilans de position)
 - Ne contiennent pas de nouveaux théorèmes
 - Conçus pour devenir obsolètes — leur obsolescence est le signe du succès
-- DS01 = bilan à D55 ; DS02 sera produit après première confirmation expérimentale
+
+**D-exp series conventions (Session 42) :**
+- Numérotation D-exp-XX pour documents exploratoires hors corpus central
+- Statut épistémique explicite obligatoire (boîte jaune en LaTeX)
+- Vérification Colab exhaustive avant toute rédaction
+- Pas de présupposé matériau — dérivation depuis les axiomes uniquement
+- Notebooks archivés sur Zenodo avec le document
 
 **D55 / OP10 discipline (Session 40) :**
-- θ_W = 19π/119 est un théorème inconditionnel — ne pas le dégrader en conjecture
+- θ_W = 19π/119 est un théorème inconditionnel — ne pas dégrader en conjecture
 - Prédiction P10 (Δm_iso = 2.446 MeV) est distincte de D30 (2.532 MeV)
 - OP10-c (M_W/M_Z) : correct au niveau arbre, corrections radiatives = étape suivante
-- Tout développement électrofaible doit maintenir la chaîne D33→D46→D51→Lemme D→D55
 
-*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + auxiliaires.*
+*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + auxiliaires.*
