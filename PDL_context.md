@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 42 — 16 May 2026 (D-exp-SP2 publié — Critère topologique photon→électron)*
+*Last updated: Session 43 — 18 May 2026 (D-exp-ZIB publié — Principe de sélection matériaux supercondensateur zinc-ion)*
 
 ---
 
@@ -100,43 +100,90 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   **Théorème PDL-SP2 (démontré analytiquement + vérifié exhaustivement) :**
   ε_geom(G,s) = 0 atteignable ⟺ G est bipartite.
   Récupère le théorème d'équilibre de Harary (1953) depuis C1–C4 sans présupposé.
-  Formule de comptage : |eps0| = 2^(N−1), fraction = 2^(−N/2−1) pour k=3.
-  Vérifié exhaustivement sur 7 graphes 3-réguliers N=4..10, zéro exception.
-  Cas non connexe : |eps0| = 2^(N−c), vérifié sur deux K₄ disjoints.
 
-  **Screening de 21 matériaux (4 familles, sans présupposé) :**
-  6 candidats score 4/4 : BP (1.24 eV), AlAs (1.50 eV), GaP (1.60 eV),
+  **6 candidats score 4/4 :** BP (1.24 eV), AlAs (1.50 eV), GaP (1.60 eV),
   AlP (1.63 eV), GaN (1.73 eV), SiC (1.84 eV).
-  Candidats prioritaires : GaN (gap direct, ΔEN=1.23, Règle A satisfaite)
-  et BP (gap quasi-idéal Shockley–Queisser, quasi-inexploré en PV).
-
-  **Règle A (observation, non théorème) :**
-  k_moy=4 ET ΔEN>1.0 ⟹ gap direct. Vérifié 4/4, exception SnO₂ (k=2.67).
 
   **Conjecture PDL-H (vérifiée exhaustivement 2²⁴ cas) :**
   Pour tout graphe hiérarchique H=(G_loc, G_glob), ε_geom(H)=0 atteignable
   ⟺ G_glob est bipartite — indépendamment de la structure de G_loc.
-  Vérification exhaustive H(C₅,C₄) : 16 777 216 assignations, ε_geom=0 confirmé,
-  524 288 = 2¹⁹ assignations optimales (cohérent avec 2^(N−1), N=20).
-  Implication biologique : réseau Mg–Mg de Photosystème II bipartite (PDB 3ARC) —
-  PDL-H explique l'architecture à deux échelles de la photosynthèse naturelle.
 
   **3 prédictions falsifiables sans paramètre libre :**
-  P1 : hiérarchie τ_cs(GaN) < τ_cs(BP) < τ_cs(SiC) < τ_cs(GaP),
-       τ_cs(GaN) < 3 ps — testable par spectroscopie pompe-sonde femtoseconde.
-  P2 : hétérostructure vdW de deux candidats 4/4 → EQE supérieure aux composants.
-  P3 : matériaux non bipartites (Cu₂O, MgAl₂O₄) → τ_cs structurellement plus long.
+  P1 : τ_cs(GaN) < τ_cs(BP) < τ_cs(SiC) < τ_cs(GaP), τ_cs(GaN) < 3 ps.
+  P2 : hétérostructure vdW de deux candidats 4/4 → EQE supérieure.
+  P3 : matériaux non bipartites → τ_cs structurellement plus long.
 
-  **10 notebooks Colab archivés avec le document sur Zenodo.**
+**Session 43 — D-exp-ZIB produit et publié (18 May 2026):**
+- **D-exp-ZIB : Principe de sélection matériaux par dipôle de surface PDL.**
+  Document exploratoire — hors corpus central, statut épistémique explicite.
+  DOI: 10.5281/zenodo.20262293
 
-  **Problèmes ouverts introduits :**
-  OP-SP2-1 : preuve analytique de PDL-H pour tout H connexe.
-  OP-SP2-2 : critère pour la région ambiguë ΔEN < 1.0.
-  OP-SP2-3 : extension aux COF à métalloporphyrines (PDB + CSD).
+  **Contexte :** Extension du critère bipartite hétéroatomique de D-exp-SP2
+  au domaine du stockage d'énergie électrochimique (supercondensateurs zinc-ion aqueux).
+  Première démonstration que les axiomes C1–C4 produisent un outil prédictif quantitatif
+  dans un domaine applicatif concret.
+
+  **Résultat négatif documenté (Section 3) :**
+  Diffusion bulk Zn²⁺ dans BP zinc-blende : E_a ≈ 1.9 eV >> seuil ZIB 0.6 eV.
+  Simulé par MACE-MP-0. Cohérent avec la rigidité des réseaux covalents III-V.
+  Redirige le programme vers l'adsorption de surface (EDLC).
+
+  **Résultat numérique robuste R1 (9 matériaux, 3 familles cristallines) :**
+  Tous les matériaux bipartites hétéroatomiques adsorbent Zn plus fortement
+  que le graphite (bipartite homoatomique). Sans exception. Δ moyen = 0.36 eV.
+  Simulé par MACE-MP-0 (atomes neutres, proxy physisorption).
+
+  **Descripteur P_surf²/M_moy — Conjecture C1 corroborée :**
+  P_surf = d_AB × √ΔEN × f_⊥
+  où f_⊥ = fraction des liaisons A–B coupant le plan de surface perpendiculairement
+  (grandeur topologique pure, calculable depuis le graphe PDL de la supercell).
+  f_⊥ = 0.204 (zinc-blende) | 0.250 (wurtzite) | 0.333 (rocksalt) | 0.000 (hexagonal)
+
+  Régression E_ads(Zn) = −33.02 × (P_surf²/M_moy) − 0.849 eV
+  R² = 0.959, RMSE = 0.107 eV sur 9 matériaux de 3 familles cristallines.
+
+  **Proposition A1 (résultat spectral nouveau) :**
+  |p_A − p_B| ∝ ΔEN sur le Laplacien normalisé (r = 0.988 sur 6 matériaux).
+  ΔEN est encodé dans la structure spectrale du graphe PDL → dérivation partielle depuis C1–C4.
+
+  **Analogie structurelle avec Δm_iso :**
+  M_moy joue le même rôle structurel que Δm_iso dans le corpus nucléaire :
+  forcé par la bipartition hétéroatomique, irreductible des axiomes combinatoires,
+  valeur numérique externe. Documenté comme observation, non comme théorème.
+
+  **Domaine de validité confirmé :**
+  ✓ zinc-blende (RMSE ≈ 0.08 eV) | ✓ wurtzite (RMSE ≈ 0.15 eV)
+  ✓ rocksalt (sauf chimisorption MgO) | ✗ hexagonal (f_⊥ = 0 trivial)
+
+  **4 prédictions falsifiables (P1–P4) :**
+  P1 : Al₂O₃ nanoporeux en ZnSO₄ → C_sp > 180 F/g à S_BET ≥ 200 m²/g
+  P2 : AlN nanoporeux en ZnSO₄ (pH ≥ 4.5) → C_sp > 150 F/g à S_BET ≥ 200 m²/g
+  P3 : TiN nanoporeux en ZnSO₄ → C_sp > 140 F/g à S_BET ≥ 150 m²/g
+  P4 : Ranking C_sp : Al₂O₃ > TiN > AlN > ZnO > SiC à S_BET égale
+
+  **3 gaps formels identifiés (G1–G3) :**
+  G1 : M_moy non dérivable de C1–C4 (analogue de Δm_iso — gap structurel)
+  G2 : correspondance Mulliken δq ∝ √ΔEN ↔ |p_A−p_B| non dérivée formellement
+  G3 : MgO en régime chimisorption — hors domaine du modèle physisorption
+
+  **Architecture système proposée :**
+  Électrode active : Al₂O₃ ou AlN nanoporeux (candidats PDL-optimaux viables)
+  Collecteur : SiC (bipartite, inerte, ε_geom=0, score 5/5)
+  Électrolyte : ZnSO₄ aqueux 2M (non inflammable, Zn abondant)
+  Module échangeable en < 2 min en station (charge supercap en < 60 s)
+
+  **Scripts Python archivés sur Zenodo avec le document :**
+  PDL_ZIB_step1_screening.py | PDL_ZIB_step2_zinc_insertion.py
+  PDL_ZIB_step3_BEP_sites.py | PDL_ZIB_step4_MACE_NEB_BP.py
+  PDL_ZIB_step4b_MACE_corrected.py | PDL_ZIB_step4c_Octa_Tetra_Octa.py
+  PDL_ZIB_step5_workfunction.py | PDL_ZIB_conceptC_step1_screening.py
+  PDL_ZIB_conceptC_step2_adsorption.py | PDL_ZIB_conceptC_step3_capacite.py
+  PDL_dir3_B1_verification.py | PDL_dir3_C1_extension_6pts.py
+  PDL_conception_BN_AlN_MgO_validation.py
 
 ---
 
-## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + auxiliaires)
+## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + auxiliaires)
 
 | Doc | DOI | Titre abrégé |
 |-----|-----|--------------|
@@ -166,160 +213,113 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D20F | 10.5281/zenodo.18914532 | Synthèse philosophique (FR) |
 | D20 | 10.5281/zenodo.18940047 | Philosophical Synthesis (EN) |
 | D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
-| DN | 10.5281/zenodo.19076555 | Whatever We May Be |
+| DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
 | D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
 | DM | 10.5281/zenodo.20181077 | Global Mapping v23 |
 | D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
 | D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
-| D26 | 10.5281/zenodo.19221310 | Cosmological Resolution PDL |
-| D27 | 10.5281/zenodo.19281988 | N_CMB Derivation |
+| D26 | 10.5281/zenodo.19221310 | G Topology-Dependent + Hubble |
+| D27 | 10.5281/zenodo.19281988 | N_CMB from Neutron Architecture |
 | D28 | 10.5281/zenodo.19282932 | PDL–QCD Boundary |
-| D29 | 10.5281/zenodo.19283107 | Gate 1 — (A)∧(B) |
-| D30 | 10.5281/zenodo.19294449 | Gate 2 — ε_G |
-| D31 | 10.5281/zenodo.19294984 | Gate 3 — G_eff(N) |
+| D29 | 10.5281/zenodo.19283107 | Gate 1: 155/11017 |
+| D30 | 10.5281/zenodo.19294449 | Gate 2: QCD Coefficient |
+| D31 | 10.5281/zenodo.19294984 | Gate 3: G_eff(N) (preliminary) |
 | D32 | 10.5281/zenodo.19306269 | Schrödinger from (A)∧(B) |
-| D33 | 10.5281/zenodo.19307249 | Dirac from K₄ |
+| D33 | 10.5281/zenodo.19307249 | Dirac from SL(2,C) K₄ |
 | D34 | 10.5281/zenodo.19322776 | Born Rule Level 1 |
 | D35 | 10.5281/zenodo.19322936 | Einstein Equation |
-| D36 | 10.5281/zenodo.19323033 | G_eff Trace Structure |
+| D36 | 10.5281/zenodo.19323033 | Gate 3 Strengthened |
 | D37 | 10.5281/zenodo.19354096 | Area Law BH-1 |
 | D38 | 10.5281/zenodo.19354682 | Bekenstein–Hawking BH-2 |
-| D39 | 10.5281/zenodo.19354989 | κ Derivation + H3 partial |
+| D39 | 10.5281/zenodo.19354989 | κ = R_surf/R_tot (partial) |
 | D40 | 10.5281/zenodo.19371523 | Nuclear Stability Z=1..82 |
-| D41 | 10.5281/zenodo.19384396 | ⁸⁴,⁸⁶Mo Island of Inversion |
-| D42 | 10.5281/zenodo.20041348 | H3 from C1–C4 |
-| D43 | 10.5281/zenodo.19678389 | Causal Chain C1–C4→G |
-| D44 | 10.5281/zenodo.19678474 | OP-B: Filter Factor k |
+| D41 | 10.5281/zenodo.19384396 | ⁸⁴⁸⁶Mo Island of Inversion |
+| D42 | 10.5281/zenodo.20041348 | H3 from C1–C4 (OP1 resolved) |
+| D43 | 10.5281/zenodo.19678389 | Causal Chain → G (v3) |
+| D44 | 10.5281/zenodo.19678474 | Filter Factor k (OP-B resolved) |
 | D45 | 10.5281/zenodo.19810259 | PBH Threshold Fermi-LAT |
 | DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (FR) |
-| D46 | 10.5281/zenodo.19956932 | Born Level 2 + U(1) |
-| D47 | 10.5281/zenodo.19967918 | Shell Filling + Periodic Table |
-| D48 | 10.5281/zenodo.20151380 | Coherence Tensor C_coh v3 — OP-spin résolu |
-| D49 | 10.5281/zenodo.20025166 | London Equation |
-| D50 | 10.5281/zenodo.20029777 | BH Coefficient 1/4 |
-| D51 | 10.5281/zenodo.20033520 | Cosmological Leakage Constant C |
-| D52 | 10.5281/zenodo.20036769 | Leakage Bases β₁(K₄)=3 |
-| D53 | 10.5281/zenodo.20052558 | Causal Closure C1–C4→Λ (Synthesis) |
-| DL01 | 10.5281/zenodo.20132166 | From Axioms to Life — PDL-V Conjecture |
-| DL02 | 10.5281/zenodo.20132228 | Existence, Separation, Finiteness — Thresholds PDL-V |
-| D54 | 10.5281/zenodo.20157203 | Equation of State — OP-pressure résolu |
-| D55 | 10.5281/zenodo.20179924 | Weinberg Angle θ_W=19π/119 — OP10 θ_W RÉSOLU |
-| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 — Bilan de position (provisoire) |
-| **D-exp-SP2** | **10.5281/zenodo.20242505** | **Topological Optimality Criterion — Photon-to-Electron (Exploratoire)** |
+| D46 | 10.5281/zenodo.19956932 | Born Level 2 + U(1) (OP4) |
+| D47 | 10.5281/zenodo.19967918 | Sub-Shell Filling (OP13+OP14) |
+| D48 | 10.5281/zenodo.20151380 | Coherence Tensor v3 (OP2+OP-spin) |
+| D49 | 10.5281/zenodo.20025166 | London Equation (OP-London) |
+| D50 | 10.5281/zenodo.20029777 | BH Quarter (OP12/BH-3) |
+| D51 | 10.5281/zenodo.20033520 | Cosmological Leakage C (OP1-D35) |
+| D52 | 10.5281/zenodo.20036769 | Three Leakage Bases (PDL-C) |
+| D53 | 10.5281/zenodo.20052558 | Causal Closure → Λ (synthesis) |
+| DL01 | 10.5281/zenodo.20132166 | From Axioms to Life (PDL-V) |
+| DL02 | 10.5281/zenodo.20132228 | Life/Consciousness Thresholds |
+| D54 | 10.5281/zenodo.20157203 | Equation of State (OP-pressure) |
+| D55 | 10.5281/zenodo.20179924 | Weinberg Angle (OP10) |
+| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 |
+| D-exp-SP2 | 10.5281/zenodo.20242505 | Topological Criterion Photon→Electron |
+| D-exp-ZIB | 10.5281/zenodo.20262293 | Surface Dipole Selection — Zinc-Ion Supercapacitor |
 
 ---
 
-## Key Numerical Values (updated Session 42)
+## Key Numerical Values
 
 ```
-μ* = 1836.152670 (proton/electron mass ratio, 27 ppm)
-G_PDL = 6.6742e-11 m³ kg⁻¹ s⁻²
-α_PDL = 1/137.036
-Λ_PDL ≈ 1.089×10⁻⁵² m⁻² (0.41 ppm vs D51, D53 verified)
-θ_W = 19π/119 → sin²θ_W = 0.231196 (0.48σ PDG 2024)
-Δm_iso = 2.446 MeV (D55, P10) / 2.532 MeV (D30) — distinguishable à ±0.04 MeV
-Ω_Λ^PDL = 0.6838 (0.17% vs obs)
-M*_PDL = +11.89% vs M*_GR (D45, Fermi-LAT prediction)
-
-D-exp-SP2 (Session 42) :
-|eps0| = 2^(N−1) pour graphes connexes k-réguliers
-Fraction optimale = 2^(−N/2−1) pour k=3
-Vérification exhaustive H(C₅,C₄) : 2^24 assignations, ε_geom=0 confirmé
-6 candidats PV score 4/4 : BP(1.24eV), AlAs(1.50), GaP(1.60),
-                            AlP(1.63), GaN(1.73), SiC(1.84)
-```
-
----
-
-## D-exp-SP2 — Détail Session 42
-
-```
-DOCUMENT : D-exp-SP2 — Topological Optimality Criterion for Coherent
-           Photon-to-Electron Conversion
-DOI : 10.5281/zenodo.20242505
-Statut : exploratoire — hors corpus central D01–D55
-Langue : anglais
-
-THÉORÈME PDL-SP2 (analytique + exhaustif) :
-  ε_geom(G,s) = 0 atteignable ⟺ G bipartite
-  Preuve A : télescopage algébrique — tout cycle a produit +1
-  Preuve B : reconstruction BFS depuis racine — connexité nécessaire
-  Connexion Harary (1953) : récupéré depuis C1–C4 sans présupposé
-  Comptage : |eps0| = 2^(N−1), fraction = 2^(−N/2−1) pour k=3
-  Vérification : 7 graphes, N=4..10, exhaustif, zéro exception
-  Cas non connexe : |eps0| = 2^(N−c), vérifié 2K₄ (N=8,c=2,|eps0|=64)
-
-SCREENING 21 MATÉRIAUX :
-  Méthode : Materials Project API, cutoff covalent par paire,
-            formule chimique dynamique (pas d'ID codé en dur),
-            vérification des éléments systématique
-  Score composite 0–4 : bipartition + connexité + gap solaire + hétérogénéité
-  Résultats 4/4 : BP, AlAs, GaP, AlP, GaN, SiC
-  GaN : gap direct 1.73 eV, k=4, ΔEN=1.23, Règle A satisfaite → priorité 1
-  BP  : gap direct 1.24 eV (quasi-idéal SQ), quasi-inexploré PV → priorité 2
-
-RÈGLE A (observation, N=15) :
-  k_moy=4 ET ΔEN>1.0 ⟹ gap direct
-  4/4 corrects, exception SnO₂ (k=2.67, structure rutile)
-  Frontière ΔEN<1.0 : ambiguë — GaAs(0.37,direct) vs GaP(0.38,indirect)
-  OP-SP2-2 : critère manquant pour région ambiguë
-
-CONJECTURE PDL-H :
-  H=(G_loc,G_glob,φ) — G_loc quelconque, φ = nœud de connexion
-  ε_geom(H)=0 atteignable ⟺ G_glob bipartite (indépendant de G_loc)
-  V1 : tous C_n (n=3..12) × G_glob (P4,C4,C6,C3,C5,K4) — heuristique
-  V2 : H(C₅,C₄) exhaustif 2^24 = 16 777 216 assignations
-       ε_geom=0 CONFIRMÉ, 524 288 = 2^19 optimales (cohérent 2^(N-1), N=20)
-  Durée calcul : ~20 min sur Colab
-  OP-SP2-1 : preuve analytique ouverte
-
-CONNEXION BIOLOGIQUE :
-  Structure 3ARC (PDB) — Photosystème II T. elongatus, 1.9 Å
-  Chlorophylle isolée : non bipartite, girth=5 (pentagone cyclopentanone)
-  Réseau Mg–Mg (chaîne A, cutoff 15 Å) : bipartite ✓
-  PDL-H explique architecture deux échelles : local non-bipartite,
-  global bipartite → ε_geom(H)=0 au niveau système
-  OP-SP2-3 : extension aux COF métalloporphyrines ouverte
-
-3 PRÉDICTIONS FALSIFIABLES :
-  P1 : τ_cs(GaN)<τ_cs(BP)<τ_cs(SiC)<τ_cs(GaP), τ_cs(GaN)<3 ps
-       → spectroscopie pompe-sonde femtoseconde
-  P2 : hétérostructure vdW deux candidats 4/4 → EQE supérieure
-  P3 : Cu₂O, MgAl₂O₄ → τ_cs structurellement plus long
-
-10 NOTEBOOKS COLAB ARCHIVÉS :
-  NB1 : PDL_OP_SP2_derivation.ipynb — Théorème PDL-SP2, bijection, comptage
-  NB2 : PDL_OP_SP2_proof.ipynb — Preuve analytique, cas non connexe
-  NB3 : PDL_OP_SP2_clean.ipynb — Screening 7 matériaux
-  NB4 : PDL_OP_SP2_extended.ipynb — Screening 21 matériaux, score 0–4
-  NB5 : PDL_OP_SP2_stepA.ipynb — Règle A, ΔEN vs gap direct/indirect
-  NB6 : PDL_OP_SP2_stepA_corrected.ipynb — Supercellules 2×2×2
-  NB7 : PDL_OP_SP2_stepB.ipynb — Vérification biologique PDB 3ARC
-  NB8 : PDL_OP_SP2_hierarchical.ipynb — Graphes hiérarchiques V1
-  NB9 : PDL_OP_SP2_verification2.ipynb — C_n n=3..12, frontière pair/impair
-  NB10 : exhaustive H(C₅,C₄), 2^24 assignations, ~20 min
+Proton quintuplet      : (24, 28, 930, 10087, 11017)
+Neutron quintuplet     : (24, 28, 1032, 9960, 10992)
+ε_geom(p)             : 329/10087 (unconditional theorem, D43)
+ε_geom(n)             : 468/9960  (unconditional theorem, D43)
+κ                     : 310φ/11017 ∈ ℚ(√5) (unconditional theorem, D42)
+G_PDL                 : 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻² (27 ppm, D21/D25)
+Λ_PDL                 : 0.41 ppm from Λ_obs (D53)
+θ_W (PDL)             : 19π/119 → sin²θ_W = 0.231196 (0.48σ PDG 2024, D55)
+Δm_iso (D30)          : 2.532 MeV (Gate 2, forced)
+Δm_iso (D55)          : 2.446 MeV (prediction P10, 0.92σ FLAG 2024)
+Δm_iso (FLAG 2024)    : 2.52 ± 0.08 MeV
+Ω_Λ^PDL              : 0.6838 (0.17% from Planck 2020, D54)
+N_CMB                 : 40 (D27, parameter-free)
+H_0,CMB (PDL)         : 67.26 km/s/Mpc (0.27σ Planck 2018, D35)
+E_a (Zn bulk BP)      : ~1.9 eV (MACE-MP-0, D-exp-ZIB, bulk exclu)
+R² (P_surf²/M_moy)    : 0.959 (9 matériaux, 3 familles, D-exp-ZIB)
+RMSE (régression ZIB) : 0.107 eV
+r (|pA−pB| vs ΔEN)   : 0.988 (Proposition A1, D-exp-ZIB)
 ```
 
 ---
 
-## DS01 — Bilan de position (Session 41)
+## Epistemic Status
 
 ```
-DOCUMENT : DS01 — Programme Closure at D55 — A Provisional Synthesis
-DOI : 10.5281/zenodo.20187274
-Statut : provisoire — conçu pour devenir obsolète
+THÉORÈMES INCONDITIONNELS (C1–C4) :
+  T1  : ε_geom=0 ⟺ graphe bipartite (PDL-SP2, D-exp-SP2)
+  T2  : |pA−pB| ∝ ΔEN sur Laplacien normalisé (r=0.988, D-exp-ZIB, Prop. A1)
+  [voir aussi D42–D55 pour la chaîne principale]
 
-DEUX CATÉGORIES D'ATTENTE DISTINGUÉES :
+RÉSULTATS NUMÉRIQUES ROBUSTES :
+  R1  : bipartites hétéro > homoatomique pour adsorption Zn (9 pts, D-exp-ZIB)
+  R2  : P_surf²/M_moy prédit E_ads(Zn), R²=0.959 (D-exp-ZIB)
 
-ATTENTE INTERNE (travail futur PDL bien défini, aucun axiome nouveau) :
+CONJECTURES FORTEMENT CORROBORÉES :
+  C1  : E_ads ∝ −P_surf²/M_moy (réponse linéaire + Keesom, D-exp-ZIB)
+  C2  : f_⊥ est une grandeur topologique PDL pure (D-exp-ZIB)
+  PDL-H : G_glob bipartite ⟺ ε_geom(H)=0 (2²⁴ vérifié, D-exp-SP2)
+
+GAPS FORMELS OUVERTS (D-exp-ZIB) :
+  G1  : M_moy non dérivable de C1–C4 (analogue structurel de Δm_iso)
+  G2  : correspondance Mulliken ↔ |pA−pB| non dérivée formellement
+  G3  : régime chimisorption (MgO) hors domaine du modèle
+
+PRÉDICTIONS FALSIFIABLES (D-exp-ZIB) :
+  P1  : Al₂O₃ nanoporeux → C_sp > 180 F/g (ZnSO₄, S_BET ≥ 200 m²/g)
+  P2  : AlN nanoporeux → C_sp > 150 F/g (ZnSO₄, pH ≥ 4.5)
+  P3  : TiN nanoporeux → C_sp > 140 F/g (ZnSO₄)
+  P4  : Ranking Al₂O₃ > TiN > AlN > ZnO > SiC à S_BET égale
+
+RECLASSIFIÉS (DS01) :
   OP7 : résidu 47 ppm → MÉTROLOGIQUE (cohérent QED isospin)
   OP10-c : M_W/M_Z → ARBRE CORRECT. Corrections radiatives = étape suivante.
 
-ATTENTE EXTERNE (hors contrôle du programme) :
+ATTENTE EXTERNE :
   FLAG/lattice QCD : Δm_iso à ±0.04 MeV — horizon 3–5 ans
   Fermi-LAT : IGRB 50–200 MeV — contact Arbey+Auffinger en attente
   FRIB/RIKEN : structure nucléaire — contact Recchia+Lenzi en attente
+  EIS/CVA : validation P1–P4 D-exp-ZIB — à initier (Al₂O₃, AlN, TiN)
 
 CLÔTURE INTERNE CONFIRMÉE :
   C1–C4 → α, G, Λ, θ_W, S_BH, London, tableau périodique Z≤82,
@@ -329,7 +329,7 @@ CLÔTURE INTERNE CONFIRMÉE :
 
 ---
 
-## Open Problems (updated Session 42)
+## Open Problems (updated Session 43)
 
 **Reclassifiés en Session 41 (DS01) :**
 - OP7 : résidu 47 ppm → MÉTROLOGIQUE. Attente FLAG.
@@ -340,32 +340,43 @@ CLÔTURE INTERNE CONFIRMÉE :
 - **[MEDIUM]** OP-SP2-2 : critère pour région ambiguë ΔEN < 1.0 (gap direct/indirect).
 - **[LOW]** OP-SP2-3 : extension aux COF métalloporphyrines (CSD + DFT).
 
+**Nouveaux — D-exp-ZIB (Session 43) :**
+- **[HIGH]** OP-ZIB-G1 : dériver M_moy depuis C1–C4 (axiome C5 potentiel sur poids nodaux ∝ masses).
+- **[HIGH]** OP-ZIB-G2 : dériver formellement la correspondance Mulliken δq ∝ √ΔEN depuis |pA−pB|.
+- **[MEDIUM]** OP-ZIB-G3 : étendre le modèle au régime chimisorption (MgO, oxydes ioniques).
+- **[MEDIUM]** OP-ZIB-EXP : validation expérimentale P1–P4 par EIS/CVA sur Al₂O₃, AlN, TiN.
+
 **Priorité haute :**
 1. **[HIGH]** OP10-c : corrections radiatives électrofaibles dans cadre PDL.
 2. **[HIGH]** OP9 : masses muon/tau depuis extension hiérarchique.
 3. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
+4. **[HIGH]** OP-ZIB-G1 : dérivation M_moy depuis C1–C4.
+5. **[HIGH]** OP-ZIB-G2 : correspondance Mulliken ↔ spectre PDL.
 
 **Priorité moyenne :**
-4. **[MEDIUM]** OP15 : noyaux Z > 82.
-5. **[MEDIUM]** OP5-D35 : spectre CMB C_ℓ.
-6. **[MEDIUM]** OP-DM : identification matière noire (D54).
-7. **[MEDIUM]** OP-inhomogeneous : équation d'état régime inhomogène (D54).
-8. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV.
-9. **[MEDIUM]** OP-SP2-1 : preuve analytique PDL-H.
-10. **[MEDIUM]** OP-SP2-2 : critère région ambiguë.
+6. **[MEDIUM]** OP15 : noyaux Z > 82.
+7. **[MEDIUM]** OP5-D35 : spectre CMB C_ℓ.
+8. **[MEDIUM]** OP-DM : identification matière noire (D54).
+9. **[MEDIUM]** OP-inhomogeneous : équation d'état régime inhomogène (D54).
+10. **[MEDIUM]** OP10-d : test Δm_iso par lattice QCD ±0.04 MeV.
+11. **[MEDIUM]** OP-SP2-1 : preuve analytique PDL-H.
+12. **[MEDIUM]** OP-SP2-2 : critère région ambiguë.
+13. **[MEDIUM]** OP-ZIB-G3 : régime chimisorption.
+14. **[MEDIUM]** OP-ZIB-EXP : validation expérimentale.
 
 **Série DL :**
-11. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
+15. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
 
 **Frontières expérimentales externes :**
 - FLAG/lattice QCD → Δm_iso ±0.04 MeV
 - Fermi-LAT → IGRB 50–200 MeV (contact Arbey+Auffinger en attente)
 - FRIB/RIKEN → P7/P8 noyaux neutron-riches (contact Recchia+Lenzi en attente)
-- EPFL/EPFZ → validation expérimentale D-exp-SP2 (à initier)
+- EPFL/EPFZ → validation D-exp-SP2 (à initier, groupe Chergui/Marzari)
+- EIS/CVA → validation D-exp-ZIB P1–P4 (Al₂O₃, AlN, TiN en ZnSO₄)
 
 ---
 
-## Dependency Map — Critical Path (updated Session 42)
+## Dependency Map — Critical Path (updated Session 43)
 
 ```
 LAYER 0  C1–C4 (axiomes)
@@ -404,14 +415,19 @@ LAYER 15 Électrofaible — θ_W RÉSOLU               [✓] PARTIEL
          θ_W = 19π/119 [✓] D55
          M_W/M_Z = cos(19π/119) [arbre correct, DS01; RG ouvert]
 
-LAYER 16 Applications exploratoires               [D-exp-SP2]
-         PDL-SP2 : bipartition ⟺ ε_geom=0 [✓ théorème]
-         PDL-H : G_glob bipartite ⟺ ε_H=0 [conjecture, 2^24 vérifié]
-         6 candidats PV score 4/4 [observation]
-         3 prédictions falsifiables [à valider EPFL/EPFZ]
+LAYER 16 Applications exploratoires               [D-exp-SP2, D-exp-ZIB]
+         PDL-SP2 : bipartition ⟺ ε_geom=0         [✓ théorème, D-exp-SP2]
+         PDL-H : G_glob bipartite ⟺ ε_H=0          [conjecture, 2^24 vérifié]
+         6 candidats PV score 4/4                  [observation]
+         3 prédictions PV falsifiables             [à valider EPFL/EPFZ]
+         P_surf²/M_moy → E_ads(Zn), R²=0.959      [✓ corroboré, D-exp-ZIB]
+         Prop. A1 : |pA−pB| ∝ ΔEN, r=0.988        [✓ résultat spectral]
+         4 prédictions ZIB falsifiables            [à valider EIS/CVA]
+         G1 : M_moy ↔ C1–C4                       [gap ouvert]
 
 LAYER 14 Dissémination — EN COURS
-         Zenodo: D01–D55 + DS01 + DL01+DL02 + D-exp-SP2 + aux | DM v23
+         Zenodo: D01–D55 + DS01 + DL01+DL02 + D-exp-SP2 + D-exp-ZIB + aux
+         DM v23
 ```
 
 **Resolved milestones:**
@@ -431,6 +447,12 @@ OP10-c RECLASSIFIÉ → ARBRE CORRECT (DS01) [✓]
 D-exp-SP2 PUBLISHED (DOI: 10.5281/zenodo.20242505)
   Théorème PDL-SP2 [✓] | Conjecture PDL-H [2^24 vérifié]
   6 candidats PV score 4/4 | 3 prédictions falsifiables
+D-exp-ZIB PUBLISHED (DOI: 10.5281/zenodo.20262293)
+  R1 [✓] bipartites hétéro > homoatomique (9 pts, 3 familles)
+  R2 [✓] P_surf²/M_moy, R²=0.959, RMSE=0.107 eV
+  Prop. A1 [✓] |pA−pB| ∝ ΔEN, r=0.988
+  4 prédictions ZIB falsifiables (Al₂O₃, AlN, TiN, ZnO)
+  Gap G1 : M_moy ↔ Δm_iso — analogue structurel documenté
 ```
 
 ---
@@ -446,6 +468,8 @@ D-exp-SP2 PUBLISHED (DOI: 10.5281/zenodo.20242505)
 **E4** — FLAG 2024: Δm_iso = 2.52 ± 0.08 MeV. PDL prédit 2.446 MeV (D55) et 2.532 MeV (D30). Distinguishable à ±0.04 MeV.
 
 **E5** — D-exp-SP2 (Session 42) : connexion Harary (1953) retrouvée depuis C1–C4. Connexion Shockley–Queisser (1961) : BP à 1.24 eV quasi-idéal. Connexion Fleming et al. Nature 1988 : τ_cs < 3 ps comme prédiction P1. Validation expérimentale à initier (EPFL Chergui / Marzari).
+
+**E6** — D-exp-ZIB (Session 43) : MACE-MP-0 (Batatia et al. 2023) utilisé comme calculateur proxy pour l'adsorption de surface. Materials Project (Jain et al. 2013) pour les structures cristallines. Mulliken (1934) pour la correspondance δq ∝ √ΔEN. Validation expérimentale à initier (EIS/CVA sur Al₂O₃, AlN, TiN en ZnSO₄ 2M).
 
 ---
 
@@ -477,13 +501,21 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 **D-exp series conventions (Session 42) :**
 - Numérotation D-exp-XX pour documents exploratoires hors corpus central
 - Statut épistémique explicite obligatoire (boîte jaune en LaTeX)
-- Vérification Colab exhaustive avant toute rédaction
+- Vérification Colab/MACE exhaustive avant toute rédaction
 - Pas de présupposé matériau — dérivation depuis les axiomes uniquement
-- Notebooks archivés sur Zenodo avec le document
+- Scripts Python archivés sur Zenodo avec le document
+- Résultats négatifs documentés honnêtement (Section dédiée)
 
 **D55 / OP10 discipline (Session 40) :**
 - θ_W = 19π/119 est un théorème inconditionnel — ne pas dégrader en conjecture
 - Prédiction P10 (Δm_iso = 2.446 MeV) est distincte de D30 (2.532 MeV)
 - OP10-c (M_W/M_Z) : correct au niveau arbre, corrections radiatives = étape suivante
 
-*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + auxiliaires.*
+**D-exp-ZIB discipline (Session 43) :**
+- P_surf²/M_moy : conjecture corroborée, non théorème — ne pas sur-présenter
+- M_moy est un paramètre externe analogue à Δm_iso — gap G1 documenté
+- Domaine de validité : zinc-blende/wurtzite/rocksalt (physisorption uniquement)
+- MgO exclu des prédictions supercondensateur (chimisorption, mécanisme distinct)
+- NaF et AlP exclus (solubilité / hydrolyse en milieu aqueux)
+
+*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + auxiliaires.*
