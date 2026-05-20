@@ -339,3 +339,8 @@ D-exp-ZIB
 https://doi.org/10.5281/zenodo.20262293 
 D-exp-ZIB: A PDL-Derived Surface Dipole Selection Principle for Zinc-Ion Aqueous Supercapacitor Electrodes — Bipartite Bond Graphs, Adsorption Energy Prediction, and Falsifiable Materials Ranking
 D_exp_ZIB_PDL_Dipole_Selection.pdf
+
+D-exp-mp01 
+https://doi.org/10.5281/zenodo.20316492 
+D-exp-MP01: PDL Structural Lacunae Confirmed by Materials Project Database Scan — Technetium and Promethium as Combinatorial Impossibilities (Projective Dynamic Logo Framework, Exploratory Document) 
+D_exp_MP01__PDL_Structural_Lacunae.pdf 
