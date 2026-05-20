@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 43 — 18 May 2026 (D-exp-ZIB publié — Principe de sélection matériaux supercondensateur zinc-ion)*
+*Last updated: Session 44 — 20 May 2026 (D-exp-MP01 publié — Lacunes structurelles PDL confirmées par Materials Project)*
 
 ---
 
@@ -120,40 +120,12 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
   **Contexte :** Extension du critère bipartite hétéroatomique de D-exp-SP2
   au domaine du stockage d'énergie électrochimique (supercondensateurs zinc-ion aqueux).
-  Première démonstration que les axiomes C1–C4 produisent un outil prédictif quantitatif
-  dans un domaine applicatif concret.
 
   **Résultat négatif documenté (Section 3) :**
   Diffusion bulk Zn²⁺ dans BP zinc-blende : E_a ≈ 1.9 eV >> seuil ZIB 0.6 eV.
-  Simulé par MACE-MP-0. Cohérent avec la rigidité des réseaux covalents III-V.
-  Redirige le programme vers l'adsorption de surface (EDLC).
-
-  **Résultat numérique robuste R1 (9 matériaux, 3 familles cristallines) :**
-  Tous les matériaux bipartites hétéroatomiques adsorbent Zn plus fortement
-  que le graphite (bipartite homoatomique). Sans exception. Δ moyen = 0.36 eV.
-  Simulé par MACE-MP-0 (atomes neutres, proxy physisorption).
 
   **Descripteur P_surf²/M_moy — Conjecture C1 corroborée :**
-  P_surf = d_AB × √ΔEN × f_⊥
-  où f_⊥ = fraction des liaisons A–B coupant le plan de surface perpendiculairement
-  (grandeur topologique pure, calculable depuis le graphe PDL de la supercell).
-  f_⊥ = 0.204 (zinc-blende) | 0.250 (wurtzite) | 0.333 (rocksalt) | 0.000 (hexagonal)
-
-  Régression E_ads(Zn) = −33.02 × (P_surf²/M_moy) − 0.849 eV
   R² = 0.959, RMSE = 0.107 eV sur 9 matériaux de 3 familles cristallines.
-
-  **Proposition A1 (résultat spectral nouveau) :**
-  |p_A − p_B| ∝ ΔEN sur le Laplacien normalisé (r = 0.988 sur 6 matériaux).
-  ΔEN est encodé dans la structure spectrale du graphe PDL → dérivation partielle depuis C1–C4.
-
-  **Analogie structurelle avec Δm_iso :**
-  M_moy joue le même rôle structurel que Δm_iso dans le corpus nucléaire :
-  forcé par la bipartition hétéroatomique, irreductible des axiomes combinatoires,
-  valeur numérique externe. Documenté comme observation, non comme théorème.
-
-  **Domaine de validité confirmé :**
-  ✓ zinc-blende (RMSE ≈ 0.08 eV) | ✓ wurtzite (RMSE ≈ 0.15 eV)
-  ✓ rocksalt (sauf chimisorption MgO) | ✗ hexagonal (f_⊥ = 0 trivial)
 
   **4 prédictions falsifiables (P1–P4) :**
   P1 : Al₂O₃ nanoporeux en ZnSO₄ → C_sp > 180 F/g à S_BET ≥ 200 m²/g
@@ -161,29 +133,40 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
   P3 : TiN nanoporeux en ZnSO₄ → C_sp > 140 F/g à S_BET ≥ 150 m²/g
   P4 : Ranking C_sp : Al₂O₃ > TiN > AlN > ZnO > SiC à S_BET égale
 
-  **3 gaps formels identifiés (G1–G3) :**
-  G1 : M_moy non dérivable de C1–C4 (analogue de Δm_iso — gap structurel)
-  G2 : correspondance Mulliken δq ∝ √ΔEN ↔ |p_A−p_B| non dérivée formellement
-  G3 : MgO en régime chimisorption — hors domaine du modèle physisorption
+**Session 44 — D-exp-MP01 produit et publié (20 May 2026):**
+- **D-exp-MP01 : Lacunes structurelles PDL confirmées par Materials Project.**
+  Document exploratoire — hors corpus central D01–D55, statut épistémique explicite.
+  DOI: 10.5281/zenodo.20316492
 
-  **Architecture système proposée :**
-  Électrode active : Al₂O₃ ou AlN nanoporeux (candidats PDL-optimaux viables)
-  Collecteur : SiC (bipartite, inerte, ε_geom=0, score 5/5)
-  Électrolyte : ZnSO₄ aqueux 2M (non inflammable, Zn abondant)
-  Module échangeable en < 2 min en station (charge supercap en < 60 s)
+  **Contexte :** Test de la conjecture OP3-D40 (Tc et Pm comme lacunes structurelles)
+  contre la base de données Materials Project (mp-api, ~160 000 matériaux inorganiques).
+  Scan exhaustif Z=1–83, filtre theoretical=False (composés observés uniquement),
+  hull < 0.05 eV/atom. Scripts Python v1–v3 archivés sur Zenodo.
 
-  **Scripts Python archivés sur Zenodo avec le document :**
-  PDL_ZIB_step1_screening.py | PDL_ZIB_step2_zinc_insertion.py
-  PDL_ZIB_step3_BEP_sites.py | PDL_ZIB_step4_MACE_NEB_BP.py
-  PDL_ZIB_step4b_MACE_corrected.py | PDL_ZIB_step4c_Octa_Tetra_Octa.py
-  PDL_ZIB_step5_workfunction.py | PDL_ZIB_conceptC_step1_screening.py
-  PDL_ZIB_conceptC_step2_adsorption.py | PDL_ZIB_conceptC_step3_capacite.py
-  PDL_dir3_B1_verification.py | PDL_dir3_C1_extension_6pts.py
-  PDL_conception_BN_AlN_MgO_validation.py
+  **Signal Test 3 (Tc et Pm vs voisins immédiats) :**
+  Tc (Z=43) : ratio observés/voisins±1 = 0.095 → facteur 10.5× de déficit.
+  Pm (Z=61) : ratio observés/voisins±1 = 0.0021 → facteur 484× de déficit.
+  Pm : 439/441 entrées MP marquées theoretical=True. 1 seul composé observé (Pm₂O₃).
+
+  **Signal Test 2 (scan Z=1–83, z-scores) :**
+  Référence : 29 éléments impairs stables Z>20 (moy=1114, std=443 composés observés).
+  z(Tc, n_obs) = −2.31σ | z(Pm, n_obs) = −2.51σ
+  z(Tc, %obs)  = −1.96σ | z(Pm, %obs)  = −5.08σ
+  Signal spécifique aux lacunes PDL : nombres magiques {He,Ca,Ni,Sn,Pb} dans la norme.
+
+  **Tableau périodique PDL en TikZ :** inclus comme figure centrale du document.
+
+  **Statut épistémique :**
+  - Déficit Tc/Pm sur composés observés : fait empirique MP établi.
+  - Corrélation avec conjecture OP3-D40 : forte (z=−5.08σ pour Pm sur %obs).
+  - Mécanisme causal Block II→III : OP4 ouvert (non encore théorème).
+
+  **Spotlight ResearchGate publié :** sur D47, texte narratif accompagné
+  du tableau périodique PDL comme image d'accroche.
 
 ---
 
-## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + auxiliaires)
+## Corpus Table (D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + auxiliaires)
 
 | Doc | DOI | Titre abrégé |
 |-----|-----|--------------|
@@ -255,6 +238,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 |
 | D-exp-SP2 | 10.5281/zenodo.20242505 | Topological Criterion Photon→Electron |
 | D-exp-ZIB | 10.5281/zenodo.20262293 | Surface Dipole Selection — Zinc-Ion Supercapacitor |
+| D-exp-MP01 | 10.5281/zenodo.20316492 | PDL Structural Lacunae — Materials Project Scan |
 
 ---
 
@@ -279,6 +263,10 @@ E_a (Zn bulk BP)      : ~1.9 eV (MACE-MP-0, D-exp-ZIB, bulk exclu)
 R² (P_surf²/M_moy)    : 0.959 (9 matériaux, 3 familles, D-exp-ZIB)
 RMSE (régression ZIB) : 0.107 eV
 r (|pA−pB| vs ΔEN)   : 0.988 (Proposition A1, D-exp-ZIB)
+z(Tc, %obs) MP01      : −1.96σ vs 29 éléments impairs stables Z>20
+z(Pm, %obs) MP01      : −5.08σ vs 29 éléments impairs stables Z>20
+ratio obs Tc/voisins  : 0.095 (facteur 10.5×, D-exp-MP01)
+ratio obs Pm/voisins  : 0.0021 (facteur 484×, D-exp-MP01)
 ```
 
 ---
@@ -294,22 +282,26 @@ THÉORÈMES INCONDITIONNELS (C1–C4) :
 RÉSULTATS NUMÉRIQUES ROBUSTES :
   R1  : bipartites hétéro > homoatomique pour adsorption Zn (9 pts, D-exp-ZIB)
   R2  : P_surf²/M_moy prédit E_ads(Zn), R²=0.959 (D-exp-ZIB)
+  R3  : Déficit observés MP : Tc facteur 10.5×, Pm facteur 484× vs voisins (D-exp-MP01)
+  R4  : z(Pm, %obs) = −5.08σ vs population de contrôle (D-exp-MP01)
 
 CONJECTURES FORTEMENT CORROBORÉES :
   C1  : E_ads ∝ −P_surf²/M_moy (réponse linéaire + Keesom, D-exp-ZIB)
   C2  : f_⊥ est une grandeur topologique PDL pure (D-exp-ZIB)
   PDL-H : G_glob bipartite ⟺ ε_geom(H)=0 (2²⁴ vérifié, D-exp-SP2)
+  OP3-D40 : Tc et Pm sont lacunes structurelles (corroborée empiriquement, D-exp-MP01)
 
-GAPS FORMELS OUVERTS (D-exp-ZIB) :
-  G1  : M_moy non dérivable de C1–C4 (analogue structurel de Δm_iso)
-  G2  : correspondance Mulliken ↔ |pA−pB| non dérivée formellement
-  G3  : régime chimisorption (MgO) hors domaine du modèle
+GAPS FORMELS OUVERTS :
+  G1  : M_moy non dérivable de C1–C4 (D-exp-ZIB)
+  G2  : correspondance Mulliken ↔ |pA−pB| non dérivée formellement (D-exp-ZIB)
+  G3  : régime chimisorption (MgO) hors domaine du modèle (D-exp-ZIB)
+  OP4 : lien causal Block II→Block III (D-exp-MP01 — ouvert)
 
-PRÉDICTIONS FALSIFIABLES (D-exp-ZIB) :
-  P1  : Al₂O₃ nanoporeux → C_sp > 180 F/g (ZnSO₄, S_BET ≥ 200 m²/g)
-  P2  : AlN nanoporeux → C_sp > 150 F/g (ZnSO₄, pH ≥ 4.5)
-  P3  : TiN nanoporeux → C_sp > 140 F/g (ZnSO₄)
-  P4  : Ranking Al₂O₃ > TiN > AlN > ZnO > SiC à S_BET égale
+PRÉDICTIONS FALSIFIABLES :
+  D-exp-ZIB P1–P4 : C_sp Al₂O₃/AlN/TiN/ZnO en ZnSO₄ (EIS/CVA)
+  D-exp-SP2 P1–P3 : τ_cs GaN/BP/SiC/GaP (femtoseconde pump-probe)
+  D45        : M*_PDL = +11.89% vs M*_GR (Fermi-LAT)
+  D41 P7/P8  : ⁸⁸Ru/⁹⁰Ru et ⁹²Pd/⁹⁴Pd (FRIB/RIKEN)
 
 RECLASSIFIÉS (DS01) :
   OP7 : résidu 47 ppm → MÉTROLOGIQUE (cohérent QED isospin)
@@ -320,6 +312,7 @@ ATTENTE EXTERNE :
   Fermi-LAT : IGRB 50–200 MeV — contact Arbey+Auffinger en attente
   FRIB/RIKEN : structure nucléaire — contact Recchia+Lenzi en attente
   EIS/CVA : validation P1–P4 D-exp-ZIB — à initier (Al₂O₃, AlN, TiN)
+  Materials Project : D-exp-MP01 — test OP4 (Block II→III causal link)
 
 CLÔTURE INTERNE CONFIRMÉE :
   C1–C4 → α, G, Λ, θ_W, S_BH, London, tableau périodique Z≤82,
@@ -329,7 +322,7 @@ CLÔTURE INTERNE CONFIRMÉE :
 
 ---
 
-## Open Problems (updated Session 43)
+## Open Problems (updated Session 44)
 
 **Reclassifiés en Session 41 (DS01) :**
 - OP7 : résidu 47 ppm → MÉTROLOGIQUE. Attente FLAG.
@@ -346,12 +339,17 @@ CLÔTURE INTERNE CONFIRMÉE :
 - **[MEDIUM]** OP-ZIB-G3 : étendre le modèle au régime chimisorption (MgO, oxydes ioniques).
 - **[MEDIUM]** OP-ZIB-EXP : validation expérimentale P1–P4 par EIS/CVA sur Al₂O₃, AlN, TiN.
 
+**Nouveaux — D-exp-MP01 (Session 44) :**
+- **[HIGH]** OP4-MP01 : dériver formellement le lien causal Block II (stabilité nucléaire) → Block III (richesse chimique) depuis C1–C4. C'est OP4 du programme PDL, maintenant empiriquement motivé par le signal z=−5.08σ de Pm.
+- **[MEDIUM]** OP-MP01-scan : étendre le scan à Z=84–118 pour tester si les éléments Z>82 (OP15) montrent un signal distinct des éléments théorèmes Z≤82.
+- **[LOW]** OP-MP01-OP3 : preuve formelle de la conjecture OP3 (Tc, Pm) depuis C1–C4.
+
 **Priorité haute :**
 1. **[HIGH]** OP10-c : corrections radiatives électrofaibles dans cadre PDL.
 2. **[HIGH]** OP9 : masses muon/tau depuis extension hiérarchique.
 3. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
 4. **[HIGH]** OP-ZIB-G1 : dérivation M_moy depuis C1–C4.
-5. **[HIGH]** OP-ZIB-G2 : correspondance Mulliken ↔ spectre PDL.
+5. **[HIGH]** OP4-MP01 : lien causal Block II→Block III.
 
 **Priorité moyenne :**
 6. **[MEDIUM]** OP15 : noyaux Z > 82.
@@ -363,9 +361,10 @@ CLÔTURE INTERNE CONFIRMÉE :
 12. **[MEDIUM]** OP-SP2-2 : critère région ambiguë.
 13. **[MEDIUM]** OP-ZIB-G3 : régime chimisorption.
 14. **[MEDIUM]** OP-ZIB-EXP : validation expérimentale.
+15. **[MEDIUM]** OP-MP01-scan : Z=84–118 dans Materials Project.
 
 **Série DL :**
-15. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
+16. **[HIGH]** DL03 : encadrement numérique n*_vie depuis fonction de gain R¹_active.
 
 **Frontières expérimentales externes :**
 - FLAG/lattice QCD → Δm_iso ±0.04 MeV
@@ -373,10 +372,11 @@ CLÔTURE INTERNE CONFIRMÉE :
 - FRIB/RIKEN → P7/P8 noyaux neutron-riches (contact Recchia+Lenzi en attente)
 - EPFL/EPFZ → validation D-exp-SP2 (à initier, groupe Chergui/Marzari)
 - EIS/CVA → validation D-exp-ZIB P1–P4 (Al₂O₃, AlN, TiN en ZnSO₄)
+- Materials Project / EIS → D-exp-MP01 OP4 (Block II→III causal link)
 
 ---
 
-## Dependency Map — Critical Path (updated Session 43)
+## Dependency Map — Critical Path (updated Session 44)
 
 ```
 LAYER 0  C1–C4 (axiomes)
@@ -415,7 +415,7 @@ LAYER 15 Électrofaible — θ_W RÉSOLU               [✓] PARTIEL
          θ_W = 19π/119 [✓] D55
          M_W/M_Z = cos(19π/119) [arbre correct, DS01; RG ouvert]
 
-LAYER 16 Applications exploratoires               [D-exp-SP2, D-exp-ZIB]
+LAYER 16 Applications exploratoires               [D-exp-SP2, D-exp-ZIB, D-exp-MP01]
          PDL-SP2 : bipartition ⟺ ε_geom=0         [✓ théorème, D-exp-SP2]
          PDL-H : G_glob bipartite ⟺ ε_H=0          [conjecture, 2^24 vérifié]
          6 candidats PV score 4/4                  [observation]
@@ -424,10 +424,14 @@ LAYER 16 Applications exploratoires               [D-exp-SP2, D-exp-ZIB]
          Prop. A1 : |pA−pB| ∝ ΔEN, r=0.988        [✓ résultat spectral]
          4 prédictions ZIB falsifiables            [à valider EIS/CVA]
          G1 : M_moy ↔ C1–C4                       [gap ouvert]
+         Tc/Pm déficit MP : z=−5.08σ (Pm)         [✓ fait empirique, D-exp-MP01]
+         OP3-D40 corroborée empiriquement          [conjecture, D-exp-MP01]
+         OP4 : Block II→Block III causal link      [ouvert, motivé empiriquement]
 
 LAYER 14 Dissémination — EN COURS
-         Zenodo: D01–D55 + DS01 + DL01+DL02 + D-exp-SP2 + D-exp-ZIB + aux
+         Zenodo: D01–D55 + DS01 + DL01+DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + aux
          DM v23
+         Spotlight ResearchGate : D47 (tableau périodique PDL)
 ```
 
 **Resolved milestones:**
@@ -453,6 +457,13 @@ D-exp-ZIB PUBLISHED (DOI: 10.5281/zenodo.20262293)
   Prop. A1 [✓] |pA−pB| ∝ ΔEN, r=0.988
   4 prédictions ZIB falsifiables (Al₂O₃, AlN, TiN, ZnO)
   Gap G1 : M_moy ↔ Δm_iso — analogue structurel documenté
+D-exp-MP01 PUBLISHED (DOI: 10.5281/zenodo.20316492)
+  z(Tc, %obs) = −1.96σ | z(Pm, %obs) = −5.08σ [✓ fait empirique]
+  Ratio Tc/voisins = 0.095 (×10.5) | Ratio Pm/voisins = 0.0021 (×484)
+  Pm : 439/441 entrées MP théoriques — 0 composé naturel
+  OP3-D40 corroborée empiriquement | OP4 identifié comme priorité haute
+  Tableau périodique PDL TikZ inclus comme figure centrale
+  Spotlight ResearchGate publié sur D47
 ```
 
 ---
@@ -470,6 +481,8 @@ D-exp-ZIB PUBLISHED (DOI: 10.5281/zenodo.20262293)
 **E5** — D-exp-SP2 (Session 42) : connexion Harary (1953) retrouvée depuis C1–C4. Connexion Shockley–Queisser (1961) : BP à 1.24 eV quasi-idéal. Connexion Fleming et al. Nature 1988 : τ_cs < 3 ps comme prédiction P1. Validation expérimentale à initier (EPFL Chergui / Marzari).
 
 **E6** — D-exp-ZIB (Session 43) : MACE-MP-0 (Batatia et al. 2023) utilisé comme calculateur proxy pour l'adsorption de surface. Materials Project (Jain et al. 2013) pour les structures cristallines. Mulliken (1934) pour la correspondance δq ∝ √ΔEN. Validation expérimentale à initier (EIS/CVA sur Al₂O₃, AlN, TiN en ZnSO₄ 2M).
+
+**E7** — D-exp-MP01 (Session 44) : Materials Project (Jain et al. 2013) + mp-api + pymatgen (Ong et al. 2013). Goeppert-Mayer (1949) et Haxel-Jensen-Suess (1949) pour les nombres magiques. Signal z=−5.08σ pour Pm sur %observé — corrélation empirique avec conjecture OP3-D40. Connexion Block II→Block III : premier test quantitatif PDL sur données chimiques expérimentales.
 
 ---
 
@@ -518,4 +531,11 @@ Update after each session: Programme Summary, Corpus Table, Key Numerical Values
 - MgO exclu des prédictions supercondensateur (chimisorption, mécanisme distinct)
 - NaF et AlP exclus (solubilité / hydrolyse en milieu aqueux)
 
-*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + auxiliaires.*
+**D-exp-MP01 discipline (Session 44) :**
+- Déficit Tc/Pm : fait empirique MP établi — ne pas présenter comme preuve de OP3
+- OP3-D40 reste une conjecture — le signal MP est une corroboration empirique forte
+- OP4 (Block II→III) : ouvert — est la prochaine cible formelle naturelle
+- z-scores calculés vs population de contrôle d'éléments impairs stables Z>20
+- Filtre theoretical=False est l'indicateur-clé : sépare observations des prédictions DFT
+
+*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + auxiliaires.*
