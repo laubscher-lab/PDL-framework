@@ -1,0 +1,438 @@
+\documentclass[11pt,a4paper]{article}
+
+% ── Packages ────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage[numbers]{natbib}
+\usepackage{caption}
+\usepackage{float}
+
+\geometry{a4paper, margin=2.5cm}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = blue!60!black,
+  citecolor  = blue!60!black,
+  urlcolor   = blue!60!black,
+  pdftitle   = {D-exp-Zr: Structural Origin of the Zirconium Quantum Phase Transition},
+  pdfauthor  = {Cédric Laubscher}
+}
+
+% ── tcolorbox styles ────────────────────────────────────────────────────────
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{epistemicbox}{
+  enhanced, breakable,
+  colback  = yellow!6!white,
+  colframe = yellow!60!black,
+  fonttitle= \bfseries,
+  title    = {Epistemic Status}
+}
+
+\newtcolorbox{pdltheorem}[2][]{
+  enhanced, breakable,
+  colback  = blue!4!white,
+  colframe = blue!50!black,
+  fonttitle= \bfseries,
+  title    = {#2}, #1
+}
+
+\newtcolorbox{pdlconjecture}[2][]{
+  enhanced, breakable,
+  colback  = orange!5!white,
+  colframe = orange!60!black,
+  fonttitle= \bfseries,
+  title    = {#2}, #1
+}
+
+\newtcolorbox{pdlopen}[2][]{
+  enhanced, breakable,
+  colback  = red!4!white,
+  colframe = red!50!black,
+  fonttitle= \bfseries,
+  title    = {#2}, #1
+}
+
+% ── Theorem environments ─────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ── Macros ───────────────────────────────────────────────────────────────────
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Zsat}{Z_{\mathrm{sat}}}
+\newcommand{\Nmin}{N_{\min}}
+\newcommand{\Dn}{\Delta n}
+\newcommand{\nuu}{n_u}
+\newcommand{\ndd}{n_d}
+\newcommand{\protonq}{(24,\,28,\,930,\,10087,\,11017)}
+\newcommand{\neutronq}{(24,\,28,\,1032,\,9960,\,10992)}
+\newcommand{\vp}{\varphi}
+\newcommand{\Tpdl}{T}
+\newcommand{\Tpp}{T_{pp}}
+\newcommand{\MQPT}{N_{\mathrm{QPT}}}
+
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+\title{\textbf{D-exp-Zr: Structural Origin of the Quantum Phase Transition
+in Zirconium Isotopes}\\[8pt]
+{\large A \PDL\ Framework Analysis of the Lifetime Measurements\\
+of Pasqualato et al.\ (2024)}\\[6pt]
+{\normalsize Projective Dynamic Logo Framework --- Exploratory Document}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}\quad
+\small \href{mailto:cedric@cedriclaubscher.ch}{cedric@cedriclaubscher.ch}\\
+\small ORCID: \href{https://orcid.org/0009-0004-5415-1098}{0009-0004-5415-1098}}
+
+\date{May 2026\\[4pt]
+\small PDL corpus: D01--D55 + DS01 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01\\
+\small Zenodo community: \texttt{pdl-framework}}
+
+\maketitle
+
+% ── Epistemic status ─────────────────────────────────────────────────────────
+\begin{epistemicbox}
+This is an \textbf{exploratory document} in the D-exp series of the PDL framework. It does not belong to the core corpus (D01--D55) and introduces no new axioms. Its purpose is to confront two established theorems of the PDL corpus --- the saturation threshold (D40) and the harmonic-oscillator level table (D47) --- with the experimental data published by Pasqualato et al.\ \cite{Pasqualato_2024} on the quantum phase transition in $^{98-104}$Zr. The structural claims established here are arithmetic corollaries of D40 and D47. The proposed connection between those structural facts and the collective deformation onset is labelled explicitly as a \textbf{conjecture} and is not yet derived from first principles.
+\end{epistemicbox}
+
+\begin{abstract}
+The recent precision measurement of nuclear lifetimes in $^{98-104}$Zr by Pasqualato et al.\ \cite{Pasqualato_2024} provides the most reliable $B(E2)$ values to date across the celebrated quantum phase transition (QPT) at $N=60$ in the zirconium chain. We analyse this experimental context using the Projective Dynamic Logo (\PDL) framework, a combinatorial approach that derives nuclear structure from four axioms on finite signed graphs without presupposing spacetime or fields. Two established theorems of the PDL corpus --- the nuclear saturation threshold $\Zsat = \Rsea(n)/\Rsurf(p) = 19.86 \approx 20$ (D40) and the harmonic-oscillator level table with spin-orbit splitting $s = 1/12$ (D47) --- place the Zr chain in a structurally distinguished position: $Z(\mathrm{Zr}) = 40 = 2\Zsat$ to $0.72\%$, and the observed $\MQPT = 60$ falls within the $5d_{3/2}$ neutron level (cumulative occupancy 59--62), immediately below the opening of the $5g_{7/2}$ level at $N=63$. Furthermore, $\pi g_{9/2}$ (proton, fills $Z=41$--50) and $\nu g_{7/2}$ (neutron, fills $N=63$--70) are spin-orbit partners in the same harmonic-oscillator shell ($N_{\mathrm{osc}}=4$, $\ell=4$), related by the Mirror Lemma of D47. We propose a structural conjecture: the QPT in Zr is the consequence of the simultaneous proximity of $Z=40$ to the $\pi g_{9/2}$ opening and of $N=60$ to the $\nu g_{7/2}$ opening, mediated by the Mirror Lemma. This conjecture is falsifiable and its proof or disproof from the PDL axioms C1--C4 is identified as a well-defined open problem.
+\end{abstract}
+
+\tableofcontents
+
+\clearpage
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Introduction and motivation}
+\label{sec:intro}
+% ════════════════════════════════════════════════════════════════════════════
+
+The zirconium ($Z=40$) isotopic chain has long served as a benchmark for nuclear structure theory. The abrupt change in the energy of the first $2^+$ state and the large jump in the $B(E2;\,2^+_1 \to 0^+_1)$ transition strength between $^{98}$Zr and $^{100}$Zr constitute one of the most striking examples of a quantum phase transition (QPT) in the nuclear chart~\cite{Togashi_2016}. Despite decades of experimental and theoretical effort, a fully microscopic and parameter-free understanding of this transition remains elusive.
+
+The recent work of Pasqualato et al.~\cite{Pasqualato_2024} provides a significant experimental advance: using the Recoil Distance Doppler Shift technique in $\gamma\gamma$-coincidence mode at GANIL with the AGATA spectrometer and VAMOS++, the authors measure the lifetimes of excited states in $^{98-104}$Zr with markedly reduced systematic uncertainties. In particular, the $\gamma\gamma$-coincidence technique avoids the feeding corrections that have historically affected $\gamma$-single measurements, yielding what the authors describe as the most reliable $B(E2)$ values currently available for this chain.
+
+The present document asks a complementary question: does the Projective Dynamic Logo (\PDL) framework, a combinatorial approach to fundamental physics derived from four axioms on finite signed graphs~\cite{PDL_DM}, offer a structural explanation for the occurrence of the QPT at precisely $Z=40$ and $N=60$? We show that two theorems already established in the PDL corpus --- one concerning the nuclear saturation threshold (D40~\cite{PDL_D40}) and one concerning the harmonic-oscillator level table with axiom-derived spin-orbit splitting (D47~\cite{PDL_D47}) --- place $Z=40$ and $N=60$ in a structurally distinguished position, without introducing any free parameter. We are careful to separate what follows rigorously from the theorems (arithmetic corollaries) from what requires further formal development (a conjecture).
+
+This document is intended to be self-contained. Section~\ref{sec:pdl} introduces the PDL framework and its nuclear results in sufficient detail that a reader familiar with Pasqualato et al.~\cite{Pasqualato_2024} but not with the PDL corpus can follow the argument. Sections~\ref{sec:zsat} and~\ref{sec:levels} establish the two structural facts. Section~\ref{sec:conjecture} formulates the conjecture and identifies the open problem. Section~\ref{sec:discussion} discusses the relation to the experimental findings and to existing theoretical frameworks, and Section~\ref{sec:conclusion} concludes.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{The PDL framework: a self-contained summary}
+\label{sec:pdl}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection{Foundations}
+\label{subsec:foundations}
+
+The Projective Dynamic Logo (\PDL) framework reconstructs physical observables from four combinatorial axioms (C1--C4) on finite signed graphs, without presupposing spacetime, particles, or fields. The proton is the unique solution to a quasi-completeness condition on these graphs; its internal structure is fully characterised by an integer quintuplet $\protonq$, where the five entries count, respectively, the two valence-core sizes $\nuu = 24$ and $\ndd = 28$, the stationary valence relational content $\rval(p) = 930$, the dynamical sea $\Rsea(p) = 10087$, and the total relational budget $\Rtot(p) = 11017$. The neutron is derived from the proton by exchanging one $u$-core for one $d$-core; its quintuplet is $\neutronq$.
+
+No continuous input is introduced. All nuclear results derived below use only these integer quintuplets and the golden ratio $\vp = (1+\sqrt{5})/2$, which enters through the definition of the proton active surface (D05~\cite{PDL_D05}):
+\begin{equation}
+  \Rsurf(p) = 310\,\vp \approx 501.59,
+  \label{eq:Rsurf}
+\end{equation}
+where $310 = \rval(p)/3$ is the mean valence content per core.
+
+\subsection{Nuclear binding units}
+\label{subsec:binding}
+
+From $\Rsurf(p)$ and the neutron sea $\Rsea(n) = 9960$, two nuclear binding units are defined (D40~\cite{PDL_D40}):
+\begin{align}
+  \Tpdl &= \frac{\Rsurf(p)^2}{\Rsea(n)} \approx 25.26, \label{eq:T} \\
+  \Tpp  &= \frac{\Rsurf(p)^2}{\Rtot(p)} \approx 22.84. \label{eq:Tpp}
+\end{align}
+The quantity $\Tpdl$ measures the binding capacity that one neutron provides to one adjacent proton; $\Tpp$ measures the conflict cost generated by one proton--proton pair. The key structural identity is:
+\begin{equation}
+  \frac{\Tpdl}{(\Dn+1)^2} = \frac{25.26}{25} = 1.010 \approx 1,
+  \label{eq:Tident}
+\end{equation}
+where $\Dn = \ndd - \nuu = 4$. This near-identity, accurate to 1\%, is central to all nuclear stability results in PDL.
+
+\subsection{The saturation threshold}
+\label{subsec:Zsat}
+
+A neutron in a nucleus can engage simultaneously all protons within a coherent surface region. The maximum number of protons that one neutron can bind simultaneously is set by the ratio of the neutron sea to the proton active surface:
+\begin{equation}
+  \Zsat = \frac{\Rsea(n)}{\Rsurf(p)} = \frac{9960}{310\,\vp} = 19.857 \approx 20.
+  \label{eq:Zsat}
+\end{equation}
+This is the \textbf{saturation threshold} established as a theorem in D40~\cite{PDL_D40}. For $Z \leq \Zsat$, each neutron can engage all $Z$ protons (unsaturated regime, $N \approx Z$); for $Z > \Zsat$, the neutron saturates and additional protons do not increase the conflict it must absorb. The value $\Zsat \approx 20$ corresponds to calcium, the empirically observed boundary between symmetric and neutron-rich nuclei.
+
+\subsection{The harmonic-oscillator PDL level table}
+\label{subsec:HOlevels}
+
+The spin-orbit splitting of nuclear shells is derived in D47~\cite{PDL_D47} from the valence-core asymmetry $\Dn = 4$: the splitting coefficient is:
+\begin{equation}
+  s = \frac{\Dn}{2\nuu} = \frac{4}{48} = \frac{1}{12}.
+  \label{eq:splitting}
+\end{equation}
+This value is an \emph{unconditional theorem} of axioms C1--C4 --- the discriminant of the quasi-completeness equation equals $149^2$ (a perfect square) uniquely for $\Dn = 4$, forcing $s = 1/12$ without any experimental input. With this splitting, the harmonic-oscillator level energies are:
+\begin{equation}
+  E(N_{\mathrm{osc}}, \ell, j) = \left(N_{\mathrm{osc}} + \tfrac{3}{2}\right)\hbar\omega_0 \mp s\,\ell\,\hbar\omega_0,
+  \label{eq:HOenergy}
+\end{equation}
+where the minus sign applies to $j = \ell + 1/2$. Levels are filled in order of increasing energy. Table~\ref{tab:HOlevels} lists all levels up to cumulative occupancy 70, with cumulative occupancies verified by Python script (see Appendix~\ref{app:code}).
+
+\begin{table}[H]
+\centering
+\caption{HO-PDL level table with spin-orbit splitting $s = 1/12$ (exact rational). Levels are listed in order of increasing energy. Cumulative occupancies at nuclear magic numbers are indicated. All seven magic numbers $\{2,8,20,28,50,82,126\}$ are reproduced exactly (7/7, D47 Theorem).}
+\label{tab:HOlevels}
+\small
+\begin{tabular}{rccccrr}
+\toprule
+\# & Level & $N_{\mathrm{osc}}$ & $\ell$ & $j$ & $d = 2j+1$ & Cumul \\
+\midrule
+1  & $1s_{1/2}$  & 0 & 0 & $1/2$  &  2 &   2 \quad\textbf{[magic]} \\
+2  & $2p_{3/2}$  & 1 & 1 & $3/2$  &  4 &   6 \\
+3  & $2p_{1/2}$  & 1 & 1 & $1/2$  &  2 &   8 \quad\textbf{[magic]} \\
+4  & $3d_{5/2}$  & 2 & 2 & $5/2$  &  6 &  14 \\
+5  & $3s_{1/2}$  & 2 & 0 & $1/2$  &  2 &  16 \\
+6  & $3d_{3/2}$  & 2 & 2 & $3/2$  &  4 &  20 \quad\textbf{[magic]} \\
+7  & $4f_{7/2}$  & 3 & 3 & $7/2$  &  8 &  28 \quad\textbf{[magic]} \\
+8  & $4p_{3/2}$  & 3 & 1 & $3/2$  &  4 &  32 \\
+9  & $4p_{1/2}$  & 3 & 1 & $1/2$  &  2 &  34 \\
+10 & $4f_{5/2}$  & 3 & 3 & $5/2$  &  6 &  40 \\
+11 & $5g_{9/2}$  & 4 & 4 & $9/2$  & 10 &  50 \quad\textbf{[magic]} \\
+12 & $5d_{5/2}$  & 4 & 2 & $5/2$  &  6 &  56 \\
+13 & $5s_{1/2}$  & 4 & 0 & $1/2$  &  2 &  58 \\
+14 & $5d_{3/2}$  & 4 & 2 & $3/2$  &  4 &  62 \\
+15 & $5g_{7/2}$  & 4 & 4 & $7/2$  &  8 &  70 \\
+16 & $6h_{11/2}$ & 5 & 5 & $11/2$ & 12 &  82 \quad\textbf{[magic]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Mirror Lemma of D47 states that the HO-PDL levels of the proton and neutron are \emph{isomorphic}: both share the same $\nuu = 24$, $\ndd = 28$, and hence the same splitting $s = 1/12$ and the same level order. Consequently, Table~\ref{tab:HOlevels} applies equally to proton and neutron level filling.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Structural Fact A: \texorpdfstring{$Z(\mathrm{Zr}) = 2\Zsat$}{Z(Zr) = 2Zsat}}
+\label{sec:zsat}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{pdltheorem}{Structural Fact A (arithmetic corollary of D40 Theorem)}
+From the PDL integers alone:
+\begin{equation}
+  \frac{Z(\mathrm{Zr})}{\Zsat} = \frac{40}{19.857} = 2.014,
+  \label{eq:ZZrZsat}
+\end{equation}
+with a deviation of $0.72\%$ from the exact integer~$2$. Equivalently, $Z(\mathrm{Zr}) = 2\,\Zsat$ to $0.72\%$.
+\end{pdltheorem}
+
+\begin{proof}
+Direct substitution of $\Rsurf(p) = 310\,\vp$ and $\Rsea(n) = 9960$ into equation~\eqref{eq:Zsat} gives $\Zsat = 9960/(310\,\vp) = 19.857$. The proton number of zirconium is $Z(\mathrm{Zr}) = 40$ by definition (atomic number). The ratio $40/19.857 = 2.014$ deviates from $2$ by $0.014/2 = 0.72\%$. No parameter is adjusted.
+\end{proof}
+
+\begin{remark}
+For comparison, the central structural identity of PDL nuclear theory, $\Tpdl/(\Dn+1)^2 = 1.010$, holds to $1\%$. The relation $Z(\mathrm{Zr}) = 2\Zsat$ is of the same order of precision and arises from a ratio of the same PDL integers. It is not an exact integer relation but a structural near-coincidence of the kind that characterises the PDL nuclear sector.
+\end{remark}
+
+The physical meaning is direct: Zr ($Z=40$) is the element whose proton number equals twice the nuclear saturation threshold. At $Z=40$, each neutron can engage exactly two ``saturation units'' of protons, making Zr structurally the most symmetric element in the neutron-saturated regime. The QPT being associated with $Z=40$ is therefore not arbitrary from the PDL perspective: it is the element with the most balanced proton--saturation architecture.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Structural Fact B: the level structure at \texorpdfstring{$N=60$}{N=60}}
+\label{sec:levels}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection{Position of \texorpdfstring{$N=60$}{N=60} in the HO-PDL table}
+\label{subsec:N60}
+
+Reading Table~\ref{tab:HOlevels}, the neutron levels above the $g_{9/2}$ magic closure at $N=50$ fill in the following sequence:
+
+\begin{center}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Level & $d$ & Start & End & Note \\
+\midrule
+$5g_{9/2}$ & 10 & 41 & 50 & \textbf{magic closure} \\
+$5d_{5/2}$ &  6 & 51 & 56 & \\
+$5s_{1/2}$ &  2 & 57 & 58 & \\
+$5d_{3/2}$ &  4 & 59 & 62 & \textbf{$N=60$ here} \\
+$5g_{7/2}$ &  8 & 63 & 70 & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{pdltheorem}{Structural Fact B (arithmetic corollary of D47 Theorem)}
+The observed QPT neutron number $\MQPT = 60$ in $^{100}$Zr falls within the $5d_{3/2}$ neutron level (cumulative occupancy 59--62). It is 2 neutrons above the $5s_{1/2}$ closure at $N=58$ and 3 neutrons below the opening of the $5g_{7/2}$ level at $N=63$.
+\end{pdltheorem}
+
+\begin{proof}
+Direct reading of Table~\ref{tab:HOlevels}, whose entries are determined by equation~\eqref{eq:HOenergy} with $s = 1/12$ (exact rational). The cumulative occupancy at the end of the $5s_{1/2}$ level is $2+4+2+6+2+4+8+4+2+6+10+6+2 = 58$. The $5d_{3/2}$ level therefore occupies cumulative positions 59--62. Since $59 \leq 60 \leq 62$, $N=60$ lies within this level. Verified by exhaustive Python script (Appendix~\ref{app:code}).
+\end{proof}
+
+\subsection{The spin-orbit partner structure}
+\label{subsec:SOpartners}
+
+The levels $5g_{9/2}$ (filling protons $Z=41$--50) and $5g_{7/2}$ (filling neutrons $N=63$--70) share the same oscillator quantum number $N_{\mathrm{osc}} = 4$ and the same orbital angular momentum $\ell = 4$. They differ only in total angular momentum: $j = \ell + 1/2 = 9/2$ and $j = \ell - 1/2 = 7/2$. They are therefore \textbf{spin-orbit partners} within the $N_{\mathrm{osc}} = 4$ shell.
+
+\begin{pdltheorem}{Structural Fact C (D47 Mirror Lemma)}
+The proton level $\pi g_{9/2}$ and the neutron level $\nu g_{7/2}$ are spin-orbit partners in the same HO-PDL shell ($N_{\mathrm{osc}} = 4$, $\ell = 4$). By the Mirror Lemma of D47, the proton and neutron HO-PDL level sequences are isomorphic; hence $\pi g_{9/2}$ and $\nu g_{7/2}$ occupy structurally equivalent positions in their respective sequences.
+\end{pdltheorem}
+
+Furthermore:
+\begin{itemize}
+  \item $Z(\mathrm{Zr}) = 40$ is the \textbf{last proton number before $\pi g_{9/2}$ opens} (which starts at $Z=41$). Zr is therefore the heaviest element whose proton shell does not yet include $g_{9/2}$ protons.
+  \item $\MQPT = 60$ is \textbf{3 neutrons before $\nu g_{7/2}$ opens} (which starts at $N=63$). The QPT occurs when neutrons are approaching but have not yet entered the $\nu g_{7/2}$ orbital.
+\end{itemize}
+
+The physical interpretation advanced in Federman and Pittel~\cite{Federman_1977} and confirmed numerically by Togashi et al.~\cite{Togashi_2016} is that the QPT is driven by the strong residual proton-neutron interaction between $\pi g_{9/2}$ and $\nu g_{7/2}/\nu d_{5/2}$. In the HO-PDL table, this interaction involves precisely the spin-orbit partners identified in Structural Fact~C.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Conjecture: structural resonance at \texorpdfstring{$Z=40$, $N\sim 60$}{Z=40, N~60}}
+\label{sec:conjecture}
+% ════════════════════════════════════════════════════════════════════════════
+
+The three structural facts established in Sections~\ref{sec:zsat} and~\ref{sec:levels} are arithmetic consequences of theorems already proved in D40 and D47. They can be summarised as follows:
+
+\begin{enumerate}
+  \item $Z(\mathrm{Zr}) = 2\Zsat$ to $0.72\%$ (Structural Fact A).
+  \item $N=60$ falls within the $5d_{3/2}$ neutron level, 2 above the $5s_{1/2}$ closure and 3 below the $\nu g_{7/2}$ opening (Structural Fact B).
+  \item $\pi g_{9/2}$ and $\nu g_{7/2}$ are spin-orbit partners, and $Z=40$ (respectively $N=60$) is the last proton number (respectively neutron number) before each of these levels opens (Structural Fact C).
+\end{enumerate}
+
+These facts motivate the following conjecture, which goes beyond what can currently be derived from C1--C4.
+
+\begin{pdlconjecture}{Conjecture Zr-QPT (candidate open problem for D-exp-Zr)}
+The onset of collective deformation in the Zr isotopic chain at $N=60$ is the structural consequence of the simultaneous proximity of $Z=40$ to the $\pi g_{9/2}$ shell opening and of $N \sim 60$ to the $\nu g_{7/2}$ shell opening, mediated by the Mirror Lemma of D47. More precisely: the PDL combinatorial architecture places $Z=40$ and $N=60$--63 at the unique configuration where both the proton and neutron $g$-shell occupancies are simultaneously approaching their next closure in the HO-PDL sequence, creating a structural resonance condition that manifests as the observed QPT.
+\end{pdlconjecture}
+
+\begin{pdlopen}{Open Problem Zr-1}
+Derive from axioms C1--C4 a formal criterion for structural resonance between proton and neutron shell openings, and prove or disprove that the Zr chain at $N=60$ satisfies this criterion as a theorem.
+\end{pdlopen}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Discussion}
+\label{sec:discussion}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection{Relation to the experimental results of Pasqualato et al.}
+
+The key experimental findings of Pasqualato et al.~\cite{Pasqualato_2024} relevant to this analysis are:
+
+\begin{itemize}
+  \item The $B(E2;\,2^+_1 \to 0^+_1)$ value in $^{98}$Zr is $0.0041(6)$~$e^2\mathrm{b}^2$, consistent with a predominantly spherical ground state, while the same quantity rises sharply to approximately $0.20$~$e^2\mathrm{b}^2$ in $^{100}$Zr --- a factor of nearly 50.
+  \item The $\gamma\gamma$-coincidence technique provides, for the first time, lifetimes of the $2^+_1$ and $4^+_1$ states in $^{98}$Zr free from feeding corrections.
+  \item The $B(E2;\,4^+_1 \to 2^+_1)$ value of $0.145(25)$~$e^2\mathrm{b}^2$ in $^{98}$Zr confirms the coexistence interpretation of a moderately deformed structure based on the $0^+_2$ state mixing with a well-deformed structure based on the $0^+_3$ state.
+  \item For $^{100-104}$Zr, the transition probabilities increase steadily with neutron number, consistent with growing collectivity.
+\end{itemize}
+
+The PDL Structural Facts A, B, C do not predict absolute $B(E2)$ values --- the PDL framework at its present stage of development for nuclear spectroscopy (see D41) provides structural signatures rather than quantitative predictions for individual transitions. What the structural facts establish is that $Z=40$ and $N\approx 60$ are \emph{structurally distinguished positions} in the PDL level scheme, arising from the same integers that generate all other PDL nuclear results. The experimental observation that the QPT occurs at precisely these values is consistent with the structural picture.
+
+\subsection{Relation to existing theoretical frameworks}
+
+The Federman--Pittel mechanism~\cite{Federman_1977}, the Monte Carlo Shell Model of Togashi et al.~\cite{Togashi_2016}, and the IBM-CM calculations cited in Pasqualato et al.~\cite{Pasqualato_2024} all identify the residual $\pi g_{9/2}$--$\nu g_{7/2}/\nu d_{5/2}$ interaction as the driver of the QPT. The PDL structural facts are fully consistent with this identification: the HO-PDL table (Table~\ref{tab:HOlevels}) places $\pi g_{9/2}$ opening at $Z=41$ and $\nu g_{7/2}$ opening at $N=63$, and identifies them as spin-orbit partners (Mirror Lemma). The PDL framework does not replace these calculations but provides a complementary structural explanation for \emph{why} these particular orbitals are relevant at $Z=40$.
+
+The difference in perspective is the following: in the Federman--Pittel--Togashi picture, the relevant orbitals are identified from the shell-model calculation and the nucleon--nucleon interaction. In the PDL picture, these orbitals emerge from the axioms C1--C4 via the unique spin-orbit splitting $s = 1/12$ (D47), and the QPT nucleus Zr ($Z=40$) is structurally distinguished because $Z = 2\Zsat$ (D40). Both approaches converge on the same physical picture, from different starting points.
+
+\subsection{Limitations}
+
+Three limitations must be stated explicitly.
+
+First, the relation $Z(\mathrm{Zr}) = 2\Zsat$ holds to $0.72\%$, not exactly. Whether this near-integer relation reflects a deeper structure of the PDL axioms or is a numerical coincidence cannot be determined without a formal proof.
+
+Second, the PDL framework does not currently provide a derivation of the observed $B(E2)$ enhancement factor (approximately 50 between $^{98}$Zr and $^{100}$Zr) from first principles. The mechanism by which the structural resonance described in Conjecture Zr-QPT translates into a quantitative transition probability remains an open problem.
+
+Third, the QPT in the Zr chain is also observed in the Sr ($Z=38$) chain, though less abruptly, and is absent in Mo ($Z=42$). A complete PDL account of the QPT would need to explain this $Z$-dependence, which the present analysis does not address.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Conclusion}
+\label{sec:conclusion}
+% ════════════════════════════════════════════════════════════════════════════
+
+We have shown that two established theorems of the PDL framework --- the nuclear saturation threshold $\Zsat = 19.86 \approx 20$ (D40) and the harmonic-oscillator level table with spin-orbit splitting $s = 1/12$ (D47) --- place the zirconium chain ($Z=40$) and the QPT neutron number ($N=60$) in a structurally distinguished position:
+
+\begin{enumerate}
+  \item $Z(\mathrm{Zr}) = 2\Zsat$ to $0.72\%$, derivable from PDL integers alone.
+  \item $N=60$ falls within the $5d_{3/2}$ neutron level (cumul 59--62), 3 neutrons below the $\nu g_{7/2}$ opening.
+  \item $\pi g_{9/2}$ and $\nu g_{7/2}$ are spin-orbit partners in the same HO-PDL shell, and $Z=40$ is the last proton number before $\pi g_{9/2}$ opens.
+\end{enumerate}
+
+These three facts are arithmetic corollaries of existing theorems, verified by exhaustive Python script with no free parameter. A structural conjecture (Conjecture Zr-QPT) is proposed connecting these facts to the observed QPT, and is explicitly labelled as requiring formal derivation from C1--C4.
+
+The precision lifetime data of Pasqualato et al.~\cite{Pasqualato_2024} provide the most reliable experimental input currently available for this region, and constitute a natural benchmark against which future quantitative PDL predictions for the Zr chain can be tested.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section*{Acknowledgements}
+% ════════════════════════════════════════════════════════════════════════════
+
+The author gratefully acknowledges the work of Pasqualato, Ansari, Heines, G{\"o}rgen, Korten, Ljungvall, Cl{\'e}ment and their collaborators~\cite{Pasqualato_2024}, whose precision measurements motivate this analysis. The PDL framework is an independent theoretical programme; any errors in the PDL analysis are the sole responsibility of the present author.
+
+% ════════════════════════════════════════════════════════════════════════════
+\appendix
+\section{Verification script}
+\label{app:code}
+% ════════════════════════════════════════════════════════════════════════════
+
+All numerical results in this document are verified by the Python script \\ \texttt{PDL\_Zr\_QPT\_verification\_v2.py}, deposited on Zenodo alongside this document. The script is fully self-contained (no external data files) and uses only the standard library plus the \texttt{fractions} module for exact rational arithmetic. It:
+\begin{itemize}
+  \item computes $\Zsat$ from the exact PDL integers and $\vp = (1+\sqrt{5})/2$;
+  \item builds the complete HO-PDL level table using exact rational arithmetic for all energies ($s = 1/12$ as \texttt{Fraction(1,12)});
+  \item verifies 7/7 magic numbers;
+  \item identifies the level containing $N=60$ and the opening of $\nu g_{7/2}$;
+  \item verifies the spin-orbit partner relationship between $\pi g_{9/2}$ and $\nu g_{7/2}$.
+\end{itemize}
+
+\noindent The script produces explicit epistemic labels (``Theorem'', ``Arithmetic corollary'', ``Conjecture'') for each output line.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Epistemic status table}
+\label{app:epistemic}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of all claims in D-exp-Zr.}
+\label{tab:epistemic}
+\small
+\begin{tabular}{p{8cm}p{4cm}p{2cm}}
+\toprule
+Claim & Status & Source \\
+\midrule
+$\Zsat = \Rsea(n)/\Rsurf(p) = 19.86 \approx 20$ & Theorem & D40 \\
+$Z(\mathrm{Zr})/\Zsat = 2.014$, deviation $0.72\%$ & Arithmetic corollary & D40 \\
+HO-PDL table reproduces 7/7 magic numbers & Theorem & D47 \\
+$N=60$ falls in $5d_{3/2}$ (cumul 59--62) & Arithmetic corollary & D47 \\
+$5g_{9/2}$ closes at $N=50$ (magic) & Theorem & D47 \\
+$5g_{7/2}$ opens at $N=63$ & Arithmetic corollary & D47 \\
+$\pi g_{9/2}$ and $\nu g_{7/2}$ are SO-partners & Theorem (Mirror Lemma) & D47 \\
+$Z=40$ is last proton before $\pi g_{9/2}$ opens & Arithmetic corollary & D47 \\
+$N=60$ is 3 neutrons before $\nu g_{7/2}$ opens & Arithmetic corollary & D47 \\
+\midrule
+QPT resonance condition $\Rightarrow$ collective deformation & \textbf{Conjecture} & Open Problem Zr-1 \\
+Quantitative $B(E2)$ prediction for $^{98-104}$Zr & \textbf{Open} & Future work \\
+$Z$-dependence of QPT (Sr vs Zr vs Mo) & \textbf{Open} & Future work \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ════════════════════════════════════════════════════════════════════════════
+\bibliographystyle{unsrt}
+\bibliography{D-exp-Zr}
+
+\end{document}
