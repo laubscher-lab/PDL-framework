@@ -184,8 +184,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D-exp-SP2 | 10.5281/zenodo.20242505 | Topological Criterion Photon→Electron |
 | D-exp-ZIB | 10.5281/zenodo.20262293 | Surface Dipole — Zinc-Ion Supercapacitor |
 | D-exp-MP01 | 10.5281/zenodo.20316492 | PDL Structural Lacunae — Materials Project |
-| D-exp-Zr | [DOI à obtenir] | Zr QPT — Structural Origin (Pasqualato 2024) |
-
+| D-exp-Zr | 10.5281/zenodo.20321750 | Zr QPT — Structural Origin (Pasqualato 2024) |
 ---
 
 ## Key Numerical Values
