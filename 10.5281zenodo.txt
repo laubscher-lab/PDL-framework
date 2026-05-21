@@ -344,3 +344,8 @@ D-exp-mp01
 https://doi.org/10.5281/zenodo.20316492 
 D-exp-MP01: PDL Structural Lacunae Confirmed by Materials Project Database Scan — Technetium and Promethium as Combinatorial Impossibilities (Projective Dynamic Logo Framework, Exploratory Document) 
 D_exp_MP01__PDL_Structural_Lacunae.pdf 
+
+D-exp-Zr 
+https://doi.org/10.5281/zenodo.20321750 
+D-exp-Zr: Structural Origin of the Quantum Phase Transition in Zirconium Isotopes — A PDL Framework Analysis of the Lifetime Measurements of Pasqualato et al. (2024)
+D_exp_Zr_Zirconium_Phase_Transition.pdf 
