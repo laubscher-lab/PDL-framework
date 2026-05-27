@@ -1,0 +1,443 @@
+\documentclass[11pt,a4paper]{article}
+
+% ── Packages ────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage[numbers]{natbib}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{enumitem}
+
+\geometry{a4paper, margin=2.5cm}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = blue!60!black,
+  citecolor  = blue!60!black,
+  urlcolor   = blue!60!black,
+  pdftitle   = {D56: Derivation of the Linear Scaling N\_comp(k) = k},
+  pdfauthor  = {Cédric Laubscher}
+}
+
+% ── tcolorbox styles ────────────────────────────────────────────────────────
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{epistemicbox}{
+  enhanced, breakable,
+  colback  = yellow!6!white,
+  colframe = yellow!60!black,
+  fonttitle= \bfseries,
+  title    = {Epistemic Status}
+}
+
+\newtcolorbox{pdltheorem}[2][]{
+  enhanced, breakable,
+  colback  = blue!4!white,
+  colframe = blue!50!black,
+  fonttitle= \bfseries,
+  title    = {#2}, #1
+}
+
+\newtcolorbox{pdlconjecture}[2][]{
+  enhanced, breakable,
+  colback  = orange!5!white,
+  colframe = orange!60!black,
+  fonttitle= \bfseries,
+  title    = {#2}, #1
+}
+
+\newtcolorbox{pdlopen}[2][]{
+  enhanced, breakable,
+  colback  = red!4!white,
+  colframe = red!50!black,
+  fonttitle= \bfseries,
+  title    = {#2}, #1
+}
+
+% ── Theorem environments ────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ── Macros ──────────────────────────────────────────────────────────────────
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Gval}{\mathcal{G}_{\mathrm{val}}}
+\newcommand{\Gsea}{\mathcal{G}_{\mathrm{sea}}}
+\newcommand{\Tpdl}{T}
+\newcommand{\Dn}{\Delta n}
+\newcommand{\nuu}{n_u}
+\newcommand{\ndd}{n_d}
+\newcommand{\vp}{\varphi}
+\newcommand{\Ncomp}{N_{\mathrm{comp}}}
+\newcommand{\kph}{k\text{p-}k\text{h}}
+\newcommand{\protonq}{(24,\,28,\,930,\,10087,\,11017)}
+\newcommand{\neutronq}{(24,\,28,\,1032,\,9960,\,10992)}
+
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+\title{\textbf{D56: Derivation of the Linear Scaling $\Ncomp(k) = k$
+from Axioms C1--C4}\\[8pt]
+{\large Resolution of Open Problem OP-D41-1-A}\\[6pt]
+{\normalsize Projective Dynamic Logo Framework}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}\quad
+\href{mailto:cedric@cedriclaubscher.ch}{cedric@cedriclaubscher.ch}\\
+\small ORCID: \href{https://orcid.org/0009-0004-5415-1098}{0009-0004-5415-1098}}
+
+\date{May 2026\\[4pt]
+\small PDL corpus: D01--D55 + DS01 + D-exp-SP2 + D-exp-ZIB
+      + D-exp-MP01 + D-exp-Zr\\
+\small Zenodo community: \texttt{pdl-framework}}
+
+\maketitle
+
+% ── Epistemic status ────────────────────────────────────────────────────────
+\begin{epistemicbox}
+This document resolves \textbf{Open Problem OP-D41-1-A}: the derivation of the linear scaling $\Ncomp(k) = k$ for the number of maximal partial closures on a $k$-particle--$k$-hole nuclear interface surface. The main result (Theorem~\ref{thm:main}) is an \textbf{unconditional theorem of axioms C1--C4}, proved via three lemmas that build on existing results of D16a~\cite{PDL_D16a}, D29~\cite{PDL_D29}, and D42~\cite{PDL_D42}. All steps are verified by the companion Python script \texttt{PDL\_OP\_D41\_1\_v1.py} deposited alongside this document. The connection $\Ncomp(k) = k \Rightarrow B(E2) \propto k$ (Open Problem OP-D41-1-B, Conjecture $H_B$~\cite{PDL_D41}) requires the additional identification of the $E2$ operator within the PDL formalism and is explicitly \textbf{not} claimed here; it is identified as Open Problem OP-E2-PDL in Section~\ref{sec:open}.
+\end{epistemicbox}
+
+\begin{abstract}
+The Projective Dynamic Logo (\PDL) framework derives nuclear structure from four combinatorial axioms on finite signed graphs~\cite{PDL_D01,PDL_D02}. Document D41~\cite{PDL_D41} introduced the closure multiplicity conjecture $H_B$: for a nucleus at the boundary of an island of nuclear inversion dominated by a $\kph$ intruder configuration, the number of maximal partial closures on the proton--neutron interface surface scales as $\Ncomp(k) = k$. The present document provides a complete proof of this scaling law from axioms C1--C4, without any free parameter. The proof rests on three lemmas: (L1) uniqueness of the maximal closure on a single interface unit (D16a); (L2) disjointness of the mixed-triangle sets of $k$ distinct $(A)\wedge(B)$ couplings (D29); (L3) C3-irreducibility of $k$ independent interface copies. Together these lemmas establish that $\Ncomp(k) = k$ exactly. Numerical verification is provided for $k = 1, \ldots, 5$ via the companion Python script. The separate question of whether $B(E2) \propto \Ncomp(k)$ follows from C1--C4 (Open Problem OP-D41-1-B) is identified as requiring the formal identification of the $E2$ multipole operator in the PDL relational framework, and is left as an explicit open problem.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Introduction and context}
+\label{sec:intro}
+% ════════════════════════════════════════════════════════════════════════════
+
+\subsection{Motivation}
+
+Document D41~\cite{PDL_D41} confronted the PDL nuclear framework with the measurement by Ha et al.~\cite{Ha_2025} of the reduced electric quadrupole transition probabilities $B(E2;\,2^+_1 \to 0^+_1)$ in $^{84}$Mo and $^{86}$Mo. The ratio $B(E2)[^{84}\text{Mo}]/B(E2)[^{86}\text{Mo}] = 2.454$, together with the wave-function component count ratio $N_{\mathrm{comp}}(^{86}\text{Mo})/N_{\mathrm{comp}}(^{84}\text{Mo}) = 1.962$, were shown to be consistent with the PDL structural identity $\Tpdl \approx (\Dn+1)^2 = 25$, where $\Tpdl = \Rsurf(p)^2/\Rsea(n) = 25.26$ is the nuclear binding unit and $\Dn = \ndd - \nuu = 4$ is the valence-core asymmetry of the proton~\cite{PDL_D22,PDL_D40}. The conjecture $H_B$ was formulated in D41 but left without a derivation from axioms C1--C4; this derivation was identified as Open Problem OP-D41-1.
+
+The companion exploratory documents D-exp-Zr~\cite{PDL_Dexp_Zr} and the present analysis of the data of Escudeiro, Recchia, Lenzi et al.~\cite{Escudeiro_2026} on the mirror nuclei $^{47}$Cr--$^{47}$V and $^{49}$Mn--$^{49}$Cr extend the context in which $\Ncomp(k) = k$ is relevant. We note, however, that the present theorem is strictly confined to the island-of-inversion regime as defined in D41, and that its extension to mirror-nuclei anomalies requires a separate argument not given here.
+
+\subsection{Structure of this document}
+
+Section~\ref{sec:prerequisites} recalls the PDL prerequisites in self-contained form, so that a reader familiar with nuclear spectroscopy but not with the PDL corpus can follow the proof. Section~\ref{sec:maintheorem} states and proves the main theorem via three lemmas. Section~\ref{sec:numerical} presents the numerical verification. Section~\ref{sec:corollary} derives the corollary $\Rsurf(k) = k\Tpdl$ and its relation to the conjecture $H_B$. Section~\ref{sec:open} identifies the remaining open problem OP-E2-PDL. Section~\ref{sec:conclusion} concludes.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Prerequisites: PDL nuclear interface in self-contained form}
+\label{sec:prerequisites}
+% ════════════════════════════════════════════════════════════════════════════
+
+This section is self-contained. A reader who has not read the prior PDL documents can verify every statement made here directly, either from the definitions given below or from the companion Python script.
+
+\subsection{The PDL proton and neutron}
+
+Within the PDL framework, the proton is the minimal hierarchical composite closure admissible under axioms C1--C4 on finite signed graphs. It is uniquely characterised by the integer quintuplet $\protonq$, where $\nuu = 24$ and $\ndd = 28$ are the two valence-core sizes, $\rval(p) = 930$ is the stationary valence relational content, $\Rsea(p) = 10087$ is the dynamical sea, and $\Rtot(p) = 11017$ is the total relational budget~\cite{PDL_D01,PDL_D16,PDL_D16a,PDL_D16b}. The neutron quintuplet is $\neutronq$~\cite{PDL_D22}. The active surface of the proton is (D05~\cite{PDL_D05}):
+\begin{equation}
+  \Rsurf(p) = 310\,\vp \approx 501.59, \qquad \vp = \tfrac{1+\sqrt{5}}{2}.
+  \label{eq:Rsurf}
+\end{equation}
+The nuclear binding unit is (D40~\cite{PDL_D40}):
+\begin{equation}
+  \Tpdl = \frac{\Rsurf(p)^2}{\Rsea(n)} = \frac{(310\,\vp)^2}{9960} = 25.260 \approx (\Dn+1)^2 = 25,
+  \label{eq:T}
+\end{equation}
+with $\Dn = \ndd - \nuu = 4$. The near-identity $\Tpdl \approx (\Dn+1)^2$ holds to $1.04\%$; it is a structural fact, not an identity.
+
+\subsection{The minimal admissible closure \texorpdfstring{$\Kfour$}{K4}}
+
+\begin{theorem}[D16a~\cite{PDL_D16a}]
+\label{thm:K4}
+No finite signed graph on $|V| \leq 3$ vertices satisfies all four axioms C1--C4 simultaneously. The complete signed graph on $|V| = 4$ vertices and $|E| = 6$ edges, denoted $\Kfour$, is the unique minimal admissible closure. It admits exactly 8 coherent sign configurations, forming 4 pulsation pairs $\{s^{(1)}, s^{(2)}\} = \{s, -s\}$. No proper sub-closure of $\Kfour$ satisfies C1--C4.
+\end{theorem}
+
+\subsection{The \texorpdfstring{$(A)\wedge(B)$}{(A)∧(B)} stability criterion}
+
+\begin{definition}[Mixed triangle and cross-product, D29~\cite{PDL_D29}]
+A \emph{mixed triangle} $(e_i, e_j, p_k)$ contains two $\Kfour$ vertices $e_i, e_j \in V(\Kfour)$ and one proton vertex $p_k$. The \emph{cross-product} at pulsation half-cycle $c \in \{1,2\}$ is:
+\begin{equation}
+  P_c = s_\times(e_i, p_k, c)\cdot s_\times(e_j, p_k, c) \in \{+1,-1\},
+  \label{eq:Pc}
+\end{equation}
+where $s_\times(e, p, c)$ is the sign of the cross-edge $(e, p)$ at half-cycle $c$.
+\end{definition}
+
+\begin{theorem}[$(A)\wedge(B)$ criterion, D29~\cite{PDL_D29}]
+\label{thm:AB}
+A mixed triangle $(e_i, e_j, p_k)$ is stable (coherent at both half-cycles) if and only if:
+\begin{align}
+  (A) &:\quad P_1 = s_{\Kfour}^{(1)}(e_i, e_j) \qquad \text{(initial alignment)}, \label{eq:A} \\
+  (B) &:\quad P_2 = -P_1 \qquad\qquad\qquad \text{(phase-locking)}. \label{eq:B}
+\end{align}
+The equivalence $(A)\wedge(B) \Leftrightarrow \text{stable}$ was verified exhaustively over all $8 \times 6 \times 16 = 768$ combinations of $\Kfour$ sign configurations, edges, and cross-signs, with zero counter-example~\cite{PDL_D29}.
+\end{theorem}
+
+\begin{proposition}[Stable fraction, D29--D50~\cite{PDL_D29,PDL_D50}]
+\label{prop:fraction}
+For any edge $(e_i, e_j) \in E(\Kfour)$, exactly 4 of the $2^4 = 16$ cross-sign configurations satisfy $(A)\wedge(B)$. The stable fraction per surface relation is $f_{\mathrm{stable}} = 4/16 = 1/4$.
+\end{proposition}
+
+\subsection{Interface unit and the nuclear binding surface}
+
+\begin{definition}[Interface unit, D41~\cite{PDL_D41}]
+\label{def:unit}
+An \emph{interface unit} is one $(A)\wedge(B)$-coupled proton--neutron pair crossing the shell gap $G$ in a $\kph$ nucleus. Its relational surface consists of all mixed triangles formed between one $\Kfour$ block and the proton active surface $\Rsurf(p)$. The effective surface size of one interface unit is $\Tpdl = \Rsurf(p)^2/\Rsea(n)$ triangles.
+\end{definition}
+
+\begin{definition}[Maximal partial closure, D16a~\cite{PDL_D16a}]
+\label{def:maxclos}
+A \emph{maximal partial closure} of an interface surface is a connected sub-configuration that satisfies all four axioms C1--C4 and is not a proper sub-configuration of any larger such sub-configuration.
+\end{definition}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Main theorem: \texorpdfstring{$\Ncomp(k) = k$}{Ncomp(k) = k}}
+\label{sec:maintheorem}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{pdltheorem}{Theorem (OP-D41-1-A resolved)}
+\begin{theorem}[$\Ncomp(k) = k$, main result]
+\label{thm:main}
+Let a $\kph$ nucleus at the boundary of an island of nuclear inversion be modelled as $k$ independent $(A)\wedge(B)$-coupled proton--neutron interface units in the sense of Definition~\ref{def:unit}. The number of maximal partial closures (Definition~\ref{def:maxclos}) of the assembly satisfies:
+\begin{equation}
+  \Ncomp(k) = k.
+  \label{eq:main}
+\end{equation}
+This is an unconditional theorem of axioms C1--C4.
+\end{theorem}
+\end{pdltheorem}
+
+The proof proceeds through three lemmas.
+
+\subsection{Lemma L1: uniqueness of the maximal closure on one interface unit}
+
+\begin{lemma}[L1 --- Uniqueness]
+\label{lem:L1}
+The unique maximal C1+C2+C3+C4-admissible closure on a single interface unit of surface $\Tpdl$ is $\Kfour$ (up to the global $S_4$ symmetry). Therefore $\Ncomp(1) = 1$.
+\end{lemma}
+
+\begin{proof}
+By Theorem~\ref{thm:K4} (D16a), $\Kfour$ on $|V|=4$ vertices is the unique minimal admissible closure; no configuration on $|V| \leq 3$ satisfies C1. Every proper sub-configuration of the interface unit has $|V| \leq 3$ vertices (since the interface unit is itself modelled on one $\Kfour$), and therefore fails C1. The interface unit itself satisfies all four axioms by construction. Hence $\Kfour$ is the only maximal C1+C2+C3+C4-admissible sub-configuration on a single interface unit: $\Ncomp(1) = 1$.
+\end{proof}
+
+\subsection{Lemma L2: disjointness of mixed-triangle sets}
+
+\begin{lemma}[L2 --- Disjointness]
+\label{lem:L2}
+Let $\mathcal{U}_1, \ldots, \mathcal{U}_k$ be $k$ distinct interface units, with $\Kfour$ blocks on vertex sets $V_1 = \{0,\ldots,3\}$, $V_2 = \{4,\ldots,7\}$, \ldots, $V_k = \{4(k-1),\ldots,4k-1\}$, and let coupling $i$ use cross-edge $(e_a^{(i)}, p_b^{(i)})$ for $e_a^{(i)} \in V_i$. The sets of mixed triangles associated with two distinct couplings $i \neq j$ are disjoint:
+\begin{equation}
+  \mathcal{T}(\mathcal{U}_i) \cap \mathcal{T}(\mathcal{U}_j) = \varnothing \qquad \forall\, i \neq j.
+  \label{eq:disjoint}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+A mixed triangle $(e_a, e_b, p_c)$ in $\mathcal{T}(\mathcal{U}_i)$ requires $e_a, e_b \in V_i$ (two vertices from the $i$-th $\Kfour$ block) and $p_c$ from the proton vertex set. A triangle in $\mathcal{T}(\mathcal{U}_j)$ requires $e_a', e_b' \in V_j$ with $V_i \cap V_j = \varnothing$ for $i \neq j$ (the $\Kfour$ blocks are on disjoint vertex sets by construction). A single triangle cannot have two vertices in $V_i$ and two vertices in $V_j$ simultaneously, since a triangle has only three vertices. Therefore no triangle belongs to both $\mathcal{T}(\mathcal{U}_i)$ and $\mathcal{T}(\mathcal{U}_j)$.
+\end{proof}
+
+\begin{remark}
+Lemma~L2 is a purely combinatorial statement about vertex disjointness. It uses no property of the signs and no property of the axioms beyond the construction of the vertex sets. It holds for any number $k \geq 2$ of interface units.
+\end{remark}
+
+\subsection{Lemma L3: C3-irreducibility of the assembly}
+
+\begin{lemma}[L3 --- C3-irreducibility]
+\label{lem:L3}
+Let $\mathcal{U}_1, \ldots, \mathcal{U}_k$ be $k$ interface units with no cross-edge between $V_i$ and $V_j$ for $i \neq j$. Then:
+\begin{enumerate}[label=(\alph*)]
+  \item Each unit $\mathcal{U}_i$ is C3-connected within itself.
+  \item No connected component of the assembly spans two or more units.
+  \item Each $\mathcal{U}_i$ is C3-irreducible with respect to the other units.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Each $\mathcal{U}_i$ is modelled on $\Kfour$, which is the complete graph on $|V_i| = 4$ vertices; it is connected by definition.
+
+(b) With no cross-edge between $V_i$ and $V_j$, the graph of the assembly is the disjoint union $\mathcal{U}_1 \sqcup \cdots \sqcup \mathcal{U}_k$. In a disjoint union, the connected components are exactly the individual summands.
+
+(c) C3 (axiom: the graph must be connected) holds within each $\mathcal{U}_i$ but not globally across units. Any sub-configuration spanning two units $\mathcal{U}_i \cup \mathcal{U}_j$ is disconnected and therefore fails C3.
+\end{proof}
+
+\subsection{Proof of the main theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+We must show that the $k$-unit assembly has exactly $k$ maximal \\ C1+C2+C3+C4-admissible sub-configurations.
+
+By Lemma~L3(b), the connected components of the assembly are exactly $\mathcal{U}_1, \ldots, \mathcal{U}_k$. By axiom C3, any C1+C2+C3+C4-admissible sub-configuration must be connected, and hence must be entirely contained within one component $\mathcal{U}_i$.
+
+By Lemma~L1, the unique maximal admissible closure within $\mathcal{U}_i$ is $\Kfour^{(i)}$ itself: $\Ncomp(\mathcal{U}_i) = 1$ for each $i$.
+
+Since no admissible closure can span two units (C3 fails), and each unit contributes exactly one maximal closure, the total count is:
+\begin{equation}
+  \Ncomp(k) = \sum_{i=1}^{k} \Ncomp(\mathcal{U}_i) = \sum_{i=1}^{k} 1 = k.
+  \qquad\qed
+\end{equation}
+\end{proof}
+
+\begin{remark}[Role of Lemma~L2]
+Lemma~L2 (disjointness of mixed-triangle sets) is not used in the proof of $\Ncomp(k) = k$ itself, which relies only on L1 and L3. Lemma~L2 becomes essential in the companion sub-problem B investigation (Section~\ref{sec:corollary} and Open Problem OP-E2-PDL): it establishes the independence of the $k$ $(A)\wedge(B)$ couplings under the Indifference Lemma (D42~\cite{PDL_D42}), which is the key input to the incoherent-summation argument for $B(E2) \propto k$.
+\end{remark}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Numerical verification}
+\label{sec:numerical}
+% ════════════════════════════════════════════════════════════════════════════
+
+The main theorem was verified by the companion Python script \texttt{PDL\_OP\_D41\_1\_v1.py}, which constructs the $\Kfour$ signed graph explicitly, enumerates all 64 sign assignments, identifies the 8 coherent configurations, and verifies $\Ncomp(k) = k$ for $k = 1, \ldots, 5$ under the independence assumption. Key numerical outputs are reproduced in Table~\ref{tab:numerical}.
+
+\begin{table}[H]
+\centering
+\caption{Numerical verification of $\Ncomp(k) = k$ for $k = 1, \ldots, 5$. The surface size $k\Tpdl$ is computed from PDL integers alone. The result $\Ncomp(k) = k$ holds exactly under the independence assumption (no cross-edges between units).}
+\label{tab:numerical}
+\small
+\begin{tabular}{rrrrl}
+\toprule
+$k$ & $k\Tpdl$ & $\Ncomp(k)$ & $\Ncomp(k)/k$ & Verified \\
+\midrule
+1 &  25.260 & 1 & 1.000 & \checkmark \\
+2 &  50.521 & 2 & 1.000 & \checkmark \\
+3 &  75.781 & 3 & 1.000 & \checkmark \\
+4 & 101.041 & 4 & 1.000 & \checkmark \\
+5 & 126.302 & 5 & 1.000 & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Additionally, the script verifies that the 8 coherent configurations of $\Kfour$ form 4 pulsation pairs (Theorem~\ref{thm:K4}), and that the mixed-triangle sets of two distinct couplings $(0_A, 0_B)$ and $(1_A, 1_B)$ are disjoint (Lemma~L2). The full output is deposited alongside this document on Zenodo.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Corollary and relation to conjecture \texorpdfstring{$H_B$}{HB}}
+\label{sec:corollary}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{corollary}[$\Rsurf(k) = k\Tpdl$]
+\label{cor:Rsurf}
+Under the independence assumption of Theorem~\ref{thm:main}, the effective active surface of a $\kph$ nucleus is:
+\begin{equation}
+  \Rsurf(k) = k\,\Tpdl = k\,\frac{\Rsurf(p)^2}{\Rsea(n)}.
+  \label{eq:Rsurfk}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Each of the $k$ independent interface units carries an active surface of size $\Tpdl$. By Theorem~\ref{thm:main} and Lemma~L2, the $k$ units contribute independently (no shared mixed triangles). The total active surface is the sum of the individual contributions: $\Rsurf(k) = k\Tpdl$.
+\end{proof}
+
+\subsection{Relation to the conjecture \texorpdfstring{$H_B$}{HB} of D41}
+
+Conjecture $H_B$ of D41~\cite{PDL_D41} states that for a $\kph$ nucleus, $B(E2) \propto \Ncomp(k) = k$. From Theorem~\ref{thm:main}, we now know that $\Ncomp(k) = k$ is a theorem. The remaining question is whether $B(E2) \propto \Ncomp(k)$ follows from C1--C4.
+
+By D32 (Proposition~3~\cite{PDL_D32}), the number of $(A)\wedge(B)$-stable mixed triangles at fixed nuclear scale $r$ is:
+\begin{equation}
+  N_{\mathrm{mix}}(k,r) = \frac{\Rsurf(k)\,K_0}{r^2} = \frac{k\Tpdl\,K_0}{r^2} \propto k,
+  \label{eq:Nmix}
+\end{equation}
+where $K_0/r^2$ cancels in any ratio between two nuclei at the same mass scale. Combining with Lemma~L2 (disjointness of mixed-triangle sets from distinct couplings) and the Indifference Lemma (D42, Theorem~\cite{PDL_D42}), which ensures that distinct relations contribute independently, the $k$ interface units contribute \emph{incoherently} to the transition matrix element $M_{fi}$:
+\begin{equation}
+  |M_{fi}|^2 = \sum_{i=1}^{k} |m_i|^2 = k\,|m_1|^2 \propto k = \Ncomp(k),
+  \label{eq:incoherent}
+\end{equation}
+provided that the $E2$ matrix element $M_{fi}$ is identified with a sum over $(A)\wedge(B)$-stable mixed triangles. This identification constitutes the formal gap described in Open Problem OP-E2-PDL below.
+
+Numerically, $R_{\mathrm{PDL}} = 2\Tpdl/(\Dn+1)^2 = 2.021$, and the experimental ratio \\ $B(E2)[^{84}\text{Mo}]/B(E2)[^{86}\text{Mo}] = 2.461 \pm 0.756$ lies $0.58\sigma$ from this prediction~\cite{PDL_D41,Ha_2025}. The incoherent scenario ($B(E2) \propto k$, ratio $= 2.000$) is preferred at $0.61\sigma$, while the coherent scenario ($B(E2) \propto k^2$, ratio $= 4.000$) is disfavoured at $2.04\sigma$. This constitutes empirical support for the incoherent-summation argument, though not a proof.
+
+\begin{pdlconjecture}{Conjecture $H_B$ (D41~\cite{PDL_D41})}
+For a nucleus at the boundary of an island of inversion dominated by a $\kph$ intruder configuration, $B(E2) \propto \Ncomp(k) = k$, and therefore:
+\begin{equation}
+  \frac{B(E2)[k_1\text{p-}k_1\text{h}]}{B(E2)[k_2\text{p-}k_2\text{h}]} = \frac{2\Tpdl}{(\Dn+1)^2} \cdot \frac{k_1}{k_2}.
+  \label{eq:HB}
+\end{equation}
+The factor $2\Tpdl/(\Dn+1)^2 = 2.021$ differs from the exact ratio $k_1/k_2$ by $1.04\%$, which is the structural residual $\Tpdl/(\Dn+1)^2 - 1$.
+\end{pdlconjecture}
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Open problem OP-E2-PDL}
+\label{sec:open}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{pdlopen}{Open Problem OP-E2-PDL}
+Identify, within the PDL signed-graph formalism, the combinatorial object that corresponds to the nuclear electric quadrupole ($E2$) transition operator. Specifically: show from axioms C1--C4 that the $E2$ matrix element between two nuclear states is proportional to the number $N_{\mathrm{mix}}$ of $(A)\wedge(B)$-stable mixed triangles connecting those states. Combined with Theorem~\ref{thm:main} (this document) and D32~\cite{PDL_D32}, this would elevate Conjecture $H_B$~\cite{PDL_D41} to a theorem.
+\end{pdlopen}
+
+The difficulty lies in connecting the PDL relational structure (signed graphs, pulsating closures, mixed triangles) to the standard multipole expansion of nuclear electromagnetic transitions. The PDL formalism has already established the connection between $N_{\mathrm{mix}}$ and the Coulomb potential (D32, Prop.~3~\cite{PDL_D32}) and between $\Rsurf$ and entropy (D37--D50~\cite{PDL_D37,PDL_D50}). The missing step is a direct identification of $T(E2)$ as a quadratic function of the mixed-triangle amplitudes.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section{Conclusion}
+\label{sec:conclusion}
+% ════════════════════════════════════════════════════════════════════════════
+
+We have proved from axioms C1--C4 that the number of maximal partial closures on a $\kph$ nuclear interface surface scales exactly as $\Ncomp(k) = k$ (Theorem~\ref{thm:main}). The proof is complete in three steps: uniqueness of the maximal closure on a single interface unit (Lemma~L1, building on D16a), disjointness of the mixed-triangle sets of distinct couplings (Lemma~L2, building on D29), and C3-irreducibility of the $k$-unit assembly (Lemma~L3, from axiom C3 directly). All steps are verified numerically for $k = 1, \ldots, 5$.
+
+This resolves Open Problem OP-D41-1-A. The companion sub-problem OP-D41-1-B --- whether $B(E2) \propto \Ncomp(k)$ follows from C1--C4 --- requires the formal identification of the $E2$ operator in the PDL framework (Open Problem OP-E2-PDL). The numerical evidence from Ha et al.~\cite{Ha_2025} supports the proportionality at $0.61\sigma$ and disfavours the coherent-summation alternative at $2.04\sigma$.
+
+% ════════════════════════════════════════════════════════════════════════════
+\section*{Acknowledgements}
+% ════════════════════════════════════════════════════════════════════════════
+
+The author thanks the experimental teams whose precision data motivate this analysis: Ha et al.~\cite{Ha_2025} for the $^{84,86}$Mo measurements, and Escudeiro, Recchia, Lenzi et al.~\cite{Escudeiro_2026} for the $f_{7/2}$ mirror-nuclei measurements. The PDL framework is an independent theoretical programme; any errors in the PDL analysis are the sole responsibility of the present author.
+
+% ════════════════════════════════════════════════════════════════════════════
+\appendix
+\section{Epistemic status table}
+\label{app:epistemic}
+% ════════════════════════════════════════════════════════════════════════════
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of all claims in D56.}
+\label{tab:epistemic}
+\small
+\begin{tabular}{p{7cm}p{3.5cm}p{3cm}}
+\toprule
+Claim & Status & Source \\
+\midrule
+$\Kfour$ is unique minimal admissible closure & Theorem & D16a \\
+8 coherent configs on $\Kfour$, 4 pulsation pairs & Theorem & D01, D16a \\
+$(A)\wedge(B)$: 192/768 stable, ratio $= 1/4$ & Theorem & D29 \\
+$\Tpdl = \Rsurf(p)^2/\Rsea(n) = 25.26$ & Theorem & D05, D40 \\
+$\Tpdl \approx (\Dn+1)^2 = 25$ to $1.04\%$ & Structural fact & D40 \\
+\midrule
+Mixed-triangle sets of distinct couplings are disjoint (L2) & Theorem (this doc.) & D29 + algebra \\
+C3-irreducibility of $k$ independent units (L3) & Theorem (this doc.) & C3 axiom \\
+$\Ncomp(1) = 1$ (L1) & Theorem & D16a \\
+$\Ncomp(k) = k$ (main theorem) & \textbf{Theorem} & D56 \\
+$\Rsurf(k) = k\Tpdl$ (corollary) & Theorem (corollary) & D56 \\
+\midrule
+$N_{\mathrm{mix}}(k) \propto k$ & Theorem & D32 Prop.~3 \\
+Incoherent summation: $|M_{fi}|^2 = k|m_1|^2$ & Cand.\ theorem & D42 + L2 \\
+$B(E2) \propto \Ncomp(k)$ & \textbf{Conjecture} $H_B$ & D41 \\
+$E2$ operator identified in PDL formalism & \textbf{Open} OP-E2-PDL & Future work \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
+
+% ════════════════════════════════════════════════════════════════════════════
+\bibliographystyle{unsrt}
+\bibliography{D56}
+% ════════════════════════════════════════════════════════════════════════════
+
+\end{document}
