@@ -88,7 +88,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
 | DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
 | D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
-| DM | [v24 DOI à obtenir après dépôt] | Global Mapping v24 |
+| DM | 10.5281/zenodo.20415182 | Global Mapping v24 |
 | D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
 | D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
