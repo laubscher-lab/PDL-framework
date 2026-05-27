@@ -349,3 +349,8 @@ D-exp-Zr
 https://doi.org/10.5281/zenodo.20321750 
 D-exp-Zr: Structural Origin of the Quantum Phase Transition in Zirconium Isotopes — A PDL Framework Analysis of the Lifetime Measurements of Pasqualato et al. (2024)
 D_exp_Zr_Zirconium_Phase_Transition.pdf 
+
+D56 
+https://doi.org/10.5281/zenodo.20409903 
+D56: Derivation of the Linear Scaling N_comp(k) = k from Axioms C1–C4 — Resolution of Open Problem OP-D41-1-A (Projective Dynamic Logo Framework) 
+D56_Derivation_k.pdf 
