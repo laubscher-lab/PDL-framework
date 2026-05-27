@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 45 — 21 May 2026 (D-exp-Zr produit — QPT du Zirconium)*
+*Last updated: Session 46 — 27 May 2026 (D56 publié — N_comp(k)=k théorème; DM v24)*
 
 ---
 
@@ -8,106 +8,51 @@
 
 The Projective Dynamic Logo (PDL) programme derives fundamental physical constants and structures from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields. The minimal admissible closure under these axioms is the complete graph K₄ on four vertices and six edges, identified with the electron prototype (R_e = 6). The proton is the minimal hierarchical composite, uniquely characterised by the integer quintuplet (24, 28, 930, 10087, 11017).
 
-**Three Gates resolved (Sessions 11–13):**
-- Gate 1 (D29): 155/11017 proved from PDL axioms alone
-- Gate 2 (D30): ε_G^B conjecture proved; G fully combinatorial (+ Δm_iso)
-- Gate 3 (D31): G_eff(N) = σ(N)·G_PDL proved
+**Sessions 11–30:** Gates 1–3, D32–D47 (voir PDL_context.md Session 45 pour détail).
 
-**Session 14:** D32 — Schrödinger from (A)∧(B)
+**Session 40 — D55 + DM v23 (14 May 2026):**
+- θ_W = 19π/119 RÉSOLU. DOI D55: 10.5281/zenodo.20179924 | DM v23: 10.5281/zenodo.20181077
 
-**Session 15:** D33 (Dirac), D34 (Born Level 1), D35 (Einstein equation), D36 (Gate 3 strengthened)
+**Session 41 — DS01 (14 May 2026):** DOI: 10.5281/zenodo.20187274
 
-**Session 16:** DM v11; website update; LaTeX conventions established
+**Sessions 42–44 — D-exp-SP2, D-exp-ZIB, D-exp-MP01:**
+- DOI: 10.5281/zenodo.20242505 | 10.5281/zenodo.20262293 | 10.5281/zenodo.20316492
 
-**Session 17:** D37 (area law BH-1), D38 (Bekenstein–Hawking BH-2), D39 (H3 partial)
+**Session 45 — D-exp-Zr publié (21 May 2026):**
+- QPT du Zirconium — corollaires D40+D47. DOI: 10.5281/zenodo.20321750
 
-**Session 18:** DM v12; website update
+**Session 46 — D56 + DM v24 (27 May 2026):**
+- **OP-D41-1-A RÉSOLU : N_comp(k) = k — théorème inconditionnel de C1–C4.**
 
-**Session 19:** D40 (nuclear stability Z=1..82), D41 (⁸⁴,⁸⁶Mo confrontation, P7/P8)
+  Trois lemmes depuis le corpus existant :
+  - L1 : K₄ est l'unique fermeture maximale admissible sur une unité d'interface (D16a).
+  - L2 : Les ensembles de triangles mixtes de k couplages (A)∧(B) distincts sont disjoints (D29 + algèbre des ensembles de sommets).
+  - L3 : k copies sans arêtes croisées sont C3-irréductibles entre elles (axiome C3 directement).
+  => N_comp(k) = k pour tout k ≥ 1.
 
-**Session 20:** D42 (H3 proved from C1–C4 — OP1 RESOLVED); DM v15
+  Corollaire : R_surf(k) = k·T pour un noyau k-ph.
 
-**Sessions 21–23:** ε_geom geometric derivation; OP-A RESOLVED; D43 v1–v2
+  Vérification numérique : k=1..5, scripts PDL_OP_D41_1_v1.py + PDL_OP_D41_1B_v1.py.
+  Scénario A (B(E2) ∝ k) confirmé à 0.58σ vs Ha et al. 2025; Scénario B (k²) rejeté à 2.04σ.
 
-**Session 24:** D43v3 + D44 — OP-B RESOLVED; causal chain C1–C4→G COMPLETE
+  **DOI D56 : 10.5281/zenodo.20409903**
 
-**Session 25:** Documentation and audit; DM v16; GitHub push
+  **Open Problem OP-E2-PDL (nouveau, HIGH) :**
+  Identifier l'opérateur E2 dans le formalisme PDL (graphes signés).
+  Montrer depuis C1–C4 que M_fi ∝ N_mix (triangles mixtes stables).
+  => Élèverait H_B (B(E2) ∝ k) au rang de théorème inconditionnel.
+  Entrée : D29, D32 (Prop. 3), D41, D56.
 
-**Session 26:** D45 (PBH threshold Fermi-LAT prediction); DM v17
+  **Références expérimentales citées dans D56 :**
+  - Ha et al., Nature Communications 16, 10631 (2025). DOI: 10.1038/s41467-025-65621-2
+  - Escudeiro, Recchia, Lenzi et al., Phys. Rev. C 113, 044304 (2026). DOI: 10.1103/1gt6-nc12
 
-**Session 27:** HAL deposits; email Arbey + Auffinger
-
-**Session 28:** Exploration D-exp-NCR — résultat négatif borné; OP-NCR identifié
-
-**Session 29 — D46 publié (1 May 2026):**
-- D46: OP4 RÉSOLU — U(1) phase freedom depuis K₄ pulsation. DOI: 10.5281/zenodo.19956932
-
-**Session 30 — D47 publié (2 May 2026):**
-- OP13 + OP14 RÉSOLUS (D47). DOI: 10.5281/zenodo.19967918
-
-**Session 33 — D49, D50, D51, D52 publiés (4 May 2026):**
-- OP-LONDON, OP12/BH-3, OP1-D35 RÉSOLUS
-
-**Session 34 — D53 publié (6 May 2026):**
-- D53 : synthèse causale C1–C4→Λ, vérification 0.41 ppm. DOI: 10.5281/zenodo.20052558
-
-**Session 35 — DM v20 publié (6 May 2026):** DOI: 10.5281/zenodo.20054876
-
-**Session 36 — DL01 publié (10 May 2026):** DOI: 10.5281/zenodo.20132166
-
-**Session 37 — DL02 publié (12 May 2026):** DOI: 10.5281/zenodo.20132228
-
-**Session 38 — D48v3 publié (13 May 2026):**
-- Audit D48v1/v2 : quatre erreurs corrigées. OP-spin RÉSOLU.
-- D48v3 DOI: 10.5281/zenodo.20151380
-
-**Session 39 — D54 publié (13 May 2026):**
-- OP-PRESSURE RÉSOLU. Ω_Λ^PDL = 0.6838 (0.17%). DOI: 10.5281/zenodo.20157203
-
-**Session 40 — D55 + DM v23 publiés (14 May 2026):**
-- OP10 θ_W RÉSOLU — θ_W = 19π/119, sin²θ_W = 0.231196 (0.48σ PDG 2024).
-- Prédiction P10 : Δm_iso = 2.446 MeV (0.92σ FLAG 2024).
-- DOI D55: 10.5281/zenodo.20179924 | DM v23: 10.5281/zenodo.20181077
-
-**Session 41 — DS01 publié (14 May 2026):**
-- Bilan de position. Clôture interne C1–C4 → α, G, Λ, θ_W confirmée.
-- OP7 reclassifié MÉTROLOGIQUE | OP10-c reclassifié ARBRE CORRECT.
-- DOI DS01: 10.5281/zenodo.20187274
-
-**Session 42 — D-exp-SP2 publié (16 May 2026):**
-- Critère topologique photon→électron. Théorème PDL-SP2 + 6 candidats PV + 3 prédictions.
-- DOI: 10.5281/zenodo.20242505
-
-**Session 43 — D-exp-ZIB publié (18 May 2026):**
-- Principe de sélection électrodes supercondensateurs zinc-ion. R²=0.959. 4 prédictions.
-- DOI: 10.5281/zenodo.20262293
-
-**Session 44 — D-exp-MP01 publié (20 May 2026):**
-- Lacunes structurelles PDL (Tc, Pm) confirmées par Materials Project. z(Pm)=−5.08σ.
-- DOI: 10.5281/zenodo.20316492
-
-**Session 45 — D-exp-Zr produit (21 May 2026):**
-- **D-exp-Zr : Origine structurelle de la QPT des isotopes du Zirconium.**
-  Document exploratoire motivé par Pasqualato et al. (arXiv:2410.17004, 2024),
-  qui fournit les valeurs B(E2) les plus fiables à ce jour pour ⁹⁸⁻¹⁰⁴Zr (AGATA/VAMOS++).
-
-  **Faits structurels établis (corollaires arithmétiques de D40 et D47) :**
-  - Z_sat = R_sea(n)/R_surf(p) = 9960/(310φ) = 19.857 ≈ 20 (D40, théorème)
-  - Z(Zr)/Z_sat = 40/19.857 = 2.014 — écart 0.72% de l'entier 2
-  - N=60 tombe dans le niveau 5d₃/₂ (cumul 59–62), 2 neutrons au-dessus de
-    la fermeture 5s₁/₂ (N=58), 3 neutrons avant l'ouverture de 5g₇/₂ (N=63)
-  - π-g₉/₂ (protons Z=41–50) et ν-g₇/₂ (neutrons N=63–70) sont partenaires
-    spin-orbite du même shell (N_osc=4, ℓ=4) — Mirror Lemma de D47
-  - Z=40 est le dernier proton avant l'ouverture de π-g₉/₂
-  - Vérification Python (script v2, arithmétique rationnelle exacte, s=1/12)
-
-  **Conjecture Zr-QPT :**
-  La QPT à N=60 est la conséquence structurelle de la double proximité Z=40
-  à l'ouverture de π-g₉/₂ et N=60 à l'ouverture de ν-g₇/₂, médiée par la
-  Mirror Lemma. Requiert dérivation formelle depuis C1–C4 (Open Problem Zr-1).
-
-  **Fichiers produits :** D-exp-Zr.tex, D-exp-Zr.bib,
-  PDL_Zr_QPT_verification_v2.py (à archiver sur Zenodo avec le document).
+  **DM v24 produit :** +52 lignes vs v23. Modifications :
+  - Section nuclear spectroscopy : D56 + Théorème N_comp(k)=k + H_B reformulée.
+  - Table épistémique L6 : "COMPLETE + D56".
+  - Open Problems : OP-D41-1-A résolu + OP-E2-PDL nouveau.
+  - Continuation Guide : DM v24 + OP-E2-PDL comme priorité #1.
+  - Bibliographie : entrées D56 + Escudeiro2026 à ajouter dans DM_v24_references.bib.
 
 ---
 
@@ -143,7 +88,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
 | DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
 | D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
-| DM | 10.5281/zenodo.20181077 | Global Mapping v23 |
+| DM | [v24 DOI à obtenir après dépôt] | Global Mapping v24 |
 | D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
 | D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
@@ -184,7 +129,9 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D-exp-SP2 | 10.5281/zenodo.20242505 | Topological Criterion Photon→Electron |
 | D-exp-ZIB | 10.5281/zenodo.20262293 | Surface Dipole — Zinc-Ion Supercapacitor |
 | D-exp-MP01 | 10.5281/zenodo.20316492 | PDL Structural Lacunae — Materials Project |
-| D-exp-Zr | 10.5281/zenodo.20321750 | Zr QPT — Structural Origin (Pasqualato 2024) |
+| D-exp-Zr | 10.5281/zenodo.20321750 | Zr QPT — Structural Origin |
+| **D56** | **10.5281/zenodo.20409903** | **N_comp(k)=k — OP-D41-1-A RESOLVED** |
+
 ---
 
 ## Key Numerical Values
@@ -195,20 +142,16 @@ Neutron quintuplet     : (24, 28, 1032, 9960, 10992)
 R_surf(p)              : 310φ = 501.59  (D05)
 ε_geom(p)             : 329/10087 (unconditional theorem, D43)
 ε_geom(n)             : 468/9960  (unconditional theorem, D43)
-κ                     : 310φ/11017 ∈ ℚ(√5) (unconditional theorem, D42)
-G_PDL                 : 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻² (27 ppm, D21/D25)
+κ                     : 310φ/11017 ∈ ℚ(√5) (D42)
+G_PDL                 : 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻² (27 ppm, D25)
 Λ_PDL                 : 0.41 ppm from Λ_obs (D53)
-θ_W (PDL)             : 19π/119 → sin²θ_W = 0.231196 (0.48σ PDG 2024, D55)
-Δm_iso (D30)          : 2.532 MeV (Gate 2, forced)
-Δm_iso (D55)          : 2.446 MeV (prediction P10, 0.92σ FLAG 2024)
-Ω_Λ^PDL              : 0.6838 (0.17% from Planck 2020, D54)
-N_CMB                 : 40 (D27, parameter-free)
-H_0,CMB (PDL)         : 67.26 km/s/Mpc (0.27σ Planck 2018, D35)
-Z_sat (D40)           : 9960/(310φ) = 19.857 ≈ 20 (calcium)
-Z(Zr)/Z_sat           : 40/19.857 = 2.014 (écart 0.72%, D-exp-Zr)
-N=60 in HO-PDL        : dans 5d₃/₂ (cumul 59–62), 3 avant ν-g₇/₂ (D-exp-Zr)
-R² (P_surf²/M_moy)    : 0.959 (9 matériaux, D-exp-ZIB)
-z(Pm, %obs) MP01      : −5.08σ vs 29 éléments impairs stables Z>20
+θ_W (PDL)             : 19π/119 → sin²θ_W = 0.231196 (0.48σ, D55)
+T = R_surf(p)²/R_sea(n): 25.260 ≈ (Δn+1)² = 25 to 1.04%
+R_PDL = 2T/(Δn+1)²   : 2.021 (H_B conjecture, D41)
+N_comp(k)             : = k exactly — THÉORÈME (D56)
+R_surf(k)             : = k·T pour noyau k-ph (D56, corollaire)
+Z_sat                 : 19.857 ≈ 20 (D40)
+Z(Zr)/Z_sat           : 2.014 (0.72%, D-exp-Zr)
 ```
 
 ---
@@ -216,103 +159,54 @@ z(Pm, %obs) MP01      : −5.08σ vs 29 éléments impairs stables Z>20
 ## Epistemic Status
 
 ```
-THÉORÈMES INCONDITIONNELS (C1–C4) — chaîne principale :
-  [voir D42–D55 pour la chaîne complète C1–C4 → α, G, Λ, θ_W, S_BH]
-
-THÉORÈMES INCONDITIONNELS — applications exploratoires :
-  T1  : ε_geom=0 ⟺ graphe bipartite (PDL-SP2, D-exp-SP2)
-  T2  : HO-PDL 7/7 nombres magiques exacts avec s=1/12 (D47, vérifié D-exp-Zr)
-  T3  : Z_sat = R_sea(n)/R_surf(p) = 19.857 ≈ 20 (D40)
-
-COROLLAIRES ARITHMÉTIQUES (D-exp-Zr) :
-  C-Zr1 : Z(Zr)/Z_sat = 2.014 (0.72% de l'entier 2)
-  C-Zr2 : N=60 dans le niveau 5d₃/₂ (cumul 59–62), théorème D47
-  C-Zr3 : π-g₉/₂ et ν-g₇/₂ partenaires SO du shell N_osc=4, ℓ=4
+THÉORÈMES INCONDITIONNELS (C1–C4) — ajout Session 46 :
+  N_comp(k) = k  [D56, OP-D41-1-A résolu]
+  R_surf(k) = k·T pour noyau k-ph  [D56, corollaire]
 
 CONJECTURES FORTEMENT CORROBORÉES :
-  PDL-H : G_glob bipartite ⟺ ε_geom(H)=0 (2²⁴ vérifié, D-exp-SP2)
-  OP3-D40 : Tc et Pm lacunes structurelles (z=−5.08σ, D-exp-MP01)
-  Zr-QPT : QPT à N=60 = résonance structurelle Z=40/N=60 (D-exp-Zr, open)
+  H_B : B(E2) ∝ N_comp(k) = k  [D41 + D56; 0.58σ vs Ha et al.]
+    Gap formel restant : OP-E2-PDL (identification opérateur E2)
+  Conjecture Zr-QPT  [D-exp-Zr, OP-Zr-1]
 
-GAPS FORMELS OUVERTS :
-  Zr-1 : dériver formellement la condition de résonance QPT depuis C1–C4
-  G1   : M_moy non dérivable de C1–C4 (D-exp-ZIB)
-  OP4  : lien causal Block II→Block III (D-exp-MP01)
-
-PRÉDICTIONS FALSIFIABLES :
-  D45        : M*_PDL = +11.89% vs M*_GR (Fermi-LAT)
-  D41 P7/P8  : ⁸⁸Ru/⁹⁰Ru et ⁹²Pd/⁹⁴Pd (FRIB/RIKEN)
-  D-exp-SP2 P1–P3 : τ_cs GaN/BP/SiC/GaP (femtoseconde pump-probe)
-  D-exp-ZIB P1–P4 : C_sp Al₂O₃/AlN/TiN/ZnO en ZnSO₄ (EIS/CVA)
-
-RECLASSIFIÉS (DS01) :
-  OP7 : résidu 47 ppm → MÉTROLOGIQUE
-  OP10-c : M_W/M_Z → ARBRE CORRECT
-
-ATTENTE EXTERNE :
-  FLAG/lattice QCD : Δm_iso à ±0.04 MeV — horizon 3–5 ans
-  Fermi-LAT : IGRB 50–200 MeV — contact Arbey+Auffinger en attente
-  FRIB/RIKEN : P7/P8 — contact Recchia+Lenzi en attente
-  Pasqualato et al. : D-exp-Zr à soumettre pour commentaire après dépôt Zenodo
-  EIS/CVA : validation D-exp-ZIB P1–P4 — à initier
+OPEN PROBLEMS NOUVEAUX (Session 46) :
+  OP-E2-PDL [HIGH] : opérateur E2 en PDL
+    => résoudre = élever H_B au rang de théorème
 
 CLÔTURE INTERNE CONFIRMÉE :
   C1–C4 → α, G, Λ, θ_W, S_BH, London, tableau périodique Z≤82,
-           nombres magiques, Schrödinger, Dirac, Einstein, équation d'état
+           nombres magiques, Schrödinger, Dirac, Einstein, N_comp(k)=k
   Paramètre externe unique : Δm_iso
 ```
 
 ---
 
-## Open Problems (updated Session 45)
+## Open Problems (updated Session 46)
 
-**Nouveau — D-exp-Zr (Session 45) :**
-- **[MEDIUM]** OP-Zr-1 : dériver formellement la condition de résonance structurelle
-  QPT (Z=40 frontière π-g₉/₂, N=60 proche ν-g₇/₂) depuis C1–C4 via Mirror Lemma.
-- **[MEDIUM]** OP-Zr-2 : dériver un B(E2) quantitatif pour ⁹⁸⁻¹⁰⁰Zr depuis C1–C4.
-- **[LOW]** OP-Zr-3 : expliquer l'absence de QPT abrupte dans Mo (Z=42) depuis PDL.
+**Résolu (Session 46) :**
+- **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
+
+**Nouveau (Session 46) :**
+- **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL. Entrée : D29, D32, D41, D56.
 
 **Priorité haute :**
-1. **[HIGH]** OP10-c : corrections radiatives électrofaibles.
-2. **[HIGH]** OP9 : masses muon/tau.
-3. **[HIGH]** OP2 : unicité globale du quintuplet protonique.
-4. **[HIGH]** OP-ZIB-G1 : dérivation M_moy depuis C1–C4.
-5. **[HIGH]** OP4-MP01 : lien causal Block II→Block III.
+1. **[HIGH]** OP-E2-PDL (nouveau)
+2. **[HIGH]** OP10-c : corrections radiatives électrofaibles.
+3. **[HIGH]** OP9 : masses muon/tau.
+4. **[HIGH]** OP2 : unicité globale quintuplet.
+5. **[HIGH]** OP-ZIB-G1 : dérivation M_moy depuis C1–C4.
+6. **[HIGH]** OP4-MP01 : lien causal Block II→Block III.
 
 **Priorité moyenne :**
-6. **[MEDIUM]** OP15 : noyaux Z > 82.
-7. **[MEDIUM]** OP-Zr-1 : condition de résonance QPT formelle.
-8. **[MEDIUM]** OP-SP2-1 : preuve analytique PDL-H.
-9. **[MEDIUM]** OP-ZIB-G3 : régime chimisorption.
-10. **[MEDIUM]** DL03 : encadrement numérique n*_vie.
+7. [MEDIUM] OP15 : noyaux Z > 82.
+8. [MEDIUM] OP-Zr-1 : condition de résonance QPT formelle.
+9. [MEDIUM] OP-SP2-1 : preuve analytique PDL-H.
+10. [MEDIUM] DL03 : encadrement numérique n*_vie.
 
-**Frontières expérimentales externes :**
+**Frontières expérimentales :**
 - FLAG/lattice QCD → Δm_iso ±0.04 MeV
-- Fermi-LAT → IGRB 50–200 MeV (Arbey+Auffinger en attente)
+- Fermi-LAT → IGRB (Arbey+Auffinger en attente)
 - FRIB/RIKEN → P7/P8 (Recchia+Lenzi en attente)
-- EPFL/EPFZ → validation D-exp-SP2
-- EIS/CVA → validation D-exp-ZIB P1–P4
-- Pasqualato et al. → contact après dépôt Zenodo D-exp-Zr
-
----
-
-## External Scientific Connections
-
-**E1** — Afshordi et al. PRL 2026: r ≥ 0.01 (quadratic gravity). Compatible avec extension inflationnaire PDL.
-
-**E2** — Yu et al. ApJ 2026: AGN S/E ratio — template pour σ(N(z))² (prédiction P6).
-
-**E3** — Ding et al. PRL 2026: magic numbers from spin-orbit splitting via RG flow. PDL dérive s=1/12 axiomatiquement (D47). Complémentaires.
-
-**E4** — FLAG 2024: Δm_iso = 2.52 ± 0.08 MeV. PDL prédit 2.446 MeV (D55) et 2.532 MeV (D30). Distinguishable à ±0.04 MeV.
-
-**E5** — D-exp-SP2 (Session 42) : connexion Harary (1953) retrouvée depuis C1–C4. Connexion Shockley–Queisser (1961). Validation à initier (EPFL Chergui/Marzari).
-
-**E6** — D-exp-ZIB (Session 43) : MACE-MP-0 comme calculateur proxy. Validation à initier (EIS/CVA en ZnSO₄ 2M).
-
-**E7** — D-exp-MP01 (Session 44) : Materials Project (mp-api). Signal z=−5.08σ pour Pm. Premier test quantitatif PDL sur données chimiques.
-
-**E8** — D-exp-Zr (Session 45) : Pasqualato et al. arXiv:2410.17004 — valeurs B(E2) les plus fiables pour ⁹⁸⁻¹⁰⁴Zr (AGATA/VAMOS++, GANIL). Connexion D40 (Z_sat) + D47 (HO-PDL, Mirror Lemma). Contact à initier après dépôt Zenodo.
+- Ha et al. / Escudeiro et al. → cités dans D56
 
 ---
 
@@ -320,106 +214,66 @@ CLÔTURE INTERNE CONFIRMÉE :
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-Update after each session: Programme Summary, Corpus Table, Key Numerical Values, Epistemic Status, Open Problems, Dependency Map.
+**Priorité immédiate Session 47 :**
+1. Déposer DM v24 sur Zenodo → obtenir DOI → mettre à jour ligne DM dans corpus table.
+2. Ajouter entrées D56 + Escudeiro2026 dans DM_v24_references.bib.
+3. Pousser PDL_context.md + DM v24 sur GitHub.
+4. Attaquer OP-E2-PDL : identifier l'opérateur E2 dans le formalisme PDL.
 
-**LaTeX conventions (Session 16):**
+**LaTeX conventions (Session 16) :**
 - No spurious mid-sentence line breaks in .tex source
 - British English throughout
 - \bibliographystyle{unsrt} with \usepackage[numbers]{natbib}
 - theorem/proof/definition/conjecture/openproblem/resolvedproblem environments
 - Epistemic status table with p{} fixed-width columns
-- All HTML links: target="_blank" rel="noopener"
 
-**D-exp series conventions (Session 42) :**
-- Numérotation D-exp-XX pour documents exploratoires hors corpus central
-- Statut épistémique explicite obligatoire (boîte jaune en LaTeX)
-- Vérification Colab exhaustive avant toute rédaction
-- Scripts Python archivés sur Zenodo avec le document
-- Résultats négatifs documentés honnêtement
-- Document autosuffisant : lecteur connaissant la source expérimentale mais pas PDL doit pouvoir suivre
+**D56 discipline (Session 46) :**
+- N_comp(k) = k : THÉORÈME (trois lemmes, D16a + D29 + C3)
+- R_surf(k) = k·T : COROLLAIRE de D56
+- H_B (B(E2) ∝ k) : toujours CONJECTURE — gap = OP-E2-PDL
+- D-exp-f7/2 : EN ATTENTE de OP-E2-PDL
 
-**D-exp-Zr discipline (Session 45) :**
-- Z(Zr)/Z_sat = 2.014 : corollaire arithmétique de D40, pas un entier exact
-- N=60 dans 5d₃/₂ : corollaire de D47, pas dans ν-g₇/₂ (qui ouvre à N=63)
-- Conjecture Zr-QPT : structurellement motivée, non dérivée — toujours labellisée conjecture
-- Référence expérimentale : Pasqualato et al. arXiv:2410.17004 (Zenodo related: references)
-
-**DL series conventions (Session 36):**
-- Numérotation DLxx pour tous les documents vie/conscience
-- Distinction analogie/dérivation formelle obligatoire
-
-**DS series conventions (Session 41) :**
-- Numérotation DSxx pour documents de synthèse provisoires
-- Ne contiennent pas de nouveaux théorèmes
-
-*All references use Zenodo canonical numbering D01–D55 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + auxiliaires.*
+*Références canoniques : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr.*
 
 ---
 
-## Dependency Map — Critical Path (updated Session 45)
+## Dependency Map — Critical Path (updated Session 46)
 
 ```
-LAYER 0  C1–C4 (axiomes)
-
-LAYER 1  K₄, n=3, exponent 18                     [✓] D16a, D23
-
-LAYER 2  Quintuplet, R_surf, H3, κ                 [✓] D16b, D05, D42
-
-LAYER 3  (A)∧(B), Gates 1–3, Δm_iso               [✓] D29, D30, D31
-
-LAYER 4  ε_geom, k, ε_G                            [✓] D43v3, D44
-
-LAYER 5  G_PDL, α, μ*                              [✓] D21, D12, D25
-
-LAYER 6  QCD interface Δm_iso = 2.532 MeV          FORCED
-
-LAYER 7  Dynamiques — COMPLETE                     [✓] D32–D35, D42, D46, D49
-
-LAYER 8  Cosmologie                                [✓] D27, D35, D42
-
-LAYER 9  Stabilité nucléaire — COMPLETE            [✓] D40, D47
-
-LAYER 10 Trous noirs — COMPLETE                    [✓] D37, D38, D42, D45, D50
-
-LAYER 11 Tenseur de cohérence — COMPLETE           [✓] D48v3, D49, D51–D52
-         OP-spin résolu | OP-pressure résolu (D54)
-         Ω_Λ^PDL = 0.6838 (0.17%)
-
-LAYER 12 Λ_PDL — COMPLETE                         [✓] D51, D52, D53
-
-LAYER 13 Vie/conscience                            [✓] DL01, DL02
-         [?] DL03 (n*_vie numérique)
-
-LAYER 14 Électrofaible — θ_W RÉSOLU               [✓] PARTIEL
-         SU(2) [✓] D33 | U(1) [✓] D46
-         θ_W = 19π/119 [✓] D55
-         M_W/M_Z = cos(19π/119) [arbre correct, DS01; RG ouvert]
-
-LAYER 15 Applications exploratoires
-         PDL-SP2 : bipartition ⟺ ε_geom=0         [✓ théorème, D-exp-SP2]
-         PDL-H : G_glob bipartite ⟺ ε_H=0          [conjecture, 2^24 vérifié]
-         P_surf²/M_moy → E_ads(Zn), R²=0.959      [✓ corroboré, D-exp-ZIB]
-         Tc/Pm déficit MP : z=−5.08σ (Pm)         [✓ fait empirique, D-exp-MP01]
-         Zr QPT : Z=2Z_sat, N=60 dans 5d₃/₂       [corollaires D40+D47, D-exp-Zr]
-         Conjecture Zr-QPT                         [conjecture, open problem Zr-1]
-
-LAYER 16 Dissémination — EN COURS
-         Zenodo: D01–D55 + DS01 + DL01+DL02
-                 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr (à déposer)
-         DM v23
+LAYER 0   C1–C4 (axiomes)
+LAYER 1   K₄, n=3, exponent 18                      [✓] D16a, D23
+LAYER 2   Quintuplet, R_surf, H3, κ                  [✓] D16b, D05, D42
+LAYER 3   (A)∧(B), Gates 1–3, Δm_iso                [✓] D29, D30, D31
+LAYER 4   ε_geom, k, ε_G                             [✓] D43v3, D44
+LAYER 5   G_PDL, α, μ*                               [✓] D21, D12, D25
+LAYER 6   QCD interface Δm_iso = 2.532 MeV           FORCED
+LAYER 7   Dynamiques — COMPLETE                      [✓] D32–D35, D42, D46, D49
+LAYER 8   Cosmologie                                 [✓] D27, D35, D42
+LAYER 9   Stabilité nucléaire — COMPLETE             [✓] D40, D47
+LAYER 10  Trous noirs — COMPLETE                     [✓] D37, D38, D42, D45, D50
+LAYER 11  Tenseur de cohérence — COMPLETE            [✓] D48v3, D49, D51–D52, D54
+LAYER 12  Λ_PDL — COMPLETE                          [✓] D51, D52, D53
+LAYER 13  Vie/conscience                             [✓] DL01, DL02; [?] DL03
+LAYER 14  Électrofaible — θ_W RÉSOLU                [✓] PARTIEL (D33, D46, D55)
+LAYER 15  Spectroscopie nucléaire
+           N_comp(k) = k                             [✓ THÉORÈME — D56]
+           R_surf(k) = k·T                           [✓ corollaire — D56]
+           B(E2) ∝ k  (H_B)                          [conjecture — D41]
+           OP-E2-PDL                                 [OUVERT — HIGH]
+           D-exp-f7/2                                [en attente OP-E2-PDL]
+LAYER 16  Applications exploratoires                 [✓] D-exp-SP2/ZIB/MP01/Zr
+LAYER 17  Dissémination                              Zenodo D01–D56; DM v24 à déposer
 ```
 
 **Resolved milestones:**
 ```
-GATE 1 (D29) | GATE 2 (D30) | GATE 3 (D36, unconditional D42)
-OP1 (D42) H3 | OP-A (D43v3) | OP-B (D44) | OP8 (D44)
-OP4 (D46) U(1) | OP13 (D47) Δn=4 | OP14 (D47) r_exc
-OP2-D35 COMPLETE (D48v3) | OP-SPIN RESOLVED (D48v3)
+GATE 1 (D29) | GATE 2 (D30) | GATE 3 (D36, D42)
+OP1 (D42) | OP-A (D43v3) | OP-B (D44) | OP8 (D44)
+OP4 (D46) | OP13 (D47) | OP14 (D47)
+OP2-D35 (D48v3) | OP-SPIN (D48v3)
 OP-LONDON (D49) | OP12/BH-3 (D50) | OP1-D35 (D51+D52)
-OP11 (D51+D52+D53) | OP-PRESSURE (D54)
-OP10 θ_W RÉSOLU (D55) [✓]
-OP7 RECLASSIFIÉ → MÉTROLOGIQUE (DS01) [✓]
-OP10-c RECLASSIFIÉ → ARBRE CORRECT (DS01) [✓]
-D-exp-SP2 [✓] | D-exp-ZIB [✓] | D-exp-MP01 [✓]
-D-exp-Zr [produit Session 45 — dépôt Zenodo à effectuer]
+OP11 (D53) | OP-PRESSURE (D54) | OP10 θ_W (D55)
+OP7 → MÉTROLOGIQUE (DS01) | OP10-c → ARBRE CORRECT (DS01)
+D-exp-SP2 [✓] | D-exp-ZIB [✓] | D-exp-MP01 [✓] | D-exp-Zr [✓]
+OP-D41-1-A → N_comp(k)=k  [✓ D56, Session 46]
 ```
