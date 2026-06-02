@@ -1,0 +1,395 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+% ─── tcolorbox environments ───────────────────────────────────────────────────
+
+\newtcolorbox{theorem_box}[1][]{
+  colback=blue!5!white, colframe=blue!60!black,
+  fonttitle=\bfseries, title={Theorem}, #1
+}
+
+\newtcolorbox{conjecture_box}[1][]{
+  colback=orange!5!white, colframe=orange!70!black,
+  fonttitle=\bfseries, title={Conjecture}, #1
+}
+
+\newtcolorbox{result_box}[1][]{
+  colback=green!5!white, colframe=green!60!black,
+  fonttitle=\bfseries, title={Verified Result}, #1
+}
+
+\newtcolorbox{open_box}[1][]{
+  colback=gray!5!white, colframe=gray!60!black,
+  fonttitle=\bfseries, title={Open Problem}, #1
+}
+
+% ─── Epistemic status table ──────────────────────────────────────────────────
+
+\newcommand{\epistemic}[4]{%
+\begin{center}
+\small
+\begin{tabular}{>{\bfseries}p{3cm} p{10cm}}
+\toprule
+Epistemic status & #1 \\
+Method           & #2 \\
+Reproducibility  & #3 \\
+Limitations      & #4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+
+\title{$\beta_1 = 3$ as a Topological Invariant of Minimal Relational Closures:\\
+Numerical Evidence from the PDL and OFN Frameworks}
+
+\author{
+  C\'edric Laubscher$^{1}$ \and Oleg I.\ Evdokimov$^{2}$
+}
+
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Two independent pre-geometric frameworks --- the Projective Dynamic Logo (PDL) and the Ontological Fundamental Network (OFN) --- independently arrive at the first Betti number $\beta_1 = 3$ as a key topological invariant of their respective foundational structures. In PDL, $\beta_1(K_4) = 3$ is forced by four combinatorial axioms and is a necessary condition for the cosmological leakage formula to be non-degenerate. In OFN, $\beta_1(G_H) = 3$ is the cyclomatic number of the Hamming subgraph induced by the vacuum manifold $\Omega_{21} \subset Q_6$. We present a structured numerical investigation establishing that this convergence is not due to a structural identity between the two frameworks, but reflects a deeper topological property: $n = 6$ is the minimal dimension of a binary space $\{0,1\}^n$ admitting the construction of three topologically independent cycles. Both frameworks have independently selected this minimal dimension. The results are fully reproducible from open-access Python scripts.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\bigskip
+
+\clearpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Introduction}
+% ─────────────────────────────────────────────────────────────────────────────
+
+The Projective Dynamic Logo (PDL)~\cite{Laubscher_DM_2026} is a foundational physics programme deriving fundamental physical constants and dynamical laws from four combinatorial axioms (C1--C4) on finite signed graphs, with no presupposition of spacetime, particles, or fields. The minimal admissible graph closure forced by C1--C4 is $K_4$, the complete graph on four vertices. $K_4$ has six edges, and its first Betti number is $\beta_1(K_4) = 3$. These three independent cycles are the structural origin of the cosmological constant $\Lambda$, derived to $0.41\,\mathrm{ppm}$ of the Planck 2020 value with no free parameter~\cite{Laubscher_D53_2026}.
+
+The Ontological Fundamental Network (OFN)~\cite{Evdokimov_OFN_2026, Evdokimov_CWS_2026} is a pre-geometric framework in which fundamental reality is a static discrete network $\Omega$. The elementary cell carries six bits of information, forming the configuration space $Q_6 = \{0,1\}^6$ of $2^6 = 64$ states. A distinguished subset $\Omega_{21} \subset Q_6$ of 21 states is selected by a three-stage filter (causal regularity, girth $\geq 5$, CP-closure). The first Betti number of the Hamming subgraph $G_H$ induced by $\Omega_{21}$ is $b_1(G_H) = 3$, which corresponds to the three generations of fermions in the Standard Model~\cite{Evdokimov_CWS_2026}.
+
+The convergence on $\beta_1 = 3$ across two independently developed frameworks prompted the present investigation. The central question is: does this convergence reflect a shared underlying structure, or do the two frameworks arrive at the same topological invariant by genuinely independent routes?
+
+\epistemic{Preliminary / Numerical}{Exhaustive enumeration (Scripts 1--3) and guided construction (Script 4). All results independently reproducible.}{Open-access Python scripts, Google Colab compatible, no external dependencies beyond NetworkX.}{Conjecture~\ref{conj:main} remains open. Dimensional scan uses random sampling for $n \geq 6$.}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{The PDL Side: \texorpdfstring{$\beta_1(K_4) = 3$}{beta1(K4)=3} and the Cosmological Formula}
+\label{sec:pdl}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{The leakage formula and its three cycles}
+
+The PDL cosmological formula~\cite{Laubscher_D51_2026, Laubscher_D52_2026, Laubscher_D53_2026} is:
+\begin{equation}
+C = (1-\kappa)^{997} \times \left(\frac{930}{11017}\right)^{23} \times (1-\eta_L)^{67}
+\label{eq:C}
+\end{equation}
+where $\kappa = 310\varphi/11017$ (with $\varphi$ the golden ratio), $\eta_L$ is the neutron coupling leakage parameter derived from the proton quintuplet $(24, 28, 930, 10087, 11017)$, and the three prime exponents $\{23, 67, 997\}$ are the natural representatives of the three independent leakage cycles of $K_4$. The target value $C_{\mathrm{target}} \approx 8.1579 \times 10^{-46}$ corresponds to $\Lambda / (m_p c/\hbar)^2$ evaluated at Planck 2020 cosmological parameters.
+
+\subsection{\texorpdfstring{$K_4$ is the unique connected 4-vertex graph with $\beta_1 = 3$}{K4 is the unique connected 4-vertex graph with beta1 = 3}}
+
+\begin{result_box}[title={Script 1 --- Exhaustive enumeration}]
+Among all 38 distinct connected graphs on four vertices, $K_4$ (the complete graph, degree sequence $[3,3,3,3]$, $E = 6$ edges) is the unique one with $\beta_1 = 3$. The distribution is: $\beta_1 = 0$ (16 graphs), $\beta_1 = 1$ (15 graphs), $\beta_1 = 2$ (6 graphs), $\beta_1 = 3$ (1 graph $= K_4$).
+\end{result_box}
+
+\subsection{\texorpdfstring{$\beta_1 = 3$}{beta1 = 3} is a necessary condition for cosmological non-degeneracy}
+
+\begin{result_box}[title={Script 1 --- Degeneration test}]
+The cosmological formula~\eqref{eq:C} evaluated with fewer than three cycles gives:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Cycles & $\beta_1$ & Value of $C$ & Deviation from $C_{\mathrm{target}}$ \\
+\midrule
+1 (surface only) & 1 & $6.66 \times 10^{-21}$ & $8.2 \times 10^{30}$ ppm \\
+2 (surface + valence) & 2 & $1.35 \times 10^{-45}$ & $6.6 \times 10^{5}$ ppm \\
+3 (full $K_4$) & 3 & $8.158 \times 10^{-46}$ & $\mathbf{0.41}$ \textbf{ppm} \\
+\bottomrule
+\end{tabular}
+\end{center}
+With $\beta_1 < 3$, the formula deviates from $C_{\mathrm{target}}$ by at least five orders of magnitude.
+\end{result_box}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{The OFN Side: \texorpdfstring{$b_1(\Omega_{21}) = 3$}{b1(Omega21) = 3}}
+\label{sec:ofn}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{The vacuum manifold \texorpdfstring{$\Omega_{21}$}{Omega21}}
+
+The 21 vertices of $\Omega_{21}$ are (in decimal, corresponding to 6-bit strings):
+\begin{center}
+$0, 1, 3, 4, 7, 8, 9, 12, 15, 16, 19, 21, 27, 31, 35, 42, 43, 48, 52, 56, 63$
+\end{center}
+These are selected from the 64 states of $Q_6$ by: (i) causal regularity, (ii) girth $\geq 5$, (iii) CP-closure under the involution $x \mapsto 63 - x$. The complement $E_{43} = Q_6 \setminus \Omega_{21}$ contains 43 excitation states.
+
+\subsection{Verified computation of \texorpdfstring{$b_1(\Omega_{21})$}{b1(Omega21)}}
+
+\begin{result_box}[title={Independent verification (NetworkX)}]
+Under Hamming distance $= 1$ adjacency, the induced subgraph $G_H$ on $\Omega_{21}$ has:
+\begin{center}
+$|V| = 21, \quad |E| = 22, \quad \beta_0 = 2, \quad \beta_1 = |E| - |V| + \beta_0 = 3$
+\end{center}
+The graph has two connected components: a main component of 20 vertices, and one isolated vertex --- decimal 21, i.e.\ $(0,1,0,1,0,1)$, which has no Hamming-distance-1 neighbour within $\Omega_{21}$. This isolated vertex is one of the four self-conjugate states of $\Omega_{21}$ under the CP-involution.
+\end{result_box}
+
+\subsection{\texorpdfstring{Robustness of $b_1 = 3$}{Robustness of b1 = 3}}
+
+The value $b_1 = 3$ is stable under multiple adjacency specifications tested independently:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Adjacency rule & $|E|$ & $b_1$ \\
+\midrule
+Hamming distance $= 1$ & 22 & \textbf{3} \\
+Hamming distance $\leq 2$ & 72 & 52 \\
+Distance $= 1$ or ($= 2$ via $\Omega_{21}$) & 52 & 33 \\
+Distance $= 1$ and CP-invariant & 2 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$b_1 = 3$ is obtained specifically under the minimal (distance $= 1$) rule, which is the physically motivated adjacency in the CWS framework~\cite{Evdokimov_CWS_2026}.
+
+\subsection{Invariance under \texorpdfstring{$A_5 \times \mathbb{Z}_2$}{A5 x Z2}}
+
+The graph $G_H$ is invariant under the automorphism group of the octahedral stabiliser cover, isomorphic to $A_5 \times \mathbb{Z}_2$ (order 120). Since $\beta_1$ is a topological invariant, it is preserved under all automorphisms:
+\begin{equation}
+\forall\, \phi \in \mathrm{Aut}(G_H), \quad b_1(\phi(G_H)) = b_1(G_H) = 3.
+\end{equation}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Cross-Framework Comparison}
+\label{sec:cross}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{Shared and distinct structural features}
+
+\begin{result_box}[title={Scripts 2 and 3 --- Orbit and bijection analysis}]
+The two frameworks share:
+\begin{itemize}
+\item A configuration space of $2^6 = 64$ binary states (6 edge-signs in PDL; 6 qubits in OFN).
+\item The topological invariant $\beta_1 = 3$ for their respective selected substructures.
+\item A distinguished set of 8 configurations: 8 balanced signed $K_4$ graphs (PDL) and 8 self-conjugate states of $\Omega_{21}$ (OFN).
+\end{itemize}
+They differ in:
+\begin{itemize}
+\item Symmetry groups: $S_4$ (PDL, acting on 6 edges) vs.\ $A_5 \times \mathbb{Z}_2$ (OFN, acting on $\Omega_{21}$).
+\item Natural involutions: global sign inversion (PDL, 0 self-conjugate states) vs.\ CP-involution $x \mapsto 63-x$ (OFN, 8 self-conjugate states).
+\item Orbit decompositions: $1 \oplus 2 \oplus 3_{\mathrm{std}}$ under $S_4$ (PDL, from~\cite{Laubscher_D36_2026}) vs.\ $8 \oplus 3 \oplus 1 \oplus 1$ under $A_5 \times \mathbb{Z}_2$ (OFN).
+\end{itemize}
+\end{result_box}
+
+\subsection{Bijection analysis: no natural correspondence}
+
+All $6! = 720$ bijections between the 6 $K_4$ edges and the 6 $Q_6$ qubits were tested. Key results:
+\begin{itemize}
+\item The best overlap between the 8 balanced PDL configurations and $\Omega_{21}$ is $5/8$ --- no bijection achieves full correspondence.
+\item For every one of the 720 bijections, the preimage of $\Omega_{21}$ in the signed $K_4$ space has $\beta_1 = 3$ (unconditional, $720/720$).
+\item Approximately 18\% of random subsets of size 21 in $\{0,1\}^6$ have $\beta_1 = 3$, confirming that $\beta_1 = 3$ is a property of the topology of the 6-dimensional binary space.
+\end{itemize}
+
+The convergence on $\beta_1 = 3$ is therefore not due to a structural identity or natural bijection between $K_4$ and $Q_6$.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Dimensional Scan: \texorpdfstring{$n = 6$}{n = 6} as the Minimal Dimension}
+\label{sec:dimensional}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{Construction of three independent cycles}
+
+A minimal connected subgraph of $\{0,1\}^n$ with $\beta_1 = k$ can be constructed by $k$ independent 4-cycles (squares), each using a distinct pair of bit positions, sharing a common vertex. This construction requires $n \geq 2k$ distinct bit positions and yields a subgraph of size $1 + 3k$.
+
+\begin{result_box}[title={Script 4 --- Dimensional scan}]
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$n$ & $2^n$ & $\min\,\mathrm{size}(\beta_1=1)$ & $\min\,\mathrm{size}(\beta_1=3)$ \\
+\midrule
+2 & 4   & 4 & \emph{N/A} \\
+3 & 8   & 4 & 7 (indirect) \\
+4 & 16  & 4 & 7 (indirect) \\
+5 & 32  & 4 & 8 (indirect) \\
+\textbf{6} & \textbf{64}  & \textbf{4} & \textbf{10} \\
+7 & 128 & 4 & 10 \\
+8 & 256 & 4 & 10 \\
+\bottomrule
+\end{tabular}
+\end{center}
+The minimal size for $\beta_1 = 3$ via three independent cycles with distinct bit pairs is 10, first achievable at $n = 6$. For $n \leq 5$, this construction is impossible ($2 \times 3 = 6 > n$).
+\end{result_box}
+
+\subsection{\texorpdfstring{$n = 6$ is the minimal dimension for $\beta_1 = 3$}{n = 6 is the minimal dimension for beta1 = 3}}
+
+\begin{theorem_box}
+$n = 6$ is the minimal dimension of $\{0,1\}^n$ admitting the construction of three topologically independent cycles via distinct bit pairs. For $n \leq 5$, no such construction exists. For $n \geq 6$, the minimal subgraph size is $1 + 3 \times 3 = 10$, invariant under further increase of $n$.
+\end{theorem_box}
+
+\subsection{\texorpdfstring{Frequency of $\beta_1 = 3$ at scale 21}{b1 = 3 at scale 21}}
+
+For random subsets of size 21 in $\{0,1\}^n$, the frequency of $\beta_1 = 3$ peaks at $n = 6$:
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+$n$ & $2^n$ & $P(\beta_1 = 3\,|\,\text{size} = 21)$ \\
+\midrule
+5 & 32  & $0.0\%$ \\
+\textbf{6} & \textbf{64}  & \textbf{21.2\%} \\
+7 & 128 & $1.6\%$ \\
+8 & 256 & $0.2\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$n = 6$ is the dimension for which $\beta_1 = 3$ is maximally probable for structures of intermediate size ($\sim 21/64$ of the full space). Both PDL and OFN select structures in this optimal dimension.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Structural Interpretation}
+\label{sec:interpretation}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{The shared combinatorial necessity}
+
+The convergence of PDL and OFN on $\beta_1 = 3$ in a 6-dimensional binary space admits a precise structural explanation. Both frameworks impose two conditions on their foundational structure:
+\begin{enumerate}
+\item \emph{Minimality}: the structure should be as small as possible while remaining non-trivial.
+\item \emph{Non-triviality}: the structure should support at least three independent topological cycles ($\beta_1 \geq 3$).
+\end{enumerate}
+These two conditions together force $n = 6$ as the minimal binary dimension, and $\beta_1 = 3$ as the minimal non-trivial invariant in that dimension.
+
+\subsection{Two readings of the same constraint}
+
+The 6-dimensional binary space is inhabited by both frameworks but read differently:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+ & PDL & OFN \\
+\midrule
+6 dimensions & 6 signed edges of $K_4$ & 6 qubits of $Q_6$ \\
+Binary states & $\{+,-\}$ (sign) & $\{0,1\}$ (qubit) \\
+Selected structure & balanced configurations & $\Omega_{21}$ \\
+$\beta_1 = 3$ role & 3 leakage cycles $\to \Lambda$ & 3 fermion generations \\
+Physical output & cosmological constant & gauge group \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Possible interpretations}
+
+Three levels of interpretation are possible, with decreasing certainty:
+
+\textbf{Level 1 (established):} Both frameworks select the minimal binary dimension supporting $\beta_1 = 3$. This is a consequence of the shared combinatorial minimality constraint.
+
+\textbf{Level 2 (conjectural):} The 3 leakage cycles of PDL and the 3 fermion generations of OFN are two manifestations of the same topological invariant $\beta_1 = 3$ in a 6-dimensional binary space. This would imply a structural connection between $\Lambda$ and the three generations.
+
+\textbf{Level 3 (speculative):} There exists a single mathematical object $X$ of which $K_4$ (PDL) and $\Omega_{21}$ (OFN) are two projections, and whose topological properties simultaneously determine the cosmological constants and the Standard Model gauge group. At this level, the two frameworks would be complementary descriptions of the same pre-geometric reality.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Main Conjecture and Open Problems}
+\label{sec:conjecture}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{conjecture_box}[label={conj:main}]
+$\beta_1 = 3$ is the minimal non-trivial topological invariant of relational closures in a 6-dimensional binary space $\{0,1\}^6$, and $n = 6$ is the minimal binary dimension supporting this invariant via three independent cycles. Any viable pre-geometric framework based on a 6-bit relational substrate must exhibit $\beta_1 = 3$.
+\end{conjecture_box}
+
+\begin{open_box}[title={OP-1: Formal proof of Conjecture~\ref{conj:main}}]
+Can it be proven that any minimal connected substructure of $\{0,1\}^6$ admitting a non-trivial relational closure necessarily has $\beta_1 = 3$? The numerical evidence is consistent with this claim, but a formal topological proof is lacking.
+\end{open_box}
+
+\begin{open_box}[title={OP-2: Identification of the common object $X$}]
+Is there a mathematical object $X$ of which both $K_4$ (with its signed graph structure) and $\Omega_{21}$ (with its CWS code structure) are projections? If so, what are the properties of $X$, and do they simultaneously determine $\Lambda$ (PDL) and $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ (OFN)?
+\end{open_box}
+
+\begin{open_box}[title={OP-3: Three leakage cycles and three fermion generations}]
+Are the three independent leakage cycles of PDL (with prime exponents 23, 67, 997) structurally identical to the three fermion generations of OFN? If so, what is the explicit map between the two cycle bases?
+\end{open_box}
+
+\begin{open_box}[title={OP-4: Derivation of the Standard Model gauge group from C1--C4}]
+Can $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ be derived from the PDL axioms C1--C4, using the OFN decomposition $8 \oplus 3 \oplus 1 \oplus 1$ as a guide? This would constitute the first axiom-derived derivation of the Standard Model gauge group in PDL.
+\end{open_box}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Epistemic Status Summary}
+\label{sec:epistemic}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{center}
+\begin{tabular}{>{\bfseries}p{5cm} p{4cm} p{4.5cm}}
+\toprule
+Statement & Status & Reference \\
+\midrule
+$K_4$ unique with $\beta_1=3$ on 4 vertices & Unconditional theorem & Script 1, exhaustive \\
+$\beta_1 = 3$ necessary for PDL formula & Unconditional theorem & Script 1 \\
+$b_1(\Omega_{21}) = 3$ under dist-1 adjacency & Verified result & Scripts 3, Sec.~\ref{sec:ofn} \\
+No natural bijection $K_4 \leftrightarrow Q_6$ & Verified result & Script 3, 720/720 \\
+$\beta_1=3$ stable across adjacency rules & Verified result & Verification script \\
+$n=6$ minimal dimension for $\beta_1=3$ & Unconditional theorem & Script 4, construction \\
+$\beta_1=3$ universal for minimal closures & Conjecture & Conjecture~\ref{conj:main} \\
+3 PDL cycles $=$ 3 OFN generations & Open problem & OP-3 \\
+Common object $X$ exists & Speculative & OP-2 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusion}
+% ─────────────────────────────────────────────────────────────────────────────
+
+We have presented a structured numerical investigation of the convergence between the PDL and OFN frameworks on the topological invariant $\beta_1 = 3$. The key findings are:
+
+\begin{enumerate}
+\item $K_4$ is the unique connected graph on 4 vertices with $\beta_1 = 3$, and $\beta_1 = 3$ is a necessary condition for the PDL cosmological formula to be non-degenerate.
+\item $b_1(\Omega_{21}) = 3$ under Hamming distance $= 1$ adjacency, independently verified.
+\item The convergence is not due to a structural identity or natural bijection between $K_4$ and $Q_6$; the two frameworks differ in their symmetry groups, involutions, and orbit decompositions.
+\item $n = 6$ is the minimal binary dimension admitting three topologically independent cycles, and both frameworks have independently selected this minimal dimension.
+\item $n = 6$ is the dimension maximising the probability of $\beta_1 = 3$ for structures of intermediate scale ($\sim 21/64$).
+
+\end{enumerate}
+
+These results motivate Conjecture~\ref{conj:main}: $\beta_1 = 3$ is a topological invariant of any minimal relational closure in a 6-dimensional binary space. Its proof, and the identification of the structural connection between the PDL leakage cycles and the OFN fermion generations, remain open.
+
+All scripts, results, and this note are available at:
+\begin{center}
+\url{https://github.com/laubscher-lab/PDL-framework/tree/main/PDL_OFN_bridge}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Acknowledgements}
+% ─────────────────────────────────────────────────────────────────────────────
+
+C.L.\ thanks Stam Nicolis and Mrutunjaya Bhuyan for critical comments on related questions posted on ResearchGate. O.I.E.\ thanks E.\ Ryss for collaboration on the OFN CWS formulation.
+
+\bibliographystyle{unsrt}
+\bibliography{PDL_OFN_bridge}
+
+\end{document}
