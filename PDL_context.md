@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 47 — 2 June 2026 (ResearchGate launch; PDL–OFN bridge initiated)*
+*Last updated: Session 48 — 3 June 2026 (N01 déposé sur Zenodo; ResearchGate actif)*
 
 ---
 
@@ -28,7 +28,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - DOI D56 : 10.5281/zenodo.20409903 | DM v24 : 10.5281/zenodo.20415182
 
 **Note sur les tâches Session 46 reportées :**
-Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_v24_references.bib, push GitHub) n'ont pas été accomplies en Session 47 — la session s'est concentrée sur ResearchGate et le Bridge OFN. Ces tâches restent à accomplir en priorité en Session 48. Le DOI de DM v24 (10.5281/zenodo.20415182) provient de la Session 46 — à vérifier lors du dépôt effectif.
+Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_v24_references.bib, push GitHub) n'ont pas été accomplies en Session 47 — la session s'est concentrée sur ResearchGate et le Bridge OFN. Ces tâches restent à accomplir. Le DOI de DM v24 (10.5281/zenodo.20415182) provient de la Session 46 — à vérifier lors du dépôt effectif.
 
 **Session 47 — ResearchGate + PDL–OFN Bridge (2 June 2026):**
 
@@ -45,33 +45,33 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 
 ### PDL–OFN Bridge — Collaboration initiée
 
-**Interlocuteur :** Oleg I. Evdokimov (OFN framework, Kazan / indépendant).
+**Interlocuteurs :** Oleg I. Evdokimov et Elena Ryss (OFN framework, Kazan / indépendant).
 
 **Convergence identifiée :** β₁(K₄) = 3 (PDL) et b₁(G_H) = 3 pour Ω₂₁ ⊂ Q₆ (OFN) — même invariant topologique, deux frameworks indépendants.
 
-**Étude numérique exhaustive — 4 scripts Python (Google Colab, bibliothèque standard + NetworkX) :**
+**Étude numérique exhaustive — 5 scripts Python (Google Colab, bibliothèque standard + NetworkX) :**
 
-- **Script 1** — K₄ unique graphe connexe sur 4 sommets avec β₁=3 (38 graphes testés exhaustivement). β₁=3 condition nécessaire pour la formule cosmologique PDL : β₁=1 → 8.2×10³⁰ ppm, β₁=2 → 6.6×10⁵ ppm, β₁=3 → 0.41 ppm ✓.
-- **Script 2** — Orbites de S₄ sur les 64 configurations signées de K₄ : 11 orbites. Les 8 configs balancées forment 3 orbites. Décomposition 1⊕2⊕3_std (confirmée, D36). Involution PDL (inversion globale) : 0 self-conjugate. Involution OFN (CP bitwise NOT) : 8 self-conjugate dans Ω₂₁. Groupes différents (S₄ vs A₅×ℤ₂), décompositions différentes.
-- **Script 3** — Test des 720 bijections K₄_arêtes ↔ Q₆_qubits. Meilleur overlap balancées PDL ∩ Ω₂₁ : 5/8 (pas de bijection naturelle). Preimage de Ω₂₁ : β₁=3 pour 720/720 bijections (inconditionnel). Environ 18% des sous-ensembles aléatoires de taille 21 dans {0,1}⁶ ont β₁=3.
-- **Script dimensionnel** — n=6 est la dimension minimale de {0,1}ⁿ permettant la construction de 3 cycles indépendants (β₁=3) via des paires de bits distinctes. Pour n≤5 : impossible (besoin de 2×3=6 bits). Pour n=6,7,8 : taille minimale = 10 (stable). Fréquence β₁=3 pour taille 21 : n=5→0%, n=6→21.2%, n=7→1.6%, n=8→0.2%. n=6 est la dimension optimale.
-
-**Vérification indépendante :** Ω₂₁ sous règle Hamming dist=1 : |V|=21, |E|=22, β₀=2, β₁=3. Sommet isolé : décimal 21 = (0,1,0,1,0,1) — un des 4 états self-conjugate de Ω₂₁ sous CP.
-
-**Correction d'Oleg :** Sa Technical Note affirmait |E|=23, β₀=1. Après vérification indépendante, |E|=23 non reproductible sous aucune des 4 règles testées. Oleg a corrigé honnêtement : résultat vérifié = |E|=22, β₀=2, β₁=3. La correction renforce le résultat (β₁=3 stable sous plusieurs règles).
+- **Script 1** (script1_beta1_necessity.py) — K₄ unique graphe connexe sur 4 sommets avec β₁=3 (38 graphes testés exhaustivement). β₁=3 condition nécessaire pour la formule cosmologique PDL : β₁=1 → 8.2×10³⁰ ppm, β₁=2 → 6.6×10⁵ ppm, β₁=3 → 0.41 ppm ✓.
+- **Script 2** (script2_S4_orbits.py) — Orbites de S₄ sur les 64 configurations signées de K₄ : 11 orbites. Les 8 configs balancées forment 3 orbites. Décomposition 1⊕2⊕3_std (confirmée, D36). Involution PDL (inversion globale) : 0 self-conjugate. Involution OFN (CP bitwise NOT) : Ω₂₁ contient 0 états self-conjugate (x=63-x sans solution entière). Groupes différents (S₄ vs A₅×ℤ₂), décompositions différentes.
+- **Script 3** (script3_bijection.py) — Test des 720 bijections K₄_arêtes ↔ Q₆_qubits. Meilleur overlap balancées PDL ∩ Ω₂₁ : 5/8 (pas de bijection naturelle). Preimage de Ω₂₁ : β₁=3 pour 720/720 bijections (inconditionnel). Environ 18% des sous-ensembles aléatoires de taille 21 dans {0,1}⁶ ont β₁=3.
+- **Script 4** (script4_dimensional_scan.py) — n=6 est la dimension minimale de {0,1}ⁿ permettant la construction de 3 cycles indépendants (β₁=3) via des paires de bits distinctes. Pour n≤5 : impossible. Pour n=6,7,8 : taille minimale = 10 (stable). Fréquence β₁=3 pour taille 21 : n=5→0%, n=6→21.2%, n=7→1.6%, n=8→0.2%. n=6 est la dimension optimale.
+- **Script 5** (script5_verification_omega21.py) — Vérification indépendante des règles d'adjacence. Ω₂₁ sous Hamming dist=1 : |V|=21, |E|=22, β₀=2, β₁=3. Sommet isolé : décimal 21 = (0,1,0,1,0,1) — image CP = 42, non self-conjugate. Aucune règle d'adjacence testée ne reproduit |E|=23 (affirmation initiale d'Oleg corrigée honnêtement).
 
 **Conclusion structurelle :**
 - La convergence sur β₁=3 n'est pas due à une identité structurelle K₄↔Q₆.
-- n=6 est la dimension minimale pour β₁=3 via 3 cycles indépendants — nécessité combinatoire, pas coïncidence.
+- n=6 est la dimension minimale pour β₁=3 via 3 cycles indépendants — nécessité combinatoire.
 - PDL et OFN ont sélectionné indépendamment la même dimension minimale.
 - Les 3 cycles de leakage PDL (→Λ) et les 3 générations de fermions OFN sont deux manifestations du même invariant β₁=3. Lien formel : problème ouvert OP-OFN-1.
 
-**Note conjointe rédigée :**
-- Titre : *"β₁ = 3 as a Topological Invariant of Minimal Relational Closures: Numerical Evidence from the PDL and OFN Frameworks"*
-- Auteurs : Cédric Laubscher, Oleg I. Evdokimov
-- Fichiers : `PDL_OFN_bridge.tex` + `PDL_OFN_bridge.bib`
-- Statut : draft envoyé à Oleg pour révision. En attente de son accord avant dépôt Zenodo.
+**Session 48 — N01 déposé sur Zenodo (3 June 2026):**
+
+- Note conjointe révisée par Oleg et Elena Ryss (troisième auteur ajouté).
+- Correction importante : Ω₂₁ contient **0 états self-conjugate** (correction de la version initiale).
+- Note épistémique ajoutée par Oleg : la sélection de Ω₂₁ est un postulat structurel ancré dans Bachani (2026), pas dérivé des axiomes CWS.
+- Bibliographie complétée avec tous les DOIs Zenodo.
+- **N01 déposé sur Zenodo.** DOI : **10.5281/zenodo.20523343**
 - GitHub : `laubscher-lab/PDL-framework/tree/main/PDL_OFN_bridge/`
+- Email de notification envoyé à Oleg et Elena avec DOI.
 
 ---
 
@@ -149,8 +149,8 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 | D-exp-ZIB | 10.5281/zenodo.20262293 | Surface Dipole — Zinc-Ion Supercapacitor |
 | D-exp-MP01 | 10.5281/zenodo.20316492 | PDL Structural Lacunae — Materials Project |
 | D-exp-Zr | 10.5281/zenodo.20321750 | Zr QPT — Structural Origin |
-| **D56** | **10.5281/zenodo.20409903** | **N_comp(k)=k — OP-D41-1-A RESOLVED** |
-| **PDL–OFN** | *(en attente Zenodo)* | **β₁=3 Topological Invariant — Joint Note** |
+| D56 | 10.5281/zenodo.20409903 | N_comp(k)=k — OP-D41-1-A RESOLVED |
+| **N01** | **10.5281/zenodo.20523343** | **β₁=3 Topological Invariant — PDL–OFN Joint Note** |
 
 ---
 
@@ -173,11 +173,12 @@ R_surf(k)             : = k·T pour noyau k-ph (D56, corollaire)
 Z_sat                 : 19.857 ≈ 20 (D40)
 Z(Zr)/Z_sat           : 2.014 (0.72%, D-exp-Zr)
 
-PDL–OFN Bridge (Session 47) :
+PDL–OFN Bridge (N01) :
 β₁(K₄)               : = 3 — dimension minimale n=6 pour β₁=3
 C_target              : 8.1579491 × 10⁻⁴⁶ (adimensionnel, D51)
 Taille min β₁=3       : 10 sommets (construction guidée, n≥6)
 Fréquence β₁=3 (n=6) : 21.2% pour sous-ensembles taille 21
+Ω₂₁ self-conjugate   : 0 (x=63-x sans solution entière — correction N01)
 ```
 
 ---
@@ -188,20 +189,24 @@ Fréquence β₁=3 (n=6) : 21.2% pour sous-ensembles taille 21
 THÉORÈMES INCONDITIONNELS (C1–C4) :
   N_comp(k) = k  [D56, OP-D41-1-A résolu]
   R_surf(k) = k·T pour noyau k-ph  [D56, corollaire]
-  K₄ unique graphe connexe sur 4 sommets avec β₁=3  [Script 1, exhaustif]
-  n=6 dimension minimale pour β₁=3 via cycles indépendants  [Script dim., construction]
-  β₁=3 nécessaire pour formule cosmologique PDL  [Script 1]
+  K₄ unique graphe connexe sur 4 sommets avec β₁=3  [Script 1, exhaustif — N01]
+  n=6 dimension minimale pour β₁=3 via cycles indépendants  [Script 4, construction — N01]
+  β₁=3 nécessaire pour formule cosmologique PDL  [Script 1 — N01]
 
-RÉSULTATS VÉRIFIÉS (PDL–OFN Bridge) :
-  b₁(Ω₂₁) = 3 sous dist=1 Hamming  [Script 3, NetworkX]
-  β₁=3 pour 720/720 bijections K₄↔Q₆ (preimage Ω₂₁)  [Script 3]
-  Pas de bijection naturelle K₄↔Q₆  [Script 3]
+RÉSULTATS VÉRIFIÉS (N01 — PDL–OFN Bridge) :
+  b₁(Ω₂₁) = 3 sous dist=1 Hamming  [Script 5, NetworkX — N01]
+  β₁=3 pour 720/720 bijections K₄↔Q₆ (preimage Ω₂₁)  [Script 3 — N01]
+  Pas de bijection naturelle K₄↔Q₆  [Script 3 — N01]
+  Ω₂₁ contient 0 états self-conjugate  [Script 5, correction N01]
 
 CONJECTURES FORTEMENT CORROBORÉES :
   H_B : B(E2) ∝ N_comp(k) = k  [D41 + D56; 0.58σ vs Ha et al.]
-  β₁=3 invariant universel des clôtures minimales dans {0,1}⁶  [Conjecture PDL–OFN]
+  β₁=3 invariant universel des clôtures minimales dans {0,1}⁶  [Conjecture N01]
 
-OPEN PROBLEMS NOUVEAUX (Session 47) :
+POSTULATS STRUCTURELS (OFN, N01) :
+  Sélection de Ω₂₁ : postulat structurel ancré dans Bachani (2026) — non dérivé des axiomes CWS.
+
+OPEN PROBLEMS (PDL–OFN) :
   OP-OFN-1 [HIGH] : lien formel entre les 3 cycles PDL et les 3 générations OFN.
   OP-OFN-2 [MEDIUM] : objet commun X dont K₄ et Ω₂₁ sont des projections.
   OP-OFN-3 [MEDIUM] : dérivation de SU(3)×SU(2)×U(1) depuis C1–C4 via pont OFN.
@@ -209,12 +214,12 @@ OPEN PROBLEMS NOUVEAUX (Session 47) :
 
 ---
 
-## Open Problems (updated Session 47)
+## Open Problems (updated Session 48)
 
 **Résolu (Session 46) :**
 - **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
 
-**Nouveaux (Session 47 — PDL–OFN) :**
+**Nouveaux (Sessions 47–48 — PDL–OFN) :**
 - **[HIGH]** OP-OFN-1 : lien formel 3 cycles leakage PDL ↔ 3 générations fermions OFN.
 - **[MEDIUM]** OP-OFN-2 : objet mathématique X dont K₄ et Ω₂₁ sont des projections.
 - **[MEDIUM]** OP-OFN-3 : dérivation SU(3)×SU(2)×U(1) depuis C1–C4 via pont OFN.
@@ -247,19 +252,19 @@ OPEN PROBLEMS NOUVEAUX (Session 47) :
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 48 :**
+**Priorité immédiate Session 49 :**
 
 *Tâches reportées de Session 46 (URGENT) :*
 1. Vérifier DOI DM v24 (10.5281/zenodo.20415182) — déposer si pas encore fait.
-2. Ajouter entrées D56 + Escudeiro2026 dans DM_v24_references.bib.
-3. Pousser PDL_context.md Session 47 + DM v24 sur GitHub.
+2. Ajouter entrées D56 + N01 + Escudeiro2026 dans DM_v24_references.bib.
+3. Pousser PDL_context.md Session 48 + DM v24 sur GitHub.
 
-*Tâches nouvelles Session 47 :*
-4. Attendre réponse d'Oleg sur le draft PDL–OFN bridge note (délai ~1 semaine).
-5. Après accord d'Oleg : déposer note conjointe sur Zenodo, obtenir DOI, mettre à jour corpus table.
-6. Attendre réponse de Recchia & Lenzi (Padova) sur D47/⁸³Se.
-7. Attaquer OP-E2-PDL : identifier l'opérateur E2 dans le formalisme PDL.
-8. Explorer OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
+*Tâches nouvelles Sessions 47–48 :*
+4. Attendre retour d'Oleg et Elena sur N01 déposé (DOI: 10.5281/zenodo.20523343).
+5. Attendre réponse de Recchia & Lenzi (Padova) sur D47/⁸³Se.
+6. Attaquer OP-E2-PDL : identifier l'opérateur E2 dans le formalisme PDL.
+7. Explorer OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
+8. Uploader N01 sur ResearchGate (type : Preprint).
 
 **LaTeX conventions (Session 16) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -268,17 +273,23 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - theorem/proof/definition/conjecture/openproblem/resolvedproblem environments
 - Epistemic status table with p{} fixed-width columns
 
-**PDL–OFN Bridge discipline (Session 47) :**
+**Nomenclature N-series (Session 48) :**
+- N01 = première note conjointe PDL–OFN (β₁=3). DOI: 10.5281/zenodo.20523343
+- Les notes conjointes avec collaborateurs externes utilisent le préfixe N.
+- Les documents solo PDL continuent la numérotation D.
+
+**PDL–OFN Bridge discipline (N01) :**
 - β₁=3 : THÉORÈME pour K₄ sur 4 sommets, RÉSULTAT VÉRIFIÉ pour Ω₂₁
 - n=6 dimension minimale : THÉORÈME par construction
-- β₁=3 invariant universel : CONJECTURE (Conjecture principale de la note)
+- β₁=3 invariant universel : CONJECTURE (Conjecture 7 de N01)
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
+- Ω₂₁ self-conjugate : 0 (x=63-x sans solution entière)
 
-*Références canoniques : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + PDL–OFN bridge (en attente Zenodo).*
+*Références canoniques : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + N01 (10.5281/zenodo.20523343).*
 
 ---
 
-## Dependency Map — Critical Path (updated Session 47)
+## Dependency Map — Critical Path (updated Session 48)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -303,17 +314,18 @@ LAYER 15  Spectroscopie nucléaire
            OP-E2-PDL                                 [OUVERT — HIGH]
            D-exp-f7/2                                [en attente OP-E2-PDL]
 LAYER 16  Applications exploratoires                 [✓] D-exp-SP2/ZIB/MP01/Zr
-LAYER 17  PDL–OFN Bridge (Session 47)
-           β₁=3 nécessaire pour Λ                   [✓ THÉORÈME — Script 1]
-           n=6 dimension minimale pour β₁=3          [✓ THÉORÈME — Script dim.]
-           b₁(Ω₂₁)=3 vérifié indépendamment         [✓ RÉSULTAT — Script 3]
-           β₁=3 invariant universel {0,1}⁶           [CONJECTURE — note conjointe]
+LAYER 17  PDL–OFN Bridge (N01 — Sessions 47–48)
+           β₁=3 nécessaire pour Λ                   [✓ THÉORÈME — N01 Script 1]
+           n=6 dimension minimale pour β₁=3          [✓ THÉORÈME — N01 Script 4]
+           b₁(Ω₂₁)=3 vérifié indépendamment         [✓ RÉSULTAT — N01 Script 5]
+           Ω₂₁ : 0 self-conjugate (correction)      [✓ RÉSULTAT — N01 Script 5]
+           β₁=3 invariant universel {0,1}⁶           [CONJECTURE — N01 Conj. 7]
            3 cycles PDL ↔ 3 générations OFN          [OUVERT — OP-OFN-1]
            SU(3)×SU(2)×U(1) depuis C1–C4            [OUVERT — OP-OFN-3]
 LAYER 18  Dissémination
            ResearchGate actif                        [✓ Session 47]
-           Note conjointe PDL–OFN                    [draft envoyé à Oleg]
-           Zenodo note conjointe                     [en attente accord Oleg]
+           N01 déposé sur Zenodo                     [✓ Session 48 — DOI: 10.5281/zenodo.20523343]
+           N01 à uploader ResearchGate               [en attente Session 49]
 ```
 
 **Resolved milestones:**
@@ -327,6 +339,7 @@ OP11 (D53) | OP-PRESSURE (D54) | OP10 θ_W (D55)
 OP7 → MÉTROLOGIQUE (DS01) | OP10-c → ARBRE CORRECT (DS01)
 D-exp-SP2 [✓] | D-exp-ZIB [✓] | D-exp-MP01 [✓] | D-exp-Zr [✓]
 OP-D41-1-A → N_comp(k)=k  [✓ D56, Session 46]
-β₁=3 nécessaire PDL  [✓ Script 1, Session 47]
-n=6 dimension minimale β₁=3  [✓ Script dim., Session 47]
+β₁=3 nécessaire PDL  [✓ N01 Script 1, Session 47]
+n=6 dimension minimale β₁=3  [✓ N01 Script 4, Session 47]
+N01 déposé Zenodo  [✓ Session 48 — DOI: 10.5281/zenodo.20523343]
 ```
