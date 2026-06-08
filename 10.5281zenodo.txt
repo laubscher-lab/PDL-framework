@@ -359,3 +359,8 @@ D-exp-f2
 https://doi.org/10.5281/zenodo.20593807 
 D-exp-f7/2 — PDL Structural Analysis of the f₇/₂ Mirror Nuclei: ⁴⁷Cr–⁴⁷V and ⁴⁹Mn–⁴⁹Cr — Confrontation with the Escudeiro–Recchia–Lenzi et al. (2026) B(E2) Data
 D_exp_f7_2.pdf
+
+D57 
+https://doi.org/10.5281/zenodo.20600264 
+Derivation of the Tree-Level Weinberg Angle and the SU(2) Gauge Structure from the PDL Axioms C1–C4 (Projective Dynamic Logo Framework — Document D57) 
+D57_gauge_su2.pdf 
