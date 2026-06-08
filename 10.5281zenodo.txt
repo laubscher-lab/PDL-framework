@@ -354,3 +354,8 @@ D56
 https://doi.org/10.5281/zenodo.20409903 
 D56: Derivation of the Linear Scaling N_comp(k) = k from Axioms C1–C4 — Resolution of Open Problem OP-D41-1-A (Projective Dynamic Logo Framework) 
 D56_Derivation_k.pdf 
+
+D-exp-f2 
+https://doi.org/10.5281/zenodo.20593807 
+D-exp-E2-PDL: PDL Structural Analysis of the f₇/₂ Mirror Nuclei ⁴⁷Cr–⁴⁷V and ⁴⁹Mn–⁴⁹Cr — Confrontation with the Escudeiro–Recchia–Lenzi et al. (2026) B(E2) Data 
+D_exp_f7_2.pdf
