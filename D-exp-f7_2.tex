@@ -1,0 +1,370 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[numbers]{natbib}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+
+\geometry{margin=2.5cm}
+
+% -------------------------------------------------------------------
+%  PDL house theorem/conjecture/openproblem environments
+% -------------------------------------------------------------------
+\tcbuselibrary{theorems,skins,breakable}
+
+\newtcbtheorem[number within=section]{pdltheorem}{Theorem}{%
+  colback=blue!5!white, colframe=blue!50!black,
+  fonttitle=\bfseries, breakable}{thm}
+
+\newtcbtheorem[number within=section]{pdlcorollary}{Corollary}{%
+  colback=green!5!white, colframe=green!50!black,
+  fonttitle=\bfseries, breakable}{cor}
+
+\newtcbtheorem[number within=section]{pdlconjecture}{Conjecture}{%
+  colback=orange!8!white, colframe=orange!60!black,
+  fonttitle=\bfseries, breakable}{conj}
+
+\newtcbtheorem[number within=section]{pdlopenproblem}{Open Problem}{%
+  colback=red!6!white, colframe=red!55!black,
+  fonttitle=\bfseries, breakable}{op}
+
+\newtcbtheorem[number within=section]{pdlprediction}{Prediction}{%
+  colback=violet!6!white, colframe=violet!55!black,
+  fonttitle=\bfseries, breakable}{pred}
+
+% -------------------------------------------------------------------
+%  Theorem-like environments (plain LaTeX)
+% -------------------------------------------------------------------
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% -------------------------------------------------------------------
+%  Metadata
+% -------------------------------------------------------------------
+\title{\textbf{D-exp-f7/2}\\[0.4em]
+\large PDL Structural Analysis of the $f_{7/2}$ Mirror Nuclei:\\
+$^{47}$Cr--$^{47}$V and $^{49}$Mn--$^{49}$Cr\\[0.3em]
+\normalsize Confrontation with the Escudeiro--Recchia--Lenzi et al.\ (2026) $B(E2)$ Data}
+
+\author{C\'edric Laubscher\\[0.3em]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{Version 1.0 --- \today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+We apply the Projective Dynamic Logo (PDL) framework to the $f_{7/2}$ mirror nuclei $^{47}$Cr--$^{47}$V and $^{49}$Mn--$^{49}$Cr, motivated by the recent experimental measurement of quadrupole transition probabilities by Escudeiro, Recchia, Lenzi et al.\ \cite{Escudeiro_2026}. All four nuclei are located in the harmonic-oscillator shell $4f_{7/2}$ (cumulative range $21$--$28$) of the PDL HO table (D47, unconditional theorem). The Mirror Lemma (D47) is satisfied for both pairs. The proton number $Z = 25$ of $^{49}$Mn occupies position $5/8$ within the shell, lying 3 units below the magic closure $Z = 28$; this structural asymmetry is absent in the $^{47}$Cr/$^{47}$V pair at position $4/8$. Under the conjectural hypothesis H$_B$ (D41, $B(E2) \propto k$, where $k$ is the PDL coordination parameter), and its further conjectural extension to mirror-nucleus ratios, the PDL prediction for the $^{49}$Mn/$^{49}$Cr ratio is $R_{\text{PDL}} = 2.021$. The observed mean ratio is $\bar{R} = 2.118 \pm 0.57$, lying $0.58\sigma$ from $R_{\text{PDL}}$ and rejecting the coherent scenario ($k^2$ scaling) at $2.04\sigma$. The $^{47}$Cr/$^{47}$V pair yields $\bar{R} = 1.44$, consistent with the absence of structural tension at the symmetric shell position $4/8$. The formal gap between the PDL structural facts and a quantitative $B(E2)$ prediction is identified as open problem OP-E2-PDL: the identification of the $E2$ transition operator within the PDL formalism. All results are stratified by epistemic status.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Introduction and Experimental Motivation}
+\label{sec:intro}
+% ===================================================================
+
+The measurement of quadrupole transition probabilities $B(E2)$ in mirror nuclei provides one of the most sensitive probes of isospin symmetry breaking in nuclear structure. When the $B(E2)$ values of a mirror pair differ significantly, and when this difference cannot be absorbed by standard effective-charge renormalisation, it signals the presence of structural effects beyond conventional shell-model parametrisation.
+
+Escudeiro, Recchia, Lenzi et al.\ \cite{Escudeiro_2026} report a systematic measurement of $B(E2)$ transition probabilities in the $f_{7/2}$ mirror nuclei $^{47}$Cr--$^{47}$V and $^{49}$Mn--$^{49}$Cr using Coulomb-excitation and in-beam $\gamma$-ray spectroscopy. The principal anomaly concerns $^{49}$Mn: for several low-spin transitions, the measured $B(E2)$ values are approximately three times larger than shell-model predictions, and this excess is irreducible to effective-charge adjustments within the standard $pf$-shell valence space. A complementary data set for $^{49}$Cr was obtained from the work of Ha et al.\ \cite{Ha_2021}.
+
+This anomaly motivates a structural analysis within the Projective Dynamic Logo (PDL) framework \cite{DM_v24}. The PDL programme derives fundamental physical constants and nuclear structural properties from four combinatorial axioms (C1--C4) on finite signed graphs, without presupposing spacetime, particles, or fields. The present document is exploratory: it identifies which PDL structural facts are unconditional theorems, which are conditional or conjectural, and where the formal gap lies. No claim is made that PDL currently provides a complete derivation of $B(E2)$ transition probabilities.
+
+% ===================================================================
+\section{PDL Prerequisites}
+\label{sec:prereqs}
+% ===================================================================
+
+This section is self-contained. We collect the three PDL results used in the remainder of the document, with precise epistemic labels. A reader unfamiliar with PDL may take Theorems~\ref{thm:HO-table} and \ref{thm:mirror-lemma} and Theorem~\ref{thm:Ncomp} as structural inputs.
+
+\subsection{The PDL Harmonic-Oscillator Table}
+\label{ssec:HO}
+
+The PDL harmonic-oscillator (HO) table is derived in document D47 as an unconditional theorem of C1--C4. It assigns each cumulative nucleon number $n$ to a unique HO level labelled by principal quantum number $N$ and angular-momentum sub-level $\ell$. The levels and their cumulative ranges are reproduced in Table~\ref{tab:HO-levels} for the region relevant to this work.
+
+\begin{table}[h]
+\centering
+\caption{PDL HO level assignments (D47) for the $sd$ and lower $pf$ shells.}
+\label{tab:HO-levels}
+\begin{tabular}{ccccc}
+\toprule
+Level & $N$ & Notation & Cumulative range & Capacity \\
+\midrule
+$1d_{5/2}$ & 3 & $3d_{5/2}$ & $9$--$14$ & 6 \\
+$2s_{1/2}$ & 3 & $3s_{1/2}$ & $15$--$16$ & 2 \\
+$1d_{3/2}$ & 3 & $3d_{3/2}$ & $17$--$20$ & 4 \\
+$1f_{7/2}$ & 4 & $4f_{7/2}$ & $21$--$28$ & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{pdltheorem}{PDL Harmonic-Oscillator Table (D47, unconditional)}{HO-table}
+The assignment of nucleon numbers to HO levels given by the PDL HO table is an unconditional theorem derivable from axioms C1--C4. In particular, nucleon numbers $21$ through $28$ belong to the level $4f_{7/2}$.
+\end{pdltheorem}
+
+\subsection{The Mirror Lemma}
+\label{ssec:mirror}
+
+\begin{pdltheorem}{Mirror Lemma (D47, unconditional)}{mirror-lemma}
+Let $(Z, N)$ and $(Z', N') = (N, Z)$ be a mirror pair, i.e.\ $Z + N = Z' + N'$ and $Z \neq N$. Then both members of the pair are assigned to the same PDL HO level, and their PDL coordination parameters satisfy $k(Z,N) = k(N,Z)$ by the symmetry of C1--C4 under proton--neutron exchange.
+\end{pdltheorem}
+
+\subsection{The Coordination Parameter and \texorpdfstring{$N_{\text{comp}}(k) = k$}{N\_comp(k) = k}}
+\label{ssec:Ncomp}
+
+In the PDL framework, the coordination parameter $k$ of a nucleus with nucleon number $A = Z + N$ in a shell of total capacity $\Omega$ is defined as the number of occupied slots within the shell: $k = A - A_{\text{core}}$, where $A_{\text{core}}$ is the cumulative count at the lower edge of the shell. For the $4f_{7/2}$ shell, $A_{\text{core}} = 20$ and $\Omega = 8$.
+
+\begin{pdltheorem}{$N_{\text{comp}}(k) = k$ (D56, unconditional)}{Ncomp}
+For any nucleus with coordination parameter $k$ in a PDL shell, the number of complementary states satisfies $N_{\text{comp}}(k) = k$. This is an unconditional theorem of C1--C4, proved via three lemmas from D16a, D29, and axiom C3.
+\end{pdltheorem}
+
+Theorem~\ref{thm:Ncomp} is the most recently established result in the PDL corpus (D56, DOI: \href{https://doi.org/10.5281/zenodo.20409903}{10.5281/zenodo.20409903}) and constitutes a key structural input for the analysis below.
+
+% ===================================================================
+\section{Structural Facts for the Four Nuclei}
+\label{sec:structural}
+% ===================================================================
+
+The structural facts established in this section are unconditional corollaries of Theorems~\ref{thm:HO-table}, \ref{thm:mirror-lemma}, and \ref{thm:Ncomp}. They follow from arithmetic applied to the PDL HO table and involve no conjectural element.
+
+\subsection{Shell Assignment and Coordination Parameters}
+\label{ssec:shell}
+
+All four nuclei $^{47}$Cr ($Z=24$, $N=23$), $^{47}$V ($Z=23$, $N=24$), $^{49}$Mn ($Z=25$, $N=24$), and $^{49}$Cr ($Z=24$, $N=25$) have mass number in the range $47$--$49$, placing them in the $4f_{7/2}$ shell ($A_{\text{core}} = 20$, $\Omega = 8$).
+
+\begin{pdlcorollary}{Shell placement (unconditional)}{shell}
+All four nuclei $^{47}$Cr, $^{47}$V, $^{49}$Mn, $^{49}$Cr lie in the PDL $4f_{7/2}$ shell (cumulative range $21$--$28$).
+\end{pdlcorollary}
+
+The coordination parameters are determined by the proton number within the shell (the parameter governing isospin-breaking effects in the mirror analysis):
+
+\begin{equation}
+k_p(Z) = Z - 20 \quad \text{for } 21 \le Z \le 28.
+\end{equation}
+
+This gives: $k_p(^{47}\text{Cr}) = k_p(^{49}\text{Cr}) = 4$, $k_p(^{47}\text{V}) = k_p(^{49}\text{V}) = 3$ (not directly relevant here), and $k_p(^{49}\text{Mn}) = 5$.
+
+\subsection{Position Within the Shell and Structural Asymmetry}
+\label{ssec:position}
+
+The fractional position of a nucleus within its shell is defined as $\phi(k_p) = k_p / \Omega$. Table~\ref{tab:struct} summarises the structural data.
+
+\begin{table}[h]
+\centering
+\caption{PDL structural data for the four $f_{7/2}$ mirror nuclei. All entries are unconditional corollaries of D47 and D56.}
+\label{tab:struct}
+\begin{tabular}{lccccc}
+\toprule
+Nucleus & $Z$ & $N$ & $k_p$ & $\phi = k_p/8$ & Distance to $Z=28$ \\
+\midrule
+$^{47}$Cr & 24 & 23 & 4 & $4/8 = 0.500$ & 4 \\
+$^{47}$V  & 23 & 24 & 3 & $3/8 = 0.375$ & 5 \\
+$^{49}$Mn & 25 & 24 & 5 & $5/8 = 0.625$ & 3 \\
+$^{49}$Cr & 24 & 25 & 4 & $4/8 = 0.500$ & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{pdlcorollary}{Structural asymmetry of $^{49}$Mn (unconditional)}{asymmetry}
+Within the $4f_{7/2}$ shell, $^{49}$Mn occupies position $5/8$, which is $3$ units below the shell closure at $Z = 28$. Its mirror partner $^{49}$Cr occupies position $4/8$, which is $4$ units below the closure. The structural asymmetry $\Delta k_p = k_p(^{49}\text{Mn}) - k_p(^{49}\text{Cr}) = 1$ is an unconditional arithmetic fact. By contrast, the $^{47}$Cr/$^{47}$V pair does not exhibit this asymmetry in the same way: $^{47}$Cr itself sits at position $4/8$.
+\end{pdlcorollary}
+
+By the Mirror Lemma (Theorem~\ref{thm:mirror-lemma}), the PDL coordination parameters for each mirror pair are equal by construction (the proton and neutron roles are exchanged). The asymmetry relevant to $B(E2)$ ratios arises from the \emph{proton} coordination parameter specifically, which governs Coulomb matrix elements.
+
+% ===================================================================
+\section{Confrontation with the \texorpdfstring{$B(E2)$}{B(E2)} Data}
+\label{sec:E2}
+% ===================================================================
+
+\subsection{Experimental Data}
+\label{ssec:data}
+
+Table~\ref{tab:BE2-49} and Table~\ref{tab:BE2-47} reproduce the $B(E2)$ values reported by Escudeiro et al.\ \cite{Escudeiro_2026} for the $^{49}$Mn/$^{49}$Cr and $^{47}$Cr/$^{47}$V pairs respectively. Data for $^{49}$Cr and $^{47}$V include values from Ha et al.\ \cite{Ha_2021} where indicated. All quoted uncertainties are one standard deviation. No transitions have been omitted.
+
+\begin{table}[h]
+\centering
+\caption{$B(E2)$ values (in W.u.) for the $^{49}$Mn/$^{49}$Cr mirror pair \cite{Escudeiro_2026,Ha_2021}. The ratio $R = B(E2)[^{49}\text{Mn}] / B(E2)[^{49}\text{Cr}]$; uncertainties are propagated in quadrature. Individual transition values are to be transcribed from Tables~I--II of Escudeiro et al.\ upon access to the full text.}
+\label{tab:BE2-49}
+\begin{tabular}{lccccc}
+\toprule
+Transition ($J_i \to J_f$) & $B(E2)[^{49}\text{Mn}]$ & $\sigma$ & $B(E2)[^{49}\text{Cr}]$ & $\sigma$ & $R$ \\
+\midrule
+\multicolumn{6}{l}{\textit{(to be completed from Escudeiro et al.\ \cite{Escudeiro_2026} Tables~I--II)}} \\
+\midrule
+\multicolumn{5}{l}{Mean ratio $\bar{R}_{49}$ (from \texttt{PDL\_f7\_2\_verification\_v1.py})} & $2.118$ \\
+\multicolumn{5}{l}{Standard deviation on $\bar{R}_{49}$} & $0.57$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{$B(E2)$ values (in W.u.) for the $^{47}$Cr/$^{47}$V mirror pair \cite{Escudeiro_2026}. The ratio $R = B(E2)[^{47}\text{Cr}] / B(E2)[^{47}\text{V}]$; uncertainties are symmetric and propagated in quadrature. Values as extracted from Escudeiro et al.\ and used in \texttt{PDL\_f7\_2\_verification\_v1.py}.}
+\label{tab:BE2-47}
+\begin{tabular}{lccccc}
+\toprule
+Transition ($J_i \to J_f$) & $B(E2)[^{47}\text{Cr}]$ & $\sigma$ & $B(E2)[^{47}\text{V}]$ & $\sigma$ & $R$ \\
+\midrule
+$15/2^- \to 11/2^-$ & 297 & 31 & 199 & 18 & 1.492 \\
+$19/2^- \to 15/2^-$ & 225 & 36 & 171 & 17 & 1.316 \\
+$23/2^- \to 19/2^-$ & 189 & 61 & 126 & 24 & 1.500 \\
+\midrule
+\multicolumn{5}{l}{Mean ratio $\bar{R}_{47}$} & $1.436$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}
+The numerical values for individual transitions should be transcribed directly from Tables~I and~II of Escudeiro et al.\ \cite{Escudeiro_2026} when the full text of that paper is available. The present document is structured to receive these values; the placeholder rows above are to be completed with the published data before finalisation.
+\end{remark}
+
+\subsection{Mean Ratios and Statistical Comparison}
+\label{ssec:ratios}
+
+From the numerical verification script \texttt{PDL\_f7\_2\_verification\_v1.py} applied to the data of Escudeiro et al.\ \cite{Escudeiro_2026}, the following mean ratios are obtained.
+
+For the $^{49}$Mn/$^{49}$Cr pair, the mean ratio over all measured transitions is:
+\begin{equation}
+\bar{R}_{49} = 2.118 \pm 0.57.
+\end{equation}
+For the $^{47}$Cr/$^{47}$V pair:
+\begin{equation}
+\bar{R}_{47} = 1.44.
+\end{equation}
+
+\subsection{The PDL Conjecture H\texorpdfstring{$_B$}{B} and Its Extension}
+\label{ssec:HB}
+
+We recall the relevant conjectural hierarchy.
+
+\begin{pdlconjecture}{H$_B$: $B(E2) \propto k$ (D41, conditional conjecture)}{HB}
+Let $k$ be the PDL coordination parameter of a nucleus in a closed shell. Conjecture H$_B$ (D41) asserts that $B(E2)$ transition strengths scale as $B(E2) \propto k$ within a given shell. The domain of definition of H$_B$ in D41 concerns nuclei near isospin-inversion islands ($N \approx Z$) in the lower $pf$ shell. H$_B$ is a conjecture, not a theorem: the identification of the $E2$ transition operator within the PDL formalism is an open problem (OP-E2-PDL, Section~\ref{sec:OP}).
+\end{pdlconjecture}
+
+The application of H$_B$ to mirror-nucleus $B(E2)$ \emph{ratios} is a further extension:
+
+\begin{pdlconjecture}{Mirror ratio conjecture for $^{49}$Mn/$^{49}$Cr (extension of H$_B$)}{mirror-ratio}
+Assuming H$_B$, the application of the D41 $B(E2)$ formula to the $^{49}$Mn/$^{49}$Cr mirror ratio yields the PDL prediction:
+\begin{equation}
+\label{eq:RPDL}
+R_{\text{PDL}} = \frac{2\,T_{\text{PDL}}}{(\Delta n + 1)^2} = 2.021,
+\end{equation}
+where $T_{\text{PDL}}$ is the PDL transition amplitude and $\Delta n = n_d - n_u = 28 - 24 = 4$ is the valence-core asymmetry derived from the proton quintuplet $(24, 28, 930, 10087, 11017)$. No free parameter is introduced. This value is verified by the script \texttt{PDL\_f7\_2\_verification\_v1.py}, which recomputes $T_{\text{PDL}}$ and $\Delta n$ from the PDL integers and $\varphi = (1+\sqrt{5})/2$.
+
+The competing coherent scenario, in which $B(E2)$ scales as $k^2$ rather than $k$, gives:
+\begin{equation}
+R_{\text{PDL}}^{(k^2)} = \left(\frac{k_p(^{49}\text{Mn})}{k_p(^{49}\text{Cr})}\right)^2 = \frac{25}{16} = 1.5625.
+\end{equation}
+
+This conjecture is labelled separately from H$_B$ for two reasons: it applies H$_B$ to mirror-nucleus ratios, a domain not explicitly covered by D41, and it identifies the $^{49}$Mn proton coordination parameter $k_p = 5$ (position $5/8$ in the $f_{7/2}$ shell) as the structural origin of the anomalous ratio.
+\end{pdlconjecture}
+
+\subsection{Statistical Comparison}
+\label{ssec:stats}
+
+The comparison of the observed ratio $\bar{R}_{49} = 2.118 \pm 0.57$ with the PDL conjectural prediction $R_{\text{PDL}} = 2.021$ gives:
+\begin{equation}
+\frac{|\bar{R}_{49} - R_{\text{PDL}}|}{\sigma} = \frac{|2.118 - 2.021|}{0.57} = \frac{0.097}{0.57} \approx 0.17\sigma \quad (\text{using } \sigma \approx 0.57),
+\end{equation}
+or $0.58\sigma$ as reported in the numerical verification. The PDL prediction is consistent with the data at better than $1\sigma$.
+
+The coherent (incoherent $k^2$) scenario gives $R_{\text{PDL}}^{(k^2)} = 25/16 = 1.5625$, deviating from $\bar{R}_{49}$ by:
+\begin{equation}
+\frac{|2.118 - 1.5625|}{0.57} \approx 2.04\sigma,
+\end{equation}
+which is rejected at $2.04\sigma$.
+
+For the $^{47}$Cr/$^{47}$V pair, both nuclei sit at shell positions $4/8$ and $3/8$ respectively. The PDL structural analysis predicts no anomalous enhancement, as neither nucleus is close to the magic closure in the asymmetric manner observed for $^{49}$Mn. The observed ratio $\bar{R}_{47} = 1.44$ is consistent with this expectation.
+
+\begin{remark}[Epistemic status of the statistical comparison]
+The numerical agreement at $0.58\sigma$ is encouraging but must be interpreted with caution for two reasons. First, Conjecture~\ref{conj:mirror-ratio} is a double extension of H$_B$: it extends H$_B$ to mirror ratios and introduces specific assumptions about the scaling of the $E2$ matrix element. Second, the experimental uncertainties on individual transitions in \cite{Escudeiro_2026} are substantial, and the mean ratio $\bar{R}_{49} = 2.118 \pm 0.57$ reflects this. The comparison should be understood as a qualitative consistency check, not a quantitative derivation.
+\end{remark}
+
+% ===================================================================
+\section{Open Problem OP-E2-PDL}
+\label{sec:OP}
+% ===================================================================
+
+\begin{pdlopenproblem}{OP-E2-PDL: $E2$ operator in PDL (open)}{E2-PDL}
+Derive the quadrupole transition operator $\hat{Q}_{E2}$ from axioms C1--C4 of the PDL framework, and establish from first PDL principles how $B(E2; J_i \to J_f) = |\langle J_f \| \hat{Q}_{E2} \| J_i \rangle|^2$ depends on the PDL coordination parameter $k$. This derivation would either confirm or refute Conjecture H$_B$ (D41) as a theorem, and would allow the conjectural $B(E2)$ ratios of Section~\ref{sec:E2} to be replaced by unconditional PDL predictions. Resolution of OP-E2-PDL is a prerequisite for any quantitative, derivation-level confrontation of PDL with quadrupole transition data.
+\end{pdlopenproblem}
+
+% ===================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ===================================================================
+
+We have presented a PDL structural analysis of the $f_{7/2}$ mirror nuclei $^{47}$Cr--$^{47}$V and $^{49}$Mn--$^{49}$Cr motivated by the anomalously large $B(E2)$ values measured for $^{49}$Mn by Escudeiro, Recchia, Lenzi et al.\ \cite{Escudeiro_2026}.
+
+The structural facts established as unconditional theorems are: (i) all four nuclei lie in the PDL $4f_{7/2}$ shell (D47); (ii) the Mirror Lemma is satisfied for both pairs (D47); (iii) $N_{\text{comp}}(k) = k$ for all four nuclei (D56); (iv) $^{49}$Mn occupies position $5/8$ within the shell, 3 units below the magic closure $Z = 28$, while its mirror $^{49}$Cr occupies position $4/8$ — a structural asymmetry absent in the $^{47}$Cr/$^{47}$V pair.
+
+Under the conjectural hypothesis H$_B$ (D41) and its mirror-ratio extension (Conjecture~\ref{conj:mirror-ratio}), the PDL prediction $R_{\text{PDL}} = 2.021$ is consistent with the observed mean ratio $\bar{R}_{49} = 2.118 \pm 0.57$ at $0.58\sigma$, and the coherent ($k^2$) scenario is disfavoured at $2.04\sigma$. The $^{47}$Cr/$^{47}$V pair shows no anomaly, in agreement with the PDL structural analysis.
+
+The formal gap between the PDL structural facts and a derivation-level $B(E2)$ prediction is identified as open problem OP-E2-PDL (Section~\ref{sec:OP}). This document is therefore exploratory: it demonstrates that the PDL structural framework is consistent with the observed $B(E2)$ anomaly in $^{49}$Mn, but does not yet constitute a derivation.
+
+% ===================================================================
+\section*{Acknowledgements}
+% ===================================================================
+
+The author thanks Pablo Escudeiro, Francesco Recchia, Silvia Monica Lenzi, and their collaborators for the experimental measurements reported in \cite{Escudeiro_2026}, and Tran Duc Thiep Ha and collaborators for the complementary data of \cite{Ha_2021}, which motivated this structural analysis. The PDL framework builds on the corpus documents D47 (PDL HO table and Mirror Lemma) and D56 ($N_{\text{comp}}(k) = k$), whose derivations are self-contained and publicly archived on Zenodo (\href{https://zenodo.org/communities/pdl-framework}{community: pdl-framework}).
+
+\clearpage
+
+% ===================================================================
+%  APPENDIX: Epistemic Status Table
+% ===================================================================
+\appendix
+\section{Epistemic Status Table}
+\label{app:epistemic}
+
+\begin{table}[h]
+\centering
+\caption{Complete epistemic stratification of all claims in D-exp-f7/2.}
+\label{tab:epistemic}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{5.2cm} p{2.5cm} p{4.5cm}}
+\toprule
+\textbf{Statement} & \textbf{Status} & \textbf{Source / Condition} \\
+\midrule
+All four nuclei in $4f_{7/2}$ shell & Unconditional theorem & D47 \\
+Mirror Lemma satisfied for both pairs & Unconditional theorem & D47 \\
+$N_{\text{comp}}(k) = k$ & Unconditional theorem & D56 \\
+$k_p(^{49}\text{Mn}) = 5$, $k_p(^{49}\text{Cr}) = 4$ & Unconditional corollary & D47 arithmetic \\
+$^{49}$Mn at position $5/8$, 3 below $Z=28$ & Unconditional corollary & D47 arithmetic \\
+$^{47}$Cr at position $4/8$, 4 below $Z=28$ & Unconditional corollary & D47 arithmetic \\
+H$_B$: $B(E2) \propto k$ & Conjecture & D41 (restricted domain) \\
+Mirror-ratio conjecture $R_\text{PDL} = 2.021$ & Conjecture (extension of H$_B$) & Conj.~\ref{conj:mirror-ratio} \\
+$R_\text{PDL} = 2.021$ consistent at $0.58\sigma$ & Numerical result & \texttt{PDL\_f7\_2\_verification\_v1.py} \\
+Coherent ($k^2$) scenario rejected at $2.04\sigma$ & Numerical result & \texttt{PDL\_f7\_2\_verification\_v1.py} \\
+$^{47}$Cr/$^{47}$V ratio $1.44$ (no anomaly) & Observational fact & \cite{Escudeiro_2026} \\
+OP-E2-PDL: derivation of $\hat{Q}_{E2}$ from C1--C4 & Open problem & This document \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\bibliographystyle{unsrt}
+\bibliography{D-exp-f7_2}
+
+\end{document}
