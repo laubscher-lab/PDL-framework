@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 48 — 3 June 2026 (N01 déposé sur Zenodo; ResearchGate actif)*
+*Last updated: Session 49 — 8 June 2026 (D-exp-E2-PDL déposé sur Zenodo; corpus complet)*
 
 ---
 
@@ -72,6 +72,11 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 - **N01 déposé sur Zenodo.** DOI : **10.5281/zenodo.20523343**
 - GitHub : `laubscher-lab/PDL-framework/tree/main/PDL_OFN_bridge/`
 - Email de notification envoyé à Oleg et Elena avec DOI.
+
+**Session 49 — D-exp-E2-PDL déposé sur Zenodo (8 June 2026):**
+- D-exp-E2-PDL (anciennement D-exp-f7/2) déposé sur Zenodo. DOI : **10.5281/zenodo.20593807**
+- Corpus complet : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v24 — tous publiés.
+- Confirmation que DM v24 (DOI : 10.5281/zenodo.20415182) est bien déposé.
 
 ---
 
@@ -150,6 +155,7 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 | D-exp-MP01 | 10.5281/zenodo.20316492 | PDL Structural Lacunae — Materials Project |
 | D-exp-Zr | 10.5281/zenodo.20321750 | Zr QPT — Structural Origin |
 | D56 | 10.5281/zenodo.20409903 | N_comp(k)=k — OP-D41-1-A RESOLVED |
+| D-exp-E2-PDL | 10.5281/zenodo.20593807 | PDL Structural Analysis f₇/₂ Mirror Nuclei — B(E2) Confrontation |
 | **N01** | **10.5281/zenodo.20523343** | **β₁=3 Topological Invariant — PDL–OFN Joint Note** |
 
 ---
@@ -252,19 +258,18 @@ OPEN PROBLEMS (PDL–OFN) :
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 49 :**
+**Priorité immédiate Session 50 :**
 
-*Tâches reportées de Session 46 (URGENT) :*
-1. Vérifier DOI DM v24 (10.5281/zenodo.20415182) — déposer si pas encore fait.
-2. Ajouter entrées D56 + N01 + Escudeiro2026 dans DM_v24_references.bib.
-3. Pousser PDL_context.md Session 48 + DM v24 sur GitHub.
+*Tâches reportées (URGENT) :*
+1. Ajouter entrées D56 + D-exp-E2-PDL + N01 + Escudeiro2026 dans DM_v24_references.bib.
+2. Pousser PDL_context.md Session 49 + fichiers mis à jour sur GitHub.
 
-*Tâches nouvelles Sessions 47–48 :*
-4. Attendre retour d'Oleg et Elena sur N01 déposé (DOI: 10.5281/zenodo.20523343).
+*Tâches actives :*
+3. Uploader N01 sur ResearchGate (type : Preprint).
+4. Attendre retour d'Oleg et Elena sur N01 (DOI: 10.5281/zenodo.20523343).
 5. Attendre réponse de Recchia & Lenzi (Padova) sur D47/⁸³Se.
 6. Attaquer OP-E2-PDL : identifier l'opérateur E2 dans le formalisme PDL.
 7. Explorer OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
-8. Uploader N01 sur ResearchGate (type : Preprint).
 
 **LaTeX conventions (Session 16) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -285,7 +290,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
 - Ω₂₁ self-conjugate : 0 (x=63-x sans solution entière)
 
-*Références canoniques : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + N01 (10.5281/zenodo.20523343).*
+*Références canoniques : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 (10.5281/zenodo.20523343). Corpus complet publié sur Zenodo.*
 
 ---
 
@@ -312,7 +317,7 @@ LAYER 15  Spectroscopie nucléaire
            R_surf(k) = k·T                           [✓ corollaire — D56]
            B(E2) ∝ k  (H_B)                          [conjecture — D41]
            OP-E2-PDL                                 [OUVERT — HIGH]
-           D-exp-f7/2                                [en attente OP-E2-PDL]
+           D-exp-E2-PDL                              [✓ publié — DOI: 10.5281/zenodo.20593807]
 LAYER 16  Applications exploratoires                 [✓] D-exp-SP2/ZIB/MP01/Zr
 LAYER 17  PDL–OFN Bridge (N01 — Sessions 47–48)
            β₁=3 nécessaire pour Λ                   [✓ THÉORÈME — N01 Script 1]
@@ -325,7 +330,9 @@ LAYER 17  PDL–OFN Bridge (N01 — Sessions 47–48)
 LAYER 18  Dissémination
            ResearchGate actif                        [✓ Session 47]
            N01 déposé sur Zenodo                     [✓ Session 48 — DOI: 10.5281/zenodo.20523343]
-           N01 à uploader ResearchGate               [en attente Session 49]
+           D-exp-E2-PDL déposé sur Zenodo            [✓ Session 49 — DOI: 10.5281/zenodo.20593807]
+           Corpus complet publié                     [✓ Session 49]
+           N01 à uploader ResearchGate               [en attente]
 ```
 
 **Resolved milestones:**
@@ -342,4 +349,6 @@ OP-D41-1-A → N_comp(k)=k  [✓ D56, Session 46]
 β₁=3 nécessaire PDL  [✓ N01 Script 1, Session 47]
 n=6 dimension minimale β₁=3  [✓ N01 Script 4, Session 47]
 N01 déposé Zenodo  [✓ Session 48 — DOI: 10.5281/zenodo.20523343]
+D-exp-E2-PDL déposé Zenodo  [✓ Session 49 — DOI: 10.5281/zenodo.20593807]
+Corpus complet Zenodo  [✓ Session 49]
 ```
