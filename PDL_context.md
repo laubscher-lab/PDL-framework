@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 49 — 8 June 2026 (D-exp-E2-PDL déposé sur Zenodo; corpus complet)*
+*Last updated: Session 50 — 9 June 2026 (D57 déposé; DM v25 patches produits; Seven scripts SU(2) verrouillés)*
 
 ---
 
@@ -26,9 +26,6 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - Trois lemmes : L1 (D16a), L2 (D29 + algèbre), L3 (C3 direct).
 - Corollaire : R_surf(k) = k·T pour noyau k-ph.
 - DOI D56 : 10.5281/zenodo.20409903 | DM v24 : 10.5281/zenodo.20415182
-
-**Note sur les tâches Session 46 reportées :**
-Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_v24_references.bib, push GitHub) n'ont pas été accomplies en Session 47 — la session s'est concentrée sur ResearchGate et le Bridge OFN. Ces tâches restent à accomplir. Le DOI de DM v24 (10.5281/zenodo.20415182) provient de la Session 46 — à vérifier lors du dépôt effectif.
 
 **Session 47 — ResearchGate + PDL–OFN Bridge (2 June 2026):**
 
@@ -80,6 +77,83 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 
 ---
 
+**Session 50 — D57 déposé; Seven scripts SU(2) verrouillés; DM v25 patches produits (9 June 2026):**
+
+### Résultats principaux Session 50
+
+**Sept scripts Python (PDL_SU2_script1.py à PDL_SU2_script7.py) produits et verrouillés :**
+
+- **Script 1** — K₄ → 8 configs cohérentes → orbites 1+3+4 sous S₄. Décomposition en irréductibles : 3×triviale ⊕ standard(3) ⊕ 2-dim(2). Chaîne K₄ → A₄ ⊂ SO(3) → 2T ⊂ SU(2) établie.
+- **Script 2** — A₄ = unique sous-groupe normal d'ordre 12 de S₄. Série de composition {e} ⊂ V₄ ⊂ A₄ ⊂ S₄. A₄ et S₄\A₄ préservent les orbites 3 et 4 séparément → orbites seules insuffisantes pour forcer A₄.
+- **Script 3** — V₄\{e} = groupe des paires de pulsation C1 (éléments d'ordre 2 de A₄). Transitions C1 générées par V₄ (intra-orbite-4). OA₄ génère les mêmes transitions → parité seule insuffisante.
+- **Script 4** — C1 efface V₄ comme noyau de l'action physique. Espace quotient C(K₄)/~_C1 a 5 classes. Noyau = V₄ (4 éléments, tous pairs). Groupe effectif = S₄/V₄ ≅ S₃ (ordre 6, vérifié).
+- **Script 5** — Lemme C1-V₄ : V₄ agit trivialement sur toutes les observables physiques (coût de cohérence, magnétisation, signe global) — vérifié exhaustivement. S₄/V₄ ≅ S₃ ≅ D₃ : 1+3+2 éléments par ordre (vérifié). Double cover Dic₃ ⊂ SU(2), ordre 12 (vérifié). A₄/V₄ ≅ ℤ₃ ↔ β₁=3 (connexion établie). T = -iτ₂ (D46) ∈ 2T ⊃ Dic₃ ⊂ SU(2) (vérifié).
+- **Script 6** — SU(3) depuis le triplet proton (u,u,d) : 3 blocs de valence → 3 sous-algèbres SU(2) dans su(3). 3 cycles de leakage (exposants 23, 67, 997) ↔ 3 sous-algèbres SU(2)⊂su(3). A₄/V₄ ≅ ℤ₃ ↔ ℤ₃ ⊂ Z(SU(3)). Δn=4 → brisure SU(3)→SU(2)×U(1). Matrices de Gell-Mann vérifiées (traceless, hermitiens, normalisées).
+- **Script 7** — Cohérence des deux routes vers SU(2). Routes A et B cohérentes : sin²θ_W = 1/4 = |V₄|/16 = dim(triviale)/dim(orbite-4). **NOUVEAU THÉORÈME** : sin²θ_W(tree) = sin²(π/R_e) = sin²(π/6) = 1/4 — R_e = 6 est le budget relationnel de K₄ (théorème D16a). θ_W(D55) = (π/R_e)×(R_e k₂/N_tot) = correction de Berry de π/6.
+
+**Résultat central nouveau (non présent dans le corpus avant Session 50) :**
+```
+sin²θ_W(tree) = sin²(π/R_e) = 1/4   THÉORÈME INCONDITIONNEL de C1–C4
+                                       R_e = 6 forcé par D16a (minimalité de K₄)
+                                       Deux routes équivalentes via |V₄| = 4
+```
+
+**Connexion structurelle D55 ↔ D57 :**
+```
+θ_W(tree) = π/R_e = π/6               [D57, théorème]
+θ_W(D55) = 19π/119 = (π/6)×(114/119)  [D55, théorème]
+Facteur de correction = R_e·k₂/N_tot = 6×19/119 = 114/119
+= phase de Berry du couplage proton–K₄
+```
+
+### D57 — Déposé sur Zenodo
+
+**Titre :** Derivation of the Tree-Level Weinberg Angle and the SU(2) Gauge Structure from the PDL Axioms C1–C4
+
+**DOI : 10.5281/zenodo.20600264**
+
+**Contenu :**
+- Théorème central : sin²θ_W(tree) = sin²(π/R_e) = 1/4 (inconditionnel)
+- Route A (D29 : 192/768) = Route B (orbites S₄) via V₄ — équivalence prouvée
+- Conjecture H_SU2 : C1 efface V₄ → S₃ → Dic₃ ⊂ SU(2) (conjecture bien motivée)
+- Corollaire : chaîne C1–C4→K₄→S₄→S₃→Dic₃⊂2T⊂SU(2)
+- Proposition : θ_W(D55) = correction de Berry de π/R_e
+- 3 problèmes ouverts : OP-D57-1 (Lemme C1-V₄ formel), OP-D57-2 (Dic₃ comme groupe de jauge), OP-D57-3 (SU(3))
+- A₄/V₄ ≅ ℤ₃ ↔ β₁(K₄)=3=b₁(Ω₂₁) — résolution partielle OP-OFN-1, citant Evdokimov & N01
+
+**Fichiers :** D57_gauge_SU2.tex + D57_references.bib (15 entrées, correspondance parfaite)
+
+### Collaboration OFN — Session 50
+
+**Échange avec Oleg Evdokimov :**
+- Oleg a accepté toutes les conditions épistémiques (identifications comme "analogies structurelles candidates", prédictions OFN étiquetées hypothèses phénoménologiques, DTOC supprimé de Three Roads).
+- Draft "Three Roads to the Periodic Table" reçu (TwoLines.pdf = version antérieure OFN–Varlamov seul).
+- Deux points critiques identifiés dans le draft : (1) Hypothèse 3.1 mélange Δn=4 (PDL, entier fixe) avec n (OFN, variable 0–6) — remplacer par tableau comparatif ; (2) Section 2.4 DTOC à supprimer.
+- Oleg a accepté les deux corrections. Tableau comparatif Δn/n/s' envoyé.
+- Attente : draft révisé des Sections 3–4 de "Three Roads".
+- DOI D57 communiqué à Oleg : 10.5281/zenodo.20600264.
+
+**Nouveau résultat pertinent pour Three Roads :**
+- sin²θ_W = sin²(π/R_e) = 1/4 fournit la fondation combinatoire pour la décomposition OFN 8⊕3⊕1⊕1 à un niveau plus profond que Δn=4 seul.
+- A₄/V₄ ≅ ℤ₃ est la résolution partielle formelle de OP-OFN-1 (à intégrer dans Three Roads Section 3).
+
+### DM v25 — Patches produits
+
+9 patches précis sur DM v24 (1190 lignes) produits dans DM_v25_patches.tex :
+- P1 : numéro de version (108)
+- P2 : abstract étendu à D57+N01 (125, après 147, 149–150)
+- P3 : "What makes this version different" (167–175)
+- P4 : tableau corpus — ajout D56, D57, N01 (après 270)
+- P5 : OP10 mis à jour avec théorème tree-level (716–718)
+- P6 : nouveaux OPs OP-OFN-1, OP-D57-1, OP-D57-2, OP-SU3 (après 749)
+- P7 : Recommended next documents (1021–1028)
+- P8 : Diagramme tikz — nœud D57 + H_SU2 (849–921)
+- P9 : Bibliographie — D57+N01 ajoutés, D56/Escudeiro décommentés (1163–1188)
+
+**DM v25 à déposer sur Zenodo après compilation Overleaf.**
+
+---
+
 ## Corpus Table
 
 | Doc | DOI | Titre abrégé |
@@ -112,7 +186,7 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 | D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
 | DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
 | D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
-| DM | 10.5281/zenodo.20415182 | Global Mapping v24 |
+| DM | 10.5281/zenodo.20415182 | Global Mapping v24 (→ v25 en cours) |
 | D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
 | D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
@@ -157,6 +231,7 @@ Les priorités #1–3 de Session 46 (dépôt DM v24 sur Zenodo, mise à jour DM_
 | D56 | 10.5281/zenodo.20409903 | N_comp(k)=k — OP-D41-1-A RESOLVED |
 | D-exp-E2-PDL | 10.5281/zenodo.20593807 | PDL Structural Analysis f₇/₂ Mirror Nuclei — B(E2) Confrontation |
 | **N01** | **10.5281/zenodo.20523343** | **β₁=3 Topological Invariant — PDL–OFN Joint Note** |
+| **D57** | **10.5281/zenodo.20600264** | **SU(2) Gauge Structure + sin²θ_W(tree)=1/4 — THÉORÈME** |
 
 ---
 
@@ -172,6 +247,8 @@ R_surf(p)              : 310φ = 501.59  (D05)
 G_PDL                 : 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻² (27 ppm, D25)
 Λ_PDL                 : 0.41 ppm from Λ_obs (D53)
 θ_W (PDL)             : 19π/119 → sin²θ_W = 0.231196 (0.48σ, D55)
+sin²θ_W(tree)         : sin²(π/R_e) = sin²(π/6) = 1/4  [D57, THÉORÈME]
+Correction Berry D55  : R_e·k₂/N_tot = 6×19/119 = 114/119 ≈ 0.958
 T = R_surf(p)²/R_sea(n): 25.260 ≈ (Δn+1)² = 25 to 1.04%
 R_PDL = 2T/(Δn+1)²   : 2.021 (H_B conjecture, D41)
 N_comp(k)             : = k exactly — THÉORÈME (D56)
@@ -185,6 +262,13 @@ C_target              : 8.1579491 × 10⁻⁴⁶ (adimensionnel, D51)
 Taille min β₁=3       : 10 sommets (construction guidée, n≥6)
 Fréquence β₁=3 (n=6) : 21.2% pour sous-ensembles taille 21
 Ω₂₁ self-conjugate   : 0 (x=63-x sans solution entière — correction N01)
+
+SU(2) structure (D57 + Scripts 1–7) :
+|V₄|                  : 4 (Klein four-group, groupe des paires de pulsation)
+S₄/V₄                 : ≅ S₃ ≅ D₃ (groupe effectif, ordre 6)
+A₄/V₄                 : ≅ ℤ₃ ↔ β₁=3 (connexion établie, Script 5)
+Dic₃ ⊂ SU(2)          : ordre 12 (double cover de S₃, vérifié)
+T = -iτ₂              : ∈ 2T ⊃ Dic₃ ⊂ SU(2) (D46, théorème)
 ```
 
 ---
@@ -196,55 +280,82 @@ THÉORÈMES INCONDITIONNELS (C1–C4) :
   N_comp(k) = k  [D56, OP-D41-1-A résolu]
   R_surf(k) = k·T pour noyau k-ph  [D56, corollaire]
   K₄ unique graphe connexe sur 4 sommets avec β₁=3  [Script 1, exhaustif — N01]
-  n=6 dimension minimale pour β₁=3 via cycles indépendants  [Script 4, construction — N01]
+  n=6 dimension minimale pour β₁=3 via cycles indépendants  [Script 4 — N01]
   β₁=3 nécessaire pour formule cosmologique PDL  [Script 1 — N01]
+  sin²θ_W(tree) = sin²(π/R_e) = 1/4  [D57, Routes A=B via V₄]
+  Routes A=B via |V₄|=4  [D57, Scripts 1–3, exhaustif]
+
+RÉSULTATS ALGÉBRIQUES ÉTABLIS (D57, Scripts 1–5) :
+  {e} ⊂ V₄ ⊂ A₄ ⊂ S₄ série de composition unique [Script 2, vérifié]
+  S₄/V₄ ≅ S₃ ≅ D₃ (1+3+2 éléments par ordre)  [Script 5, vérifié]
+  Dic₃ ⊂ SU(2), ordre 12  [Script 5, vérifié]
+  A₄/V₄ ≅ ℤ₃ ↔ β₁(K₄)=3=b₁(Ω₂₁)  [Script 5, vérifié]
+  T = -iτ₂ ∈ 2T ⊃ Dic₃  [D46 théorème + Script 5]
 
 RÉSULTATS VÉRIFIÉS (N01 — PDL–OFN Bridge) :
   b₁(Ω₂₁) = 3 sous dist=1 Hamming  [Script 5, NetworkX — N01]
-  β₁=3 pour 720/720 bijections K₄↔Q₆ (preimage Ω₂₁)  [Script 3 — N01]
+  β₁=3 pour 720/720 bijections K₄↔Q₆  [Script 3 — N01]
   Pas de bijection naturelle K₄↔Q₆  [Script 3 — N01]
   Ω₂₁ contient 0 états self-conjugate  [Script 5, correction N01]
+
+CONJECTURES BIEN MOTIVÉES :
+  H_SU2 : C1 force V₄ trivial → S₃ effectif → Dic₃ ⊂ SU(2)  [D57, Scripts 4–5]
+  V₄-invariance observables physiques PDL (coût, magnétisation, signe global)  [Script 5, exhaustif]
 
 CONJECTURES FORTEMENT CORROBORÉES :
   H_B : B(E2) ∝ N_comp(k) = k  [D41 + D56; 0.58σ vs Ha et al.]
   β₁=3 invariant universel des clôtures minimales dans {0,1}⁶  [Conjecture N01]
 
+HYPOTHÈSES STRUCTURELLES :
+  H_SU3 : SU(3) depuis triplet (u,u,d) et 3 cycles leakage  [Script 6 — à vérifier D58]
+  3 cycles leakage ↔ 3 sous-algèbres SU(2)⊂su(3)  [Script 6, cohérent avec D41]
+
 POSTULATS STRUCTURELS (OFN, N01) :
   Sélection de Ω₂₁ : postulat structurel ancré dans Bachani (2026) — non dérivé des axiomes CWS.
 
-OPEN PROBLEMS (PDL–OFN) :
+OPEN PROBLEMS (mis à jour Session 50) :
   OP-OFN-1 [HIGH] : lien formel entre les 3 cycles PDL et les 3 générations OFN.
+                     Résolution partielle : A₄/V₄ ≅ ℤ₃ est l'origine combinatoire commune (D57).
   OP-OFN-2 [MEDIUM] : objet commun X dont K₄ et Ω₂₁ sont des projections.
   OP-OFN-3 [MEDIUM] : dérivation de SU(3)×SU(2)×U(1) depuis C1–C4 via pont OFN.
+  OP-D57-1 [HIGH] : preuve formelle du Lemme C1-V₄ depuis C1 seul.
+  OP-D57-2 [MEDIUM] : Dic₃ comme générateur structurel du groupe de jauge faible.
+  OP-D57-3 [HIGH] : SU(3) depuis le triplet proton (u,u,d) → D58.
+  OP-SU3 = OP-D57-3.
 ```
 
 ---
 
-## Open Problems (updated Session 48)
+## Open Problems (updated Session 50)
 
 **Résolu (Session 46) :**
 - **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
 
-**Nouveaux (Sessions 47–48 — PDL–OFN) :**
-- **[HIGH]** OP-OFN-1 : lien formel 3 cycles leakage PDL ↔ 3 générations fermions OFN.
-- **[MEDIUM]** OP-OFN-2 : objet mathématique X dont K₄ et Ω₂₁ sont des projections.
-- **[MEDIUM]** OP-OFN-3 : dérivation SU(3)×SU(2)×U(1) depuis C1–C4 via pont OFN.
+**Résolu partiellement (Session 50) :**
+- **[PARTIAL]** OP-OFN-1 : A₄/V₄ ≅ ℤ₃ identifié comme origine combinatoire de β₁=3 (D57). Lien formel 3 cycles PDL ↔ 3 générations OFN reste ouvert.
+- **[PARTIAL]** OP-SU2 : sin²θ_W(tree) = 1/4 = sin²(π/R_e) — théorème (D57). H_SU2 reste conjecture (Lemme C1-V₄ non encore théorème).
+
+**Nouveaux (Session 50) :**
+- **[HIGH]** OP-D57-1 : preuve formelle du Lemme C1-V₄ (C1 implique O(v·s)=O(s) pour tout v∈V₄).
+- **[MEDIUM]** OP-D57-2 : Dic₃ comme groupe de jauge faible structurel (argument de continuité).
+- **[HIGH]** OP-D57-3 / OP-SU3 : SU(3) depuis triplet proton (u,u,d) → D58 (à préparer).
 
 **Priorité haute :**
-1. **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL.
-2. **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
-3. **[HIGH]** OP10-c : corrections radiatives électrofaibles.
-4. **[HIGH]** OP9 : masses muon/tau.
-5. **[HIGH]** OP2 : unicité globale quintuplet.
-6. **[HIGH]** OP-ZIB-G1 : dérivation M_moy depuis C1–C4.
+1. **[HIGH]** OP-D57-1 : Lemme C1-V₄ formel → promouvrait H_SU2 en théorème.
+2. **[HIGH]** OP-D57-3 : SU(3) depuis proton → D58 (après vérification Colab H_SU3).
+3. **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL.
+4. **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
+5. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) → D-electroweak-WZ.
+6. **[HIGH]** OP9 : masses muon/tau (deuxième et troisième générations).
 
 **Priorité moyenne :**
-7. [MEDIUM] OP-OFN-2 : objet X commun K₄/Ω₂₁.
-8. [MEDIUM] OP-OFN-3 : SU(3)×SU(2)×U(1) depuis C1–C4.
-9. [MEDIUM] OP15 : noyaux Z > 82.
-10. [MEDIUM] OP-Zr-1 : condition de résonance QPT formelle.
-11. [MEDIUM] OP-SP2-1 : preuve analytique PDL-H.
-12. [MEDIUM] DL03 : encadrement numérique n*_vie.
+7. [MEDIUM] OP-D57-2 : Dic₃ comme groupe de jauge faible.
+8. [MEDIUM] OP-OFN-2 : objet X commun K₄/Ω₂₁.
+9. [MEDIUM] OP-OFN-3 : SU(3)×SU(2)×U(1) depuis C1–C4.
+10. [MEDIUM] OP15 : noyaux Z > 82.
+11. [MEDIUM] OP-Zr-1 : condition de résonance QPT formelle.
+12. [MEDIUM] OP-SP2-1 : preuve analytique PDL-H.
+13. [MEDIUM] DL03 : encadrement numérique n*_vie.
 
 **Frontières expérimentales :**
 - FLAG/lattice QCD → Δm_iso ±0.04 MeV
@@ -258,18 +369,15 @@ OPEN PROBLEMS (PDL–OFN) :
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 50 :**
+**Priorité immédiate Session 51 :**
 
-*Tâches reportées (URGENT) :*
-1. Ajouter entrées D56 + D-exp-E2-PDL + N01 + Escudeiro2026 dans DM_v24_references.bib.
-2. Pousser PDL_context.md Session 49 + fichiers mis à jour sur GitHub.
-
-*Tâches actives :*
-3. Uploader N01 sur ResearchGate (type : Preprint).
-4. Attendre retour d'Oleg et Elena sur N01 (DOI: 10.5281/zenodo.20523343).
-5. Attendre réponse de Recchia & Lenzi (Padova) sur D47/⁸³Se.
-6. Attaquer OP-E2-PDL : identifier l'opérateur E2 dans le formalisme PDL.
-7. Explorer OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
+1. **[URGENT]** Pousser PDL_context.md Session 50 + Scripts 1–7 + D57.tex + D57_references.bib sur GitHub.
+2. **[URGENT]** Compiler DM v25 dans Overleaf (appliquer patches DM_v25_patches.tex sur DM v24) → déposer sur Zenodo.
+3. **[URGENT]** Attendre draft révisé Sections 3–4 "Three Roads" d'Oleg (sans DTOC, avec tableau comparatif).
+4. **[HIGH]** Vérification Colab du Lemme C1-V₄ (OP-D57-1) — outil de verrouillage avant D58.
+5. **[HIGH]** Préparer D58 : SU(3) depuis le triplet proton — après vérification H_SU3 en Colab.
+6. **[HIGH]** Uploader N01 sur ResearchGate (type : Preprint).
+7. **[MEDIUM]** Continuer OP-E2-PDL (opérateur E2 dans le formalisme PDL).
 
 **LaTeX conventions (Session 16) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -277,6 +385,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - \bibliographystyle{unsrt} with \usepackage[numbers]{natbib}
 - theorem/proof/definition/conjecture/openproblem/resolvedproblem environments
 - Epistemic status table with p{} fixed-width columns
+- \texorpdfstring{}{} pour tous les titres de sections contenant des maths
 
 **Nomenclature N-series (Session 48) :**
 - N01 = première note conjointe PDL–OFN (β₁=3). DOI: 10.5281/zenodo.20523343
@@ -290,11 +399,18 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
 - Ω₂₁ self-conjugate : 0 (x=63-x sans solution entière)
 
-*Références canoniques : D01–D56 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 (10.5281/zenodo.20523343). Corpus complet publié sur Zenodo.*
+**Discipline PDL–OFN pour Three Roads (Session 50) :**
+- Δn=4 (PDL) et n (OFN) : analogie structurelle candidate, PAS identité prouvée
+- sin²θ_W=1/4 (D57) et décomposition 8⊕3⊕1⊕1 (OFN) : connexion à approfondir dans Three Roads Section 3
+- A₄/V₄ ≅ ℤ₃ ↔ β₁=3 : résolution partielle OP-OFN-1, citée dans D57 avec attribution à N01
+- DTOC : supprimé de Three Roads, réservé pour collaboration future séparée
+- Priorité de dépôt : D57 déposé AVANT partage avec Oleg ✓
+
+*Références canoniques : D01–D57 + DS01 + DL01 + DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 (10.5281/zenodo.20523343) + DM v24 (10.5281/zenodo.20415182). D57 : 10.5281/zenodo.20600264. DM v25 en cours.*
 
 ---
 
-## Dependency Map — Critical Path (updated Session 48)
+## Dependency Map — Critical Path (updated Session 50)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -311,7 +427,15 @@ LAYER 10  Trous noirs — COMPLETE                     [✓] D37, D38, D42, D45,
 LAYER 11  Tenseur de cohérence — COMPLETE            [✓] D48v3, D49, D51–D52, D54
 LAYER 12  Λ_PDL — COMPLETE                          [✓] D51, D52, D53
 LAYER 13  Vie/conscience                             [✓] DL01, DL02; [?] DL03
-LAYER 14  Électrofaible — θ_W RÉSOLU                [✓] PARTIEL (D33, D46, D55)
+LAYER 14  Électrofaible
+           θ_W = 19π/119                             [✓ THÉORÈME — D55]
+           sin²θ_W(tree) = sin²(π/R_e) = 1/4        [✓ THÉORÈME — D57]
+           θ_W(D55) = (π/R_e)×(114/119)             [✓ THÉORÈME — D57+D55]
+           H_SU2 : C1 → V₄ trivial → S₃ → SU(2)    [CONJECTURE — D57]
+           OP-D57-1 : Lemme C1-V₄ formel             [OUVERT — HIGH]
+           OP-D57-2 : Dic₃ comme groupe de jauge     [OUVERT — MEDIUM]
+           OP-D57-3 / OP-SU3 : SU(3) → D58           [OUVERT — HIGH]
+           W/Z mass ratio (OP10-c)                    [OUVERT — MEDIUM]
 LAYER 15  Spectroscopie nucléaire
            N_comp(k) = k                             [✓ THÉORÈME — D56]
            R_surf(k) = k·T                           [✓ corollaire — D56]
@@ -325,14 +449,18 @@ LAYER 17  PDL–OFN Bridge (N01 — Sessions 47–48)
            b₁(Ω₂₁)=3 vérifié indépendamment         [✓ RÉSULTAT — N01 Script 5]
            Ω₂₁ : 0 self-conjugate (correction)      [✓ RÉSULTAT — N01 Script 5]
            β₁=3 invariant universel {0,1}⁶           [CONJECTURE — N01 Conj. 7]
+           A₄/V₄ ≅ ℤ₃ ↔ β₁=3 (résolution partielle OP-OFN-1)  [✓ — D57]
            3 cycles PDL ↔ 3 générations OFN          [OUVERT — OP-OFN-1]
            SU(3)×SU(2)×U(1) depuis C1–C4            [OUVERT — OP-OFN-3]
 LAYER 18  Dissémination
            ResearchGate actif                        [✓ Session 47]
            N01 déposé sur Zenodo                     [✓ Session 48 — DOI: 10.5281/zenodo.20523343]
            D-exp-E2-PDL déposé sur Zenodo            [✓ Session 49 — DOI: 10.5281/zenodo.20593807]
-           Corpus complet publié                     [✓ Session 49]
+           D57 déposé sur Zenodo                     [✓ Session 50 — DOI: 10.5281/zenodo.20600264]
+           Corpus complet publié                     [✓ Session 49–50]
            N01 à uploader ResearchGate               [en attente]
+           DM v25 patches produits                   [✓ Session 50 — à appliquer Overleaf]
+           DM v25 à déposer Zenodo                   [en attente]
 ```
 
 **Resolved milestones:**
@@ -351,4 +479,9 @@ n=6 dimension minimale β₁=3  [✓ N01 Script 4, Session 47]
 N01 déposé Zenodo  [✓ Session 48 — DOI: 10.5281/zenodo.20523343]
 D-exp-E2-PDL déposé Zenodo  [✓ Session 49 — DOI: 10.5281/zenodo.20593807]
 Corpus complet Zenodo  [✓ Session 49]
+sin²θ_W(tree) = sin²(π/R_e) = 1/4  [✓ D57 théorème, Session 50]
+Routes A=B via V₄  [✓ D57, Session 50]
+A₄/V₄ ≅ ℤ₃ ↔ β₁=3  [✓ D57, Session 50 — résolution partielle OP-OFN-1]
+D57 déposé Zenodo  [✓ Session 50 — DOI: 10.5281/zenodo.20600264]
+DM v25 patches produits  [✓ Session 50]
 ```
