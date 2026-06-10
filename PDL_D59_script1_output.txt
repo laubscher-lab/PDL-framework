@@ -1,0 +1,98 @@
+============================================================
+PDL_D59_script1.py — Verification for Document D59
+Physical Identification of SU(3)_c and the
+Fundamental Representation 3 from C1-C4
+============================================================
+
+--- PRELIMINARY: Quintuplet and leakage indices ---
+  [PASSED] N_U = 24 (D47)
+  [PASSED] N_D = 28 (D47)
+  [PASSED] R_VAL = 930 (D29)
+  [PASSED] R_SEA = 10087 (D29)
+  [PASSED] R_TOT = 11017 (D29)
+  [PASSED] R_E = 6 (D16a)
+  [PASSED] DELTA_N = N_D - N_U = 4 (D47 theorem)
+  [PASSED] K1 = N_D - N_U + R_E - 1 = 9 (D51)
+  [PASSED] K2 = N_U - R_E + 1 = 19 (D51)
+  [PASSED] K3 = R_E * N_D = 168 (D51)
+  [PASSED] K1 + K2 = N_D (completeness, D51)
+
+--- LEMMA L1: S3 = S4/V4 acts on V4\{e} (recall D58 L2) ---
+  [PASSED] L1a: S4 conjugation stabilises V4\{e} (24 elements checked)
+  [PASSED] L1b: Image of S4 -> Sym(V4\{e}) has exactly 6 elements (= |S3|)
+  [PASSED] L1c: Kernel of the action = V4 (4 elements)
+
+--- LEMMA L2: Character of the permutation representation ---
+  [PASSED] L2a: chi(identity class) = 3 for all 4 elements in V4
+          values = [3, 3, 3, 3]
+  [PASSED] L2b: chi(A4 \ V4) = 0 for all 8 elements (3-cycle images)
+          values = [0]
+  [PASSED] L2c: chi(S4 \ A4) = 1 for all 12 elements (transposition images)
+          values = [1]
+  [PASSED] L2d: chi_pi = chi_trivial + chi_standard (decomposition verified)
+          chi_pi(e)=3, chi_pi(transpositions)=1, chi_pi(3-cycles)=0
+  [PASSED] L2e: All 24 elements satisfy chi decomposition exactly
+
+--- LEMMA L3: Invariant decomposition C^3 = trivial + standard ---
+  [PASSED] L3a: (1,1,1) is fixed by all S3 actions (trivial subspace)
+  [PASSED] L3b: Subspace W = {a+b+c=0} is preserved by all S3 actions
+  [PASSED] L3c: Both basis vectors of W stay in W for all 6 S3 elements
+  [PASSED] L3d: The 6 S3 elements induce 6 distinct 2x2 integer matrices on W
+          count = 6
+  [PASSED] L3e: All 6 matrices on W have |det| = 1 (integer exact)
+          determinants = [-1, 1]
+
+--- LEMMA L4: A2 root system in the trace-zero plane W ---
+  [PASSED] L4a: All 6 roots have squared norm = 2
+          norms^2 = [2, 2, 2, 2, 2, 2]
+  [PASSED] L4b: S3 action on V4\{e} permutes the 6 roots among themselves
+  [PASSED] L4c: S3 acts transitively on the 6 roots (single orbit)
+  [PASSED] L4d: Each root is paired with its negative
+  [PASSED] L4e: Inner products between roots are in {-2,-1,0,1,2} (A2 Cartan)
+          inner products found: [-2, -1, 1, 2]
+  [PASSED] L4f: Cartan matrix of simple roots equals A2 = [[2,-1],[-1,2]]
+          Cartan = [[2, -1], [-1, 2]]
+
+--- LEMMA L5: Orientation and 3 vs 3-bar from DELTA_N ---
+  [PASSED] L5a: DELTA_N = n_d - n_u = 4 > 0 (forced by C4, D47 theorem)
+  [PASSED] L5b: K1 < K2 < K3 (canonical total order on V4\{e})
+          K1=9, K2=19, K3=168
+  [PASSED] L5c: Image of A4 in Sym(V4\{e}) = {even permutations} = Z3
+          A4 image = {(0, 1, 2), (2, 0, 1), (1, 2, 0)}
+  [PASSED] L5d: Z3 generator (012) preserves orientation (0,1,2)
+          (012) applied to (0,1,2) -> (1, 2, 0)
+  [PASSED] L5e: Generator (012) maps cyclic order (0,1,2) to cyclic (1,2,0)
+  [PASSED] L5f: K3 / (K1 + K2) = R_E = 6 (integer, exact)
+          K3/(K1+K2) = 6 = 6
+  [PASSED] L5g: DELTA_N > 0 (i.e., n_d > n_u) selects orientation 3 (matter)
+
+--- NEGATIVE RESULT: (T2) vs (T3) bijection is NOT S4-equivariant ---
+  [PASSED] NEG-a: K1, K2, K3 are three distinct integers
+          K1=9, K2=19, K3=168
+  [PASSED] NEG-b: No non-trivial S3 permutation fixes the ordered triple (K1,K2,K3)
+          Confirms: the bijection T2<->T3 is physically motivated, not S4-equivariant
+
+--- ADDITIONAL: beta_1(K4) = 3 (topological consistency) ---
+  [PASSED] ADD: beta_1(K4) = |E| - |V| + 1 = 6 - 4 + 1 = 3
+          beta_1 = 3
+
+============================================================
+SUMMARY: ALL VERIFICATIONS PASSED
+
+Lemmas verified for PDL D59:
+  L1: S3 = S4/V4 acts faithfully and transitively on V4\{e}
+       (recalled from D58 L2; kernel = V4; 6 distinct actions)
+  L2: Character of the permutation representation = chi_trivial + chi_standard
+       (chi: e->3, transpositions->1, 3-cycles->0; exact integer)
+  L3: C^3 = trivial + standard-2D; W = {a+b+c=0} is S3-invariant
+       (6 distinct integer matrices on W, all |det|=1)
+  L4: A2 root system in W: 6 roots, norm^2=2, Cartan=[[2,-1],[-1,2]]
+       (S3-transitive orbit, root pairing, all inner products in {-2..2})
+  L5: Orientation 3 vs 3-bar: DELTA_N=4>0 selects matter orientation
+       (canonical order K1<K2<K3; K3/(K1+K2)=R_E=6; Z3 centre exact)
+
+Negative result documented:
+  NEG: (T2)={K1,K2,K3} and (T3)=V4\{e} are NOT S4-equivariantly bijectable
+       The canonical bijection is physically motivated (quintuplet),
+       not forced by S4-equivariance.
+============================================================
