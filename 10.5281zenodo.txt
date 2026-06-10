@@ -364,3 +364,13 @@ D57
 https://doi.org/10.5281/zenodo.20600264 
 Derivation of the Tree-Level Weinberg Angle and the SU(2) Gauge Structure from the PDL Axioms C1–C4 (Projective Dynamic Logo Framework — Document D57) 
 D57_gauge_su2.pdf 
+
+D58-py 
+https://doi.org/10.5281/zenodo.20623231
+PDL_SU3_script1.py: Verification of the Five Lemmas Establishing SU(3) as an Unconditional Theorem of C1–C4 — Supplementary material to PDL Document D58 
+PDL_SU3_script1_output.txt
+
+D58 
+https://doi.org/10.5281/zenodo.20622987 
+Derivation of the SU(3) Gauge Structure from the PDL Axioms C1–C4: Completion of the Standard Model Gauge Group SU(3) × SU(2) × U(1) (Projective Dynamic Logo Framework — Document D58) 
+D58_gauge_su3.pdf
