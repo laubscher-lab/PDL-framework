@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 52 — 10 June 2026 (DM v26 déposé)*
+*Last updated: Session 53 — 10 June 2026 (D59-py + D59 + DM v27 déposés)*
 
 ---
 
@@ -60,9 +60,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 Protocole verrouillage respecté : script Colab exécuté indépendamment avant rédaction.
 
-**Résultat négatif documenté (découverte du script) :** V₄ agit de façon **faithfully** (non triviale) sur H₁(K₄; ℝ) — stratégie initiale via homologie de cycles invalidée. Les matrices explicites de V₄ sur la base de cycles sont calculées et documentées.
-
-**Objet géométrique central identifié :** les 3 orbites de V₄ sur les 6 arêtes de K₄, en bijection S₄-équivariante canonique avec V₄\{e} et avec les 3 partitions de {0,1,2,3} en deux paires non ordonnées.
+**Résultat négatif documenté :** V₄ agit fidèlement sur H₁(K₄; ℝ) — stratégie initiale via homologie invalidée.
 
 **PDL_SU3_script1.py déposé sur Zenodo. DOI : 10.5281/zenodo.20623231**
 
@@ -80,33 +78,14 @@ Cinq lemmes verrouillés (tous PASSED, résultat négatif VERIFIED NEGATIVE) :
 
 **DOI : 10.5281/zenodo.20622987**
 
-**Contenu :**
-- Cinq lemmes (L1–L5) établis comme théorèmes inconditionnels de C1–C4 + théorie des groupes classique
-- Théorème principal : SU(3) est l'unique groupe de Lie compact simplement connexe simple compatible avec la structure algébrique de K₄ modulo le quotient C1-effectif V₄ (Cartan–Killing–Weyl)
-- Corollaire : SU(3) × SU(2) × U(1) comme théorème algébrique de C1–C4 (combiné D46+D57+D58)
-- Résultat négatif documenté : V₄ agit fidèlement sur H₁(K₄; ℝ) — l'ensemble S₃ naturel est V₄\{e}, non l'homologie
-- Trois problèmes ouverts : OP-D58-1 (identification physique SU(3)_c), OP-D58-2 (lien entre les 3 triplets de K₄), OP-D58-3 (représentation fondamentale 3 depuis C1–C4)
-- Diagramme causal complet : C1–C4 → K₄ → S₄ → {U(1), SU(2), SU(3)} → SU(3)×SU(2)×U(1)
-
-**Résultat central nouveau (non présent dans le corpus avant Session 51) :**
+**Résultat central :**
 ```
 SU(3) × SU(2) × U(1)   THÉORÈME ALGÉBRIQUE de C1–C4
                          Chaîne : D46 (U(1)) + D57 (SU(2)) + D58 (SU(3))
                          Modulo la classification de Cartan–Killing–Weyl (classique)
 ```
 
-**Identification canonique (bijection S₄-équivariante, Lemme L2) :**
-```
-Orbite 0 : arêtes {(0,1),(2,3)} <-> v = (1,0,3,2) = (01)(23)
-Orbite 1 : arêtes {(0,2),(1,3)} <-> v = (2,3,0,1) = (02)(13)
-Orbite 2 : arêtes {(0,3),(1,2)} <-> v = (3,2,1,0) = (03)(12)
-```
-
 **Fichiers :** D58_gauge_SU3_v2.tex + D58_references.bib (21 entrées)
-
-**Convention LaTeX nouvellement intégrée (à appliquer à tous les futurs documents) :**
-- `\texorpdfstring{$...$}{version texte pur}` obligatoire pour tout titre `\section`/`\subsection` contenant des maths
-- Bloc `\pdfstringdefDisableCommands{...}` complet dans le préambule (33 commandes PDL + standard)
 
 #### DM v25 — Déposé sur Zenodo
 
@@ -119,12 +98,58 @@ Orbite 2 : arêtes {(0,3),(1,2)} <-> v = (3,2,1,0) = (03)(12)
 ### Résultats principaux Session 52
 
 **DM v26 déposé sur Zenodo. DOI : 10.5281/zenodo.20625504**
-- Incorpore D58 (SU(3) théorème algébrique, complétion SU(3)×SU(2)×U(1)) et PDL_SU3_script1.py
-- OP-SU3 / OP-D57-3 marqué résolu (algébrique)
-- OP-D58-1, OP-D58-2, OP-D58-3 ajoutés
-- Diagramme TikZ : nœuds D58 et SU(3)×SU(2)×U(1) ajoutés
-- Recommended next documents mis à jour (D59 en priorité haute)
-- Nouveau fichier .bib : DM_v26_references.bib (2 entrées ajoutées : D58, D58-py)
+
+---
+
+**Session 53 — D59-py + D59 + DM v27 déposés (10 June 2026):**
+
+### Résultats principaux Session 53
+
+#### Script de verrouillage D59 — PDL_D59_script1.py
+
+Protocole verrouillage respecté : script Colab exécuté indépendamment avant rédaction.
+
+**PDL_D59_script1.py déposé sur Zenodo. DOI : 10.5281/zenodo.20628926**
+
+Cinq lemmes verrouillés + un résultat négatif (tous PASSED / VERIFIED) :
+- L1 : S₃ = S₄/V₄ agit fidèlement et transitivement sur V₄\{e} (rappel D58)
+- L2 : χ_π = χ_trivial + χ_standard — décomposition du caractère, vérifiée sur les 24 éléments de S₄
+- L3 : W = {a+b+c=0} ⊂ ℂ³ est le complément S₃-invariant unique de ℂ(1,1,1)
+- L4 : système de racines A₂ dans W — matrice de Cartan [[2,-1],[-1,2]] par arithmétique entière exacte
+- L5 : Δn = n_d - n_u = 4 > 0 (théorème C4, D47) force l'orientation 3 vs 3̄ — k₃/(k₁+k₂) = R_e = 6 exact
+- NEG : bijection (T₂)↔(T₃) physiquement motivée mais PAS S₄-équivariante
+
+#### D59 — Déposé sur Zenodo
+
+**Titre :** Physical Identification of SU(3)_c and the Fundamental Representation 3 from the PDL Axioms C1–C4 (Projective Dynamic Logo Framework — Document D59)
+
+**DOI : 10.5281/zenodo.20629282**
+
+**Contenu :**
+- Cinq lemmes (L1–L5) établis comme théorèmes inconditionnels de C1–C4
+- Espace porteur W = {a+b+c=0} ⊂ ℂ³ canoniquement labellé par V₄\{e}
+- Théorème principal : SU(3)_c agissant sur W dans la représentation fondamentale 3 est un théorème inconditionnel de C1–C4 + Cartan–Killing–Weyl
+- Orientation matière/antimatière sélectionnée par Δn = 4 > 0 (D47, théorème de C4)
+- Identité exacte : k₃/(k₁+k₂) = R_e = 6
+- Résultat négatif documenté : bijection (T₂)↔(T₃) non S₄-équivariante
+- OP-D58-1 et OP-D58-3 RÉSOLUS
+- Nouveaux problèmes ouverts : OP-D59-1 (masse des quarks), OP-D59-2 (D_μ = ∂_μ - igA_μ depuis C4)
+
+**Résultat central nouveau (Session 53) :**
+```
+SU(3)_c dans 3   THÉORÈME de C1–C4 + Cartan–Killing–Weyl
+                  W = {a+b+c=0} porteur canonique, axes = V₄\{e}
+                  Orientation 3 vs 3̄ : Δn = 4 > 0 (D47)
+                  Identité : k₃/(k₁+k₂) = R_e = 6 (exact)
+```
+
+**Fichiers :** D59_representation_3.tex + D59_references.bib (15 entrées)
+
+#### DM v27 — Déposé sur Zenodo
+
+**DOI : (à compléter après dépôt)**
+
+Incorpore D59 et PDL_D59_script1.py. OP-D58-1 et OP-D58-3 marqués résolus. OP-D59-1 et OP-D59-2 ajoutés. Nœud D59 dans le diagramme TikZ.
 
 ---
 
@@ -160,7 +185,7 @@ Orbite 2 : arêtes {(0,3),(1,2)} <-> v = (3,2,1,0) = (03)(12)
 | D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
 | DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
 | D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
-| **DM** | **10.5281/zenodo.20625504** | **Global Mapping v26** |
+| **DM** | **10.5281/zenodo.(v27 DOI à compléter)** | **Global Mapping v27** |
 | D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
 | D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
@@ -208,6 +233,8 @@ Orbite 2 : arêtes {(0,3),(1,2)} <-> v = (3,2,1,0) = (03)(12)
 | **D57** | **10.5281/zenodo.20600264** | **SU(2) Gauge Structure + sin²θ_W(tree)=1/4 — THÉORÈME** |
 | **D58-py** | **10.5281/zenodo.20623231** | **PDL_SU3_script1.py — Verrouillage D58** |
 | **D58** | **10.5281/zenodo.20622987** | **SU(3) Gauge Structure — Complétion SU(3)×SU(2)×U(1) — THÉORÈME** |
+| **D59-py** | **10.5281/zenodo.20628926** | **PDL_D59_script1.py — Verrouillage D59** |
+| **D59** | **10.5281/zenodo.20629282** | **SU(3)_c dans 3 — Représentation fondamentale — THÉORÈME** |
 
 ---
 
@@ -245,6 +272,14 @@ Orbites V₄-arêtes      :
   O₂ = {(0,3),(1,2)} ↔ (03)(12)
 Résultat négatif       : V₄ agit fidèlement (non trivialement) sur H₁(K₄;ℝ)
 
+Représentation fondamentale 3 — SU(3)_c (D59) :
+Espace porteur W       : {(a,b,c) ∈ ℂ³ : a+b+c=0} — plan trace-nulle
+Base canonique         : axes labellés par V₄\{e} = {(01)(23), (02)(13), (03)(12)}
+Orientation matière    : Δn = n_d - n_u = 4 > 0 → représentation 3 (D47, théorème C4)
+Identité exacte        : k₃/(k₁+k₂) = R_e·n_d / n_d = R_e = 6
+Matrice de Cartan A₂   : [[2,-1],[-1,2]] — vérifiée par arithmétique entière exacte
+Résultat négatif D59   : bijection (T₂)↔(T₃) non S₄-équivariante
+
 PDL–OFN Bridge (N01) :
 β₁(K₄)               : = 3 — nécessaire pour Λ_PDL
 b₁(Ω₂₁)              : = 3 (vérifié indépendamment)
@@ -268,23 +303,32 @@ THÉORÈMES INCONDITIONNELS (C1–C4) :
   Rang Cartan = 2 via R_e=6  [D58, L4]
   Système de racines A₂  [D58, L5]
   V₄ agit fidèlement sur H₁(K₄;ℝ)  [D58, résultat négatif]
+  χ_π = χ_trivial + χ_standard sur ℂ³  [D59, L2]
+  W = {a+b+c=0} est le complément S₃-invariant de ℂ(1,1,1)  [D59, L3]
+  A₂ dans W — Cartan [[2,-1],[-1,2]]  [D59, L4]
+  Δn = 4 > 0 → orientation 3 vs 3̄  [D59, L5 depuis D47]
+  k₃/(k₁+k₂) = R_e = 6  [D59, L5 — exact]
+  SU(3)_c dans 3 sur W  [D59, théorème principal]
+  bijection (T₂)↔(T₃) non S₄-équivariante  [D59, résultat négatif]
 
 CONJECTURES BIEN MOTIVÉES :
   H_SU2 : C1 force V₄ trivial → S₃ effectif → Dic₃ ⊂ SU(2)  [D57]
 
 HYPOTHÈSES STRUCTURELLES :
-  H_SU3 : identification physique SU(3)_c ↔ triplet (u,u,d)  [D58, OP-D58-1]
+  OP-D59-2 : D_μ = ∂_μ - igA_μ est l'unique transport C4-compatible  [D59, ouvert]
 
-OPEN PROBLEMS (mis à jour Session 51) :
+OPEN PROBLEMS (mis à jour Session 53) :
   OP-D57-1 [HIGH]    : preuve formelle du Lemme C1-V₄ → promouvrait H_SU2 en théorème
   OP-D57-2 [MEDIUM]  : Dic₃ comme générateur structurel du groupe de jauge faible
-  OP-D58-1 [HIGH]    : identification physique SU(3)_c — représentation 3 sur triplet (u,u,d)
-  OP-D58-2 [MEDIUM]  : lien entre les 3 triplets de K₄ : (T1) cycles H₁, (T2) cycles leakage, (T3) orbites V₄-arêtes
-  OP-D58-3 [MEDIUM]  : dérivation de la représentation fondamentale 3 depuis C1–C4
+  OP-D58-1 [RÉSOLU par D59] : identification physique SU(3)_c — RÉSOLU
+  OP-D58-2 [MEDIUM]  : lien entre les 3 triplets de K₄ : (T1) cycles H₁, (T2) leakage, (T3) orbites
+  OP-D58-3 [RÉSOLU par D59] : représentation fondamentale 3 depuis C1–C4 — RÉSOLUE
+  OP-D59-1 [MEDIUM]  : masse des quarks depuis C1–C4
+  OP-D59-2 [HIGH]    : D_μ = ∂_μ - igA_μ comme théorème de survie C4 (principe darwinien)
   OP-OFN-1 [HIGH]    : lien formel 3 cycles PDL ↔ 3 générations OFN
-                        Résolution partielle : A₄/V₄ ≅ ℤ₃ origine combinatoire commune (D57+D58)
+                        Résolution partielle : A₄/V₄ ≅ ℤ₃ + triplet (T₂) labellise axes de W (D59)
   OP-OFN-2 [MEDIUM]  : objet commun X dont K₄ et Ω₂₁ sont deux projections
-  OP-OFN-3 [RESOLVED par D58] : dérivation de SU(3)×SU(2)×U(1) depuis C1–C4 — RÉSOLU (algébrique)
+  OP-OFN-3 [RÉSOLU par D58] : dérivation de SU(3)×SU(2)×U(1) depuis C1–C4
   OP10-c [HIGH]      : rapport W/Z = cos(19π/119) — D-electroweak-WZ
   OP-E2-PDL [HIGH]   : opérateur E2 dans le formalisme PDL (Lacunes G1, G2 ouvertes)
   OP9 [HIGH]         : masses muon/tau (générations 2 et 3)
@@ -296,34 +340,40 @@ OPEN PROBLEMS (mis à jour Session 51) :
 
 ---
 
-## Open Problems (updated Session 51)
+## Open Problems (updated Session 53)
 
 **Résolu (Session 46) :**
 - **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
 
 **Résolu (Session 51) :**
-- **[RESOLVED — algébrique]** OP-OFN-3 / OP-SU3 : SU(3)×SU(2)×U(1) comme théorème algébrique de C1–C4 (D46+D57+D58). La partie physique (représentations fermioniques) reste ouverte.
+- **[RESOLVED — algébrique]** OP-OFN-3 / OP-SU3 : SU(3)×SU(2)×U(1) comme théorème algébrique de C1–C4 (D46+D57+D58).
+
+**Résolu (Session 53) :**
+- **[RESOLVED]** OP-D58-1 : identification physique SU(3)_c — espace porteur W = {a+b+c=0} labellé par V₄\{e}, orientation 3 forcée par Δn = 4 > 0 (D59).
+- **[RESOLVED]** OP-D58-3 : représentation fondamentale 3 de SU(3) depuis C1–C4 (D59, théorème principal).
 
 **Résolu partiellement (Sessions 50–51) :**
-- **[PARTIAL]** OP-OFN-1 : A₄/V₄ ≅ ℤ₃ identifié comme centre de SU(3) et origine combinatoire de β₁=3 (D57+D58). Lien formel 3 cycles PDL ↔ 3 générations OFN reste ouvert.
+- **[PARTIAL]** OP-OFN-1 : A₄/V₄ ≅ ℤ₃ comme origine combinatoire (D57+D58) + triplet (T₂) labellise les axes de W (D59). Lien formel 3 cycles PDL ↔ 3 générations OFN reste ouvert.
 - **[PARTIAL]** OP-SU2 : sin²θ_W(tree) = 1/4 théorème (D57). H_SU2 reste conjecture (OP-D57-1 ouvert).
 
-**Nouveaux (Session 51) :**
-- **[HIGH]** OP-D58-1 : identification physique SU(3)_c — carte explicite entre SU(3) algébrique (D58) et SU(3)_c agissant sur le triplet (u,u,d) dans la représentation fondamentale 3.
-- **[MEDIUM]** OP-D58-2 : relation entre les 3 triplets de K₄ — (T1) cycles dans H₁(K₄;ℤ), (T2) cycles de leakage (23, 67, 997), (T3) orbites V₄-arêtes.
-- **[MEDIUM]** OP-D58-3 : dérivation de la représentation fondamentale 3 de SU(3) depuis C1–C4.
+**Nouveaux (Session 53) :**
+- **[MEDIUM]** OP-D59-1 : masse des quarks depuis C1–C4 — le paramètre irréductible Δm_iso = m_d - m_u est forcé (D31) ; les masses individuelles restent ouvertes.
+- **[HIGH]** OP-D59-2 : D_μ = ∂_μ - igA_μ comme théorème de survie de C4 — tout transport non équivariant introduit un coût structurel éliminé par C4 (principe darwinien appliqué aux structures dynamiques).
+
+**Maintenu ouvert :**
+- **[MEDIUM]** OP-D58-2 : lien formel entre (T1), (T2), (T3) — résultat négatif D59 documenté.
 
 **Priorité haute :**
-1. **[HIGH]** OP-D58-1 : identification physique SU(3)_c → D59.
+1. **[HIGH]** OP-D59-2 : D_μ depuis C4 → formalisation de la dynamique de jauge comme survie.
 2. **[HIGH]** OP-D57-1 : Lemme C1-V₄ formel → promouvrait H_SU2 en théorème.
-3. **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL.
-4. **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
-5. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) → D-electroweak-WZ.
+3. **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
+4. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) → D-electroweak-WZ.
+5. **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL.
 6. **[HIGH]** OP9 : masses muon/tau.
 
 **Priorité moyenne :**
-7. [MEDIUM] OP-D58-2 : lien entre les 3 triplets de K₄.
-8. [MEDIUM] OP-D58-3 : représentation fondamentale 3.
+7. [MEDIUM] OP-D59-1 : masse des quarks.
+8. [MEDIUM] OP-D58-2 : lien entre les 3 triplets de K₄.
 9. [MEDIUM] OP-D57-2 : Dic₃ comme groupe de jauge faible.
 10. [MEDIUM] OP-OFN-2 : objet X commun K₄/Ω₂₁.
 11. [MEDIUM] OP15 : noyaux Z > 82.
@@ -339,7 +389,7 @@ OPEN PROBLEMS (mis à jour Session 51) :
 
 ---
 
-## Dependency Map — Critical Path (updated Session 51)
+## Dependency Map — Critical Path (updated Session 53)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -364,7 +414,7 @@ LAYER 14  Électrofaible
            OP-D57-1 : Lemme C1-V₄ formel             [OUVERT — HIGH]
            OP-D57-2 : Dic₃ comme groupe de jauge     [OUVERT — MEDIUM]
            W/Z mass ratio (OP10-c)                    [OUVERT — HIGH]
-LAYER 14b Groupe de jauge — COMPLET (algébrique)
+LAYER 14b Groupe de jauge — COMPLET (algébrique + représentation)
            S₄/V₄ ≅ S₃ = Weyl(A₂)                   [✓ THÉORÈME — D57+D58, L1]
            V₄\{e} ↔ orbites V₄-arêtes (bij. S₄-éq.) [✓ THÉORÈME — D58, L2]
            A₄/V₄ ≅ ℤ₃ = centre SU(3)               [✓ THÉORÈME — D58, L3]
@@ -373,9 +423,17 @@ LAYER 14b Groupe de jauge — COMPLET (algébrique)
            SU(3) depuis C1–C4 + Cartan–Killing       [✓ THÉORÈME — D58]
            SU(3)×SU(2)×U(1) algébrique              [✓ COROLLAIRE — D46+D57+D58]
            V₄ fidèle sur H₁(K₄;ℝ) [résultat négatif] [✓ VÉRIFIÉ — D58]
-           OP-D58-1 : identification physique SU(3)_c [OUVERT — HIGH → D59]
-           OP-D58-2 : lien 3 triplets K₄             [OUVERT — MEDIUM]
-           OP-D58-3 : représentation fondamentale 3  [OUVERT — MEDIUM]
+           χ_π = χ_trivial + χ_standard              [✓ THÉORÈME — D59, L2]
+           W = {a+b+c=0} porteur canonique           [✓ THÉORÈME — D59, L3]
+           A₂ dans W, Cartan [[2,-1],[-1,2]]         [✓ THÉORÈME — D59, L4]
+           Δn=4>0 → orientation 3 vs 3̄              [✓ THÉORÈME — D59, L5 depuis D47]
+           k₃/(k₁+k₂) = R_e = 6 exact              [✓ THÉORÈME — D59, L5]
+           SU(3)_c dans 3 sur W                      [✓ THÉORÈME — D59]
+           (T₂)↔(T₃) non S₄-équivariante [négatif]  [✓ VÉRIFIÉ — D59]
+           OP-D58-1 → RÉSOLU (D59)                   [✓ Session 53]
+           OP-D58-3 → RÉSOLUE (D59)                  [✓ Session 53]
+           OP-D59-1 : masse des quarks               [OUVERT — MEDIUM]
+           OP-D59-2 : D_μ depuis C4 (survie)         [OUVERT — HIGH]
 LAYER 15  Spectroscopie nucléaire
            N_comp(k) = k                             [✓ THÉORÈME — D56]
            B(E2) ∝ k  (H_B)                          [conjecture — D41]
@@ -387,6 +445,7 @@ LAYER 17  PDL–OFN Bridge
            n=6 dimension minimale pour β₁=3          [✓ THÉORÈME — N01]
            b₁(Ω₂₁)=3 vérifié indépendamment         [✓ RÉSULTAT — N01]
            A₄/V₄ ≅ ℤ₃ ↔ β₁=3 ↔ centre SU(3)       [✓ THÉORÈME — D57+D58]
+           (T₂) labellise axes de W (D59)            [✓ THÉORÈME — D59]
            OP-OFN-1 : 3 cycles PDL ↔ 3 générations  [OUVERT — HIGH]
            OP-OFN-2 : objet X commun K₄/Ω₂₁         [OUVERT — MEDIUM]
            OP-OFN-3 : SU(3)×SU(2)×U(1) depuis C1–C4 [RÉSOLU — D46+D57+D58]
@@ -396,6 +455,9 @@ LAYER 18  Dissémination
            D58 déposé Zenodo                         [✓ Session 51 — 10.5281/zenodo.20622987]
            DM v25 déposé Zenodo                      [✓ Session 51 — 10.5281/zenodo.20605620]
            DM v26 déposé Zenodo                      [✓ Session 52 — 10.5281/zenodo.20625504]
+           PDL_D59_script1.py déposé Zenodo          [✓ Session 53 — 10.5281/zenodo.20628926]
+           D59 déposé Zenodo                         [✓ Session 53 — 10.5281/zenodo.20629282]
+           DM v27 déposé Zenodo                      [✓ Session 53 — DOI à compléter]
            N01 à uploader ResearchGate               [en attente]
            Three Roads — draft révisé Oleg en attente [en attente]
 ```
@@ -426,6 +488,15 @@ OP-OFN-3 → RÉSOLU (algébrique)  [✓ D58, Session 51]
 PDL_SU3_script1.py déposé Zenodo  [✓ Session 51 — 10.5281/zenodo.20623231]
 D58 déposé Zenodo  [✓ Session 51 — 10.5281/zenodo.20622987]
 DM v26 déposé Zenodo  [✓ Session 52 — 10.5281/zenodo.20625504]
+SU(3)_c dans 3 — représentation fondamentale  [✓ D59, Session 53]
+W = {a+b+c=0} porteur canonique  [✓ D59, Session 53]
+Δn=4>0 → orientation matière/antimatière  [✓ D59, Session 53]
+k₃/(k₁+k₂) = R_e = 6 exact  [✓ D59, Session 53]
+OP-D58-1 → RÉSOLU (représentation physique SU(3)_c)  [✓ D59, Session 53]
+OP-D58-3 → RÉSOLUE (représentation fondamentale 3)  [✓ D59, Session 53]
+PDL_D59_script1.py déposé Zenodo  [✓ Session 53 — 10.5281/zenodo.20628926]
+D59 déposé Zenodo  [✓ Session 53 — 10.5281/zenodo.20629282]
+DM v27 déposé Zenodo  [✓ Session 53 — DOI à compléter]
 ```
 
 ---
@@ -434,14 +505,14 @@ DM v26 déposé Zenodo  [✓ Session 52 — 10.5281/zenodo.20625504]
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 53 :**
+**Priorité immédiate Session 54 :**
 
-1. **[URGENT]** Pousser PDL_context.md Session 52 + DM_v26 sur GitHub.
-2. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg du DOI de D58.
-3. **[HIGH]** Envoyer DOI D58 à Oleg Evdokimov pour intégration dans Three Roads (révision Sections 3–4).
-4. **[HIGH]** D59 : identification physique SU(3)_c — construction de la représentation fondamentale 3 sur les 3 orbites V₄-arêtes ou les 3 cycles de leakage. Nécessite script Colab de verrouillage avant rédaction.
+1. **[URGENT]** Compléter le DOI de DM v27 dans PDL_context.md puis pousser sur GitHub.
+2. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58 et D59.
+3. **[HIGH]** Envoyer DOIs D58 + D59 à Oleg Evdokimov pour intégration dans Three Roads.
+4. **[HIGH]** OP-D59-2 : formaliser le théorème que D_μ = ∂_μ - igA_μ est l'unique transport C4-compatible sur K₄. Document de type structurel, clairement stratifié conjecture → théorème.
 5. **[HIGH]** OP-D57-1 : preuve formelle du Lemme C1-V₄ depuis C1 seul — promouvrait H_SU2 en théorème inconditionnel.
-6. **[MEDIUM]** OP-E2-PDL : résoudre les lacunes G1 et G2 (dérivation seuil Ω/2 depuis C3/C4 ; dérivation φ^(k-Ω/2) depuis pulsation K₄).
+6. **[HIGH]** D-electroweak-WZ : rapport W/Z = cos(19π/119) depuis C1–C4 (OP10-c).
 
 **LaTeX conventions (consolidées Session 51) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -456,13 +527,14 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - N-series : notes conjointes avec collaborateurs externes. N01 = PDL–OFN (β₁=3).
 - D-series : documents solo PDL.
 - D-exp-series : documents exploratoires applications.
-- DM : Global Mapping (version courante : v26, DOI : 10.5281/zenodo.20625504).
+- DM : Global Mapping (version courante : v27, DOI à compléter).
 
 **PDL–OFN Bridge discipline :**
 - β₁=3 : THÉORÈME pour K₄, RÉSULTAT VÉRIFIÉ pour Ω₂₁
 - A₄/V₄ ≅ ℤ₃ : THÉORÈME (D57+D58) — origine combinatoire commune de β₁=3 et centre de SU(3)
+- Triplet (T₂) labellise les axes de W (D59) : THÉORÈME
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
 - Analogies Three Roads : PAS des identités prouvées, uniquement analogies structurelles candidates
 
-*Références canoniques : D01–D58 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v26.*
-*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | DM v26 : 10.5281/zenodo.20625504*
+*Références canoniques : D01–D59 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v27.*
+*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : DOI à compléter*
