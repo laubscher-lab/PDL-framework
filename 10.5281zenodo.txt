@@ -374,3 +374,9 @@ D58
 https://doi.org/10.5281/zenodo.20622987 
 Derivation of the SU(3) Gauge Structure from the PDL Axioms C1–C4: Completion of the Standard Model Gauge Group SU(3) × SU(2) × U(1) (Projective Dynamic Logo Framework — Document D58) 
 D58_gauge_su3.pdf
+
+D59-py 
+https://doi.org/10.5281/zenodo.20628926 
+PDL_D59_script1.py: Verification of the Five Lemmas Establishing the Fundamental Representation 3 of SU(3)_c from the PDL Axioms C1–C4 — Supplementary material to PDL Document D59
+PDL_D59_script1_output.txt 
+
