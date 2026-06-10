@@ -1,0 +1,118 @@
+================================================================================
+PDL_SU3_script1 -- D58 VERROUILLAGE
+================================================================================
+Derivation of the SU(3) Gauge Structure from C1-C4
+Five-Lemma Verification, June 2026
+Author: Cedric Laubscher, Independent Researcher (Switzerland)
+
+Execution environment:
+  Python:      3.12.3
+  numpy:       2.4.4
+  networkx:    3.6.1
+  Platform:    Linux-6.18.5-x86_64-with-glibc2.39
+
+
+--------------------------------------------------------------------------------
+Setup: K_4 and its automorphism group
+--------------------------------------------------------------------------------
+  K_4: 4 vertices, 6 edges
+  beta_1(K_4) = 3                              [D51, theorem]
+  R_e = |E(K_4)| = 6                                [D16a, theorem]
+  |S_4| = 24, |A_4| = 12, |V_4| = 4
+  V_4 = [(0, 1, 2, 3), (1, 0, 3, 2), (2, 3, 0, 1), (3, 2, 1, 0)]
+  V_4 normal in S_4                            [verified exhaustively]
+  V_4 contained in A_4                         [signs all +1]
+
+--------------------------------------------------------------------------------
+Lemma 1: S_4 / V_4 = S_3
+--------------------------------------------------------------------------------
+  Status:   PASSED
+  Evidence: 6 cosets, non-abelian quotient of order 6
+
+--------------------------------------------------------------------------------
+Lemma 2: Aut(V_4) = S_3 acts on V_4 \ {e}
+--------------------------------------------------------------------------------
+  Status:   PASSED
+  Canonical bijection V_4 \ {e} <-> V_4-orbits on edges:
+    Orbit 0:  edges [(0, 1), (2, 3)]  <-->  v = (1, 0, 3, 2)
+    Orbit 1:  edges [(0, 2), (1, 3)]  <-->  v = (2, 3, 0, 1)
+    Orbit 2:  edges [(0, 3), (1, 2)]  <-->  v = (3, 2, 1, 0)
+  S_4-equivariance: verified on all 24 elements of S_4
+
+--------------------------------------------------------------------------------
+Lemma 3: A_4 / V_4 = Z_3 (centre of SU(3))
+--------------------------------------------------------------------------------
+  Status:   PASSED
+  Evidence: A_4 image in S_3 = [(0, 1, 2), (1, 2, 0), (2, 0, 1)] (cyclic order 3)
+
+--------------------------------------------------------------------------------
+Lemma 4: rank-2 Cartan from R_e = 6 invariance (D16a)
+--------------------------------------------------------------------------------
+  Status:   PASSED
+  Evidence: R^3 = V_triv (+) V_std; diagonal invariant; trace-zero plane preserved; dim = 2 = rank(SU(3))
+
+--------------------------------------------------------------------------------
+Lemma 5: A_2 root system in the trace-zero plane
+--------------------------------------------------------------------------------
+  Status:   PASSED
+  Evidence: 6 roots {e_i - e_j} of squared length 2; S_3 preserves the root set and acts transitively
+
+--------------------------------------------------------------------------------
+Negative result: V_4 NOT trivial on H_1(K_4; R)
+--------------------------------------------------------------------------------
+  Status:   VERIFIED NEGATIVE
+  Evidence: All 3 non-identity V_4 elements have non-identity matrices in the cycle basis (H_1 is the faithful standard rep of S_4)
+  Consequence: the natural S_3-set is V_4 \ {e}, NOT H_1(K_4)
+
+================================================================================
+FINAL VERIFICATION TABLE
+================================================================================
+
+  Result                                                       Status              
+  ------------------------------------------------------------ --------------------
+  L1: S_4 / V_4 = S_3                                          PASSED              
+  L2: Aut(V_4) = S_3 acts on V_4 \ {e} <-> V_4-orbits on edges PASSED              
+  L3: A_4 / V_4 = Z_3 (centre of SU(3))                        PASSED              
+  L4: rank-2 Cartan from R_e = 6 invariance (D16a)             PASSED              
+  L5: A_2 root system in the trace-zero plane                  PASSED              
+  Negative result: V_4 acts non-trivially on H_1(K_4; R)       VERIFIED NEGATIVE   
+
+================================================================================
+CONCLUSION
+================================================================================
+
+  All five lemmas (L1-L5) are verified by exhaustive computation:
+
+    L1.  S_4 / V_4 = S_3 (Weyl group of A_2)
+    L2.  Natural S_3-action on V_4 \ {e}, in S_4-equivariant
+         bijection with the V_4-orbits on the 6 edges of K_4
+    L3.  A_4 / V_4 = Z_3 (centre of SU(3), not of PSU(3))
+    L4.  Rank-2 Cartan subalgebra from R_e = 6 invariance (D16a)
+    L5.  A_2 root system in the trace-zero plane
+
+  By the Cartan-Killing-Weyl classification of compact simply connected
+  simple Lie groups (Bourbaki, Groupes et algebres de Lie, ch. VI), the
+  unique such group with:
+
+      - Weyl group S_3,
+      - Centre Z_3,
+      - Rank-2 Cartan with A_2 root system,
+
+  is SU(3).
+
+  Therefore, under axioms C1-C4 of the PDL programme, the gauge group
+  acting on the structure of K_4 via the C1-effective quotient S_4 / V_4
+  is uniquely SU(3) -- an unconditional theorem.
+
+  Combined with D46 (U(1) via Hopf fibration of K_4) and D57 (SU(2) via
+  the chain S_4 -> S_3 -> Dic_3 -> SU(2)), this completes the algebraic
+  derivation of the gauge group SU(3) x SU(2) x U(1) of the Standard
+  Model as an unconditional theorem of C1-C4.
+
+  The physical identification of SU(3) with SU(3)_colour acting on the
+  proton triplet (u, u, d) in the fundamental representation 3 remains
+  as Open Problem OP-D58-1.
+
+================================================================================
+END OF VERIFICATION
+================================================================================
