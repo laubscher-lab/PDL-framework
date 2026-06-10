@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 51 — 10 June 2026 (D58 déposé; PDL_SU3_script1.py déposé; DM v25 déposé)*
+*Last updated: Session 52 — 10 June 2026 (DM v26 déposé)*
 
 ---
 
@@ -114,6 +114,20 @@ Orbite 2 : arêtes {(0,3),(1,2)} <-> v = (3,2,1,0) = (03)(12)
 
 ---
 
+**Session 52 — DM v26 déposé (10 June 2026):**
+
+### Résultats principaux Session 52
+
+**DM v26 déposé sur Zenodo. DOI : 10.5281/zenodo.20625504**
+- Incorpore D58 (SU(3) théorème algébrique, complétion SU(3)×SU(2)×U(1)) et PDL_SU3_script1.py
+- OP-SU3 / OP-D57-3 marqué résolu (algébrique)
+- OP-D58-1, OP-D58-2, OP-D58-3 ajoutés
+- Diagramme TikZ : nœuds D58 et SU(3)×SU(2)×U(1) ajoutés
+- Recommended next documents mis à jour (D59 en priorité haute)
+- Nouveau fichier .bib : DM_v26_references.bib (2 entrées ajoutées : D58, D58-py)
+
+---
+
 ## Corpus Table
 
 | Doc | DOI | Titre abrégé |
@@ -146,7 +160,7 @@ Orbite 2 : arêtes {(0,3),(1,2)} <-> v = (3,2,1,0) = (03)(12)
 | D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
 | DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
 | D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
-| **DM** | **10.5281/zenodo.20605620** | **Global Mapping v25** |
+| **DM** | **10.5281/zenodo.20625504** | **Global Mapping v26** |
 | D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
 | D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
@@ -381,6 +395,7 @@ LAYER 18  Dissémination
            PDL_SU3_script1.py déposé Zenodo          [✓ Session 51 — 10.5281/zenodo.20623231]
            D58 déposé Zenodo                         [✓ Session 51 — 10.5281/zenodo.20622987]
            DM v25 déposé Zenodo                      [✓ Session 51 — 10.5281/zenodo.20605620]
+           DM v26 déposé Zenodo                      [✓ Session 52 — 10.5281/zenodo.20625504]
            N01 à uploader ResearchGate               [en attente]
            Three Roads — draft révisé Oleg en attente [en attente]
 ```
@@ -410,6 +425,7 @@ V₄ fidèle sur H₁(K₄;ℝ) [résultat négatif documenté]  [✓ D58, Sessi
 OP-OFN-3 → RÉSOLU (algébrique)  [✓ D58, Session 51]
 PDL_SU3_script1.py déposé Zenodo  [✓ Session 51 — 10.5281/zenodo.20623231]
 D58 déposé Zenodo  [✓ Session 51 — 10.5281/zenodo.20622987]
+DM v26 déposé Zenodo  [✓ Session 52 — 10.5281/zenodo.20625504]
 ```
 
 ---
@@ -418,13 +434,13 @@ D58 déposé Zenodo  [✓ Session 51 — 10.5281/zenodo.20622987]
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 52 :**
+**Priorité immédiate Session 53 :**
 
-1. **[URGENT]** Pousser PDL_context.md Session 51 + D58_gauge_SU3_v2.tex + D58_references.bib + PDL_SU3_script1.py + PDL_SU3_script1_output.txt sur GitHub.
+1. **[URGENT]** Pousser PDL_context.md Session 52 + DM_v26 sur GitHub.
 2. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg du DOI de D58.
-3. **[HIGH]** D59 : identification physique SU(3)_c — construction de la représentation fondamentale 3 sur les 3 orbites V₄-arêtes ou les 3 cycles de leakage. Nécessite script Colab de verrouillage avant rédaction.
-4. **[HIGH]** OP-D57-1 : preuve formelle du Lemme C1-V₄ depuis C1 seul — promouvrait H_SU2 en théorème inconditionnel.
-5. **[HIGH]** Envoyer DOI D58 à Oleg Evdokimov pour intégration dans Three Roads (révision Sections 3–4).
+3. **[HIGH]** Envoyer DOI D58 à Oleg Evdokimov pour intégration dans Three Roads (révision Sections 3–4).
+4. **[HIGH]** D59 : identification physique SU(3)_c — construction de la représentation fondamentale 3 sur les 3 orbites V₄-arêtes ou les 3 cycles de leakage. Nécessite script Colab de verrouillage avant rédaction.
+5. **[HIGH]** OP-D57-1 : preuve formelle du Lemme C1-V₄ depuis C1 seul — promouvrait H_SU2 en théorème inconditionnel.
 6. **[MEDIUM]** OP-E2-PDL : résoudre les lacunes G1 et G2 (dérivation seuil Ω/2 depuis C3/C4 ; dérivation φ^(k-Ω/2) depuis pulsation K₄).
 
 **LaTeX conventions (consolidées Session 51) :**
@@ -440,7 +456,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - N-series : notes conjointes avec collaborateurs externes. N01 = PDL–OFN (β₁=3).
 - D-series : documents solo PDL.
 - D-exp-series : documents exploratoires applications.
-- DM : Global Mapping (version courante : v25, DOI : 10.5281/zenodo.20605620).
+- DM : Global Mapping (version courante : v26, DOI : 10.5281/zenodo.20625504).
 
 **PDL–OFN Bridge discipline :**
 - β₁=3 : THÉORÈME pour K₄, RÉSULTAT VÉRIFIÉ pour Ω₂₁
@@ -448,5 +464,5 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
 - Analogies Three Roads : PAS des identités prouvées, uniquement analogies structurelles candidates
 
-*Références canoniques : D01–D58 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v25.*
-*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | DM v25 : 10.5281/zenodo.20605620*
+*Références canoniques : D01–D58 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v26.*
+*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | DM v26 : 10.5281/zenodo.20625504*
