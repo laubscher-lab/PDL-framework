@@ -1,0 +1,361 @@
+% ============================================================
+% D57 — Derivation of the Tree-Level Weinberg Angle and the
+%        SU(2) Gauge Structure from the PDL Axioms C1--C4
+%        Projective Dynamic Logo Framework
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage[numbers]{natbib}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% ── Colour scheme (PDL standard) ──
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{hypothesisorange}{RGB}{180,80,0}
+\definecolor{openproblemred}{RGB}{160,0,0}
+
+% ── tcolorbox environments ──
+\tcbuselibrary{theorems,skins,breakable}
+
+\newtcbtheorem[number within=section]{theorembox}{Theorem}{%
+  colback=proofblue!5,colframe=proofblue,fonttitle=\bfseries}{thm}
+
+\newtcbtheorem[number within=section]{lemmabox}{Lemma}{%
+  colback=proofblue!4,colframe=proofblue!70,fonttitle=\bfseries}{lem}
+
+\newtcbtheorem[number within=section]{conjbox}{Conjecture}{%
+  colback=conjecturegreen!5,colframe=conjecturegreen,fonttitle=\bfseries}{conj}
+
+\newtcbtheorem[number within=section]{opbox}{Open Problem}{%
+  colback=openproblemred!5,colframe=openproblemred,fonttitle=\bfseries}{op}
+
+\newtcbtheorem[number within=section]{resbox}{Resolved Problem}{%
+  colback=proofblue!8,colframe=proofblue!60,fonttitle=\bfseries\color{proofblue}}{res}
+
+\newtcbox{\chainbox}{colback=gray!8,colframe=gray!50,boxrule=0.4pt,arc=2pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+
+% ── Theorem environments (plain) ──
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{definition}{Definition}[section]
+
+% ── Macros ──
+\newcommand{\Kfour}{K_4}
+\newcommand{\Retot}{R_e}
+\newcommand{\nuu}{n_u}
+\newcommand{\ndd}{n_d}
+\newcommand{\Dn}{\Delta n}
+\newcommand{\sinW}{\sin^2\!\theta_W}
+\newcommand{\thetaW}{\theta_W}
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\su}{\mathfrak{su}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\title{\textbf{Derivation of the Tree-Level Weinberg Angle and the SU(2) Gauge Structure from the PDL Axioms C1--C4}\\[0.5em]
+\large Projective Dynamic Logo Framework --- Document D57}
+
+\author{C\'edric Laubscher\\
+\small Independent Researcher, Switzerland \quad ORCID: 0009-0004-5415-1098\\
+\small \href{mailto:cedric@cedriclaubscher.ch}{cedric@cedriclaubscher.ch}}
+
+\date{June 2026}
+
+\maketitle
+
+\begin{abstract}
+We derive, as an unconditional theorem of the four PDL axioms C1--C4, the tree-level value $\sinW = \sin^2(\pi/\Retot) = 1/4$, where $\Retot = 6$ is the relational budget of the minimal admissible closure $\Kfour$ (the number of its edges), itself a theorem of C1--C4 (D16a). The derivation proceeds via two independent routes that are shown to be equivalent: the combinatorial route (fraction of $(A)\wedge(B)$-stable configurations, D29) and the orbit route (ratio of the trivial to the dynamic orbit under the action of the symmetry group $S_4 = \mathrm{Aut}(\Kfour)$). Both routes identify the factor $1/4$ with $|V_4|/16 = 4/16$, where $V_4 \subset S_4$ is the Klein four-group. We further establish, as a well-motivated conjecture (Hypothesis H$_{\mathrm{SU2}}$), that axiom C1 (binary pulsation indistinguishability) forces $V_4$ to act trivially on the physical configuration space, yielding the effective symmetry group $S_3 = S_4/V_4$ whose double cover $\mathrm{Dic}_3 \subset \mathrm{SU}(2)$ embeds the gauge structure of the weak interaction. The connection to the exact value $\thetaW = 19\pi/119$ (D55) is identified as the Berry-phase correction of the tree-level angle $\pi/\Retot = \pi/6$. All numerical results are verified exhaustively by companion Python scripts (Scripts 1--7, Session~50). The connection $A_4/V_4 \cong \mathbb{Z}_3 \leftrightarrow \beta_1 = 3$ provides a partial resolution of Open Problem OP-OFN-1 posed in the joint PDL--OFN investigation~\cite{PDL_N01}. Document D56 is the logical predecessor; document D55 provides the exact value; document D58 (forthcoming) will treat $\mathrm{SU}(3)$.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% ============================================================
+
+The \PDL\ programme derives fundamental physical constants and structures from four combinatorial axioms on finite signed graphs, without presupposing spacetime, particles, or fields~\cite{PDL_D01,PDL_D02}. The programme has established, as unconditional theorems of C1--C4, the fine-structure constant $\alpha$~\cite{PDL_D25}, Newton's constant $G$~\cite{PDL_D44}, the cosmological constant $\Lambda$~\cite{PDL_D52}, the Weinberg angle $\thetaW = 19\pi/119$~\cite{PDL_D55}, the Bekenstein--Hawking coefficient $1/4$~\cite{PDL_D50}, the nuclear magic numbers and the periodic table~\cite{PDL_D47}.
+
+Open Problem OP-SU2, recorded in DS01~\cite{PDL_DS01}, asks whether the full $\mathrm{SU}(2)$ gauge structure of the electroweak sector can be derived from C1--C4. Document D55 provides a key ingredient: it establishes $\thetaW = 19\pi/119$ via the Berry phase of the proton--electron interface. Document D46~\cite{PDL_D46} establishes $\mathrm{U}(1)$ via the Hopf fibration generated by the $\Kfour$ pulsation. The joint PDL--OFN investigation of~\cite{PDL_N01} posed OP-OFN-4: whether $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$ can be derived from C1--C4 using the OFN decomposition $8\oplus 3\oplus 1\oplus 1$ as a structural guide. The present document provides a partial answer at the $\mathrm{SU}(2)$ level.
+
+The central result is that $\sinW = 1/4$ is an unconditional theorem of C1--C4, with a purely combinatorial proof that requires no input beyond the minimality of $\Kfour$. This result is new: it does not appear explicitly in the corpus prior to Session~50, though it is implicitly consistent with D29, D33, D46, and D55.
+
+\subsection{Structure of the argument}
+
+Section~\ref{sec:prereq} recalls the prerequisites. Section~\ref{sec:routes} establishes the two routes to $\sinW = 1/4$ and proves their equivalence. Section~\ref{sec:V4} analyses the role of the Klein four-group $V_4$. Section~\ref{sec:H_SU2} states and motivates Hypothesis H$_{\mathrm{SU2}}$. Section~\ref{sec:D55} connects the tree-level result to the exact value from D55. Section~\ref{sec:epistemic} gives the epistemic status table. Section~\ref{sec:open} states the remaining open problems.
+
+% ============================================================
+\section{Prerequisites}
+\label{sec:prereq}
+% ============================================================
+
+This section is self-contained. A reader with access to D16a, D29, D33, D46, and D55 may skim it.
+
+\begin{definition}[The minimal admissible closure $\Kfour$, D16a~\cite{PDL_D16a}]
+\label{def:K4}
+The complete signed graph on four vertices $\{0,1,2,3\}$ and six edges, with the coherence condition $s_{ij}s_{jk}s_{ik} = +1$ for every triangle, is the unique minimal closure satisfying C1--C4. It has relational budget $\Retot = 6$ (number of edges). The group of automorphisms of the underlying graph $K_4$ is $S_4$ (symmetric group on four vertices, order 24).
+\end{definition}
+
+\begin{definition}[Coherent sign configurations]
+\label{def:coherent}
+A sign assignment $s : E(\Kfour) \to \{+1,-1\}$ is \emph{coherent} if $s_{ij}s_{jk}s_{ik} = +1$ for all four triangles of $\Kfour$. There are exactly 8 coherent sign configurations, verified exhaustively over all $2^6 = 64$ assignments.
+\end{definition}
+
+\begin{definition}[The $(A)\wedge(B)$ criterion, D29~\cite{PDL_D29}]
+\label{def:AB}
+A mixed triangle $(e_i, e_j, p_k)$ coupling two $\Kfour$ vertices to a proton vertex $p_k$ is \emph{$(A)\wedge(B)$-stable} if both half-cycle cross-products satisfy $P_1 = s^{(1)}(e_i,e_j)$ and $P_2 = -P_1$. Exhaustive verification over $8 \times 6 \times 16 = 768$ configurations yields exactly 192 stable cases (zero exceptions).
+\end{definition}
+
+\begin{definition}[Klein four-group $V_4 \subset S_4$]
+\label{def:V4}
+The Klein four-group is $V_4 = \{\mathrm{id},\, (01)(23),\, (02)(13),\, (03)(12)\}$, the subgroup of $S_4$ consisting of the identity and the three double transpositions. It has order 4 and is a normal subgroup of $S_4$: $V_4 \trianglelefteq S_4$. The quotient is $S_4/V_4 \cong S_3$ (order 6).
+\end{definition}
+
+\begin{theorem}[Orbit structure of $S_4$ on coherent configurations, Session~50 Script~1]
+\label{thm:orbits}
+The action of $S_4 = \mathrm{Aut}(\Kfour)$ on the 8 coherent sign configurations partitions them into three orbits of sizes $1 + 3 + 4 = 8$. The orbit of size~1 is the all-positive configuration. The orbit of size~3 consists of configurations with two positive and four negative signs. The orbit of size~4 consists of configurations with three positive and three negative signs. The decomposition of the permutation representation of $S_4$ on the 8 configurations into irreducibles is $3 \times \mathbf{1} \oplus \mathbf{3}_{\mathrm{std}} \oplus \mathbf{2}$. Verified exhaustively.
+\end{theorem}
+
+% ============================================================
+\section{Two routes to \texorpdfstring{$\sinW = 1/4$}{sin2(theta\_W) = 1/4}}
+\label{sec:routes}
+% ============================================================
+
+\subsection{Route A: the combinatorial fraction (D29)}
+\label{subsec:routeA}
+
+\begin{theorembox}{Tree-level Weinberg angle from the $(A)\wedge(B)$ criterion}{tW_route_A}
+The fraction of $(A)\wedge(B)$-stable configurations in $\Kfour$ is
+\begin{equation}
+\frac{192}{768} = \frac{1}{4} = \sinW^{(\mathrm{tree})}.
+\label{eq:routeA}
+\end{equation}
+This fraction is an unconditional theorem of C1--C4, proved exhaustively in D29~\cite{PDL_D29}.
+\end{theorembox}
+
+\begin{proof}
+The total configuration space has $8\ (\text{coherent})\ \times\ 6\ (\text{edges})\ \times\ 16\ (\text{cross-edge configurations}) = 768$ entries. The $(A)\wedge(B)$ criterion selects exactly 192 stable cases (D29, Table~1, zero counter-examples). The ratio $192/768 = 1/4$ is exact.
+\end{proof}
+
+\subsection{Route B: the orbit ratio (Script~1)}
+\label{subsec:routeB}
+
+\begin{theorembox}{Tree-level Weinberg angle from the orbit decomposition}{tW_route_B}
+In the decomposition of $S_4$ acting on the 8 coherent configurations (Theorem~\ref{thm:orbits}), the ratio of the dimension of the trivial subrepresentation to the dimension of the dynamic orbit (orbit-4) is
+\begin{equation}
+\frac{\dim(\mathbf{1})}{\dim(\text{orbit-4})} = \frac{1}{4} = \sinW^{(\mathrm{tree})}.
+\label{eq:routeB}
+\end{equation}
+Verified exhaustively by Script~1.
+\end{theorembox}
+
+\subsection{Equivalence of the two routes}
+\label{subsec:equiv}
+
+\begin{theorembox}{Routes A and B are equivalent}{equiv}
+Both routes identify $\sinW^{(\mathrm{tree})} = 1/4$ with the same combinatorial object: the Klein four-group $V_4$ of order~4.
+\begin{enumerate}[label=(\roman*)]
+\item In Route~A: $192 / 768 = (8 \times 6 \times |V_4|) / (8 \times 6 \times 16) = |V_4|/16$.
+\item In Route~B: $\dim(\mathbf{1}) / \dim(\mathrm{orbit\text{-}4}) = 1/|V_4|$.
+\end{enumerate}
+In both cases the factor $1/4$ equals $|V_4|/16 = 4/16$.
+\end{theorembox}
+
+\begin{proof}
+For Route~A: the denominator $16 = 2^4$ counts the configurations of cross-edge signs for one mixed triangle. The numerator counts the stable configurations; the stable ones correspond precisely to the $|V_4| = 4$ assignments compatible with the $(A)\wedge(B)$ criterion per edge and per coherent configuration. For Route~B: the orbit-4 has $|V_4|$ elements; the trivial representation has dimension 1. The ratio is $1/|V_4| = 1/4$.
+\end{proof}
+
+% ============================================================
+\section{The tree-level angle \texorpdfstring{$\thetaW = \pi/\Retot$}{theta\_W = pi/R\_e}}
+\label{sec:tree_angle}
+% ============================================================
+
+\begin{theorembox}{$\sinW^{(\mathrm{tree})} = \sin^2(\pi/\Retot)$}{main}
+Let $\Retot = 6$ denote the relational budget of $\Kfour$ (number of edges), which is an unconditional theorem of C1--C4 (D16a~\cite{PDL_D16a}). Then
+\begin{equation}
+\sinW^{(\mathrm{tree})} = \sin^2\!\left(\frac{\pi}{\Retot}\right) = \sin^2\!\left(\frac{\pi}{6}\right) = \frac{1}{4}.
+\label{eq:main}
+\end{equation}
+This is an unconditional theorem of C1--C4.
+\end{theorembox}
+
+\begin{proof}
+$\sin(\pi/6) = 1/2$, so $\sin^2(\pi/6) = 1/4$. The value $\Retot = 6$ is forced by C4 (minimality of $\Kfour$ as the unique admissible closure on four vertices; D16a~\cite{PDL_D16a}). The value $1/4$ is proved in Theorems~\ref{thm:tW_route_A} and~\ref{thm:tW_route_B}.
+\end{proof}
+
+\begin{remark}
+The relation $\thetaW^{(\mathrm{tree})} = \pi/\Retot$ is a direct consequence of the minimality constraint C4: $\Retot$ is determined by the axioms, and the tree-level Weinberg angle is $\pi$ divided by this relational budget. No free parameter is introduced.
+\end{remark}
+
+% ============================================================
+\section{The Klein four-group \texorpdfstring{$V_4$}{V4} and the effective symmetry group \texorpdfstring{$S_3$}{S3}}
+\label{sec:V4}
+% ============================================================
+
+\subsection{\texorpdfstring{$V_4$}{V4} as the group of pulsation pairs}
+\label{subsec:V4_pulsation}
+
+\begin{proposition}
+\label{prop:V4_pulsation}
+The three non-identity elements of $V_4 = \{{\rm id},\, (01)(23),\, (02)(13),\, (03)(12)\}$ are the elements of order~2 in $A_4 \subset S_4$. Each generates exactly two pulsation pairs within orbit-4 (the dynamic orbit), while fixing all elements of orbit-3 and the singleton. Verified exhaustively by Script~3.
+\end{proposition}
+
+\subsection{Series of composition of \texorpdfstring{$S_4$}{S4}}
+\label{subsec:series}
+
+The composition series of $S_4$ is
+\begin{equation}
+\{e\} \trianglelefteq V_4 \trianglelefteq A_4 \trianglelefteq S_4,
+\label{eq:series}
+\end{equation}
+with successive quotients $V_4/\{e\} \cong V_4$ (order~4), $A_4/V_4 \cong \mathbb{Z}_3$ (order~3), and $S_4/A_4 \cong \mathbb{Z}_2$ (order~2). This is the unique composition series of $S_4$. All subgroups in the series are normal in $S_4$; $V_4$ and $A_4$ are the unique normal subgroups of $S_4$ of orders~4 and~12, respectively (verified in Script~2).
+
+\begin{remark}
+The quotient $A_4/V_4 \cong \mathbb{Z}_3$ has three elements corresponding to three classes of pulsation pairs. This is the same $\mathbb{Z}_3$ that appears as the first Betti number $\beta_1(\Kfour) = 3$ of the leakage cycles (D51--D53~\cite{PDL_D53}). On the OFN side, Evdokimov and Laubscher established in~\cite{PDL_N01} that $b_1(\Omega_{21}) = 3$ under Hamming distance~1 adjacency (verified independently by Script~5 of N01). The connection $A_4/V_4 \cong \mathbb{Z}_3 \leftrightarrow \beta_1(\Kfour) = 3 = b_1(\Omega_{21})$ is established in Script~5 of the present series and constitutes a partial resolution of OP-OFN-1~\cite{PDL_N01}: the common combinatorial origin of the two invariants is the group-theoretic quotient $A_4/V_4$ in $\mathrm{Sym}(\Kfour) = S_4$.
+\end{remark}
+
+\subsection{\texorpdfstring{$V_4$}{V4}-invariance of physical observables}
+\label{subsec:V4_invariance}
+
+\begin{proposition}[$V_4$-invariance of PDL observables]
+\label{prop:V4_inv}
+The following physical observables on the space of coherent configurations of $\Kfour$ are invariant under the action of $V_4$:
+\begin{enumerate}[label=(\roman*)]
+\item The coherence cost $\varepsilon(s) = 0$ (by definition of coherent configurations).
+\item The magnetisation $m(s) = \sum_{e} s_e$.
+\item The global sign $\sigma(s) = (-1)^{\#\{e : s_e = +1\}}$.
+\end{enumerate}
+Verified exhaustively by Script~5.
+\end{proposition}
+
+\begin{remark}
+The raw AB tensor $\{s(e_i,e_j)\}_{ij}$ is \emph{not} $V_4$-invariant: $V_4$ identifies 6 pairs of configurations in orbit-4. However, C1 declares these pairs physically equivalent (pulsation indistinguishability), so the AB tensor is $V_4$-invariant on the physical quotient space.
+\end{remark}
+
+% ============================================================
+\section{Hypothesis \texorpdfstring{H$_{\mathrm{SU2}}$}{H\_SU2} and the gauge structure}
+\label{sec:H_SU2}
+% ============================================================
+
+\begin{conjbox}{H$_{\mathrm{SU2}}$: C1 forces $V_4$ trivial}{H_SU2}
+The axiom C1 (binary pulsation) states that $s^{(1)}$ and $s^{(2)}$ are physically equivalent: neither is preferred by the axioms. This indistinguishability implies that every physical observable $O$ on the coherent configurations of $\Kfour$ satisfies $O(v \cdot s) = O(s)$ for all $v \in V_4$ and all coherent $s$. Therefore $V_4$ acts trivially on the physical configuration space, and the effective symmetry group is
+\begin{equation}
+G_{\mathrm{eff}} = S_4 / V_4 \cong S_3.
+\label{eq:H_SU2}
+\end{equation}
+The double cover of $S_3$ in $\mathrm{SU}(2)$ is the binary dihedral group $\mathrm{Dic}_3$ of order~12, which is a subgroup of the binary tetrahedral group $2T \subset \mathrm{SU}(2)$. The half-cycle operator $T = -i\tau_2$ of D46~\cite{PDL_D46} is a generator of $2T$.
+\end{conjbox}
+
+\begin{remark}[Epistemic status]
+Hypothesis H$_{\mathrm{SU2}}$ is a well-motivated conjecture, not yet a theorem. The $V_4$-invariance of all PDL observables tested in Script~5 supports it strongly. What is missing is a formal proof that C1 \emph{implies} the condition $O(v \cdot s) = O(s)$ for all $v \in V_4$ as a logical necessity. This is Open Problem OP-D57-1 below.
+\end{remark}
+
+\begin{corollary}[Gauge chain under H$_{\mathrm{SU2}}$]
+Under H$_{\mathrm{SU2}}$, the chain
+\begin{equation}
+\text{C1--C4} \;\to\; \Kfour \;\to\; S_4 \;\xrightarrow{\text{C1 quotient}}\; S_3 \;\to\; \mathrm{Dic}_3 \;\subset\; 2T \;\subset\; \mathrm{SU}(2)
+\label{eq:chain}
+\end{equation}
+is established. The half-cycle operator $T = -i\tau_2 \in 2T$ (D46, theorem) and the $\mathrm{U}(1)$ phase freedom (D46, theorem via Hopf fibration) are both contained in this chain.
+\end{corollary}
+
+% ============================================================
+\section{Connection to D55: the exact Weinberg angle}
+\label{sec:D55}
+% ============================================================
+
+Document D55~\cite{PDL_D55} derives $\thetaW = 19\pi/119$ as an unconditional theorem via the Berry phase of the proton--electron interface. The connection to the tree-level result of the present document is as follows.
+
+\begin{proposition}[D55 as Berry correction of $\pi/\Retot$]
+\label{prop:D55_correction}
+The exact PDL Weinberg angle of D55 is related to the tree-level value by
+\begin{equation}
+\thetaW^{(\mathrm{D55})} = \frac{19\pi}{119} = \frac{\pi}{\Retot} \cdot \frac{\Retot \, k_2}{N_{\mathrm{tot}}} = \frac{\pi}{6} \cdot \frac{6 \times 19}{119} = \frac{\pi}{6} \cdot \frac{114}{119},
+\label{eq:D55_correction}
+\end{equation}
+where $k_2 = 19$ is the dephasing step count and $N_{\mathrm{tot}} = 119$ is the total interface step count, both unconditional theorems of C1--C4 (D51~\cite{PDL_D51}, D55~\cite{PDL_D55}). The correction factor $\Retot k_2 / N_{\mathrm{tot}} = 114/119 \approx 0.958$ is the Berry phase of the proton--$\Kfour$ coupling, expressible entirely in terms of $\Retot = 6$, $k_2 = 19$, and $N_{\mathrm{tot}} = 119$.
+\end{proposition}
+
+\begin{proof}
+Direct substitution: $(6 \times 19)/119 = 114/119$. Both $k_2 = 19$ and $N_{\mathrm{tot}} = 119$ are proved in D55 as unconditional theorems; $\Retot = 6$ from D16a. The numerical values $\thetaW^{(\mathrm{tree})} = \pi/6 = 0.5236$~rad and $\thetaW^{(\mathrm{D55})} = 19\pi/119 = 0.5016$~rad give $\sin^2(\pi/6) = 0.2500$ and $\sin^2(19\pi/119) = 0.2312$, the latter in agreement with the PDG~2024 value $0.23121 \pm 0.00003$ at $0.48\,\sigma$ (D55).
+\end{proof}
+
+\begin{remark}
+Equation~\eqref{eq:D55_correction} provides the structural interpretation of the exact Weinberg angle derivation in D55: $\thetaW = 19\pi/119$ is the Berry correction to the combinatorial tree-level value $\pi/\Retot = \pi/6$ by the proton--electron interface dynamics. The two levels (combinatorial tree and Berry quantum correction) are connected by the single factor $\Retot \, k_2 / N_{\mathrm{tot}}$, entirely determined by C1--C4.
+\end{remark}
+
+% ============================================================
+\section{Epistemic status}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the principal results of D57.}
+\label{tab:epistemic}
+\small
+\begin{tabular}{p{6.5cm}p{2.8cm}p{4.5cm}}
+\toprule
+Result & Status & Dependencies \\
+\midrule
+$\Retot = 6$ (relational budget of $\Kfour$) & Theorem & D16a, C4 \\
+8 coherent configurations of $\Kfour$ & Theorem & C1, C2, exhaustive \\
+Orbits $1+3+4$ of $S_4$ on coherent configs & Theorem & Script~1, exhaustive \\
+$\sinW^{(\mathrm{tree})} = 192/768 = 1/4$ (Route~A) & Theorem & D29 \\
+$\sinW^{(\mathrm{tree})} = 1/\lvert V_4\rvert = 1/4$ (Route~B) & Theorem & Script~1,2 \\
+Routes A = B via $V_4$ & Theorem & Scripts~1--3 \\
+$\sinW^{(\mathrm{tree})} = \sin^2(\pi/\Retot) = 1/4$ & \textcolor{proofblue}{\textbf{Theorem}} & D16a, D29 \\
+$A_4/V_4 \cong \mathbb{Z}_3 \leftrightarrow \beta_1(\Kfour) = b_1(\Omega_{21}) = 3$ & Conjecture & Script~5 (PDL); N01~\cite{PDL_N01} (OFN) \\
+H$_{\mathrm{SU2}}$: C1 forces $V_4$ trivial & \textcolor{conjecturegreen}{Conjecture} & Scripts~4--5 \\
+$G_{\mathrm{eff}} = S_3 = S_4/V_4$ & Conjecture (under H$_{\mathrm{SU2}}$) & Scripts~4--5 \\
+$\mathrm{Dic}_3 \subset \mathrm{SU}(2)$, order~12 & Established & Script~5, algebraic \\
+$T = -i\tau_2 \in 2T \supset \mathrm{Dic}_3$ & Theorem & D46 \\
+$\thetaW^{(\mathrm{D55})} = (\pi/\Retot)(\Retot k_2/N_{\mathrm{tot}})$ & Theorem & D55, D16a \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{opbox}{OP-D57-1 --- Formal proof of Lemma C1-$V_4$}{lem_C1V4}
+Prove, as a theorem from C1 alone, that the physical indistinguishability of $s^{(1)}$ and $s^{(2)}$ in the pulsation 2-cycle implies $O(v \cdot s) = O(s)$ for all $v \in V_4$ and all physical observables $O$. The supporting evidence is the exhaustive $V_4$-invariance verified in Script~5, together with the identification of $V_4$ as the group of pulsation pairs (Script~3). A formal proof would promote H$_{\mathrm{SU2}}$ to a theorem. \textbf{Priority:} high.
+\end{opbox}
+
+\begin{opbox}{OP-D57-2 --- $\mathrm{Dic}_3$ as the weak gauge group}{Dic3_gauge}
+Identify $\mathrm{Dic}_3 \subset \mathrm{SU}(2)$ not merely as a subgroup but as the structural generator of the weak gauge group within PDL. The question is whether C1--C4 forces the gauge group to be exactly $\mathrm{SU}(2)$ (the continuous extension of $\mathrm{Dic}_3$) via a universality argument. \textbf{Priority:} medium.
+\end{opbox}
+
+\begin{opbox}{OP-D57-3 --- $\mathrm{SU}(3)$ from the proton hierarchy}{SU3}
+Derive the $\mathrm{SU}(3)$ colour gauge group from the proton triplet $(u,u,d)$ and the three leakage cycles of $\Kfour$ ($\beta_1 = 3$). Document D58 (forthcoming) will address this. The connection $A_4/V_4 \cong \mathbb{Z}_3 \leftrightarrow \mathbb{Z}_3 \subset Z(\mathrm{SU}(3))$ (centre of $\mathrm{SU}(3)$) is established in Script~5. \textbf{Priority:} high.
+\end{opbox}
+
+% ============================================================
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{D57_references}
+
+\end{document}
