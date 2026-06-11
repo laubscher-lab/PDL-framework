@@ -389,3 +389,8 @@ D60
 https://doi.org/10.5281/zenodo.20639684 
 From the Logic of Existence to the Gauge Symmetry Group: A Proof of Hypothesis H_SU2 from Axioms C1 and C2 (Projective Dynamic Logo Framework — Document D60) 
 D60_C1V4_theorem.pdf 
+
+D61 
+https://doi.org/10.5281/zenodo.20645713
+D61: Gauge Dynamics as a C4 Survival Theorem — Derivation of the Minimal Covariant Derivative from the PDL Axioms C1–C4 (Projective Dynamic Logo Framework)
+D61_covariant_derivative.pdf 
