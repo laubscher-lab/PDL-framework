@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 54 — 11 June 2026 (D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés; DM v27 DOI complété)*
+*Last updated: Session 55 — 11 June 2026 (D61 + PDL_D61_script1.py + PDL_D61_script2.py rédigés et verrouillés; OP-D59-2 RÉSOLU; chaîne causale C1–C4 → D_μ fermée)*
 
 ---
 
@@ -217,7 +217,83 @@ SU(3) × SU(2) × U(1) + représentation 3   THÉORÈME INCONDITIONNEL de C1–C
 
 ---
 
-## Corpus Table
+**Session 55 — D61 rédigé et verrouillé (11 June 2026) :**
+
+### Résultats principaux Session 55
+
+#### Scripts de verrouillage D61
+
+Protocole verrouillage respecté : deux scripts exécutés indépendamment dans Google Colab avant rédaction. Scripts déposés avec D61 dans le même enregistrement Zenodo (dépôt groupé, comme D60).
+
+**PDL_D61_script1.py** — Vérifie (2048 checks, arithmétique entière exacte) :
+- |Coh(K₄)| = 8 configurations cohérentes (PASSED)
+- Partenaires de pulsation −s sont tous INCOHÉRENTS — pulsation alterne cohérent ↔ incohérent (PASSED)
+- Transports C4-admissibles = Coh(K₄) exactement — identité algébrique prouvée en 2 lignes et vérifiée exhaustivement (PASSED)
+- Structure de groupe Z₂³ : clos, abélien, exposant 2 (PASSED)
+- 56 transports non-admissibles ont tous ν > 0 sur au moins une config cohérente (PASSED)
+- Distribution des coûts : 48 à ν_max = 2/4, 8 à ν_max = 4/4
+- Résultat négatif : flip global (−1,...,−1) NON admissible — coût 4/4 (VERIFIED)
+- Résultat négatif : conjecture initiale (groupe admissible = V₄, ordre 4) RÉFUTÉE — groupe correct = Coh(K₄) ≅ Z₂³ (ordre 8) (DOCUMENTED)
+
+**PDL_D61_script2.py** — Vérifie (288 checks, arithmétique entière exacte) :
+- V₄ clos sous composition (PASSED)
+- Coh(K₄) stable sous action arêtes de V₄ (32 checks, PASSED)
+- Action fidèle : noyau = {id} (PASSED)
+- V₄ agit par automorphismes de groupe de Z₂³ (256 checks, PASSED)
+- Structure orbitale : 4×{taille 1} + 1×{taille 4} — table d'action complète V₄ × Coh(K₄) produite
+- Sous-groupe de points fixes F ≅ V₄ labellé par les 3 couplages parfaits de K₄ = axes de W en D59 (PASSED)
+- Produit semi-direct Z₂³ ⋊ V₄ d'ordre 32 bien défini (PASSED)
+
+#### D61 — Rédigé, verrouillé, prêt pour dépôt Zenodo
+
+**Titre :** Gauge Dynamics as a C4 Survival Theorem: Derivation of the Minimal Covariant Derivative from the PDL Axioms C1–C4 (Projective Dynamic Logo Framework — Document D61)
+
+**Résultat central :**
+```
+D_μ = ∂_μ − igA_μ   THÉORÈME (via lemmes externes) de C1–C4
+
+Chaîne causale en 4 flèches explicitement stratifiées :
+
+α : C4 → Coh(K₄) ≅ Z₂³
+    THÉORÈME INCONDITIONNEL, verrouillé par script1 (2048 checks)
+    C4 étendu aux règles de transport (généralisation de D49)
+
+β : Z₂³ → Z₂³ ⋊ V₄
+    THÉORÈME INCONDITIONNEL, verrouillé par script2 (288 checks)
+    V₄ agit fidèlement par automorphismes sur Coh(K₄)
+
+γ : Z₂³ ⋊ V₄ → G_gauge = SU(3)×SU(2)×U(1)
+    THÉORÈME DE CONSISTANCE via D46–D60
+    (non une nouvelle dérivation de G_gauge : convergence des deux routes)
+
+δ : G_gauge → D_μ = ∂_μ − igA_μ
+    THÉORÈME via Utiyama (1956) comme lemme externe
+    — invariance locale forcée par C4 (non postulée)
+    — restriction au premier ordre = minimalité C4
+```
+
+**Résultats négatifs documentés :**
+- Conjecture initiale (groupe admissible = V₄, ordre 4) réfutée — groupe correct = Coh(K₄) ≅ Z₂³ (ordre 8)
+- Flip global (−1,...,−1) non admissible (coût 4/4) — C4 élimine la pulsation comme transport
+
+**Connexion avec D49 :** D61 est la généralisation de D49 (London → D_μ complet). D49 dérivait ∇φ=0 pour U(1) via C4; D61 dérive D_μ pour G_gauge entier via la même logique de survie.
+
+**Connexion avec D58–D60 :** Le sous-groupe de points fixes F ≅ V₄ (script2) est labellé par les 3 couplages parfaits de K₄ = axes de W en D59. La structure orbitale 4×1+1×4 de script2 est le pendant transport de la structure orbitale 1+3+4 de D60.
+
+**Problèmes ouverts nouveaux :**
+- OP-D61-1 : masses des bosons W±/Z⁰ (priorité HIGH)
+- OP-D61-2 : trois générations de fermions (priorité HIGH)
+- OP-D61-3 : dérivation autonome de G_gauge depuis Z₂³ ⋊ V₄ sans invoquer D46–D60 pour la flèche γ (priorité MEDIUM)
+
+**Note sur le dépôt Zenodo :** PDL_D61_script1.py et PDL_D61_script2.py sont déposés DANS le même enregistrement que D61 (dépôt groupé, comme D60). Pas de DOIs séparés pour les scripts.
+
+**Fichiers :** D61_covariant_derivative_v2.pdf + D61_covariant_derivative_v2.tex + D61_references.bib + PDL_D61_script1.py + PDL_D61_script2.py
+
+**Statut OP-D59-2 :** RÉSOLU par D61.
+
+**Fermeture du secteur de jauge :** La chaîne causale C1–C4 → D_μ est maintenant fermée. Ce qui reste ouvert n'est plus la structure ni la dynamique du secteur de jauge, mais les masses des bosons et la structure de génération.
+
+---
 
 | Doc | DOI | Titre abrégé |
 |-----|-----|--------------|
@@ -298,12 +374,13 @@ SU(3) × SU(2) × U(1) + représentation 3   THÉORÈME INCONDITIONNEL de C1–C
 | D58 | 10.5281/zenodo.20622987 | SU(3) gauge (D58) |
 | D59-py | 10.5281/zenodo.20628926 | PDL_D59_script1.py |
 | D59 | 10.5281/zenodo.20629282 | SU(3)_c representation 3 (D59) |
-| D60 | 10.5281/zenodo.20639684 | H_SU2 theorem: G_eff = S₄/V₄ ≅ S₃ (D60) |
+| D60 | 10.5281/zenodo.20639684 | H_SU2 theorem: G_eff = S₄/V₄ ≅ S₃ (D60) + PDL_C1V4_script1.py + PDL_C1V4_script2.py |
+| D61 | à déposer | Gauge dynamics: D_μ from C4 (D61) + PDL_D61_script1.py + PDL_D61_script2.py |
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN Bridge : β₁=3 |
 
 ---
 
-## Current Epistemic State — Gauge Sector (updated Session 54)
+## Current Epistemic State — Gauge Sector (updated Session 55)
 
 ```
 THÉORÈMES INCONDITIONNELS de C1–C4 (secteur de jauge) :
@@ -315,7 +392,7 @@ U(1) :
 SU(2) :
   sin²θ_W(tree) = sin²(π/R_e) = 1/4                     [D57]
   θ_W(D55) = (π/R_e)×(114/119) — angle exact            [D55+D57]
-  G_eff = S₄/V₄ ≅ S₃ — H_SU2 RÉSOLU                   [D60] ← NOUVEAU
+  G_eff = S₄/V₄ ≅ S₃ — H_SU2 RÉSOLU                   [D60]
   s → −s brise C2 [résultat négatif documenté]           [D60]
   orbit-4 ≅ V₄ comme V₄-ensemble régulier               [D60]
   Pairings = cosets de H₁,H₂,H₃ dans V₄                [D60]
@@ -338,16 +415,27 @@ Représentation fondamentale :
   k₃/(k₁+k₂) = R_e = 6 exact                           [D59, L5]
   SU(3)_c dans 3 sur W                                  [D59]
 
-COROLLAIRE GLOBAL :
-  SU(3) × SU(2) × U(1) + représentation 3
-  THÉORÈME INCONDITIONNEL de C1–C4
-  (D46 + D60 + D58 + D59)
+Dynamique de jauge :                                     ← NOUVEAU (D61)
+  Transports C4-admissibles = Coh(K₄) ≅ Z₂³            [D61, script1, α]
+  V₄ fidèle par automorphismes sur Coh(K₄)              [D61, script2, β]
+  F ≅ V₄ fixe = couplages parfaits K₄ = axes W (D59)   [D61, script2]
+  Z₂³ ⋊ V₄ ordre 32 bien défini                        [D61, β]
+  Consistance Z₂³ ⋊ V₄ → G_gauge (via D46–D60)         [D61, γ]
+  D_μ = ∂_μ − igA_μ unique (via Utiyama)               [D61, δ]
+
+COROLLAIRE GLOBAL (mis à jour Session 55) :
+  SU(3) × SU(2) × U(1) + représentation 3 + D_μ
+  THÉORÈME de C1–C4 (structure et dynamique de jauge)
+  (D46 + D60 + D58 + D59 + D61)
   AUCUNE ÉTAPE CONJECTURALE RÉSIDUELLE dans le secteur de jauge
+  Ce qui reste ouvert : masses des bosons, structure de génération
 
 RÉSULTATS NÉGATIFS DOCUMENTÉS (valeur scientifique positive) :
   V₄ fidèle sur H₁(K₄;ℝ)           [D58 — invalidé stratégie homologie]
   s → −s brise C2                   [D60 — pulsation ≠ flip global]
   bijection (T₂)↔(T₃) non S₄-éq.  [D59]
+  Conjecture initiale (admissible = V₄) réfutée  [D61 — Coh(K₄) ≅ Z₂³]
+  Flip global non admissible (ν=4/4)             [D61]
 ```
 
 ---
@@ -377,7 +465,7 @@ LAYER 14  Électrofaible
            OP-D57-1 → RÉSOLU (D60)                   [✓ Session 54]
            OP-D57-2 : Dic₃ comme groupe de jauge     [OUVERT — MEDIUM]
            W/Z mass ratio (OP10-c)                    [OUVERT — HIGH]
-LAYER 14b Groupe de jauge — COMPLET (algébrique + représentation)
+LAYER 14b Groupe de jauge — COMPLET (algébrique + représentation + dynamique)
            S₄/V₄ ≅ S₃ = Weyl(A₂)                   [✓ THÉORÈME — D57+D58, L1]
            V₄\{e} ↔ orbites V₄-arêtes (bij. S₄-éq.) [✓ THÉORÈME — D58, L2]
            A₄/V₄ ≅ ℤ₃ = centre SU(3)               [✓ THÉORÈME — D58, L3]
@@ -398,10 +486,16 @@ LAYER 14b Groupe de jauge — COMPLET (algébrique + représentation)
            k₃/(k₁+k₂) = R_e = 6 exact              [✓ THÉORÈME — D59, L5]
            SU(3)_c dans 3 sur W                      [✓ THÉORÈME — D59]
            (T₂)↔(T₃) non S₄-équivariante [négatif]  [✓ VÉRIFIÉ — D59]
+           Coh(K₄) ≅ Z₂³ — transports C4-admissibles [✓ THÉORÈME — D61, α] ← NOUVEAU
+           V₄ fidèle par Aut(Z₂³) sur Coh(K₄)       [✓ THÉORÈME — D61, β] ← NOUVEAU
+           F ≅ V₄ = sous-groupe points fixes D61     [✓ THÉORÈME — D61, script2] ← NOUVEAU
+           Consistance Z₂³⋊V₄ → G_gauge             [✓ CONSISTANCE — D61, γ] ← NOUVEAU
+           D_μ = ∂_μ − igA_μ unique (via Utiyama)   [✓ THÉORÈME — D61, δ] ← NOUVEAU
+           OP-D59-2 → RÉSOLU (D61)                   [✓ Session 55] ← NOUVEAU
            OP-D58-1 → RÉSOLU (D59)                   [✓ Session 53]
            OP-D58-3 → RÉSOLUE (D59)                  [✓ Session 53]
            OP-D59-1 : masse des quarks               [OUVERT — MEDIUM]
-           OP-D59-2 : D_μ depuis C4 (survie)         [OUVERT — HIGH]
+           OP-D59-2 : D_μ depuis C4 → RÉSOLU (D61)  [✓ Session 55] ← NOUVEAU
 LAYER 15  Spectroscopie nucléaire
            N_comp(k) = k                             [✓ THÉORÈME — D56]
            B(E2) ∝ k  (H_B)                          [conjecture — D41]
@@ -427,6 +521,7 @@ LAYER 18  Dissémination
            D59 déposé Zenodo                         [✓ Session 53 — 10.5281/zenodo.20629282]
            DM v27 déposé Zenodo                      [✓ Session 53 — 10.5281/zenodo.20630421]
            D60 + scripts C1V4 déposés Zenodo         [✓ Session 54 — 10.5281/zenodo.20639684]
+           D61 + scripts D61 — prêt pour dépôt       [✓ Session 55 — DOI à obtenir]
            N01 à uploader ResearchGate               [en attente]
            Three Roads — draft révisé Oleg en attente [en attente]
 ```
@@ -474,11 +569,17 @@ C1-admissibilité = V₄-invariance sur tout Coh(K₄)  [✓ D60, Session 54]
 G_eff = S₄/V₄ ≅ S₃ — théorème inconditionnel de C1+C2  [✓ D60, Session 54]
 SU(3)×SU(2)×U(1) + représentation 3 — AUCUNE étape conjecturale résiduelle  [✓ D46+D60+D58+D59]
 D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés Zenodo  [✓ Session 54 — 10.5281/zenodo.20639684]
+OP-D59-2 → RÉSOLU : D_μ = ∂_μ − igA_μ théorème de C4 via Utiyama  [✓ D61, Session 55]
+Coh(K₄) ≅ Z₂³ — groupe maximal de transports C4-admissibles  [✓ D61 script1, Session 55]
+V₄ fidèle par Aut(Z₂³) — Z₂³ ⋊ V₄ ordre 32  [✓ D61 script2, Session 55]
+F ≅ V₄ = sous-groupe points fixes labellé couplages parfaits  [✓ D61 script2, Session 55]
+Chaîne causale C1–C4 → D_μ fermée  [✓ D61, Session 55]
+Conjecture initiale (admissible = V₄) réfutée [résultat négatif documenté]  [✓ D61, Session 55]
 ```
 
 ---
 
-## Open Problems (updated Session 54)
+## Open Problems (updated Session 55)
 
 **Résolu (Session 46) :**
 - **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
@@ -491,19 +592,23 @@ D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés Zenodo  [✓ Session 5
 - **[RESOLVED]** OP-D58-3 : représentation fondamentale 3 depuis C1–C4 (D59).
 
 **Résolu (Session 54) :**
-- **[RESOLVED]** OP-D57-1 : H_SU2 théorème inconditionnel de C1+C2 (D60). La chaîne logique complète depuis l'existence jusqu'à G_eff = S₃ est établie sans étape conjecturale.
+- **[RESOLVED]** OP-D57-1 : H_SU2 théorème inconditionnel de C1+C2 (D60).
+
+**Résolu (Session 55) :**
+- **[RESOLVED]** OP-D59-2 : D_μ = ∂_μ − igA_μ comme théorème de survie C4 (D61). La dynamique de jauge est une conséquence de C4, sans postulat variationnel.
 
 **Résolu partiellement :**
 - **[PARTIAL]** OP-OFN-1 : A₄/V₄ ≅ ℤ₃ (D57+D58) + triplet (T₂) labellise axes de W (D59). Lien formel 3 cycles PDL ↔ 3 générations OFN reste ouvert.
 - **[PARTIAL]** OP-SU2 : sin²θ_W(tree) = 1/4 théorème (D57), H_SU2 théorème (D60). OP-D57-2 (Dic₃ comme générateur du groupe de jauge faible par universalité) reste ouvert.
 
 **Ouverts prioritaires :**
-- **[HIGH]** OP-D59-2 : D_μ = ∂_μ − igA_μ comme théorème de survie C4 — document structurel dédié requis (D61 prospectif).
-- **[HIGH]** OP-D57-2 : Dic₃ comme générateur structurel du groupe de jauge faible — argument d'universalité depuis C1–C4.
-- **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) depuis C1–C4 (D-electroweak-WZ).
+- **[HIGH]** OP-D61-1 : masses des bosons W±/Z⁰ depuis C1–C4 (D-electroweak-WZ).
+- **[HIGH]** OP-D61-2 : trois générations de fermions depuis C1–C4.
+- **[HIGH]** OP-D57-2 : Dic₃ comme générateur structurel du groupe de jauge faible.
+- **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) depuis C1–C4.
 - **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
 - **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL (Lacunes G1, G2).
-- **[MEDIUM]** OP-D57-2 : Dic₃ comme groupe de jauge faible (universalité).
+- **[MEDIUM]** OP-D61-3 : dérivation autonome de G_gauge depuis Z₂³ ⋊ V₄ sans invoquer D46–D60 pour la flèche γ.
 - **[MEDIUM]** OP-D59-1 : masse des quarks depuis C1–C4.
 - **[MEDIUM]** OP-OFN-2 : objet X commun dont K₄ et Ω₂₁ sont deux projections.
 - **[MEDIUM]** OP9 : masses muon/tau (générations 2 et 3).
@@ -522,14 +627,14 @@ D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés Zenodo  [✓ Session 5
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 55 :**
+**Priorité immédiate Session 56 :**
 
-1. **[URGENT]** Pousser PDL_context.md mis à jour sur GitHub (laubscher-lab/PDL-framework).
-2. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58, D59, D60.
-3. **[URGENT]** Produire DM v28 intégrant D60 : nœud D60 dans le diagramme TikZ, OP-D57-1 marqué résolu, Layer 14 mis à jour, corollaire SU(3)×SU(2)×U(1) sans étape conjecturale.
-4. **[HIGH]** OP-D59-2 : formaliser D61 — D_μ = ∂_μ − igA_μ comme unique transport C4-compatible. Commencer par la définition formelle d'un transport admissible sur K₄.
-5. **[HIGH]** OP10-c : D-electroweak-WZ — rapport W/Z = cos(19π/119) depuis C1–C4.
-6. **[HIGH]** Envoyer DOI D60 à Oleg Evdokimov pour Three Roads.
+1. **[URGENT]** Déposer D61 sur Zenodo (dépôt groupé : D61_covariant_derivative_v2.pdf + .tex + D61_references.bib + PDL_D61_script1.py + PDL_D61_script2.py). Récupérer le DOI et mettre à jour PDL_context.md.
+2. **[URGENT]** Pousser PDL_context.md mis à jour sur GitHub (laubscher-lab/PDL-framework).
+3. **[URGENT]** Produire DM v28 intégrant D60 et D61 : nœuds D60 et D61 dans le diagramme TikZ, OP-D57-1 et OP-D59-2 marqués résolus, Layer 14b mis à jour avec dynamique de jauge, corollaire final mis à jour.
+4. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58, D59, D60, D61.
+5. **[HIGH]** OP-D61-1 : masses des bosons W±/Z⁰ (D-electroweak-WZ) — prochain document structurel.
+6. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) depuis C1–C4.
 
 **LaTeX conventions (consolidées Session 51) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -553,5 +658,6 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
 - Analogies Three Roads : PAS des identités prouvées, uniquement analogies structurelles candidates
 
-*Références canoniques : D01–D60 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v27.*
-*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : 10.5281/zenodo.20630421 | D60 : 10.5281/zenodo.20639684*
+*Références canoniques : D01–D61 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v27.*
+*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : 10.5281/zenodo.20630421 | D60 : 10.5281/zenodo.20639684 | D61 : à déposer*
+*Note dépôts groupés : D60 (DOI 10.5281/zenodo.20639684) contient D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py. D61 (DOI à obtenir) contiendra D61 + PDL_D61_script1.py + PDL_D61_script2.py.*
