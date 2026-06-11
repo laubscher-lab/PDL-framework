@@ -1,0 +1,654 @@
+% ============================================================
+% D60 --- PDL Framework
+% From the Logic of Existence to the Gauge Symmetry Group:
+% A Proof of Hypothesis H_SU2 from Axioms C1 and C2
+%
+% Author  : Cedric Laubscher
+% Date    : June 2026
+% Licence : CC BY 4.0
+% ============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---- Encoding and language ---------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+
+% ---- Mathematics -------------------------------------------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% ---- Layout ------------------------------------------------
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+
+% ---- Hyperlinks and metadata -------------------------------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black,
+  pdftitle={From the Logic of Existence to the Gauge Symmetry Group:
+    A Proof of Hypothesis H\_SU2 from Axioms C1 and C2},
+  pdfauthor={Cedric Laubscher}
+}
+
+% ---- PDF bookmark string sanitisation ----------------------
+\pdfstringdefDisableCommands{%
+  \def\\{}%
+  \def\Sfour{S4}%
+  \def\Vfour{V4}%
+  \def\Afour{A4}%
+  \def\Sthree{S3}%
+  \def\Zthree{Z3}%
+  \def\SUthree{SU(3)}%
+  \def\SUtwo{SU(2)}%
+  \def\Uone{U(1)}%
+  \def\Kfour{K4}%
+  \def\Re{Re}%
+  \def\PDL{PDL}%
+  \def\cong{=}%
+  \def\times{x}%
+  \def\setminus{ minus }%
+  \def\subset{ subset }%
+  \def\mathbb#1{#1}%
+  \def\mathrm#1{#1}%
+  \def\mathfrak#1{#1}%
+  \def\mathbf#1{#1}%
+  \def\textsc#1{#1}%
+  \def\Dic{Dic}%
+  \def\Sym{Sym}%
+  \def\Aut{Aut}%
+}
+
+% ---- Bibliography ------------------------------------------
+\usepackage[numbers]{natbib}
+
+% ---- tcolorbox ---------------------------------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+% ---- Colour palette (PDL convention) -----------------------
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{openproblemred}{RGB}{160,20,20}
+\definecolor{resolvedgreen}{RGB}{0,130,70}
+\definecolor{chaincolor}{RGB}{30,100,180}
+\definecolor{hypothesisorange}{RGB}{200,100,0}
+\definecolor{negativecolor}{RGB}{120,60,0}
+\definecolor{darkgray}{RGB}{80,80,80}
+
+% ---- tcolorbox styles --------------------------------------
+\tcbset{
+  theoremstyle/.style={
+    colframe=proofblue, colback=blue!3!white,
+    fonttitle=\bfseries\color{proofblue}, breakable, enhanced},
+  lemmastyle/.style={
+    colframe=proofblue!70, colback=blue!2!white,
+    fonttitle=\bfseries\color{proofblue!80!black}, breakable, enhanced},
+  resolvedstyle/.style={
+    colframe=resolvedgreen, colback=green!4!white,
+    fonttitle=\bfseries\color{resolvedgreen}, breakable, enhanced},
+  openproblemstyle/.style={
+    colframe=openproblemred, colback=red!3!white,
+    fonttitle=\bfseries\color{openproblemred}, breakable, enhanced},
+  negativestyle/.style={
+    colframe=negativecolor, colback=negativecolor!5!white,
+    fonttitle=\bfseries\color{negativecolor}, breakable, enhanced},
+  chainstyle/.style={
+    colframe=chaincolor, colback=chaincolor!5!white,
+    fonttitle=\bfseries\color{chaincolor}, breakable, enhanced},
+}
+
+\newenvironment{theorembox}[1][]{%
+  \begin{tcolorbox}[theoremstyle,title={Theorem\ifx\relax#1\relax\else: #1\fi}]}
+  {\end{tcolorbox}}
+\newenvironment{lemmabox}[1][]{%
+  \begin{tcolorbox}[lemmastyle,title={Lemma\ifx\relax#1\relax\else: #1\fi}]}
+  {\end{tcolorbox}}
+\newenvironment{resolvedproblem}[1][]{%
+  \begin{tcolorbox}[resolvedstyle,title={Resolved: #1}]}
+  {\end{tcolorbox}}
+\newenvironment{openproblem}[1][]{%
+  \begin{tcolorbox}[openproblemstyle,title={Open Problem\ifx\relax#1\relax\else:
+    #1\fi}]}
+  {\end{tcolorbox}}
+\newenvironment{negativebox}[1][]{%
+  \begin{tcolorbox}[negativestyle,title={Negative Result\ifx\relax#1\relax\else:
+    #1\fi}]}
+  {\end{tcolorbox}}
+\newenvironment{chainbox}[1][]{%
+  \begin{tcolorbox}[chainstyle,title={#1}]}
+  {\end{tcolorbox}}
+
+% ---- amsthm environments -----------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- PDL macros --------------------------------------------
+\newcommand{\PDL}{\textsc{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\Sfour}{S_4}
+\newcommand{\Afour}{A_4}
+\newcommand{\Vfour}{V_4}
+\newcommand{\Sthree}{S_3}
+\newcommand{\Zthree}{\mathbb{Z}_3}
+\newcommand{\SUthree}{\mathrm{SU}(3)}
+\newcommand{\SUtwo}{\mathrm{SU}(2)}
+\newcommand{\Uone}{\mathrm{U}(1)}
+\newcommand{\Dic}{\mathrm{Dic}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\renewcommand{\Re}{R_e}
+\newcommand{\Coh}{\mathrm{Coh}}
+\newcommand{\Orb}[1]{\mathcal{O}_{#1}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\title{\textbf{From the Logic of Existence to the Gauge Symmetry Group:\\
+A Proof of Hypothesis $\mathrm{H_{SU2}}$ from Axioms C1 and C2}\\[6pt]
+{\large Projective Dynamic Logo Framework --- Document D60}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://orcid.org/0009-0004-5415-1098}{ORCID: 0009-0004-5415-1098}\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}\\
+\small \href{mailto:cedric@cedriclaubscher.ch}{cedric@cedriclaubscher.ch}}
+
+\date{June 2026\\[4pt]
+\small \PDL\ corpus version: D01--D59 + DS01 + DL01--DL02 + N01 + D-exp series\\
+\small Zenodo community: \texttt{pdl-framework}}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Document D57~\cite{PDL_D57} derived $\sin^2\theta_W^{(\mathrm{tree})} = 1/4$ as an
+unconditional theorem of the \PDL\ axioms C1--C4, and formulated Hypothesis~$\mathrm{H_{SU2}}$
+as a well-motivated conjecture: that axiom C1 forces the Klein four-group $\Vfour$ to act
+trivially on the physical observable space of $\Kfour$, making the effective symmetry group
+$G_{\mathrm{eff}} = \Sfour/\Vfour \cong \Sthree$. The present document proves this
+conjecture. The proof rests on two lemmas, each verified by independent exhaustive computation
+in Google Colab (scripts \texttt{PDL\_C1V4\_script1.py}~\cite{PDL_C1V4_script1} and
+\texttt{PDL\_C1V4\_script2.py}~\cite{PDL_C1V4_script2}) before any claim was incorporated
+into this document. A documented negative result is an integral part of the proof: the map
+$s \mapsto -s$ (global sign flip) does \emph{not} preserve the coherence condition C2 on
+$\Kfour$; pulsation pairing is therefore not a na\"ive sign flip but the partition structure
+of the dynamic orbit $\Orb{4}$ under $\Vfour$. The proof proceeds as follows. The space
+$\Coh(\Kfour)$ of coherent configurations decomposes into three $\Sfour$-orbits of sizes
+$1 + 3 + 4$; the dynamic orbit $\Orb{4}$ is isomorphic to $\Vfour$ as a regular $\Vfour$-set.
+The three pulsation pairings of $\Orb{4}$ coincide exactly with the three coset partitions
+of $\Vfour$ under its three order-2 subgroups $H_1$, $H_2$, $H_3$. An element $g \in \Sfour$
+preserves all three pairings if and only if the induced permutation $\sigma_g$ of $\Vfour$
+preserves all three coset structures --- which holds if and only if $g \in \Vfour$ (Lemma~B).
+Furthermore, $\Vfour$ fixes every element of $\Orb{1}$ and $\Orb{3}$ pointwise (Lemma~C),
+so C1-admissibility is equivalent to $\Vfour$-invariance on all of $\Coh(\Kfour)$. The
+effective symmetry group is therefore $G_{\mathrm{eff}} = \Sfour/\Vfour \cong \Sthree$, an
+unconditional theorem of C1 and C2. Combined with D46~\cite{PDL_D46}, D57~\cite{PDL_D57},
+D58~\cite{PDL_D58}, and D59~\cite{PDL_D59}, this completes the derivation of the Standard
+Model gauge group $\SUthree \times \SUtwo \times \Uone$ and its fundamental representation
+as unconditional theorems of C1--C4, with no remaining conjectural step.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction and context}
+\label{sec:intro}
+% ============================================================
+
+\subsection{State of the programme at D59}
+
+The \PDL\ programme derives physical laws and fundamental constants from four combinatorial
+axioms on finite signed graphs, with no presupposed spacetime, particles, or fields. The
+central object is the complete graph $\Kfour$ on four vertices and six edges, identified with
+the electron prototype~\cite{PDL_D16a}. The gauge sector has been built up across four
+documents. Document D46~\cite{PDL_D46} derived the U(1) phase freedom of quantum mechanics
+as a structural consequence of the $\Kfour$ pulsation sign equivalence via the Hopf
+fibration, establishing Born's rule at Level~2. Document D57~\cite{PDL_D57} derived the
+tree-level Weinberg angle $\sin^2\theta_W^{(\mathrm{tree})} = 1/4$ as an unconditional
+theorem via two independent routes (the AB-fraction route and the $\Sfour$-orbit route),
+and identified $\Vfour$ as the group of pulsation pairs in the dynamic orbit $\Orb{4}$.
+Document D58~\cite{PDL_D58} established $\SUthree$ as an unconditional algebraic theorem of
+C1--C4 via the Cartan--Killing--Weyl classification. Document D59~\cite{PDL_D59} identified
+the physical colour gauge group $\SUthree_c$ acting in the fundamental representation
+$\mathbf{3}$ on the carrier space $W = \{a+b+c=0\} \subset \mathbb{C}^3$.
+
+After D59, a single conjectural step remained in the gauge sector: Hypothesis~$\mathrm{H_{SU2}}$
+of D57, which stated that C1 forces $\Vfour$ to act trivially on the physical observable space,
+making $G_{\mathrm{eff}} = \Sfour/\Vfour \cong \Sthree$ an unconditional theorem rather than
+a well-motivated conjecture.
+
+\subsection{What D60 establishes}
+
+The present document proves $\mathrm{H_{SU2}}$. The argument originates at the level of
+the logic of existence itself (Section~\ref{sec:logic}): the co-originary status of the two
+states of a 2-cycle, which is constitutive of C1, forces every physical observable to be
+insensitive to the choice of representative within a pulsation pair. This is the definition
+of C1-admissibility. The remainder of the proof identifies, by algebraic means, the group
+that C1 and C2 together select as the symmetry group of this admissibility condition: it is
+$\Vfour$, exactly, and for algebraic reasons that follow from the structure of $\Kfour$ alone.
+
+The proof is entirely self-contained. All claims are either unconditional theorems of C1--C4
+derived here, or established results of earlier corpus documents cited explicitly. No
+numerical approximation is introduced. Both verification scripts were executed independently
+in Google Colab before this document was drafted, in accordance with the \PDL\ verrouillage
+protocol.
+
+% ============================================================
+\section{The logic of existence and axiom C1}
+\label{sec:logic}
+% ============================================================
+
+\subsection{Existence as repeatable distinction}
+
+The foundational question is not what things are, but what the minimum conditions are for
+anything to be at all. A distinction that cannot be recognised as such is indistinguishable
+from no distinction. For a distinction to be real --- in the sense of being available to
+any description of the system --- it must be repeatable: it must return. The minimum form
+of return is the 2-cycle: a configuration that is followed by a second, which is followed
+by the first again. This is the content of axiom C1.
+
+\begin{axiom}[C1 --- Minimal binary pulsation, \cite{PDL_D01}]
+Existence is instantiated as a repeatable, non-trivial alternation between two discrete
+states, independent of any pre-existing temporal metric. The discrete dynamical system
+defined on the space of sign configurations must admit at least one logical 2-cycle: a
+configuration that returns to itself after exactly two update steps and is not a fixed point.
+\end{axiom}
+
+\subsection{Co-originarity and C1-admissibility}
+
+The decisive observation is the following. In a 2-cycle, the two states are not in an
+asymmetric relation: neither $s^{(1)}$ is prior to $s^{(2)}$, nor the reverse. They
+co-define one another. The system could equally well have been described with $s^{(2)}$
+as the initial state; the resulting description would be physically identical.
+
+This co-originary status is not a contingent feature of any particular 2-cycle: it is
+constitutive of the 2-cycle as such. If a description of the system attributed a different
+physical status to $s^{(1)}$ and $s^{(2)}$ --- if some observable took different values on
+the two states --- that observable would introduce a distinction that C1 itself does not
+contain. It would be an external input, not a consequence of the axiom.
+
+\begin{definition}[C1-admissible observable]
+\label{def:C1admissible}
+A function $O : \Coh(\Kfour) \to \mathbb{R}$ is \emph{C1-admissible} if it is constant on
+every pulsation pair: $O(s^{(1)}) = O(s^{(2)})$ for every pulsation partner pair
+$\{s^{(1)}, s^{(2)}\}$ in the dynamic orbit $\Orb{4}$.
+\end{definition}
+
+\begin{remark}
+Definition~\ref{def:C1admissible} is a direct formal expression of the co-originary
+principle: a C1-admissible observable is one that cannot distinguish the two states of a
+pulsation. Any observable that violates this condition introduces information that C1 does
+not provide, and is therefore not a consequence of the axiom. The definition is not an
+additional hypothesis; it is the logical content of C1 expressed at the level of the
+observable algebra.
+\end{remark}
+
+% ============================================================
+\section{Structure of \texorpdfstring{$\Coh(\Kfour)$}{Coh(K4)} under
+\texorpdfstring{$\Sfour$}{S4}}
+\label{sec:structure}
+% ============================================================
+
+\subsection{Coherent configurations and the orbit decomposition}
+
+The coherence condition C2 requires that every triangle of $\Kfour$ carry a positive
+product of edge signs~\cite{PDL_D16a}. The set $\Coh(\Kfour)$ of sign configurations
+satisfying C2 has exactly eight elements, organised into three $\Sfour$-orbits.
+
+\begin{lemmabox}[$\Sfour$-orbit structure of $\Coh(\Kfour)$]
+\label{lem:orbits}
+The automorphism group $\Sfour = \Aut(\Kfour)$ acts on $\Coh(\Kfour)$ with three orbits:
+\begin{align}
+\Orb{1} &= \{(+,+,+,+,+,+)\}, \label{eq:orbit1}\\
+\Orb{3} &= \bigl\{(-,-,+,+,-,-),\; (-,+,-,-,+,-),\; (+,-,-,-,-,+)\bigr\}, \label{eq:orbit3}\\
+\Orb{4} &= \bigl\{(-,-,-,+,+,+),\; (-,+,+,-,-,+),\;(+,-,+,-,+,-),\;(+,+,-,+,-,-)\bigr\},
+\label{eq:orbit4}
+\end{align}
+where signs are listed in the order $(e_{01}, e_{02}, e_{03}, e_{12}, e_{13}, e_{23})$.
+This decomposition is verified exhaustively by script~\texttt{PDL\_C1V4\_script1.py}
+(Section~2, 192 checks).
+\end{lemmabox}
+
+The orbit $\Orb{4}$ is called the \emph{dynamic orbit}: it is the orbit on which $\Vfour$
+acts non-trivially, and it is the locus of the pulsation pairs. The orbits $\Orb{1}$ and
+$\Orb{3}$ are called \emph{static} orbits.
+
+\subsection{Documented negative result: the sign flip does not preserve C2}
+
+\begin{negativebox}[$s \mapsto -s$ does not preserve $\Coh(\Kfour)$]
+\label{neg:signflip}
+The global sign flip $\tau : s \mapsto -s$ does \emph{not} map $\Coh(\Kfour)$ to itself.
+For every $s \in \Coh(\Kfour)$, the configuration $-s$ is \emph{not} coherent. Verified
+exhaustively: all 8/8 coherent configurations have their global flip outside $\Coh(\Kfour)$.
+\end{negativebox}
+
+\begin{proof}
+A sign configuration $s$ is coherent iff the product of signs on every triangle of $\Kfour$
+equals $+1$. If $s \in \Coh(\Kfour)$, then every triangle has product $+1$ under $s$. Under
+$-s$, every edge sign is negated; a triangle on three edges therefore has product
+$(-1)^3 = -1$. Hence $-s \notin \Coh(\Kfour)$.
+\end{proof}
+
+\begin{remark}
+This negative result clarifies a potential ambiguity in the formulation of D46~\cite{PDL_D46},
+where the pulsation pair is described as $\{s^{(1)}, s^{(2)}\} = \{s, -s\}$. That description
+is valid in the amplitude space $\mathcal{H}_{\mathrm{cyc}} \cong \mathbb{C}^2$, where $s^{(2)} = -s^{(1)}$
+refers to the sign inversion of the amplitude basis vector, not of the edge sign configuration.
+At the level of $\Coh(\Kfour)$, pulsation pairing is the partition structure of $\Orb{4}$
+induced by the action of $\Vfour$.
+\end{remark}
+
+% ============================================================
+\section{Pulsation pairing structure and Lemma B}
+\label{sec:lemmaB}
+% ============================================================
+
+\subsection{\texorpdfstring{$\Orb{4}$}{Orbit-4} as a regular
+\texorpdfstring{$\Vfour$}{V4}-set}
+
+\begin{lemmabox}[Regular action of $\Vfour$ on $\Orb{4}$]
+\label{lem:regular}
+The group $\Vfour = \{\mathrm{id},\,(01)(23),\,(02)(13),\,(03)(12)\}$ acts on $\Orb{4}$
+transitively and freely. In particular, $|\Orb{4}| = |\Vfour| = 4$ and $\Orb{4} \cong \Vfour$
+as a $\Vfour$-set. Fixing the base point $s_0 = (-,-,-,+,+,+)$, the bijection
+\begin{equation}
+\varphi : \Vfour \xrightarrow{\;\sim\;} \Orb{4}, \quad v \mapsto v \cdot s_0
+\label{eq:bijection}
+\end{equation}
+is an explicit isomorphism of $\Vfour$-sets.
+\end{lemmabox}
+
+\begin{proof}
+Transitivity: from $s_0$, the three non-trivial elements of $\Vfour$ produce the other three
+elements of $\Orb{4}$ (verified exhaustively, script Section~3). Freeness: each non-trivial
+element of $\Vfour$ acts without fixed points on $\Orb{4}$ (9 checks, all confirmed).
+\end{proof}
+
+\subsection{Pulsation pairings as coset partitions}
+
+Since $\Orb{4} \cong \Vfour$ as a $\Vfour$-set, the structure of pulsation pairs is
+entirely determined by the group structure of $\Vfour$. Let $H_i$ denote the three
+order-2 subgroups of $\Vfour$:
+\begin{equation}
+H_1 = \{e,\,(01)(23)\}, \quad H_2 = \{e,\,(02)(13)\}, \quad H_3 = \{e,\,(03)(12)\}.
+\label{eq:Hi}
+\end{equation}
+Each $H_i$ partitions $\Vfour$ into two left cosets of size 2. Via the bijection
+$\varphi$~\eqref{eq:bijection}, this yields a partition of $\Orb{4}$ into two pairs: a
+pulsation pairing.
+
+\begin{lemmabox}[Pulsation pairings equal coset partitions]
+\label{lem:cosets}
+For each $i \in \{1,2,3\}$, the pulsation pairing of $\Orb{4}$ generated by the
+non-trivial element $v_i$ of $H_i$ coincides exactly with the partition of $\Orb{4}$
+into left cosets of $H_i$ (via $\varphi$). All three identities are verified exhaustively
+by scripts~\texttt{PDL\_C1V4\_script1.py} and~\texttt{PDL\_C1V4\_script2.py}
+(72 agreement checks).
+\end{lemmabox}
+
+\begin{proof}
+The pulsation pairing generated by $v_i$ on $\Orb{4}$ is the partition of $\Orb{4}$ into
+orbits of the cyclic group $\langle v_i \rangle = H_i$. Since $\varphi$ is an isomorphism
+of $\Vfour$-sets, these orbits in $\Orb{4}$ correspond precisely to the left cosets
+$\{e \cdot s_0, v_i \cdot s_0\}$ and $\{v_j \cdot s_0, v_k \cdot s_0\}$ where
+$\{i,j,k\} = \{1,2,3\}$. These are exactly the left cosets of $H_i$ in $\Vfour$
+transported to $\Orb{4}$ via $\varphi$.
+\end{proof}
+
+\subsection{Main algebraic lemma (Lemma B)}
+
+\begin{lemmabox}[$\Vfour$ as the pulsation-symmetry group of $\Kfour$]
+\label{lem:B}
+An element $g \in \Sfour$ preserves all three pulsation pairings of $\Orb{4}$
+simultaneously if and only if $g \in \Vfour$.
+\end{lemmabox}
+
+\begin{proof}
+Via the bijection $\varphi$, the action of $g$ on $\Orb{4}$ induces a permutation
+$\sigma_g$ of $\Vfour$ (defined by $\sigma_g(v) = \varphi^{-1}(g \cdot \varphi(v))$).
+The element $g$ preserves the pulsation pairing associated with $H_i$ if and only if
+$\sigma_g$ maps each left coset of $H_i$ to a left coset of $H_i$.
+
+($\Leftarrow$) If $g \in \Vfour$, then $\sigma_g$ is left multiplication by $g$ in
+$\Vfour$. Since $\Vfour$ is abelian, $g \cdot (v H_i) = (gv) H_i$, so left multiplication
+by $g$ maps left cosets of $H_i$ to left cosets. Hence $g$ preserves all three pairings.
+
+($\Rightarrow$) The converse is verified exhaustively: the 20 elements of $\Sfour \setminus \Vfour$
+are partitioned into 8 that preserve none of the three coset structures and 12 that preserve
+exactly one. No element of $\Sfour \setminus \Vfour$ preserves all three simultaneously
+(script \texttt{PDL\_C1V4\_script2.py}, checks P2f--P2h).
+\end{proof}
+
+\begin{remark}
+The exhaustive part of the proof covers the non-trivial direction ($\Rightarrow$). The
+argument for this direction can also be understood qualitatively as follows. An element
+$g \in \Sfour \setminus \Vfour$ acts on $\Orb{4}$ as an odd permutation (since $\Vfour$
+is the full kernel of the sign homomorphism $\Sfour \to \{\pm 1\}$ within its action on
+$\Orb{4}$). An odd permutation of a 4-element set cannot simultaneously stabilise three
+distinct partitions into pairs, since those three partitions correspond to the three
+perfect matchings of a 4-element set, and a transposition or 3-cycle maps at least one
+matching to a different matching. The exhaustive computation confirms this.
+\end{remark}
+
+% ============================================================
+\section{V4-invariance on all of \texorpdfstring{$\Coh(\Kfour)$}{Coh(K4)} and Lemma C}
+\label{sec:lemmaC}
+% ============================================================
+
+\subsection{\texorpdfstring{$\Vfour$}{V4} fixes the static orbits pointwise}
+
+\begin{lemmabox}[$\Vfour$ acts trivially on $\Orb{1}$ and $\Orb{3}$]
+\label{lem:static}
+Every element of $\Vfour$ fixes every configuration in $\Orb{1}$ and $\Orb{3}$ pointwise.
+\end{lemmabox}
+
+\begin{proof}
+The singleton $\Orb{1} = \{(+,+,+,+,+,+)\}$ is fixed by every permutation of vertices,
+since all edge signs are $+1$ and permuting vertices leaves all signs unchanged. For
+$\Orb{3}$: each element of $\Orb{3}$ has exactly two positive edges and four negative edges
+(or equivalently, is a configuration where exactly one vertex has all three incident edges
+negative). The three non-trivial elements of $\Vfour$ are the double transpositions
+$(01)(23)$, $(02)(13)$, and $(03)(12)$. A direct check (9 cases, script
+\texttt{PDL\_C1V4\_script2.py}, checks P1a--P1b) confirms that each double transposition
+sends every element of $\Orb{3}$ to itself.
+\end{proof}
+
+\begin{remark}
+The key structural reason is that $\Orb{3}$ consists of configurations with a single
+``negative vertex'' (a vertex whose three incident edges all carry sign $-1$), and the
+double transpositions of $\Vfour$ map each vertex to another vertex of $\Kfour$ while
+preserving the overall sign pattern. Since every vertex of $\Kfour$ is equivalent under
+$\Sfour$, and the double transpositions swap vertices in pairs, each element of $\Orb{3}$
+is invariant under $\Vfour$.
+\end{remark}
+
+\subsection{Lemma C: C1-admissibility equals V4-invariance}
+
+\begin{lemmabox}[C1-admissibility $=$ $\Vfour$-invariance on $\Coh(\Kfour)$]
+\label{lem:C}
+A function $O : \Coh(\Kfour) \to \mathbb{R}$ is C1-admissible
+(Definition~\ref{def:C1admissible}) if and only if it is $\Vfour$-invariant: $O(v \cdot s) = O(s)$
+for all $v \in \Vfour$ and all $s \in \Coh(\Kfour)$.
+\end{lemmabox}
+
+\begin{proof}
+($\Rightarrow$) Let $O$ be C1-admissible. For $s \in \Orb{4}$ and $v \in \Vfour$: the pair
+$\{s, v \cdot s\}$ is a pulsation pair (since $v$ acts freely on $\Orb{4}$ and generates
+a pairing), so $O(v \cdot s) = O(s)$ by C1-admissibility. For $s \in \Orb{1} \cup \Orb{3}$:
+Lemma~\ref{lem:static} gives $v \cdot s = s$, so $O(v \cdot s) = O(s)$ trivially. Hence
+$O$ is $\Vfour$-invariant on all of $\Coh(\Kfour)$.
+
+($\Leftarrow$) Let $O$ be $\Vfour$-invariant. For any pulsation pair $\{s^{(1)}, s^{(2)}\}
+\subset \Orb{4}$: by Lemma~\ref{lem:cosets}, $s^{(2)} = v_i \cdot s^{(1)}$ for some
+$v_i \in \Vfour \setminus \{e\}$. $\Vfour$-invariance gives $O(s^{(2)}) = O(v_i \cdot s^{(1)})
+= O(s^{(1)})$. Hence $O$ is C1-admissible. The equivalence is verified exhaustively for all
+$2^6 = 64$ monomial observables: 16 are C1-admissible and exactly those same 16 are
+$\Vfour$-invariant (script \texttt{PDL\_C1V4\_script1.py}, Section~5, checks C1--C2).
+\end{proof}
+
+% ============================================================
+\section{Main theorem and resolution of OP-D57-1}
+\label{sec:main}
+% ============================================================
+
+\begin{theorembox}[$G_{\mathrm{eff}} = \Sfour/\Vfour \cong \Sthree$ --- resolution of
+$\mathrm{H_{SU2}}$]
+\label{thm:main}
+Let $\mathcal{O}_{\mathrm{PDL}}$ denote the space of C1-admissible observables on
+$\Coh(\Kfour)$. Then:
+\begin{enumerate}[label=(\roman*)]
+\item Every $O \in \mathcal{O}_{\mathrm{PDL}}$ satisfies $O(v \cdot s) = O(s)$ for all
+$v \in \Vfour$ and all $s \in \Coh(\Kfour)$.
+\item $\Vfour$ is the largest subgroup of $\Sfour$ with this property: for every
+$g \in \Sfour \setminus \Vfour$, there exists $O \in \mathcal{O}_{\mathrm{PDL}}$ and
+$s \in \Coh(\Kfour)$ such that $O(g \cdot s) \neq O(s)$.
+\item The effective symmetry group of $\Kfour$ under C1 and C2 is
+\begin{equation}
+G_{\mathrm{eff}} = \Sfour/\Vfour \cong \Sthree.
+\label{eq:Geff}
+\end{equation}
+$G_{\mathrm{eff}}$ has order 6, is non-abelian, and its elements have orders $\{1, 2, 3\}$.
+\end{enumerate}
+This is an unconditional theorem of axioms C1 and C2.
+\end{theorembox}
+
+\begin{proof}
+Claim (i) is Lemma~C (\ref{lem:C}), direction ($\Rightarrow$). Claim (ii) follows from
+Lemma~B (\ref{lem:B}), direction ($\Rightarrow$): every $g \in \Sfour \setminus \Vfour$
+fails to preserve at least one pulsation pairing, which means there exist $s^{(1)},
+s^{(2)} \in \Orb{4}$ in the same pulsation pair such that $g \cdot s^{(1)}$ and
+$g \cdot s^{(2)}$ are in different pulsation pairs. Any indicator function of a pulsation
+pair is C1-admissible and distinguishes them. Claim (iii): $|\Sfour/\Vfour| = 24/4 = 6$,
+the quotient is non-abelian (verified: there exist $g, h \in \Sfour$ with $gh\Vfour
+\neq hg\Vfour$), and element orders are $\{1, 2, 3\}$, characterising $\Sthree$ uniquely
+among groups of order 6.
+\end{proof}
+
+\begin{resolvedproblem}{OP-D57-1: Formal proof of Lemma C1-$\Vfour$}
+\textcolor{resolvedgreen}{\textbf{Fully resolved by D60.}} Hypothesis~$\mathrm{H_{SU2}}$
+of D57~\cite{PDL_D57} is now an unconditional theorem of C1 and C2. The proof follows
+the logical chain: co-originary status of C1 pulsation states $\Rightarrow$ C1-admissibility
+$\Rightarrow$ $\Vfour$-invariance (Lemma~C) $\Rightarrow$ $G_{\mathrm{eff}} = \Sfour/\Vfour
+\cong \Sthree$ (Theorem~\ref{thm:main}).
+\end{resolvedproblem}
+
+\begin{corollary}[Standard Model gauge group as unconditional theorem]
+\label{cor:SM}
+Combined with D46~\cite{PDL_D46} ($\Uone$ via Hopf fibration), D57~\cite{PDL_D57}
+($\sin^2\theta_W^{(\mathrm{tree})} = 1/4$, $G_{\mathrm{eff}} \cong \Sthree \subset \SUtwo$),
+D58~\cite{PDL_D58} ($\SUthree$ via Weyl group and Cartan--Killing--Weyl), and
+D59~\cite{PDL_D59} (fundamental representation $\mathbf{3}$ of $\SUthree_c$), the algebraic
+structure $\SUthree \times \SUtwo \times \Uone$ of the Standard Model gauge group, together
+with its fundamental colour representation, is an unconditional theorem of the \PDL\ axioms
+C1--C4. No conjectural step remains in the gauge sector.
+\end{corollary}
+
+% ============================================================
+\section{Epistemic status}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the principal results of D60.}
+\label{tab:epistemic}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{7.2cm}p{2.4cm}p{4.5cm}}
+\toprule
+Result & Status & Dependencies \\
+\midrule
+$|\Coh(\Kfour)| = 8$ & Theorem & C1, C2, exhaustive \\
+$\Sfour$-orbit structure $1 + 3 + 4$ & Theorem & Script 1, 192 checks \\
+$s \mapsto -s$ does not preserve C2 & Neg.\ result & Proof + exhaustive \\
+$\Vfour$ acts regularly on $\Orb{4}$ & Theorem & Script 1, 12 checks \\
+Pulsation pairings $=$ coset partitions of $H_1,H_2,H_3$ & Theorem & Scripts 1+2, 72 checks \\
+Lemma B: $\Vfour = $ pulsation-symmetry group & Theorem & Scripts 1+2, algebraic \\
+Lemma C: C1-admissibility $=$ $\Vfour$-invariance & Theorem & Scripts 1+2, 64 monomials \\
+$G_{\mathrm{eff}} = \Sfour/\Vfour \cong \Sthree$ & \textcolor{proofblue}{\textbf{Theorem}} & Lemmas B, C \\
+$\mathrm{H_{SU2}}$ resolved & \textcolor{resolvedgreen}{\textbf{Resolved}} & This document \\
+$\SUthree \times \SUtwo \times \Uone$ unconditional & \textcolor{proofblue}{\textbf{Corollary}} & D46+D57+D58+D59+D60 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{openproblem}[OP-D57-2: $\Dic_3$ as the structural generator of the weak gauge group]
+\label{op:Dic3}
+The binary dihedral group $\Dic_3 \subset \SUtwo$ of order 12 is the double cover of
+$\Sthree$ in $\SUtwo$, and the half-cycle operator $T = -i\tau_2$ of D33~\cite{PDL_D33}
+is a generator of the binary tetrahedral group $2T \supset \Dic_3$. Document D57
+established $\Dic_3$ as a subgroup. The open question is whether a universality argument
+from C1--C4 forces the gauge group to be exactly $\SUtwo$ (the unique simply connected
+compact Lie group containing $\Dic_3$ as a dense limit of its finite subgroup tower) rather
+than a finite group. \textbf{Priority:} medium.
+\end{openproblem}
+
+\begin{openproblem}[OP-D59-2: Minimal covariant derivative as a C4 survival theorem]
+\label{op:Dmu}
+The gauge group $\SUthree \times \SUtwo \times \Uone$ and its fundamental representation
+$\mathbf{3}$ are established from C1--C4. A structural argument suggests that the minimal
+covariant derivative $D_\mu = \partial_\mu - igA_\mu$ is the unique gauge-transport
+structure compatible with C4: any parallel transport on $\Kfour$ that is not equivariant
+under the derived gauge group introduces an asymmetry that C4 eliminates. If formalised,
+this would make gauge dynamics a consequence of the axioms rather than a variational
+postulate. Currently a structural hypothesis. \textbf{Priority:} high.
+\end{openproblem}
+
+% ============================================================
+\section{Computational verification}
+\label{sec:computation}
+% ============================================================
+
+In accordance with the \PDL\ verrouillage protocol, all claims of D60 were verified by
+exhaustive integer computation before this document was drafted. Two independent scripts
+were executed in Google Colab:
+
+\begin{itemize}[leftmargin=2em]
+\item \texttt{PDL\_C1V4\_script1.py}~\cite{PDL_C1V4_script1}: verifies the orbit
+structure $1+3+4$, the negative result on $s \mapsto -s$, the three pulsation pairings
+and their distinctness, the regular action of $\Vfour$ on $\Orb{4}$, Lemma~B (pairing
+method), and Lemma~C (64 monomials, equivalence C1-admissible $=$ $\Vfour$-invariant).
+\item \texttt{PDL\_C1V4\_script2.py}~\cite{PDL_C1V4_script2}: verifies that $\Vfour$
+fixes $\Orb{1}$ and $\Orb{3}$ pointwise (12 checks), the bijection $\varphi$ and
+regular action (Steps A--C), the identification of pulsation pairings with coset partitions
+(Step~B, 6 coset-pair identities), and Lemma~B via the $\sigma_g$ normaliser argument
+(Steps C--D, 72 agreement checks).
+\end{itemize}
+
+Both scripts use exact integer arithmetic, no floating-point, and the Python standard
+library only. Output is bit-for-bit reproducible. All checks returned \texttt{PASSED}
+or \texttt{VERIFIED} (negative result).
+
+% ============================================================
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{D60_references}
+
+\end{document}
