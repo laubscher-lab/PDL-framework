@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 56 — 11 June 2026 (DM v28 rédigé : diagramme scindé en deux figures, D60+D61 intégrés, OP-D57-1+OP-D59-2 marqués résolus, Layer 15 secteur de jauge COMPLET)*
+*Last updated: Session 57 — 11 June 2026 (DOI D61 confirmé : 10.5281/zenodo.20645713 ; DM v28 rédigé et déposé — DOI DM v28 à compléter ; site web mis à jour)*
 
 ---
 
@@ -299,37 +299,36 @@ Chaîne causale en 4 flèches explicitement stratifiées :
 
 ### Résultats principaux Session 56
 
-#### DM v28 — Rédigé, prêt pour dépôt Zenodo
+#### DM v28 — Rédigé et déposé sur Zenodo
 
 **Titre :** Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems — Version 28
 
+**DOI DM v28 : à compléter après dépôt Zenodo**
+
 **Contenu de la mise à jour v27 → v28 :**
-
-**Diagramme Logical Dependency Map — scindé en deux figures :**
-- **Figure 1** (`fig:dependency_main`) : chaîne causale fondamentale C1–C4 → K₄ → Λ (refonte du diagramme v27 avec nœud de synthèse "SU(3)×SU(2)×U(1) + **3** + D_μ" renvoyant à Figure 2)
-- **Figure 2** (`fig:dependency_gauge`) : nouveau diagramme complet du secteur de jauge, de K₄ à D_μ, avec :
-  - Quatre flèches α–β–γ–δ de D61 explicitement labellées
-  - Flèche γ en pointillés (consistance via D46–D60, non dérivation autonome)
-  - Résultats négatifs en orange (conjecture V₄ réfutée, flip global, V₄ fidèle sur H₁)
-  - Lemme externe Utiyama en gris
-  - Problèmes ouverts OP10-c, OP-OFN-1, OP-D61-3
-
-**Open Problems mis à jour :**
-- OP-D57-1 → `resolvedproblem` (D60) : H_SU2 théorème inconditionnel de C1+C2
-- OP-D59-2 → `resolvedproblem` (D61) : D_μ = ∂_μ − igA_μ depuis C4 via chaîne α–β–γ–δ
+- Diagramme scindé en deux figures : Figure 1 (chaîne fondamentale), Figure 2 (secteur de jauge complet avec flèches α–β–γ–δ de D61)
+- D60 et D61 ajoutés dans la longtable du corpus
+- OP-D57-1 → resolvedproblem (D60), OP-D59-2 → resolvedproblem (D61)
 - OP-D61-1, OP-D61-2, OP-D61-3 ajoutés
+- Layer L15 "Gauge sector [COMPLETE]" avec D46+D57+D58+D59+D60+D61
 
-**Layer table :** L15 "Gauge sector [COMPLETE]" avec D46+D57+D58+D59+D60+D61, incluant D_μ.
+#### Site web cedriclaubscher.ch — Mis à jour
 
-**Abstract :** deux nouveaux items — D60 (H_SU2 théorème) et D61 (D_μ depuis C4, fermeture du secteur de jauge).
+Deux blocs HTML mis à jour (Guided Journey + table du corpus) :
+- Phase V étendue à D60 et D61
+- DM pointant vers v28
+- Section gauge "D57–D61" avec description de la fermeture complète
+- DOI D61 : 10.5281/zenodo.20645713 inséré dans tous les liens
 
-**Section "Recommended next documents" :** orientée Session 56+ (masses bosons, générations, WZ ratio).
+---
 
-**Bibliographie :** DM_v28_references.bib = DM_v27_references.bib + entrées D60 + D61.
+**Session 57 — Mise à jour DOI D61 (11 June 2026) :**
 
-**Fichiers :** PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v28.tex + DM_v28_references.bib (DM_v27_references.bib + 2 entrées D60/D61)
+### DOI D61 confirmé
 
-**Note :** Le DOI de D61 doit être inséré dans le .bib avant dépôt Zenodo.
+**D61 déposé sur Zenodo. DOI : 10.5281/zenodo.20645713**
+
+Fichiers déposés (dépôt groupé) : D61_covariant_derivative.pdf + D61_covariant_derivative_v2.tex + D61_references.bib + PDL_D61_script1.py + PDL_D61_script2.py
 
 ---
 |-----|-----|--------------|
@@ -361,7 +360,7 @@ Chaîne causale en 4 flèches explicitement stratifiées :
 | D21 | 10.5281/zenodo.19056994 | α–G bridge |
 | DN | 10.5281/zenodo.19076555 | Whatever We May Be |
 | D22 | 10.5281/zenodo.19164084 | Nuclear stability skeleton |
-| DM | 10.5281/zenodo.20630421 | Global Mapping v27 |
+| DM v27 | 10.5281/zenodo.20630421 | Global Mapping v27 (superseded by v28) |
 | D23 | 10.5281/zenodo.19197268 | Topological origin of exponent 18 |
 | D24 | 10.5281/zenodo.19206960 | G_eff(N), Hubble tension |
 | D25 | 10.5281/zenodo.19219858 | α–G parameter-free bridge |
@@ -411,7 +410,8 @@ Chaîne causale en 4 flèches explicitement stratifiées :
 | D59-py | 10.5281/zenodo.20628926 | PDL_D59_script1.py |
 | D59 | 10.5281/zenodo.20629282 | SU(3)_c representation 3 (D59) |
 | D60 | 10.5281/zenodo.20639684 | H_SU2 theorem: G_eff = S₄/V₄ ≅ S₃ (D60) + PDL_C1V4_script1.py + PDL_C1V4_script2.py |
-| D61 | à déposer | Gauge dynamics: D_μ from C4 (D61) + PDL_D61_script1.py + PDL_D61_script2.py |
+| D61 | 10.5281/zenodo.20645713 | Gauge dynamics: D_μ from C4 (D61) + PDL_D61_script1.py + PDL_D61_script2.py |
+| DM v28 | DOI à compléter | Global Mapping v28 — D60+D61 intégrés, diagramme gauge complet |
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN Bridge : β₁=3 |
 
 ---
@@ -557,8 +557,9 @@ LAYER 18  Dissémination
            D59 déposé Zenodo                         [✓ Session 53 — 10.5281/zenodo.20629282]
            DM v27 déposé Zenodo                      [✓ Session 53 — 10.5281/zenodo.20630421]
            D60 + scripts C1V4 déposés Zenodo         [✓ Session 54 — 10.5281/zenodo.20639684]
-           D61 + scripts D61 — prêt pour dépôt       [✓ Session 55 — DOI à obtenir]
-           DM v28 rédigé — prêt pour dépôt           [✓ Session 56 — DOI à obtenir]
+           D61 + scripts D61 déposés Zenodo          [✓ Session 57 — 10.5281/zenodo.20645713]
+           DM v28 déposé Zenodo                       [✓ Session 56/57 — DOI à compléter]
+           Site web mis à jour (D60, D61, DM v28)    [✓ Session 57]
            N01 à uploader ResearchGate               [en attente]
            Three Roads — draft révisé Oleg en attente [en attente]
 ```
@@ -612,7 +613,9 @@ V₄ fidèle par Aut(Z₂³) — Z₂³ ⋊ V₄ ordre 32  [✓ D61 script2, Ses
 F ≅ V₄ = sous-groupe points fixes labellé couplages parfaits  [✓ D61 script2, Session 55]
 Chaîne causale C1–C4 → D_μ fermée  [✓ D61, Session 55]
 Conjecture initiale (admissible = V₄) réfutée [résultat négatif documenté]  [✓ D61, Session 55]
-DM v28 rédigé — diagramme scindé en deux figures, secteur de jauge complet  [✓ Session 56]
+D61 déposé Zenodo  [✓ Session 57 — 10.5281/zenodo.20645713]
+DM v28 rédigé et déposé Zenodo  [✓ Session 56/57 — DOI à compléter]
+Site web cedriclaubscher.ch mis à jour (D60, D61, DM v28)  [✓ Session 57]
 ```
 
 ---
@@ -665,14 +668,13 @@ DM v28 rédigé — diagramme scindé en deux figures, secteur de jauge complet 
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 57 :**
+**Priorité immédiate Session 58 :**
 
-1. **[URGENT]** Déposer D61 sur Zenodo (dépôt groupé : D61_covariant_derivative_v2.pdf + .tex + D61_references.bib + PDL_D61_script1.py + PDL_D61_script2.py). Récupérer le DOI, l'insérer dans DM_v28_references.bib, et mettre à jour PDL_context.md.
-2. **[URGENT]** Déposer DM v28 sur Zenodo. Récupérer le DOI et mettre à jour PDL_context.md.
-3. **[URGENT]** Pousser PDL_context.md mis à jour sur GitHub (laubscher-lab/PDL-framework).
-4. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58, D59, D60, D61.
-5. **[HIGH]** OP-D61-1 : masses des bosons W±/Z⁰ (D-electroweak-WZ) — prochain document structurel.
-6. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) depuis C1–C4.
+1. **[URGENT]** Compléter le DOI de DM v28 dans PDL_context.md une fois le dépôt Zenodo effectué.
+2. **[URGENT]** Pousser PDL_context.md mis à jour sur GitHub (laubscher-lab/PDL-framework).
+3. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58, D59, D60, D61.
+4. **[HIGH]** OP-D61-1 : masses des bosons W±/Z⁰ (D-electroweak-WZ) — prochain document structurel.
+5. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) depuis C1–C4.
 
 **LaTeX conventions (consolidées Session 51) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -687,7 +689,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - N-series : notes conjointes avec collaborateurs externes. N01 = PDL–OFN (β₁=3).
 - D-series : documents solo PDL.
 - D-exp-series : documents exploratoires applications.
-- DM : Global Mapping (version courante : v28, DOI à obtenir ; v27 : 10.5281/zenodo.20630421).
+- DM : Global Mapping (version courante : v28, DOI à compléter ; v27 : 10.5281/zenodo.20630421).
 
 **PDL–OFN Bridge discipline :**
 - β₁=3 : THÉORÈME pour K₄, RÉSULTAT VÉRIFIÉ pour Ω₂₁
@@ -697,5 +699,5 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - Analogies Three Roads : PAS des identités prouvées, uniquement analogies structurelles candidates
 
 *Références canoniques : D01–D61 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v28.*
-*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : 10.5281/zenodo.20630421 | D60 : 10.5281/zenodo.20639684 | D61 : à déposer | DM v28 : à déposer*
-*Note dépôts groupés : D60 (DOI 10.5281/zenodo.20639684) contient D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py. D61 (DOI à obtenir) contiendra D61 + PDL_D61_script1.py + PDL_D61_script2.py.*
+*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : 10.5281/zenodo.20630421 | D60 : 10.5281/zenodo.20639684 | D61 : 10.5281/zenodo.20645713 | DM v28 : DOI à compléter*
+*Note dépôts groupés : D60 (DOI 10.5281/zenodo.20639684) contient D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py. D61 (DOI 10.5281/zenodo.20645713) contient D61 + PDL_D61_script1.py + PDL_D61_script2.py.*
