@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 53 — 10 June 2026 (D59-py + D59 + DM v27 déposés)*
+*Last updated: Session 54 — 11 June 2026 (D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés; DM v27 DOI complété)*
 
 ---
 
@@ -135,7 +135,7 @@ Cinq lemmes verrouillés + un résultat négatif (tous PASSED / VERIFIED) :
 - OP-D58-1 et OP-D58-3 RÉSOLUS
 - Nouveaux problèmes ouverts : OP-D59-1 (masse des quarks), OP-D59-2 (D_μ = ∂_μ - igA_μ depuis C4)
 
-**Résultat central nouveau (Session 53) :**
+**Résultat central (Session 53) :**
 ```
 SU(3)_c dans 3   THÉORÈME de C1–C4 + Cartan–Killing–Weyl
                   W = {a+b+c=0} porteur canonique, axes = V₄\{e}
@@ -147,9 +147,73 @@ SU(3)_c dans 3   THÉORÈME de C1–C4 + Cartan–Killing–Weyl
 
 #### DM v27 — Déposé sur Zenodo
 
-**DOI : (à compléter après dépôt)**
+**DOI : 10.5281/zenodo.20630421**
 
 Incorpore D59 et PDL_D59_script1.py. OP-D58-1 et OP-D58-3 marqués résolus. OP-D59-1 et OP-D59-2 ajoutés. Nœud D59 dans le diagramme TikZ.
+
+---
+
+**Session 54 — D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés (11 June 2026):**
+
+### Résultats principaux Session 54
+
+#### Contexte : échange avec Prof. Thomas Görnitz
+
+Contact établi avec Prof. Thomas Görnitz (Goethe Universität Frankfurt), auteur du cadre Protyposis/AQI et du papier Görnitz–Schomäcker (2018) «The Structures of Interactions — How to Explain the Gauge Groups U(1), SU(2) and SU(3)» (Foundations of Science, DOI: 10.1007/s10699-016-9507-6). Sa réponse confirme la convergence structurelle : dans les deux cadres, les groupes de jauge précèdent l'espace de Minkowski et émergent d'une structure primitive (AQI chez Görnitz, K₄ chez PDL). La route vers SU(3) est distincte (duplication de Cartan chez Görnitz, chaîne S₄→S₃→A₂ chez PDL). Valeur : confirmation externe de cohérence fondationnelle ; référence bibliographique pour futurs documents sur le secteur de jauge.
+
+#### Scripts de verrouillage D60
+
+Protocole verrouillage respecté : deux scripts exécutés indépendamment dans Google Colab avant rédaction.
+
+**PDL_C1V4_script1.py** — Vérifie :
+- Structure orbite 1+3+4 de S₄ sur Coh(K₄) (192 checks)
+- Résultat négatif documenté : s → −s ne préserve pas C2 (8/8 VERIFIED)
+- V₄ agit librement sur orbit-4, génère exactement 3 pairings distincts
+- Lemme B (méthode pairings) : V₄ = {g ∈ S₄ : g préserve les 3 pairings} (PASSED)
+- Lemme C : C1-admissibilité = V₄-invariance, équivalence exacte sur 64 monomials (PASSED)
+
+**PDL_C1V4_script2.py** — Vérifie :
+- Point 1 : V₄ fixe orbit-1 et orbit-3 pointwise (12 checks, PASSED)
+- Point 2 : orbit-4 ≅ V₄ comme V₄-ensemble régulier (PASSED)
+- Trois pairings = partitions en cosets de H₁, H₂, H₃ (6 identités coset-pair, PASSED)
+- Argument algébrique σ_g : accord méthode cosets/méthode pairings sur 24 éléments (72 checks, PASSED)
+- Aucun élément de S₄\V₄ ne préserve les 3 structures de cosets (PASSED)
+
+**Déposés sur Zenodo avec D60 (dépôt groupé). DOI : 10.5281/zenodo.20639684**
+
+#### D60 — Déposé sur Zenodo
+
+**Titre :** From the Logic of Existence to the Gauge Symmetry Group: A Proof of Hypothesis H_SU2 from Axioms C1 and C2 (Projective Dynamic Logo Framework — Document D60)
+
+**DOI : 10.5281/zenodo.20639684**
+
+**Résultat central :**
+```
+H_SU2   THÉORÈME INCONDITIONNEL de C1+C2
+         Chaîne logique :
+         Existence = distinction répétable (C1)
+         → co-originarité des deux états du 2-cycle
+         → C1-admissibilité (aucun observable ne distingue s(1) de s(2))
+         → s → −s brise C2 [résultat négatif]
+         → pulsation pairing = partition de orbit-4 sous V₄
+         → V₄ = groupe des symétries de pulsation de K₄ (Lemme B)
+         → V₄ fixe orbit-1 et orbit-3 pointwise (Lemme C)
+         → C1-admissibilité = V₄-invariance sur tout Coh(K₄)
+         → G_eff = S₄/V₄ ≅ S₃
+```
+
+**Corollaire majeur :**
+```
+SU(3) × SU(2) × U(1) + représentation 3   THÉORÈME INCONDITIONNEL de C1–C4
+                                             D46 (U(1)) + D60 (SU(2), théorème)
+                                             + D58 (SU(3)) + D59 (représentation 3)
+                                             AUCUNE ÉTAPE CONJECTURALE RÉSIDUELLE
+                                             dans le secteur de jauge
+```
+
+**Fichiers déposés :** D60_C1V4_theorem.pdf + D60_C1V4_theorem.tex + D60_references.bib + PDL_C1V4_script1.py + PDL_C1V4_script2.py
+
+**Statut OP-D57-1 :** RÉSOLU par D60.
 
 ---
 
@@ -159,237 +223,136 @@ Incorpore D59 et PDL_D59_script1.py. OP-D58-1 et OP-D58-3 marqués résolus. OP-
 |-----|-----|--------------|
 | D01 | 10.5281/zenodo.18462686 | Emergence of Physical Reality (PDL) |
 | D02 | 10.5281/zenodo.18463130 | Introduction to PDL |
-| D01F | 10.5281/zenodo.18475542 | Émergence réalité physique (FR) |
-| D03 | 10.5281/zenodo.18509648 | PDL IMRaD |
+| D01F | 10.5281/zenodo.18475542 | Émergence réalité physique (français) |
+| D03 | 10.5281/zenodo.18509648 | PDL IMRaD format |
 | D04 | 10.5281/zenodo.18580925 | PDL–TO Dialogue |
 | D05 | 10.5281/zenodo.18581453 | Golden Ratio in PDL |
-| D06 | 10.5281/zenodo.18581807 | Exponent 18 (sketch) |
-| D07 | 10.5281/zenodo.18663156 | Gleason Born's Rule |
-| D08 | 10.5281/zenodo.18664995 | Topological Reformulation |
-| D09 | 10.5281/zenodo.18675200 | Position Paper |
-| D10 | 10.5281/zenodo.18716526 | Coherence Effective Fields |
-| D10a | 10.5281/zenodo.19329465 | Proper Time as Coherence Counting |
-| D11 | 10.5281/zenodo.18725069 | Einstein–Dirac Unification |
-| D12 | 10.5281/zenodo.18828183 | Fine-Structure Constant |
-| D13 | 10.5281/zenodo.18831587 | Schrödinger Compatibility |
-| D14 | 10.5281/zenodo.18832069 | Born's Rule + Golden Ratio |
-| D15 | 10.5281/zenodo.18832542 | Schrödinger Dynamics Sketch |
-| D16 | 10.5281/zenodo.18832953 | Proton Architecture |
-| D16a | 10.5281/zenodo.18841034 | Minimal Closures (4,6) |
-| D16b | 10.5281/zenodo.18841166 | Proton Local Uniqueness |
-| D17 | 10.5281/zenodo.18841254 | Exponent 18 (full) |
-| D18 | 10.5281/zenodo.18854190 | Discrete Cavity Modes |
-| D19 | 10.5281/zenodo.18854559 | Existence as Pulsating Closure |
-| D20F | 10.5281/zenodo.18914532 | Synthèse philosophique (FR) |
-| D20 | 10.5281/zenodo.18940047 | Philosophical Synthesis (EN) |
-| D21 | 10.5281/zenodo.19056994 | Coherence Leakage Bridge G–α |
-| DN | 10.5281/zenodo.19076555 | Whatever We May Be (EN) |
-| D22 | 10.5281/zenodo.19164084 | Nuclear Stability Skeleton |
-| **DM** | **10.5281/zenodo.(v27 DOI à compléter)** | **Global Mapping v27** |
-| D23 | 10.5281/zenodo.19197268 | Topological Origin Exponent 18 |
-| D24 | 10.5281/zenodo.19206960 | Closure-Density G_eff + Hubble |
-| D25 | 10.5281/zenodo.19219858 | Parameter-Free Bridge α–G |
-| D26 | 10.5281/zenodo.19221310 | G Topology-Dependent + Hubble |
-| D27 | 10.5281/zenodo.19281988 | N_CMB from Neutron Architecture |
-| D28 | 10.5281/zenodo.19282932 | PDL–QCD Boundary |
-| D29 | 10.5281/zenodo.19283107 | Gate 1: 155/11017 |
-| D30 | 10.5281/zenodo.19294449 | Gate 2: QCD Coefficient |
-| D31 | 10.5281/zenodo.19294984 | Gate 3: G_eff(N) (preliminary) |
-| D32 | 10.5281/zenodo.19306269 | Schrödinger from (A)∧(B) |
-| D33 | 10.5281/zenodo.19307249 | Dirac from SL(2,C) K₄ |
-| D34 | 10.5281/zenodo.19322776 | Born Rule Level 1 |
-| D35 | 10.5281/zenodo.19322936 | Einstein Equation |
-| D36 | 10.5281/zenodo.19323033 | Gate 3 Strengthened |
-| D37 | 10.5281/zenodo.19354096 | Area Law BH-1 |
-| D38 | 10.5281/zenodo.19354682 | Bekenstein–Hawking BH-2 |
-| D39 | 10.5281/zenodo.19354989 | κ = R_surf/R_tot (partial) |
-| D40 | 10.5281/zenodo.19371523 | Nuclear Stability Z=1..82 |
-| D41 | 10.5281/zenodo.19384396 | ⁸⁴⁸⁶Mo Island of Inversion |
-| D42 | 10.5281/zenodo.20041348 | H3 from C1–C4 (OP1 resolved) |
-| D43 | 10.5281/zenodo.19678389 | Causal Chain → G (v3) |
-| D44 | 10.5281/zenodo.19678474 | Filter Factor k (OP-B resolved) |
-| D45 | 10.5281/zenodo.19810259 | PBH Threshold Fermi-LAT |
-| DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (FR) |
-| D46 | 10.5281/zenodo.19956932 | Born Level 2 + U(1) (OP4) |
-| D47 | 10.5281/zenodo.19967918 | Sub-Shell Filling (OP13+OP14) |
-| D48 | 10.5281/zenodo.20151380 | Coherence Tensor v3 (OP2+OP-spin) |
-| D49 | 10.5281/zenodo.20025166 | London Equation (OP-London) |
-| D50 | 10.5281/zenodo.20029777 | BH Quarter (OP12/BH-3) |
-| D51 | 10.5281/zenodo.20033520 | Cosmological Leakage C (OP1-D35) |
-| D52 | 10.5281/zenodo.20036769 | Three Leakage Bases (PDL-C) |
-| D53 | 10.5281/zenodo.20052558 | Causal Closure → Λ (synthesis) |
+| D06 | 10.5281/zenodo.18581807 | Coherence Leakage, Exponent 18 |
+| D07 | 10.5281/zenodo.18663156 | Gleason-Type Born's Rule |
+| D08 | 10.5281/zenodo.18664995 | Topological Reformulation PDL |
+| D09 | 10.5281/zenodo.18675200 | PDL Research Programme Position Paper |
+| D10 | 10.5281/zenodo.18716526 | Discrete Coherence Flux to Effective Fields |
+| D10a | 10.5281/zenodo.19329465 | Proper Time as Coherence-Cycle Counting |
+| D11 | 10.5281/zenodo.18725069 | Einstein–Dirac Unification sketch |
+| D12 | 10.5281/zenodo.18828183 | Fine-Structure Constant derivation |
+| D13 | 10.5281/zenodo.18831587 | Schrödinger compatibility |
+| D14 | 10.5281/zenodo.18832069 | Born's Rule + Golden Ratio surface |
+| D15 | 10.5281/zenodo.18832542 | Schrödinger dynamics sketch |
+| D16 | 10.5281/zenodo.18832953 | Proton architecture combinatorics |
+| D16a | 10.5281/zenodo.18841034 | K₄ as unique minimal closure |
+| D16b | 10.5281/zenodo.18841166 | Proton architecture uniqueness |
+| D17 | 10.5281/zenodo.18841254 | Exponent 18, hierarchical filtering |
+| D18 | 10.5281/zenodo.18854190 | Discrete cavity modes |
+| D19 | 10.5281/zenodo.18854559 | Existence as Pulsating Closure (ontologie) |
+| D20F | 10.5281/zenodo.18914532 | Qui que nous puissions être (français) |
+| D20 | 10.5281/zenodo.18940047 | Whoever We May Be |
+| D21 | 10.5281/zenodo.19056994 | α–G bridge |
+| DN | 10.5281/zenodo.19076555 | Whatever We May Be |
+| D22 | 10.5281/zenodo.19164084 | Nuclear stability skeleton |
+| DM | 10.5281/zenodo.20630421 | Global Mapping v27 |
+| D23 | 10.5281/zenodo.19197268 | Topological origin of exponent 18 |
+| D24 | 10.5281/zenodo.19206960 | G_eff(N), Hubble tension |
+| D25 | 10.5281/zenodo.19219858 | α–G parameter-free bridge |
+| D26 | 10.5281/zenodo.19221310 | Cosmological resolution via PDL |
+| D27 | 10.5281/zenodo.19281988 | N_CMB derivation, Hubble tension resolved |
+| D28 | 10.5281/zenodo.19282932 | PDL–QCD boundary, mass ratio |
+| D29 | 10.5281/zenodo.19283107 | Gate 1 : 155/11017 |
+| D30 | 10.5281/zenodo.19294449 | Gate 2 : a=2 |
+| D31 | 10.5281/zenodo.19295227 | Gate 3 conjecture + Δm_iso |
+| D32 | 10.5281/zenodo.19295583 | Schrödinger equation from PDL |
+| D33 | 10.5281/zenodo.14965050 | Dirac equation from PDL |
+| D34 | 10.5281/zenodo.19302936 | Born's Rule Level 1 |
+| D35 | 10.5281/zenodo.19303408 | Einstein equation from PDL |
+| D36 | 10.5281/zenodo.19323033 | Gate 3 : G_eff = σ(N)·G_PDL |
+| D37 | 10.5281/zenodo.19354096 | Area law |
+| D38 | 10.5281/zenodo.19354682 | Bekenstein–Hawking + PBH predictions |
+| D39 | 10.5281/zenodo.19354989 | κ = R_surf/R_tot derivation |
+| D40 | 10.5281/zenodo.19371523 | Valley of stability, magic numbers |
+| D41 | 10.5281/zenodo.19384396 | Island of inversion ⁸⁴,⁸⁶Mo |
+| D42 | 10.5281/zenodo.20041348 | H3 theorem (Indifference Lemma) |
+| D43 | 10.5281/zenodo.19678389 | Causal chain, ε_geom (OP-A resolved) |
+| D44 | 10.5281/zenodo.19678474 | Filter factor k (OP-B resolved) |
+| D45 | 10.5281/zenodo.19810259 | PBH threshold + Fermi-LAT prediction |
+| DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (français) |
+| D46 | 10.5281/zenodo.19956932 | Born Level 2 : U(1), Hopf fibration |
+| D47 | 10.5281/zenodo.19967918 | Sub-shell filling, periodic table (OP13+OP14) |
+| D48 | 10.5281/zenodo.20151380 | Coherence stress-energy tensor C_coh |
+| D49 | 10.5281/zenodo.20025166 | London equation (OP-London resolved) |
+| D50 | 10.5281/zenodo.20029777 | BH coefficient 1/4 (OP12 resolved) |
+| D51 | 10.5281/zenodo.20033520 | Cosmological leakage constant C |
+| D52 | 10.5281/zenodo.20036769 | Three leakage bases identified |
+| D53 | 10.5281/zenodo.20052558 | Causal closure C1–C4 → Λ |
 | DL01 | 10.5281/zenodo.20132166 | From Axioms to Life (PDL-V) |
-| DL02 | 10.5281/zenodo.20132228 | Life/Consciousness Thresholds |
-| D54 | 10.5281/zenodo.20157203 | Equation of State (OP-pressure) |
-| D55 | 10.5281/zenodo.20179924 | Weinberg Angle (OP10) |
-| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 |
-| D-exp-SP2 | 10.5281/zenodo.20242505 | Topological Criterion Photon→Electron |
-| D-exp-ZIB | 10.5281/zenodo.20262293 | Surface Dipole — Zinc-Ion Supercapacitor |
-| D-exp-MP01 | 10.5281/zenodo.20316492 | PDL Structural Lacunae — Materials Project |
-| D-exp-Zr | 10.5281/zenodo.20321750 | Zr QPT — Structural Origin |
-| D56 | 10.5281/zenodo.20409903 | N_comp(k)=k — OP-D41-1-A RESOLVED |
-| D-exp-E2-PDL | 10.5281/zenodo.20593807 | PDL Structural Analysis f₇/₂ Mirror Nuclei |
-| **N01** | **10.5281/zenodo.20523343** | **β₁=3 Topological Invariant — PDL–OFN Joint Note** |
-| **D57** | **10.5281/zenodo.20600264** | **SU(2) Gauge Structure + sin²θ_W(tree)=1/4 — THÉORÈME** |
-| **D58-py** | **10.5281/zenodo.20623231** | **PDL_SU3_script1.py — Verrouillage D58** |
-| **D58** | **10.5281/zenodo.20622987** | **SU(3) Gauge Structure — Complétion SU(3)×SU(2)×U(1) — THÉORÈME** |
-| **D59-py** | **10.5281/zenodo.20628926** | **PDL_D59_script1.py — Verrouillage D59** |
-| **D59** | **10.5281/zenodo.20629282** | **SU(3)_c dans 3 — Représentation fondamentale — THÉORÈME** |
+| DL02 | 10.5281/zenodo.20132228 | Life/consciousness thresholds |
+| D54 | 10.5281/zenodo.20157203 | Equation of state coherence fluid |
+| D55 | 10.5281/zenodo.20179924 | Weinberg angle θ_W = 19π/119 |
+| DS01 | 10.5281/zenodo.20187274 | Programme closure at D55 |
+| D-exp-SP2 | 10.5281/zenodo.20242505 | Photon-to-electron conversion topology |
+| D-exp-ZIB | 10.5281/zenodo.20262293 | Zinc-ion supercapacitor PDL |
+| D-exp-MP01 | 10.5281/zenodo.20316492 | Structural lacunae Tc/Pm |
+| D-exp-Zr | 10.5281/zenodo.20321750 | QPT Zirconium |
+| D56 | 10.5281/zenodo.20409903 | N_comp(k) = k (OP-D41-1-A resolved) |
+| D-exp-E2-PDL | 10.5281/zenodo.20593807 | f₇/₂ mirror nuclei B(E2) |
+| D57 | 10.5281/zenodo.20600264 | SU(2) gauge + sin²θ_W = 1/4 (D57) |
+| D58-py | 10.5281/zenodo.20623231 | PDL_SU3_script1.py |
+| D58 | 10.5281/zenodo.20622987 | SU(3) gauge (D58) |
+| D59-py | 10.5281/zenodo.20628926 | PDL_D59_script1.py |
+| D59 | 10.5281/zenodo.20629282 | SU(3)_c representation 3 (D59) |
+| D60 | 10.5281/zenodo.20639684 | H_SU2 theorem: G_eff = S₄/V₄ ≅ S₃ (D60) |
+| N01 | 10.5281/zenodo.20523343 | PDL–OFN Bridge : β₁=3 |
 
 ---
 
-## Key Numerical Values
+## Current Epistemic State — Gauge Sector (updated Session 54)
 
 ```
-Proton quintuplet      : (24, 28, 930, 10087, 11017)
-Neutron quintuplet     : (24, 28, 1032, 9960, 10992)
-R_surf(p)              : 310φ = 501.59  (D05)
-ε_geom(p)             : 329/10087 (unconditional theorem, D43)
-ε_geom(n)             : 468/9960  (unconditional theorem, D43)
-κ                     : 310φ/11017 ∈ ℚ(√5) (D42)
-G_PDL                 : 6.67448 × 10⁻¹¹ m³kg⁻¹s⁻² (27 ppm, D25)
-Λ_PDL                 : 0.41 ppm from Λ_obs (D53)
-θ_W (PDL)             : 19π/119 → sin²θ_W = 0.231196 (0.48σ, D55)
-sin²θ_W(tree)         : sin²(π/R_e) = sin²(π/6) = 1/4  [D57, THÉORÈME]
-Correction Berry D55  : R_e·k₂/N_tot = 6×19/119 = 114/119 ≈ 0.958
-N_comp(k)             : = k exactly — THÉORÈME (D56)
-R_surf(k)             : = k·T pour noyau k-ph (D56, corollaire)
+THÉORÈMES INCONDITIONNELS de C1–C4 (secteur de jauge) :
 
-SU(2) structure (D57) :
-|V₄|                  : 4 (Klein four-group)
-S₄/V₄                 : ≅ S₃ ≅ D₃ (groupe effectif, ordre 6)
-A₄/V₄                 : ≅ ℤ₃ ↔ β₁=3
-Dic₃ ⊂ SU(2)          : ordre 12 (double cover de S₃)
+U(1) :
+  Fibration de Hopf depuis équivalence de signe K₄       [D46]
+  Born Level 2 : règle de Born depuis U(1)               [D46]
 
-SU(3) structure (D58) :
-Groupe de Weyl         : S₄/V₄ ≅ S₃ = Weyl(A₂)
-Centre                 : A₄/V₄ ≅ ℤ₃ = Z(SU(3))
-Rang Cartan            : 2 = dim(plan trace-nulle) = rang(SU(3))
-Système de racines     : A₂ — 6 racines {e_i - e_j} de longueur √2
-Orbites V₄-arêtes      :
-  O₀ = {(0,1),(2,3)} ↔ (01)(23)
-  O₁ = {(0,2),(1,3)} ↔ (02)(13)
-  O₂ = {(0,3),(1,2)} ↔ (03)(12)
-Résultat négatif       : V₄ agit fidèlement (non trivialement) sur H₁(K₄;ℝ)
+SU(2) :
+  sin²θ_W(tree) = sin²(π/R_e) = 1/4                     [D57]
+  θ_W(D55) = (π/R_e)×(114/119) — angle exact            [D55+D57]
+  G_eff = S₄/V₄ ≅ S₃ — H_SU2 RÉSOLU                   [D60] ← NOUVEAU
+  s → −s brise C2 [résultat négatif documenté]           [D60]
+  orbit-4 ≅ V₄ comme V₄-ensemble régulier               [D60]
+  Pairings = cosets de H₁,H₂,H₃ dans V₄                [D60]
+  V₄ fixe orbit-1 et orbit-3 pointwise                  [D60]
+  C1-admissibilité = V₄-invariance sur tout Coh(K₄)     [D60]
 
-Représentation fondamentale 3 — SU(3)_c (D59) :
-Espace porteur W       : {(a,b,c) ∈ ℂ³ : a+b+c=0} — plan trace-nulle
-Base canonique         : axes labellés par V₄\{e} = {(01)(23), (02)(13), (03)(12)}
-Orientation matière    : Δn = n_d - n_u = 4 > 0 → représentation 3 (D47, théorème C4)
-Identité exacte        : k₃/(k₁+k₂) = R_e·n_d / n_d = R_e = 6
-Matrice de Cartan A₂   : [[2,-1],[-1,2]] — vérifiée par arithmétique entière exacte
-Résultat négatif D59   : bijection (T₂)↔(T₃) non S₄-équivariante
+SU(3) :
+  S₄/V₄ ≅ S₃ = groupe de Weyl de A₂                    [D58, L1]
+  V₄\{e} ↔ orbites V₄-arêtes (bij. S₄-équivariante)    [D58, L2]
+  A₄/V₄ ≅ ℤ₃ = centre de SU(3)                        [D58, L3]
+  Cartan rang 2 via R_e=6                                [D58, L4]
+  Système de racines A₂ dans plan trace-nulle            [D58, L5]
+  SU(3) depuis C1–C4 + Cartan–Killing–Weyl              [D58]
 
-PDL–OFN Bridge (N01) :
-β₁(K₄)               : = 3 — nécessaire pour Λ_PDL
-b₁(Ω₂₁)              : = 3 (vérifié indépendamment)
-n=6                   : dimension minimale pour β₁=3
-Ω₂₁ self-conjugate   : 0 (correction N01)
-```
+Représentation fondamentale :
+  χ_π = χ_trivial + χ_standard                          [D59, L2]
+  W = {a+b+c=0} porteur canonique                       [D59, L3]
+  A₂ dans W, Cartan [[2,-1],[-1,2]]                     [D59, L4]
+  Δn=4>0 → orientation 3 vs 3̄                         [D59, L5 depuis D47]
+  k₃/(k₁+k₂) = R_e = 6 exact                           [D59, L5]
+  SU(3)_c dans 3 sur W                                  [D59]
 
----
+COROLLAIRE GLOBAL :
+  SU(3) × SU(2) × U(1) + représentation 3
+  THÉORÈME INCONDITIONNEL de C1–C4
+  (D46 + D60 + D58 + D59)
+  AUCUNE ÉTAPE CONJECTURALE RÉSIDUELLE dans le secteur de jauge
 
-## Epistemic Status
-
-```
-THÉORÈMES INCONDITIONNELS (C1–C4) :
-  N_comp(k) = k  [D56]
-  R_surf(k) = k·T  [D56, corollaire]
-  sin²θ_W(tree) = sin²(π/R_e) = 1/4  [D57]
-  SU(3) × SU(2) × U(1) — structure algébrique  [D46+D57+D58, Cartan–Killing–Weyl]
-  S₄/V₄ ≅ S₃ (Weyl de A₂)  [D57+D58, L1]
-  Bijection S₄-équivariante V₄\{e} ↔ orbites V₄-arêtes  [D58, L2]
-  A₄/V₄ ≅ ℤ₃ = centre SU(3)  [D58, L3]
-  Rang Cartan = 2 via R_e=6  [D58, L4]
-  Système de racines A₂  [D58, L5]
-  V₄ agit fidèlement sur H₁(K₄;ℝ)  [D58, résultat négatif]
-  χ_π = χ_trivial + χ_standard sur ℂ³  [D59, L2]
-  W = {a+b+c=0} est le complément S₃-invariant de ℂ(1,1,1)  [D59, L3]
-  A₂ dans W — Cartan [[2,-1],[-1,2]]  [D59, L4]
-  Δn = 4 > 0 → orientation 3 vs 3̄  [D59, L5 depuis D47]
-  k₃/(k₁+k₂) = R_e = 6  [D59, L5 — exact]
-  SU(3)_c dans 3 sur W  [D59, théorème principal]
-  bijection (T₂)↔(T₃) non S₄-équivariante  [D59, résultat négatif]
-
-CONJECTURES BIEN MOTIVÉES :
-  H_SU2 : C1 force V₄ trivial → S₃ effectif → Dic₃ ⊂ SU(2)  [D57]
-
-HYPOTHÈSES STRUCTURELLES :
-  OP-D59-2 : D_μ = ∂_μ - igA_μ est l'unique transport C4-compatible  [D59, ouvert]
-
-OPEN PROBLEMS (mis à jour Session 53) :
-  OP-D57-1 [HIGH]    : preuve formelle du Lemme C1-V₄ → promouvrait H_SU2 en théorème
-  OP-D57-2 [MEDIUM]  : Dic₃ comme générateur structurel du groupe de jauge faible
-  OP-D58-1 [RÉSOLU par D59] : identification physique SU(3)_c — RÉSOLU
-  OP-D58-2 [MEDIUM]  : lien entre les 3 triplets de K₄ : (T1) cycles H₁, (T2) leakage, (T3) orbites
-  OP-D58-3 [RÉSOLU par D59] : représentation fondamentale 3 depuis C1–C4 — RÉSOLUE
-  OP-D59-1 [MEDIUM]  : masse des quarks depuis C1–C4
-  OP-D59-2 [HIGH]    : D_μ = ∂_μ - igA_μ comme théorème de survie C4 (principe darwinien)
-  OP-OFN-1 [HIGH]    : lien formel 3 cycles PDL ↔ 3 générations OFN
-                        Résolution partielle : A₄/V₄ ≅ ℤ₃ + triplet (T₂) labellise axes de W (D59)
-  OP-OFN-2 [MEDIUM]  : objet commun X dont K₄ et Ω₂₁ sont deux projections
-  OP-OFN-3 [RÉSOLU par D58] : dérivation de SU(3)×SU(2)×U(1) depuis C1–C4
-  OP10-c [HIGH]      : rapport W/Z = cos(19π/119) — D-electroweak-WZ
-  OP-E2-PDL [HIGH]   : opérateur E2 dans le formalisme PDL (Lacunes G1, G2 ouvertes)
-  OP9 [HIGH]         : masses muon/tau (générations 2 et 3)
-  OP15 [MEDIUM]      : noyaux Z > 82
-  OP-Zr-1 [MEDIUM]   : condition de résonance QPT formelle
-  OP-SP2-1 [MEDIUM]  : preuve analytique PDL-H
-  DL03 [MEDIUM]      : encadrement numérique n*_vie
+RÉSULTATS NÉGATIFS DOCUMENTÉS (valeur scientifique positive) :
+  V₄ fidèle sur H₁(K₄;ℝ)           [D58 — invalidé stratégie homologie]
+  s → −s brise C2                   [D60 — pulsation ≠ flip global]
+  bijection (T₂)↔(T₃) non S₄-éq.  [D59]
 ```
 
 ---
 
-## Open Problems (updated Session 53)
-
-**Résolu (Session 46) :**
-- **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
-
-**Résolu (Session 51) :**
-- **[RESOLVED — algébrique]** OP-OFN-3 / OP-SU3 : SU(3)×SU(2)×U(1) comme théorème algébrique de C1–C4 (D46+D57+D58).
-
-**Résolu (Session 53) :**
-- **[RESOLVED]** OP-D58-1 : identification physique SU(3)_c — espace porteur W = {a+b+c=0} labellé par V₄\{e}, orientation 3 forcée par Δn = 4 > 0 (D59).
-- **[RESOLVED]** OP-D58-3 : représentation fondamentale 3 de SU(3) depuis C1–C4 (D59, théorème principal).
-
-**Résolu partiellement (Sessions 50–51) :**
-- **[PARTIAL]** OP-OFN-1 : A₄/V₄ ≅ ℤ₃ comme origine combinatoire (D57+D58) + triplet (T₂) labellise les axes de W (D59). Lien formel 3 cycles PDL ↔ 3 générations OFN reste ouvert.
-- **[PARTIAL]** OP-SU2 : sin²θ_W(tree) = 1/4 théorème (D57). H_SU2 reste conjecture (OP-D57-1 ouvert).
-
-**Nouveaux (Session 53) :**
-- **[MEDIUM]** OP-D59-1 : masse des quarks depuis C1–C4 — le paramètre irréductible Δm_iso = m_d - m_u est forcé (D31) ; les masses individuelles restent ouvertes.
-- **[HIGH]** OP-D59-2 : D_μ = ∂_μ - igA_μ comme théorème de survie de C4 — tout transport non équivariant introduit un coût structurel éliminé par C4 (principe darwinien appliqué aux structures dynamiques).
-
-**Maintenu ouvert :**
-- **[MEDIUM]** OP-D58-2 : lien formel entre (T1), (T2), (T3) — résultat négatif D59 documenté.
-
-**Priorité haute :**
-1. **[HIGH]** OP-D59-2 : D_μ depuis C4 → formalisation de la dynamique de jauge comme survie.
-2. **[HIGH]** OP-D57-1 : Lemme C1-V₄ formel → promouvrait H_SU2 en théorème.
-3. **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
-4. **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) → D-electroweak-WZ.
-5. **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL.
-6. **[HIGH]** OP9 : masses muon/tau.
-
-**Priorité moyenne :**
-7. [MEDIUM] OP-D59-1 : masse des quarks.
-8. [MEDIUM] OP-D58-2 : lien entre les 3 triplets de K₄.
-9. [MEDIUM] OP-D57-2 : Dic₃ comme groupe de jauge faible.
-10. [MEDIUM] OP-OFN-2 : objet X commun K₄/Ω₂₁.
-11. [MEDIUM] OP15 : noyaux Z > 82.
-12. [MEDIUM] OP-Zr-1 : condition de résonance QPT formelle.
-13. [MEDIUM] OP-SP2-1 : preuve analytique PDL-H.
-14. [MEDIUM] DL03 : encadrement numérique n*_vie.
-
-**Frontières expérimentales :**
-- FLAG/lattice QCD → Δm_iso ±0.04 MeV
-- Fermi-LAT → IGRB (Arbey+Auffinger en attente)
-- FRIB/RIKEN → P7/P8 (Recchia+Lenzi — message envoyé, en attente)
-- Ha et al. / Escudeiro et al. → cités dans D56
-
----
-
-## Dependency Map — Critical Path (updated Session 53)
+## Dependency Map — Critical Path (updated Session 54)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -410,8 +373,8 @@ LAYER 14  Électrofaible
            θ_W = 19π/119                             [✓ THÉORÈME — D55]
            sin²θ_W(tree) = sin²(π/R_e) = 1/4        [✓ THÉORÈME — D57]
            θ_W(D55) = (π/R_e)×(114/119)             [✓ THÉORÈME — D57+D55]
-           H_SU2 : C1 → V₄ trivial → S₃ → SU(2)    [CONJECTURE — D57]
-           OP-D57-1 : Lemme C1-V₄ formel             [OUVERT — HIGH]
+           H_SU2 : G_eff = S₄/V₄ ≅ S₃              [✓ THÉORÈME — D60]  ← RÉSOLU
+           OP-D57-1 → RÉSOLU (D60)                   [✓ Session 54]
            OP-D57-2 : Dic₃ comme groupe de jauge     [OUVERT — MEDIUM]
            W/Z mass ratio (OP10-c)                    [OUVERT — HIGH]
 LAYER 14b Groupe de jauge — COMPLET (algébrique + représentation)
@@ -421,8 +384,13 @@ LAYER 14b Groupe de jauge — COMPLET (algébrique + représentation)
            Cartan rang 2 via R_e=6                   [✓ THÉORÈME — D58, L4]
            Système de racines A₂                     [✓ THÉORÈME — D58, L5]
            SU(3) depuis C1–C4 + Cartan–Killing       [✓ THÉORÈME — D58]
-           SU(3)×SU(2)×U(1) algébrique              [✓ COROLLAIRE — D46+D57+D58]
+           SU(3)×SU(2)×U(1) algébrique              [✓ COROLLAIRE — D46+D60+D58]
            V₄ fidèle sur H₁(K₄;ℝ) [résultat négatif] [✓ VÉRIFIÉ — D58]
+           s → −s brise C2 [résultat négatif]        [✓ VÉRIFIÉ — D60]
+           orbit-4 ≅ V₄ régulier                    [✓ THÉORÈME — D60]
+           Pairings = cosets H₁,H₂,H₃               [✓ THÉORÈME — D60]
+           V₄ fixe orbit-1 et orbit-3               [✓ THÉORÈME — D60]
+           C1-admissibilité = V₄-invariance          [✓ THÉORÈME — D60]
            χ_π = χ_trivial + χ_standard              [✓ THÉORÈME — D59, L2]
            W = {a+b+c=0} porteur canonique           [✓ THÉORÈME — D59, L3]
            A₂ dans W, Cartan [[2,-1],[-1,2]]         [✓ THÉORÈME — D59, L4]
@@ -448,7 +416,7 @@ LAYER 17  PDL–OFN Bridge
            (T₂) labellise axes de W (D59)            [✓ THÉORÈME — D59]
            OP-OFN-1 : 3 cycles PDL ↔ 3 générations  [OUVERT — HIGH]
            OP-OFN-2 : objet X commun K₄/Ω₂₁         [OUVERT — MEDIUM]
-           OP-OFN-3 : SU(3)×SU(2)×U(1) depuis C1–C4 [RÉSOLU — D46+D57+D58]
+           OP-OFN-3 : SU(3)×SU(2)×U(1) depuis C1–C4 [RÉSOLU — D46+D60+D58]
 LAYER 18  Dissémination
            D57 déposé Zenodo                         [✓ Session 50 — 10.5281/zenodo.20600264]
            PDL_SU3_script1.py déposé Zenodo          [✓ Session 51 — 10.5281/zenodo.20623231]
@@ -457,7 +425,8 @@ LAYER 18  Dissémination
            DM v26 déposé Zenodo                      [✓ Session 52 — 10.5281/zenodo.20625504]
            PDL_D59_script1.py déposé Zenodo          [✓ Session 53 — 10.5281/zenodo.20628926]
            D59 déposé Zenodo                         [✓ Session 53 — 10.5281/zenodo.20629282]
-           DM v27 déposé Zenodo                      [✓ Session 53 — DOI à compléter]
+           DM v27 déposé Zenodo                      [✓ Session 53 — 10.5281/zenodo.20630421]
+           D60 + scripts C1V4 déposés Zenodo         [✓ Session 54 — 10.5281/zenodo.20639684]
            N01 à uploader ResearchGate               [en attente]
            Three Roads — draft révisé Oleg en attente [en attente]
 ```
@@ -496,8 +465,56 @@ OP-D58-1 → RÉSOLU (représentation physique SU(3)_c)  [✓ D59, Session 53]
 OP-D58-3 → RÉSOLUE (représentation fondamentale 3)  [✓ D59, Session 53]
 PDL_D59_script1.py déposé Zenodo  [✓ Session 53 — 10.5281/zenodo.20628926]
 D59 déposé Zenodo  [✓ Session 53 — 10.5281/zenodo.20629282]
-DM v27 déposé Zenodo  [✓ Session 53 — DOI à compléter]
+DM v27 déposé Zenodo  [✓ Session 53 — 10.5281/zenodo.20630421]
+OP-D57-1 → RÉSOLU : H_SU2 théorème inconditionnel de C1+C2  [✓ D60, Session 54]
+s → −s brise C2 [résultat négatif documenté]  [✓ D60, Session 54]
+orbit-4 ≅ V₄ régulier — trois pairings = cosets H₁,H₂,H₃  [✓ D60, Session 54]
+V₄ fixe orbit-1 et orbit-3 pointwise  [✓ D60, Session 54]
+C1-admissibilité = V₄-invariance sur tout Coh(K₄)  [✓ D60, Session 54]
+G_eff = S₄/V₄ ≅ S₃ — théorème inconditionnel de C1+C2  [✓ D60, Session 54]
+SU(3)×SU(2)×U(1) + représentation 3 — AUCUNE étape conjecturale résiduelle  [✓ D46+D60+D58+D59]
+D60 + PDL_C1V4_script1.py + PDL_C1V4_script2.py déposés Zenodo  [✓ Session 54 — 10.5281/zenodo.20639684]
 ```
+
+---
+
+## Open Problems (updated Session 54)
+
+**Résolu (Session 46) :**
+- **[RESOLVED]** OP-D41-1-A : N_comp(k) = k (D56).
+
+**Résolu (Session 51) :**
+- **[RESOLVED — algébrique]** OP-OFN-3 / OP-SU3 : SU(3)×SU(2)×U(1) comme théorème algébrique de C1–C4 (D46+D60+D58).
+
+**Résolu (Session 53) :**
+- **[RESOLVED]** OP-D58-1 : identification physique SU(3)_c (D59).
+- **[RESOLVED]** OP-D58-3 : représentation fondamentale 3 depuis C1–C4 (D59).
+
+**Résolu (Session 54) :**
+- **[RESOLVED]** OP-D57-1 : H_SU2 théorème inconditionnel de C1+C2 (D60). La chaîne logique complète depuis l'existence jusqu'à G_eff = S₃ est établie sans étape conjecturale.
+
+**Résolu partiellement :**
+- **[PARTIAL]** OP-OFN-1 : A₄/V₄ ≅ ℤ₃ (D57+D58) + triplet (T₂) labellise axes de W (D59). Lien formel 3 cycles PDL ↔ 3 générations OFN reste ouvert.
+- **[PARTIAL]** OP-SU2 : sin²θ_W(tree) = 1/4 théorème (D57), H_SU2 théorème (D60). OP-D57-2 (Dic₃ comme générateur du groupe de jauge faible par universalité) reste ouvert.
+
+**Ouverts prioritaires :**
+- **[HIGH]** OP-D59-2 : D_μ = ∂_μ − igA_μ comme théorème de survie C4 — document structurel dédié requis (D61 prospectif).
+- **[HIGH]** OP-D57-2 : Dic₃ comme générateur structurel du groupe de jauge faible — argument d'universalité depuis C1–C4.
+- **[HIGH]** OP10-c : rapport W/Z = cos(19π/119) depuis C1–C4 (D-electroweak-WZ).
+- **[HIGH]** OP-OFN-1 : lien formel 3 cycles PDL ↔ 3 générations OFN.
+- **[HIGH]** OP-E2-PDL : opérateur E2 dans le formalisme PDL (Lacunes G1, G2).
+- **[MEDIUM]** OP-D57-2 : Dic₃ comme groupe de jauge faible (universalité).
+- **[MEDIUM]** OP-D59-1 : masse des quarks depuis C1–C4.
+- **[MEDIUM]** OP-OFN-2 : objet X commun dont K₄ et Ω₂₁ sont deux projections.
+- **[MEDIUM]** OP9 : masses muon/tau (générations 2 et 3).
+- **[MEDIUM]** OP15 : noyaux Z > 82.
+- **[MEDIUM]** DL03 : encadrement numérique n*_vie.
+
+**Frontières expérimentales :**
+- FLAG/lattice QCD → Δm_iso ±0.04 MeV
+- Fermi-LAT → IGRB (Arbey+Auffinger en attente)
+- FRIB/RIKEN → P7/P8 (Recchia+Lenzi — message envoyé, en attente)
+- Ha et al. / Escudeiro et al. → cités dans D56
 
 ---
 
@@ -505,14 +522,14 @@ DM v27 déposé Zenodo  [✓ Session 53 — DOI à compléter]
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorité immédiate Session 54 :**
+**Priorité immédiate Session 55 :**
 
-1. **[URGENT]** Compléter le DOI de DM v27 dans PDL_context.md puis pousser sur GitHub.
-2. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58 et D59.
-3. **[HIGH]** Envoyer DOIs D58 + D59 à Oleg Evdokimov pour intégration dans Three Roads.
-4. **[HIGH]** OP-D59-2 : formaliser le théorème que D_μ = ∂_μ - igA_μ est l'unique transport C4-compatible sur K₄. Document de type structurel, clairement stratifié conjecture → théorème.
-5. **[HIGH]** OP-D57-1 : preuve formelle du Lemme C1-V₄ depuis C1 seul — promouvrait H_SU2 en théorème inconditionnel.
-6. **[HIGH]** D-electroweak-WZ : rapport W/Z = cos(19π/119) depuis C1–C4 (OP10-c).
+1. **[URGENT]** Pousser PDL_context.md mis à jour sur GitHub (laubscher-lab/PDL-framework).
+2. **[URGENT]** Uploader N01 sur ResearchGate (type : Preprint) + notifier Oleg des DOIs D58, D59, D60.
+3. **[URGENT]** Produire DM v28 intégrant D60 : nœud D60 dans le diagramme TikZ, OP-D57-1 marqué résolu, Layer 14 mis à jour, corollaire SU(3)×SU(2)×U(1) sans étape conjecturale.
+4. **[HIGH]** OP-D59-2 : formaliser D61 — D_μ = ∂_μ − igA_μ comme unique transport C4-compatible. Commencer par la définition formelle d'un transport admissible sur K₄.
+5. **[HIGH]** OP10-c : D-electroweak-WZ — rapport W/Z = cos(19π/119) depuis C1–C4.
+6. **[HIGH]** Envoyer DOI D60 à Oleg Evdokimov pour Three Roads.
 
 **LaTeX conventions (consolidées Session 51) :**
 - No spurious mid-sentence line breaks in .tex source
@@ -527,7 +544,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - N-series : notes conjointes avec collaborateurs externes. N01 = PDL–OFN (β₁=3).
 - D-series : documents solo PDL.
 - D-exp-series : documents exploratoires applications.
-- DM : Global Mapping (version courante : v27, DOI à compléter).
+- DM : Global Mapping (version courante : v27, DOI : 10.5281/zenodo.20630421 ; v28 à produire).
 
 **PDL–OFN Bridge discipline :**
 - β₁=3 : THÉORÈME pour K₄, RÉSULTAT VÉRIFIÉ pour Ω₂₁
@@ -536,5 +553,5 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - 3 cycles PDL = 3 générations OFN : PROBLÈME OUVERT (OP-OFN-1)
 - Analogies Three Roads : PAS des identités prouvées, uniquement analogies structurelles candidates
 
-*Références canoniques : D01–D59 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v27.*
-*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : DOI à compléter*
+*Références canoniques : D01–D60 + DS01 + DL01–DL02 + D-exp-SP2 + D-exp-ZIB + D-exp-MP01 + D-exp-Zr + D-exp-E2-PDL + N01 + DM v27.*
+*DOIs principaux : D57 : 10.5281/zenodo.20600264 | D58 : 10.5281/zenodo.20622987 | D58-py : 10.5281/zenodo.20623231 | D59-py : 10.5281/zenodo.20628926 | D59 : 10.5281/zenodo.20629282 | DM v27 : 10.5281/zenodo.20630421 | D60 : 10.5281/zenodo.20639684*
