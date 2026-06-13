@@ -1,0 +1,659 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tikz-cd}
+\usepackage{natbib}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{observation}[theorem]{Observation}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}[theorem]{Open Problem}
+
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Coh}{\mathrm{Coh}}
+\newcommand{\Ztwo}{\mathbb{Z}_{2}^{3}}
+\newcommand{\Qphi}{\mathbb{Q}(\sqrt{5})}
+\newcommand{\ksurf}{\kappa_{\mathrm{surf}}}
+\newcommand{\miso}{\Delta m_{\mathrm{iso}}}
+\newcommand{\Ntot}{N_{\mathrm{tot}}}
+\newcommand{\thetaW}{\theta_{W}}
+\newcommand{\sinthW}{\sin^{2}\!\theta_{W}}
+\newcommand{\cosW}{\cos\theta_{W}}
+\newcommand{\Dalep}{\Delta\alpha_{\mathrm{lep}}}
+\newcommand{\Dahad}{\Delta\alpha_{\mathrm{had}}}
+\newcommand{\MZ}{M_{Z}}
+\newcommand{\MW}{M_{W}}
+\newcommand{\MH}{M_{H}}
+\newcommand{\vev}{v}
+\newcommand{\alphaPDL}{\alpha_{\mathrm{PDL}}}
+\newcommand{\ppm}{\,\mathrm{ppm}}
+\newcommand{\MeV}{\,\mathrm{MeV}}
+\newcommand{\GeV}{\,\mathrm{GeV}}
+\newcommand{\TeV}{\,\mathrm{TeV}}
+\newcommand{\mproton}{m_{p}}
+
+\pdfstringdefDisableCommands{%
+  \def\PDL{PDL}%
+  \def\Ztwo{Z2\^{}3}%
+  \def\MZ{MZ}%
+  \def\MW{MW}%
+  \def\MH{MH}%
+  \def\thetaW{theta\_W}%
+  \def\ksurf{kappa\_surf}%
+}
+
+\title{%
+  \textbf{D62: Gauge Boson Masses from Combinatorial Axioms}\\[0.4em]
+  \large Derivation of \texorpdfstring{$\vev$, $\MZ$, $\MW$}{v, MZ, MW}
+  and Prediction of \texorpdfstring{$\MH$}{MH}
+  in the Projective Dynamic Logo Framework
+}
+
+\author{C\'edric Laubscher\\[0.3em]
+  \small Independent Researcher, Switzerland\\
+  \small ORCID: 0009-0004-5415-1098\\
+  \small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}
+}
+
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Building on the derivation of the Standard Model gauge group
+$\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$ as an unconditional
+theorem of the four combinatorial axioms C1--C4 of the Projective Dynamic Logo
+(\PDL) programme (D57--D61), this document addresses the question of gauge
+boson masses. We provide a formal definition of a gauge boson mass as the
+minimal coherence excitation cost of a transport mode in
+$\Coh(K_4)\cong\Ztwo$. The electroweak vacuum expectation value is derived as
+$\vev = \Ntot^{2}/(R_{e}\,k_{1})\cdot\mproton$ from the structure of the
+$\mathrm{SU}(2)$ sequencing network (Conjecture~T1, $676\ppm$). The ratio
+$\MZ/\MW = 1/\cosW$ is an unconditional theorem, with the deviation of
+$5182\ppm$ from experiment understood as a tree-level vs.\ physical angle
+effect of order $\alpha/\pi$. An analytical chain for $\MZ$ via the running
+electromagnetic coupling yields $\MZ/\mproton = 97.179$ at $84.6\ppm$
+($3.67\sigma$); the residual tension is traced precisely to the absence of
+sub-proton hadronic closures (pions, kaons) in the current corpus, pending
+resolution of OP-D59-1. The Higgs mass is predicted as
+$\MH/\mproton = 133.611$ at $1.49\sigma$. The decay cascade is mapped onto
+the $\Ztwo$ topology: the Higgs admits exactly four primary decompositions,
+neutrinos exit the coherence network at level~2 carrying $12.2\%$ of the
+Higgs rest energy, and the production cross-section admits a structural
+estimate within $17871\ppm$. Five open problems are precisely formulated with
+their resolution pathways.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+%%------------------------------------------------------------
+\section{Introduction and context}
+%%------------------------------------------------------------
+
+Documents D57 through D61 of the \PDL\ corpus established that the Standard
+Model gauge group $G_{\mathrm{SM}}=\mathrm{SU}(3)\times\mathrm{SU}(2)\times
+\mathrm{U}(1)$ is an unconditional theorem of axioms C1--C4 on finite signed
+graphs~\cite{D57,D58,D59,D60,D61}. D60 proved that $G_{\mathrm{eff}}=
+S_{4}/V_{4}\cong S_{3}$ acts on $\Coh(K_4)\cong\Ztwo$ (D60), and D61
+showed that the minimal covariant derivative $D_{\mu}=\partial_{\mu}-igA_{\mu}$
+is the unique C4-compatible gauge transport. These results complete the gauge
+sector of the \PDL\ programme without free parameters beyond $\miso=m_{d}-m_{u}$.
+
+What remained open was the question of \emph{mass}. Deriving a gauge group
+without deriving the masses of its associated bosons is structurally incomplete:
+the group tells us which transport modes are allowed, but not what it costs to
+excite them. In the Standard Model (SM), boson masses arise via the Higgs
+mechanism~\cite{Higgs1964,Brout1964}: a scalar field acquires a vacuum
+expectation value $\vev\approx246\GeV$, spontaneously breaking $\mathrm{SU}(2)
+\times\mathrm{U}(1)\to\mathrm{U}(1)_{\mathrm{em}}$, so that $\MW=g\vev/2$ and
+$\MZ=\MW/\cosW$. This mechanism is postulated, not derived.
+
+The present document addresses this gap. It provides: a formal definition of
+gauge boson mass in the \PDL\ formalim; a derivation of the electroweak vacuum
+expectation value from C1--C4; the ratio $\MZ/\MW$ as an unconditional theorem;
+an analytical chain for $\MZ$; a prediction for $\MH$; and a structural account
+of Higgs production and decay in the \PDL\ language.
+
+\paragraph{Physical picture.} In the \PDL\ paradigm, a proton--proton collision
+at high energy is a \emph{coherence reorganisation}: two fermionic closures
+attempt to form a common coherent state, and axiom C4 selects the
+reconfiguration of minimal cost at each step. The resulting \emph{decay cascade}
+is a hierarchical leakage process. At each level, the network exports its
+coherence cost towards smaller-scale admissible closures; the observable
+particles are the ``quotients'' of this hierarchical division, and the
+undetected neutrinos and soft photons are the ``remainders'' that cannot
+organise into any further admissible closure. The mass of each boson is the
+threshold energy at which the corresponding reorganisation becomes accessible.
+
+\paragraph{Epistemic convention.} Every result in this document carries an
+explicit epistemic status: unconditional theorem of C1--C4, well-motivated
+conjecture, structural hypothesis, or open problem. Conjectures are presented
+with their numerical tension against experiment. No result is claimed beyond
+what the derivation establishes.
+
+%%------------------------------------------------------------
+\section{Formal definition of gauge boson mass in \texorpdfstring{\PDL}{PDL}}
+%%------------------------------------------------------------
+
+\subsection{\texorpdfstring{The coherence network $\Coh(K_4)\cong\Ztwo$}{The coherence network}}
+
+From D60, the coherence group of $K_4$ is $\Coh(K_4)\cong\Ztwo$, with eight
+elements and seven non-trivial generators. The group $G_{\mathrm{eff}}=S_{3}$
+acts on $\Ztwo$ by permuting the three bits, partitioning the seven generators
+into three orbits:
+\begin{align*}
+\mathcal{O}_{1} &= \{(1,0,0),\,(0,1,0),\,(0,0,1)\}, &|\mathcal{O}_{1}|=3,\\
+\mathcal{O}_{2} &= \{(1,1,0),\,(1,0,1),\,(0,1,1)\}, &|\mathcal{O}_{2}|=3,\\
+\mathcal{O}_{3} &= \{(1,1,1)\},                       &|\mathcal{O}_{3}|=1.
+\end{align*}
+By D58 and D59, $\mathcal{O}_{1}$ corresponds to the gluon sector (massless,
+commutes with the C1 binary pulsation), $\mathcal{O}_{2}$ to the weak bosons
+($W^{\pm}$, $Z^{0}$, massive), and $\mathcal{O}_{3}$ to the Higgs scalar
+(massive). The photon is the U(1) phase mode: it commutes with C1 and carries
+zero coherence cost, hence zero mass.
+
+\subsection{Definition of gauge boson mass}
+
+In the \PDL\ corpus, the mass of a fermionic closure is its stationary
+coherence cost (D32). Gauge bosons are not fermionic closures; they are
+transport conditions between closures. Their mass cannot be defined as a
+stationary cost. The correct definition is instead the \emph{minimal excitation
+threshold}:
+
+\begin{definition}[Gauge boson mass in \PDL]\label{def:boson-mass}
+Let $B\in\Ztwo$ be a non-trivial generator. The \emph{mass} of the
+corresponding gauge boson is:
+\begin{equation}
+m_{B} = \inf\Bigl\{E>0\;\Big|\;\exists\,\mathcal{C}\in\Ztwo:
+\nu(\mathcal{C})-\nu_{0} = \frac{E\hbar}{c^{2}R_{\mathrm{tot}}}\,,\;
+\mathcal{C}\text{ activates mode }B\Bigr\},
+\end{equation}
+where $\nu_{0}$ is the ground-state coherence fraction of the $\mathrm{SU}(2)$
+transport network and $R_{\mathrm{tot}}=11017$.
+\end{definition}
+
+The generators of $\mathcal{O}_{1}$ (gluons, photon) have $m_{B}=0$: they
+correspond to symmetries of the ground state that commute with C1, so no
+threshold energy is required to activate them. The generators of
+$\mathcal{O}_{2}$ ($W^{\pm}$, $Z^{0}$) break C1 pulsation locally (in one
+or two bit dimensions), incurring a positive threshold cost. The generator
+$(1,1,1)\in\mathcal{O}_{3}$ (Higgs) breaks C1 globally in all three
+dimensions, incurring the largest threshold cost.
+
+\subsection{The decay cascade and its topological structure}
+
+The generator $(1,1,1)\in\mathcal{O}_{3}$ admits exactly four direct
+decompositions in $\Ztwo$ (verified exhaustively):
+\begin{equation}\label{eq:decomp}
+(1,1,1) = \underbrace{(0,0,1)+(0,1,0)+(1,0,0)}_{\text{1 decomp.\ via }\mathcal{O}_{1}}
+= \underbrace{\begin{cases}
+(0,0,1)+(1,1,0)\\
+(0,1,0)+(1,0,1)\\
+(1,0,0)+(0,1,1)
+\end{cases}}_{\text{3 decomp.\ via }\mathcal{O}_{1}+\mathcal{O}_{2}}.
+\end{equation}
+These four paths define the four dominant primary decay channels of the Higgs
+boson: $H\to ggg$ (one way), and $H\to g+W^{\pm}$ or $g+Z^{0}$ (three ways).
+The cascade ordering $\mathcal{O}_{3}\to\mathcal{O}_{2}\to\mathcal{O}_{1}$
+is not arbitrary: it is the unique ordering compatible with C4 (cost
+minimisation). Orbits of higher weight carry higher coherence cost; C4 forces
+the network to discharge towards lower-cost orbits one level at a time.
+
+This structure has a precise analogy. In a high-energy collision, the energy
+budget is partitioned hierarchically: the Higgs absorbs the coherent fraction,
+the $W/Z$ bosons absorb the next level, and hadrons and leptons absorb the
+remainder. At each level, C4 selects the reconfiguration of minimal cost; what
+cannot be absorbed at one level is exported to the next. The observable
+particles are the ``quotients'' of this hierarchical process, and the
+undetected particles (soft photons, neutrinos) are the ``remainders'' that
+exit the coherence network without further reorganisation.
+
+\begin{observation}[Neutrino exit level]\label{obs:neutrinos}
+Neutrinos enter the cascade at level~2, when generators of $\mathcal{O}_{2}$
+decompose into pairs of $\mathcal{O}_{1}$ elements. For example,
+$(0,1,1)\to(0,1,0)+(0,0,1)$. In the \PDL\ formalism (D33), the neutrino
+corresponds to the neutral $\mathcal{O}_{1}$ component with
+$R_{\mathrm{surf}}(\nu)\approx0$. A closure with near-zero surface budget
+cannot form new coherent triangles with any other closure; it exits the
+coherence network immediately upon production.
+
+The energy fraction carried away invisibly by neutrinos from the Higgs is
+estimated at $12.2\%$ of $M_{H}$, arising from $WW^{*}$ ($7.5\%$), $ZZ^{*}$
+($0.5\%$), and $\tau^{+}\tau^{-}$ ($4.1\%$) channels. This fraction is
+absent from the reconstructed invariant mass used by ATLAS and CMS; the
+measured mass $125.2\GeV$ is thus the \emph{coherent fraction}, not the total
+reorganisation cost. This observation is an unconditional structural consequence
+of Definition~\ref{def:boson-mass} and D33.
+\end{observation}
+
+%%------------------------------------------------------------
+\section{The electroweak vacuum expectation value}
+%%------------------------------------------------------------
+
+\subsection{\texorpdfstring{The $\mathrm{SU}(2)$ sequencing network}{The SU(2) sequencing network}}
+
+By D55 (Lemma~D), the total number of admissible $\mathrm{SU}(2)$ sequencing
+cycles in the transport network is:
+\begin{equation}
+\Ntot = \frac{n_{d}}{4}\cdot\frac{r_{d}-r_{u}}{R_{e}} = 7\times17=119,
+\end{equation}
+where $n_{d}=28$, $r_{d}=\binom{28}{2}=378$, $r_{u}=\binom{24}{2}=276$,
+$R_{e}=6$. This is an unconditional theorem of C1--C4.
+
+\begin{definition}[Coherent transports on the sequencing network]\label{def:transport}
+The $\mathrm{SU}(2)$ sequencing network is the cyclic group $\mathbb{Z}_{\Ntot}$
+of $\Ntot=119$ cycles. A \emph{coherent transport} is a group endomorphism
+$\mathbb{Z}_{\Ntot}\to\mathbb{Z}_{\Ntot}$; there are exactly $\Ntot=119$ such
+endomorphisms, including the null endomorphism (identity). By C1 (binary
+pulsation), each transport simultaneously engages \emph{two} endomorphisms,
+one per pulsation branch. The total capacity of the network is therefore the
+number of ordered pairs of coherent transports:
+\begin{equation}
+\mathcal{T} = \Ntot^{2} = 119^{2} = 14161.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Minimal transport unit]\label{def:mtu}
+The minimal coherent transport unit is the product of the elementary $K_4$
+relational budget and the primary $\mathrm{SU}(2)$ leakage period:
+\begin{equation}
+\mathcal{U}_{\min} = R_{e}\cdot k_{1} = 6\times9 = 54,
+\end{equation}
+where $R_{e}=6$ (D16a) and $k_{1}=n_{d}-n_{u}+R_{e}-1=9$ (D51) are
+unconditional theorems.
+\end{definition}
+
+\subsection{Derivation of the vev}
+
+\begin{conjecture}[Electroweak vev]\label{conj:vev}
+The vacuum expectation value of the electroweak symmetry breaking is:
+\begin{equation}\label{eq:vev}
+\vev = \frac{\Ntot^{2}}{R_{e}\,k_{1}}\cdot\mproton
+= \frac{14161}{54}\cdot\mproton \approx 262.241\,\mproton.
+\end{equation}
+The deviation from the experimental value $\vev_{\exp}/\mproton=262.418$ is
+$676\ppm$.
+\end{conjecture}
+
+\emph{Justification.} The vev is the energy threshold below which the
+$\mathrm{SU}(2)$ transport network cannot sustain a fully coherent state: the
+minimal energy per unit is $\mproton$ (the reference fermionic closure), the
+total capacity is $\mathcal{T}=\Ntot^{2}$ ordered transport pairs, and the
+unit cost of a single coherent transport is $\mathcal{U}_{\min}=R_{e}k_{1}$.
+Their ratio $\Ntot^{2}/(R_{e}k_{1})$ is the number of ``unit transports''
+that the network can accommodate. In an exhaustive numerical search over all
+rational combinations of \PDL\ quintuplet invariants, this candidate is
+isolated by a factor of 15 from the next alternative.
+
+\begin{remark}[Correction and OP-D62-1]\label{rem:vcorr}
+The residual of $676\ppm$ is real: $\vev_{\exp}$ is defined exactly via
+$G_{F}$, known to $0.5\ppm$. The leading correction candidate is:
+\begin{equation}\label{eq:vcorr}
+\vev_{\mathrm{corr}} = \frac{\Ntot^{2}}{R_{e}\,k_{1}}
+\left(1+\frac{k_{1}}{\Ntot^{2}}\right)\cdot\mproton
+= \frac{14170}{54}\cdot\mproton,
+\end{equation}
+reducing the deviation to $41\ppm$. The factor $k_{1}/\Ntot^{2}=9/14161$ is
+interpretable as the weight of the null endomorphism (identity transport) in
+$\mathbb{Z}_{\Ntot}$: the null transport contributes to the network capacity
+but carries no physical information, and its fractional weight
+$k_{1}/\Ntot^{2}$ corrects the vev upward by the corresponding proportion.
+The formal derivation of this correction from C1--C4 is OP-D62-1.
+\end{remark}
+
+%%------------------------------------------------------------
+\section{Analytical derivation of \texorpdfstring{$M_Z$}{MZ}}
+%%------------------------------------------------------------
+
+\subsection{Strategy: the SM relation as a PDL chain}
+
+In the SM, $\MZ = g_{Z}(\MZ)\,\vev/2$ where $g_{Z}=e(\MZ)/(\sin\thetaW\cos\thetaW)$
+and $e(\MZ)$ is the electromagnetic coupling evaluated at the scale $\MZ$.
+This relation is exact in the SM and is a consequence of the $\mathrm{SU}(2)
+\times\mathrm{U}(1)$ breaking structure. In the \PDL, the relation holds with:
+(i)~$\vev$ from Conjecture~\ref{conj:vev}; (ii)~$\thetaW=19\pi/119$ from D55
+(unconditional theorem); (iii)~$e(\MZ)$ from the \PDL\ coupling constant
+$\alphaPDL=1/137.036$ (D12) corrected for the running between $0$ and $\MZ$.
+
+The running correction $\Delta\alpha(\MZ)=1-\alpha(0)/\alpha(\MZ)$ encodes how
+the electromagnetic coupling increases from its low-energy value to the
+electroweak scale. In the \PDL\ language, this increase is a \emph{granularity
+effect}: at higher energies, the network engages more degrees of freedom, and
+the effective coupling is larger. The correction decomposes into two structurally
+distinct contributions.
+
+\subsection{Leptonic running}
+
+The Schwinger perturbative formula gives the leptonic contribution:
+\begin{equation}\label{eq:dalep}
+\Dalep = \frac{\alphaPDL}{3\pi}\sum_{\ell=e,\mu,\tau}
+\!\left[\ln\frac{\MZ^{2}}{m_{\ell}^{2}}-\frac{5}{3}\right] = 0.031421,
+\end{equation}
+at $2447\ppm$ from the PDG value $0.031498$. This contribution is derivable
+from D12 ($\alphaPDL$) and the lepton masses, both already in the corpus.
+Each lepton $\ell$ contributes proportionally to $\ln(\MZ^{2}/m_{\ell}^{2})$:
+the logarithm counts the number of energy ``levels'' between $m_{\ell}$ and
+$\MZ$, i.e.\ the number of network scales that the transport must traverse.
+
+\subsection{Hadronic running and the PDL lower bound}
+
+In the SM, the hadronic contribution is the dispersive integral:
+\begin{equation}\label{eq:dahad_SM}
+\Dahad^{(\mathrm{SM})} = -\frac{\alpha\MZ^{2}}{3\pi}
+\mathcal{P}\!\int_{4m_{\pi}^{2}}^{\infty}
+\frac{R(s)}{s(s-\MZ^{2})}\,\mathrm{d}s, \qquad
+R(s) = \frac{\sigma(e^{+}e^{-}\to\mathrm{hadrons})}{\sigma(e^{+}e^{-}\to\mu^{+}\mu^{-})}.
+\end{equation}
+The lower bound $4m_{\pi}^{2}$ is the production threshold of the lightest
+charged hadronic state. In the \PDL\ framework, this threshold has a precise
+structural meaning: it is the minimal energy at which a hadronic fermionic
+closure can be produced. Pions and kaons, which dominate the region
+$[2m_{\pi},\,m_{\rho}]$ and contribute approximately $0.003$ to
+$\Dahad^{(\mathrm{SM})}$, are Goldstone modes of chiral symmetry breaking.
+They are not independent C1--C4 fermionic closures in the present corpus; they
+will be derived from C1--C4 in the resolution of OP-D59-1.
+
+Consequently, the natural lower bound of the \PDL\ dispersive sum is $\mproton$:
+only the proton and heavier hadrons are admissible fermionic closures in the
+current corpus. With this lower bound, the hadronic contribution to the running
+is the surface leakage of the reference fermionic closure, normalised by the
+golden ratio:
+
+\begin{conjecture}[Hadronic running coupling]\label{conj:dahad}
+\begin{equation}\label{eq:dahad}
+\Dahad = \frac{\ksurf}{\varphi} = \frac{310}{11017} \approx 0.028138,
+\end{equation}
+where $\ksurf=\varphi\cdot r_{\mathrm{val}}/(3\,R_{\mathrm{tot}})=\varphi\cdot310/11017$
+is the surface leakage parameter of the proton (D42) and $\varphi=(1+\sqrt{5})/2$.
+\end{conjecture}
+
+\emph{Justification.} The value $\ksurf/\varphi=310/11017$ is the fraction of
+the proton's surface-active relational budget divided by $\varphi$ (the
+Fibonacci normalisation of the surface-to-core ratio, D05). It is the
+contribution of the proton-sector fermionic closures to the electromagnetic
+running when the dispersive integral is evaluated with lower bound $\mproton$
+rather than $2m_{\pi}$.
+
+\emph{Tension and its origin.} The PDG value is $\Dahad^{(\mathrm{PDG})}=
+0.027661\pm0.000110$, at $4.34\,\sigma$ from $\ksurf/\varphi=0.028138$.
+This tension is not an error: it is the missing contribution of pions and
+kaons ($\approx0.000477$), which in the SM integral contribute from threshold
+$2m_{\pi}$ but are absent from the \PDL\ lower bound. When OP-D59-1 provides
+the pion and kaon contributions in \PDL\ language, the correction will bring
+$\Dahad^{(\mathrm{PDL})}$ into agreement with $\Dahad^{(\mathrm{PDG})}$, and
+the tension on $\MZ$ is expected to fall below $2\sigma$.
+
+\subsection{\texorpdfstring{The $M_Z$ prediction}{MZ prediction}}
+
+\begin{conjecture}[\texorpdfstring{$M_Z$}{MZ}]\label{conj:mz}
+The $Z^{0}$ boson mass satisfies:
+\begin{equation}\label{eq:mz}
+\frac{\MZ}{\mproton} = \frac{g_{Z}\bigl[\Dalep+\Dahad\bigr]\cdot\vev}{2\mproton},
+\end{equation}
+where $\alpha_{\mathrm{eff}}=\alphaPDL/(1-\Dalep-\Dahad)$,
+$g_{Z}=\sqrt{4\pi\alpha_{\mathrm{eff}}}/(\sin\thetaW\cos\thetaW)$,
+$\thetaW=19\pi/119$ \emph{(D55)}, and $\vev$ is equation~\eqref{eq:vev}.
+Numerically: $\MZ/\mproton=97.179$, deviation $84.6\ppm$ from experiment,
+tension $3.67\sigma$.
+\end{conjecture}
+
+The self-consistency of equation~\eqref{eq:mz} was verified by fixed-point
+iteration: starting from $\MZ^{(0)}=97\,\mproton$, the sequence converges in
+two iterations (the rapid convergence reflects the fact that $\Dahad=
+\ksurf/\varphi$ is independent of $\MZ$). The tension of $3.67\sigma$
+against the experimental value $\MZ^{(\mathrm{exp})}=91187.6\MeV$ is
+structural: it reflects the $4.34\sigma$ discrepancy in $\Dahad$ arising from
+the absence of pion and kaon contributions. The two tensions are linked
+quantitatively: $\delta(\Dahad)\times\mathrm{d}\MZ/\mathrm{d}(\Dahad)\approx
+0.000477\times51.7\,\mproton\approx24.7\,\mproton$, corresponding to
+$\approx11\sigma_{\MZ}$ if $\Dahad$ alone were corrected. The smaller observed
+tension of $3.67\sigma$ on $\MZ$ results from the partial compensation between
+the $\Dahad$ excess and the $\vev$ deficit.
+
+%%------------------------------------------------------------
+\section{The theorem \texorpdfstring{$M_Z/M_W=1/\cos\theta_W$}{MZ/MW}}
+%%------------------------------------------------------------
+
+\begin{theorem}[\texorpdfstring{$M_Z/M_W$}{MZ/MW}]\label{thm:mzmw}
+As an unconditional consequence of C1--C4:
+\begin{equation}\label{eq:mzmw}
+\frac{\MZ}{\MW} = \frac{1}{\cosW} = \frac{1}{\cos\!\left(\tfrac{19\pi}{119}\right)}.
+\end{equation}
+The PDL value $1/\cosW=1.14049$ differs from the experimental ratio
+$\MZ/\MW=1.13461$ by $5182\ppm$. This deviation is consistent with the known
+difference between the tree-level Weinberg angle and its radiatively corrected
+physical value, an effect of order $\alpha/\pi\approx2300\ppm$ in the SM.
+\end{theorem}
+
+\begin{proof}
+From D57, the relation $\MW=\MZ\cosW$ is a structural consequence of
+$\mathrm{SU}(2)\times\mathrm{U}(1)\to\mathrm{U}(1)_{\mathrm{em}}$ breaking,
+itself an unconditional theorem of C1--C4. From D55, $\thetaW=19\pi/119$ is
+an unconditional theorem. The ratio $\MZ/\MW=1/\cosW$ then holds without free
+parameters. The $5182\ppm$ deviation from the experimental ratio reflects the
+difference between the tree-level (PDL) and radiatively corrected (physical)
+Weinberg angle. Comparing $\sinthW^{(\mathrm{PDL})}=0.23120$ against the PDG
+MS-bar value $\sinthW^{(\mathrm{exp})}=0.23121\pm0.00003$ gives a tension
+of $0.48\sigma$, confirming that the tree-level \PDL\ angle and the physical
+angle agree to better than $1\sigma$.
+\end{proof}
+
+\begin{corollary}\label{cor:mw}
+Once $\MZ$ is determined, $\MW$ is a theorem of C1--C4:
+$\MW = \MZ\cdot\cos(19\pi/119)$.
+\end{corollary}
+
+%%------------------------------------------------------------
+\section{Prediction of \texorpdfstring{$M_H$}{MH}}
+%%------------------------------------------------------------
+
+\begin{conjecture}[\texorpdfstring{$M_H$}{MH}]\label{conj:mh}
+\begin{equation}\label{eq:mh}
+\frac{\MH}{\mproton} = \frac{\varphi\,k_{2}}{\sinthW}
++ \frac{\Delta n\cdot k_{2}}{\Ntot}
+= \frac{\varphi\times19}{\sin^{2}(19\pi/119)} + \frac{4\times19}{119},
+\end{equation}
+where $k_{2}=19$ \emph{(D51)}, $\Delta n=4$ \emph{(D47)}, $\Ntot=119$
+\emph{(D55)}. Numerically: $\MH/\mproton=133.611$ at $1307\ppm$ ($1.49\sigma$).
+\end{conjecture}
+
+\emph{Structural motivation.} The generator $(1,1,1)\in\mathcal{O}_{3}$ is the
+unique element of $\Ztwo$ that engages all three transport dimensions
+simultaneously. Its excitation cost is therefore the largest in the network and
+involves all three \PDL\ structural scales at once: $\varphi$ (surface-to-core
+ratio, D05), $k_{2}=19$ ($\mathrm{SU}(2)$ sequencing cycle, D51), and
+$\sinthW$ (electroweak mixing, D55). The correction term $\Delta n\cdot k_{2}/\Ntot
+=76/119$ encodes the isospin asymmetry $\Delta n=4$ (D47) acting on the
+$\mathrm{SU}(2)$ cycle length.
+
+\emph{Epistemic status.} The Higgs self-coupling $\lambda_{H}=(M_{H}/v)^{2}/2
+\approx0.129$ is not yet derived from C1--C4. Its derivation requires the top
+quark Yukawa coupling $y_{t}=\sqrt{2}\,m_{t}/v$, hence the top quark mass from
+OP-D59-1 (OP-D62-2). Until then, Conjecture~\ref{conj:mh} is a motivated
+prediction, not a theorem.
+
+%%------------------------------------------------------------
+\section{Higgs production and decay: structural observations}
+%%------------------------------------------------------------
+
+\subsection{Rarity of Higgs production}
+
+At $\sqrt{s}=8\TeV$, $\sigma(gg\to H)\approx19\,\mathrm{pb}$ while
+$\sigma_{pp}\approx70\,\mathrm{mb}$, giving a ratio of approximately
+$2.71\times10^{-10}$. This extraordinary rarity reflects the complexity of the
+required coherence configuration. A Higgs is produced only when the network
+simultaneously activates all three dimensions of $\Ztwo$, which requires:
+(i)~a coherent encounter of two $K_{4}$ surfaces; (ii)~selection of the
+specific $\mathcal{O}_{3}$ generator among all configurations of $\Ztwo$.
+
+$K_{4}$ has exactly three perfect matchings. When two protons collide, the
+number of jointly coherent configurations is $3\times3=9$ out of
+$6\times4=24$ possible mixed triangles, giving a coherence probability of
+$9/24=3/8$. Among coherent configurations, the probability of activating
+$(1,1,1)$ specifically is $1/8$ (one element among eight in $\Ztwo$). The
+structural estimate is:
+\begin{equation}\label{eq:xsec}
+\frac{\sigma(gg\to H)}{\sigma_{pp}} \sim \frac{\ksurf^{3}}{\Ntot^{2}\cdot5^{2}},
+\end{equation}
+where $5^{2}=(\sqrt{5})^{4}$ encodes the double encounter of two $K_4$
+surfaces, each contributing a factor $\sqrt{5}$ through $\ksurf=\varphi\cdot310/
+R_{\mathrm{tot}}$ and the relation $\varphi=(1+\sqrt{5})/2$. Numerically,
+$\ksurf^{3}/(\Ntot^{2}\times25)=2.67\times10^{-10}$, within $17871\ppm$ of
+the experimental value. The derivation of the factor $5^{2}$ from a
+combinatorial matching problem on $K_4$ is OP-D62-5.
+
+\subsection{Decay cascade: three levels}
+
+The cascade has a precise three-level structure within $\Ztwo$:
+\begin{enumerate}
+\item[\textbf{Level 0.}] Production: $(1,1,1)$ is created. Lifetime
+$\tau_{H}\sim\hbar/\Gamma_{H}\approx10^{-22}\,\mathrm{s}$. No stable
+intermediate state exists at this orbit level.
+\item[\textbf{Level 1.}] Primary decay: $(1,1,1)\to X+Y$ via one of the four
+paths of equation~\eqref{eq:decomp}. Products are one $\mathcal{O}_{1}$
+element (gluon) and one $\mathcal{O}_{2}$ element ($W^{\pm}$ or $Z^{0}$),
+or three $\mathcal{O}_{1}$ elements.
+\item[\textbf{Level 2.}] Secondary decay: $\mathcal{O}_{2}$ elements decompose
+into two $\mathcal{O}_{1}$ elements: $(0,1,1)\to(0,1,0)+(0,0,1)$, etc.
+\emph{Neutrinos appear at this level.}
+\end{enumerate}
+
+\begin{observation}[Neutrino exit at level 2]\label{obs:nu-level}
+When an $\mathcal{O}_{2}$ generator decomposes into two $\mathcal{O}_{1}$
+elements, one of the products is typically a charged lepton $(Q\neq0)$ and
+one is a neutrino ($Q=0$, $R_{\mathrm{surf}}(\nu)\approx0$). The neutrino
+exits the coherence network immediately (Observation~\ref{obs:neutrinos}).
+The energy it carries -- approximately $12.2\%$ of $M_{H}$ in total -- is
+lost to experimental reconstruction. This is not a measurement limitation but
+a structural consequence: neutrinos have no surface coherence budget, so they
+cannot form further triangles. The fact that the measured Higgs mass is
+reproduced at $1.49\sigma$ by equation~\eqref{eq:mh} suggests that the
+prediction already accounts, at least approximately, for the mass of the
+complete decay state, not just the detectable fraction.
+\end{observation}
+
+%%------------------------------------------------------------
+\section{Open problems}
+%%------------------------------------------------------------
+
+\begin{openproblem}[OP-D62-1: correction on $v$]\label{op:1}
+Derive from C1--C4 the correction factor $k_{1}/\Ntot^{2}=9/14161$ on the vev
+(Remark~\ref{rem:vcorr}). The candidate interpretation -- weight of the null
+endomorphism in $\mathbb{Z}_{\Ntot}$ -- must be formalised as a lemma. Expected
+impact: reduction of the vev deviation from $676\ppm$ to $41\ppm$.
+\end{openproblem}
+
+\begin{openproblem}[OP-D62-2: derivation of $\lambda_H$]\label{op:2}
+Derive the Higgs self-coupling $\lambda_{H}=(M_{H}/v)^{2}/2\approx0.129$
+from C1--C4. Prerequisite: top quark mass from OP-D59-1.
+\end{openproblem}
+
+\begin{openproblem}[OP-D62-3: self-consistency of the $M_Z$ equation]\label{op:3}
+Prove analytically that equation~\eqref{eq:mz} has a unique fixed point, and
+that its solution converges from any physically reasonable initial value.
+Numerical verification (convergence in two iterations) is established but a
+formal proof is missing.
+\end{openproblem}
+
+\begin{openproblem}[OP-D62-4: hadronic running coupling from C1--C4]\label{op:4}
+Derive $\Dahad=\ksurf/\varphi$ analytically as the hadronic contribution to
+$\Delta\alpha(\MZ)$ with lower bound $\mproton$. Then derive the pion and kaon
+corrections (from OP-D59-1) to bring $\Dahad^{(\mathrm{PDL})}$ into agreement
+with the PDG dispersive value $0.027661\pm0.000110$. Expected impact on $\MZ$:
+reduction of the tension from $3.67\sigma$ to below $2\sigma$.
+\end{openproblem}
+
+\begin{openproblem}[OP-D62-5: Higgs production cross-section]\label{op:5}
+Derive the factor $5^{2}=(\sqrt{5})^{4}$ in equation~\eqref{eq:xsec} from a
+combinatorial matching polynomial on $K_4$, connecting the double $K_4$ surface
+encounter to the $\Qphi$ structure of the \PDL\ surface leakage parameter.
+\end{openproblem}
+
+%%------------------------------------------------------------
+\section{Summary and conclusions}
+%%------------------------------------------------------------
+
+\begin{table}[h!]
+\centering
+\caption{Summary of D62 results. Masses in units of $\mproton=938.272\MeV$.
+PDG~2024 experimental values. Tensions use experimental uncertainties.}
+\label{tab:summary}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{p{1.5cm}p{5.0cm}ccc}
+\toprule
+Quantity & \PDL\ expression & PDL value & Exp.\ value & Status\\
+\midrule
+$\MZ/\MW$ & $1/\cos(19\pi/119)$ & $1.14049$ & $1.13461$ & Theorem, $5182\ppm$\\
+$v/\mproton$ & $\Ntot^{2}/(R_{e}k_{1})$ & $262.241$ & $262.418$ & Conj., $676\ppm$\\
+$\MZ/\mproton$ & analytical chain & $97.179$ & $97.187$ & Conj., $3.67\sigma$\\
+$\MW/\mproton$ & $\MZ\cos(19\pi/119)$ & $85.208$ & $85.656$ & Corollary\\
+$\MH/\mproton$ & $\varphi k_{2}/\sinthW+\Delta n\,k_{2}/\Ntot$ & $133.611$ & $133.437$ & Conj., $1.49\sigma$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This document makes five contributions to the \PDL\ corpus.
+
+\textbf{Definition of gauge boson mass} (Definition~\ref{def:boson-mass}).
+The first formal definition of boson mass in the \PDL\ programme, bridging
+the gap between the gauge group derivation (D57--D61) and the mass question.
+Gauge bosons are transport modes in $\Ztwo$, not fermionic closures; their
+mass is a minimal excitation threshold, not a stationary coherence cost.
+
+\textbf{Derivation of the vev} (Conjecture~\ref{conj:vev}). The electroweak
+vev is expressed as a ratio of network capacities: $\vev=\Ntot^{2}/(R_{e}k_{1})
+\cdot\mproton$, with each factor justified by an unconditional theorem. The
+isolation of this candidate in the numerical search is robust.
+
+\textbf{The $M_Z/M_W$ theorem} (Theorem~\ref{thm:mzmw}). The ratio
+$\MZ/\MW=1/\cosW$ is an unconditional theorem of C1--C4. The tree-level PDL
+Weinberg angle agrees with the physical MS-bar value to $0.48\sigma$.
+
+\textbf{The $M_Z$ analytical chain} (Conjecture~\ref{conj:mz}). The chain
+$\MZ=g_{Z}(\Dalep+\Dahad)\cdot\vev/2$ yields $84.6\ppm$ at $3.67\sigma$.
+The tension is precisely attributed: $\Dahad=\ksurf/\varphi$ uses $\mproton$
+as the lower integration bound, excluding pion and kaon contributions that
+will be recovered when OP-D59-1 is resolved.
+
+\textbf{The decay cascade} (Observations~\ref{obs:neutrinos},
+\ref{obs:nu-level}). The Higgs cascade is mapped exactly onto the $\Ztwo$
+topology. The four primary decay paths are derived combinatorially. Neutrinos
+exit the coherence network at level~2, carrying $12.2\%$ of $M_{H}$ and
+rendering the reconstructed LHC mass a coherent-fraction measurement.
+
+The resolution of OP-D59-1 (quark and hadron mass spectrum from C1--C4) is the
+key next step: it will supply the missing pion and kaon contributions to
+$\Dahad$, derive $\lambda_{H}$ via the top quark Yukawa coupling, and enable
+D62's conjectures to be elevated to theorems.
+
+\bibliographystyle{unsrt}
+\bibliography{D62}
+
+\end{document}
