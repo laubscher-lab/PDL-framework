@@ -394,3 +394,8 @@ D61
 https://doi.org/10.5281/zenodo.20645713
 D61: Gauge Dynamics as a C4 Survival Theorem — Derivation of the Minimal Covariant Derivative from the PDL Axioms C1–C4 (Projective Dynamic Logo Framework)
 D61_covariant_derivative.pdf 
+
+D62 
+https://doi.org/10.5281/zenodo.20679631 
+D62: Gauge Boson Masses from Combinatorial Axioms — Derivation of v, M_Z, M_W and Prediction of M_H in the Projective Dynamic Logo Framework 
+D62_Gauge_Boson.pdf
