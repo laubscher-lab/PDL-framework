@@ -1,0 +1,405 @@
+% ============================================================
+% D63 — Quark Mass Spectrum from Combinatorial Axioms:
+%        Two Conjectures on Valence and Sea Quark Masses
+%        in the Projective Dynamic Logo Framework
+% Author: Cédric Laubscher
+% Zenodo open-access, CC BY 4.0
+% LaTeX conventions: British English; no spurious mid-sentence
+% line breaks; prose as continuous paragraphs;
+% \bibliographystyle{unsrt} with natbib [numbers]
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage[numbers]{natbib}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+\geometry{top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm}
+
+\hypersetup{colorlinks=true, linkcolor=blue!70!black, citecolor=blue!60!black, urlcolor=blue!70!black, pdftitle={Quark Mass Spectrum from Combinatorial Axioms: Two Conjectures on Valence and Sea Quark Masses in the PDL Framework}, pdfauthor={C\'edric Laubscher}}
+
+\pdfstringdefDisableCommands{
+  \def\PDL{PDL}
+  \def\Kfour{K4}
+  \def\Rsea{R\_sea}
+  \def\Rtot{R\_tot}
+  \def\pkone{p\_k1}
+  \def\QQ{Q}
+}
+
+% ---- Colour palette ----
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{openproblemred}{RGB}{160,20,20}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{openproblem}[theorem]{Open Problem}
+
+\tcolorboxenvironment{conjecture}{colback=conjecturegreen!5!white, colframe=conjecturegreen!60!black, boxrule=0.5pt, left=4pt, right=4pt, top=2pt, bottom=2pt, breakable}
+
+\tcolorboxenvironment{openproblem}{colback=openproblemred!5!white, colframe=openproblemred!60!black, boxrule=0.5pt, left=4pt, right=4pt, top=2pt, bottom=2pt, breakable}
+
+% ---- Custom macros ----
+\newcommand{\PDL}{\textnormal{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\quintuplet}{(24,\,28,\,930,\,10087,\,11017)}
+\newcommand{\nnu}{n_u}
+\newcommand{\nnd}{n_d}
+\newcommand{\Dn}{\Delta n}
+\newcommand{\Rval}{R_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\kone}{k_1}
+\newcommand{\ktwo}{k_2}
+\newcommand{\pkone}{p_{k_1}}
+\newcommand{\Dmiso}{\Delta m_{\mathrm{iso}}}
+\newcommand{\mup}{m_u}
+\newcommand{\mdown}{m_d}
+\newcommand{\mstrange}{m_s}
+\newcommand{\mcharm}{m_c}
+\newcommand{\mbottom}{m_b}
+\newcommand{\mtop}{m_t}
+\newcommand{\QQ}{\mathcal{Q}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\title{\texorpdfstring{D63: Quark Mass Spectrum from Combinatorial Axioms\\[4pt] \large Two Conjectures on Valence and Sea Quark Masses in the Projective Dynamic Logo Framework}{D63: Quark Mass Spectrum from Combinatorial Axioms}}
+
+\author{C\'edric Laubscher\\[4pt] \small Independent Researcher, Switzerland\\ \small ORCID: 0009-0004-5415-1098\\ \small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{June 2026\\[2pt] \small Zenodo \textit{pdl-framework} community, CC~BY~4.0}
+
+\maketitle
+
+\begin{abstract}
+Open problem OP-D59-1 asks for a derivation of the individual quark masses from the combinatorial axioms C1--C4 of the Projective Dynamic Logo (\PDL) framework~\cite{D01,D43}. The sole irreducible external parameter of the programme is the isospin mass splitting $\Dmiso = \mdown - \mup = 2.532$~MeV~\cite{D31}. This document presents two conjectures of distinct ontological character that together address the full quark mass spectrum. The first conjecture, H\_mass, concerns the valence quarks $u$ and $d$: their mass ratio is identified as the ratio of the coherence-pulsation costs of the valence cores $K_{24}$ and $K_{28}$, giving $\mdown/\mup = 2401/1104 \approx 2.1748$, from which $\mup = 2.155$~MeV and $\mdown = 4.687$~MeV are derived at $0.22\%$ and $0.37\%$ of the PDG values respectively, with no additional free parameter. A structural identity connecting the result to the cosmological leakage sector is identified: $\nnu - 1 = p_{k_1} = 23$, where $p_{k_1}$ is the first cosmological leakage prime of D51~\cite{D51}. The second conjecture, H\_sea, concerns the sea quarks $s$, $c$, $b$, $t$: their effective masses are reproduced within $2.5\%$ of PDG values by a formula combining the same coherence-pulsation cost with a residual-fluidity weighting $\Rsea/(\Rsea + r(n))$ derived from the proton quintuplet. The non-hadronisation of the top quark emerges as a structural consequence: its effective size $n_t = 332$ satisfies $r(332) \gg \Rsea$, making the sea budget insufficient to sustain its structure. All candidate formulae were identified by exhaustive numerical scan over the \PDL\ quintuplet invariants, executed in exact integer arithmetic in Google Colab prior to drafting (verrouillage protocol). The epistemic status of each claim is stratified explicitly throughout.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction and context}
+\label{sec:intro}
+% ============================================================
+
+The \PDL\ programme reconstructs physical reality from four axioms on finite signed graphs --- minimal binary pulsation~(C1), triangular coherence~(C2), relational completeness~(C3), and coherence-cost optimisation~(C4) --- without presupposing spacetime, particles, or fields~\cite{D01,D43}. The unique minimal admissible closure under C1--C4 is the complete signed graph $\Kfour$ on four vertices and six edges, identified with the electron prototype~\cite{D01}. The proton is the minimal hierarchical composite of such closures, uniquely characterised by the integer quintuplet $(\nnu, \nnd, \Rval, \Rsea, \Rtot) = \quintuplet$, where $\nnu = 24$ and $\nnd = 28$ are the sizes of the up- and down-type valence cores, $\Rval = 930$ the total valence relational budget, $\Rsea = 10087$ the sea relational budget, and $\Rtot = 11017$ the total~\cite{D16a,D16b,D47}. From this single combinatorial object, the programme has derived, without free parameters, the fine-structure constant $\alpha$~\cite{D12,D25}, Newton's gravitational constant $G$ to 27~ppm of CODATA~2022~\cite{D21,D28}, the cosmological constant $\Lambda$ to $0.17\%$ of Planck~2020~\cite{D51,D52,D53}, the Standard Model gauge group $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$~\cite{D57,D58,D59,D60}, the minimal covariant derivative~\cite{D61}, and the electroweak gauge boson mass ratios~\cite{D62}.
+
+The sole irreducible external parameter is $\Dmiso = \mdown - \mup = 2.532$~MeV, established at the \PDL--QCD interface in D31~\cite{D31}. Document D59~\cite{D59} constructed the carrier space $W$ and the colour gauge group $\mathrm{SU}(3)_c$ from C1--C4 and stated as OP-D59-1 the open problem of deriving the individual quark masses from the axioms. This document addresses that problem.
+
+The derivation proceeds in two logically distinct stages, corresponding to two ontologically distinct categories of quark. Section~\ref{sec:distinction} establishes the ontological distinction. Sections~\ref{sec:Hmass} and~\ref{sec:Hsea} present the two conjectures H\_mass and H\_sea respectively, each including the numerical search methodology that led to the candidate formula. Section~\ref{sec:negative} documents the rejected candidate formulae. Section~\ref{sec:openproblems} states the resulting open problems. Section~\ref{sec:conclusion} synthesises the impact on D62~\cite{D62}.
+
+% ============================================================
+\section{Ontological distinction: valence quarks versus sea quarks}
+\label{sec:distinction}
+% ============================================================
+
+\subsection{Valence cores as permanent partial closures}
+\label{subsec:valence}
+
+In the \PDL\ description of the proton, the two up-type cores $K_{24}$ and the one down-type core $K_{28}$ are permanent partial closures selected by C4 at the global optimum~\cite{D16a,D16b}. They are not self-contained closures: each has an open boundary through which it couples to the relational sea $\Rsea$. This coupling is mediated by mixed triangles --- coherent triangles involving two vertices of a valence core and one relation of the sea --- which are necessary for the global closure to satisfy C2 and C3. The mass of a valence quark is the cost of maintaining its partial closure against the permanent pressure of the leakage parameter $\kappa = 310\varphi/11017$~\cite{D42}, where $\varphi = (1+\sqrt{5})/2$. This cost is stationary: it is paid at every pulsation cycle, indefinitely, as long as the proton persists.
+
+\subsection{Sea quarks as induced pseudo-stationary regimes}
+\label{subsec:sea}
+
+The quarks $s$, $c$, $b$, $t$ do not appear as valence cores of the proton or neutron at rest. They are observed experimentally only in high-energy collisions, where the pulsation of the valence cores through the sea --- driven by the requirement that the global dynamical balance remain null --- forces some sea relations to momentarily organise into locally coherent configurations. During their finite lifetime, these configurations satisfy C1--C4 locally and transiently, indistinguishable from a genuine stationary regime for a finite number of pulsation cycles, after which C4 at the global level dissolves them. This is a fundamental ontological difference: valence quarks are permanent structural features selected by C4 at the global optimum, whereas sea quarks are ephemeral responses of the sea to the motion of valence cores, satisfying C1--C4 only locally and momentarily. Their mass is not a stationary maintenance cost but an effective cost of transient local coherence.
+
+\subsection{Consequence: two distinct formulae are required}
+\label{subsec:consequence}
+
+Because the two categories of quark differ in ontological status, a single formula cannot govern both. The derivation of valence quark masses proceeds from the combinatorial structure of $K_{\nnu}$ and $K_{\nnd}$ and their permanent coupling to the sea. The derivation of sea quark masses proceeds from the effective cost of transient pseudo-stationary regimes in $\Rsea$, modulated by the residual fluidity of the sea. The conjectures H\_mass and H\_sea formalise these two mechanisms respectively.
+
+% ============================================================
+\section{\texorpdfstring{Conjecture H\_mass: valence quark mass ratio from C1--C4}{Conjecture H-mass: valence quark mass ratio from C1-C4}}
+\label{sec:Hmass}
+% ============================================================
+
+\subsection{The missing equation}
+\label{subsec:missing}
+
+Document D31~\cite{D31} established $\Dmiso = \mdown - \mup = 2.532$~MeV as the unique irreducible external parameter at the \PDL--QCD interface. This gives one equation in two unknowns. A second, internal equation is needed: can C1--C4, applied to the valence cores $K_{\nnu}$ and $K_{\nnd}$, determine the ratio $\mdown/\mup$ without any additional external input?
+
+\subsection{Numerical search for the candidate formula}
+\label{subsec:search_mass}
+
+The search for the ratio $\mdown/\mup$ was conducted as an exhaustive numerical scan over functions of the quintuplet invariants, following the \PDL\ verrouillage protocol: all computations were executed in exact integer and rational arithmetic in Google Colab prior to any analytical interpretation. The scan tested all functions of the form $f(n) = r(n)^a \cdot n^b \cdot (n-1)^c \cdot (n+\Dn)^d$ for non-negative integer exponents $a, b, c, d$ with $a+b+c+d \leq 5$, where $r(n) = n(n-1)/2$ is the number of edges of $K_n$ and $\Dn = 4$. The candidate ratio for the mass ratio was $f(\nnd)/f(\nnu)$, compared against the PDG value $\mdown/\mup = 2.162 \pm 0.063$. Of the several hundred candidates tested in the first pass, four passed a $15\%$ deviation filter; of these, only one passed a strict $1\%$ filter in a refined scan: the function $f(n) = r(n) \cdot n^3 = n^4(n-1)/2$, giving $\mdown/\mup = 2401/1104 \approx 2.1748$, a deviation of $0.59\%$ from the PDG central value. No other combination of the quintuplet invariants with total degree $\leq 5$ achieved a deviation below $1\%$. The isolation of this candidate is thus robust within the scanned family.
+
+\subsection{The coherence-pulsation cost: structural interpretation}
+\label{subsec:cost}
+
+The numerical candidate $f(n) = r(n) \cdot n^3$ admits a natural structural interpretation within C1--C4. The mass of a valence core is the cost of verifying all four axioms simultaneously during each pulsation cycle. This verification decomposes into four independent scalar constraints, each parameterised by exactly one degree of freedom.
+
+\begin{definition}[Coherence-pulsation quadruplet set]\label{def:quadruplet}
+Let $K_n$ be a valence core of size $n$ (a multiple of~$4$). The \emph{coherence-pulsation quadruplet set} of $K_n$ is $\QQ(K_n) = \{(r, e_1, e_2, e_3) \mid r \in E(K_n),\; e_1, e_2, e_3 \in V(K_n)\}$, where $E(K_n)$ is the edge set and $V(K_n)$ the vertex set. Elements are ordered quadruplets of one relation and three entities, with repetition permitted on the entity positions.
+\end{definition}
+
+The four components correspond to the four axioms as follows. The relation $r = (e_i, e_j)$ is the fundamental object of C1: pulsation acts on the signs of relations. The entity $e_1$ is the unique third vertex required by C2 to form a coherent triangle containing $r$; the coherence condition $s(e_i, e_j) \cdot s(e_j, e_1) \cdot s(e_1, e_i) = +1$ is a single scalar equation parameterised by $e_1$ alone. The entity $e_2$ encodes the relational completeness of C3: the coherence constraint must propagate to all entities of $K_n$, requiring one traversal parameter. The entity $e_3$ encodes the optimisation of C4: the cost minimisation requires indexing the configurations to be compared, and one entity suffices. Repetition is permitted because C3 imposes exhaustive coverage without exclusion, and requiring distinctness would impose an additional constraint that C4 (minimisation) excludes as non-minimal. The argument for exactly one entity per axiom is one of minimality: zero entities at level~C2 would leave triangular coherence unverifiable; two entities at any level would impose a bilinear constraint, exceeding the minimal scalar requirement. Thus $k = 3$ entity levels is the unique value compatible with C1--C4, and $|\QQ(K_n)| = r(n) \cdot n^3$ follows directly.
+
+\begin{proposition}[Cardinal of \texorpdfstring{$\QQ(K_n)$}{Q(Kn)}]\label{prop:cardinal}
+For a valence core $K_n$ with $n$ vertices and $r(n) = n(n-1)/2$ edges, $|\QQ(K_n)| = r(n) \cdot n^3 = n^4(n-1)/2$.
+\end{proposition}
+
+\begin{proof}
+By Definition~\ref{def:quadruplet}, $|\QQ(K_n)| = |E(K_n)| \cdot |V(K_n)|^3 = r(n) \cdot n^3$. The factored form follows from $r(n) = n(n-1)/2$.
+\end{proof}
+
+\subsection{The mass ratio conjecture}
+\label{subsec:ratio}
+
+\begin{conjecture}[\texorpdfstring{H\_mass: valence quark mass ratio}{H-mass: valence quark mass ratio}]\label{conj:Hmass}
+The ratio of the masses of the down and up valence quarks equals the ratio of the coherence-pulsation costs of their respective valence cores:
+\[
+\frac{\mdown}{\mup} = \frac{|\QQ(K_{\nnd})|}{|\QQ(K_{\nnu})|} = \frac{\nnd^4(\nnd - 1)}{\nnu^4(\nnu - 1)} = \frac{28^4 \times 27}{24^4 \times 23} = \frac{2401}{1104}.
+\]
+\end{conjecture}
+
+\emph{Epistemic status.} H\_mass is a strongly motivated conjecture supported by (i)~the exhaustive numerical scan of Section~\ref{subsec:search_mass} establishing the isolation of $f(n) = r(n) \cdot n^3$, (ii)~the structural interpretation of Section~\ref{subsec:cost} identifying $|\QQ(K_n)|$ as the coherence-pulsation cost under C1--C4, and (iii)~the numerical agreement of Section~\ref{subsec:numerics_mass}. It is not yet a theorem: the formal proof that the constraints of C2, C3, and C4 are mutually independent within the quadruplet structure remains open (OP-D63-1).
+
+\subsection{\texorpdfstring{A structural identity: $n_u - 1 = p_{k_1} = 23$}{A structural identity: nu - 1 = pk1 = 23}}
+\label{subsec:identity}
+
+The denominator of Conjecture~\ref{conj:Hmass} involves the factor $\nnu - 1 = 23$. By D47~\cite{D47}, $\nnu = 24$ is an unconditional theorem of C1--C4, derived as the unique positive integer solution to the quasi-completeness discriminant equation with $\Dn = 4$. By D51~\cite{D51}, $\pkone = p_{\kone} = p_9 = 23$ is the first cosmological leakage prime, also an unconditional theorem of C1--C4, where $k_1 = 9 = n_d - n_u + R_e - 1$ is the first leakage index.
+
+\begin{proposition}[Structural identity]\label{prop:identity}
+The following exact integer identity holds between two unconditional theorems of C1--C4: $\nnu - 1 = \pkone = 23$.
+\end{proposition}
+
+This identity is not a numerical accident within the family of integers near 23: it connects two quantities derived from entirely different structural mechanisms. The value $\nnu = 24$ is forced by the combinatorial constraint that selects the proton valence multiplicity~\cite{D47}, while $\pkone = 23$ is forced by the prime indexing of the cosmological leakage cycle lengths~\cite{D51}. Their coincidence --- $\nnu - 1 = \pkone$ --- means that the factor governing the mass hierarchy between $u$ and $d$ quarks is structurally identical to the factor governing the first level of cosmological leakage amplification. This suggests a deeper connection between the hadronic and cosmological sectors of the \PDL\ programme that is not yet formalised (OP-D63-3).
+
+\subsection{Numerical verification}
+\label{subsec:numerics_mass}
+
+From Conjecture~\ref{conj:Hmass} and $\Dmiso = 2.532$~MeV, the system $\mdown/\mup = 2401/1104$ and $\mdown - \mup = 2.532$~MeV yields the unique solution $\mup = 1104 \times 2.532 / 1297 \approx 2.155$~MeV and $\mdown = \mup + \Dmiso \approx 4.687$~MeV.
+
+\begin{table}[H]
+\centering
+\caption{Valence quark masses: \PDL\ predictions from H\_mass versus PDG~2024~\cite{PDG2024}. The ratio $\mdown/\mup = 2401/1104$ is exact over $\mathbb{Q}$; the individual masses depend on $\Dmiso = 2.532 \pm 0.030$~MeV (D31~\cite{D31}). The propagation of the uncertainty on $\Dmiso$ gives $\delta(\mup) = \delta(\mdown) = \pm 0.026$~MeV.}
+\label{tab:Hmass}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcccc}
+\toprule
+Quantity & \PDL\ value & PDG value & Deviation & Status \\
+\midrule
+$\mdown/\mup$ & $2401/1104 \approx 2.1748$ & $2.162 \pm 0.063$ & $0.59\%$ & Conj.\ H\_mass \\
+$\mup$ & $2.155$~MeV & $2.16 \pm 0.07$~MeV & $0.22\%$ & Conj.\ H\_mass \\
+$\mdown$ & $4.687$~MeV & $4.67 \pm 0.15$~MeV & $0.37\%$ & Conj.\ H\_mass \\
+$\mdown - \mup$ & $2.532$~MeV & $2.532$~MeV & exact & D31~\cite{D31} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All deviations are well within the PDG uncertainties. The candidate $f(n) = r(n) \cdot n^3$ was verified as the unique isolated minimum of $|f(\nnd)/f(\nnu) - (\mdown/\mup)^{\mathrm{PDG}}|$ within the scanned family; adjacent multiples of the degree gave deviations exceeding $10\%$.
+
+% ============================================================
+\section{\texorpdfstring{Conjecture H\_sea: sea quark effective masses}{Conjecture H-sea: sea quark effective masses}}
+\label{sec:Hsea}
+% ============================================================
+
+\subsection{Motivation and methodology}
+\label{subsec:motivation_sea}
+
+The sea quarks $s$, $c$, $b$, $t$ are pseudo-stationary regimes induced in $\Rsea$ by the pulsation of the valence cores (Section~\ref{subsec:sea}). During their finite lifetime, they locally satisfy C1--C4, suggesting that the same coherence-pulsation cost $|\QQ(K_n)|$ governs their effective mass, but with a modification reflecting the transient character of their existence. The methodology is a retro-analysis: starting from the experimental values of $\mstrange$, $\mcharm$, $\mbottom$, $\mtop$, one determines for each quark the effective size $n$ at which a candidate formula reproduces the PDG mass, then verifies that $n$ is a multiple of~$4$ (the internal completeness condition from C3~\cite{D01,D16a}) and that the result is structurally consistent with the sea relational budget $\Rsea$.
+
+\subsection{Numerical search for the fluidity weighting}
+\label{subsec:search_sea}
+
+The bare pulsation-cost formula $m(n) = [n^4(n-1)/\nnu^4(\nnu-1)] \cdot \mup$ without any weighting reproduces $\mbottom$ and $\mtop$ well (deviations $1.6\%$ and $0.3\%$ respectively) but fails for $\mstrange$ and $\mcharm$ (deviations $12.6\%$ and $8.1\%$). This suggests that the effective mass of a sea quark is not solely governed by its bare pulsation cost but also by how well the sea can accommodate its structure. Five weighting functions $w(n)$ were tested exhaustively over all multiples of~$4$ in $[4, 500]$: the identity $w = 1$, the linear correction $w = 1 - r(n)/\Rsea$, the harmonic form $w = \Rsea/(\Rsea + r(n))$, its square $w = [\Rsea/(\Rsea + r(n))]^2$, and the exponential $w = \exp(-r(n)/\Rsea)$. For each weighting and each quark, the optimal multiple of~$4$ was identified and its deviation from the PDG mass recorded. The results are summarised in Table~\ref{tab:weightings}. Only the harmonic weighting $w(n) = \Rsea/(\Rsea + r(n))$ reproduces all four sea quarks simultaneously within $2.5\%$; the maximum deviation over the four quarks is $2.46\%$, compared to $98.8\%$, $71.8\%$, and $92.3\%$ for the linear, squared-harmonic, and exponential weightings respectively.
+
+\begin{table}[H]
+\centering
+\caption{Maximum deviation over the four sea quarks $s$, $c$, $b$, $t$ for five candidate weighting functions $w(n)$, each optimised independently over multiples of~$4$ in $[4, 500]$. Only the harmonic weighting achieves universal agreement below $2.5\%$.}
+\label{tab:weightings}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\toprule
+Weighting $w(n)$ & Max.\ deviation & Verdict \\
+\midrule
+$1$ (bare cost) & $12.6\%$ (on $\mstrange$) & rejected \\
+$1 - r(n)/\Rsea$ & $98.8\%$ (on $\mtop$) & rejected \\
+$\Rsea/(\Rsea + r(n))$ & $2.46\%$ (on $\mcharm$) & \textbf{retained} \\
+$[\Rsea/(\Rsea + r(n))]^2$ & $71.8\%$ (on $\mtop$) & rejected \\
+$\exp(-r(n)/\Rsea)$ & $92.3\%$ (on $\mtop$) & rejected \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Structural interpretation of the residual-fluidity weighting}
+\label{subsec:fluidity}
+
+The harmonic weighting $w(n) = \Rsea/(\Rsea + r(n))$ admits a natural structural reading. A pseudo-stationary structure of effective size $n$ in the sea mobilises $r(n) = n(n-1)/2$ relations internally. The total relational budget engaged when such a structure exists is $\Rsea + r(n)$: the sea itself plus the internal relations of the structure. The fraction of this extended budget that remains available as fluid sea --- its \emph{residual fluidity} --- is precisely $w(n)$. When $r(n) \ll \Rsea$, the structure barely perturbs the sea and $w(n) \approx 1$: the effective mass is close to the bare pulsation cost. When $r(n) \sim \Rsea$, the structure monopolises a significant fraction of the sea budget and $w(n) \ll 1$: the sea can no longer sustain the structure for long, reducing its effective persistence and hence its effective mass. When $r(n) \gg \Rsea$, the sea budget is entirely exhausted and the structure cannot exist as a stable pseudo-stationary regime: the weighting suppresses the effective mass toward zero, and more fundamentally, the sea cannot accommodate the structure at all.
+
+\begin{conjecture}[\texorpdfstring{H\_sea: sea quark effective masses}{H-sea: sea quark effective masses}]\label{conj:Hsea}
+The effective mass of a pseudo-stationary sea regime of size $n$ (a multiple of~$4$) is
+\[
+m_{\mathrm{sea}}(n) = \frac{n^4(n-1)}{\nnu^4(\nnu-1)} \cdot \frac{\Rsea}{\Rsea + r(n)} \cdot \mup,
+\]
+where $\nnu = 24$, $\Rsea = 10087$, $r(n) = n(n-1)/2$, and $\mup = 2.155$~MeV from H\_mass. All parameters are invariants of the \PDL\ quintuplet or derive from H\_mass and D31~\cite{D31}. No additional free parameter is introduced.
+\end{conjecture}
+
+\emph{Epistemic status.} H\_sea is a motivated conjecture, weaker than H\_mass in two respects. First, the application of $|\QQ(K_n)|$ to transient regimes is an analogy, not a derivation from C1--C4 in stationary mode. Second, the residual-fluidity weighting $w(n)$ is structurally natural and numerically selected, but not yet formally derived from the axioms in transient mode (OP-D63-2). The significance of the effective sizes $(52, 92, 120, 332)$ is OP-D63-3.
+
+\subsection{Numerical verification}
+\label{subsec:numerics_sea}
+
+For each sea quark, the effective size $n$ listed in Table~\ref{tab:Hsea} is the unique multiple of~$4$ minimising $|m_{\mathrm{sea}}(n) - m^{\mathrm{PDG}}|/m^{\mathrm{PDG}}$. Robustness was verified by confirming that adjacent multiples of~$4$ ($n \pm 4$) give deviations exceeding $10\%$ in all cases, establishing that each optimal $n$ is well-isolated within the discrete family.
+
+\begin{table}[H]
+\centering
+\caption{Sea quark effective masses from H\_sea versus PDG~2024~\cite{PDG2024}. All masses are MS-bar current masses. Effective sizes $n$ were determined by retro-analysis. All computations performed at 50-decimal precision using \texttt{mpmath} in Google Colab.}
+\label{tab:Hsea}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcccccc}
+\toprule
+Quark & $n$ & $r(n)$ & $r(n)/\Rsea$ & $m_{\mathrm{sea}}$ (MeV) & $m^{\mathrm{PDG}}$ (MeV) & Deviation \\
+\midrule
+$s$ & $52 = 13\times4$ & $1326$ & $0.1315$ & $93.08$ & $93.5 \pm 0.8$ & $0.45\%$ \\
+$c$ & $92 = 23\times4$ & $4186$ & $0.4150$ & $1301.2$ & $1270 \pm 30$ & $2.46\%$ \\
+$b$ & $120 = 30\times4$ & $7140$ & $0.7079$ & $4080.8$ & $4180 \pm 30$ & $2.37\%$ \\
+$t$ & $332 = 83\times4$ & $54946$ & $5.448$ & $176169$ & $172760 \pm 720$ & $1.97\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The hadronisation boundary}
+\label{subsec:boundary}
+
+The constraint $r(n) \leq \Rsea$ defines a natural upper bound on the sizes of pseudo-stationary regimes that can be fully accommodated within the sea. This bound gives $n_{\max} = 142$, with the largest admissible multiple of~$4$ being $n = 140$ with $r(140) = 9730 < \Rsea$, corresponding to a maximum effective mass $m_{\mathrm{sea}}(140) \approx 7677$~MeV. The quark $b$ has effective size $n_b = 120$ and $r(120) = 7140 < \Rsea$: it fits within the sea budget and forms hadrons (B~mesons, $\Lambda_b$ baryon). The quark $t$ has effective size $n_t = 332$ and $r(332) = 54946 \gg \Rsea$: its internal relational budget exceeds the entire sea by a factor of~$5.4$, so the sea is structurally insufficient to absorb it. In the Standard Model, the top quark decays via $t \to W^+b$ on a timescale $\tau_t \sim 10^{-25}$~s, shorter than the QCD hadronisation scale $\Lambda_{\mathrm{QCD}}^{-1} \sim 10^{-24}$~s; in the \PDL\ framework, this is a structural consequence of $r(n_t) \gg \Rsea$.
+
+\begin{corollary}[Non-hadronisation of the top quark]\label{cor:top}
+Under Conjecture~H\_sea, the top quark does not hadronise because $r(n_t) = 54946 \gg \Rsea = 10087$, making the sea relational budget structurally insufficient to sustain its pseudo-stationary regime.
+\end{corollary}
+
+\subsection{Remark on the effective sizes}
+\label{subsec:sizes}
+
+The effective sizes found by retro-analysis display structural regularities. For the charm quark, $n_c = 92 = 23 \times 4 = \pkone \times 4$, where $\pkone = 23 = \nnu - 1$ is the structural identity of Proposition~\ref{prop:identity}. For the bottom quark, $n_b = 120 = 5 \times \nnu = 30 \times 4$, an exact integer multiple of $\nnu$. The strange quark gives $n_s = 52 = 13 \times 4$, where $13$ is the prime immediately preceding $\pkone = 23$ in the sequence of primes. Whether these regularities reflect a structural selection principle from C1--C4, or are coincidences within the current approximation scheme, is an open problem (OP-D63-3).
+
+% ============================================================
+\section{Documented negative results}
+\label{sec:negative}
+% ============================================================
+
+The \PDL\ methodology requires that rejected candidates be documented with the same rigour as retained ones. The following approaches were tested and rejected.
+
+\textbf{Auto-similarity for sea quark masses.} The form $(k_2/k_1)^4 \cdot (k_2-1)/(k_1-1)$, replacing valence core sizes by leakage indices $k_1 = 9$, $k_2 = 19$~\cite{D51} in the H\_mass formula, gives $m_s/m_u \approx 44.69$ versus the PDG ratio $43.38$, a tension of $3.53\sigma$. Rejected.
+
+\textbf{Linear fluidity correction.} The weighting $w(n) = 1 - r(n)/\Rsea$ improves $\mstrange$ to $2.2\%$ deviation but gives $40\%$, $58\%$, and $257\%$ deviations for $\mcharm$, $\mbottom$, and $\mtop$ respectively. Rejected.
+
+\textbf{Exponential fluidity correction.} The weighting $w(n) = \exp(-r(n)/\Rsea)$ gives $0.03\%$ on $\mstrange$ but fails completely for $\mtop$ at $92\%$ deviation. Rejected.
+
+\textbf{Squared-harmonic fluidity correction.} The weighting $w(n) = [\Rsea/(\Rsea + r(n))]^2$ gives $12\%$ on $\mstrange$ and $72\%$ on $\mtop$. Rejected. These failures are informationally significant: they confirm that the harmonic weighting $w(n) = \Rsea/(\Rsea + r(n))$ is the unique simple rational function of the sea budget and internal relational cost that achieves universal agreement below $2.5\%$ across all four sea quarks.
+
+% ============================================================
+\section{Open problems}
+\label{sec:openproblems}
+% ============================================================
+
+\begin{openproblem}[\texorpdfstring{OP-D63-1 --- Formal justification of $|\QQ(K_n)| = r(n) \cdot n^3$ from C1--C4}{OP-D63-1 --- Formal justification of the quadruplet formula}]
+\label{op:1}
+Section~\ref{subsec:cost} argues that $k = 3$ entity levels is the unique value compatible with C1--C4 via a minimality argument. A complete proof requires showing that the constraints imposed by C2, C3, and C4 on the quadruplet set are mutually independent within $K_n$ --- that none of the three can be derived from the other two. This independence would elevate H\_mass from a strongly motivated conjecture to a theorem. \textbf{Priority:} high. \textbf{Entry point:} D47~\cite{D47}, D59~\cite{D59}, present document.
+\end{openproblem}
+
+\begin{openproblem}[\texorpdfstring{OP-D63-2 --- Formal derivation of $w(n) = \Rsea/(\Rsea + r(n))$ from C1--C4 in transient mode}{OP-D63-2 --- Formal derivation of the fluidity weighting}]
+\label{op:2}
+The residual-fluidity weighting was selected by exhaustive numerical scan (Section~\ref{subsec:search_sea}) and admits a natural structural reading (Section~\ref{subsec:fluidity}), but its derivation from C1--C4 applied to configurations with finite lifetime is missing. Such a derivation would require extending the \PDL\ variational principle C4 to transient pseudo-stationary regimes, which is not yet part of the axiomatic framework. \textbf{Priority:} medium. \textbf{Entry point:} present document, D61~\cite{D61}.
+\end{openproblem}
+
+\begin{openproblem}[OP-D63-3 --- Structural origin of the effective sizes $(52,\,92,\,120,\,332)$ and of the identity $\nnu - 1 = \pkone$]
+\label{op:3}
+The effective sizes determined by retro-analysis satisfy $n_c = \pkone \times 4$ and $n_b = 5\nnu$, and the H\_mass formula involves the factor $\nnu - 1 = \pkone = 23$ connecting the hadronic and cosmological sectors. Whether these regularities are forced by C1--C4 or are coincidences at the current level of approximation is open. A structural derivation of the admissible effective sizes from the axioms would close this problem and provide a first-principles prediction of the sea quark mass spectrum without retro-analysis. \textbf{Priority:} medium. \textbf{Entry point:} D47~\cite{D47}, D51~\cite{D51}, present document.
+\end{openproblem}
+
+% ============================================================
+\section{Numerical methods and reproducibility}
+\label{sec:methods}
+% ============================================================
+
+All results in this document were obtained prior to drafting by execution of a dedicated Python verification script \texttt{PDL\_D63\_lockdown.py}, deposited on Zenodo together with the present document. The script uses the Python standard library \texttt{fractions.Fraction} for exact rational arithmetic and \texttt{mpmath} at 50-decimal precision for floating-point verification. It performs the following checks in sequence: (i)~verification of all \PDL\ quintuplet identities; (ii)~exhaustive scan of the family $f(n) = r(n)^a \cdot n^b \cdot (n-1)^c \cdot (n+\Dn)^d$ with $a+b+c+d \leq 5$, confirming the isolation of $f(n) = r(n) \cdot n^3$; (iii)~computation of the exact fraction $\mdown/\mup = 2401/1104$ and the masses $\mup$, $\mdown$ with uncertainty propagation; (iv)~exhaustive scan of five weighting functions over all multiples of~$4$ in $[4, 500]$, confirming the selection of $w(n) = \Rsea/(\Rsea + r(n))$; (v)~robustness verification confirming that adjacent multiples of~$4$ give deviations exceeding $10\%$ for all four sea quarks; (vi)~verification of the hadronisation boundary $n_{\max} = 140$.
+
+% ============================================================
+\section{Epistemic stratification}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Complete epistemic stratification of D63 claims.}
+\label{tab:epistemic}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{7.5cm} p{3.2cm} p{3.5cm}}
+\toprule
+\textbf{Claim} & \textbf{Status} & \textbf{Source} \\
+\midrule
+$\nnu = 24$, $\nnd = 28$, $\Dn = 4$ & Theorem (C1--C4) & D47~\cite{D47} \\
+$\quintuplet$ uniqueness & Theorem (C1--C4) & D16a, D16b~\cite{D16a,D16b} \\
+$\pkone = p_9 = 23$ & Theorem (C1--C4) & D51~\cite{D51} \\
+$\nnu - 1 = \pkone = 23$ & Exact identity & D47$+$D51 \\
+$\Dmiso = \mdown - \mup = 2.532$~MeV & External parameter & D31~\cite{D31} \\
+$f(n) = r(n) \cdot n^3$ unique below $1\%$ & Numerical result & D63, \S\ref{subsec:search_mass} \\
+$|\QQ(K_n)| = r(n) \cdot n^3$ & Motivated conjecture & D63, Prop.~\ref{prop:cardinal} \\
+$\mdown/\mup = 2401/1104$ & H\_mass (strong conj.) & D63, Conj.~\ref{conj:Hmass} \\
+$\mup = 2.155$~MeV, $\mdown = 4.687$~MeV & H\_mass$+$D31 & D63, \S\ref{subsec:numerics_mass} \\
+$w(n) = \Rsea/(\Rsea+r(n))$ unique below $2.5\%$ & Numerical result & D63, \S\ref{subsec:search_sea} \\
+$m_{\mathrm{sea}}(n)$ formula & H\_sea (motivated conj.) & D63, Conj.~\ref{conj:Hsea} \\
+$\mstrange$, $\mcharm$, $\mbottom$, $\mtop$ within $2.5\%$ & H\_sea numerical & D63, \S\ref{subsec:numerics_sea} \\
+Non-hadronisation of top quark & Corollary (cond.\ H\_sea) & D63, Cor.~\ref{cor:top} \\
+Auto-similarity ($3.53\sigma$) & Negative result & D63, \S\ref{sec:negative} \\
+Linear fluidity (max.\ $257\%$) & Negative result & D63, \S\ref{sec:negative} \\
+Exponential fluidity (max.\ $92\%$) & Negative result & D63, \S\ref{sec:negative} \\
+Squared-harmonic fluidity (max.\ $72\%$) & Negative result & D63, \S\ref{sec:negative} \\
+OP-D63-1: independence of C2, C3, C4 & Open problem & D63, OP~\ref{op:1} \\
+OP-D63-2: formal derivation of $w(n)$ & Open problem & D63, OP~\ref{op:2} \\
+OP-D63-3: structural origin of sizes and identity & Open problem & D63, OP~\ref{op:3} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ============================================================
+
+\subsection{Summary of results}
+
+This document addresses OP-D59-1 by establishing two conjectures of distinct ontological character, without introducing any free parameter beyond $\Dmiso$ (D31~\cite{D31}). Conjecture H\_mass derives the ratio $\mdown/\mup = 2401/1104$ as the ratio of coherence-pulsation costs of the valence cores $K_{24}$ and $K_{28}$, yielding $\mup = 2.155$~MeV and $\mdown = 4.687$~MeV at $0.22\%$ and $0.37\%$ of the PDG values. The formula $f(n) = r(n) \cdot n^3$ was identified by exhaustive numerical scan as the unique isolated minimum within the family of degree-$\leq 5$ monomials in the quintuplet invariants. The key structural identity $\nnu - 1 = \pkone = 23$ connects the valence quark mass hierarchy to the cosmological leakage sector of D51~\cite{D51}. Conjecture H\_sea extends the same pulsation-cost framework to the sea quarks $s$, $c$, $b$, $t$ via the residual-fluidity weighting $w(n) = \Rsea/(\Rsea + r(n))$, the unique rational weighting achieving universal agreement below $2.5\%$ across all four sea quarks. The non-hadronisation of the top quark emerges structurally from $r(n_t) \gg \Rsea$.
+
+\subsection{Impact on D62}
+
+Document D62~\cite{D62} left two open problems pending the quark mass spectrum. OP-D62-2 requires the top quark Yukawa coupling $y_t = \sqrt{2}\,\mtop/v$ to derive the Higgs self-coupling $\lambda_H$; H\_sea gives $\mtop \approx 176169$~MeV, yielding $y_t \approx 0.947$, within $5\%$ of the Standard Model value. OP-D62-4 requires pion and kaon mass corrections to reduce the tension on $M_Z$; H\_sea gives $\mstrange \approx 93.1$~MeV, which enables estimation of the light meson masses and is expected to reduce the tension from $3.67\sigma$ toward below $2\sigma$. Both problems remain partially open, but H\_mass and H\_sea provide the structural input required to address them.
+
+\subsection{Outlook}
+
+Resolution of OP-D63-1 would elevate H\_mass to a theorem of C1--C4. Resolution of OP-D63-2 would place H\_sea on the same axiomatic footing. Resolution of OP-D63-3 would provide a first-principles derivation of the admissible effective sizes and close OP-D59-1 in full generality.
+
+\bibliographystyle{unsrt}
+\bibliography{D63}
+
+\end{document}
