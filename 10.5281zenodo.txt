@@ -399,3 +399,8 @@ D62
 https://doi.org/10.5281/zenodo.20679631 
 D62: Gauge Boson Masses from Combinatorial Axioms — Derivation of v, M_Z, M_W and Prediction of M_H in the Projective Dynamic Logo Framework 
 D62_Gauge_Boson.pdf
+
+D63 
+https://doi.org/10.5281/zenodo.20696391 
+D63: Quark Mass Spectrum from Combinatorial Axioms — Two Conjectures on Valence and Sea Quark Masses in the Projective Dynamic Logo Framework 
+D63_Quark_Mass_Spectrum.pdf 
