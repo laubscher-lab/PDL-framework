@@ -1,7 +1,8 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 60 — 15 June 2026*
+*Last updated: Session 61 — 22 June 2026*
 *(D62 : 10.5281/zenodo.20679631 | D63 : 10.5281/zenodo.20696391 | DM v29 : 10.5281/zenodo.20701571)*
+*(Session 61 : exploration DL-OP1/DL-OP2, non déposée — voir Consolidation_DL_session_Spinoza_Lawvere.md)*
 
 ---
 
@@ -143,6 +144,14 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - DOI DM v29 : 10.5281/zenodo.20701571
 - Fichiers : PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v29.pdf + .tex + .bib
 
+**Session 61 — Exploration DL-OP1/DL-OP2, aucun dépôt (22 June 2026):**
+- Cinq formalisations testées pour n*_vie/n*_conscience : R¹_active statique, templating de lignée unique, reproduction différentielle (calcul exact), itération de S sur clôture isolée. **Toutes négatives ou falsifiées par contrôle.**
+- **Résultat positif retenu (candidat théorème, non verrouillé) :** R¹_active(Γ) vrai pour toute configuration cohérente de K_n (n≥4) sauf l'unique configuration homogène (tous signes +1). Vérifié exhaustivement n=4 ; cohérent avec fractions observées n=5,6,7 = (2^(n-1)−1)/2^(n-1).
+- **Épisode de contrôle majeur :** un théorème exact sur l'avantage reproductif de Γ' (avec preuve analytique de l'égalité à δ=1/2, convergence vers f(n)) s'est révélé, par contrôle contre une paire d'arêtes arbitraire, être un fait combinatoire générique sans rapport avec l'auto-représentation active. **Falsifié avant verrouillage** — précédent du même type que l'épisode 1682/11017 avec Oleg, cette fois intercepté en interne.
+- **6 bugs méthodologiques identifiés** dans les notebooks DL01/DL02 existants (recherche gloutonne de Γ' dans Script 6 ; Ω(σ) structurellement constant sur K_n cohérents ; double comptage de f_eff(N) et bug de troncature L=1 dans Script 13 ; incohérence texte/calcul dans Script 8 ; R²_weak tautologique à 100%). À corriger avant toute réutilisation de ces scripts.
+- **Diagnostic structurel retenu :** les cinq échecs partagent la même cause — recherche d'une propriété intrinsèque à une clôture isolée plutôt que du couplage effectif entre clôtures distinctes via Λ. Direction retenue pour la suite de DL-OP1/DL-OP2.
+- Fichier de référence (non Zenodo) : `Consolidation_DL_session_Spinoza_Lawvere.md`.
+
 ---
 
 ## State of the Programme (end of Session 60)
@@ -235,7 +244,9 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-OFN-2** : objet commun K₄ et Ω₂₁. Entrée : N01.
 - **OP9** : masses muon et tau (générations 2 et 3). Entrée : D12, D63.
 - **OP15** : noyaux Z > 82. Entrée : D40, D47.
-- **DL-OP1** : valeur numérique de n*_vie. Entrée : DL01, DL02.
+- **DL-OP1** : valeur numérique de n*_vie. Entrée : DL01, DL02. **[Session 61 : 5 formalisations testées (statique, templating, reproduction différentielle, itération S) — toutes négatives ou falsifiées par contrôle ; voir consolidation. Piste retenue : couplage effectif via Λ entre clôtures distinctes, pas propriété intrinsèque à une clôture isolée.]**
+- **DL-OP2** : valeur numérique de n*_conscience. Entrée : DL01, DL02. **[Session 61 : même statut que DL-OP1 ; test de convergence S^k entre clôtures distinctes négatif (invariant de partition préservé, jamais de fusion de classes).]**
+- **DL-OP-bugs** : corriger avant réutilisation — Script 6 (recherche gloutonne de Γ' masque des témoins valides), Script 8 (synthèse texte incohérente avec Δε calculé), Script 13 (double comptage de f_eff(N) dans le gain ; troncature artificielle à L=1). Entrée : DL01, DL02 notebooks.
 
 ---
 
@@ -280,6 +291,7 @@ LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45
 LAYER 11  Tenseur de cohérence — COMPLET              [✓] D48, D49, D51, D52, D54
 LAYER 12  Λ_PDL — COMPLET                            [✓] D51, D52, D53
 LAYER 13  Vie/conscience                              [✓] DL01, DL02; [?] DL03
+           Session 61 : 5 pistes négatives/falsifiées pour DL-OP1/DL-OP2 ; piste retenue = couplage Λ entre clôtures distinctes (voir consolidation, non Zenodo)
 LAYER 14  Secteur électrofaible
            θ_W = 19π/119                             [✓ THÉORÈME — D55]
            sin²θ_W(tree) = 1/4                       [✓ THÉORÈME — D57]
@@ -319,13 +331,15 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 61 :**
+**Priorités Session 62 :**
 
 1. **[HIGH]** OP-D63-1 : lancer la preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
 2. **[HIGH]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Calculer les corrections pions/kaons via Gell-Mann–Oakes–Renner. Entrée : D62, D63.
 3. **[HIGH]** Mise à jour site web cedriclaubscher.ch avec D62, D63, DM v29.
 4. **[HIGH]** Uploader N01 sur ResearchGate + notifier Oleg des DOIs D58–D63.
 5. **[MEDIUM]** Communication ResearchGate/Academia : axe groupe de jauge (D57–D60) + masses quarks (D63).
+6. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes (compatibilité de paires, pas propriété ou itération sur une clôture isolée). Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
+7. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02 (cf. DL-OP-bugs).
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
