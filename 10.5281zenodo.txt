@@ -404,3 +404,8 @@ D63
 https://doi.org/10.5281/zenodo.20696391 
 D63: Quark Mass Spectrum from Combinatorial Axioms — Two Conjectures on Valence and Sea Quark Masses in the Projective Dynamic Logo Framework 
 D63_Quark_Mass_Spectrum.pdf 
+
+D64 
+https://doi.org/10.5281/zenodo.20820472 
+Soft Hair on PDL Closures: A Structural Correspondence Between Surface Microstate Counting and Black Hole Hair 
+D64_soft_hair_pdl.pdf
