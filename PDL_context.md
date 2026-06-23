@@ -1,8 +1,8 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 61 — 22 June 2026*
-*(D62 : 10.5281/zenodo.20679631 | D63 : 10.5281/zenodo.20696391 | DM v29 : 10.5281/zenodo.20701571)*
-*(Session 61 : exploration DL-OP1/DL-OP2, non déposée — voir Consolidation_DL_session_Spinoza_Lawvere.md)*
+*Last updated: Session 62 — 23 June 2026*
+*(D64 : 10.5281/zenodo.20820472)*
+*(Session 62 : correspondance Hawking-Perry-Strominger ↔ D50 ; deux problèmes ouverts nouveaux OP-D64-1, OP-D64-2 ; correction de 8 DOI erronés D31–D38 dans l'index ci-dessous, vérifiés contre le fichier maître 10.5281zenodo.txt du GitHub)*
 
 ---
 
@@ -12,7 +12,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 60)
+## Complete DOI Index (Zenodo canonical order — verified Session 62)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -52,14 +52,14 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D28 | 10.5281/zenodo.19282932 | PDL–QCD boundary |
 | D29 | 10.5281/zenodo.19283107 | Gate 1: 155/11017 from axioms |
 | D30 | 10.5281/zenodo.19294449 | Gate 2: ε_G^B proved |
-| D31 | 10.5281/zenodo.15614551 | QCD correction; Δm_iso = 2.532 MeV |
-| D32 | 10.5281/zenodo.19339048 | Schrödinger dynamics from PDL |
-| D33 | 10.5281/zenodo.19339312 | Dirac equation from PDL |
-| D34 | 10.5281/zenodo.19340001 | Born rule Level 1 |
-| D35 | 10.5281/zenodo.19340227 | Quantitative Einstein equation |
-| D36 | 10.5281/zenodo.19340423 | Gate 3 strengthened |
-| D37 | 10.5281/zenodo.19340692 | Area law S ∝ R_surf |
-| D38 | 10.5281/zenodo.19341003 | Bekenstein–Hawking entropy |
+| D31 | 10.5281/zenodo.19294984 | QCD correction; Δm_iso = 2.532 MeV |
+| D32 | 10.5281/zenodo.19306269 | Schrödinger dynamics from PDL |
+| D33 | 10.5281/zenodo.19307249 | Dirac equation from PDL |
+| D34 | 10.5281/zenodo.19322776 | Born rule Level 1 |
+| D35 | 10.5281/zenodo.19322936 | Quantitative Einstein equation |
+| D36 | 10.5281/zenodo.19323033 | Gate 3 strengthened |
+| D37 | 10.5281/zenodo.19354096 | Area law S ∝ R_surf |
+| D38 | 10.5281/zenodo.19354682 | Bekenstein–Hawking entropy |
 | D39 | 10.5281/zenodo.19354989 | Indifference Lemma H3 (partial) |
 | D40 | 10.5281/zenodo.19371523 | Nuclear stability from PDL |
 | D41 | 10.5281/zenodo.19384396 | Island of inversion: ⁸⁴,⁸⁶Mo |
@@ -98,10 +98,23 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D63 | 10.5281/zenodo.20696391 | Quark mass spectrum; H_mass and H_sea |
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN bridge: β₁=3 |
 | DM v29 | 10.5281/zenodo.20701571 | Global Mapping v29 (current) |
+| D64 | 10.5281/zenodo.20820472 | Soft hair correspondence; OP-D64-1, OP-D64-2 |
 
 ---
 
-## Session History (abridged — Sessions 50–60)
+## Session History (abridged — Sessions 50–62)
+
+**Session 62 — D64 déposé (23 June 2026):**
+- Correspondance structurale explicite, pour la première fois, entre le théorème de dégénérescence de surface de D50 (Ω_surf = 4^R_surf) et le programme des cheveux mous de Hawking, Perry et Strominger (Phys. Rev. Lett. 116, 231301, 2016 ; JHEP 05, 161, 2017). Présentée comme analogie structurale à motivation indépendante (protocole N02), pas comme identité mathématique.
+- Définition autonome du critère (A)∧(B) (triangles mixtes, signes croisés, demi-cycles de pulsation) intégrée dans le document, pour qu'il se tienne sans renvoi obligatoire à D29.
+- **Résultat négatif documenté :** extrapolation naïve par paires de nucléons à un trou noir macroscopique (N≈1,196×10⁵⁷, une masse solaire) — écart de 36,7 ordres de grandeur par rapport à la valeur de Bekenstein-Hawking. Restriction aux nucléons de surface (N^(2/3)) : écart réduit à 1,4 ordre de grandeur, indiquant que les degrés de liberté pertinents sont surfaciques, pas volumiques.
+- **OP-D64-1** introduit : comptage macroscopique à N nucléons (équivalent en difficulté au problème général de comptage microscopique de l'entropie des trous noirs).
+- **OP-D64-2** introduit : pont espace-temps — dérivation combinatoire de c et promotion de μ* (conjecture, résidu 47 ppm) en théorème, préalable nécessaire à la dérivation de λ_PDL = 4l_P² (problème ouvert principal de D37).
+- **Correction de corpus :** 8 DOI erronés détectés et corrigés dans l'index ci-dessous (D31, D32, D33, D34, D35, D36, D37, D38), par comparaison systématique avec le fichier maître `10.5281zenodo.txt` du GitHub. Les valeurs précédentes provenaient d'une désynchronisation antérieure non détectée.
+- DOI D64 : 10.5281/zenodo.20820472
+- Fichiers : D64_Soft_Hair_PDL.tex + D64_references.bib + PDF compilé
+
+---
 
 **Session 50 — D57 déposé (9 June 2026):**
 - sin²θ_W(tree) = 1/4 THÉORÈME. DOI D57 : 10.5281/zenodo.20600264
@@ -154,7 +167,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## State of the Programme (end of Session 60)
+## State of the Programme (end of Session 62)
 
 ### Secteur de jauge — COMPLET
 
@@ -207,7 +220,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 60)
+## Open Problems (updated Session 62)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
@@ -231,7 +244,9 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-OFN-1** : lien formel 3 cycles PDL ↔ 3 générations OFN. Entrée : N01, D57, D59.
 - **OP-E2-PDL** : opérateur E2 dans le formalisme PDL → élèverait H_B en théorème. Entrée : D40, D41, D47, D-exp-f7/2.
 - **OP-D61-2** : trois générations de fermions depuis C1–C4. Entrée : D51, D59, D61.
-- **OP7** : résidu 47 ppm dans μ. Entrée : D28, D29, D30, D43.
+- **OP7** : résidu 47 ppm dans μ. Entrée : D28, D29, D30, D43. **[Reclassé dans DS01 comme problème d'interface métrologique, cohérent avec les corrections QED de brisure d'isospin (≈19,7 ppm à une boucle), pas un trou structurel — voir aussi OP-D64-2.]**
+- **OP-D64-1** : comptage macroscopique à N nucléons — dériver ln Ω_surf(N) = 4π(M_eff/M_Pl)² directement de la combinatoire PDL, sans invoquer la géométrie de Schwarzschild. Équivalent en difficulté au problème général de comptage microscopique de l'entropie des trous noirs (Strominger-Vafa ne le résout que pour des cas extrémaux). Entrée : D38, D64.
+- **OP-D64-2** : pont espace-temps — dérivation combinatoire de c comme taux de propagation intrinsèque au réseau relationnel PDL (sans référence antérieure à une distance ou une durée standard), et promotion de μ* de conjecture à théorème (résolution complète d'OP7). Préalable nécessaire à λ_PDL = 4l_P² (problème ouvert principal de D37). Entrée : D01, D28, D30, D37, DS01, D64.
 
 ### Ouverts — MEDIUM priority
 - **OP-D63-2** : dérivation formelle de w(n) = R_sea/(R_sea+r(n)) depuis C1–C4 en mode transitoire. Entrée : D61, D63.
@@ -250,7 +265,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Falsifiable Predictions (updated Session 60)
+## Falsifiable Predictions (updated Session 60, unchanged Session 62)
 
 | ID | Observable | PDL value | PDG / obs. | Tension |
 |----|-----------|-----------|------------|---------|
@@ -274,7 +289,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Dependency Map — Critical Path (updated Session 60)
+## Dependency Map — Critical Path (updated Session 62)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -288,6 +303,9 @@ LAYER 7   Dynamiques — COMPLET                        [✓] D32–D35, D42, D4
 LAYER 8   Cosmologie                                  [✓] D27, D35, D42
 LAYER 9   Stabilité nucléaire — COMPLET               [✓] D40, D47
 LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45, D50
+           Correspondance cheveux mous (Hawking-Perry-Strominger) [D64, analogie structurale]
+           OP-D64-1 (comptage macroscopique N corps)    [OUVERT]
+           OP-D64-2 (pont espace-temps : c, μ*)          [OUVERT]
 LAYER 11  Tenseur de cohérence — COMPLET              [✓] D48, D49, D51, D52, D54
 LAYER 12  Λ_PDL — COMPLET                            [✓] D51, D52, D53
 LAYER 13  Vie/conscience                              [✓] DL01, DL02; [?] DL03
@@ -331,15 +349,17 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 62 :**
+**Priorités Session 63 :**
 
-1. **[HIGH]** OP-D63-1 : lancer la preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
-2. **[HIGH]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Calculer les corrections pions/kaons via Gell-Mann–Oakes–Renner. Entrée : D62, D63.
-3. **[HIGH]** Mise à jour site web cedriclaubscher.ch avec D62, D63, DM v29.
-4. **[HIGH]** Uploader N01 sur ResearchGate + notifier Oleg des DOIs D58–D63.
-5. **[MEDIUM]** Communication ResearchGate/Academia : axe groupe de jauge (D57–D60) + masses quarks (D63).
-6. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes (compatibilité de paires, pas propriété ou itération sur une clôture isolée). Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
-7. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02 (cf. DL-OP-bugs).
+1. **[HIGH]** OP-D64-2 : commencer par le jalon le plus accessible — repartir d'OP7 (résidu 47 ppm) et chercher si une dérivation combinatoire de c peut être amorcée à partir du réseau relationnel, avant de viser μ* en théorème. Entrée : D01, D28, D30, D37, DS01, D64.
+2. **[HIGH]** OP-D64-1 : à traiter sans précipitation, probablement sur plusieurs sessions — le résultat négatif de D64 (échec du comptage naïf par paires, 36,7 ordres de grandeur) exclut une piste ; chercher la bonne unité de comptage areal plutôt que nucléonique. Entrée : D38, D64.
+3. **[HIGH]** OP-D63-1 : lancer la preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
+4. **[HIGH]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Calculer les corrections pions/kaons via Gell-Mann–Oakes–Renner. Entrée : D62, D63.
+5. **[HIGH]** Mise à jour site web cedriclaubscher.ch avec D64.
+6. **[MEDIUM]** Communication ResearchGate/Academia : annonce D64 (correspondance cheveux mous), en insistant sur le statut d'analogie structurale, pas d'identité.
+7. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes (compatibilité de paires, pas propriété ou itération sur une clôture isolée). Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
+8. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02 (cf. DL-OP-bugs).
+9. **[LOW]** Vérifier sur Zenodo, pour chaque document du corpus, que les DOI de l'index ci-dessus correspondent bien aux dépôts réels — la correction de 8 entrées erronées (D31–D38) cette session suggère qu'une vérification systématique complète serait prudente plutôt que de faire confiance aux mémoires de session seules.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
@@ -349,6 +369,8 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - Bloc `\pdfstringdefDisableCommands{...}` avec `\def` (pas `\renewcommand`)
 - Pas de `\newcommand` sur des macros LaTeX standard existantes (\nu, \mp, etc.)
 - Entrées .bib : champ `journal = {Zenodo}` obligatoire pour toutes les entrées PDL
+- **[Session 62]** Utiliser `@article` (jamais `@misc`) pour les entrées PDL internes : `unsrt.bst` n'imprime ni `journal=` ni `doi=` pour le type `@misc`. Le DOI doit être placé dans le champ `note = {\url{https://doi.org/...}}` pour apparaître réellement dans la bibliographie compilée — vérifié par compilation, pas par lecture du `.bib` seul.
+- **[Session 62]** Avant toute citation de DOI dans un nouveau document, vérifier contre le fichier maître `10.5281zenodo.txt` du GitHub plutôt que contre la mémoire de session ou les en-têtes de commentaires `.tex` (qui peuvent être obsolètes — cas constaté pour D42 dans l'en-tête de D50.tex).
 
 **Nomenclature :**
 - D-series : documents solo PDL (D01–D63)
@@ -358,15 +380,22 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - N-series : notes conjointes (N01 = PDL–OFN)
 - DM : Global Mapping (version courante : v29, DOI : 10.5281/zenodo.20701571)
 
-**DOIs récents (Session 58–60) :**
-- D62 : 10.5281/zenodo.20679631
-- D63 : 10.5281/zenodo.20696391
-- DM v29 : 10.5281/zenodo.20701571
+**DOIs récents (Session 62) :**
+- D64 : 10.5281/zenodo.20820472
+
+**Corrections de corpus (Session 62) :**
+- D31 : 10.5281/zenodo.19294984 (corrigé, était erronément 15614551)
+- D32 : 10.5281/zenodo.19306269 (corrigé)
+- D33 : 10.5281/zenodo.19307249 (corrigé)
+- D34 : 10.5281/zenodo.19322776 (corrigé)
+- D35 : 10.5281/zenodo.19322936 (corrigé)
+- D36 : 10.5281/zenodo.19323033 (corrigé)
+- D37 : 10.5281/zenodo.19354096 (corrigé)
+- D38 : 10.5281/zenodo.19354682 (corrigé)
+- Source de vérité utilisée : fichier maître `10.5281zenodo.txt` du GitHub (laubscher-lab/PDL-framework)
 
 **Dépôts groupés :**
-- D62 : D62_Gauge_Boson.pdf + PDL_D62_lockdown.py
-- D63 : D63_Quark_Mass_Spectrum.pdf + D63.tex + D63.bib + PDL_D63_lockdown.py (66 checks, 66 PASS)
-- DM v29 : PDF + .tex + .bib
+- D64 : D64_Soft_Hair_PDL.tex + D64_references.bib + PDF compilé
 
 **Résultats numériques clés :**
 - α⁻¹ = 137.036 | G_PDL : 27 ppm CODATA | μ* : 47 ppm
