@@ -359,7 +359,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 6. **[MEDIUM]** Communication ResearchGate/Academia : annonce D64 (correspondance cheveux mous), en insistant sur le statut d'analogie structurale, pas d'identité.
 7. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes (compatibilité de paires, pas propriété ou itération sur une clôture isolée). Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
 8. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02 (cf. DL-OP-bugs).
-9. **[LOW]** Vérifier sur Zenodo, pour chaque document du corpus, que les DOI de l'index ci-dessus correspondent bien aux dépôts réels — la correction de 8 entrées erronées (D31–D38) cette session suggère qu'une vérification systématique complète serait prudente plutôt que de faire confiance aux mémoires de session seules.
+9. **[FAIT — Session 62]** Vérification systématique de l'index complet des DOI (~70 entrées) contre le fichier maître `10.5281zenodo.txt` du GitHub — confirmée exhaustive, pas un échantillon. Huit corrections appliquées (D31–D38). L'index ci-dessus est désormais aligné avec la source de vérité.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
