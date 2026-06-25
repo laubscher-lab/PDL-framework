@@ -1,0 +1,129 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arbey and Auffinger(2021)]{Arbey:2021mbl}
+Alexandre Arbey and J{\'e}r{\'e}my Auffinger.
+\newblock Physics beyond the standard model with blackhawk v2.0.
+\newblock \emph{Eur. Phys. J. C}, 81:\penalty0 910, 2021.
+\newblock \doi{10.1140/epjc/s10052-021-09702-8}.
+
+\bibitem[Bethe and Ashkin(1953)]{Bethe1953}
+Hans Bethe and Julius Ashkin.
+\newblock Passage of radiations through matter.
+\newblock In Emilio Segr{\`e}, editor, \emph{Experimental Nuclear Physics},
+  pages 253--. John Wiley \& Sons, New York, 1953.
+
+\bibitem[Biagetti et~al.(2021)Biagetti, De~Luca, Franciolini, Kehagias, and
+  Riotto]{Biagetti:2021eep}
+Matteo Biagetti, Valerio De~Luca, Gabriele Franciolini, Alex Kehagias, and
+  Antonio Riotto.
+\newblock The formation probability of primordial black holes.
+\newblock \emph{Phys. Lett. B}, 820:\penalty0 136602, 2021.
+\newblock \doi{10.1016/j.physletb.2021.136602}.
+
+\bibitem[Caputo et~al.(2022)]{Caputo:2022xpx}
+Regina Caputo et~al.
+\newblock All-sky medium energy gamma-ray observatory explorer mission concept.
+\newblock \emph{J. Astron. Telesc. Instrum. Syst.}, 8\penalty0 (4):\penalty0
+  044003, 2022.
+\newblock \doi{10.1117/1.JATIS.8.4.044003}.
+
+\bibitem[Carlini and Cholis(2025)]{ZenodoLink}
+John Carlini and Ilias Cholis.
+\newblock Gammapbhplotter: code and user manual.
+\newblock \url{https://zenodo.org/records/16944093}, 2025.
+\newblock Zenodo.
+
+\bibitem[Carr et~al.(2016)Carr, K{\"u}hnel, and Sandstad]{Carr:2016drx}
+Bernard Carr, Florian K{\"u}hnel, and Marit Sandstad.
+\newblock Primordial black holes as dark matter.
+\newblock \emph{Phys. Rev. D}, 94\penalty0 (8):\penalty0 083504, 2016.
+\newblock \doi{10.1103/PhysRevD.94.083504}.
+
+\bibitem[da~Costa-Luis and tqdm developers(2024)]{dacostaluis_tqdm_zenodo_2024}
+Casper~O. da~Costa-Luis and tqdm developers.
+\newblock tqdm: A fast, extensible progress bar for python and cli.
+\newblock \url{https://doi.org/10.5281/zenodo.11107065}, 2024.
+\newblock Software release (v4.66.4).
+
+\bibitem[Harris et~al.(2020)Harris, Millman, van~der Walt, Gommers, Virtanen,
+  Cournapeau, Wieser, Taylor, Berg, Smith, Kern, Picus, Hoyer, van Kerkwijk,
+  Brett, Haldane, Fern{\'a}ndez~del R{\'i}o, Wiebe, Peterson,
+  G{\'e}rard-Marchant, Sheppard, Reddy, Weckesser, Abbasi, Gohlke, and
+  Oliphant]{harris_array_numpy_2020}
+Charles~R. Harris, K.~Jarrod Millman, St{\'e}fan~J. van~der Walt, Ralf Gommers,
+  Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor, Sebastian Berg,
+  Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer, Marten~H. van
+  Kerkwijk, Matthew Brett, Allan Haldane, Jaime Fern{\'a}ndez~del R{\'i}o, Mark
+  Wiebe, Pearu Peterson, Pierre G{\'e}rard-Marchant, Kevin Sheppard, Tyler
+  Reddy, Warren Weckesser, Hameer Abbasi, Christoph Gohlke, and Travis~E.
+  Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock \emph{Nature}, 585\penalty0 (7825):\penalty0 357--362, 2020.
+\newblock \doi{10.1038/s41586-020-2649-2}.
+
+\bibitem[Hartley(2022)]{hartley_colorama_046_2022}
+Jonathan Hartley.
+\newblock Colorama.
+\newblock \url{https://pypi.org/project/colorama/}, 2022.
+\newblock Python package, version 0.4.6.
+
+\bibitem[Hawking(1974)]{1974Natur.248...30H}
+S.~W. Hawking.
+\newblock Black hole explosions?
+\newblock \emph{\nat}, 248\penalty0 (5443):\penalty0 30--31, March 1974.
+\newblock \doi{10.1038/248030a0}.
+
+\bibitem[Hunter(2007)]{hunter_matplotlib_2007}
+John~D. Hunter.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock \emph{Computing in Science \& Engineering}, 9\penalty0 (3):\penalty0
+  90--95, 2007.
+\newblock \doi{10.1109/MCSE.2007.55}.
+
+\bibitem[Keith et~al.(2022)Keith, Hooper, Linden, and Liu]{Keith:2022sow}
+Celeste Keith, Dan Hooper, Tim Linden, and Rayne Liu.
+\newblock Sensitivity of future gamma-ray telescopes to primordial black holes.
+\newblock \emph{Phys. Rev. D}, 106\penalty0 (4):\penalty0 043003, 2022.
+\newblock \doi{10.1103/PhysRevD.106.043003}.
+
+\bibitem[Sj{\"o}strand et~al.(2015)Sj{\"o}strand, Ask, Christiansen, Corke,
+  Desai, Ilten, Mrenna, Prestel, Rasmussen, and Skands]{Sjostrand:2014zea}
+Torbj{\"o}rn Sj{\"o}strand, Stefan Ask, Jesper~R. Christiansen, Richard Corke,
+  Nishita Desai, Philip Ilten, Stephen Mrenna, Stefan Prestel, Christine~O.
+  Rasmussen, and Peter~Z. Skands.
+\newblock An introduction to pythia 8.2.
+\newblock \emph{Comput. Phys. Commun.}, 191:\penalty0 159--177, 2015.
+\newblock \doi{10.1016/j.cpc.2015.01.024}.
+
+\bibitem[Tavani et~al.(2018)]{e-ASTROGAM:2017pxr}
+M.~Tavani et~al.
+\newblock Science with e-astrogam: A space mission for mev--gev gamma-ray
+  astrophysics.
+\newblock \emph{JHEAp}, 19:\penalty0 1--106, 2018.
+\newblock \doi{10.1016/j.jheap.2018.07.001}.
+
+\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  Cournapeau, Burovski, Peterson, Weckesser, Bright, van~der Walt, Brett,
+  Wilson, Millman, Mayorov, Nelson, Jones, Kern, Larson, Carey, Polat, Feng,
+  Moore, VanderPlas, Laxalde, Perktold, Cimrman, Henriksen, Quintero, Harris,
+  Archibald, Ribeiro, Pedregosa, van Mulbregt, and
+  Contributors]{virtanen_scipy_2020}
+Pauli Virtanen, Ralf Gommers, Travis~E. Oliphant, Matt Haberland, Tyler Reddy,
+  David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan
+  Bright, St{\'e}fan~J. van~der Walt, Matthew Brett, Joshua Wilson, K.~Jarrod
+  Millman, Nikolay Mayorov, Andrew R.~J. Nelson, Eric Jones, Robert Kern, Eric
+  Larson, C.~J. Carey, {\.I}lhan Polat, Yu~Feng, Eric~W. Moore, Jake
+  VanderPlas, Denis Laxalde, Josef Perktold, Robert Cimrman, Ian Henriksen,
+  E.~A. Quintero, Charles~R. Harris, Anne~M. Archibald, Ant{\^o}nio~H. Ribeiro,
+  Fabian Pedregosa, Paul van Mulbregt, and SciPy~1.0 Contributors.
+\newblock {SciPy} 1.0: Fundamental algorithms for scientific computing in
+  python.
+\newblock \emph{Nature Methods}, 17\penalty0 (3):\penalty0 261--272, 2020.
+\newblock \doi{10.1038/s41592-019-0686-2}.
+
+\end{thebibliography}

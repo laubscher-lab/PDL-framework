@@ -1,0 +1,294 @@
+% ============================================================
+% D64 — Soft Hair on PDL Closures: A Structural Correspondence
+%        Between Surface Microstate Counting and Black Hole Hair
+%
+% Author  : Cédric Laubscher
+% Corpus  : PDL Document Series, D64
+% Depends : D29  (10.5281/zenodo.19283107)
+%           D37  (10.5281/zenodo.19354096)
+%           D38  (10.5281/zenodo.19354682)
+%           D42  (10.5281/zenodo.19397315)
+%           D50  (BH Quarter)
+% Introduces: OP-D64-1 (macroscopic N-body counting)
+%             OP-D64-2 (the spacetime bridge: c and mu*)
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newpxtext}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{pdllink}{RGB}{0,60,120}
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{speculativeorange}{RGB}{180,90,0}
+\hypersetup{colorlinks=true, linkcolor=pdllink,
+citecolor=pdllink, urlcolor=pdllink}
+
+% ---- Theorem environments ------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}{Open Problem}
+\newtheorem{resolvedproblem}{Resolved Problem}
+
+% ---- speculativebox, per the N02 protocol --------------------------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{speculativebox}[1][]{%
+colback=orange!5, colframe=speculativeorange, fonttitle=\bfseries, title=Structural correspondence (not a proof of identity), #1}
+
+% ---- PDL macros -----------------------------------------------------
+\newcommand{\Kfour}{K_4}
+\newcommand{\hb}{\hbar}
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rval}{R_{\mathrm{val}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Gval}{\mathcal{G}_{\mathrm{val}}}
+\newcommand{\Gsea}{\mathcal{G}_{\mathrm{sea}}}
+\newcommand{\Omegasurf}{\Omega_{\mathrm{surf}}}
+\newcommand{\Ssurf}{S_{\mathrm{surf}}}
+\newcommand{\SBH}{S_{\mathrm{BH}}}
+\newcommand{\lPl}{\ell_{\mathrm{Pl}}}
+\newcommand{\Meff}{M_{\mathrm{eff}}}
+\newcommand{\MPl}{M_{\mathrm{Pl}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\vp}{\varphi}
+\newcommand{\kap}{\kappa}
+\newcommand{\Dmiso}{\Delta m_{\mathrm{iso}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+
+% ============================================================
+\begin{document}
+
+\title{\textbf{Soft Hair on \PDL\ Closures: A Structural Correspondence
+Between Surface Microstate Counting and Black Hole Hair}\\[6pt] {\large PDL Document D64 \textemdash{} Two New Open Problems (OP-D64-1, OP-D64-2)}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{June 2026}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Document~D50 proves, as an unconditional theorem of the four \PDL\ axioms C1--C4, that the active surface of a \PDL\ proton closure carries $\Omegasurf = 4^{\Rsurf}$ statistically independent microstates at fixed global quantum numbers (the proton quintuplet), while the interior carries none ($\Omega_{\mathrm{val}}=1$). This document establishes, for the first time explicitly, the structural correspondence between this result and the soft-hair programme of Hawking, Perry and Strominger~\cite{HPS2016,HPS2017}, in which black holes carry an infinite-dimensional space of supertranslation and superrotation charges at fixed mass, charge and angular momentum. Both results share the same logical architecture: a macroscopic object fully characterised by a small number of global invariants, yet carrying a combinatorially large space of boundary degrees of freedom invisible to any measurement of the global invariants alone. The correspondence is presented as a structural analogy with independent motivation on both sides, not as a claim of mathematical identity, following the cross-framework identification protocol already in use for the \PDL--\textsc{ofn} bridge~\cite{N02}. The document also reports a negative result: a naive extrapolation of the \PDL\ per-relation degeneracy to macroscopic black holes (combinatorial pairing of engaged nucleons) fails by 36.7 orders of magnitude against the Bekenstein--Hawking value, a discrepancy shown here to be mass-independent by algebraic construction and verified identically across four black-hole masses spanning eight orders of magnitude (one solar mass, M87*, Sagittarius~A*, and the GW150914 remnant). A surface-restricted count narrows this to 1.4 orders of magnitude for a solar-mass black hole, but this improvement is shown here \emph{not} to generalise: the identical surface-restricted count evaluated for M87* ($M\approx6.5\times10^9\,M_\odot$) leaves a discrepancy of 7.9 orders of magnitude, nearly six times worse. This sharpens, rather than weakens, the conclusion that the relevant microscopic degrees of freedom are areal rather than volumetric in some deeper sense not captured by nucleon counting at any fixed geometric scale. Two open problems are formally introduced: \textbf{OP-D64-1}, the derivation of the macroscopic many-nucleon entropy law from \PDL\ combinatorics alone (the genuine microstate-counting problem, equivalent in difficulty to OP1 of D38), and \textbf{OP-D64-2}, the construction of a fully relational unit system in which the speed of light~$c$ and the proton--electron mass ratio~$\mu^*$ are derived from C1--C4 rather than imported from measurement, a necessary precondition for an autonomous \PDL\ derivation of $\lambda_{\mathrm{PDL}} = 4\lPl^2$ (the principal open problem of D37).
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Purpose and intended audience}
+\label{sec:purpose}
+% ============================================================
+
+This document is written to be read by colleagues outside the \PDL\ programme who are familiar with black hole thermodynamics and the soft-hair literature, but not with the internal combinatorics of \PDL. Section~\ref{sec:prereq} therefore recalls, without proof, exactly the \PDL\ results required; the proofs themselves are in D29, D37, D38, D42 and D50, cited throughout. Section~\ref{sec:softhair} recalls the relevant external literature in the same spirit, for readers approaching from the \PDL\ side. Section~\ref{sec:correspondence} states the correspondence precisely, with explicit care about what is and is not being claimed. Section~\ref{sec:negative} reports a negative numerical result that delimits the correspondence. Section~\ref{sec:open} introduces the two new open problems. No result in this document modifies or supersedes D50, D37, or D38; it is a correspondence document, not a derivation document.
+
+% ============================================================
+\section{PDL prerequisites: the surface degeneracy theorem of D50}
+\label{sec:prereq}
+% ============================================================
+
+The \PDL\ programme derives fundamental physical structures from four combinatorial axioms (C1--C4) on finite signed graphs, with a single irreducible external parameter, $\Dmiso = m_d - m_u$, at the \PDL--\textsc{qcd} interface~\cite{PDL_D01_2026}. The proton is identified as the unique hierarchical composite satisfying these axioms, characterised by the integer quintuplet $(n_u, n_d, \rval, \Rsea, \Rtot) = (24, 28, 930, 10\,087, 11\,017)$~\cite{PDL_D16_2026}. The electron is identified with the minimal closure $\Kfour$, the complete graph on four vertices and six edges, the smallest signed graph satisfying C1--C4~\cite{PDL_D01_2026}.
+
+\begin{definition}[Active surface, \cite{PDL_D05_2026,PDL_D42_2026}]
+The active surface $\Rsurf = 310\vp \in \mathbb{Q}(\sqrt{5})$, where $\vp=(1+\sqrt{5})/2$, is the subset of the proton's total relational budget $\Rtot$ that forms stable $(A)\wedge(B)$ couplings with an external $\Kfour$ closure (the electron prototype). This is an unconditional theorem of C1--C4.
+\end{definition}
+
+\begin{definition}[Mixed triangles and the $(A)\wedge(B)$ stability criterion, \cite{PDL_D29_2026}]
+\label{def:AB}
+A \emph{mixed triangle} is a triangle of the \PDL\ relational graph formed by two vertices $e_i, e_j$ of the external $\Kfour$ closure and one relation $p_k$ of the proton. \PDL\ structures pulsate through two alternating half-cycles, $c \in \{1,2\}$ (the discrete analogue of a phase). For a fixed edge $(e_i, e_j)$ of $\Kfour$, with intrinsic sign $s^{(1)}(e_i,e_j) \in \{+1,-1\}$ fixed by the coherent configuration of $\Kfour$, a \emph{cross-sign configuration} for $p_k$ is a choice of four binary cross-edge signs $(s_{i,1}, s_{j,1}, s_{i,2}, s_{j,2}) \in \{+1,-1\}^4$, one for each of the two $\Kfour$ vertices at each of the two half-cycles, giving $2^4=16$ possibilities in total. Define the cross-products $P_c = s_{i,c}\cdot s_{j,c}$ for $c=1,2$. The cross-sign configuration is \emph{$(A)\wedge(B)$-stable} if and only if
+\begin{equation}
+\text{(A)}\quad P_1 = s^{(1)}(e_i,e_j), \qquad \text{(B)}\quad P_2 = -P_1.
+\end{equation}
+Condition (A) requires the relation to couple in phase with $\Kfour$ at the first half-cycle; condition (B) requires it to couple in antiphase at the second, the discrete signature of a complete pulsation cycle. Exhaustive enumeration over all $8\times6\times16=768$ combinations of ($\Kfour$ configuration, edge, cross-sign choice) shows that exactly 4 of the 16 cross-sign configurations satisfy (A)$\wedge$(B) for any fixed edge sign, independently of which of the 8 coherent configurations of $\Kfour$ is realised~\cite{PDL_D29_2026,PDL_D50_2026}.
+\end{definition}
+
+\begin{theorem}[Surface locality of entropy, BH-1, \cite{PDL_D37_2026}]
+\label{thm:BH1}
+The valence sector of the proton admits exactly one externally distinguishable $(A)\wedge(B)$-stable configuration: $\Omega_{\mathrm{val}} = 1$, hence $S_{\mathrm{val}} = 0$. The sea sector is excluded from stationary coupling, hence $S_{\mathrm{sea}} = 0$. All entropy is localised on the active surface.
+\end{theorem}
+
+\begin{theorem}[Surface degeneracy, D50~\cite{PDL_D50_2026}]
+\label{thm:D50}
+Each surface relation $p_k \in \Rsurf$ admits exactly 4 statistically independent $(A)\wedge(B)$-stable cross-sign configurations out of 16 possible (Definition~\ref{def:AB}), a fraction proved by exhaustive enumeration over the 768 configurations of D29~\cite{PDL_D29_2026}. Independence across distinct surface relations is proved via the three lemmas of D42 (equiparticipation, cross-triangle blindness, $S_4$-equivariance verified over 24\,576 cases) and confirmed by direct enumeration over 30\,720 cross-sign pairs: $P(e_1\wedge e_2\ \mathrm{stable}) = 1/16 = (1/4)^2$ exactly. Consequently
+\begin{equation}
+\Omegasurf = 4^{\Rsurf}, \qquad \Ssurf = k_B \Rsurf \ln 4 = 695.352~\mathrm{nats}.
+\end{equation}
+This is an unconditional theorem of C1--C4; no free parameter enters.
+\end{theorem}
+
+The physical reading of Theorem~\ref{thm:D50}, given informally in D50, is that each of the $\Rsurf \approx 501.6$ surface relations behaves as a two-bit switch: of the 16 possible ways an external $\Kfour$ can couple to it, exactly 4 are stable, and which of these 4 is realised is, as far as any external probe restricted to the global quintuplet is concerned, unobservable. The proton's global quantum numbers (its quintuplet) do not determine which of the $4^{\Rsurf}$ stable surface configurations is realised.
+
+% ============================================================
+\section{External prerequisites: the no-hair theorem and soft hair}
+\label{sec:softhair}
+% ============================================================
+
+The classical no-hair theorem~\cite{Israel1967,Carter1971} states that a stationary black hole in General Relativity is fully characterised, up to diffeomorphism, by three parameters: mass $M$, charge $Q$, and angular momentum $J$. Any additional information about the matter that formed the black hole appears, classically, to be lost --- the seed of the black hole information paradox~\cite{Hawking1975,Hawking1976}.
+
+Hawking, Perry and Strominger~\cite{HPS2016} showed that this picture is incomplete. Black holes admit an infinite-dimensional family of soft (zero-energy) supertranslation charges defined on the horizon, associated with the Bondi--van~der~Burg--Metzner--Sachs (\textsc{bms}) asymptotic symmetry group. Two black holes with identical $M$, $Q$, $J$ can carry different supertranslation charges --- soft hair --- which are in principle measurable at the horizon even though they are invisible to any measurement of $M$, $Q$, $J$ alone. The follow-up work~\cite{HPS2017} extends this to superrotation charges associated with horizon supertranslation and superrotation hair, and the broader literature~\cite{Strominger2014,DonnayEtAl2016} situates this within the infrared structure of gravity. The physical upshot, as stated in~\cite{HPS2016}, is that complete information about the soft quantum state of a black hole is stored holographically on the horizon, even though it is invisible to the macroscopic, no-hair description.
+
+\clearpage
+
+% ============================================================
+\section{The structural correspondence}
+\label{sec:correspondence}
+% ============================================================
+
+Both results above share an identical logical skeleton, summarised in Table~\ref{tab:correspondence}.
+
+\begin{table}[H]
+\centering
+\caption{The structural correspondence between black hole soft hair and
+\PDL\ surface microstates.}
+\label{tab:correspondence}
+\begin{tabular}{p{5.5cm}p{5.5cm}}
+\toprule
+Black hole (\textsc{gr}, \cite{HPS2016,HPS2017}) & \PDL\ proton closure (D29, D37, D42, D50) \\
+\midrule
+Global invariants: $M$, $Q$, $J$ & Global invariants: the quintuplet $(n_u,n_d,\rval,\Rsea,\Rtot)$ \\[4pt]
+No-hair theorem: $M,Q,J$ fix the geometry up to diffeomorphism & $\Omega_{\mathrm{val}}=1$: the interior has no externally distinguishable degeneracy (Thm.~\ref{thm:BH1}) \\[4pt]
+Soft supertranslation charges on the horizon, invisible to $M,Q,J$ & Surface relations $p_k \in \Rsurf$, with 4 stable cross-sign realisations each, invisible to the quintuplet \\[4pt]
+Information stored holographically on the horizon~\cite{HPS2016} & Entropy localised entirely on $\Rsurf$, never on the interior (Thm.~\ref{thm:BH1}) \\[4pt]
+Degeneracy at fixed global charges: continuous (\textsc{bms} is infinite-dimensional) & Degeneracy at fixed global charges: discrete, $\Omegasurf = 4^{\Rsurf}$ (Thm.~\ref{thm:D50}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{speculativebox}
+\textbf{What is claimed.} The two frameworks exhibit the same structural pattern --- macroscopic global invariants insufficient to fix the microstate, with the missing information located strictly on a boundary --- and each side has independent motivation for this pattern within its own framework: the no-hair theorem and \textsc{bms} symmetry on the \textsc{gr} side; the $(A)\wedge(B)$ criterion and D42's independence lemmas on the \PDL\ side. This satisfies the cross-framework identification protocol already applied to the \PDL--\textsc{ofn} bridge~\cite{N02}: an analogy may be asserted once each side is independently motivated, but no further identification (e.g. a literal correspondence between $\Rsurf$ relations and \textsc{bms} supertranslation modes) is claimed here.
+
+\textbf{What is not claimed.} (1) That the \PDL\ surface relations \emph{are} \textsc{bms} supertranslation modes, or that there exists a bijection between them. No such map is constructed in this document. (2) That Theorem~\ref{thm:D50} resolves any open problem of black hole information loss; \PDL\ has, at this stage, no dynamical (time-dependent) theory of horizon evolution comparable to Hawking radiation~\cite{Hawking1975}, only the static entropy count of Theorem~\ref{thm:D50}. (3) That the $\Rsurf$-scale degeneracy of a single proton extrapolates to the macroscopic degeneracy of an astrophysical black hole; this is addressed, and shown to fail under the simplest extrapolation, in Section~\ref{sec:negative}.
+\end{speculativebox}
+
+% ============================================================
+\section{A documented negative result: macroscopic extrapolation fails}
+\label{sec:negative}
+% ============================================================
+
+Theorem~\ref{thm:D50} establishes $\Omegasurf = 4^{\Rsurf}$ for a single proton, with $\Rsurf \approx 501.6$, giving $\Ssurf \approx 695$ nats. An astrophysical black hole of $N \sim 10^{57}$ nucleons (one solar mass) requires, by the Bekenstein--Hawking formula combined with the \PDL\ effective coupling~\cite{PDL_D38_2026}, an entropy of order $\ln\Omegasurf(N) \approx 1.06\times10^{77}$~nats. Whether the per-proton mechanism of Theorem~\ref{thm:D50} extends to this macroscopic regime is precisely D38's Open Problem~1 (the derivation of $\ln\Omegasurf(N)=4\pi(\Meff/\MPl)^2$ from \PDL\ axioms without invoking Schwarzschild geometry), restated here as OP-D64-1 in Section~\ref{sec:open}.
+
+\begin{proposition}[Naive volumetric extrapolation, negative result]
+\label{prop:negative1}
+Let $k = \sigma(N)N$ be the number of gravitationally engaged nucleons in an ensemble of $N$ nucleons, under the Gate~3 engagement fraction~\cite{PDL_D36_2026}. If each pair of engaged nucleons contributes one independent bit of entropy (the direct extrapolation of the per-relation mechanism of Theorem~\ref{thm:D50} to pairs of whole nucleons), then for $N=1.196\times10^{57}$ (one solar mass),
+\begin{equation}
+\ln\Omegasurf^{\mathrm{naive}} = \binom{k}{2}\ln 2 \approx 4.96\times10^{113}~\mathrm{nats},
+\end{equation}
+exceeding the required value by a factor of $4.67\times10^{36}$ (36.7 orders of magnitude). The volumetric pairwise mechanism is therefore excluded as a model of macroscopic black hole entropy.
+\end{proposition}
+
+\begin{proposition}[Surface-restricted extrapolation, partial improvement]
+\label{prop:negative2}
+Restricting the pairwise count of Proposition~\ref{prop:negative1} to only those nucleons geometrically located at the surface of a uniform-density sphere of $N$ nucleons ($N_{\mathrm{surf}} \sim N^{2/3}$) gives
+\begin{equation}
+\ln\Omegasurf^{\mathrm{surf}} \approx 4.40\times10^{75}~\mathrm{nats},
+\end{equation}
+a factor of $0.041$ relative to the target, i.e.\ an improvement from 36.7 to 1.4 orders of magnitude. This indicates that the relevant microscopic degrees of freedom for macroscopic black hole entropy are areal, consistent with the holographic principle~\cite{Hooft1993,Susskind1995} and with the surface-locality result of Theorem~\ref{thm:BH1} itself, but the remaining 1.4-order discrepancy shows that ``nucleon'' is not the correct counting unit; Section~\ref{sec:open} (OP-D64-1) identifies the correct unit as the open problem.
+\end{proposition}
+
+\begin{proposition}[Mass-(in)variance of Propositions~\ref{prop:negative1} and~\ref{prop:negative2}]
+\label{prop:massinvariance}
+The discrepancy of Proposition~\ref{prop:negative1} is independent of $M$ by algebraic construction: writing $N=M/m_p$ and substituting into both the naive count and the Bekenstein--Hawking target,
+\begin{equation}
+\frac{\ln\Omegasurf^{\mathrm{naive}}}{\ln\Omegasurf^{\mathrm{target}}} = \frac{\binom{N}{2}\ln 2}{4\pi(N m_p/\MPl)^2} = \frac{\ln 2}{8\pi}\left(\frac{\MPl}{m_p}\right)^2 \approx 4.67\times10^{36},
+\end{equation}
+independently of $M$. This is confirmed numerically to three significant figures for $M=1\,M_\odot$, $M=6.5\times10^{9}\,M_\odot$ (M87*), $M=4.297\times10^6\,M_\odot$ (Sagittarius~A*), and $M=62\,M_\odot$ (the GW150914 remnant): the ratio is $4.68$, $4.67$, $4.68$, and $4.67\times10^{36}$ respectively. The invariance of Proposition~\ref{prop:negative1}'s discrepancy is therefore a tautological consequence of both quantities scaling as $N^2$ with fixed prefactors, not an empirical regularity requiring explanation.
+
+By contrast, the surface-restricted count of Proposition~\ref{prop:negative2} does \emph{not} share this invariance, because $N_{\mathrm{surf}}\sim N^{2/3}$ introduces a different, $M$-dependent scaling relative to the target. Repeating the calculation of Proposition~\ref{prop:negative2} for M87* ($N\approx7.73\times10^{66}$, $N_{\mathrm{surf}}\approx3.91\times10^{44}$) gives
+\begin{equation}
+\ln\Omegasurf^{\mathrm{surf}}(\mathrm{M87}^*) \approx 5.30\times10^{88}~\mathrm{nats}, \qquad \ln\Omegasurf^{\mathrm{target}}(\mathrm{M87}^*) \approx 4.43\times10^{96}~\mathrm{nats},
+\end{equation}
+a discrepancy of $8.4\times10^{7}$, i.e.\ \textbf{7.9 orders of magnitude} --- not the 1.4 orders found for one solar mass. The apparent improvement reported in Proposition~\ref{prop:negative2} is therefore specific to the mass at which it was originally evaluated and does not constitute a generic property of the surface-restricted mechanism.
+\end{proposition}
+
+\begin{remark}
+Proposition~\ref{prop:massinvariance} strengthens rather than weakens the conclusion of Proposition~\ref{prop:negative2}: not only is ``nucleon'' the wrong counting unit, but the specific areal restriction $N_{\mathrm{surf}}\sim N^{2/3}$ tested there is itself not the correct geometric prescription, since a unit that captured the right physics would be expected to leave a discrepancy of comparable order across very different black-hole masses, as Proposition~\ref{prop:negative1}'s tautological invariance illustrates for the (wrong) mechanism it rules out. Any future candidate solution to OP-D64-1 (Section~\ref{sec:open}) should be checked against at least two black-hole masses differing by several orders of magnitude before being reported as a partial success; this is now standard practice in the present author's working protocol following the cross-check performed for this revision.
+\end{remark}
+
+\begin{remark}
+All three propositions above are reported as negative or partial results, in keeping with the \PDL\ programme's convention of documenting failed approaches with the same rigour as positive ones~\cite{PDL_DM_v29}. Proposition~\ref{prop:negative1} rules out one natural hypothesis, with a discrepancy now shown to be a structural tautology rather than a meaningful measurement; Proposition~\ref{prop:negative2} narrows the search at one mass but does not resolve it; Proposition~\ref{prop:massinvariance} shows that this narrowing does not survive a change of mass, and records this as a methodological requirement for future attempts.
+\end{remark}
+
+
+
+% ============================================================
+\section{Two new open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{openproblem}[OP-D64-1 --- Macroscopic many-nucleon surface counting]
+\label{op:D64-1}
+Derive $\ln\Omegasurf(N) = 4\pi(\Meff/\MPl)^2$ for $N\gg1$ nucleons directly from \PDL\ combinatorics, without invoking the Schwarzschild relation $A=16\pi(GM/c^2)^2$ as an external input (cf.\ D38's Open Problem~1~\cite{PDL_D38_2026}). Proposition~\ref{prop:negative1} excludes the naive pairwise-volumetric mechanism by a mass-independent factor; Proposition~\ref{prop:negative2} indicates that the correct counting unit is areal rather than nucleonic, but Proposition~\ref{prop:massinvariance} shows this specific areal prescription fails to generalise across black-hole masses, narrowing but not resolving the search. This problem is, in its full generality, equivalent to the long-standing problem of microscopic black hole entropy counting addressed for special (extremal) cases by other frameworks~\cite{StromingerVafa1996}; no claim is made that \PDL\ resolves it here. \textbf{Priority:} high. \textbf{Entry point:} D38, this document.
+\end{openproblem}
+
+\begin{openproblem}[OP-D64-2 --- The spacetime bridge: relational $c$ and $\mu^*$]
+\label{op:D64-2}
+The reduced Planck constant $\hb$ is already interpreted, without reference to spacetime, as the action quantum of one $\Kfour$ pulsation cycle~\cite{PDL_D01_2026}, and Newton's constant $G$ is an unconditional \PDL\ theorem~\cite{PDL_D21_2026,PDL_D43_2026,PDL_D44_2026}. However, the speed of light $c$ enters the \PDL\ corpus only as a qualitative reinterpretation of the standard limiting speed of information transfer~\cite{PDL_D01_2026}, and the proton--electron mass ratio $\mu^* = m_p/m_e$ remains a strong conjecture with an unresolved 47~ppm residual (OP7~\cite{PDL_D28_2026,PDL_D30_2026}), reclassified in DS01~\cite{PDL_DS01_2026} as a metrological interface problem consistent with known QED isospin-breaking corrections rather than a structural gap. Resolving the principal open problem of D37 --- the prediction $\lambda_{\mathrm{PDL}}=4\lPl^2$, requiring a counting argument that each Planck area corresponds to exactly four relational units of $\Rsurf$~\cite{PDL_D37_2026} --- requires expressing $l_{\mathrm{Pl}}^2 = \hb G/c^3$ entirely in relational units. This requires, in turn: (a) a combinatorial derivation of $c$ as a propagation rate intrinsic to the \PDL\ relational network, with no antecedent reference to distance or duration in the standard sense; and (b) the promotion of $\mu^*$ from conjecture to theorem. Neither exists in the corpus at this stage. \textbf{Priority:} high. \textbf{Entry point:} D01, D28, D30, D37, DS01, this document.
+\end{openproblem}
+
+% ============================================================
+\section{Epistemic status}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the results of D64.}
+\label{tab:epistemic}
+\small
+\begin{tabular}{p{6.5cm}p{3cm}p{4cm}}
+\toprule
+Result & Status & Dependency \\
+\midrule
+$\Omegasurf = 4^{\Rsurf}$ (recalled, not re-derived) & Theorem & D29, D42, D50 \\[4pt]
+Structural correspondence with soft hair (Table~\ref{tab:correspondence}) & Structural analogy, independently motivated & this document, \cite{HPS2016,HPS2017,N02} \\[4pt]
+Naive pairwise extrapolation excluded (Prop.~\ref{prop:negative1}) & Negative result, verified by direct computation & this document \\[4pt]
+Surface-restricted extrapolation (Prop.~\ref{prop:negative2}) & Partial improvement, not a resolution & this document \\[4pt]
+Mass-(in)variance of both extrapolations (Prop.~\ref{prop:massinvariance}) & Theorem (Prop.~\ref{prop:negative1} invariance, algebraic) and negative result (Prop.~\ref{prop:negative2} non-generalisation), verified on four black-hole masses & this document \\[4pt]
+OP-D64-1 (macroscopic counting) & Open & D38, this document \\[4pt]
+OP-D64-2 (relational $c$, $\mu^*$) & Open & D01, D28, D30, D37, DS01, this document \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Summary for colleagues outside the PDL programme}
+\label{sec:summary}
+% ============================================================
+
+A reader unfamiliar with \PDL\ may retain the following. \PDL\ is a combinatorial framework that derives physical structures from finite signed graphs satisfying four axioms, with the proton modelled as a specific such graph. Within this framework, it has been proved (Theorem~\ref{thm:D50}, document D50) that the boundary of this graph carries an enormous number of microscopic configurations --- $4^{\Rsurf}$, with $\Rsurf\approx502$ --- that are indistinguishable from one another by any measurement of the proton's global quantum numbers, while the interior carries none. This is, independently of any intended connection to gravitational physics, structurally the same statement as the soft-hair result of Hawking, Perry and Strominger~\cite{HPS2016,HPS2017}: black holes carry boundary degrees of freedom invisible to their mass, charge and angular momentum. This document states that correspondence explicitly for the first time, without claiming any further identification between the two frameworks, and uses it to motivate two precise open problems: whether the \PDL\ mechanism scales correctly to real, macroscopic black holes (OP-D64-1), and whether \PDL\ can express its own fundamental constants without borrowing $c$ and $m_p/m_e$ from measurement (OP-D64-2).
+
+\clearpage
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D64_references}
+
+\end{document}
