@@ -256,9 +256,9 @@ Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axi
 D44___Closure_of_OP_B.pdf
 
 D45
-https://doi.org/10.5281/zenodo.19810259
+https://doi.org/10.5281/zenodo.20866017 
 Primordial Black Hole Evaporation Threshold from the Projective Dynamic Logo Framework: A Falsifiable Prediction for Fermi-LAT
-D45_pbh_threshold.pdf
+D45_pbh_threshold_v2.pdf 
 
 DN-fr
 https://doi.org/10.5281/zenodo.19924230
@@ -406,6 +406,6 @@ D63: Quark Mass Spectrum from Combinatorial Axioms — Two Conjectures on Valenc
 D63_Quark_Mass_Spectrum.pdf 
 
 D64 
-https://doi.org/10.5281/zenodo.20820472 
+https://doi.org/10.5281/zenodo.20868328 
 Soft Hair on PDL Closures: A Structural Correspondence Between Surface Microstate Counting and Black Hole Hair 
-D64_soft_hair_pdl.pdf
+D64_soft_hair_pdl_v2.pdf 
