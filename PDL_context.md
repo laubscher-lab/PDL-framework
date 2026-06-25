@@ -1,8 +1,8 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 62 — 23 June 2026*
-*(D64 : 10.5281/zenodo.20820472)*
-*(Session 62 : correspondance Hawking-Perry-Strominger ↔ D50 ; deux problèmes ouverts nouveaux OP-D64-1, OP-D64-2 ; correction de 8 DOI erronés D31–D38 dans l'index ci-dessous, vérifiés contre le fichier maître 10.5281zenodo.txt du GitHub)*
+*Last updated: Session 63 — 25 June 2026*
+*(D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328)*
+*(Session 63 : exploration approfondie d'OP-D64-1/OP-D64-2 — fuite inverse de Λ, mer relationnelle, métrique relationnelle absente (constat à haut degré de confiance, 4 voies indépendantes), spin J et charge centrale 12J de Hawking-Perry-Strominger, confrontation Fermi-LAT réelle via GammaPBHPlotter/BlackHawk sur GitHub. D45 et D64 révisés en v2 et redéposés sur Zenodo.)*
 
 ---
 
@@ -12,7 +12,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -66,7 +66,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D42 | 10.5281/zenodo.20041348 | H3 from C1–C4: Equiparticipation Lemma |
 | D43 | 10.5281/zenodo.19678389 | Causal chain C1–C4 → G |
 | D44 | 10.5281/zenodo.19678474 | Filter factor k from axioms |
-| D45 | 10.5281/zenodo.19810259 | PBH threshold; Fermi-LAT |
+| D45 | 10.5281/zenodo.20866017 (v2) | PBH threshold; Fermi-LAT (v2: spectre complet GammaPBHPlotter/BlackHawk) |
 | DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (FR) |
 | D46 | 10.5281/zenodo.19956932 | Born Level 2: U(1) from K₄ |
 | D47 | 10.5281/zenodo.19967918 | Sub-shell filling rates; periodic table |
@@ -98,11 +98,46 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D63 | 10.5281/zenodo.20696391 | Quark mass spectrum; H_mass and H_sea |
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN bridge: β₁=3 |
 | DM v29 | 10.5281/zenodo.20701571 | Global Mapping v29 (current) |
-| D64 | 10.5281/zenodo.20820472 | Soft hair correspondence; OP-D64-1, OP-D64-2 |
+| D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
 
 ---
 
-## Session History (abridged — Sessions 50–62)
+## Session History (abridged — Sessions 50–63)
+
+**Session 63 — exploration OP-D64-1/OP-D64-2, D45 et D64 révisés en v2 (25 June 2026):**
+
+*Fil 1 — fuite inverse de Λ et absorption (priorité 1 de session, abandonnée puis réorientée) :*
+- Formalisation d'une « clôture absorbante » testée par Route B (rigidité interne de K₄ entre bords gauche/droite) : résultat LIBRE sur les trois appariements parfaits et la paire adjacente — aucune rigidité, mais test trop grossier pour conclure positivement.
+- Tentative de distance combinatoire multi-K₄ : abandonnée — la divisibilité tétraédrique (n_u=24=6 blocs, n_d=28=7 blocs, D47 C2) est un fait de comptage, **aucune règle d'assemblage explicite n'existe dans le corpus** (vérifié par recherche directe).
+- **Piège de l'horloge globale identifié** : présupposer un cycle de pulsation simultané entre clôtures distinctes importe silencieusement l'absence de délai qu'on cherche à mesurer.
+- **Constat plus profond** : la distinction même espace/temps n'est peut-être pas encore produite par C1–C4 à ce niveau — question reformulée plutôt que résolue.
+
+*Fil 2 — la métrique relationnelle manquante (nouveau goulot d'étranglement identifié, haute confiance) :*
+- Quatre voies de recherche indépendantes convergent : (i) rigidité interne K₄ — libre mais sans distance ; (ii) distance multi-blocs — jamais définie, règle d'assemblage absente ; (iii) topologie K₄≅S² (D23) — donne n=3 et des rangs algébriques, **aucune longueur** ; (iv) longueur d'onde de Compton (PDL.tex) — importe c, pas indépendant.
+- **Conclusion retenue : PDL n'a, à ce jour, aucune notion de distance ou de métrique dérivée de C1–C4** — distinct du manque de théorie dynamique déjà identifié en D64. Chantier mis en pause ; nécessiterait probablement une extension axiomatique (candidat C5), pas une réutilisation de structure existante.
+- Clarification métrologique posée pour OP-D64-2 : la valeur numérique de c n'est pas une question physique sensée depuis 1983 (définition SI) ; l'objectif légitime est une borne combinatoire structurelle (saut/cycle), pas un nombre en m/s.
+
+*Fil 3 — comptage macroscopique OP-D64-1, reformulation et tests négatifs supplémentaires :*
+- **Reformulation centrale retenue** : le problème n'est plus « 36,7 ordres de grandeur » mais « pourquoi une paire de nucléons engagés contribue exactement 8πα_G ≈ 1,48×10⁻³⁷ nats (α_G = constante de structure fine gravitationnelle), et non un bit complet ln2 ». Vérifié comme tautologie algébrique mass-invariante sur 4 masses (Soleil, M87*, Sgr A*, GW150914) — voir D64 v2, Proposition 3.
+- **Restriction surfacique de D64 (Prop. negative2) testée sur une seconde masse (M87*) : échec à 7,9 ordres de grandeur, pas 1,4.** Le résultat ne généralise pas — corrigé dans D64 v2.
+- Pistes testées et écartées pour le poids par paire : κ² (≈2×10⁻³), ε_G² (≈5,6×10⁻⁵), ε_G^n pour n entier (n exact = 17,34, non entier — disqualifié), σ(N) comme unité de comptage (sature à N~10³, sans variation à l'échelle macroscopique — disqualifié sans appel), T_pdl/mécanisme de voisinage (D56, N_comp(k)=k, structurellement linéaire — incompatible avec le N² requis), modèle de « mer dense » réutilisant H3/D42 entre paires de nucléons (réutilisation légitime mais surestime encore plus que le modèle naïf : 39,67 ordres d'écart).
+- **Hypothèse de la mer fusionnée** (cœurs de valence K₂₄/K₂₈ qui restent des graphes discrets ; mers individuelles qui fusionnent en une mer commune à l'horizon) retenue comme la piste qualitativement la plus motivée, mais non encore formalisée quantitativement — nécessite de re-vérifier les conditions de validité du Lemme L2 de D56 (disjonction des triangles mixtes), jamais testée à l'interface des mers spécifiquement.
+- **Test du spin J** : 12J (charge centrale de Haco-Hawking-Perry-Strominger 2018, *Black Hole Entropy and Soft Hair*, JHEP 12 (2018) 098) clarifié — ce n'est pas « 12 joules » mais c_L=c_R=12J, J étant le moment cinétique du trou noir. Agrégation naïve de N spins élémentaires ħ/2 (D33, théorème, structure SU(2) de période 4 de la pulsation K₄) pour M87* (a*≈0,9) : sous-estime J réel de **29 ordres de grandeur** — catégorie d'erreur (orbital collectif vs spin intrinsèque), pas un facteur à corriger. Confirme, par une troisième voie indépendante, le besoin d'une métrique relationnelle (J=M·v·R requiert un rayon).
+- **Réduction des degrés de liberté du quintuplet, observation nouvelle non encore documentée dans un D-document** : sur les cinq nombres (n_u, n_d, r_val, R_sea, R_tot), seuls trois sont indépendants — r_val se déduit de (n_u, n_d, composition u/d/d ou u/u/d) par formule exacte (vérifié proton 930 et neutron 1032 avec les mêmes n_u=24, n_d=28) ; R_tot = r_val + R_sea par définition. Parallèle frappant avec les trois paramètres de Kerr-Newman (M, Q, J) — statut épistémique comparable des deux côtés (aucun des deux cadres ne dérive ses paramètres libres « plus bas »), mais n_u, n_d eux-mêmes restent conjecturés, pas prouvés uniques (OP2, OP-D63-3 toujours ouverts). **Candidat pour un futur document court**, non rédigé à ce stade.
+- Recherche corpus ciblée (négative, mais informative) : aucune trace d'une explication pour 8πα_G ; avertissement déjà présent dans D36 contre la substitution naïve ε_G^18 collective (cohérent avec nos propres échecs) ; OP1 de D36 (origine de κ) identifié comme question-sœur, à échelle différente.
+
+*Fil 4 — confrontation Fermi-LAT réelle (résultat positif, actionnable) :*
+- Code public **GammaPBHPlotter** (Carlini & Cholis 2025, Zenodo 10.5281/zenodo.16944093) récupéré depuis le GitHub du laboratoire (`laubscher-lab/PDL-framework/Gamma`, tables BlackHawk incluses, 56 masses pré-rendues de 5×10¹³ à 10¹⁹ g) et exécuté avec succès (zenodo.org hors domaines réseau autorisés ; GitHub fonctionne).
+- **Calcul complet du spectre multi-composantes** (primaire + secondaire + annihilation en vol + radiation d'état final), pipeline d'interpolation reproduit exactement (RectBivariateSpline, linéaire log M, cubique log E) : pic à **130,1 MeV (M*_GR)** vs **117,5 MeV (M*_PDL)**, décalage **−9,65%** — remplace l'estimation analytique grossière (93/104 MeV, rayonnement primaire seul) de la v1 de D45.
+- Contrainte indépendante très récente identifiée (Cholis, Krommydas & Carlini, arXiv:2606.10013, 8 juin 2026) : f_PBH ≲ 10⁻¹⁰ près de cette masse — risque sérieux que le signal soit indétectable quel que soit le cadre, à signaler honnêtement (fait, dans D45 v2).
+- **D45 et D64 entièrement révisés en conséquence et redéposés sur Zenodo** : D45 v2 (10.5281/zenodo.20866017) et D64 v2 (10.5281/zenodo.20868328, ajout Proposition 3).
+
+*Fil 5 — clarification méthodologique majeure, à conserver pour toute session future :*
+- **Distinction formalisée entre deux strates du programme** : une strate phénoménologique (G_eff(N)=σ(N)G_PDL, déjà théorème, qui *substitue* un coefficient PDL dans une formule déjà géométrique de la RG — D38/BH-2, D45/PBH — et qui n'a jamais besoin d'OP-D64-1/2 pour produire des prédictions falsifiables) et une strate fondationnelle (Ω_surf comme comptage de microétats *dérivé*, sans emprunt à la RG — bloquée sur OP-D64-1/2). Le succès de la confrontation Fermi-LAT n'est pas un progrès vers OP-D64-1/2 ; c'est une confirmation indépendante que la première strate tient ses promesses sans avoir besoin de la seconde.
+- Contrainte de cohérence retenue pour toute future résolution d'OP-D64-1 : 1/T=dS/dM doit, dans la limite macroscopique, redonner exactement σ(N) déjà établi (Porte 3).
+- Discussions exploratoires sur la nature du trou noir (vide géométrique au sens de Schwarzschild/Komar confirmé ; thèse ontologique forte du « rien à l'intérieur » distinguée explicitement comme allant au-delà même des résultats les plus radicaux de la physique théorique actuelle — îles d'intrication, courbe de Page) et sur la masse comme coût de cohérence relatif (chaîne électron→quark→proton→boson, toutes les masses du secteur électrofaible étant des ratios à m_p, jamais des injections indépendantes) tenues au registre conceptuel/philosophique, explicitement distinguées du registre théorème — candidates pour un futur document du registre DL/D19-D20, non rédigées à ce stade.
+
+---
 
 **Session 62 — D64 déposé (23 June 2026):**
 - Correspondance structurale explicite, pour la première fois, entre le théorème de dégénérescence de surface de D50 (Ω_surf = 4^R_surf) et le programme des cheveux mous de Hawking, Perry et Strominger (Phys. Rev. Lett. 116, 231301, 2016 ; JHEP 05, 161, 2017). Présentée comme analogie structurale à motivation indépendante (protocole N02), pas comme identité mathématique.
@@ -167,7 +202,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## State of the Programme (end of Session 62)
+## State of the Programme (end of Session 63)
 
 ### Secteur de jauge — COMPLET
 
@@ -220,7 +255,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 62)
+## Open Problems (updated Session 63)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
@@ -245,8 +280,9 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-E2-PDL** : opérateur E2 dans le formalisme PDL → élèverait H_B en théorème. Entrée : D40, D41, D47, D-exp-f7/2.
 - **OP-D61-2** : trois générations de fermions depuis C1–C4. Entrée : D51, D59, D61.
 - **OP7** : résidu 47 ppm dans μ. Entrée : D28, D29, D30, D43. **[Reclassé dans DS01 comme problème d'interface métrologique, cohérent avec les corrections QED de brisure d'isospin (≈19,7 ppm à une boucle), pas un trou structurel — voir aussi OP-D64-2.]**
-- **OP-D64-1** : comptage macroscopique à N nucléons — dériver ln Ω_surf(N) = 4π(M_eff/M_Pl)² directement de la combinatoire PDL, sans invoquer la géométrie de Schwarzschild. Équivalent en difficulté au problème général de comptage microscopique de l'entropie des trous noirs (Strominger-Vafa ne le résout que pour des cas extrémaux). Entrée : D38, D64.
-- **OP-D64-2** : pont espace-temps — dérivation combinatoire de c comme taux de propagation intrinsèque au réseau relationnel PDL (sans référence antérieure à une distance ou une durée standard), et promotion de μ* de conjecture à théorème (résolution complète d'OP7). Préalable nécessaire à λ_PDL = 4l_P² (problème ouvert principal de D37). Entrée : D01, D28, D30, D37, DS01, D64.
+- **OP-D64-1** : comptage macroscopique à N nucléons — dériver ln Ω_surf(N) = 4π(M_eff/M_Pl)² directement de la combinatoire PDL, sans invoquer la géométrie de Schwarzschild. Équivalent en difficulté au problème général de comptage microscopique de l'entropie des trous noirs (Strominger-Vafa ne le résout que pour des cas extrémaux). **[Session 63]** Reformulé précisément : pourquoi une paire de nucléons engagés contribue 8πα_G ≈1,48×10⁻³⁷ nats (tautologie algébrique mass-invariante, vérifiée 4 masses), pas un bit complet. Restriction surfacique de D64 ne généralise pas (1,4 ordre solaire → 7,9 ordres M87*, D64 v2 Prop. 3). Six pistes testées et écartées (κ², ε_G^n, σ(N), T_pdl, mer dense, chaîne de filtres κ). Piste qualitative retenue, non formalisée : mer fusionnée + cœurs de valence comme graphes discrets persistants — nécessite de revérifier la validité du Lemme L2 de D56 à l'interface des mers. Entrée : D38, D64 v2.
+- **OP-D64-2** : pont espace-temps — dérivation combinatoire de c comme taux de propagation intrinsèque au réseau relationnel PDL (sans référence antérieure à une distance ou une durée standard), et promotion de μ* de conjecture à théorème (résolution complète d'OP7). Préalable nécessaire à λ_PDL = 4l_P² (problème ouvert principal de D37). **[Session 63]** Quatre voies indépendantes (rigidité K₄, distance multi-blocs, topologie D23, divisibilité tétraédrique) convergent : **aucune métrique relationnelle n'existe dans C1–C4** — constat à haut degré de confiance, distinct du manque de théorie dynamique. Reformulation methodologique : l'objectif légitime est une borne combinatoire structurelle (saut/cycle), jamais une valeur numérique de c (catégorie métrologique depuis 1983, pas physique). Entrée : D01, D28, D30, D37, DS01, D64 v2.
+- **OP-D64-3** : la métrique relationnelle manquante (nouveau, Session 63). Construire, ou montrer la nécessité d'une extension axiomatique (candidat C5) pour construire, une notion de distance/longueur depuis C1–C4, indépendante de toute structure empruntée à la RG. Identifié comme le goulot d'étranglement commun à OP-D64-1 (agrégation du spin J, J=M·v·R) et OP-D64-2 (dérivation de c). **Priorité : haute, mais projet à part — ne pas tenter de l'assembler à partir de pièces existantes (leçon de 3 tentatives échouées en Session 63).** Entrée : D16a, D23, D47, D64 v2.
 
 ### Ouverts — MEDIUM priority
 - **OP-D63-2** : dérivation formelle de w(n) = R_sea/(R_sea+r(n)) depuis C1–C4 en mode transitoire. Entrée : D61, D63.
@@ -265,7 +301,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Falsifiable Predictions (updated Session 60, unchanged Session 62)
+## Falsifiable Predictions (updated Session 63 — P5, P9)
 
 | ID | Observable | PDL value | PDG / obs. | Tension |
 |----|-----------|-----------|------------|---------|
@@ -273,11 +309,11 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 | P2 | α⁻¹ | 137.036 | 137.036 | < 1 ppm |
 | P3 | H₀ ratio | 1.085935 | 1.0859±0.007 | 0.006% |
 | P4 | CMB BH entropy suppression | σ(40) ≈ 0.848 | testable CMB-S4 | — |
-| P5 | PBH threshold | 5.706×10¹⁴ g (+11.89%) | Fermi-LAT | testable |
+| P5 | PBH threshold | 5.706×10¹⁴ g (+11.89%) | Fermi-LAT | testable ; f_PBH≲10⁻¹⁰ proche (Cholis 2026) |
 | P6 | AGN S/E ratio | ∝ σ(N(z)) | JWST/Euclid | — |
 | P7 | B(E2) ratio ⁹⁰Ru/⁸⁸Ru | R ≈ 2.02 | FRIB/RIKEN | testable |
 | P8 | N_comp ratio ⁹⁴Pd/⁹²Pd | 2.000±0.05 | RIKEN | testable |
-| P9 | IGRB cutoff | 93 MeV vs 104 MeV (GR) | Fermi-LAT | testable |
+| P9 | IGRB peak | 117.5 MeV vs 130.1 MeV (GR) | Fermi-LAT | testable ; calculé GammaPBHPlotter/BlackHawk, Session 63 |
 | P10 | Δm_iso | 2.446 MeV (D55) | FLAG 2024: 2.52±0.08 | 0.92σ |
 | P11 | v (electroweak vev) | 246.20 GeV | 246.22 GeV | 676 ppm |
 | P12 | M_Z | 91.168 GeV | 91.1876 GeV | 3.67σ |
@@ -289,7 +325,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Dependency Map — Critical Path (updated Session 62)
+## Dependency Map — Critical Path (updated Session 63)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -302,10 +338,12 @@ LAYER 6   QCD interface Δm_iso = 2.532 MeV           EXTERNAL PARAMETER
 LAYER 7   Dynamiques — COMPLET                        [✓] D32–D35, D42, D46, D49
 LAYER 8   Cosmologie                                  [✓] D27, D35, D42
 LAYER 9   Stabilité nucléaire — COMPLET               [✓] D40, D47
-LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45, D50
-           Correspondance cheveux mous (Hawking-Perry-Strominger) [D64, analogie structurale]
-           OP-D64-1 (comptage macroscopique N corps)    [OUVERT]
-           OP-D64-2 (pont espace-temps : c, μ*)          [OUVERT]
+LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45 v2, D50
+           Correspondance cheveux mous (Hawking-Perry-Strominger) [D64 v2, analogie structurale]
+           OP-D64-1 (comptage macroscopique N corps)    [OUVERT — reformulé Session 63 : poids 8πα_G/paire]
+           OP-D64-2 (pont espace-temps : c, μ*)          [OUVERT — métrique relationnelle absente]
+           OP-D64-3 (métrique relationnelle manquante)   [OUVERT — nouveau, Session 63]
+           D45 confronté à Fermi-LAT via GammaPBHPlotter/BlackHawk (réel, Session 63)
 LAYER 11  Tenseur de cohérence — COMPLET              [✓] D48, D49, D51, D52, D54
 LAYER 12  Λ_PDL — COMPLET                            [✓] D51, D52, D53
 LAYER 13  Vie/conscience                              [✓] DL01, DL02; [?] DL03
@@ -349,17 +387,20 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 63 :**
+**Priorités Session 64 :**
 
-1. **[HIGH]** OP-D64-2 : commencer par le jalon le plus accessible — repartir d'OP7 (résidu 47 ppm) et chercher si une dérivation combinatoire de c peut être amorcée à partir du réseau relationnel, avant de viser μ* en théorème. Entrée : D01, D28, D30, D37, DS01, D64.
-2. **[HIGH]** OP-D64-1 : à traiter sans précipitation, probablement sur plusieurs sessions — le résultat négatif de D64 (échec du comptage naïf par paires, 36,7 ordres de grandeur) exclut une piste ; chercher la bonne unité de comptage areal plutôt que nucléonique. Entrée : D38, D64.
-3. **[HIGH]** OP-D63-1 : lancer la preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
-4. **[HIGH]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Calculer les corrections pions/kaons via Gell-Mann–Oakes–Renner. Entrée : D62, D63.
-5. **[HIGH]** Mise à jour site web cedriclaubscher.ch avec D64.
-6. **[MEDIUM]** Communication ResearchGate/Academia : annonce D64 (correspondance cheveux mous), en insistant sur le statut d'analogie structurale, pas d'identité.
-7. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes (compatibilité de paires, pas propriété ou itération sur une clôture isolée). Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
-8. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02 (cf. DL-OP-bugs).
-9. **[FAIT — Session 62]** Vérification systématique de l'index complet des DOI (~70 entrées) contre le fichier maître `10.5281zenodo.txt` du GitHub — confirmée exhaustive, pas un échantillon. Huit corrections appliquées (D31–D38). L'index ci-dessus est désormais aligné avec la source de vérité.
+1. **[HIGH]** OP-D64-3 (nouveau) : ouvrir le chantier de la métrique relationnelle comme projet à part entière, pas comme assemblage de pièces existantes — envisager un candidat d'axiome C5 si aucune dérivation depuis C1–C4 seul n'émerge. Entrée : D16a, D23, D47, D64 v2.
+2. **[HIGH]** OP-D64-1 : reprendre la piste qualitative de la mer fusionnée (cœurs de valence comme graphes persistants + fusion des mers à l'interface) — vérifier d'abord si le Lemme L2 de D56 (disjonction des triangles mixtes) a des conditions de validité explicites qui cassent précisément à l'interface des mers. Ne pas chercher de nouveau coefficient en visant directement 8πα_G (leçon de Session 63). Entrée : D38, D56, D64 v2.
+3. **[HIGH]** OP-D64-2 : ne pas reprendre tant qu'OP-D64-3 n'a pas progressé — les deux sont bloqués sur la même absence. Entrée : D64 v2.
+4. **[HIGH]** OP-D63-1 : lancer la preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
+5. **[HIGH]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Calculer les corrections pions/kaons via Gell-Mann–Oakes–Renner. Entrée : D62, D63.
+6. **[MEDIUM]** Rédiger le document court sur la réduction des degrés de liberté du quintuplet (5→3 : n_u, n_d, R_sea indépendants ; r_val et R_tot dérivés) et son parallèle avec les trois paramètres de Kerr-Newman (M, Q, J) — observation de Session 63, non encore documentée. Entrée : D16b, D29, D47, D64 v2.
+7. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini (Oakland University / Rice University) au sujet de la fenêtre spectrale 100–150 MeV et de la contrainte f_PBH~10⁻¹⁰ — question technique précise plutôt que demande de validation. Entrée : D45 v2, arXiv:2606.10013.
+8. **[MEDIUM]** Mise à jour site web cedriclaubscher.ch avec D45 v2 et D64 v2.
+9. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes (compatibilité de paires, pas propriété ou itération sur une clôture isolée). Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
+10. **[LOW]** Envisager un document court (registre DL/D19-D20) pour la chaîne énergétique électron→quark→proton→boson (toutes les masses du secteur électrofaible comme ratios à m_p) et la distinction théorème/conjecture/registre philosophique discutée en Session 63 — à séparer clairement de toute extension testable.
+11. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02 (cf. DL-OP-bugs).
+12. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo, avec nouveaux DOI vérifiés contre le fichier maître `10.5281zenodo.txt` du GitHub.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
@@ -369,33 +410,27 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - Bloc `\pdfstringdefDisableCommands{...}` avec `\def` (pas `\renewcommand`)
 - Pas de `\newcommand` sur des macros LaTeX standard existantes (\nu, \mp, etc.)
 - Entrées .bib : champ `journal = {Zenodo}` obligatoire pour toutes les entrées PDL
-- **[Session 62]** Utiliser `@article` (jamais `@misc`) pour les entrées PDL internes : `unsrt.bst` n'imprime ni `journal=` ni `doi=` pour le type `@misc`. Le DOI doit être placé dans le champ `note = {\url{https://doi.org/...}}` pour apparaître réellement dans la bibliographie compilée — vérifié par compilation, pas par lecture du `.bib` seul.
-- **[Session 62]** Avant toute citation de DOI dans un nouveau document, vérifier contre le fichier maître `10.5281zenodo.txt` du GitHub plutôt que contre la mémoire de session ou les en-têtes de commentaires `.tex` (qui peuvent être obsolètes — cas constaté pour D42 dans l'en-tête de D50.tex).
+- Utiliser `@article` (jamais `@misc`) pour les entrées PDL internes : `unsrt.bst` n'imprime ni `journal=` ni `doi=` pour le type `@misc`. Le DOI doit être placé dans le champ `note = {\url{https://doi.org/...}}` pour apparaître réellement dans la bibliographie compilée — vérifié par compilation, pas par lecture du `.bib` seul.
+- Avant toute citation de DOI dans un nouveau document, vérifier contre le fichier maître `10.5281zenodo.txt` du GitHub plutôt que contre la mémoire de session ou les en-têtes de commentaires `.tex` (qui peuvent être obsolètes — cas constaté pour D42 dans l'en-tête de D50.tex).
+- **[Session 63]** Avant toute confrontation à des données ou des outils externes, vérifier l'accès réseau disponible (GitHub, PyPI accessibles ; Zenodo non accessible en exécution directe — passer par GitHub si le code doit être exécuté).
+- **[Session 63]** Toute amélioration partielle d'un résultat négatif (type Proposition negative2 de D64) doit être vérifiée sur au moins deux échelles très différentes avant d'être rapportée comme un progrès — un résultat qui semble s'améliorer à une seule échelle peut ne pas généraliser (cf. D64 v2, Proposition 3).
 
 **Nomenclature :**
-- D-series : documents solo PDL (D01–D63)
+- D-series : documents solo PDL (D01–D64)
 - D-exp-series : documents exploratoires
 - DL-series : vie et conscience (DL01–DL02)
 - DS01 : synthèse provisoire à D55
 - N-series : notes conjointes (N01 = PDL–OFN)
 - DM : Global Mapping (version courante : v29, DOI : 10.5281/zenodo.20701571)
 
-**DOIs récents (Session 62) :**
-- D64 : 10.5281/zenodo.20820472
-
-**Corrections de corpus (Session 62) :**
-- D31 : 10.5281/zenodo.19294984 (corrigé, était erronément 15614551)
-- D32 : 10.5281/zenodo.19306269 (corrigé)
-- D33 : 10.5281/zenodo.19307249 (corrigé)
-- D34 : 10.5281/zenodo.19322776 (corrigé)
-- D35 : 10.5281/zenodo.19322936 (corrigé)
-- D36 : 10.5281/zenodo.19323033 (corrigé)
-- D37 : 10.5281/zenodo.19354096 (corrigé)
-- D38 : 10.5281/zenodo.19354682 (corrigé)
-- Source de vérité utilisée : fichier maître `10.5281zenodo.txt` du GitHub (laubscher-lab/PDL-framework)
+**DOIs récents (Session 63) :**
+- D45 v2 : 10.5281/zenodo.20866017 (remplace v1, 10.5281/zenodo.19810259)
+- D64 v2 : 10.5281/zenodo.20868328 (remplace v1, 10.5281/zenodo.20820472)
+- Source de vérité utilisée : fichier maître `10.5281zenodo.txt` du GitHub (laubscher-lab/PDL-framework) — D45 et D64 y apparaissent déjà comme `D45_pbh_threshold_v2.pdf` et `D64_soft_hair_pdl_v2.pdf`.
 
 **Dépôts groupés :**
-- D64 : D64_Soft_Hair_PDL.tex + D64_references.bib + PDF compilé
+- D45 v2 : D45_pbh_threshold.tex (révisé) + D45_references.bib (+ entrées Carlini2025, Cholis2026) + PDF compilé
+- D64 v2 : D64_Soft_Hair_PDL.tex (révisé, Proposition 3 ajoutée) + D64_references.bib (+ entrées EHT2019, GRAVITY2022, LIGO2016) + PDF compilé
 
 **Résultats numériques clés :**
 - α⁻¹ = 137.036 | G_PDL : 27 ppm CODATA | μ* : 47 ppm
@@ -405,3 +440,5 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - m_d/m_u = 2401/1104 (0.59% PDG)
 - m_u = 2.155 MeV (0.22%) | m_d = 4.687 MeV (0.37%)
 - v = 246.20 GeV (676 ppm) | M_H = 125.33 GeV (1.49σ)
+- **[Session 63]** E_peak(PBH) : 130.1 MeV (GR) vs 117.5 MeV (PDL), −9.65% — calcul complet GammaPBHPlotter/BlackHawk, remplace l'estimation analytique 93/104 MeV
+- **[Session 63]** Poids requis par paire de nucléons engagés (reformulation OP-D64-1) : 8πα_G ≈ 1.484×10⁻³⁷ nats ; écart naïf/cible = (ln2/8π)(M_Pl/m_p)² ≈ 4.67×10³⁶, tautologie algébrique mass-invariante
