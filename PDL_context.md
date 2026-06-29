@@ -1,9 +1,9 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 64 — 26 June 2026*
-*(D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328 — inchangés cette session, aucun nouveau dépôt)*
-*(Session 64 : exploration intensive du verrou central identifié — l'absence de règle de couplage explicite K₄↔K₄. Dix tentatives indépendantes de construction d'une distance/métrique relationnelle, toutes négatives mais chacune informative. Découverte majeure : D08 (2025) contenait déjà, sous forme heuristique jamais complétée, la pseudo-métrique de coût de cohérence et le « paradoxe entropique logique ». Clarification conceptuelle majeure actée : c et ħ sont des facteurs de traduction discret↔continu, pas des objets internes à C1–C4 — confirmée systématiquement par un tableau de convergence sur huit résultats majeurs du programme. OP-D64-1 reformulé une dixième fois ; identification du déconfinement quark-gluon comme angle structurel probable, absent du corpus. Cible numérique de référence pour la suite : GW250114 (SNR=80, le signal le mieux mesuré à ce jour).)*
-*(Cette édition ajoute, à la demande explicite de Cédric, une reconstitution complète et non abrégée des Sessions 1 à 49 — voir la note méthodologique au début de la section « Session History » : reconstitution chronologique depuis les DOI Zenodo et le contenu réel des documents, pas un journal retrouvé.)*
+*Last updated: Session 65 — 29 June 2026*
+*(Aucun nouveau dépôt Zenodo cette session — travail exploratoire pur, accès direct au GitHub `laubscher-lab/PDL-framework` pour lecture de source. D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328 — inchangés.)*
+*(Session 65 : attaque directe du verrou central K₄↔K₄ identifié en Session 64, par construction explicite plutôt que par recherche de coïncidence numérique. Onze tentatives supplémentaires documentées (portant le total à 21 depuis le début du chantier), dont deux avancées structurelles réelles : (i) preuve que la fusion combinatoire de plusieurs blocs K₄ en un graphe complet plus grand est **structurellement exclue à toute densité** par l'indicateur de minimalité Φ_min — pas seulement défavorisée, exclue ; (ii) découverte que la formule établie σ(N)=1−(1−κ)^N (couplage gravitationnel effectif) n'est démontrée que dans le régime dilué Nκ≪1, et que ce seuil (1/κ≈21,96) coïncide avec Z_sat≈20 trouvé indépendamment en D22/D40 — confirmant que tout le programme opère, depuis le début, hors du domaine prouvé de cette formule pour les systèmes macroscopiques. **Correction de corpus majeure** : la formule de Z_sat donnée dans « Nuclear Stability PDL.tex » (⌊T/(T−Tpp)⌋+1=11) est incohérente avec la formule originale et correcte de D22 (R_sea(n)/R_surf(p)≈19,86≈20, 0,72% d'écart), malgré une citation prétendant l'accord — erreur interne non détectée jusqu'ici, à corriger dans le document source. Reformulation finale de la priorité de recherche : le problème n'est plus "comment compter les paires" mais "comment la fonctionnelle de sélection F(η,ρ,m) doit être reformulée au niveau multi-nucléon (S_nuclear) plutôt qu'au niveau d'un graphe fusionné" — chantier explicitement identifié, mais jamais entamé, par le document fondateur de l'architecture du proton lui-même.)*
+*(Cette édition conserve, à la demande explicite de Cédric, la reconstitution complète et non abrégée des Sessions 1 à 49 — voir la note méthodologique au début de la section « Session History ».)*
 
 ---
 
@@ -13,7 +13,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; inchangé Session 64)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; inchangé Sessions 64–65)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -209,9 +209,62 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Session History (abridged — Sessions 50–64)
+## Session History (abridged — Sessions 50–65)
 
-**Session 64 — verrou central K₄↔K₄, dix résultats négatifs, clarification c/ħ, cible GW250114 (26 June 2026) :**
+**Session 65 — attaque directe du verrou K₄↔K₄, exclusion structurelle de la fusion, découverte du régime dilué et correction de corpus (29 June 2026) :**
+
+*Fil 1 — réseau multi-centres explicite (T_pdl + T_pp combinés), premier objet K₄↔K₄ jamais construit explicitement :*
+- Construction d'un graphe pondéré nucléon-nucléon généralisant l'étoile D56 (un seul centre) et le graphe complet plafonné T_pp (D40) en un objet unique pour tout (Z,N) : arêtes p–n de poids T (chaque neutron engageant les c=min(Z,Z_sat) premiers protons), arêtes p–p de poids T_pp (graphe complet plafonné), arêtes n–n absentes (lacune de corpus confirmée : aucune règle n–n complète n'existe nulle part, T_nn n'apparaît que dans un bonus d'appariement isolé).
+- **Vérifié par script** : réduction exacte aux formules D40/D56 connues ; invariance par relabeling sur 20 permutations aléatoires (la règle ne référence jamais l'identité interne des nucléons, seulement leur type) ; loi d'échelle prouvée analytiquement extensive ($W(N)/N\to 20T$ exactement, vérifié jusqu'à $N=10^{57}$) — jamais quadratique.
+- **Conclusion (théorème combinatoire, pas conjecture) :** un réseau saturé à $Z_{sat}=20$ est structurellement extensif ($\propto N$), donc structurellement incapable de fournir l'aire de Schwarzschild ($\propto N^2$, parce que $R_s\propto M\propto N$, pas $R\propto N^{1/3}$ comme la matière nucléaire ordinaire). Onzième échec du chantier, mais le premier exclu analytiquement plutôt que numériquement.
+
+*Fil 2 — piste de la surface 2D holographique (suggestion de Cédric), motivation indépendante confirmée, mais insuffisante seule :*
+- Motivation à deux sources indépendantes : le principe holographique (’t Hooft, Susskind — externe, établi) et le fait, déjà acquis dans le corpus avant cette session (D37/D50), que PDL est déjà « holographique » au niveau d'un seul proton ($\Omega_{val}=1$, $\Omega_{surf}=4^{R_{surf}}$).
+- **Sandwich numérique calculé (nouveau, jamais fait avant cette session)** : modèle extensif naïf (chaque nucléon transporte son $S_{surf}$ D50 déjà prouvé, sommé sur N) sous-compte la cible Bekenstein-Hawking de **17,1 ordres de grandeur** ; modèle pairwise naïf ($\binom{N}{2}\ln2$, déjà connu) surcompte de **36,7 ordres**. La cible $N^2$ est bien encadrée entre les deux, confirmant l'exposant nécessaire par une voie indépendante du Fil 1.
+- **Clôture honnête de la piste « îlots de quarks à l'échelle nucléaire »** : la granularité requise pour paver l'horizon au quantum standard de Bekenstein-Hawking ($4l_P^2$) est d'environ $8{,}8\times10^{19}$ grains par nucléon — beaucoup trop fin pour être des sous-structures de quarks à l'échelle nucléaire, et ce nombre dépend de $N$ (pas une constante universelle, vérifié explicitement). Le déconfinement seul ne peut pas fournir l'unité de comptage ; il joue, au mieux, un rôle nécessaire mais pas suffisant.
+
+*Fil 3 — garde-fou bilan énergétique vs entropie (alerte de Cédric, confirmée et formalisée) :*
+- Précédent identifié et cité précisément : D48 (tenseur de cohérence v3), « double forcing » de $V_C$ par la Chaîne 2, tautologique car l'unité relationnelle y est définie par construction comme $\lambda_C/\sqrt{R_{surf}}$ — le même type de piège qu'un bilan énergétique appliqué à $\lambda_{PDL}$ aurait reproduit.
+- Règle déjà existante (Session 64, tableau de convergence) réappliquée explicitement ici : l'énergie ($m_p$, $\hbar$, $c$, $G_{PDL}$) ne doit être importée qu'**une seule fois**, à la conversion finale d'un résultat combinatoire déjà obtenu — jamais comme mécanisme de calcul du coefficient combinatoire lui-même. Cible reformulée comme fonction fermée et close de $N$ seul : $S_{\text{cible}}(N)=4\pi\,\sigma(N)\,\alpha_G'\,N^2$, avec $\alpha_G'=G_{PDL}m_p^2/(\hbar c)$ fixé une fois pour toutes.
+
+*Fil 4 — ansatz extensif×pairwise, conjecture H-pair formulée puis explicitement downgradée :*
+- Ansatz $\Omega_{comb}(N)=4^{N R_{surf}(p)}\times f^{\binom{N}{2}}$ (généralisation directe de D50, plus une correction par paire). Résolution algébrique : $\ln f = 1{,}4844\times10^{-37}$, à comparer à $8\pi\varepsilon_G^{18}=1{,}4854\times10^{-37}$ (écart $0{,}07\%$). Le « $8\pi$ » est de la pure arithmétique ($4\pi$ de la formule d'aire / $1/2$ du comptage de paires $\binom{N}{2}\approx N^2/2$) — rien à expliquer là.
+- **Tentative de justification structurelle, et échec honnête, après lecture complète de D23 v2** : l'exposant 18 n'est pas un compte générique de filtres réutilisable à n'importe quelle échelle — il est construit à partir d'une chaîne précise et spécifique (rang 6 : bloc proton ; rang 5, déficit $r_{val}(p)=930$ ; rang 4, déficit $r_{val}(n)=1032$ ; plus 3 morphismes de bord, dont l'identité gravitationnelle elle-même comptée comme une des trois contraintes). Rien dans cette preuve ne suggère une réutilisation pour un couplage croisé entre nucléons macroscopiquement distincts. **Conjecture H-pair downgradée de « motivée par réutilisation d'un mécanisme établi » à « coïncidence numérique précise mais non expliquée »** — même statut que $R_e=6$ vs $|Dic_3|/2$ (Session 64), à traiter comme non confirmée.
+
+*Fil 5 — tentative de preuve directe de la forme de l'ansatz (extensif × pairwise), partiellement réussie :*
+- **Lemme (nouveau, corollaire direct et rigoureux de D56 L1+L3)** : sous disjonction totale en sommets pour toutes les paires de blocs, $\Omega_{comb}(N)=4^{NR_{surf}(p)}$ exactement — aucun terme croisé possible.
+- **Conséquence forcée (pas une hypothèse)** : cette forme sous-compte de 17 ordres (Fil 2) — donc la disjonction totale doit nécessairement se rompre à l'échelle macroscopique. C'est une conséquence arithmétique, pas une intuition sur le déconfinement.
+- **Lemme (nouveau, généralisation triviale du comptage de sommets de D56 L2)** : pour deux paires de blocs sans bloc commun, leurs triangles croisés (s'ils existent) sont automatiquement disjoints en sommets — corrections indépendantes, multiplicatives, rigoureusement.
+- **Problème ouvert identifié, et correction d'une piste antérieure erronée** : l'indépendance pour deux paires *partageant* un bloc commun n'est PAS couverte par D42 (vérifié : D42 prouve l'équiparticipation $S_4$ des relations internes du proton vues par UN $K_4$ externe — pas l'indépendance entre paires de paires). Argument asymptotique de consolation : la fraction de paires-de-paires partageant un bloc tend vers 0 comme $4/N$ — négligeable ($\sim3{,}4\times10^{-57}$ à l'échelle solaire), mais reste un vrai trou non résolu, pas contourné.
+
+*Fil 6 — cohabitation spatiale, correction d'une fausse piste d'« axiome » et redirection vers le bon objet (discussion approfondie avec Cédric) :*
+- Clarification actée : pas un nouvel axiome (rien dans C1–C4 n'interdit la coexistence de plusieurs $K_4$ — D56 le fait déjà) — un théorème manquant.
+- **Vérification décisive, avant toute construction de modèle-jouet** : le mécanisme $(1/4)^N$ déjà établi dans le corpus (D17/D23/D44) décrit $N$ répétitions **temporelles** d'un même cycle de pulsation sur une seule relation — pas $N$ fermetures distinctes coexistant dans l'espace. Aucun mécanisme PDL existant ne couvre la multiplicité spatiale ; tentative de modèle-jouet abandonnée avant calcul plutôt que construite sur une mauvaise lecture.
+- Localisation précise de l'hypothèse implicite « un seul partenaire externe » dans la dérivation fondatrice (contraintes C8–C9, « Combinatorial Proton Architecture », définition de la surface active et du nombre d'or $\varphi$ — toutes deux formulées explicitement pour UN $(4,6)$ externe, jamais généralisées à $K$ partenaires simultanés).
+
+*Fil 7 — généralisation auto-similaire avec $K$ explicite, falsifiée proprement :*
+- Ansatz $K\lambda^2=\lambda+1$ (chaque partenaire reçoit $R_{surf}/K$ dans la récursion d'auto-similarité de D05/φ) : redonne $\lambda(1)=\varphi$ exactement (cohérent au point de départ), mais prédit $\lambda(20)=0{,}25$ — **falsifié** par D40 lui-même, qui utilise $\varphi$ inchangé jusqu'à $Z_{sat}=20$ partenaires simultanés, validé contre des données nucléaires réelles. Contrainte concrète retenue pour toute future tentative : $\lambda(K\le20)=\varphi$ exactement ; tout changement ne peut survenir qu'à un véritable seuil, pas par dérive continue dès $K=2$.
+
+*Fil 8 — découverte du régime dilué, reconnexion à $Z_{sat}$ par une troisième voie indépendante (suggestion de Cédric) :*
+- Document retrouvé (« Closure-Density Dependence... Hubble Tension », jamais consulté avant cette session) : la formule établie $\sigma(N)=1-(1-\kappa)^N$ repose sur une hypothèse d'**indépendance posée, pas démontrée**, explicitement qualifiée de valide seulement dans le régime dilué $N\kappa\ll1$.
+- **Vérifié : $1/\kappa\approx21{,}96$ coïncide avec $Z_{sat}\approx20$** (D40/D22) — deux dérivations totalement indépendantes (probabilité d'engagement vs comptage combinatoire dur) convergent sur le même seuil. Pour $N\sim10^{57}$ (notre régime), $N\kappa\sim5{,}6\times10^{55}$ — à 55 ordres de grandeur du domaine prouvé.
+- **Nuance importante retenue** : $\sigma(N)\to1$ reste qualitativement robuste pour le couplage gravitationnel local (confirmé, pour une raison différente — saturation combinatoire dure, pas convergence probabiliste lisse) — mais le comptage microscopique des microétats ($\Omega_{comb}(N)$) n'est, lui, couvert par AUCUN des deux mécanismes, qui ne traitent qu'UN proton de référence face à SES voisins, jamais un réseau partout simultanément saturé. **Reformulation finale de la question** : pas « les 20 partenaires engagés changent-ils de comportement » (non, vérifié Fil 7) mais « que devient, relationnellement, la majorité $N-20$ qui n'a structurellement aucun canal direct, quand la pression externe est partout à saturation simultanément ».
+
+*Fil 9 — tentative de fusion combinatoire $K_4\to K_8$, exclusion structurelle rigoureuse :*
+- Vérifié par théorème de Harary (exhaustif sur 56 triangles, 3 bipartitions) : la fusion de blocs $K_4$ en un graphe complet plus grand reste **toujours** parfaitement cohérente ($\eta=0$), à n'importe quelle taille — pas d'obstruction combinatoire. Densité relationnelle $\rho$ croît superlinéairement par fusion (gain $\times2{,}33$ pour $K_8$, $\times2{,}04$ pour des cœurs de valence $n_u{=}24{\to}48$) — vérifié numériquement.
+- **Découverte décisive, en relisant la définition exacte de $\Phi_{min}$** (« Combinatorial Proton Architecture ») : $\Phi_{min}(\Pi)=1$ ssi le graphe ne contient AUCUN sous-graphe propre satisfaisant les mêmes contraintes avec moins de relations. $K_4$ lui-même est **toujours** un tel sous-graphe de n'importe quel $K_{4k}$ fusionné (un groupe de 4 sommets de même signe dans une bipartition équilibrée forme un $K_4$ tout-positif, $\eta=0$, structurellement équivalent) — donc $\Phi_{min}(\text{fusion})=0$ **à n'importe quelle densité**, par construction de la définition, pas par préférence. **La fusion en graphe complet plus grand est donc structurellement exclue, pas seulement défavorisée — résultat négatif rigoureux, le plus définitif du chantier à ce jour.**
+- **Redirection vers la bonne question, déjà identifiée mais jamais entamée par le document fondateur lui-même** : la stabilité empirique des neutrons liés (vs neutron libre instable) y est explicitement attribuée à un « déplacement du **niveau** auquel l'optimalité combinatoire est atteinte — des architectures à un seul nucléon vers des **clôtures multi-nucléons** » (citation directe du document), via une fonctionnelle $S_{\text{nuclear}}$ de niveau supérieur comparant configuration liée vs désintégration, SANS fusion des graphes $K_4$ sous-jacents. Le document admet explicitement que cette généralisation n'a jamais été complétée, même pour le cas ordinaire.
+
+*Fil 10 — correction de corpus, en cherchant dans le corpus et en dehors :*
+- En cherchant l'origine de $Z_{sat}=20$ (mentionnée comme « établie en D22 » par « Nuclear Stability PDL.tex »), découverte que la formule donnée dans ce dernier document — $Z_{sat}=\lfloor T/(T-T_{pp})\rfloor+1=11$ — **ne redérive pas** la formule originale de D22 (« Pdl nuclear stability skeleton.tex ») : $Z_{sat}=R_{sea}(n)/R_{surf}(p)=9960/501{,}59=19{,}857$, écart à 20 de seulement $0{,}72\%$, exactement comme revendiqué par le tableau épistémique de ce document.
+- **Vérifié par calcul exact** : les deux formules ne sont pas algébriquement équivalentes et donnent des valeurs différentes (11 contre 19,86) — incohérence interne du corpus, non détectée avant cette session, malgré une citation prétendant l'accord.
+- **Conséquence pour cette session** : la piste explorée juste avant (un facteur manquant ${\approx}1{,}8$, potentiellement lié à la densité) était une fausse piste née de la confiance dans la formule la plus récente sans vérification contre sa source citée — corrigée en consultant D22 directement plutôt que sa paraphrase.
+- **Vérification externe (hors corpus)** : $Z=20$ (calcium) est un nombre magique nucléaire bien établi en physique nucléaire mainstream (modèle en couches, Goeppert-Mayer et Jensen, 1949) ; $^{40}\text{Ca}$ est effectivement l'un des noyaux légers les plus stables connus (doublement magique). Sur ce point précis, PDL s'accorde avec une physique externe solide — seule l'incohérence interne entre les deux formules PDL est en cause, pas le repère empirique lui-même.
+- **Action de correction recommandée, non encore effectuée** : la formule de Z_sat dans « Nuclear Stability PDL.tex » devrait être remplacée par celle de D22 (le document source), ou la divergence entre les deux explicitement documentée et résolue, avant toute réutilisation future de ce document.
+
+---
+
+
 
 *Fil 1 — redécouverte de D08 (2025), jamais reliée jusqu'ici à OP-D64-3 :*
 - D08 (« Logical leakage as self-maintained probability ») contient déjà, en germe : (i) la réinterprétation de η(G) comme probabilité sous mesure uniforme sur les triplets de sommets — théorème complet, preuve rigoureuse ; (ii) η_L comme **probabilité auto-entretenue**, déterminée par le même principe d'optimisation (C4) qui la minimise — pas une probabilité imposée de l'extérieur ; (iii) le **« paradoxe entropique logique »**, nommé explicitement — exactement l'argument de conjonction combinatoire (plus de hiérarchie = intersection de contraintes plus rare = plus de fuite) reconstruit indépendamment cette session par discussion ; (iv) une **pseudo-métrique de coût de cohérence** $d(C_1,C_2)=\inf_{\mathcal J}(\eta(G_{12})-\max(\eta(G_1),\eta(G_2)))_+$, mais explicitement qualifiée par l'auteur lui-même de **« heuristique »**, avec la pièce manquante nommée : une spécification précise de $\mathcal J(C_1,C_2)$ (les plongements joints admissibles) — jamais construite, ici ni dans les deux documents qui la reprennent (D11 « Towards Einstein-Dirac Unification » : promotion schématique à une métrique lorentzienne emergente, jamais vérifiée ; D24 « Closure-Density Dependence » : même statut, citée comme contexte seulement). Confirmé que η_L (D08/D24) = ε_G (D43/D44), même nombre sous deux noms.
@@ -364,7 +417,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## State of the Programme (end of Session 64)
+## State of the Programme (end of Session 65)
 
 ### Secteur de jauge — COMPLET
 
@@ -417,7 +470,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 64)
+## Open Problems (updated Session 65)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
@@ -432,6 +485,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **[RÉSOLU D61]** OP-D59-2 : D_μ minimal covariant derivative
 - **[PARTIEL D62]** OP-D61-1 : masses bosons (M_Z/M_W théorème; v, M_Z, M_H conjectures)
 - **[PARTIEL D63]** OP-D59-1 : spectre de masse des quarks (H_mass et H_sea conjectures)
+- **[RÉSOLU — Session 65, résultat négatif définitif]** La fusion combinatoire de blocs K₄ en un graphe complet plus grand est structurellement exclue à toute densité par Φ_min — fermeture rigoureuse d'une branche entière du chantier K₄↔K₄, pas seulement une tentative écartée.
 
 ### Ouverts — HIGH priority
 - **OP-D63-1** : preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n) → élèverait H_mass en théorème. Entrée : D47, D59, D63.
@@ -442,9 +496,11 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-E2-PDL** : opérateur E2 dans le formalisme PDL → élèverait H_B en théorème. Entrée : D40, D41, D47, D-exp-f7/2.
 - **OP-D61-2** : trois générations de fermions depuis C1–C4. Entrée : D51, D59, D61.
 - **OP7** : résidu 47 ppm dans μ. Entrée : D28, D29, D30, D43. **[Reclassé dans DS01 comme problème d'interface métrologique, cohérent avec les corrections QED de brisure d'isospin (≈19,7 ppm à une boucle), pas un trou structurel — voir aussi OP-D64-2.]**
-- **OP-D64-1** : comptage macroscopique à N nucléons — dériver ln Ω_surf(N) = 4π(M_eff/M_Pl)² directement de la combinatoire PDL, sans invoquer la géométrie de Schwarzschild. Équivalent en difficulté au problème général de comptage microscopique de l'entropie des trous noirs (Strominger-Vafa ne le résout que pour des cas extrémaux). **[Session 63]** Reformulé précisément : pourquoi une paire de nucléons engagés contribue 8πα_G ≈1,48×10⁻³⁷ nats, pas un bit complet. **[Session 64]** Dix tentatives indépendantes désormais documentées et écartées (modèle séquentiel = C(N,2) sans information nouvelle ; mer fusionnée R_sea² = 45 ordres, pire ; κ/P₁/P₂ en puissance entière, aucun ne fonctionne ; rotation/charge/dissipation énergétique bornés à O(1), insuffisants de 36 ordres ; redshift gravitationnel nécessiterait une échelle sous-planckienne ; ε_G^18 reste une propriété d'un seul proton). **Reformulation structurelle majeure retenue : le problème est probablement mal posé tant que la matière est traitée comme des nucléons distincts — la QCD réelle prévoit un déconfinement en plasma de quarks-gluons avant l'échelle pertinente, jamais traité dans le corpus. Le verrou véritable est la règle de couplage K₄↔K₄ explicite (absente), pas un coefficient manquant.** Entrée : D38, D56, D64 v2.
-- **OP-D64-2** : pont espace-temps — dérivation combinatoire de c comme taux de propagation intrinsèque au réseau relationnel PDL, et promotion de μ* de conjecture à théorème (résolution complète d'OP7). Préalable nécessaire à λ_PDL = 4l_P² (problème ouvert principal de D37). **[Session 63]** Aucune métrique relationnelle n'existe dans C1–C4. **[Session 64] Clarification métrologique actée comme acquis définitif : c et ħ sont des facteurs de traduction discret↔continu, pas des objets internes à C1–C4 — confirmé systématiquement sur 8 résultats majeurs du programme (tableau de convergence) et par archéologie complète du corpus (D08, D10a, D11, D48, toutes les tentatives d'échelle indépendante retombent sur une importation explicite ou une tautologie). Le volet « valeur/rôle de c » est désormais considéré clos par clarification catégorielle, pas par calcul — ni PDL ni aucune théorie physique depuis 2019 ne peut dériver c autrement.** Reste ouvert : le volet μ* (résidu 47 ppm, OP7), totalement indépendant de cette clarification. Entrée : D01, D28, D30, D33, D37, DS01, D64 v2.
-- **OP-D64-3** : la métrique relationnelle manquante (Session 63). **[Session 64]** Reformulée : la signature spatio-temporelle (1 temps + 3 espaces) est désormais un théorème acquis (D33, produit tensoriel cycle⊗spin, jamais relié à OP-D64-3 avant cette session) — seule l'échelle reste ouverte, et la clarification de Fil 5 (Session 64) suggère qu'elle n'est, par nature, pas un objet à *trouver* dans le discret mais à *traduire* depuis lui, à l'instar de ħ. Dix tentatives de construction d'une distance combinatoire entre clôtures distinctes (Harary, (A)∧(B), Hamming, fractions D42, etc.) toutes négatives — voir Session 64, Fil 2. Seul résultat positif : la structure en étoile T_pdl (D56), limitée à deux valeurs, et la découverte de T_pp (D40, graphe complet plafonné à Z_sat=20 protons), jamais combinés en un réseau à plusieurs centres. **Priorité haute, mais à n'attaquer désormais qu'à travers le verrou K₄↔K₄ central (voir OP-D64-1), pas isolément.** Entrée : D16a, D23, D33, D40, D47, D56, D64 v2.
+- **OP-D64-1** : comptage macroscopique à N nucléons — dériver ln Ω_surf(N) = 4π(M_eff/M_Pl)² directement de la combinatoire PDL, sans invoquer la géométrie de Schwarzschild. Équivalent en difficulté au problème général de comptage microscopique de l'entropie des trous noirs (Strominger-Vafa ne le résout que pour des cas extrémaux). **[Session 63]** Reformulé précisément : pourquoi une paire de nucléons engagés contribue 8πα_G ≈1,48×10⁻³⁷ nats, pas un bit complet. **[Session 64]** Dix tentatives indépendantes désormais documentées et écartées. **[Session 65]** Onze tentatives supplémentaires (total 21) : réseau multi-centres T_pdl+T_pp prouvé extensif donc structurellement insuffisant (Fil 1) ; sandwich numérique encadrant rigoureusement la cible entre sous-comptage extensif (−17,1 ordres) et surcomptage pairwise naïf (+36,7 ordres), confirmant l'exposant N² par une voie indépendante (Fil 2) ; ansatz extensif×pairwise donnant la conjecture H-pair $f=\exp(8\pi\varepsilon_G^{18})$ — **downgradée à coïncidence numérique non expliquée après lecture complète de D23 v2** (Fil 4, Fil 6) ; preuve partielle de la forme de l'ansatz (extensivité forcée sous disjonction totale = corollaire D56 ; rupture de disjonction = conséquence forcée, pas hypothèse ; multiplicativité prouvée pour les paires sans bloc commun ; trou identifié et non comblé pour les paires partageant un bloc — Fil 5) ; fusion combinatoire en graphe complet plus grand **structurellement exclue à toute densité par Φ_min** (Fil 9, résultat négatif définitif) ; redirection finale vers la reformulation, déjà identifiée par le document fondateur de l'architecture du proton mais jamais entamée, d'une fonctionnelle de sélection multi-nucléon $S_{\text{nuclear}}$ comparant configuration liée vs désintégration, sans fusion des graphes K₄ sous-jacents — voir **OP-D65-1**. Entrée : D08, D22, D23, D29, D40, D56, D64 v2, Combinatorial Proton Architecture.
+- **OP-D64-2** : pont espace-temps — dérivation combinatoire de c comme taux de propagation intrinsèque au réseau relationnel PDL, et promotion de μ* de conjecture à théorème (résolution complète d'OP7). Préalable nécessaire à λ_PDL = 4l_P² (problème ouvert principal de D37). **[Session 63]** Aucune métrique relationnelle n'existe dans C1–C4. **[Session 64] Clarification métrologique actée comme acquis définitif : c et ħ sont des facteurs de traduction discret↔continu, pas des objets internes à C1–C4** — confirmé systématiquement sur 8 résultats majeurs du programme et par archéologie complète du corpus. **[Session 65]** Règle réappliquée explicitement et avec succès au calcul de la cible d'entropie macroscopique (Fil 3) : l'énergie n'est importée qu'une fois, à la conversion finale, jamais comme mécanisme de calcul d'un coefficient combinatoire — confirmé sur un nouveau cas d'usage, aucune exception trouvée. Reste ouvert : le volet μ* (résidu 47 ppm, OP7), totalement indépendant de cette clarification. Entrée : D01, D28, D30, D33, D37, DS01, D64 v2.
+- **OP-D64-3** : la métrique relationnelle manquante (Session 63). **[Session 64]** Reformulée ; signature spatio-temporelle acquise comme théorème (D33). **[Session 65]** Premier objet K₄↔K₄ multi-centres explicitement construit et vérifié (Fil 1, réseau T_pdl+T_pp), mais prouvé structurellement extensif — insuffisant seul pour le rôle de métrique macroscopique recherché. Découverte que la formule de couplage gravitationnel établie σ(N)=1−(1−κ)^N **n'est démontrée que dans le régime dilué Nκ≪1**, dont le seuil (1/κ≈21,96) coïncide avec Z_sat≈20 trouvé indépendamment (Fil 8) — tout le programme opère, pour les systèmes macroscopiques, à 55 ordres de grandeur hors du domaine prouvé de cette formule. **Priorité haute, désormais reformulée à travers OP-D65-1 plutôt qu'isolément.** Entrée : D16a, D23, D33, D40, D47, D56, D64 v2, Closure-Density Dependence (Hubble Tension).
+- **OP-D65-1 [NOUVEAU — Session 65, priorité haute]** : reformuler la fonctionnelle de sélection au niveau multi-nucléon ($S_{\text{nuclear}}$), comparant explicitement une configuration liée à $N$ corps contre l'alternative de désintégration/dispersion, sans jamais fusionner les graphes K₄ sous-jacents (exclu par Φ_min, Fil 9). Chantier explicitement identifié comme non complété, y compris pour le cas ordinaire (stabilité du neutron lié vs libre), par le document fondateur de l'architecture du proton lui-même (« Combinatorial Proton Architecture », section discussion). Sous-question immédiate : que devient, relationnellement, la fraction $N-Z_{sat}$ de nucléons sans canal d'engagement direct, dans un régime où la pression externe sature partout simultanément (Fil 8) — pas un seul proton de référence face à ses voisins. Entrée : Combinatorial Proton Architecture (C8–C9, Φ_min), D40, D56, Closure-Density Dependence (Hubble Tension).
+- **OP-D65-2 [NOUVEAU — Session 65, correction de corpus, priorité haute mais non physique]** : la formule de $Z_{sat}$ donnée dans « Nuclear Stability PDL.tex » ($\lfloor T/(T-T_{pp})\rfloor+1=11$) est incohérente avec la formule originale et correcte de D22 ($R_{sea}(n)/R_{surf}(p)\approx19{,}857$, écart 0,72% à la valeur observée 20), malgré une citation prétendant l'accord entre les deux. Action requise : corriger la formule dans le document le plus récent, ou documenter et résoudre explicitement la divergence, avant toute réutilisation. Aucune implication physique nouvelle identifiée — confirmé qu'il ne s'agit pas d'un mécanisme manquant lié à la densité (fausse piste explorée puis écartée, Fil 10). Entrée : « Pdl nuclear stability skeleton.tex » (D22, formule correcte), « Nuclear Stability PDL.tex » (D40, formule à corriger).
 
 ### Ouverts — MEDIUM priority
 - **OP-D63-2** : dérivation formelle de w(n) = R_sea/(R_sea+r(n)) depuis C1–C4 en mode transitoire. Entrée : D61, D63.
@@ -463,7 +519,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Falsifiable Predictions (unchanged Session 64 — see GW250114 as new reference target, not yet a formal prediction)
+## Falsifiable Predictions (unchanged Sessions 64–65 — see GW250114 as new reference target, not yet a formal prediction)
 
 | ID | Observable | PDL value | PDG / obs. | Tension |
 |----|-----------|-----------|------------|---------|
@@ -487,7 +543,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Dependency Map — Critical Path (updated Session 64)
+## Dependency Map — Critical Path (updated Session 65)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -502,11 +558,13 @@ LAYER 8   Cosmologie                                  [✓] D27, D35, D42
 LAYER 9   Stabilité nucléaire — COMPLET               [✓] D40, D47
 LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45 v2, D50
            Correspondance cheveux mous (Hawking-Perry-Strominger) [D64 v2, analogie structurale]
-           OP-D64-1 (comptage macroscopique N corps)    [OUVERT — Session 64 : verrou central = règle K₄↔K₄, déconfinement quark-gluon]
-           OP-D64-2 (pont espace-temps : c, μ*)          [PARTIEL — Session 64 : volet c clos (clarification c/ħ=traduction) ; volet μ* (47ppm) ouvert]
-           OP-D64-3 (métrique relationnelle manquante)   [OUVERT — Session 64 : signature 1+3 acquise (D33), échelle toujours ouverte]
+           OP-D64-1 (comptage macroscopique N corps)    [OUVERT — Session 65 : 21 tentatives documentées ; fusion K₄→graphe complet exclue (Φ_min) ; reformulé via OP-D65-1 (fonctionnelle multi-nucléon)]
+           OP-D64-2 (pont espace-temps : c, μ*)          [PARTIEL — volet c clos (Session 64) ; volet μ* (47ppm) ouvert]
+           OP-D64-3 (métrique relationnelle manquante)   [OUVERT — Session 65 : réseau multi-centres construit mais extensif (insuffisant) ; régime dilué de σ(N) découvert, coïncide avec Z_sat]
+           OP-D65-1 (fonctionnelle de sélection multi-nucléon S_nuclear) [NOUVEAU — Session 65, priorité absolue]
+           OP-D65-2 (incohérence corpus : formule Z_sat) [NOUVEAU — Session 65, correction non physique]
            D45 confronté à Fermi-LAT via GammaPBHPlotter/BlackHawk (réel, Session 63)
-           Cible de référence Session 65 : GW250114 (SNR=80, ringdown + loi de l'aire, Session 64)
+           Cible de référence : GW250114 (SNR=80, ringdown + loi de l'aire) — non encore confrontée aux résultats de Session 65
 LAYER 11  Tenseur de cohérence — COMPLET              [✓] D48, D49, D51, D52, D54
 LAYER 12  Λ_PDL — COMPLET                            [✓] D51, D52, D53
 LAYER 13  Vie/conscience                              [✓] DL01, DL02; [?] DL03
@@ -550,20 +608,23 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 65 :**
+**Priorités Session 66 :**
 
-1. **[HIGH — PRIORITÉ ABSOLUE]** Le verrou central : construire une règle de couplage K₄↔K₄ explicite. Ne pas l'attaquer isolément comme une dixième tentative — l'attaquer comme la clé commune à OP-D64-1, OP-D64-2/3, et la description de la matière déconfinée. Repartir des dix échecs déjà documentés (Session 64, Fil 2) pour éviter de les répéter. Cible numérique de référence : GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz, γ₂₂₀=221 Hz, f₂₂₁=249 Hz, γ₂₂₁=708 Hz — arXiv:2509.08054). Entrée : D08, D29, D33, D40, D56, D61, D64 v2.
-2. **[HIGH]** Explorer si le déconfinement quark-gluon peut être posé en langage PDL — quels blocs K₄ restent identifiables, quelle règle remplace T_pdl/κ une fois les nucléons dissous. Probablement un chantier à part, pas un patch. Entrée : D47, D63, et le constat d'absence de Session 64.
-3. **[HIGH]** OP-D63-1 : preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
-4. **[HIGH]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Entrée : D62, D63.
-5. **[MEDIUM]** Rédiger le document court sur la réduction des degrés de liberté du quintuplet (5→3) et son parallèle avec Kerr-Newman — observation de Session 63, non encore documentée.
-6. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini au sujet de la fenêtre spectrale 100–150 MeV et de la contrainte f_PBH~10⁻¹⁰. Entrée : D45 v2, arXiv:2606.10013.
-7. **[MEDIUM]** Mise à jour site web cedriclaubscher.ch avec D45 v2 et D64 v2.
-8. **[MEDIUM]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes. Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
-9. **[LOW]** Document court (registre DL/D19-D20) pour la chaîne énergétique électron→quark→proton→boson, et pour le fil Spinoza/Boltzmann (entropie comme direction émergente d'une conjonction combinatoire, pas d'une asymétrie posée) — discuté en profondeur Session 63-64, jamais rédigé, à séparer clairement du registre théorème.
-10. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
-11. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
-12. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction discret↔continu, actée et documentée ; archéologie complète du corpus sur la question de l'échelle (D08/D10a/D11/D48) ; dix tentatives de métrique relationnelle documentées ; cible GW250114 identifiée et ses données récupérées.
+1. **[HIGH — PRIORITÉ ABSOLUE]** OP-D65-1 : reformuler la fonctionnelle de sélection multi-nucléon $S_{\text{nuclear}}$ (configuration liée vs désintégration/dispersion, sans fusion des graphes K₄ sous-jacents — exclue par Φ_min, Session 65 Fil 9). Sous-question immédiate : le sort relationnel de la fraction $N-Z_{sat}$ de nucléons sans canal d'engagement direct, dans un régime de saturation simultanée partout, pas un seul proton de référence face à ses voisins (Session 65, Fil 8). Entrée : Combinatorial Proton Architecture (C8–C9, Φ_min), D40, D56, Closure-Density Dependence (Hubble Tension).
+2. **[HIGH — correction de corpus, non physique]** OP-D65-2 : corriger l'incohérence entre la formule de Z_sat de D22 (originale, correcte, ≈19,857) et celle de « Nuclear Stability PDL.tex » (récente, incohérente, =11) — décider laquelle conserver, documenter la divergence, mettre à jour le document si nécessaire.
+3. **[HIGH]** Reprendre la preuve directe de la forme de l'ansatz extensif×pairwise (Session 65, Fil 5) : combler ou borner rigoureusement le trou d'indépendance pour les paires de blocs partageant un bloc commun — actuellement seulement négligeable asymptotiquement (~4/N), pas résolu.
+4. **[MEDIUM]** Explorer si le déconfinement quark-gluon peut être posé en langage PDL, maintenant recentré sur OP-D65-1 plutôt qu'isolément — quels blocs K₄ restent identifiables, quelle règle remplace T_pdl/κ une fois les nucléons dissous. Entrée : D47, D63, et le constat d'absence de Session 64.
+5. **[MEDIUM]** OP-D63-1 : preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
+6. **[MEDIUM]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Entrée : D62, D63.
+7. **[MEDIUM]** Rédiger le document court sur la réduction des degrés de liberté du quintuplet (5→3) et son parallèle avec Kerr-Newman — observation de Session 63, non encore documentée.
+8. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini au sujet de la fenêtre spectrale 100–150 MeV et de la contrainte f_PBH~10⁻¹⁰. Entrée : D45 v2, arXiv:2606.10013.
+9. **[LOW]** Mise à jour site web cedriclaubscher.ch avec D45 v2 et D64 v2.
+10. **[LOW]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes. Entrée : DL01, DL02, Consolidation_DL_session_Spinoza_Lawvere.md.
+11. **[LOW]** Document court (registre DL/D19-D20) pour la chaîne énergétique électron→quark→proton→boson, et pour le fil Spinoza/Boltzmann — discuté en profondeur Session 63-64, jamais rédigé, à séparer clairement du registre théorème.
+12. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
+13. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
+14. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction discret↔continu, actée et documentée ; dix tentatives de métrique relationnelle documentées ; cible GW250114 identifiée.
+15. **[FAIT — Session 65]** Onze tentatives supplémentaires sur le verrou K₄↔K₄ documentées (total 21) ; fusion combinatoire K₄→graphe complet plus grand exclue rigoureusement (Φ_min) ; régime dilué de σ(N) découvert et relié à Z_sat par une troisième voie indépendante ; incohérence de corpus sur Z_sat identifiée (non corrigée — voir OP-D65-2) ; conjecture H-pair formulée puis honnêtement downgradée.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
@@ -581,6 +642,9 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 64]** Toute construction de distance ou métrique entre deux clôtures distinctes doit être vérifiée pour invariance sous relabeling (permutation des sommets internes) avant d'être prise au sérieux — cause systématique d'échec cette session (Hamming, (A)∧(B) global).
 - **[Session 64]** Une coïncidence numérique entre deux constructions combinatoires indépendantes (même valeur, chemins différents) doit être accompagnée d'une bijection ou d'un argument structurel explicite avant d'être retenue — sinon la rejeter par défaut, même si le nombre est séduisant (cas R_e=6 vs |Dic₃|/2 cette session, non tranché, à traiter comme non confirmé).
 - **[Session 64]** c et ħ ne doivent plus être recherchés comme des quantités internes dérivables de C1–C4 — toute future tentative dans ce sens doit être reconnue d'emblée comme une question mal posée, sauf nouvel argument explicite remettant en cause la clarification de Session 64.
+- **[Session 65]** Avant de réutiliser une formule numérique citée comme « établie en [document source] », vérifier qu'elle redérive effectivement la formule originale du document cité — pas seulement que les deux convergent vers une même valeur observée. Une citation d'accord n'est pas une vérification d'identité algébrique (cas Z_sat : 11 contre 19,86, deux formules distinctes dans deux documents, l'une prétendant à tort être en accord avec l'autre).
+- **[Session 65]** Avant de construire un modèle-jouet réutilisant un mécanisme combinatoire établi ailleurs dans le corpus (probabilité, exposant, facteur d'échelle), vérifier explicitement le domaine d'application exact de ce mécanisme dans sa preuve d'origine (temporel vs spatial ; un seul partenaire vs plusieurs ; régime dilué vs saturé) avant tout calcul — pas après. Deux fausses pistes évitées cette session par cette seule vérification préalable (mécanisme $(1/4)^N$ temporel non spatial, Fil 6 ; portée exacte de D42, Fil 5).
+- **[Session 65]** Toute construction testant si une structure plus grande ou plus dense est combinatoirement admissible (η=0) doit aussi être testée contre l'indicateur de minimalité Φ_min — l'admissibilité seule (cohérence triangulaire) ne suffit jamais à garantir la sélection par F(η,ρ,m) ; une structure peut être parfaitement cohérente et pourtant structurellement exclue (cas de la fusion K₄→K₈, Fil 9).
 
 **Nomenclature :**
 - D-series : documents solo PDL (D01–D64)
@@ -590,12 +654,12 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - N-series : notes conjointes (N01 = PDL–OFN)
 - DM : Global Mapping (version courante : v29, DOI : 10.5281/zenodo.20701571)
 
-**DOIs récents (Session 63, inchangés Session 64) :**
+**DOIs récents (Session 63, inchangés Sessions 64–65) :**
 - D45 v2 : 10.5281/zenodo.20866017 (remplace v1, 10.5281/zenodo.19810259)
 - D64 v2 : 10.5281/zenodo.20868328 (remplace v1, 10.5281/zenodo.20820472)
 - Source de vérité utilisée : fichier maître `10.5281zenodo.txt` du GitHub (laubscher-lab/PDL-framework).
 
-**Dépôts groupés (inchangés Session 64) :**
+**Dépôts groupés (inchangés Sessions 64–65) :**
 - D45 v2 : D45_pbh_threshold.tex (révisé) + D45_references.bib (+ entrées Carlini2025, Cholis2026) + PDF compilé
 - D64 v2 : D64_Soft_Hair_PDL.tex (révisé, Proposition 3 ajoutée) + D64_references.bib (+ entrées EHT2019, GRAVITY2022, LIGO2016) + PDF compilé
 
@@ -617,3 +681,9 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 64]** T∈Dic₃ (théorie des groupes, forcé) ; τ₃/Dic₃ = 6 = R_e (coïncidence non prouvée, à traiter comme non confirmée)
 - **[Session 64]** D33 : signature de Minkowski $\eta^{\mu\nu}$=diag(+1,−1,−1,−1) comme théorème, via $\mathcal H_{cycl}\otimes\mathcal H_{spin}$ (1 temps + 3 espace) — relié pour la première fois à OP-D64-2/3
 - **[Session 64]** GW250114 (arXiv:2509.08054, SNR=80) : M_f=62,7±1,0 M_☉, χ_f=0,68±0,01, f₂₂₀=247±6 Hz, γ₂₂₀=221⁺³⁹₋₃₂ Hz, f₂₂₁=249⁺⁸₋₉ Hz, γ₂₂₁=708⁺¹¹⁶₋₁₀₇ Hz — cible de référence pour la règle de couplage K₄↔K₄
+- **[Session 65]** Sandwich numérique pour la cible Bekenstein-Hawking (1 M_☉) : extensif naïf (N×S_surf(1 proton)) = 8,27×10⁵⁹ nats, sous-comptage de 17,1 ordres ; pairwise naïf (C(N,2)ln2) = 4,90×10¹¹³ nats, surcomptage de 36,7 ordres ; cible réelle = 1,049×10⁷⁷ nats
+- **[Session 65]** Conjecture H-pair (downgradée, non confirmée) : ln(f)_requis = 1,4844×10⁻³⁷ vs 8π ε_G^18 = 1,4854×10⁻³⁷ (écart 0,07%) — coïncidence numérique sans bijection connue, exposant 18 spécifique à la chaîne proton→noyau→gravité (D23 v2), pas réutilisable tel quel
+- **[Session 65]** Réseau multi-centres T_pdl+T_pp : extensivité exacte W(N)/N → 20T ≈ 505,207 quand N→∞ (vérifié analytiquement jusqu'à N=10⁵⁷)
+- **[Session 65]** Régime dilué : κ = 0,045529 (théorème D42) ; 1/κ = 21,964 ≈ Z_sat (D40/D22) — deux dérivations indépendantes convergentes ; pour N=10⁵⁷, Nκ≈5,6×10⁵⁵, soit 55 ordres de grandeur hors du régime dilué Nκ≪1 où σ(N)=1−(1−κ)^N est démontrée
+- **[Session 65]** Fusion K₄→K₈ (théorème de Harary, vérifié exhaustivement) : η=0 préservé à toute taille ; gain de densité relationnelle ×2,33 (K₈ vs 2×K₄), ×2,04 (cœurs n_u=24→48) — mais Φ_min=0 toujours (K₄ reste un sous-graphe admissible à moins de relations) → fusion structurellement exclue, indépendamment de la densité
+- **[Session 65]** Correction de corpus : Z_sat formule D22 (originale, correcte) = R_sea(n)/R_surf(p) = 9960/501,59 = 19,857 (écart 0,72% à 20) ; formule « Nuclear Stability PDL.tex » (récente, incohérente) = ⌊T/(T−Tpp)⌋+1 = 11 — les deux documents ne sont pas algébriquement cohérents malgré une citation d'accord
