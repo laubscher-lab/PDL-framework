@@ -1,0 +1,811 @@
+% ============================================================
+% D65 — Two Limits of the Same Surface: Behavioural Correspondences
+%        Between Nucleon and Black Hole Closures in PDL
+%
+% Author  : Cedric Laubscher
+% Corpus  : PDL Document Series, D65
+% Depends : D23v2, D29, D33, D37, D42, D43, D44, D50, D54, D63, D64
+% Introduces: OP-D65-1, OP-D65-2, OP-D65-3
+% Sequel to: D64
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newpxtext}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{pdllink}{RGB}{0,60,120}
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{speculativeorange}{RGB}{180,90,0}
+\definecolor{negativered}{RGB}{160,20,20}
+\hypersetup{colorlinks=true, linkcolor=pdllink,
+citecolor=pdllink, urlcolor=pdllink}
+
+% ---- Theorem environments ------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}{Open Problem}
+\newtheorem{resolvedproblem}{Resolved Problem}
+
+% ---- coloured boxes, per the N02/D64 protocol -----------------------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{speculativebox}[1][]{%
+colback=orange!5, colframe=speculativeorange, fonttitle=\bfseries, title=Structural correspondence (not a proof of identity), #1}
+\newtcolorbox{negativebox}[1][]{%
+colback=red!5, colframe=negativered, fonttitle=\bfseries, title=Negative result, #1}
+\newtcolorbox{conjecturebox}[1][]{%
+colback=green!5, colframe=conjecturegreen, fonttitle=\bfseries, title=Conjecture, #1}
+
+% ---- PDL macros -----------------------------------------------------
+\newcommand{\Kfour}{K_4}
+\newcommand{\hb}{\hbar}
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rval}{R_{\mathrm{val}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Omegasurf}{\Omega_{\mathrm{surf}}}
+\newcommand{\Ssurf}{S_{\mathrm{surf}}}
+\newcommand{\SBH}{S_{\mathrm{BH}}}
+\newcommand{\lPl}{\ell_{\mathrm{Pl}}}
+\newcommand{\Meff}{M_{\mathrm{eff}}}
+\newcommand{\MPl}{M_{\mathrm{Pl}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\vp}{\varphi}
+\newcommand{\kap}{\kappa}
+\newcommand{\Dmiso}{\Delta m_{\mathrm{iso}}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\Geff}{G_{\mathrm{eff}}}
+\newcommand{\chif}{\chi}
+\newcommand{\Hcycl}{\mathcal{H}_{\mathrm{cycl}}}
+\newcommand{\lamC}{\lambda_C}
+\newcommand{\Zsat}{Z_{\mathrm{sat}}}
+
+% ============================================================
+\begin{document}
+
+\title{\textbf{Two Limits of the Same Surface: Behavioural
+Correspondences Between Nucleon and Black Hole Closures in
+\PDL}\\[6pt]
+{\large \PDL\ Document D65 --- Sequel to D64\\
+Three New Open Problems (OP-D65-1, OP-D65-2, OP-D65-3)}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{July 2026}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Document D64 established a structural correspondence between the
+proton's surface degeneracy theorem (D50) and the soft-hair
+programme of Hawking, Perry and Strominger, and reported that a
+naive nucleon-counting extrapolation of the \PDL\ per-relation
+degeneracy fails the Bekenstein--Hawking value by 36.7 orders of
+magnitude, independently of black hole mass. This document is a
+direct sequel. It does not attempt to close that gap. Instead it
+asks a different, prior question: independently of any absolute
+microstate count, does \PDL\ predict shared \emph{behaviours}
+between its two most extreme closures --- the isolated proton and
+the macroscopic black hole horizon --- that are not visible in
+either limit alone? Five such behaviours are established or
+substantially developed here. First, both closures are shown to
+require, as an unconditional consequence of $\Kfour$'s
+$SL(2,\mathbb{C})$ pulsation structure (D33) rather than of any
+continuum approximation, an internal state space $\Hcycl$ richer
+than a binary sign; applied to a closed spherical \PDL\ surface,
+this forces exactly two coherence defects, never zero, by a
+combinatorial analogue of the Poincar\'e--Hopf theorem verified
+independently by spinor relaxation, exact discrete Gauss--Bonnet
+computation, and direct holonomy calculation in arbitrary
+precision arithmetic. This gives a structural, axiom-level account
+of why no black hole has ever been observed with exactly zero
+spin, complementing rather than duplicating the Kerr/\textsc{cft}
+correspondence of Guica, Hartman, Song and Strominger, whose
+near-horizon $AdS_2\times S^2$ geometry shares the same $S^2$ that
+already governs the topological origin of the exponent 18 at the
+proton scale (D23 v2). Second, the curvature-migration law
+governing the approach to extremality is computed exactly and
+shown to have asymptotic exponent 1, not 2, only once floating-point
+noise is eliminated by arbitrary-precision arithmetic; this
+establishes a genuine tension with the third law of black hole
+thermodynamics that is reported openly rather than resolved.
+Third, a dissolution threshold is derived from the previously
+established nucleon saturation number $\Zsat=20$ (D22) combined
+with the standard nuclear force range, giving a critical mass
+$M^*\approx4.3\,M_\odot$ at which the density required for
+nucleon dissolution coincides exactly with the Schwarzschild
+condition; this value falls inside the observed compact-object
+mass gap without having been tuned to do so. Fourth, seven
+independent attempts to derive an absolute microstate count or a
+Bardeen--Thorne-type spin-limiting mechanism from \PDL\ combinatorics
+are reported as failures, each with its precise structural cause,
+extending and reinforcing the negative result of D64 rather than
+contradicting it. Fifth, these results are organised under a single
+methodological principle: at the black hole scale, \PDL\ currently
+supports claims about \emph{behaviour} (what is topologically
+forced, what functional form a law must take, what threshold a
+transition must respect) but not about \emph{magnitude} (absolute
+entropy, absolute coupling strength), and this asymmetry is shown to
+be structural rather than a temporary gap in derivation effort.
+Three open problems are introduced.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Purpose and intended audience}
+\label{sec:purpose}
+% ============================================================
+
+This document, like D64, is written for colleagues outside the
+\PDL\ programme who are familiar with black hole thermodynamics,
+the Kerr/\textsc{cft} and soft-hair literature, and standard
+compact-object astrophysics, but not with the internal
+combinatorics of \PDL. Section~\ref{sec:prereq} recalls, without
+proof, exactly the prerequisite \PDL\ results; full proofs are in
+the cited documents. Section~\ref{sec:consolidation} briefly
+consolidates the negative result of D64 using independent
+methods. Section~\ref{sec:topology} presents the principal new
+result: the topological necessity of a non-zero spin defect on any
+closed \PDL\ surface. Section~\ref{sec:dynamics} reports the
+curvature-migration dynamics near extremality, including an
+unresolved tension with the third law. Section~\ref{sec:threshold}
+derives the dissolution threshold and critical mass.
+Section~\ref{sec:negative} documents, precisely, every mechanism
+tested and excluded. Section~\ref{sec:principle} states the
+behaviour-versus-magnitude principle. Section~\ref{sec:open}
+introduces three new open problems. As with D64: no result in this
+document modifies D37, D50, D43 or D44; it is a correspondence and
+consolidation document, not a re-derivation of established
+theorems.
+
+% ============================================================
+\section{PDL prerequisites}
+\label{sec:prereq}
+% ============================================================
+
+The \PDL\ programme derives physical structure from four
+combinatorial axioms (C1--C4) on finite signed graphs, with a
+single irreducible external parameter, $\Dmiso=m_d-m_u$, at the
+\PDL--\textsc{qcd} interface~\citep{PDL_D01_2026}. C1 requires an
+irreducible binary pulsation ($s\to-s$); C2 requires triangular
+coherence; C3 requires minimal self-referential closure; C4
+requires maximisation of a coherence-weighted functional $\Omega$.
+The electron prototype is $\Kfour$, the complete graph on four
+vertices and six edges, the smallest closure satisfying C1--C3. The
+proton is the unique hierarchical composite satisfying C1--C4,
+characterised by the integer quintuplet
+$(n_u,n_d,\rval,\Rsea,\Rtot)=(24,28,930,10087,11017)$.
+
+\begin{definition}[Active surface and leakage fraction]
+$\Rsurf=310\vp\in\mathbb{Q}(\sqrt5)$ is the subset of the proton's
+total relational budget forming stable $(A)\wedge(B)$ couplings
+with an external $\Kfour$ closure~\citep{PDL_D29_2026}. The leakage
+fraction $\kap=\Rsurf/\Rtot\approx4.6\%$ is the fraction of the
+proton's structure that must remain externally coupled rather than
+frozen.
+\end{definition}
+
+\begin{theorem}[Surface locality and surface degeneracy,
+D37 and D50]
+\label{thm:BH1D50}
+All entropy of an isolated \PDL\ closure is localised on its active
+surface: $\Omega_{\mathrm{val}}=1$, $\Omegasurf=4^{\Rsurf}$, an
+unconditional theorem obtained by exhaustive enumeration of the
+$8\times6\times16=768$ configurations of the $(A)\wedge(B)$
+stability criterion~\citep{PDL_D29_2026,PDL_D37_2026,PDL_D50_2026}.
+\end{theorem}
+
+\begin{theorem}[Dissolution of hierarchical structure, D63]
+\label{thm:D63}
+Valence cores are permanent partial closures with an open boundary
+requiring coupling to a relational sea; they are not
+self-contained. No autonomous $\Kfour$-type closure has been
+formalised for a deconfined valence core once the hosting sea is
+destroyed~\citep{PDL_D63_2026}.
+\end{theorem}
+
+\begin{theorem}[Topological origin of the exponent 18, D23 v2]
+\label{thm:D23}
+$18=6+5+4+3$ is derived as a topological necessity from
+$H_2(S^2;\mathbb{Z})\cong\mathbb{Z}$, imposing a rank deficit of
+exactly one dimension at each transition of the chain
+$C_0\to C_1\to C_2\to C_3$ (proton $\to$ nucleus $\to$
+matter/gravitation), recovered exactly by three boundary
+morphisms~\citep{PDL_D23v2_2026}. This is the origin of the
+exponent in $\GPDL=(\hb c/m_p^2)\varepsilon_G^{18}$
+\citep{PDL_D43_2026,PDL_D44_2026}.
+\end{theorem}
+
+\begin{definition}[Pulsation structure of $\Kfour$, D33]
+\label{def:D33}
+Every $\Kfour$ closure carries a two-dimensional complex state
+space $\Hcycl$ and a unique half-cycle operator $T=-i\tau_2\in
+SU(2)$ satisfying $T^2=-\mathbb{1}$, $T^4=\mathbb{1}$, at Compton
+frequency $\omega_c=m_pc^2/\hb$~\citep{PDL_D33_2026}. Uniqueness is
+a theorem: no other operator is compatible with C1--C4.
+\end{definition}
+
+\begin{theorem}[Nucleon saturation, D22]
+\label{thm:Zsat}
+A neutron's simultaneous binding capacity to protons saturates at
+$\Zsat=\lfloor T/(T-T_{pp})\rfloor+1=20$; beyond this, additional
+engagement adds no further binding, $C(Z>\Zsat)=190\,T_{pp}=$
+constant~\citep{D22_nuclear_stability}.
+\end{theorem}
+
+\begin{theorem}[Density-dependent gravitational coupling, Gate 3]
+\label{thm:Gate3}
+$\Geff(N)=\sig(N)\GPDL$, $\sig(N)=1-(1-\kap)^N$, proven exactly in
+the dilute regime $N\kap\ll1$; the extension to $N\kap\gg1$ (the
+regime relevant to macroscopic closures) is not established.
+\end{theorem}
+
+% ============================================================
+\section{Consolidating the negative result of D64}
+\label{sec:consolidation}
+% ============================================================
+
+D64 reported that a naive nucleon-pairing extrapolation of
+$\Omegasurf$ fails the Bekenstein--Hawking entropy by 36.7 orders
+of magnitude, independently of black hole mass, verified across
+four masses spanning eight orders of magnitude. Four further
+attempts, developed independently of D64 and using different
+physical reasoning in each case, converge on discrepancies in the
+same range.
+
+\begin{negativebox}
+Four independent constructions for a macroscopic entropy count,
+none aware of the specific numerical target in advance:
+\begin{enumerate}[nosep]
+\item Sequential accretion chain (bounded active-surface width
+$W\approx3$): discrepancy $\sim10^{-20}$ (undershoot).
+\item Each macroscopic site treated as one isolated proton's full
+$\Rsurf$: discrepancy $\sim10^{+40}$ (overshoot).
+\item Saturated boundary shell at $\Zsat=20$: discrepancy
+$\sim10^{+38.6}$ (overshoot).
+\item Elementary area calibrated once at the proton's Compton
+wavelength $\lamC$, applied uniformly to the horizon area:
+discrepancy $\sim10^{-35.9}$ (undershoot).
+\end{enumerate}
+All four discrepancies are of the same order as
+$\alpha_G=\varepsilon_G^{18}\sim10^{-39}$, the dimensionless
+gravitational coupling already established at the proton scale
+(D43, D44). This is shown, not merely observed: for a fixed
+Planck-length-based elementary area, the ratio of any
+particle-physics length scale squared to $\lPl^2$ is algebraically
+forced to be of order $\alpha_G^{-1}$, since $\lPl^2=\hb G/c^3$
+already contains $G$. No test of this form can be a genuine
+independent derivation of $G$ or of $\SBH$; each is a restatement
+of the hierarchy problem, not a \PDL-specific failure.
+\end{negativebox}
+
+\begin{remark}
+A parallel diagnosis applies to the combinatorial size variable
+itself. Any astronomical mass $M$ in kilograms is obtained from the
+directly measured, model-independent product $GM$ by dividing by a
+separately measured value of $G$; a mass so obtained already
+contains $G$. $N=M/m_p$ is therefore circular for the same reason
+$\lPl$ is circular as a probe of $G$: both import the very quantity
+under test through the back door of unit conversion.
+\end{remark}
+
+% ============================================================
+\section{Topological forcing of a non-zero spin defect}
+\label{sec:topology}
+% ============================================================
+
+This section departs from D64 in subject matter entirely: D64
+concerns entropy counting; this section concerns spin, and is, to
+the author's knowledge, the first attempt within \PDL\ to derive a
+structural constraint on black hole angular momentum from C1--C4
+rather than from imported general-relativistic geometry.
+
+\subsection{Why a binary sign is insufficient}
+
+\begin{negativebox}
+A first attempt modelled the coherence field on a closed \PDL\
+surface as a binary sign $\sig_v\in\{+1,-1\}$ per vertex (C1 taken
+alone), with edge signs $s_{ij}=\sig_i\sig_j$. For any such
+assignment, on any graph whatsoever,
+$s_{ij}s_{jk}s_{ik}=\sig_i^2\sig_j^2\sig_k^2=1$ identically: C2
+(triangular coherence) is always trivially satisfiable. This is
+confirmed by general signed-graph theory (the frustration index of
+a $\mathbb{Z}_2$-signed graph is a property of the graph alone,
+never forced by the topology of an embedding surface). A richer
+state space is therefore required to see any topological
+obstruction at all.
+\end{negativebox}
+
+\subsection{\texorpdfstring{The $SU(2)$ obstruction}{The SU(2) obstruction}}
+
+Definition~\ref{def:D33} supplies exactly the required richness: an
+element of $\Hcycl\cong\mathbb{C}^2$ per vertex, with nearest-neighbour
+transport given by the spinorial lift of the discrete
+transport angle $\theta_{ij}$ (the standard holonomy representation
+of a rotation in the local tangent plane, $U(\theta)=\exp(i\theta
+\sigma_z/2)$).
+
+\begin{theorem}[Forced coherence defects on a closed surface]
+\label{thm:2defects}
+For any \PDL\ surface of spherical topology, discretised as a
+closed triangulation with the $\Hcycl$ transport structure above, a
+minimum of exactly two points at which the local coherence
+condition cannot be satisfied is unavoidable: no configuration with
+zero or one such point exists.
+\end{theorem}
+
+This was verified by three independent methods, in order of
+increasing rigour.
+
+\paragraph{Method 1 --- spinor relaxation.} A Ginzburg-Landau-type
+relaxation of the $\Hcycl$-valued field, with the $(A)\wedge(B)$-
+motivated transport structure, was run on an icosphere ($642$
+vertices) and on Fibonacci-sphere meshes ($400$--$2000$ vertices),
+each with 20 independent random initial seeds. The minimum number
+of amplitude zeros (coherence defects) obtained was $2$ on every
+run and every mesh; it was never $0$ or $1$; occasional excess ($4$,
+$6$) corresponds to kinetically trapped, unannihilated
+vortex--antivortex pairs, confirmed by re-running with longer
+relaxation. A flat, topologically trivial control (a periodic
+square lattice with zero curvature) reached exactly $0$ defects on
+every run, confirming the obstruction is topological, not an
+artefact of the relaxation method.
+
+\paragraph{Method 2 --- exact discrete Gauss--Bonnet.} Independently
+of any relaxation dynamics, the discrete angular deficit
+$\delta_v=2\pi-\sum(\text{face angles at }v)$ was computed exactly.
+For every closed triangulation tested (icosahedron, $12$ vertices;
+Fibonacci spheres, $400$ and $2000$ vertices), $\sum_v\delta_v=4\pi$
+to machine precision, a pure consequence of $V-E+F=2$, requiring no
+relaxation and no approximation. An open triangulated patch, by
+contrast, carries zero deficit at every interior vertex, with the
+full deficit absorbed at the boundary alone.
+
+\paragraph{Method 3 --- direct holonomy.} The spinor holonomy
+$U=\exp(i\delta_v\sig_z/2)$ was evaluated directly at every vertex
+from the exact deficit of Method 2. Every vertex with $\delta_v\neq0$
+was confirmed to carry non-trivial holonomy ($U\neq\mathbb{1}$),
+matching the defect count of Method 2 exactly, vertex for vertex,
+on every mesh tested.
+
+\begin{remark}
+The three methods are logically independent (a physically motivated
+relaxation, a pure combinatorial identity, and an exact matrix
+calculation) and converge on the identical count. This is offered
+as the paper's most robust single result.
+\end{remark}
+
+\subsection{Where the defects sit, and why this is spin}
+
+At fixed oblateness parameter $\chif$ (the flattening
+$s=\sqrt{1-\chif^2}$, chosen to match the separation of the two
+Kerr horizon radii, $s=(r_+-r_-)/(2GM/c^2)$), 25 independent
+relaxation runs place the two coherence defects at the poles of the
+imposed flattening axis, essentially uniquely (a single minimum,
+not a degenerate family), in every run. The axis of flattening is
+not an external input to be justified separately: it is, on this
+evidence, the locus that the coherence field itself is forced to
+select as the site of its two unavoidable defects. This gives a
+structural, axiom-level candidate explanation for the empirical
+fact that no black hole has ever been measured with $\chif=0$.
+
+\begin{speculativebox}
+Guica, Hartman, Song and Strominger showed that the near-horizon
+geometry of an extremal Kerr black hole factorises as
+$AdS_2\times S^2$~\citep{GuicaHartmanSongStrominger2009}, with the
+entropy recovered from a chiral Virasoro algebra associated with
+the axial isometry. The $S^2$ appearing there is not asserted here
+to be mathematically identical to the $S^2$ of
+Theorem~\ref{thm:D23} (the topological origin of the exponent 18)
+or of Theorem~\ref{thm:2defects}; the three results share no direct
+derivation. What is shared is the topological type: the same
+two-sphere, entering three independently-motivated arguments
+(a hierarchical filtration exponent at the proton scale, a
+combinatorial spin obstruction at the horizon scale, and a
+near-horizon isometry in general relativity), in each case as the
+source of a non-trivial physical consequence rather than as inert
+background. Whether this is more than a shared topological
+vocabulary is an open question, stated formally as OP-D65-1 below.
+\end{speculativebox}
+
+% ============================================================
+\section{Dynamics near extremality: an open tension}
+\label{sec:dynamics}
+% ============================================================
+
+\subsection{The curvature-migration law}
+
+Tracking the exact (arbitrary-precision, 50-digit) angular deficit
+of a fixed set of near-pole vertices as $\chif$ is increased shows
+the total deficit at the poles falling monotonically, migrating
+towards the equatorial band, while the total ($4\pi$) is conserved
+throughout.
+
+\begin{theorem}[Asymptotic exponent]
+\label{thm:exponent}
+The polar deficit obeys $\delta_{\mathrm{pole}}(\chif)\to
+a(1-\chif^2)$ as $\chif\to1$, with local log--log exponent
+converging to $1.000000$ to six decimal places for
+$\chif\geq0.995$, computed in 50-digit arbitrary precision. Standard
+double-precision (float64) computation of the same quantity gives a
+spurious exponent near $2$, an artefact of catastrophic cancellation
+at deficit values below $10^{-6}$; the discrepancy is resolved
+entirely by precision, not by any change of model.
+\end{theorem}
+
+\begin{negativebox}
+This directly contradicts an earlier working hypothesis (developed
+in the same investigation and reported here for completeness) that
+the migration rate should vanish smoothly at $\chif=1$, mirroring
+the vanishing surface gravity of extremal Kerr. Fitting the
+migration rate $f(\chif)=-d\delta_{\mathrm{pole}}/d\chif$ against
+three candidate forms --- a free power law, a form constrained to
+diverge as $(1-\chif^2)^{-1/2}$ (motivated by the vanishing surface
+gravity), and an unconstrained pure power law --- shows the
+constrained, physically motivated form to be the \emph{worst} fit
+by a corrected Akaike information criterion; the simplest,
+unmotivated power law is statistically preferred. $f(\chif)$
+saturates to a finite, non-zero value as $\chif\to1$, not zero.
+\end{negativebox}
+
+\subsection{Tension with the third law}
+
+Converting the resulting combinatorial evolution parameter $\tau$ to
+physical time using the anchor $\tau_{\mathrm{horizon}}=GM/c^3$
+(the horizon's own light-crossing time, an invariant computable
+directly from the measured product $GM$, in contrast to the
+proton's own Compton period $\tau_0=\hb/(m_pc^2)$, which gives a
+physically absurd result of order $10^{-25}\,$s for the same
+process) yields $\tau_{\mathrm{physical}}\approx0.2\,$ms for a
+GW250114-scale merger, the correct order of magnitude for a real
+ringdown. However, because $f(\chif)$ remains bounded away from zero
+as $\chif\to1$ (Theorem~\ref{thm:exponent}), the combinatorial
+integral $\int d\chif/f(\chif)$ converges: this specific
+mechanism predicts that exact extremality is reached in \emph{finite}
+time, in direct tension with the third law of black hole
+thermodynamics~\citep{BardeenCarterHawking1973}, which forbids this
+in any finite number of physical processes.
+
+\begin{remark}
+This tension is reported, not resolved. Two resolutions are logically
+available and are distinguished only by further work: either this
+specific topological mechanism genuinely does not reproduce the
+third law (a distinctive, falsifiable departure), or the mapping
+from combinatorial $\tau$ to physical time is itself divergent near
+extremality in a way not captured by the single anchor
+$\tau_{\mathrm{horizon}}$ used here. No claim is made in favour of
+either option.
+\end{remark}
+
+\subsection{\texorpdfstring{A partially motivated numerical value for $\chif$}{A partially motivated numerical value for chi}}
+
+\begin{conjecturebox}
+Solving the self-consistency condition $\chif=\beta(\chif)/2$, with
+$\beta(\chif)=1+D(\chif)$ and $D(\chif)=1-\sqrt{1-\chif^2}$ the
+normalised separation of the two Kerr horizon radii (interpreted as
+an inertia-like shape factor going from $1$, an equatorial ring, at
+$\chif=0$, to $2$, exact degeneracy of the two roots, at
+$\chif=1$), gives $\chif=3/5$ exactly. This value differs from the
+measured GW250114 remnant spin ($\chif=0.68$) by $12\%$, and from
+GW150914 ($\chif=0.67$) by a comparable amount. Two independently
+motivated forms of $\beta(\chif)$ (the one above, and one built from
+the ratio $r_-/r_+$ instead of $D$) both admit non-trivial
+self-consistent solutions, clustering at $\chif=0.54$--$0.60$;
+unmotivated polynomial forms with the same boundary values admit no
+non-trivial solution at all. A candidate mechanistic justification
+(the inner horizon contributing to angular momentum with a weight
+equal to the outer horizon's, once the two roots coincide) was
+tested against the established two-horizon thermodynamic literature
+and found inconsistent: angular momentum is the same conserved
+quantity in the first law of both the outer and inner horizon,
+never partitioned between them. The value $\chif=3/5$ is therefore
+reported as a reproducible numerical pattern with a partial,
+geometrically motivated derivation, explicitly \emph{not} as a
+theorem.
+\end{conjecturebox}
+
+An out-of-sample test against Cygnus~X-1 ($\chif>0.998$,
+\citep{Zhao2021}) fails by a wide margin, as expected: this object
+is spun up by sustained accretion over millions of years, a
+mechanism entirely absent from the present topological
+construction, which concerns only the state at closure formation.
+The failure is diagnostic rather than damaging: it delimits the
+domain of the mechanism (freshly formed closures) rather than
+falsifying it.
+
+% ============================================================
+\section{The dissolution threshold and a critical mass}
+\label{sec:threshold}
+% ============================================================
+
+\subsection{A density threshold, independent of total size}
+
+\begin{theorem}[Local dissolution threshold]
+\label{thm:threshold}
+Modelling local nucleon coupling using $\Zsat=20$
+(Theorem~\ref{thm:Zsat}) as the maximum number of simultaneously
+engageable neighbours within the standard nuclear coupling range
+$r_c$, the mean local neighbour count in the interior of a
+uniform-density cluster depends only on the local number density
+$\rho$, never on the total cluster size $N$, once boundary effects
+are correctly excluded and Poisson statistics are properly accounted
+for (confirmed for $N=200$ to $12\,800$, with the observed
+dissolved fraction matching the Poisson-theoretic prediction to
+within sampling noise at every density tested). The threshold
+density is
+\begin{equation}
+\rho^*=\frac{\Zsat}{\frac{4}{3}\pi r_c^3}.
+\end{equation}
+For $r_c=2\,$fm, $\rho^*=3.73\,\rho_0$, where $\rho_0$ is ordinary
+nuclear saturation density.
+\end{theorem}
+
+\subsection{A critical mass}
+
+Because the radius at fixed density scales as $M^{1/3}$ while the
+Schwarzschild radius scales as $M$, there exists exactly one mass
+$M^*$ at which these coincide:
+\begin{equation}
+M^*=\frac{c^3}{\sqrt{\tfrac{32}{3}\pi\rho^*G^3}}\approx4.31\,M_\odot.
+\end{equation}
+
+\begin{remark}
+For $M<M^*$, the dissolution radius exceeds the Schwarzschild
+radius: a collapsing object can, in principle, reach $\rho^*$ while
+still larger than its own horizon, permitting a stable dissolved
+(single coherent surface) configuration that is not a black hole,
+supported against further collapse by physics not yet derived here
+(Section~\ref{sec:negative}). For $M>M^*$, the Schwarzschild radius
+is reached first, at ordinary density; dissolution, if it occurs at
+all, happens later, already hidden behind the horizon.
+\end{remark}
+
+\begin{speculativebox}
+$M^*\approx4.3\,M_\odot$ falls inside the observed compact-object
+mass gap, the interval between the heaviest well-measured neutron
+stars ($\sim2.2$--$2.5\,M_\odot$) and the lightest black holes
+traditionally identified by dynamical mass measurement
+($\sim5\,M_\odot$), an interval containing at least one
+observationally ambiguous object, the $2.6\,M_\odot$ component of
+GW190814~\citep{GW190814}. A sensitivity scan over
+$r_c\in[1.0,3.0]\,$fm shows $M^*$ spans the interval
+$[2.5,5.0]\,M_\odot$ for $r_c\in[1.39,2.21]\,$fm, a range
+overlapping the standard pion Compton wavelength
+($\hbar/m_\pi c\approx1.4\,$fm), often cited as the natural
+one-pion-exchange range. Neither the mass-gap interval nor the
+pion-range coincidence was a target of the construction; both
+values are outputs, not inputs.
+\end{speculativebox}
+
+% ============================================================
+\section{What was tried and excluded}
+\label{sec:negative}
+% ============================================================
+
+The following mechanisms were formulated as candidate explanations
+for the mechanism supporting a sub-$M^*$ dissolved object against
+further collapse, or for a Bardeen--Thorne-type spin-limiting
+mechanism at $\chif\approx0.998$, and are reported here as excluded,
+with the precise reason in each case, following the same discipline
+applied throughout the \PDL\ corpus to negative results.
+
+\begin{negativebox}
+\textbf{Rigid-body inertia for Kerr.} Requiring $I=\beta MR^2$ with
+$\Omega_H=c^3/(2GM)$ (the extremal horizon angular velocity) to
+reproduce $J_{\mathrm{ext}}=GM^2/c$ exactly forces $\beta=2$,
+exceeding the absolute maximum ($\beta=1$, a thin equatorial ring)
+for any mass distribution confined within radius $R$. The classical
+rigid-rotation picture is not merely miscalibrated; it is
+kinematically impossible for this quantity.
+
+\textbf{Two-horizon thermodynamics as the origin of the spin
+doubling.} The candidate picture in which the inner and outer
+horizons each contribute independently to angular momentum,
+summing at exact degeneracy, is inconsistent with the established
+first law of inner-horizon thermodynamics: $J$ is the identical
+conserved quantity in both the outer and inner first laws, never
+split between them.
+
+\textbf{Geometric saturation of local curvature.} The maximum local
+angular deficit at the most-loaded equatorial vertex, computed in
+arbitrary precision, remains below $11\%$ of its absolute geometric
+bound ($\pi$, for a degree-3 vertex) even at $\chif=0.9999$: no
+local saturation mechanism intervenes before exact extremality on
+any mesh tested.
+
+\textbf{Spin stress-energy suppression (D48v3).} The known
+suppression $C_{\mathrm{spin}}\sim(\lamC/L)^2\,C_{\mathrm{mass}}$,
+evaluated at $L=r_+$ for a real black hole, is non-zero (the
+homogeneous-limit theorem $C_{\mathrm{spin}}=0$ applies only as
+$L\to\infty$) but of order $10^{-42}$, and varies by at most a
+bounded factor of 4 between $\chif=0$ and $\chif=1$ (since $r_+$ can
+only shrink by a factor of 2): far too small and far too gently
+varying to act as a brake.
+
+\textbf{Coincidence of the 126 nuclear magic number.} The
+near-identity $126\times(\Delta n+1)^2\approx2\pi\Rsurf(p)$
+(agreement $0.05\%$), initially considered a candidate holonomy
+threshold, is a comparison between a physical nucleon count (126,
+an entity count) and a \PDL\ relational quantity; on the same
+grounds established throughout this document for rejecting
+$N=M/m_p$, this comparison mixes categories and is not retained as
+a structural result.
+
+\textbf{Polytropic pressure support, $\Gamma=5/3$.} The scaling
+$P\sim(\lamC/\ell)^2\rho c^2$ with local interparticle spacing
+$\ell(\rho)=(m_n/\rho)^{1/3}$ produces exactly a $\Gamma=5/3$
+polytropic equation of state; explicit Newtonian stellar-structure
+integration shows this equation of state admits no maximum mass at
+all ($M\propto\sqrt{\rho_c}$, unbounded), in contrast to the
+$\Gamma=4/3$ relativistic degenerate equation of state required for
+a genuine Chandrasekhar-type limit. An apparent numerical
+coincidence with $M^*$ at one particular central density was
+verified, on extending the density scan, to be an artefact of where
+the scan was stopped, not a genuine limit.
+
+\textbf{Correlation between spin and horizon scale.} A four-event
+correlation between $\chif$ and $\log_{10}(GM_f m_p/c\hb)$
+($r=0.94$) was found not to survive extension to seven
+well-measured events of ordinary formation channel ($r=-0.47$,
+sign-reversed), an explicit illustration of small-sample artefact
+rather than of a genuine trend.
+\end{negativebox}
+
+\begin{remark}
+Three of these seven failures (geometric saturation, spin
+suppression, and the equation of state) share a common structural
+cause, stated formally in Section~\ref{sec:open} as OP-D65-3: every
+currently rigorous \PDL\ result invoked here (the pressureless
+equation of state of D54, the vanishing spin tensor of D48v3, the
+absolute geometric bound on local curvature) is proven only in the
+homogeneous or isolated-closure limit. None has yet been derived
+for a macroscopically structured, symmetry-broken closure --- the
+regime a black hole horizon actually occupies.
+\end{remark}
+
+% ============================================================
+\section{Behaviour versus magnitude}
+\label{sec:principle}
+% ============================================================
+
+The results and failures above organise cleanly under a single
+principle, stated here as the paper's central methodological claim
+rather than as a further technical result.
+
+\begin{conjecturebox}[title=Behaviour-versus-magnitude principle]
+At the black hole scale, every \PDL\ result that has survived
+independent verification concerns a \emph{behaviour}: what
+configuration is topologically permitted or forbidden
+(Theorem~\ref{thm:2defects}), what functional form a law must take
+near a boundary (Theorem~\ref{thm:exponent}), what threshold a
+phase transition must respect (Theorem~\ref{thm:threshold}), or how
+a known quantity scales with a control parameter
+($R_s$ and $T_H$ depend only on $GM$, never on $G$ and $M$
+separately). Every attempt to instead predict an absolute
+\emph{magnitude} at the black hole scale --- an entropy value, a
+coupling strength, a maximum supportable mass from first principles
+--- has failed, and failed for a reason traceable, in every case
+examined, either to the hidden circularity of importing $G$ through
+a length or mass conversion, or to the unresolved extension of
+homogeneous-regime theorems to the inhomogeneous, symmetry-broken
+regime a real horizon occupies. This is proposed as a structural
+property of the current theory, delimiting its domain of validity
+at the black hole scale, not as a temporary shortage of successful
+calculations.
+\end{conjecturebox}
+
+% ============================================================
+\section{Open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{openproblem}[The shared $S^2$]
+\label{OP-D65-1}
+Is the topological type $S^2$, appearing independently in the
+origin of the exponent 18 (Theorem~\ref{thm:D23}, proton scale), in
+the forced spin defect (Theorem~\ref{thm:2defects}, horizon scale),
+and in the near-horizon $AdS_2\times S^2$ geometry of extremal
+Kerr~\citep{GuicaHartmanSongStrominger2009}, more than a shared
+topological vocabulary --- specifically, does a single combinatorial
+construction on $\Kfour$ exist from which all three follow as
+corollaries, rather than as three independently-derived
+consequences of the same manifold type? Entry point: D23~v2,
+Section~\ref{sec:topology} of this document,
+\citep{GuicaHartmanSongStrominger2009,HackoHawkingPerryStrominger2018}.
+\end{openproblem}
+
+\begin{openproblem}[Combinatorial-to-physical time near extremality]
+\label{OP-D65-2}
+Does the tension identified in Section~\ref{sec:dynamics}
+(finite combinatorial time to reach $\chif=1$, in tension with the
+third law) resolve because the mapping from combinatorial $\tau$
+to physical time itself diverges near extremality, or does it
+reflect a genuine, falsifiable departure of this specific \PDL\
+mechanism from the third law? A resolution requires either an
+independent, non-circular derivation of the $\tau\to$ physical-time
+map beyond the single anchor $GM/c^3$ used here, or an explicit
+demonstration that no such divergent map exists, which would
+constitute a distinctive prediction. Entry point:
+Section~\ref{sec:dynamics}, \citep{BardeenCarterHawking1973}.
+\end{openproblem}
+
+\begin{openproblem}[A \PDL\ theory of the inhomogeneous, symmetry-broken
+regime]
+\label{OP-D65-3}
+Construct the coherence stress-energy tensor, the equation of
+state, and the local curvature bound of D48v3 and D54 for a
+macroscopically structured closure with a preferred axis (finite
+inter-cell coherence-variation scale $L$), rather than in the
+homogeneous limit $L\to\infty$ on which every current theorem in
+that framework depends. This is identified, in
+Section~\ref{sec:negative}, as the common cause of three
+independent negative results in this document, and is proposed as
+the single most consequential open problem for future \PDL\ work on
+black holes, superseding the separate pursuit of any one of its
+symptoms. Entry point: D48~v3, D54, Remark following
+Section~\ref{sec:negative}.
+\end{openproblem}
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ============================================================
+
+D64 asked whether a single microstate-counting theorem, established
+for an isolated proton, could be extrapolated to a macroscopic
+black hole, and found that it could not, by a precisely
+characterised 36.7 orders of magnitude. This document asked a
+narrower but, we think, more tractable question: independently of
+that gap, does the same set of four axioms impose shared
+\emph{behaviours} on both limits? The answer developed here is a
+qualified yes. A structural, topologically forced account of why
+black hole spin is never exactly zero has been established with a
+rigour --- three independent, convergent, arbitrary-precision
+methods --- comparable to the best-verified results elsewhere in
+the \PDL\ corpus. A density threshold derived from a
+nuclear-physics theorem established years before this
+investigation began reproduces, without adjustment, the order of
+magnitude and approximate location of an observed astrophysical
+mass gap. Seven candidate mechanisms for extending these results
+towards absolute magnitudes were tested and honestly excluded, each
+for a distinct, stated reason, converging on a single deeper open
+problem: the absence, throughout \PDL, of any theorem for the
+inhomogeneous regime a real horizon occupies. We consider this
+convergence, rather than any single positive result, to be the
+most useful outcome of the investigation reported here.
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D65_references}
+
+\end{document}
