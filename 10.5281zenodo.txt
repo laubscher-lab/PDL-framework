@@ -143,7 +143,7 @@ https://doi.org/10.5281/zenodo.20701571
 Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 29)
 PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v29.pdf
 
-D23
+D23v2
 https://doi.org/10.5281/zenodo.19197268
 Topological Origin of the Exponent 18 in the PDL Gravitational Coupling: K_4, S^2, and the Periodic Table (version 2)
 PDL___Topological_Origin_of_the_Exponent_18_v2.pdf
@@ -409,3 +409,8 @@ D64
 https://doi.org/10.5281/zenodo.20868328 
 Soft Hair on PDL Closures: A Structural Correspondence Between Surface Microstate Counting and Black Hole Hair 
 D64_soft_hair_pdl_v2.pdf 
+
+D65 
+https://doi.org/10.5281/zenodo.21220251 
+Two Limits of the Same Surface: Behavioural Correspondences Between Nucleon and Black Hole Closures in PDL 
+D65_two_limits.pdf 
