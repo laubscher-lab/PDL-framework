@@ -1,0 +1,345 @@
+% ============================================================
+% D44 — OP-B Reopened: Two Filter-Product Constructions for the
+%        Hierarchical Factor k, and Why Neither Reproduces the
+%        Target Value
+% Projective Dynamic Logo (PDL) Framework
+% Author: Cédric Laubscher
+% Zenodo open-access, CC BY 4.0
+% Version 2 — supersedes v1, which incorrectly claimed OP-B resolved
+% LaTeX conventions: British English; no spurious line breaks;
+% prose as continuous paragraphs;
+% \bibliographystyle{unsrt} with natbib [numbers]
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{lmodern}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage[numbers]{natbib}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\newcommand{\Gsea}{\mathcal{G}_{\mathrm{sea}}}
+\newcommand{\Gval}{\mathcal{G}_{\mathrm{val}}}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds,calc}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+\geometry{top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue!70!black,
+citecolor=blue!60!black,
+urlcolor=blue!70!black,
+pdftitle={OP-B Reopened: Two Filter-Product Constructions for the Hierarchical Factor k},
+pdfauthor={Cédric Laubscher}}
+
+% ---- Colour palette ----
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{openproblemred}{RGB}{160,20,20}
+\definecolor{chaincolor}{RGB}{30,100,180}
+\definecolor{epscolor}{RGB}{160,60,0}
+\definecolor{resolvedgreen}{RGB}{0,130,70}
+\definecolor{negativered}{RGB}{160,20,20}
+\definecolor{darkgray}{RGB}{80,80,80}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Custom tcolorbox environments ----
+\tcbset{
+resolvedstyle/.style={
+colframe=resolvedgreen,colback=green!4,
+fonttitle=\bfseries\color{resolvedgreen},breakable,enhanced},
+keystep/.style={
+colframe=chaincolor,colback=chaincolor!5,
+fonttitle=\bfseries\color{chaincolor},breakable,enhanced},
+epsstyle/.style={
+colframe=epscolor,colback=epscolor!5,
+fonttitle=\bfseries\color{epscolor},breakable,enhanced},
+openproblemstyle/.style={
+colframe=openproblemred,colback=red!3,
+fonttitle=\bfseries\color{openproblemred},breakable,enhanced},
+negativestyle/.style={
+colframe=negativered,colback=red!5,
+fonttitle=\bfseries\color{negativered},breakable,enhanced}}
+
+\newenvironment{resolvedproblem}[1][]{%
+\begin{tcolorbox}[resolvedstyle,title={Resolved: #1}]}{\end{tcolorbox}}
+\newenvironment{keystepbox}[1][]{%
+\begin{tcolorbox}[keystep,title={Key Step\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{epsbox}[1][]{%
+\begin{tcolorbox}[epsstyle,title={Key Result\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{openproblem}[1][]{%
+\begin{tcolorbox}[openproblemstyle,title={Open Problem\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{negativebox}[1][]{%
+\begin{tcolorbox}[negativestyle,title={Negative Result\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+
+% ---- Macros ----
+\newcommand{\PDL}{\textsc{PDL}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\vp}{\varphi}
+\newcommand{\kap}{\kappa}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\egeom}{\varepsilon_{\mathrm{geom}}}
+\newcommand{\eG}{\varepsilon_G}
+\newcommand{\eGB}{\varepsilon_G^B}
+\newcommand{\dmiso}{\Delta m_{\mathrm{iso}}}
+\newcommand{\nK}{n_K}
+\newcommand{\Deltanop}{\Delta n}
+\newcommand{\fii}{f_i}
+\newcommand{\kg}{k_{\mathrm{geom}}}
+\newcommand{\ks}{k_{\mathrm{surf}}}
+\newcommand{\kt}{k_{\mathrm{tot}}}
+\newcommand{\kfull}{k}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\begin{titlepage}
+\begin{center}
+\vspace*{1.2cm}
+{\LARGE\bfseries OP-B Reopened}\\[0.6em]
+{\Large Two Filter-Product Constructions for the Hierarchical Factor $k$,\\[0.3em]
+and Why Neither Reproduces the Target Value}\\[2em]
+{\large\textsc{PDL Framework} --- Document D44, Version~2}\\[1.5em]
+{\large Cédric Laubscher}\\[0.5em]
+{\normalsize Independent researcher, Switzerland}\\[0.3em]
+{\normalsize \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}\\[1.5em]
+{\normalsize \today}\\[2.5em]
+\begin{abstract}
+\noindent Version~1 of this document claimed to resolve open problem OP-B --- the derivation, from the four \PDL\ axioms C1--C4 alone, of the hierarchical filter factor $k=0.921716$ entering $\eG=\egeom\times k^{18}$ and hence $G_{\mathrm{PDL}}=(\hbar c/m_p^2)\,\eG^{18}$, with $k=0.921716$ established as the target value in D43~\citep{D43}. Independent re-verification, reported here in full, shows that neither of the two filter-product constructions given in version~1 in fact reproduces this target. The first construction (exponent~$1/3$) gives $k\approx0.155$ and was already flagged in v1 as discrepant; the second, offered as a correction (exponent~$1/18$, same three structural factors), was claimed to give $0.92172$ but in fact evaluates to $0.7328$, a genuine arithmetic error rather than a resolution. No integer or simple rational exponent applied to the three structural factors identified here --- $1-\egeom$, $\kap$, and $\rval/\Rtot$ --- reproduces $k=0.921716$: the exponent that would be required, found by direct solution, is $\approx68.6$, which corresponds to no combinatorial structure identified in this document or elsewhere in the corpus. OP-B is therefore reopened. This document preserves, with unchanged status, the three structural identifications that remain independently well-founded (the sea-sector coherence ratio, the surface engagement ratio $\kap$, and the valence scale-separation ratio, each resting on theorems established in D42 and D43 and unaffected by the present retraction), and reports precisely, in the style applied elsewhere in the \PDL\ corpus to negative results, why their combination as attempted here does not close OP-B. The numerical value of $G_{\mathrm{PDL}}$ itself is unaffected by this retraction: it has always been computed, throughout the corpus, from the independently established target $\eG\approx0.0075197$, never from the erroneous outputs reported here. What is withdrawn is solely the claim that this value has been derived from C1--C4 without a residual free parameter; the causal chain from axioms to $G$ therefore has one remaining open link, not zero.
+\end{abstract}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Context and statement of OP-B}
+\label{sec:context}
+% ============================================================
+
+The \PDL\ programme derives, from four axioms on finite signed graphs, the proton quintuplet $(24,28,930,10087,11017)$, the fine-structure constant $\alpha$, Newton's constant $G$, the proton-to-electron mass ratio $\mu^*$, the Hubble tension, and the major dynamical equations~\citep{D43}. The gravitational branch of the causal chain rests on the relation
+\[
+\eG \;=\; \egeom \times k^{18},
+\]
+where $\eG=(Gm_p^2/\hbar c)^{1/18}\approx0.0075197$ is the gravitational leakage parameter, $\egeom=329/10087$ is the geometric leakage parameter proved in D43~\citep{D43}, and $k$ was conjectured to encode the suppression of boundary leakage across 18 hierarchical coherence filters, first identified structurally (though not derived) in D06~\citep{D06}.
+
+D43~\citep{D43} established, concerning OP-B: (i) six candidate derivations were eliminated; (ii) $k^{18}\in\mathbb{Q}(\sqrt5)$ via the D28 formula~\citep{D28}, conditionally on that formula being exact; (iii) resolving OP-B is equivalent to resolving the 17~ppm residual of OP8. The target value against which any candidate derivation must be checked is
+\[
+k_{\exp} = 0.921716, \qquad\text{equivalently}\qquad k_{\exp}^{18} = 0.23054, \qquad \eG = \egeom\times k_{\exp}^{18}\approx0.007519.
+\]
+This value is external to the present document: it is fixed in D43 and is independently consistent with the value of $\eG$ used throughout the rest of the \PDL\ corpus, including in the derivation of $\Lambda_{\mathrm{PDL}}$ and the Hubble-tension resolution, neither of which is affected by anything in this document.
+
+Version~1 of the present document attempted a structural identification of the 18 filter factors from the proton architecture, in two successive constructions. Both are reported below, in full, together with the precise reason each fails to reproduce $k_{\exp}$.
+
+% ============================================================
+\section{The three structural factors: what remains independently established}
+\label{sec:filters}
+% ============================================================
+
+The exponent~18 itself is independently established: D23~\citep{D23} derives $18=6+5+4+3$ as a topological necessity from $H_2(S^2;\mathbb{Z})\cong\mathbb{Z}$, a rank-deficit argument entirely unrelated to the filter-product construction of this document and unaffected by anything below. D06~\citep{D06} separately proposed, at the level of physical narrative rather than proof, a decomposition of the same exponent into three groups of six filters, associated with three sectors of the proton architecture. The present document's contribution, preserved from v1, is the structural identification of what each group's filter value should be; what is withdrawn is the claim that combining these three values reproduces $k_{\exp}$.
+
+\begin{definition}[Sea-sector internal coherence ratio]
+\label{def:fI}
+The sea sector $\Gsea$ has $\Rsea=10087$ total relational edges and $E_{\mathrm{bord}}=329$ boundary edges (D43~\citep{D43}, Theorem~3.2). The internal coherence ratio is
+\[
+f_I \;=\; \frac{\Rsea-E_{\mathrm{bord}}}{\Rsea} \;=\; 1-\egeom \;=\; \frac{9758}{10087} \approx 0.967384.
+\]
+\end{definition}
+
+\begin{definition}[Surface engagement ratio]
+\label{def:fII}
+The active surface $\Rsurf=310\vp\approx501.592$ is the relational budget of the proton participating in electromagnetic and gravitational coupling (D05, D39, D42~\citep{D05,D39,D42}). The surface engagement ratio is
+\[
+f_{II} \;=\; \frac{\Rsurf}{\Rtot} \;=\; \frac{310\vp}{11017} \;=\; \kap \;\approx\; 0.045529 \;\in\;\mathbb{Q}(\sqrt5).
+\]
+This is an unconditional theorem, established in D42~\citep{D42} (the Indifference Lemma $H_3$, promoted from conditional hypothesis to unconditional theorem), entirely independent of the filter-product construction below.
+\end{definition}
+
+\begin{definition}[Valence scale-separation ratio]
+\label{def:fIII}
+The valence sector $\Gval$ has $\rval=930$ relational edges. The valence scale-separation ratio is
+\[
+f_{III} \;=\; \frac{\rval}{\Rtot} \;=\; \frac{930}{11017} \;\approx\; 0.084419 \;\in\;\mathbb{Q}.
+\]
+\end{definition}
+
+\begin{remark}
+Nothing in Definitions~\ref{def:fI}--\ref{def:fIII} is in question. $\egeom$, $\kap$ and $\rval/\Rtot$ are each independently established theorems of C1--C4, used correctly and without alteration throughout the rest of the \PDL\ corpus. What is in question, and is shown below to fail, is the specific claim that raising these three ratios to some power and combining them reproduces $k_{\exp}=0.921716$.
+\end{remark}
+
+% ============================================================
+\section{Two filter-product constructions, and why each fails}
+\label{sec:product}
+% ============================================================
+
+\subsection{First construction: exponent \texorpdfstring{$1/3$}{1/3}}
+
+Version~1 first proposed, on the grounds that the three structural factors act at three physically distinct hierarchical scales and should therefore combine as a simple geometric mean,
+\[
+k^{18} \;=\; \left[(1-\egeom)\cdot\kap\cdot\frac{\rval}{\Rtot}\right]^{6}, \qquad\text{hence}\qquad k \;=\; \left[(1-\egeom)\cdot\kap\cdot\frac{\rval}{\Rtot}\right]^{1/3}.
+\]
+
+\begin{negativebox}[Exponent $1/3$ does not reproduce the target]
+\label{neg:onethird}
+Numerically, $(1-\egeom)\cdot\kap\cdot(\rval/\Rtot)=0.967384\times0.045529\times0.084419\approx0.0037180$, so
+\[
+k \;\approx\; (0.0037180)^{1/3} \;\approx\; 0.15513.
+\]
+This is far from $k_{\exp}=0.921716$ (a factor of~$5.9$), a discrepancy already noted, but not resolved, in v1.
+\end{negativebox}
+
+\subsection{Second construction: exponent \texorpdfstring{$1/18$}{1/18}, same factors}
+
+Version~1 next proposed a different combinatorial reading of the same three ratios: rather than a single geometric mean, each ratio was assigned to a group of six identical filters (motivated by a sector-symmetry argument under axiom C3, Lemma~\ref{lem:symmetry} below), giving
+\[
+k^{18} \;=\; f_I^6\cdot f_{II}^6\cdot f_{III}^6 \;=\; \left[(1-\egeom)\cdot\kap\cdot\frac{\rval}{\Rtot}\right]^{6}, \qquad\text{hence}\qquad k \;=\; \left[(1-\egeom)\cdot\kap\cdot\frac{\rval}{\Rtot}\right]^{1/18}.
+\]
+
+\begin{lemma}[Sector symmetry under C3]
+\label{lem:symmetry}
+The three relational sectors of the proton --- sea, active surface, and valence --- each contribute exactly six filter factors to the product $k^{18}$ under C3 (minimal completeness), on the grounds that C3 forbids any non-trivial decomposition of the closure into independent sub-configurations, forcing the filter product to be invariant under permutation of the three sectors. This lemma is retained; what fails is the numerical claim built upon it, in Corollary~\ref{cor:knum2} below.
+\end{lemma}
+
+\begin{negativebox}[Exponent $1/18$ does not reproduce the target either --- and version~1's own arithmetic was incorrect]
+\label{neg:oneeighteenth}
+Version~1 claimed that this construction gives $k\approx0.92172$, matching $k_{\exp}$ to $0.4$~ppm. Independent re-verification, performed here to confirm this claim before the present retraction, shows this to be false as a matter of arithmetic, not merely of interpretation. The product itself is confirmed correct,
+\[
+(1-\egeom)\cdot\kap\cdot\frac{\rval}{\Rtot} \;=\; 0.967384\times0.045529\times0.084419 \;\approx\; 3.718\times10^{-3},
+\]
+matching v1's own stated value to four significant figures. However,
+\[
+k \;=\; (3.718\times10^{-3})^{1/18} \;\approx\; 0.7328, \qquad\text{\emph{not}}\quad 0.92172.
+\]
+Independently, evaluating $k_{\exp}$ raised to the 18th power gives $(0.921716)^{18}\approx0.23054$, which does \emph{not} equal $3.718\times10^{-3}$ either --- the two figures differ by a factor of $0.23054/0.003718\approx62.0$. No integer or simple rational exponent $n$ satisfies $(3.718\times10^{-3})^{1/n}=0.921716$: solving directly gives $n\approx68.6$, which corresponds to no structure --- combinatorial, geometric, or otherwise --- identified anywhere in this document or, to the author's knowledge, elsewhere in the \PDL\ corpus. Version~1's reported ``0.4~ppm'' agreement in fact compared the target value to itself, not to the output of this construction.
+\end{negativebox}
+
+\begin{corollary}[Both constructions fail; OP-B is reopened]
+\label{cor:knum2}
+Neither the exponent-$1/3$ construction (Negative Result~\ref{neg:onethird}) nor the exponent-$1/18$ construction (Negative Result~\ref{neg:oneeighteenth}) reproduces $k_{\exp}=0.921716$ from the three structural factors of Section~\ref{sec:filters}. OP-B, as posed in D43, is not resolved by either construction offered in v1 of this document, and is reopened, precisely delimited as follows: \emph{either} the three structural factors identified here are individually correct but combine differently from either construction attempted (a different exponent, a different grouping, or additional factors not yet identified), \emph{or} one or more of the three factors themselves, while independently valid theorems in their own right (Definitions~\ref{def:fI}--\ref{def:fIII}), are not in fact the correct ingredients for a filter-product formula for $k$, which would need to be sought elsewhere.
+\end{corollary}
+
+\begin{remark}[On the D28 conjecture and OP8]
+The D28 formula~\citep{D28}, $\eGB=\kap C/(6+\kap)\cdot(1+2/\Rtot)$ with $C=(n_u^2-1)/n_u^2=575/576$, gives $\eGB\approx\eG$ to 17~ppm, independently of the constructions retracted here. This 17~ppm residual (OP8) is therefore \emph{not} resolved by the present document, contrary to what v1 claimed; OP8 and OP-B revert to their status prior to v1, namely open and plausibly related, as established in D43.
+\end{remark}
+
+% ============================================================
+\section{What is, and is not, affected elsewhere in the corpus}
+\label{sec:impact}
+% ============================================================
+
+\begin{negativebox}[Scope of the retraction]
+\emph{Affected:} every statement in the corpus asserting that OP-B is resolved, that $k=0.921716$ has been derived from C1--C4 without a free parameter, or that the causal chain C1--C4~$\to$~$\Kfour$~$\to$~quintuplet~$\to$~$\egeom$~$\to$~$\eG$~$\to$~$G$ is closed with no remaining open problem, must be revised to reflect that OP-B is open. This includes the corresponding entries of the Global Mapping document (multiple versions) and the closure theorem of v1 of the present document.
+
+\emph{Not affected:} the numerical value of $G_{\mathrm{PDL}}\approx6.674\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}$, computed throughout the corpus from the independently established target $\eG\approx0.0075197$, never from the constructions retracted here; the values of $\egeom$, $\kap$, and $\rval/\Rtot$ (Definitions~\ref{def:fI}--\ref{def:fIII}), each an unconditional theorem in its own right; the exponent~18 itself (D23); $\Lambda_{\mathrm{PDL}}$ and the Hubble-tension resolution, which depend on $\eG$'s numerical value, not on its derivation status.
+\end{negativebox}
+
+% ============================================================
+\section{Remaining open problems}
+\label{sec:remaining}
+% ============================================================
+
+\begin{openproblem}[OP-B --- reopened]
+Derive $k=0.921716$ (equivalently $k^{18}=0.23054$) from C1--C4 alone. Corollary~\ref{cor:knum2} shows that neither of the two constructions attempted in this document succeeds, and precisely delimits what a successful derivation would need to supply. Documents: D43~\citep{D43}, this document.
+\end{openproblem}
+
+\begin{openproblem}[OP8 --- The 17~ppm residual of the mass-ratio formula]
+Identification of the structural factor accounting for the residual between the D28 formula and the exact target value of $\eG$. Reverts to its status prior to v1 of this document. Documents: D28~\citep{D28}, D30~\citep{D30}, D43~\citep{D43}.
+\end{openproblem}
+
+\begin{openproblem}[OP2 --- Born rule Level~2]
+Derivation of the phase parameter $\alpha_\tau$ from C1--C4. Documents: D34~\citep{D34}. Unaffected by this document.
+\end{openproblem}
+
+\begin{openproblem}[OP4 --- Coherence stress tensor]
+Explicit construction of $C_{\mathrm{coh}}$ in the Einstein equation from the relational architecture. Documents: D35~\citep{D35}. Unaffected by this document.
+\end{openproblem}
+
+\begin{openproblem}[OP11 --- Global uniqueness of the proton quintuplet]
+Global proof that $(24,28,930,10087,11017)$ is the unique admissible quintuplet under C1--C4. Local uniqueness proved in D16b~\citep{D16b}. Unaffected by this document.
+\end{openproblem}
+
+\begin{openproblem}[OP12 / BH-3 --- Bekenstein--Hawking from axioms alone]
+Derive $S_{\mathrm{BH}}/k_B=4\pi(M_{\mathrm{eff}}/M_{\mathrm{Pl}})^2$ from C1--C4 without Schwarzschild geometry. Documents: D37~\citep{D37}, D38~\citep{D38}. Unaffected by this document.
+\end{openproblem}
+
+\begin{openproblem}[OP14 --- Nuclear filling rates from axioms]
+Analytic derivation of $r_{\mathrm{exc}}(Z)\in\{0,1,2,3\}$ from C1--C4. Documents: D22~\citep{D22}, D40~\citep{D40}. Unaffected by this document.
+\end{openproblem}
+
+% ============================================================
+\section{Epistemic status summary}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the results discussed in this document, corrected from v1. For the full corpus status, see D43~\citep{D43}, Table~1.}
+\label{tab:epistemic}
+\medskip
+\begin{tabular}{>{\raggedright}p{7.5cm} p{2.2cm} p{4.5cm}}
+\toprule
+Result & Status & Primary reference \\
+\midrule
+$\egeom=329/10087$ (proton) & \textcolor{proofblue}{\textbf{Theorem}} & D43~\citep{D43} \\[2pt]
+$\kap=310\vp/11017$ & \textcolor{proofblue}{\textbf{Theorem}} & D42~\citep{D42} \\[2pt]
+$\rval/\Rtot=930/11017$ & \textcolor{proofblue}{\textbf{Theorem}} & D16a~\citep{D16a} \\[2pt]
+Sector symmetry (Lemma~\ref{lem:symmetry}) & \textcolor{proofblue}{\textbf{Theorem}} & This document \\[2pt]
+Exponent-$1/3$ construction reproduces $k_{\exp}$ & \textcolor{negativered}{\textbf{Negative}} & Neg.\ Result~\ref{neg:onethird} \\[2pt]
+Exponent-$1/18$ construction reproduces $k_{\exp}$ & \textcolor{negativered}{\textbf{Negative}} & Neg.\ Result~\ref{neg:oneeighteenth} \\[2pt]
+OP-B & \textcolor{openproblemred}{\textbf{Open (reopened)}} & Corollary~\ref{cor:knum2} \\[2pt]
+OP8 & \textcolor{openproblemred}{\textbf{Open (reverted)}} & Remark following Cor.~\ref{cor:knum2} \\[2pt]
+Numerical value $\eG\approx0.0075197$, $G_{\mathrm{PDL}}$ & \textcolor{proofblue}{\textbf{Unaffected}} & D43~\citep{D43} \\[2pt]
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\appendix
+\section{Version history}
+\label{app:versions}
+% ============================================================
+
+\begin{description}[nosep]
+\item[Version~1] Claimed a complete derivation of $k$ from C1--C4 and closure of OP-B. \textbf{Retracted}, superseded by Version~2.
+\item[Version~2] Independent re-verification shows both filter-product constructions of v1 fail to reproduce the target value $k_{\exp}=0.921716$: the first (exponent $1/3$) was already flagged as discrepant in v1; the second (exponent $1/18$), presented in v1 as a correction, is shown here to rest on an arithmetic error (v1 reported $0.92172$ for a quantity that in fact evaluates to $0.7328$). OP-B and OP8 are reopened. The three structural factors $\egeom$, $\kap$, $\rval/\Rtot$, and the exponent~18 itself (D23), are unaffected and retained. The causal chain from C1--C4 to $G$ therefore has one remaining open link at the derivation of~$k$; the numerical value of $G_{\mathrm{PDL}}$ is unaffected, having always been computed from the independently established target value of $\eG$, never from the retracted constructions.
+\end{description}
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D44_references}
+% ============================================================
+
+\end{document}
