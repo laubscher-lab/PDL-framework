@@ -252,8 +252,8 @@ D43_causal_chain.pdf
 
 D44v2
 https://doi.org/10.5281/zenodo.21221113
-Closure of OP-B: Derivation of the Hierarchical Filter Factor k from the PDL Axioms
-D44___Closure_of_OP_B.pdf
+OP-B Reopened: Two Filter-Product Constructions for the Hierarchical Factor kk k, and Why Neither Reproduces the Target Value
+D44___OP_B_Reopened.pdf 
 
 D45
 https://doi.org/10.5281/zenodo.20866017 
