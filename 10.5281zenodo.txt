@@ -139,9 +139,9 @@ Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in
 Pdl_nuclear_stability_skeleton.pdf
 
 DM
-https://doi.org/10.5281/zenodo.20701571 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 29)
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v29.pdf
+https://doi.org/10.5281/zenodo.21228274 
+Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 30) 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v30.pdf 
 
 D23v2
 https://doi.org/10.5281/zenodo.19197268
