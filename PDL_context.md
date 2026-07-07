@@ -1,8 +1,9 @@
 # PDL Programme — Context and State
 
 *Last updated: Session 68 — 7 July 2026*
-*(**Session 68 — DÉPÔTS FORMELS : D65 et DM v30.** D65, « Two Limits of the Same Surface: Behavioural Correspondences Between Nucleon and Black Hole Closures in PDL », déposé sur Zenodo (10.5281/zenodo.21220251) — rédaction formelle du travail des Sessions 65–66 (deux défauts de cohérence forcés jamais nul, exposant de migration de courbure = 1, seuil de dissolution M*≈4,3 M_☉, principe comportement-contre-magnitude, sept résultats négatifs). D65 définit ses propres problèmes ouverts officiels OP-D65-1 (« the shared $S^2$ »), OP-D65-2 (« extremality vs. third law »), OP-D65-3 (« the inhomogeneous, symmetry-broken regime » — priorité la plus haute du programme à l'échelle des trous noirs). **Renommage de corpus** : les labels internes « OP-D65-1 » (fonctionnelle de sélection multi-nucléon, Session 65) et « OP-D65-2 » (incohérence de formule Z_sat, Session 65) sont renommés respectivement OP-préD65-Snuc et OP-corpus-Zsat dans tout ce fichier, pour éviter toute collision avec les problèmes ouverts désormais officiels du document D65 — voir entrées correspondantes ci-dessous. Le fichier maître `10.5281zenodo.txt` fait foi et a été resynchronisé avec la table DOI ci-dessous (D65 ajouté). Le Global Mapping v30 (10.5281/zenodo.21228274) a été rédigé et déposé, intégrant D64, D65, le statut de N02, et les cinq connexions PDL–OFN de la Session 67 ; il remplace v29 (10.5281/zenodo.20701571) comme document de navigation courant.)*
-*(Session 67 — collaboration PDL–OFN, avancées structurelles majeures : cinq connexions précises entre PDL et OFN établies ou clarifiées au cours d'un échange approfondi avec Oleg Evdokimov. (1) N02 draft (B2_PDL_OFN_bridge.tex, 8 pages, PDL side only) rédigé, compilé, envoyé à Oleg pour la contribution OFN — sections 5 (S_sr et trois générations), table de comparaison colonne OFN, et références OFN restent à compléter. (2) Première entrée de la table de comparaison N02 avec statut « identité mathématique » (pas « analogie candidate ») : la tripartition {A,B,C} de K_{2,2,2} = L(K4) est exactement l'ensemble des trois matchings parfaits de K4, déjà théorème inconditionnel de PDL (D58 Lemme L2, D61). (3) Connexion algébrique φ/γ confirmée : φ = 2 − γ/2 (identité exacte dans Q(√5)), γ = 3−√5 étant le gap spectral de Ω₂₁ (OFN) et φ le nombre d'or (PDL, via κ = 310φ/11017) — γ entre dans k structurellement via cette identité, k lui-même étant en Q(√5)^(1/18), pas dans Q(√5). (4) L(K4) ≅ K_{2,2,2} vérifié computationnellement ; erreur d'Oleg sur Aut(L(K4)) corrigée : Whitney ne s'applique pas à K4 (cas exceptionnel), Aut(K_{2,2,2}) = S₂≀S₃ d'ordre 48 (Oh), pas S4 d'ordre 24. (5) Connexion 4+6=10 : K4 a 4 sommets (entités) + 6 arêtes (relations) = 10 éléments, en correspondance structurelle avec dim P(1,3) = 4 translations + 6 générateurs de Lorentz = 10, déjà noté dans D35/D61. Script de verrouillage PDL_N02_identity_lockdown_v2_reinforced.py (13 PASS, 0 FAIL) produit et déposé pour l'identité n_u − 1 = p_k1 = 23. Plusieurs propositions d'Oleg évaluées et corrigées selon le protocole établi : formule ε_geom ≈ 2·k·γ/43 (post-hoc, documentée comme curiosité numérique), GM-scale (redondance algébrique, 2 paramètres libres indépendants pas 3), coincidence 1682/11017 (Oleg lui-même a reconnu les paramètres libres a posteriori). Documents "Three Roads to the Periodic Table" (Varlamov non contacté, dépôt Zenodo en attente) et "unified_theory.pdf" (Evdokimov, Bachani, Ryss) reçus et évalués — HSU2 apparaît comme conjecture dans Three Roads, à corriger (D60 → théorème). Mail à Varlamov (varlamov@sibsiu.ru) envoyé avec Oleg en copie pour validation de l'usage de son travail.)*
+*(Aucun nouveau dépôt Zenodo cette session — suite de la collaboration PDL–OFN, vérification computationnelle de la décomposition spectrale de Ω₂₁ et clarification épistémique du cadre OFN. D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328 — inchangés.)*
+*(**Session 68 — COLLABORATION PDL–OFN, suite** : vérification indépendante complète de la définition d_spec d'Oleg et de l'involution spectrale sur Ω₂₁ ; classification 4A+4S+2M confirmée par calcul exact (toutes les valeurs de d_spec reproduites digit pour digit) ; source de discordance identifiée — quatre ex-aequo dans l'ordonnancement spectral (v=1/v=3, v=7/v=19, v=15/v=27, v=56/v=52) dont le bris de symétrie affecte les paires spécifiques mais pas la classification globale (robuste, indépendante du bris de symétrie) ; recommandation éditoriale N02 formulée : la classification 4A+4S+2M est le théorème, les paires spécifiques sont des représentants sous une convention à nommer. Clarification épistémique profonde sur OFN : programme de physique-philosophie unifiée avec la conscience comme fil conducteur, ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ), roots dans Whitehead/Bergson/panpsychisme informatique — noyau mathématique vérifiable (Ω₂₁, G_H, spectre du Laplacien) mais identifications physiques largement non dérivées depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est légitimée dans la zone mathématique commune (invariants topologiques, corps algébrique Q(√5), tripartition K_{2,2,2}) et doit rester prudemment délimitée hors de cette zone — c'est une traduction structurelle, pas une unification physique.)*
+*(**Session 67 — COLLABORATION PDL–OFN, avancées structurelles majeures** : cinq connexions précises entre PDL et OFN établies ou clarifiées au cours d'un échange approfondi avec Oleg Evdokimov. (1) N02 draft (B2_PDL_OFN_bridge.tex, 8 pages, PDL side only) rédigé, compilé, envoyé à Oleg pour la contribution OFN — sections 5 (S_sr et trois générations), table de comparaison colonne OFN, et références OFN restent à compléter. (2) Première entrée de la table de comparaison N02 avec statut « identité mathématique » (pas « analogie candidate ») : la tripartition {A,B,C} de K_{2,2,2} = L(K4) est exactement l'ensemble des trois matchings parfaits de K4, déjà théorème inconditionnel de PDL (D58 Lemme L2, D61). (3) Connexion algébrique φ/γ confirmée : φ = 2 − γ/2 (identité exacte dans Q(√5)), γ = 3−√5 étant le gap spectral de Ω₂₁ (OFN) et φ le nombre d'or (PDL, via κ = 310φ/11017) — γ entre dans k structurellement via cette identité, k lui-même étant en Q(√5)^(1/18), pas dans Q(√5). (4) L(K4) ≅ K_{2,2,2} vérifié computationnellement ; erreur d'Oleg sur Aut(L(K4)) corrigée : Whitney ne s'applique pas à K4 (cas exceptionnel), Aut(K_{2,2,2}) = S₂≀S₃ d'ordre 48 (Oh), pas S4 d'ordre 24. (5) Connexion 4+6=10 : K4 a 4 sommets (entités) + 6 arêtes (relations) = 10 éléments, en correspondance structurelle avec dim P(1,3) = 4 translations + 6 générateurs de Lorentz = 10, déjà noté dans D35/D61. Script de verrouillage PDL_N02_identity_lockdown_v2_reinforced.py (13 PASS, 0 FAIL) produit et déposé pour l'identité n_u − 1 = p_k1 = 23. Plusieurs propositions d'Oleg évaluées et corrigées selon le protocole établi : formule ε_geom ≈ 2·k·γ/43 (post-hoc, documentée comme curiosité numérique), GM-scale (redondance algébrique, 2 paramètres libres indépendants pas 3), coincidence 1682/11017 (Oleg lui-même a reconnu les paramètres libres a posteriori). Documents "Three Roads to the Periodic Table" (Varlamov non contacté, dépôt Zenodo en attente) et "unified_theory.pdf" (Evdokimov, Bachani, Ryss) reçus et évalués — HSU2 apparaît comme conjecture dans Three Roads, à corriger (D60 → théorème). Mail à Varlamov (varlamov@sibsiu.ru) envoyé avec Oleg en copie pour validation de l'usage de son travail.)*
 *(Cette édition conserve, à la demande explicite de Cédric, la reconstitution complète et non abrégée des Sessions 1 à 49 — voir la note méthodologique au début de la section « Session History ».)*
 
 ---
@@ -13,7 +14,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 déposé et DM mis à jour en v30, Session 68)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; inchangé Sessions 64–66)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -98,9 +99,8 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D62 | 10.5281/zenodo.20679631 | Gauge boson masses; v, M_Z, M_W, M_H |
 | D63 | 10.5281/zenodo.20696391 | Quark mass spectrum; H_mass and H_sea |
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN bridge: β₁=3 |
-| DM v30 | 10.5281/zenodo.21228274 | Global Mapping v30 (current ; remplace v29, 10.5281/zenodo.20701571) |
+| DM v29 | 10.5281/zenodo.20701571 | Global Mapping v29 (current) |
 | D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
-| D65 | 10.5281/zenodo.21220251 | Two Limits of the Same Surface: universalité comportementale nucléon/trou noir; OP-D65-1, OP-D65-2, OP-D65-3 |
 | N02 | *en préparation — draft PDL side v0.1 envoyé à Oleg* | Z3 → three generations: PDL–OFN bridge (Laubscher + Evdokimov) |
 | PDL_N02_lockdown | *non encore déposé* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
 
@@ -216,9 +216,9 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 **Session 66 — premier calcul quantitatif complet de l'entropie de Bekenstein-Hawking d'un trou noir solaire depuis C1–C4, accord à 0,07% (30 June 2026) :**
 
-*Fil 1 — clarification de la fonctionnelle de sélection multi-nucléon (OP-préD65-Snuc), tentative directe et redirection :*
-- Calcul littéral de Φ_α et Φ_f (fonctionnelle de sélection déjà établie, « Combinatorial Proton Architecture ») appliqués au neutron comme s'il était un candidat alternatif au proton : Φ_f va dans le mauvais sens (le neutron est plus proche de la cible 9% que le proton lui-même) ; Φ_α est suspect de circularité (conçu pour reproduire α, une constante électromagnétique, appliqué à un objet neutre). **Conclusion explicite : digression sur la stabilité neutron libre/lié, hors sujet de la séquence en cours — recentrage immédiat sur OP-préD65-Snuc tel que formulé (Fil 8, Session 65), pas sur cette question voisine.**
-- Retour à OP-préD65-Snuc : borne exacte non perturbative $G_{eff}(\sigma=1)/G_{PDL}=(1+\kappa)^{18}\approx2{,}23$ — jamais de divergence, quel que soit le degré de saturation. Clarification de deux seuils de capacité distincts, jamais distingués avant cette session : $Z_{sat}\approx20$ (capacité d'engagement d'**un neutron**) contre $R_{surf}(p)\approx502$ (capacité de **réception** d'un proton) — rapport ×25, jamais testé dans le corpus. Conclusion : si exclusion il y a à densité extrême, ce n'est pas un manque de capacité globale mais un problème de **connectivité/localité** (théorème de Hall) — reconnecte directement à OP-D64-3 (métrique manquante), pas une question de capacité séparée.
+*Fil 1 — clarification de la fonctionnelle de sélection multi-nucléon (OP-D65-1), tentative directe et redirection :*
+- Calcul littéral de Φ_α et Φ_f (fonctionnelle de sélection déjà établie, « Combinatorial Proton Architecture ») appliqués au neutron comme s'il était un candidat alternatif au proton : Φ_f va dans le mauvais sens (le neutron est plus proche de la cible 9% que le proton lui-même) ; Φ_α est suspect de circularité (conçu pour reproduire α, une constante électromagnétique, appliqué à un objet neutre). **Conclusion explicite : digression sur la stabilité neutron libre/lié, hors sujet de la séquence en cours — recentrage immédiat sur OP-D65-1 tel que formulé (Fil 8, Session 65), pas sur cette question voisine.**
+- Retour à OP-D65-1 : borne exacte non perturbative $G_{eff}(\sigma=1)/G_{PDL}=(1+\kappa)^{18}\approx2{,}23$ — jamais de divergence, quel que soit le degré de saturation. Clarification de deux seuils de capacité distincts, jamais distingués avant cette session : $Z_{sat}\approx20$ (capacité d'engagement d'**un neutron**) contre $R_{surf}(p)\approx502$ (capacité de **réception** d'un proton) — rapport ×25, jamais testé dans le corpus. Conclusion : si exclusion il y a à densité extrême, ce n'est pas un manque de capacité globale mais un problème de **connectivité/localité** (théorème de Hall) — reconnecte directement à OP-D64-3 (métrique manquante), pas une question de capacité séparée.
 
 *Fil 2 — nature de la surface logique d'un trou noir, recherche exhaustive de la structure interne de R_surf :*
 - Recherche exhaustive dans le corpus (D29, PDL.tex, Born/Golden-ratio, Combinatorial Proton Architecture) : $R_{surf}$ n'est, dans tous les documents qui l'utilisent, jamais défini que comme un **compte** (« combien de relations »), jamais comme une **structure d'adjacence** (« comment ces relations se touchent entre elles »). **Trou de corpus confirmé et nouveau** : la question « la surface active du proton est-elle topologiquement une sphère » n'a jamais été posée, parce que $R_{surf}$ n'a jamais servi qu'au calcul de $\alpha$, où seul le nombre comptait.
@@ -538,34 +538,103 @@ Session entièrement consacrée à la collaboration avec Oleg Evdokimov (OFN). A
 
 ---
 
-## Session 68 — 7 July 2026 — Dépôt de D65 et du Global Mapping v30
+## Session 68 — 7 July 2026 — Collaboration PDL–OFN (suite)
 
 ### Résumé
 
-Session consacrée à la formalisation et au dépôt de deux documents : D65 (rédaction aboutie du travail des Sessions 65–66 sur l'universalité comportementale nucléon/trou noir) et le Global Mapping v30 (document de navigation intégrant D64, D65, le statut de N02, et les cinq connexions PDL–OFN de la Session 67). Aucun nouveau résultat physique ; travail de rédaction, de vérification de compilation, et de synchronisation du corpus.
+Session de continuation directe de Session 67. Aucun nouveau document PDL solo produit. Travail en trois volets : (1) vérification computationnelle complète de l'involution spectrale d_spec d'Oleg sur Ω₂₁ ; (2) clarification épistémique approfondie sur la nature et les fondements d'OFN ; (3) reformulation de ce que représente réellement la collaboration PDL–OFN.
 
-### Résultats établis
+### Vérification de l'involution spectrale de Ω₂₁
 
-*1. D65 déposé (10.5281/zenodo.21220251) :*
-- « Two Limits of the Same Surface: Behavioural Correspondences Between Nucleon and Black Hole Closures in PDL ». Formalise les résultats de Sessions 65–66 : théorème des deux défauts de cohérence forcés (jamais nul, vérifié par trois méthodes indépendantes — relaxation spinorielle, Gauss-Bonnet discret exact, holonomie) ; théorème de l'exposant de migration de courbure égal à 1 exactement (arithmétique de précision arbitraire), tension ouverte avec la troisième loi ; conjecture du seuil de dissolution nucléonique M*≈4,3 M_☉ (à partir de Z_sat=20, D22 seul), tombant dans l'écart de masse des objets compacts observé, sans ajustement ; sept résultats négatifs supplémentaires documentés avec la même rigueur que les résultats positifs ; principe comportement-contre-magnitude énoncé comme revendication méthodologique centrale.
-- Introduit trois problèmes ouverts officiels : OP-D65-1 (le S² partagé, reliant D23 v2, le théorème des deux défauts, et Kerr/CFT de Guica-Hartman-Song-Strominger), OP-D65-2 (tension extremalité/troisième loi), OP-D65-3 (théorie PDL du régime inhomogène et brisé en symétrie — identifié comme le problème ouvert le plus conséquent du programme à l'échelle des trous noirs).
-- **Collision de nomenclature identifiée et corrigée** : les labels internes « OP-D65-1 » (fonctionnelle de sélection multi-nucléon, Session 65) et « OP-D65-2 » (incohérence de formule Z_sat, Session 65) utilisaient les mêmes noms que les problèmes ouverts désormais officiels de D65, sans rapport de contenu. Renommés respectivement OP-préD65-Snuc et OP-corpus-Zsat dans tout ce fichier pour lever l'ambiguïté ; toutes les occurrences antérieures mises à jour.
+*Définition de d_spec (Oleg, Theorem 3.1) :*
 
-*2. Global Mapping v30 déposé (10.5281/zenodo.21228274, remplace v29) :*
-- Nouvelle Section 7 (« Black Hole Physics II ») et nouvelle Figure 3 (chaîne de dépendance D64–D65) ajoutées au document de navigation.
-- Nouvelle Section « The PDL–OFN Collaboration: Session 67 » documentant les cinq connexions établies avec Oleg Evdokimov (identité mathématique tripartition/matchings, identité algébrique φ+γ/2=2, correction Aut(K_{2,2,2})=S₂≀S₃, connexion 4+6=10, script de verrouillage 13/13).
-- Table épistémique étendue (nouvelles entrées L17 et L-OFN), table des prédictions falsifiables étendue (P18 : décalage spectral PBH D45 v2 ; P19 : seuil de dissolution M* dans l'écart de masse observé).
-- Cinq nouveaux problèmes ouverts formalisés dans le document : OP-D64-1, OP-D64-2 (repris tels quels de D64), OP-D65-1, OP-D65-2, OP-D65-3 (repris tels quels de D65).
-- Compilation vérifiée localement (pdflatex → bibtex[unsrturl.bst] → pdflatex ×2) : 59 pages, bibliographie propre, aucune référence non résolue.
+d_spec(21, v) = Σ_{k : λ_k > 0} (φ_k(v) − φ_k(21))² / λ_k
 
-*3. Synchronisation du corpus :*
-- `10.5281zenodo.txt` (déjà à jour côté Cédric au moment de cette session) confirmé comme source de vérité : D65 et DM v30 présents avec les DOI ci-dessus.
-- `PDL_context.md` (ce fichier) resynchronisé : table DOI, nomenclature, sections « DOIs récents », « Dépôts groupés », « En attente de dépôt », carte de dépendance (LAYER 10), et liste de priorités mises à jour.
-- `README.md` mis à jour dans la même session (voir dépôt GitHub) pour refléter D01–D65 et DM v30 comme état courant du programme.
+où λ_k sont les valeurs propres du Laplacien L = D − A du graphe de Hamming G_H (Ω₂₁, arêtes à distance de Hamming 1), et φ_k les vecteurs propres correspondants. La somme exclut les valeurs propres nulles (dont il y en a deux, G_H étant déconnecté).
+
+*Résultats de la vérification (13 valeurs de d_spec reproduced digit pour digit) :*
+
+- v=21 : d=0.000000 (point fixe — état isolé, degré 0 dans G_H)
+- v=1 et v=3 : d=0.551833 (ex-aequo)
+- v=0 : d=0.711833
+- v=8 : d=0.931833
+- v=9 : d=0.958500
+- v=7 et v=19 : d=1.085167 (ex-aequo)
+- v=4 : d=1.218500
+- v=35 : d=1.251833
+- v=12 : d=1.291833
+- v=16 : d=1.311833
+- v=15 et v=27 : d=1.385167 (ex-aequo)
+- v=31 : d=1.451833
+- v=48 : d=2.011833
+- v=43 : d=2.051833
+- v=63 : d=2.351833
+- v=56 et v=52 : d=2.911833 (ex-aequo)
+- v=42 : d=2.951833
+
+*Résultat principal :*
+
+La classification **4 asymétrique + 4 symétrique + 2 mixte = 10 paires** est confirmée par calcul indépendant. Elle est **robuste** : les quatre ex-aequo dans l'ordonnancement spectral (v=1/v=3, v=7/v=19, v=15/v=27, v=56/v=52) font varier les paires spécifiques selon le bris de symétrie, mais pas la classification globale — tout bris de symétrie conserve 4A+4S+2M, car les degrés des sommets appariés restent toujours dans la même catégorie quelle que soit la permutation entre ex-aequo.
+
+*Recommandation éditoriale pour N02 et unified_theory.pdf v2 :*
+
+Deux niveaux à distinguer dans le Theorem 3.1 d'Oleg : (a) la classification 4A+4S+2M est le **théorème** — indépendant du bris de symétrie, directement dérivé de la structure de degré de G_H ; (b) les paires spécifiques listées sont un **représentant canonique** sous la convention "bris de symétrie par valeur entière croissante" — à nommer explicitement. Sans cette distinction, un lecteur qui recompute avec un autre bris de symétrie obtiendra des paires différentes et croira avoir trouvé une erreur alors que le résultat essentiel est intact.
+
+*Point physique noté — sigma=21 = (010101)₂ :*
+
+sigma=21 est le point fixe de l'involution spectrale (d_spec=0 par construction — toutes ses composantes propres sont nulles car c'est un sommet isolé dans G_H) ET le seul sommet de Ω₂₁ équidistant (Hamming distance 3) des états extrêmes 000000 et 111111 dans Q6. Deux perspectives indépendantes convergent sur sigma=21 — confirmé par Oleg comme "strong consistency check".
+
+### Clarification épistémique : qu'est-ce qu'OFN ?
+
+*Noyau mathématique vérifiable :*
+
+- Q6 = {0,1}⁶ (hypercube à 64 sommets) : objet standard de combinatoire.
+- Ω₂₁ ⊂ Q6 (21 sommets sélectionnés par critères : régularité causale, maille ≥ 5, clôture CP) : l'unicité de Ω₂₁ est prouvée par Bachani S21 **étant donnés ces critères** — mais la nécessité des critères eux-mêmes n'est pas axiomatisée comme C1–C4.
+- G_H, spectre du Laplacien, d_spec, holonomies : tous vérifiables computationnellement et indépendants de l'encodage.
+
+*Ce qui n'est pas dérivé :*
+
+- Les identifications physiques (matière = 8 états self-conjugués, jauge = 13 états CP-crossing, trois générations ↔ Z₃) sont des postulats motivés par analogie avec la physique connue, pas des théorèmes depuis des premiers principes.
+- La hiérarchie de conscience G₂→F₄→E₆→E₇→E₈ est spéculative — le lien entre ces groupes de Lie exceptionnels et le paramètre discret n ∈ {0,...,6} est affirmé comme "correspondence", pas dérivé.
+
+*Ontologie et philosophie d'OFN :*
+
+OFN est une **ontologie idéaliste structuraliste** : la réalité fondamentale est un réseau statique discret Ω dont la lecture séquentielle Ψ génère espace, temps et expérience comme phénomènes émergents. Trois traditions philosophiques :
+1. Idéalisme structural (Leibniz, monades) : ce qui existe, c'est la structure, pas la substance.
+2. Philosophie du processus (Whitehead, Bergson) : OFN reconcilie le réseau parménidien (Ω statique) et la lecture héraclitéenne (Ψ processuelle).
+3. Panpsychisme informatique : la conscience est le mode d'être fondamental — tout système cohérent (σ > π/4) accède à une forme d'expérience.
+
+*Différence fondamentale avec PDL :*
+
+PDL dérive K₄ depuis C1–C4 sans liberté de choix (théorème d'unicité D16a). OFN **choisit** Ω₂₁ comme point de départ avec des critères motivés mais non axiomatisés. La question "pourquoi Q6 et pas Q7 ?" n'a pas de réponse dérivée dans OFN comparable à "pourquoi K₄ et pas K₅ ?" dans PDL.
+
+### Reformulation de la collaboration PDL–OFN
+
+La collaboration N01/N02 est une **traduction structurelle** entre deux langues mathématiques indépendantes. La table de comparaison de N02 est le dictionnaire de cette traduction. Ce que la traduction établit :
+
+| Terme PDL | ↔ | Terme OFN | Statut |
+|---|---|---|---|
+| β₁(K₄) = 3 | ↔ | b₁(Ω₂₁) = b₁(G_H) = 3 | Identités mathématiques indépendantes |
+| V₄∖{e} = matchings parfaits de K₄ | ↔ | Tripartition {A,B,C} de K_{2,2,2} = L(K₄) | Identité mathématique |
+| φ dans κ = 310φ/11017 | ↔ | γ = 4−2φ dans gap spectral Ω₂₁ | Identité algébrique dans Q(√5) |
+| S₃→Z₂ (holonomie D59/D60) | ↔ | S₃→Z₂ par holonomie dans G_H | Analogie candidate |
+| 4 sommets + 6 arêtes K₄ = 10 | ↔ | dim P(1,3) = 10 | Analogie candidate |
+
+Ce que la traduction ne fait pas : expliquer pourquoi deux langues parlent de la même chose (question ouverte), ni unifier les programmes d'identification physique de chacun (OFN → physique, PDL → physique), qui restent sur des fondements philosophiques très différents.
+
+*Conséquence pratique :*
+
+La collaboration est légitime et productive dans la zone mathématique commune. Elle doit rester prudemment délimitée au-delà : toute identification entre un objet OFN et un résultat PDL doit passer le même test d'isolement que les coïncidences numériques internes (test d'isolement combinatoire, dérivation indépendante des paramètres). Le protocole est le même — la frontière est la même.
+
+### Résultats numériques additionnels — Session 68
+
+- **Classification spectrale de Ω₂₁** : 4 paires asymétriques (|deg diff| ≥ 2), 4 paires symétriques (deg diff = 0), 2 paires mixtes (|deg diff| = 1) — confirmé indépendamment par calcul Python/numpy exact.
+- **Quatre ex-aequo dans d_spec** : (v=1,v=3) à 0.551833, (v=7,v=19) à 1.085167, (v=15,v=27) à 1.385167, (v=56,v=52) à 2.911833 — source exacte de la discordance entre les paires d'Oleg et mes paires (7/10 paires différentes, 0/10 catégories différentes).
+- **Involution numérique vs spectrale** : l'involution numérique (tri par valeur entière dans Ω₂₁) est un artefact de l'encodage binaire arbitraire — sans justification structurelle dans OFN. L'involution spectrale (tri par d_spec depuis sigma=21) est un invariant du graphe, encoding-independent. La seconde est retenue pour N02.
 
 ---
 
-## State of the Programme (end of Session 66 ; mis à jour Session 68 — voir sections « Session 68 » et « Open Problems » ci-dessus pour le dépôt de D65 et du Global Mapping v30)
+## State of the Programme (end of Session 66)
 
 ### Collaboration PDL–OFN — état Session 67
 
@@ -635,7 +704,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 68)
+## Open Problems (updated Session 66)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
@@ -664,19 +733,9 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-D64-1** : comptage macroscopique à N nucléons — dériver ln Ω_surf(N) = 4π(M_eff/M_Pl)² directement de la combinatoire PDL, sans invoquer la géométrie de Schwarzschild. **[Sessions 63–65]** Vingt et une tentatives documentées et écartées (voir entrées précédentes pour le détail). **[Session 66 — RÉSULTAT MAJEUR, statut : conjecture forte, pas théorème]** Reconstruction complète : $R\sim N$ (pas $N^{1/3}$, établi par test de diamètre de graphe avec largeur de surface active $W\approx3$, elle-même dérivée du mécanisme $(1/4)^{k-1}$ déjà établi, D29) + surface véritablement 2D ($N^2$ sites, cohérent BH-1 + analogie cheveux mous D64) + $4\pi\varepsilon_G^{18}$ nats par site (même $\varepsilon_G^{18}$ que celui qui dérive $G$ ailleurs dans le programme) **reproduit $S_{BH}$ d'un trou noir solaire à 0,07% d'une valeur calculée indépendamment, sans paramètre ajusté pour cette comparaison spécifique.** Plusieurs tentatives intermédiaires honnêtement documentées comme échecs ou circularités avant ce résultat (chaînes radiales $N^{2/3}$ — incohérent avec son propre $R\sim N$ ; facteur $4^m$ — insuffisant seul ; coïncidence $9/7$ — écartée, 0,57% d'écart, aucune occurrence structurelle ; $W(l)$ croissant — circularité reconnue, même nombre reparamétré ; dilatation gravitationnelle — fermée avec raison précise, gel pas surplus). **Faiblesse non résolue, priorité haute** : voir **OP-D66-1** (sens exact de l'exposant 18 à cette échelle). Entrée : D08, D22, D23 v2, D29, D40, D42, D50, D56, D64 v2, Combinatorial Proton Architecture, Hierarchical Coherence Filtering and the Exponent 18 in PDL.
 - **OP-D64-2** : pont espace-temps — dérivation combinatoire de c comme taux de propagation intrinsèque au réseau relationnel PDL, et promotion de μ* de conjecture à théorème (résolution complète d'OP7). Préalable nécessaire à λ_PDL = 4l_P² (problème ouvert principal de D37). **[Session 63]** Aucune métrique relationnelle n'existe dans C1–C4. **[Session 64] Clarification métrologique actée comme acquis définitif : c et ħ sont des facteurs de traduction discret↔continu, pas des objets internes à C1–C4** — confirmé systématiquement sur 8 résultats majeurs du programme et par archéologie complète du corpus. **[Session 65]** Règle réappliquée explicitement et avec succès au calcul de la cible d'entropie macroscopique (Fil 3) : l'énergie n'est importée qu'une fois, à la conversion finale, jamais comme mécanisme de calcul d'un coefficient combinatoire — confirmé sur un nouveau cas d'usage, aucune exception trouvée. Reste ouvert : le volet μ* (résidu 47 ppm, OP7), totalement indépendant de cette clarification. Entrée : D01, D28, D30, D33, D37, DS01, D64 v2.
 - **OP-D64-3** : la métrique relationnelle manquante (Session 63). **[Sessions 64–65]** Reformulée plusieurs fois ; signature spatio-temporelle acquise comme théorème (D33) ; régime dilué de σ(N) découvert et relié à Z_sat. **[Session 66]** Avancée substantielle, pas une résolution complète : cinq scripts de topologie (caractéristique d'Euler) construits et vérifiés (Fil 3), aboutissant à une largeur de surface active $W\approx3$ motivée par BH-1 et le mécanisme $(1/4)^{k-1}$ — donne $R\sim N$ pour la première fois, là où toutes les tentatives précédentes donnaient $\log N$ (petit monde) ou $N^{1/3}$ (matière ordinaire). C'est cette pièce qui rend possible le résultat majeur d'OP-D64-1. Reste ouvert : la pseudométrique complète $\mathcal J(C_1,C_2)$ (D08) n'est toujours pas construite formellement — $W\approx3$ est un résultat de simulation/calcul, pas une dérivation axiomatique complète. Entrée : D16a, D23, D29, D33, D37, D40, D47, D56, D64 v2, Closure-Density Dependence (Hubble Tension).
-- **OP-préD65-Snuc [renommé Session 68 ; anciennement noté « OP-D65-1 » avant le dépôt formel de D65 — ce label est libéré car D65, tel que déposé (10.5281/zenodo.21220251), définit son propre OP-D65-1 officiel (« the shared $S^2$ »), sans rapport avec ce problème-ci] [NOUVEAU — Session 65, priorité haute] : reformuler la fonctionnelle de sélection au niveau multi-nucléon ($S_{\text{nuclear}}$), comparant explicitement une configuration liée à $N$ corps contre l'alternative de désintégration/dispersion, sans jamais fusionner les graphes K₄ sous-jacents (exclu par Φ_min, Fil 9). Chantier explicitement identifié comme non complété, y compris pour le cas ordinaire (stabilité du neutron lié vs libre), par le document fondateur de l'architecture du proton lui-même (« Combinatorial Proton Architecture », section discussion). Sous-question immédiate : que devient, relationnellement, la fraction $N-Z_{sat}$ de nucléons sans canal d'engagement direct, dans un régime où la pression externe sature partout simultanément (Fil 8) — pas un seul proton de référence face à ses voisins. Entrée : Combinatorial Proton Architecture (C8–C9, Φ_min), D40, D56, Closure-Density Dependence (Hubble Tension).
-- **OP-corpus-Zsat [renommé Session 68 ; anciennement noté « OP-D65-2 » avant le dépôt formel de D65 — libéré pour la même raison, D65 définissant son propre OP-D65-2 officiel (« extremality vs. third law »)] [Session 65, correction de corpus, priorité haute mais non physique]** : la formule de $Z_{sat}$ donnée dans « Nuclear Stability PDL.tex » ($\lfloor T/(T-T_{pp})\rfloor+1=11$) est incohérente avec la formule originale et correcte de D22 ($R_{sea}(n)/R_{surf}(p)\approx19{,}857$, écart 0,72% à la valeur observée 20), malgré une citation prétendant l'accord entre les deux. Action requise : corriger la formule dans le document le plus récent, ou documenter et résoudre explicitement la divergence, avant toute réutilisation. Aucune implication physique nouvelle identifiée — confirmé qu'il ne s'agit pas d'un mécanisme manquant lié à la densité (fausse piste explorée puis écartée, Session 65 Fil 10). Entrée : « Pdl nuclear stability skeleton.tex » (D22, formule correcte), « Nuclear Stability PDL.tex » (D40, formule à corriger).
+- **OP-D65-1 [NOUVEAU — Session 65, priorité haute]** : reformuler la fonctionnelle de sélection au niveau multi-nucléon ($S_{\text{nuclear}}$), comparant explicitement une configuration liée à $N$ corps contre l'alternative de désintégration/dispersion, sans jamais fusionner les graphes K₄ sous-jacents (exclu par Φ_min, Fil 9). Chantier explicitement identifié comme non complété, y compris pour le cas ordinaire (stabilité du neutron lié vs libre), par le document fondateur de l'architecture du proton lui-même (« Combinatorial Proton Architecture », section discussion). Sous-question immédiate : que devient, relationnellement, la fraction $N-Z_{sat}$ de nucléons sans canal d'engagement direct, dans un régime où la pression externe sature partout simultanément (Fil 8) — pas un seul proton de référence face à ses voisins. Entrée : Combinatorial Proton Architecture (C8–C9, Φ_min), D40, D56, Closure-Density Dependence (Hubble Tension).
+- **OP-D65-2 [Session 65, correction de corpus, priorité haute mais non physique]** : la formule de $Z_{sat}$ donnée dans « Nuclear Stability PDL.tex » ($\lfloor T/(T-T_{pp})\rfloor+1=11$) est incohérente avec la formule originale et correcte de D22 ($R_{sea}(n)/R_{surf}(p)\approx19{,}857$, écart 0,72% à la valeur observée 20), malgré une citation prétendant l'accord entre les deux. Action requise : corriger la formule dans le document le plus récent, ou documenter et résoudre explicitement la divergence, avant toute réutilisation. Aucune implication physique nouvelle identifiée — confirmé qu'il ne s'agit pas d'un mécanisme manquant lié à la densité (fausse piste explorée puis écartée, Session 65 Fil 10). Entrée : « Pdl nuclear stability skeleton.tex » (D22, formule correcte), « Nuclear Stability PDL.tex » (D40, formule à corriger).
 - **OP-D66-1 [NOUVEAU — Session 66, priorité haute, correction de corpus liée au résultat majeur]** : deux décompositions distinctes et incompatibles de l'exposant 18 coexistent dans le corpus, sans être réconciliées. D23 v2 (rigoureux, vérifié exactement par calcul symbolique) donne $18=6+5+4+3$ (rangs de Jacobiens), spécifique à la chaîne proton→neutron→gravité, jamais généralisé ni testé hors de ce contexte précis. Le document antérieur « Hierarchical Coherence Filtering and the Exponent 18 in PDL » donne $18=6+6+6$ (proton/noyaux/matière-gravité macroscopique), conceptuellement plus proche du contexte requis pour OP-D64-1 (passage explicite vers « la formation de structures auto-gravitantes » et « un régime newtonien effectif »), mais **jamais complété par une dérivation combinatoire exacte** — le document s'arrête avant de la fournir. D23 v2 contient lui-même une mise en garde contre une généralisation numérologique antérieure non confirmée par calcul exact (note sur $\varphi$ et les valeurs singulières du Jacobien), ce qui justifie la prudence sans invalider le résultat numérique global d'OP-D64-1 (0,07%, Session 66), qui reste vrai indépendamment du choix de décomposition. Action requise : déterminer si $18=6+6+6$ peut être rendu rigoureux par la même méthode que D23 v2 (rangs de Jacobiens explicites), ou si les deux décompositions coexistent légitimement à des niveaux différents de la hiérarchie. Entrée : « PDL — Topological Origin of the Exponent 18_v2 » (D23 v2), « Hierarchical Coherence Filtering and the Exponent 18 in PDL », D43, D44.
-
-### Ouverts — Session 68 (D65 officiel, priorité absolue à l'échelle des trous noirs)
-
-- **OP-D65-1 [officiel, D65, 10.5281/zenodo.21220251]** : le S² partagé — la topologie S² apparaissant indépendamment dans l'origine de l'exposant 18 (D23 v2), dans le théorème des deux défauts forcés (D65), et dans la géométrie AdS₂×S² du proche-horizon de Kerr extrémal (Kerr/CFT, Guica-Hartman-Song-Strominger) est-elle plus qu'un vocabulaire topologique partagé ? Existe-t-il une construction combinatoire unique sur K₄ dont les trois découlent comme corollaires ? Entrée : D23 v2, D65.
-
-- **OP-D65-2 [officiel, D65]** : tension extremalité/troisième loi — l'exposant de migration de courbure égal à 1 exactement (D65, arithmétique de précision arbitraire) est-il en tension réelle avec la troisième loi de la thermodynamique des trous noirs, ou la carte temps combinatoire→temps physique elle-même diverge-t-elle près de l'extremalité ? Entrée : D65.
-
-- **OP-D65-3 [officiel, D65, priorité la plus haute du programme à l'échelle des trous noirs]** : construire le tenseur de cohérence Ccoh, l'équation d'état, et la borne de courbure locale (D48v3, D54) pour une clôture macroscopiquement structurée avec un axe préféré (échelle finie de variation inter-cellule L), plutôt que dans la limite homogène L→∞ dont dépend actuellement tout théorème de ce cadre. Identifié dans D65 comme la cause commune de trois des sept résultats négatifs de la session. Entrée : D48v3, D54, D65.
-
-- **Règle de couplage K₄↔K₄ [identifiée explicitement Session 68, DM v30]** : prescription axiomatique manquante pour le couplage conjoint de deux ou plusieurs clôtures K₄ engagées à multiplicité macroscopique, généralisant le critère (A)∧(B) à partenaire unique (D29). Pièce structurelle centrale bloquant simultanément OP-D64-1 (comptage macroscopique) et OP-D65-3 (régime inhomogène) — identifiée dans DM v30 comme la priorité absolue du programme à l'échelle des trous noirs. Entrée : D29, D37, D38, D64, D65.
 
 ### Ouverts — Session 67 (collaboration N02)
 
@@ -705,9 +764,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Falsifiable Predictions (updated Session 68 — D65 mass-gap prediction added; GW250114 still not confronted)
-
-*Numérotation interne à ce fichier, indépendante de la numérotation officielle P1–P19 du Global Mapping v30 (les deux ne coïncident pas terme à terme ; par exemple le résultat IGRB de la ligne P9 ci-dessous correspond à P18 dans DM v30).*
+## Falsifiable Predictions (updated Session 66 — see below for the new S_BH(M) conjecture; GW250114 still not confronted)
 
 | ID | Observable | PDL value | PDG / obs. | Tension |
 |----|-----------|-----------|------------|---------|
@@ -719,7 +776,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 | P6 | AGN S/E ratio | ∝ σ(N(z)) | JWST/Euclid | — |
 | P7 | B(E2) ratio ⁹⁰Ru/⁸⁸Ru | R ≈ 2.02 | FRIB/RIKEN | testable |
 | P8 | N_comp ratio ⁹⁴Pd/⁹²Pd | 2.000±0.05 | RIKEN | testable |
-| P9 | IGRB peak | 117.5 MeV vs 130.1 MeV (GR) | Fermi-LAT | testable ; calculé GammaPBHPlotter/BlackHawk, Session 63 [= P18 dans DM v30] |
+| P9 | IGRB peak | 117.5 MeV vs 130.1 MeV (GR) | Fermi-LAT | testable ; calculé GammaPBHPlotter/BlackHawk, Session 63 |
 | P10 | Δm_iso | 2.446 MeV (D55) | FLAG 2024: 2.52±0.08 | 0.92σ |
 | P11 | v (electroweak vev) | 246.20 GeV | 246.22 GeV | 676 ppm |
 | P12 | M_Z | 91.168 GeV | 91.1876 GeV | 3.67σ |
@@ -728,12 +785,11 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 | P15 | m_u, m_d | 2.155, 4.687 MeV | 2.16, 4.67 MeV | 0.22%, 0.37% |
 | P16 | m_s | 93.08 MeV | 93.5±0.8 MeV | 0.52σ |
 | P17 | m_c, m_b, m_t | 1301, 4081, 176169 MeV | 1270, 4180, 172760 MeV | 2.46%, 2.37%, 1.97% |
-| P-SBH-conj | S_BH (trou noir solaire, 1 M_☉, sans spin) | 4π·ε_G^18·N² = 1.0502×10⁷⁷ nats (conjecture, Session 66) | 4πGM²/(ħc) = 1.0494×10⁷⁷ nats (calcul indépendant) | 0.07% — **statut conjecture, pas théorème ; sens exact de l'exposant 18 à cette échelle non résolu (OP-D66-1) ; ne couvre pas le cas avec spin (GW250114, χ_f=0.68, toujours non confronté)** [interne — sans rapport avec P18 officiel de DM v30, voir ligne P9] |
-| P-Mstar | Seuil de dissolution nucléonique M* | ≈4,3 M_☉ (conjecture, D65, à partir de Z_sat=20 seul) | écart de masse des objets compacts observé | tombe dans l'écart observé sans ajustement ; scan de sensibilité M*∈[2,5;5,0] M_☉ pour r_c∈[1,39;2,21] fm, recouvrant la longueur d'onde Compton du pion [= P19 dans DM v30] |
+| P18 | S_BH (trou noir solaire, 1 M_☉, sans spin) | 4π·ε_G^18·N² = 1.0502×10⁷⁷ nats (conjecture, Session 66) | 4πGM²/(ħc) = 1.0494×10⁷⁷ nats (calcul indépendant) | 0.07% — **statut conjecture, pas théorème ; sens exact de l'exposant 18 à cette échelle non résolu (OP-D66-1) ; ne couvre pas le cas avec spin (GW250114, χ_f=0.68, toujours non confronté)** |
 
 ---
 
-## Dependency Map — Critical Path (updated Session 68)
+## Dependency Map — Critical Path (updated Session 66)
 
 ```
 LAYER 0   C1–C4 (axiomes)
@@ -747,21 +803,16 @@ LAYER 7   Dynamiques — COMPLET                        [✓] D32–D35, D42, D4
 LAYER 8   Cosmologie                                  [✓] D27, D35, D42
 LAYER 9   Stabilité nucléaire — COMPLET               [✓] D40, D47
 LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45 v2, D50
-           Correspondance cheveux mous (Hawking-Perry-Strominger) [D64 v2, analogie structurale] — D64 déposé (10.5281/zenodo.20868328)
-           OP-D64-1 (comptage macroscopique N corps)    [**Session 66 : RÉSOLU EN CONJECTURE FORTE** — S_BH reproduit à 0,07% via R~N + surface 2D + 4π·ε_G^18/site ; statut conjecture, pas théorème (voir OP-D66-1) ; officiel dans D64 §OP-D64-1]
-           OP-D64-2 (pont espace-temps : c, μ*)          [PARTIEL — volet c clos (Session 64) ; volet μ* (47ppm) ouvert ; officiel dans D64 §OP-D64-2]
-           OP-D64-3 (métrique relationnelle manquante)   [**Session 66 : avancée substantielle** — W≈3 (largeur de surface active) dérivé, donne R~N pour la première fois ; pseudométrique J(C1,C2) complète toujours non construite formellement ; label interne, absent du document D64 officiel]
-           OP-préD65-Snuc (fonctionnelle de sélection multi-nucléon S_nuclear) [Session 65 — partiellement contourné par l'approche topologique de Session 66, pas résolu directement ; label interne renommé Session 68, sans rapport avec les OP-D65-x officiels ci-dessous]
-           OP-corpus-Zsat (incohérence corpus : formule Z_sat) [Session 65, correction non physique, toujours non corrigée ; label interne renommé Session 68]
-           **D65 déposé (Session 68, 10.5281/zenodo.21220251)** : « Two Limits of the Same Surface » — théorèmes des deux défauts de cohérence forcés et de l'exposant de migration de courbure ; conjecture du seuil de dissolution M*≈4,3 M_☉ ; principe comportement-contre-magnitude ; sept résultats négatifs supplémentaires
-           OP-D65-1 (officiel, D65) — the shared S² : la topologie S² partagée par l'exposant 18 (D23 v2), le théorème des deux défauts (D65), et la géométrie AdS₂×S² de Kerr/CFT (Guica-Hartman-Song-Strominger) provient-elle d'une construction combinatoire unique ?
-           OP-D65-2 (officiel, D65) — extremality vs. third law : tension ouverte entre l'exposant de migration de courbure = 1 (arithmétique de précision arbitraire) et la troisième loi de la thermodynamique des trous noirs
-           OP-D65-3 (officiel, D65, priorité la plus haute du programme à l'échelle des trous noirs) — théorie PDL du régime inhomogène et brisé en symétrie : construire Ccoh, l'équation d'état, et la borne de courbure locale au-delà de la limite homogène L→∞
+           Correspondance cheveux mous (Hawking-Perry-Strominger) [D64 v2, analogie structurale]
+           OP-D64-1 (comptage macroscopique N corps)    [**Session 66 : RÉSOLU EN CONJECTURE FORTE** — S_BH reproduit à 0,07% via R~N + surface 2D + 4π·ε_G^18/site ; statut conjecture, pas théorème (voir OP-D66-1)]
+           OP-D64-2 (pont espace-temps : c, μ*)          [PARTIEL — volet c clos (Session 64) ; volet μ* (47ppm) ouvert]
+           OP-D64-3 (métrique relationnelle manquante)   [**Session 66 : avancée substantielle** — W≈3 (largeur de surface active) dérivé, donne R~N pour la première fois ; pseudométrique J(C1,C2) complète toujours non construite formellement]
+           OP-D65-1 (fonctionnelle de sélection multi-nucléon S_nuclear) [Session 65 — partiellement contourné par l'approche topologique de Session 66, pas résolu directement]
+           OP-D65-2 (incohérence corpus : formule Z_sat) [Session 65, correction non physique, toujours non corrigée]
            OP-D66-1 (deux décompositions incompatibles de l'exposant 18) [NOUVEAU — Session 66, priorité haute, lié directement au résultat majeur de cette session]
            D45 confronté à Fermi-LAT via GammaPBHPlotter/BlackHawk (réel, Session 63)
            Règle de sélection hôte/invité par charge (Session 65, confirmée sur 4 cas dont antihydrogène CERN, Session 66) ; lien qualitatif avec suppression d'aire de Reissner-Nordström (Session 65)
-           Cible de référence : GW250114 (SNR=80, ringdown + loi de l'aire) — toujours non confrontée ; le résultat de Session 66 ne couvre que le cas sans spin (Schwarzschild) ; entrée pour l'extension Kerr identifiée comme priorité Session 69 (guide de continuation, DM v30)
-           Règle de couplage K₄↔K₄ (macroscopiquement engagée) — pièce structurelle centrale manquante, bloque simultanément OP-D64-1 et OP-D65-3 (identifiée explicitement dans DM v30 comme priorité absolue du programme)
+           Cible de référence : GW250114 (SNR=80, ringdown + loi de l'aire) — toujours non confrontée ; le résultat de Session 66 ne couvre que le cas sans spin (Schwarzschild)
 LAYER 11  Tenseur de cohérence — COMPLET              [✓] D48, D49, D51, D52, D54
 LAYER 12  Λ_PDL — COMPLET                            [✓] D51, D52, D53
 LAYER 13  Vie/conscience                              [✓] DL01, DL02; [?] DL03
@@ -808,27 +859,26 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 **Priorités Session 69 :**
 
 1. **[HIGH — PRIORITÉ ABSOLUE]** OP-D66-1 : résoudre la tension entre les deux décompositions de l'exposant 18 ($6+5+4+3$ de D23 v2 vs $6+6+6$ de « Hierarchical Coherence Filtering... »). Tenter une dérivation rigoureuse (rangs de Jacobiens explicites, méthode de D23 v2) pour la décomposition $6+6+6$, seule pertinente pour le contexte macroscopique du résultat de Session 66. C'est la faiblesse la plus exposée du résultat majeur — la consolider ou la corriger en priorité. Entrée : D23 v2, Hierarchical Coherence Filtering and the Exponent 18 in PDL, D43, D44.
-2. **[HIGH — PRIORITÉ ABSOLUE, identifiée Session 68]** Règle de couplage K₄↔K₄ (multiplicité macroscopique) : construire la prescription axiomatique manquante pour deux ou plusieurs clôtures K₄ engagées conjointement, généralisant le critère (A)∧(B) à partenaire unique (D29). Débloquerait simultanément OP-D64-1 (comptage macroscopique) et OP-D65-3 (régime inhomogène, priorité la plus haute officielle de D65) ; ouvrirait aussi la description du régime de plasma quark-gluon près de la formation d'un trou noir. Entrée : D29, D37, D38, D64, D65, guide de continuation DM v30 §16.
-3. **[HIGH]** N02 : intégrer la contribution OFN d'Oleg (Section 5 S_sr, table de comparaison colonne OFN, références) quand elle arrive ; vérifier la cohérence avec les 5 connexions établies en Session 67 ; compiler et déposer. Attendre aussi la réponse de Varlamov avant tout dépôt de "Three Roads" ou unified_theory.pdf.
-4. **[HIGH]** Étendre le résultat de Session 66 (S_BH à 0,07%) au cas avec spin (Kerr) — confronter à la cible de référence GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz), fixée depuis Session 64 et jamais utilisée. Nécessite d'incorporer le moment angulaire dans la construction de la surface 2D à N² sites. Voir aussi OP-D65-2 (officiel, D65) sur la tension exposant=1/troisième loi, à traiter avant ou avec l'extension Kerr. Entrée : D65, guide de continuation DM v30 §16 (« D-Kerr-extension »).
-5. **[HIGH]** Construire formellement la pseudométrique complète $\mathcal J(C_1,C_2)$ (D08, jamais résolue) à partir du mécanisme de surface active bornée $W\approx3$ découvert en Session 66 (script 5) — actuellement un résultat de simulation, pas une dérivation axiomatique depuis C1–C4. Recouvre largement OP-D65-3 (officiel, D65) : voir item 2.
-6. **[HIGH — correction de corpus, non physique]** OP-corpus-Zsat : corriger l'incohérence entre la formule de Z_sat de D22 (≈19,857) et celle de « Nuclear Stability PDL.tex » (=11) — décider laquelle conserver, documenter, mettre à jour le document.
-7. **[MEDIUM — N02]** OP-N02-1 : explorer si les exposants premiers (23, 67, 997) des cycles de fuite PDL ont un analogue dynamique dans la hiérarchie de masse OFN — en attendant la contribution d'Oleg.
-8. **[MEDIUM — N02]** OP-N02-4 : tester si γ = 3−√5 apparaît dans la dérivation de k côté PDL autrement que via l'identité algébrique φ = 2 − γ/2 — possibilité d'une connexion plus profonde Q(√5) ↔ G_PDL.
-9. **[MEDIUM]** Vérifier si la règle de sélection hôte/invité par charge non nulle peut être reliée quantitativement à la suppression d'aire de Reissner-Nordström.
-10. **[MEDIUM]** OP-D63-1 : preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
-11. **[MEDIUM]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Entrée : D62, D63.
-12. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini au sujet de la fenêtre spectrale 100–150 MeV et de la contrainte f_PBH~10⁻¹⁰. Entrée : D45 v2, arXiv:2606.10013.
-13. **[LOW]** Mise à jour site web cedriclaubscher.ch avec D45 v2, D64 v2, et D65.
-14. **[LOW]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes. Entrée : DL01, DL02.
-15. **[LOW]** Document court sur la réduction des degrés de liberté du quintuplet (5→3) et son parallèle avec Kerr-Newman.
-16. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
-17. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
-18. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction discret↔continu, actée et documentée ; cible GW250114 identifiée.
-19. **[FAIT — Session 65]** Vingt et une tentatives documentées sur le verrou K₄↔K₄ ; fusion combinatoire K₄→graphe complet plus grand exclue rigoureusement (Φ_min) ; régime dilué de σ(N) découvert et relié à Z_sat ; incohérence de corpus sur Z_sat identifiée (non corrigée — voir OP-corpus-Zsat) ; règle de sélection hôte/invité par charge formulée.
-20. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** Première reconstruction complète de $S_{BH}$ d'un trou noir solaire (sans spin) depuis C1–C4 à 0,07% près, sans paramètre ajusté ; règle de sélection par charge confirmée sur l'antihydrogène (CERN) ; Φ_min exclut la fusion ; W≈3 dérivée de BH-1 + D29 ; OP-D66-1 ouvert.
-21. **[FAIT — Session 67]** N02 draft PDL side rédigé, compilé, envoyé à Oleg (B2_PDL_OFN_bridge.tex, 8 pages) ; 5 connexions PDL–OFN établies (tripartition = matchings parfaits [identité mathématique], φ=2−γ/2 [identité algébrique], brisure S₃→Z₂ [holonomie OFN], 4+6=10 ↔ dim P(1,3) [analogue candidate], β₁=3 ↔ tripartition [conséquence théorème D58/D61]) ; corrections apportées aux propositions d'Oleg (Whitney, redondance GM-scale, a=2 post-hoc, 1682/11017) ; script de verrouillage N02 13 PASS/0 FAIL produit ; mail à Varlamov envoyé.
-22. **[FAIT — Session 68]** D65 déposé sur Zenodo (10.5281/zenodo.21220251), rédaction formelle du travail des Sessions 65–66 ; D65 introduit ses propres problèmes ouverts officiels OP-D65-1/2/3, distincts des labels internes de même nom utilisés en Session 65 (renommés OP-préD65-Snuc et OP-corpus-Zsat pour lever toute ambiguïté). Global Mapping v30 rédigé et déposé (10.5281/zenodo.21228274), remplaçant v29 ; intègre D64, D65, le statut de N02, et les 5 connexions PDL–OFN de la Session 67. Fichiers `PDL_context.md`, `10.5281zenodo.txt` (déjà à jour côté Cédric) et `README.md` resynchronisés avec le corpus courant (D01–D65, DM v30).
+2. **[HIGH]** N02 : intégrer la contribution OFN d'Oleg (Section 5 S_sr, table de comparaison colonne OFN, références) quand elle arrive ; vérifier la cohérence avec les 5 connexions établies en Session 67 ; compiler et déposer. Attendre aussi la réponse de Varlamov avant tout dépôt de "Three Roads" ou unified_theory.pdf.
+3. **[HIGH]** Étendre le résultat de Session 66 (S_BH à 0,07%) au cas avec spin (Kerr) — confronter à la cible de référence GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz), fixée depuis Session 64 et jamais utilisée. Nécessite d'incorporer le moment angulaire dans la construction de la surface 2D à N² sites.
+4. **[HIGH]** Construire formellement la pseudométrique complète $\mathcal J(C_1,C_2)$ (D08, jamais résolue) à partir du mécanisme de surface active bornée $W\approx3$ découvert en Session 66 (script 5) — actuellement un résultat de simulation, pas une dérivation axiomatique depuis C1–C4.
+5. **[HIGH — correction de corpus, non physique]** OP-D65-2 : corriger l'incohérence entre la formule de Z_sat de D22 (≈19,857) et celle de « Nuclear Stability PDL.tex » (=11) — décider laquelle conserver, documenter, mettre à jour le document.
+6. **[MEDIUM — N02]** OP-N02-1 : explorer si les exposants premiers (23, 67, 997) des cycles de fuite PDL ont un analogue dynamique dans la hiérarchie de masse OFN — en attendant la contribution d'Oleg.
+7. **[MEDIUM — N02]** OP-N02-4 : tester si γ = 3−√5 apparaît dans la dérivation de k côté PDL autrement que via l'identité algébrique φ = 2 − γ/2 — possibilité d'une connexion plus profonde Q(√5) ↔ G_PDL.
+8. **[MEDIUM]** Vérifier si la règle de sélection hôte/invité par charge non nulle peut être reliée quantitativement à la suppression d'aire de Reissner-Nordström.
+9. **[MEDIUM]** OP-D63-1 : preuve formelle d'indépendance de C2, C3, C4 dans Q(K_n). Entrée : D47, D59, D63. Résolution → H_mass devient théorème.
+10. **[MEDIUM]** OP-D62-4 : corrections Δα_had depuis H_sea (m_s = 93.1 MeV). Entrée : D62, D63.
+11. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini au sujet de la fenêtre spectrale 100–150 MeV et de la contrainte f_PBH~10⁻¹⁰. Entrée : D45 v2, arXiv:2606.10013.
+12. **[LOW]** Mise à jour site web cedriclaubscher.ch avec D45 v2 et D64 v2.
+13. **[LOW]** DL-OP1/DL-OP2 : tester le couplage effectif via Λ entre clôtures distinctes. Entrée : DL01, DL02.
+14. **[LOW]** Document court sur la réduction des degrés de liberté du quintuplet (5→3) et son parallèle avec Kerr-Newman.
+15. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
+16. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
+17. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction discret↔continu, actée et documentée ; cible GW250114 identifiée.
+18. **[FAIT — Session 65]** Vingt et une tentatives documentées sur le verrou K₄↔K₄ ; fusion combinatoire K₄→graphe complet plus grand exclue rigoureusement (Φ_min) ; régime dilué de σ(N) découvert et relié à Z_sat ; incohérence de corpus sur Z_sat identifiée (non corrigée — voir OP-D65-2) ; règle de sélection hôte/invité par charge formulée.
+19. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** Première reconstruction complète de $S_{BH}$ d'un trou noir solaire (sans spin) depuis C1–C4 à 0,07% près, sans paramètre ajusté ; règle de sélection par charge confirmée sur l'antihydrogène (CERN) ; Φ_min exclut la fusion ; W≈3 dérivée de BH-1 + D29 ; OP-D66-1 ouvert.
+20. **[FAIT — Session 67]** N02 draft PDL side rédigé, compilé, envoyé à Oleg (B2_PDL_OFN_bridge.tex, 8 pages) ; 5 connexions PDL–OFN établies ; corrections apportées aux propositions d'Oleg ; script de verrouillage N02 13 PASS/0 FAIL produit ; mail à Varlamov envoyé.
+21. **[FAIT — Session 68]** Classification spectrale de Ω₂₁ (4A+4S+2M) vérifiée par calcul exact depuis la définition d_spec d'Oleg (13 valeurs digit pour digit) ; source de discordance identifiée (4 ex-aequo + deux involutions différentes) ; recommandation éditoriale N02 formulée (distinguer classification robuste vs paires spécifiques sous convention de bris de symétrie nommée) ; clarification épistémique d'OFN complétée (ontologie idéaliste structuraliste, noyau mathématique vérifiable, identifications physiques non dérivées) ; périmètre de la collaboration PDL–OFN reformulé explicitement comme traduction structurelle dans la zone mathématique commune.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
@@ -858,31 +908,30 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 67]** Le théorème de Whitney (Aut(L(G)) ≅ Aut(G)) ne s'applique pas aux graphes K3 et K4 — vérifier toujours les cas exceptionnels avant d'invoquer un théorème général sur les graphes de lignes.
 - **[Session 67]** Quand un collaborateur propose une identification algébrique ("Z₃ de PDL = orbite de dimension 3 dans OFN"), vérifier si les deux objets sont dans la même catégorie mathématique (groupe vs espace vectoriel, groupe discret vs représentation) avant toute autre vérification numérique.
 - **[Session 67]** Les résultats négatifs obtenus par un collaborateur sur ses propres propositions (1682/11017, GM-scale, a=2 post-hoc) sont des contributions scientifiques exactement au même titre que les résultats positifs — les documenter avec la même rigueur et les remercier explicitement dans la correspondance.
+- **[Session 68]** Avant d'accepter ou de rejeter une discordance entre deux calculs d'un même résultat, vérifier si les deux calculs utilisent réellement la même définition de l'objet — la discordance Oleg/Cédric sur les paires CP de Ω₂₁ (4+4+2 vs 5+2+3) provenait de deux involutions différentes (spectrale vs numérique), pas d'une erreur arithmétique. Demander la définition exacte plutôt que de supposer que les procédures sont identiques.
+- **[Session 68]** Quand une classification est robuste (invariante sous les bris de symétrie) mais que les représentants spécifiques ne le sont pas, il faut distinguer les deux niveaux dans l'énoncé du théorème. Présenter une liste de paires spécifiques sans nommer la convention de bris de symétrie utilisée est une source prévisible de non-reproductibilité.
+- **[Session 68]** La question "qu'est-ce qu'OFN ?" est légitime à poser explicitement dans le cadre d'une collaboration — la réponse conditionne ce qu'on peut raisonnablement attendre de la traduction PDL↔OFN. OFN est une ontologie idéaliste structuraliste avec un noyau mathématique vérifiable et un programme d'identification physique largement non dérivé. Cette asymétrie avec PDL (programme axiomatique) ne disqualifie pas la collaboration, mais en délimite le périmètre : la zone mathématique commune (invariants topologiques, corps algébriques, automorphismes) est productive ; l'interprétation physique de ces connexions reste le travail de chaque programme dans son propre cadre.
 
 **Nomenclature :**
-- D-series : documents solo PDL (D01–D65)
+- D-series : documents solo PDL (D01–D64)
 - D-exp-series : documents exploratoires
 - DL-series : vie et conscience (DL01–DL02)
 - DS01 : synthèse provisoire à D55
 - N-series : notes conjointes PDL–OFN (N01 déposé ; N02 en préparation)
 - B2-series : fichiers de travail pour N02 (B2_PDL_OFN_bridge.tex, B2_PDL_OFN.pdf, B2_references.bib)
-- DM : Global Mapping (version courante : v30, DOI : 10.5281/zenodo.21228274 ; remplace v29, 10.5281/zenodo.20701571)
+- DM : Global Mapping (version courante : v29, DOI : 10.5281/zenodo.20701571)
 
-**DOIs récents (Session 68 ; D45 v2/D64 v2 inchangés depuis Session 63) :**
+**DOIs récents (Session 63, inchangés Sessions 64–67) :**
 - D45 v2 : 10.5281/zenodo.20866017 (remplace v1, 10.5281/zenodo.19810259)
 - D64 v2 : 10.5281/zenodo.20868328 (remplace v1, 10.5281/zenodo.20820472)
-- D65 : 10.5281/zenodo.21220251 (nouveau, Session 68)
 - N01 : 10.5281/zenodo.20523343 (Laubscher, Evdokimov, Ryss)
-- DM v30 : 10.5281/zenodo.21228274 (nouveau, Session 68 ; remplace DM v29, 10.5281/zenodo.20701571)
 - Source de vérité utilisée : fichier maître `10.5281zenodo.txt` du GitHub (laubscher-lab/PDL-framework).
 
-**Dépôts groupés (Session 68 ; D45 v2/D64 v2 inchangés depuis Session 63) :**
+**Dépôts groupés (inchangés Sessions 64–67) :**
 - D45 v2 : D45_pbh_threshold.tex (révisé) + D45_references.bib (+ entrées Carlini2025, Cholis2026) + PDF compilé
 - D64 v2 : D64_Soft_Hair_PDL.tex (révisé, Proposition 3 ajoutée) + D64_references.bib (+ entrées EHT2019, GRAVITY2022, LIGO2016) + PDF compilé
-- D65 : D65_Two_Limits.tex + D65_references.bib (+ entrées Bardeen1970, Thorne1974, BardeenCarterHawking1973, GuicaHartmanSongStrominger2009, HackoHawkingPerryStrominger2018, HPS2016, HPS2017, StromingerVafa1996, Milnor1978, Zhao2021, GWTC1, GW190521, GW190814) + PDF compilé
-- DM v30 : PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v30.tex + DM_v30_references.bib (+ entrées D64, D65, N02, HPS2016, HPS2017, GuicaHartmanSongStrominger2009, BardeenCarterHawking1973, GW190814, EHT2019, GRAVITY2022, LIGO2016, GW250114) + PDF compilé
 
-**En attente de dépôt (inchangé depuis Session 67) :**
+**En attente de dépôt (Session 67) :**
 - N02 : B2_PDL_OFN_bridge.tex + B2_references.bib + B2_PDL_OFN.pdf (version 8 pages avec clearpage) — côté PDL complet, côté OFN (Section 5) en attente de la contribution d'Oleg.
 - PDL_N02_identity_lockdown_v2_reinforced.py — script de verrouillage pour l'identité n_u−1 = p_k1 = 23, à déposer groupé avec N02.
 - "Three Roads to the Periodic Table" (draft Evdokimov + Laubscher) — en attente de réponse de Varlamov (varlamov@sibsiu.ru, mail envoyé Session 67) et corrections (HSU2, prédictions phénoménologiques).
@@ -925,4 +974,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 67]** Formule ε_geom ≈ 2·k·γ/43 : documentée comme curiosité numérique (a=2 post-hoc, selon Oleg lui-même). Facteur a=2 = taille de part dans K_{2,2,2} a une justification OFN indépendante. Soustraction 2⁶−|Ω₂₁|=43 sans justification PDL. Analogie candidate à suivre, non retenue comme connexion structurelle.
 - **[Session 67]** Formule GM-scale (ratios muon/tau) retirée par Oleg : redondance algébrique (√2)²=2 → 2 paramètres libres indépendants, pas 3 ; 3 triplets (a,b,c) distincts produisent la même valeur pour le muon.
 - **[Session 67]** 10 paires CP dans Ω₂₁ sous l'involution d'index f(i)=(-i) mod 21 (sur liste triée Ω₂₁) : vérifiées computationnellement. Point fixe = v=0 (index 0), pas sigma=21 (état isolé par le graphe, degré 0 dans G_H). Ce sont deux états distincts.
-- **[Session 67]** Discordance classification Oleg (4+4+2) vs calcul indépendant (5+2+3) pour les paires CP — à clarifier avant intégration dans unified_theory.pdf v2.
+- **[Session 67]** Discordance classification Oleg (4+4+2) vs calcul indépendant (5+2+3) pour les paires CP — identifiée comme due à l'usage de deux involutions différentes, non à une erreur de calcul.
+- **[Session 68]** Classification spectrale de Ω₂₁ : 4A+4S+2M confirmée par calcul exact Python/numpy avec la définition d_spec exacte d'Oleg (13 valeurs de d_spec reproduites digit pour digit). Source de discordance sur les paires spécifiques : 4 ex-aequo dans l'ordonnancement spectral — la classification est robuste (indépendante du bris de symétrie), les paires spécifiques dépendent d'une convention à nommer explicitement dans le Theorem 3.1 de unified_theory.pdf v2.
+- **[Session 68]** sigma=21 = (010101)₂ est simultanément : (a) état isolé de G_H (degré 0) ; (b) point fixe de l'involution spectrale (d_spec=0 par construction — composantes propres nulles dans le composant séparé) ; (c) seul sommet de Ω₂₁ équidistant (Hamming distance 3) de 000000 et 111111 dans Q6. Trois convergences indépendantes sur le même sommet.
+- **[Session 68]** OFN est une ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ) avec roots Whitehead/Bergson/panpsychisme informatique. Noyau mathématique vérifiable : Ω₂₁, G_H, spectre, holonomies. Identifications physiques (matière/jauge/générations/conscience) : postulats motivés, non dérivés depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est une traduction structurelle dans la zone mathématique commune, pas une unification physique.
