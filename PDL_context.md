@@ -5,6 +5,7 @@
 *(**Session 68 — COLLABORATION PDL–OFN, suite** : vérification indépendante complète de la définition d_spec d'Oleg et de l'involution spectrale sur Ω₂₁ ; classification 4A+4S+2M confirmée par calcul exact (toutes les valeurs de d_spec reproduites digit pour digit) ; source de discordance identifiée — quatre ex-aequo dans l'ordonnancement spectral (v=1/v=3, v=7/v=19, v=15/v=27, v=56/v=52) dont le bris de symétrie affecte les paires spécifiques mais pas la classification globale (robuste, indépendante du bris de symétrie) ; recommandation éditoriale N02 formulée : la classification 4A+4S+2M est le théorème, les paires spécifiques sont des représentants sous une convention à nommer. Clarification épistémique profonde sur OFN : programme de physique-philosophie unifiée avec la conscience comme fil conducteur, ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ), roots dans Whitehead/Bergson/panpsychisme informatique — noyau mathématique vérifiable (Ω₂₁, G_H, spectre du Laplacien) mais identifications physiques largement non dérivées depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est légitimée dans la zone mathématique commune (invariants topologiques, corps algébrique Q(√5), tripartition K_{2,2,2}) et doit rester prudemment délimitée hors de cette zone — c'est une traduction structurelle, pas une unification physique.)*
 *(**Session 67 — COLLABORATION PDL–OFN, avancées structurelles majeures** : cinq connexions précises entre PDL et OFN établies ou clarifiées au cours d'un échange approfondi avec Oleg Evdokimov. (1) N02 draft (B2_PDL_OFN_bridge.tex, 8 pages, PDL side only) rédigé, compilé, envoyé à Oleg pour la contribution OFN — sections 5 (S_sr et trois générations), table de comparaison colonne OFN, et références OFN restent à compléter. (2) Première entrée de la table de comparaison N02 avec statut « identité mathématique » (pas « analogie candidate ») : la tripartition {A,B,C} de K_{2,2,2} = L(K4) est exactement l'ensemble des trois matchings parfaits de K4, déjà théorème inconditionnel de PDL (D58 Lemme L2, D61). (3) Connexion algébrique φ/γ confirmée : φ = 2 − γ/2 (identité exacte dans Q(√5)), γ = 3−√5 étant le gap spectral de Ω₂₁ (OFN) et φ le nombre d'or (PDL, via κ = 310φ/11017) — γ entre dans k structurellement via cette identité, k lui-même étant en Q(√5)^(1/18), pas dans Q(√5). (4) L(K4) ≅ K_{2,2,2} vérifié computationnellement ; erreur d'Oleg sur Aut(L(K4)) corrigée : Whitney ne s'applique pas à K4 (cas exceptionnel), Aut(K_{2,2,2}) = S₂≀S₃ d'ordre 48 (Oh), pas S4 d'ordre 24. (5) Connexion 4+6=10 : K4 a 4 sommets (entités) + 6 arêtes (relations) = 10 éléments, en correspondance structurelle avec dim P(1,3) = 4 translations + 6 générateurs de Lorentz = 10, déjà noté dans D35/D61. Script de verrouillage PDL_N02_identity_lockdown_v2_reinforced.py (13 PASS, 0 FAIL) produit et déposé pour l'identité n_u − 1 = p_k1 = 23. Plusieurs propositions d'Oleg évaluées et corrigées selon le protocole établi : formule ε_geom ≈ 2·k·γ/43 (post-hoc, documentée comme curiosité numérique), GM-scale (redondance algébrique, 2 paramètres libres indépendants pas 3), coincidence 1682/11017 (Oleg lui-même a reconnu les paramètres libres a posteriori). Documents "Three Roads to the Periodic Table" (Varlamov non contacté, dépôt Zenodo en attente) et "unified_theory.pdf" (Evdokimov, Bachani, Ryss) reçus et évalués — HSU2 apparaît comme conjecture dans Three Roads, à corriger (D60 → théorème). Mail à Varlamov (varlamov@sibsiu.ru) envoyé avec Oleg en copie pour validation de l'usage de son travail.)*
 *(Cette édition conserve, à la demande explicite de Cédric, la reconstitution complète et non abrégée des Sessions 1 à 49 — voir la note méthodologique au début de la section « Session History ».)*
+*(**Addendum administratif — 7 July 2026** : ajout d'une nouvelle section « Academia.edu Publication Status » faisant l'inventaire des documents du corpus effectivement publiés sur le compte Academia.edu de Cédric, distinct du statut de dépôt Zenodo. Aucun nouveau résultat scientifique dans cet addendum ; il s'agit d'un suivi éditorial demandé par Cédric pour garder la trace de la diffusion secondaire du corpus.)*
 
 ---
 
@@ -103,6 +104,48 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
 | N02 | *en préparation — draft PDL side v0.1 envoyé à Oleg* | Z3 → three generations: PDL–OFN bridge (Laubscher + Evdokimov) |
 | PDL_N02_lockdown | *non encore déposé* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
+
+---
+
+## Academia.edu Publication Status (as of 7 July 2026)
+
+Le compte Academia.edu de Cédric (cedriclaubscher.ch) est un canal de diffusion secondaire, distinct du dépôt Zenodo canonique. Tous les documents déposés sur Zenodo ne sont pas systématiquement publiés sur Academia ; cette section fait l'inventaire de ce qui l'est réellement, pour éviter les doublons et guider les prochaines mises en ligne.
+
+**Documents publiés sur Academia.edu :**
+
+| Label | Titre publié sur Academia | Statut |
+|-------|---------------------------|--------|
+| D01 | Projective Dynamic Logo (PDL) | ✅ publié |
+| D07 | Towards a Gleason-Type Theorem for Spin-1/2 Systems in the PDL Framework | ✅ publié |
+| D21 (v3) | Universal Coherence Leakage: A Structural Bridge between the Gravitational and Electromagnetic Constants in the PDL Framework (Version 3) | ✅ publié |
+| DN | Whatever We May Be | ✅ publié |
+| D22 | Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in the PDL Framework | ✅ publié |
+| D40 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms: Derivation of the Valley of Stability, Magic Numbers, and Assembly Rules | ✅ publié |
+| D42 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality (D42) | ✅ publié |
+| D43 | The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (D43) | ✅ publié |
+| D45 | Primordial Black Hole Evaporation Threshold from the PDL Framework: A Falsifiable Prediction for Fermi-LAT | ✅ publié |
+| DL01 | From Axioms to Life: The PDL-V Conjecture and the Hierarchical Replication of C1–C4 (DL01) | ✅ publié (doublon détecté dans la liste Academia — même papier listé deux fois, à corriger côté Academia) |
+| N01 | β₁ = 3 as a Topological Invariant of Minimal Relational Closures: Numerical Evidence from the PDL and OFN Frameworks | ✅ publié |
+| D63 | D63: Quark Mass Spectrum from Combinatorial Axioms — Two Conjectures on Valence and Sea Quark Masses in the PDL Framework | ✅ publié |
+| DM v30 | Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems, Version 30 | ✅ publié |
+| D47 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms (D47) | ✅ publié — ajouté Session 69 |
+| D50 | The Bekenstein–Hawking Coefficient 1/4 from the PDL Axioms (D50) | ✅ publié — ajouté Session 69 |
+| D53 | From Four Axioms to the Cosmological Constant: Causal Closure of the Chain C1–C4 to Λ — A Synthesis and Computational Verification (D53) | ✅ publié — ajouté Session 69 |
+| D55 | Derivation of the Weinberg Angle from the PDL Axioms: Dephasing Sequencing, Lemma D, and a New Prediction for Δm_iso (D55) | ✅ publié — ajouté Session 69 |
+| D61 | D_μ = ∂_μ − igA_μ from C4: Covariant Derivative and Gauge Dynamics in the PDL Framework (D61) | ✅ publié — ajouté Session 69 |
+| DS01 | Projective Dynamic Logo: Programme Closure at D55 — A Provisional Synthesis (DS01) | ✅ publié — ajouté Session 69 |
+
+**Non encore publié sur Academia — candidats identifiés (par ordre de priorité décroissant, cf. recommandation Session 69) :**
+
+- N02 (PDL–OFN, Z₃ → three generations) — **n'existe pas encore** ; côté PDL rédigé (B2_PDL_OFN_bridge.tex), en attente de la contribution d'Oleg (Section 5) avant tout dépôt Zenodo ou publication Academia.
+- D51, D52 — sources primaires citées par D53 (constante de fuite cosmologique C, trois bases de fuite) ; utiles pour qu'un lecteur Academia puisse remonter la chaîne complète depuis D53.
+- D57, D58, D59, D60, D62 — secteur de jauge individuel (SU(2), SU(3), G_eff, masses des bosons électrofaibles) ; D61 déjà publié en couvre la synthèse dynamique, ces documents restent secondaires sauf demande spécifique.
+- D-exp-SP2, D-exp-ZIB, D-exp-MP01, D-exp-Zr, D-exp-f7/2 — applications exploratoires (matériaux, isotopes) ; public différent, à réserver pour une extension ultérieure de la présence Academia.
+- D64, D65 — trou noir / soft hair, microstate counting ; encore au stade « behavioural universality », pas de fermeture aussi nette que D53/D55, à publier une fois le OP-D64-1/OP-D65 stabilisé.
+
+**Point de vigilance permanent — D44 :**
+
+D44v1 (« Closure of OP-B ») contient une erreur de fabrique (facteur ~62 manquant, exposant requis ~68,6 non atteint) et **ne doit jamais être publié sur Academia**. Si D44 est un jour publié, ce doit être exclusivement **D44v2 « OP-B Reopened »**, avec son titre honnête reflétant la réouverture du problème. Ceci s'applique également à toute republication de D53, DS01, ou DM vN sur Academia : vérifier qu'ils ne prétendent pas la chaîne causale complète sans paramètre libre sans mentionner la réouverture d'OP-B.
 
 ---
 
