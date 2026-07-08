@@ -5,7 +5,6 @@
 *(**Session 68 — COLLABORATION PDL–OFN, suite** : vérification indépendante complète de la définition d_spec d'Oleg et de l'involution spectrale sur Ω₂₁ ; classification 4A+4S+2M confirmée par calcul exact (toutes les valeurs de d_spec reproduites digit pour digit) ; source de discordance identifiée — quatre ex-aequo dans l'ordonnancement spectral (v=1/v=3, v=7/v=19, v=15/v=27, v=56/v=52) dont le bris de symétrie affecte les paires spécifiques mais pas la classification globale (robuste, indépendante du bris de symétrie) ; recommandation éditoriale N02 formulée : la classification 4A+4S+2M est le théorème, les paires spécifiques sont des représentants sous une convention à nommer. Clarification épistémique profonde sur OFN : programme de physique-philosophie unifiée avec la conscience comme fil conducteur, ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ), roots dans Whitehead/Bergson/panpsychisme informatique — noyau mathématique vérifiable (Ω₂₁, G_H, spectre du Laplacien) mais identifications physiques largement non dérivées depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est légitimée dans la zone mathématique commune (invariants topologiques, corps algébrique Q(√5), tripartition K_{2,2,2}) et doit rester prudemment délimitée hors de cette zone — c'est une traduction structurelle, pas une unification physique.)*
 *(**Session 67 — COLLABORATION PDL–OFN, avancées structurelles majeures** : cinq connexions précises entre PDL et OFN établies ou clarifiées au cours d'un échange approfondi avec Oleg Evdokimov. (1) N02 draft (B2_PDL_OFN_bridge.tex, 8 pages, PDL side only) rédigé, compilé, envoyé à Oleg pour la contribution OFN — sections 5 (S_sr et trois générations), table de comparaison colonne OFN, et références OFN restent à compléter. (2) Première entrée de la table de comparaison N02 avec statut « identité mathématique » (pas « analogie candidate ») : la tripartition {A,B,C} de K_{2,2,2} = L(K4) est exactement l'ensemble des trois matchings parfaits de K4, déjà théorème inconditionnel de PDL (D58 Lemme L2, D61). (3) Connexion algébrique φ/γ confirmée : φ = 2 − γ/2 (identité exacte dans Q(√5)), γ = 3−√5 étant le gap spectral de Ω₂₁ (OFN) et φ le nombre d'or (PDL, via κ = 310φ/11017) — γ entre dans k structurellement via cette identité, k lui-même étant en Q(√5)^(1/18), pas dans Q(√5). (4) L(K4) ≅ K_{2,2,2} vérifié computationnellement ; erreur d'Oleg sur Aut(L(K4)) corrigée : Whitney ne s'applique pas à K4 (cas exceptionnel), Aut(K_{2,2,2}) = S₂≀S₃ d'ordre 48 (Oh), pas S4 d'ordre 24. (5) Connexion 4+6=10 : K4 a 4 sommets (entités) + 6 arêtes (relations) = 10 éléments, en correspondance structurelle avec dim P(1,3) = 4 translations + 6 générateurs de Lorentz = 10, déjà noté dans D35/D61. Script de verrouillage PDL_N02_identity_lockdown_v2_reinforced.py (13 PASS, 0 FAIL) produit et déposé pour l'identité n_u − 1 = p_k1 = 23. Plusieurs propositions d'Oleg évaluées et corrigées selon le protocole établi : formule ε_geom ≈ 2·k·γ/43 (post-hoc, documentée comme curiosité numérique), GM-scale (redondance algébrique, 2 paramètres libres indépendants pas 3), coincidence 1682/11017 (Oleg lui-même a reconnu les paramètres libres a posteriori). Documents "Three Roads to the Periodic Table" (Varlamov non contacté, dépôt Zenodo en attente) et "unified_theory.pdf" (Evdokimov, Bachani, Ryss) reçus et évalués — HSU2 apparaît comme conjecture dans Three Roads, à corriger (D60 → théorème). Mail à Varlamov (varlamov@sibsiu.ru) envoyé avec Oleg en copie pour validation de l'usage de son travail.)*
 *(Cette édition conserve, à la demande explicite de Cédric, la reconstitution complète et non abrégée des Sessions 1 à 49 — voir la note méthodologique au début de la section « Session History ».)*
-*(**Addendum administratif — 7 July 2026** : ajout d'une nouvelle section « Academia.edu Publication Status » faisant l'inventaire des documents du corpus effectivement publiés sur le compte Academia.edu de Cédric, distinct du statut de dépôt Zenodo. Aucun nouveau résultat scientifique dans cet addendum ; il s'agit d'un suivi éditorial demandé par Cédric pour garder la trace de la diffusion secondaire du corpus.)*
 
 ---
 
@@ -104,48 +103,6 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
 | N02 | *en préparation — draft PDL side v0.1 envoyé à Oleg* | Z3 → three generations: PDL–OFN bridge (Laubscher + Evdokimov) |
 | PDL_N02_lockdown | *non encore déposé* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
-
----
-
-## Academia.edu Publication Status (as of 7 July 2026)
-
-Le compte Academia.edu de Cédric (cedriclaubscher.ch) est un canal de diffusion secondaire, distinct du dépôt Zenodo canonique. Tous les documents déposés sur Zenodo ne sont pas systématiquement publiés sur Academia ; cette section fait l'inventaire de ce qui l'est réellement, pour éviter les doublons et guider les prochaines mises en ligne.
-
-**Documents publiés sur Academia.edu :**
-
-| Label | Titre publié sur Academia | Statut |
-|-------|---------------------------|--------|
-| D01 | Projective Dynamic Logo (PDL) | ✅ publié |
-| D07 | Towards a Gleason-Type Theorem for Spin-1/2 Systems in the PDL Framework | ✅ publié |
-| D21 (v3) | Universal Coherence Leakage: A Structural Bridge between the Gravitational and Electromagnetic Constants in the PDL Framework (Version 3) | ✅ publié |
-| DN | Whatever We May Be | ✅ publié |
-| D22 | Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in the PDL Framework | ✅ publié |
-| D40 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms: Derivation of the Valley of Stability, Magic Numbers, and Assembly Rules | ✅ publié |
-| D42 | Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality (D42) | ✅ publié |
-| D43 | The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (D43) | ✅ publié |
-| D45 | Primordial Black Hole Evaporation Threshold from the PDL Framework: A Falsifiable Prediction for Fermi-LAT | ✅ publié |
-| DL01 | From Axioms to Life: The PDL-V Conjecture and the Hierarchical Replication of C1–C4 (DL01) | ✅ publié (doublon détecté dans la liste Academia — même papier listé deux fois, à corriger côté Academia) |
-| N01 | β₁ = 3 as a Topological Invariant of Minimal Relational Closures: Numerical Evidence from the PDL and OFN Frameworks | ✅ publié |
-| D63 | D63: Quark Mass Spectrum from Combinatorial Axioms — Two Conjectures on Valence and Sea Quark Masses in the PDL Framework | ✅ publié |
-| DM v30 | Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems, Version 30 | ✅ publié |
-| D47 | Nuclear Stability and the Periodic Table from PDL Combinatorial Axioms (D47) | ✅ publié — ajouté Session 69 |
-| D50 | The Bekenstein–Hawking Coefficient 1/4 from the PDL Axioms (D50) | ✅ publié — ajouté Session 69 |
-| D53 | From Four Axioms to the Cosmological Constant: Causal Closure of the Chain C1–C4 to Λ — A Synthesis and Computational Verification (D53) | ✅ publié — ajouté Session 69 |
-| D55 | Derivation of the Weinberg Angle from the PDL Axioms: Dephasing Sequencing, Lemma D, and a New Prediction for Δm_iso (D55) | ✅ publié — ajouté Session 69 |
-| D61 | D_μ = ∂_μ − igA_μ from C4: Covariant Derivative and Gauge Dynamics in the PDL Framework (D61) | ✅ publié — ajouté Session 69 |
-| DS01 | Projective Dynamic Logo: Programme Closure at D55 — A Provisional Synthesis (DS01) | ✅ publié — ajouté Session 69 |
-
-**Non encore publié sur Academia — candidats identifiés (par ordre de priorité décroissant, cf. recommandation Session 69) :**
-
-- N02 (PDL–OFN, Z₃ → three generations) — **n'existe pas encore** ; côté PDL rédigé (B2_PDL_OFN_bridge.tex), en attente de la contribution d'Oleg (Section 5) avant tout dépôt Zenodo ou publication Academia.
-- D51, D52 — sources primaires citées par D53 (constante de fuite cosmologique C, trois bases de fuite) ; utiles pour qu'un lecteur Academia puisse remonter la chaîne complète depuis D53.
-- D57, D58, D59, D60, D62 — secteur de jauge individuel (SU(2), SU(3), G_eff, masses des bosons électrofaibles) ; D61 déjà publié en couvre la synthèse dynamique, ces documents restent secondaires sauf demande spécifique.
-- D-exp-SP2, D-exp-ZIB, D-exp-MP01, D-exp-Zr, D-exp-f7/2 — applications exploratoires (matériaux, isotopes) ; public différent, à réserver pour une extension ultérieure de la présence Academia.
-- D64, D65 — trou noir / soft hair, microstate counting ; encore au stade « behavioural universality », pas de fermeture aussi nette que D53/D55, à publier une fois le OP-D64-1/OP-D65 stabilisé.
-
-**Point de vigilance permanent — D44 :**
-
-D44v1 (« Closure of OP-B ») contient une erreur de fabrique (facteur ~62 manquant, exposant requis ~68,6 non atteint) et **ne doit jamais être publié sur Academia**. Si D44 est un jour publié, ce doit être exclusivement **D44v2 « OP-B Reopened »**, avec son titre honnête reflétant la réouverture du problème. Ceci s'applique également à toute republication de D53, DS01, ou DM vN sur Academia : vérifier qu'ils ne prétendent pas la chaîne causale complète sans paramètre libre sans mentionner la réouverture d'OP-B.
 
 ---
 
@@ -522,11 +479,10 @@ Session entièrement consacrée à la collaboration avec Oleg Evdokimov (OFN). A
 - Confirmé par Oleg côté OFN : les trois parts {A,B,C} de K_{2,2,2} sont bien les trois matchings parfaits de K4, sans identification délibérée — "a émergé de la structure combinatoire de la cellule locale".
 - Conséquence : la transition K4 → L(K4) = K_{2,2,2} est le passage de "entités" (sommets de K4) à "relations" (arêtes de K4 = sommets de L(K4)), avec expansion de symétrie S₄ (ordre 24) → Oh (ordre 48).
 
-*3. Connexion algébrique φ/γ dans Q(√5) :*
-- φ = 2 − γ/2 est une identité exacte dans Q(√5), avec γ = 3−√5 (gap spectral de Ω₂₁, OFN) et φ = (1+√5)/2 (nombre d'or, PDL via κ = 310φ/11017).
-- Conséquence : γ entre dans k structurellement via κ = (620 − 155γ)/11017, k étant de la forme k = [R·φ]^(1/18) avec R rationnel.
-- k n'est PAS dans Q(√5) — il vit dans une extension de degré 18. La recherche PSLQ d'Oleg (k = p + q√5) ne pouvait pas aboutir — résultat négatif établi et expliqué.
-- La connexion est algébrique (corps partagé Q(√5)), pas spectrale (γ n'est pas une valeur propre de K4, dont les valeurs propres sont les entiers 3 et −1).
+*3. Connexion algébrique φ/γ_E dans Q(√5) [corrigée Session 69] :*
+- φ = 2 − γ_E/2 est une identité exacte dans Q(√5), avec **γ_E = 3−√5 = gap spectral de G_E** (le dodécaèdre sur Ω₂₁, 30 arêtes, adjacence dodécaédrique distance-2, 3-régulier). **Pas** le gap spectral de G_H.
+- G_H (22 arêtes, distance de Hamming 1) a un gap spectral λ₁ ≈ 0.0804170036 — racine du polynôme irréductible de degré 16 sur ℚ avec terme constant 600. λ₁ est algébriquement sans lien avec φ. φ + λ₁/2 ≈ 1.658, pas 2.
+- Conséquence : γ_E entre dans k structurellement via κ = (620 − 155γ_E)/11017, k étant de la forme k = [R·φ]^(1/18) avec R rationnel. G_H, utilisé dans les calculs d'holonomie (Section 1.3 de N02), est un objet distinct de G_E — les deux connexions (algébrique via G_E, holonomique via G_H) sont indépendantes.
 
 *4. Correction sur Aut(L(K4)) :*
 - Le théorème de Whitney (Aut(L(G)) ≅ Aut(G) pour graphes connexes) ne s'applique pas à K4, qui est l'un des deux cas exceptionnels (avec K3).
@@ -659,7 +615,7 @@ La collaboration N01/N02 est une **traduction structurelle** entre deux langues 
 |---|---|---|---|
 | β₁(K₄) = 3 | ↔ | b₁(Ω₂₁) = b₁(G_H) = 3 | Identités mathématiques indépendantes |
 | V₄∖{e} = matchings parfaits de K₄ | ↔ | Tripartition {A,B,C} de K_{2,2,2} = L(K₄) | Identité mathématique |
-| φ dans κ = 310φ/11017 | ↔ | γ = 4−2φ dans gap spectral Ω₂₁ | Identité algébrique dans Q(√5) |
+| φ dans κ = 310φ/11017 | ↔ | γ_E = 4−2φ dans gap spectral de G_E (dodécaèdre sur Ω₂₁, 30 arêtes, 3-régulier) | Identité algébrique dans Q(√5) — φ + γ_E/2 = 2 exact. **Note :** G_H (22 arêtes, Hamming distance 1, irrégulier) a un gap spectral λ₁ ≈ 0.0804, racine d'un polynôme irréductible de degré 16 sur ℚ, algébriquement sans lien avec φ. G_E et G_H sont deux graphes distincts sur Ω₂₁. |
 | S₃→Z₂ (holonomie D59/D60) | ↔ | S₃→Z₂ par holonomie dans G_H | Analogie candidate |
 | 4 sommets + 6 arêtes K₄ = 10 | ↔ | dim P(1,3) = 10 | Analogie candidate |
 
@@ -922,6 +878,7 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 19. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** Première reconstruction complète de $S_{BH}$ d'un trou noir solaire (sans spin) depuis C1–C4 à 0,07% près, sans paramètre ajusté ; règle de sélection par charge confirmée sur l'antihydrogène (CERN) ; Φ_min exclut la fusion ; W≈3 dérivée de BH-1 + D29 ; OP-D66-1 ouvert.
 20. **[FAIT — Session 67]** N02 draft PDL side rédigé, compilé, envoyé à Oleg (B2_PDL_OFN_bridge.tex, 8 pages) ; 5 connexions PDL–OFN établies ; corrections apportées aux propositions d'Oleg ; script de verrouillage N02 13 PASS/0 FAIL produit ; mail à Varlamov envoyé.
 21. **[FAIT — Session 68]** Classification spectrale de Ω₂₁ (4A+4S+2M) vérifiée par calcul exact depuis la définition d_spec d'Oleg (13 valeurs digit pour digit) ; source de discordance identifiée (4 ex-aequo + deux involutions différentes) ; recommandation éditoriale N02 formulée (distinguer classification robuste vs paires spécifiques sous convention de bris de symétrie nommée) ; clarification épistémique d'OFN complétée (ontologie idéaliste structuraliste, noyau mathématique vérifiable, identifications physiques non dérivées) ; périmètre de la collaboration PDL–OFN reformulé explicitement comme traduction structurelle dans la zone mathématique commune.
+22. **[FAIT — Session 69]** Correction de la connexion (ii) PDL–OFN : γ_E = 3−√5 est le gap spectral de G_E (dodécaèdre sur Ω₂₁, 30 arêtes, 3-régulier), pas de G_H (Hamming distance 1, 22 arêtes, λ₁ ≈ 0.0804). L'identité φ + γ_E/2 = 2 est exacte pour G_E ; elle ne tient pas pour G_H. Confirmé computationnellement (λ₁ = 0.0804170036, produit des valeurs propres non nulles de G_H = 1800, τ = 90 arbres couvrants exact). Tableau de comparaison N02 corrigé en conséquence. PDL_context.md mis à jour.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
@@ -954,6 +911,8 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 68]** Avant d'accepter ou de rejeter une discordance entre deux calculs d'un même résultat, vérifier si les deux calculs utilisent réellement la même définition de l'objet — la discordance Oleg/Cédric sur les paires CP de Ω₂₁ (4+4+2 vs 5+2+3) provenait de deux involutions différentes (spectrale vs numérique), pas d'une erreur arithmétique. Demander la définition exacte plutôt que de supposer que les procédures sont identiques.
 - **[Session 68]** Quand une classification est robuste (invariante sous les bris de symétrie) mais que les représentants spécifiques ne le sont pas, il faut distinguer les deux niveaux dans l'énoncé du théorème. Présenter une liste de paires spécifiques sans nommer la convention de bris de symétrie utilisée est une source prévisible de non-reproductibilité.
 - **[Session 68]** La question "qu'est-ce qu'OFN ?" est légitime à poser explicitement dans le cadre d'une collaboration — la réponse conditionne ce qu'on peut raisonnablement attendre de la traduction PDL↔OFN. OFN est une ontologie idéaliste structuraliste avec un noyau mathématique vérifiable et un programme d'identification physique largement non dérivé. Cette asymétrie avec PDL (programme axiomatique) ne disqualifie pas la collaboration, mais en délimite le périmètre : la zone mathématique commune (invariants topologiques, corps algébriques, automorphismes) est productive ; l'interprétation physique de ces connexions reste le travail de chaque programme dans son propre cadre.
+- **[Session 69]** Quand un collaborateur signale une correction, la vérifier d'abord computationnellement avant de répondre — même si la correction semble plausible a priori. La distinction G_E vs G_H sur Ω₂₁ était une correction correcte d'Oleg, confirmée numériquement.
+- **[Session 69]** Un objet (Ω₂₁) peut porter plusieurs structures graphiques distinctes avec des propriétés spectrales radicalement différentes. Parler du "gap spectral de Ω₂₁" sans préciser G_E ou G_H est une ambiguïté qui produit des énoncés faux (φ + λ₁/2 ≠ 2 mais φ + γ_E/2 = 2). Toujours spécifier le graphe dont on parle.
 
 **Nomenclature :**
 - D-series : documents solo PDL (D01–D64)
@@ -1021,3 +980,6 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 68]** Classification spectrale de Ω₂₁ : 4A+4S+2M confirmée par calcul exact Python/numpy avec la définition d_spec exacte d'Oleg (13 valeurs de d_spec reproduites digit pour digit). Source de discordance sur les paires spécifiques : 4 ex-aequo dans l'ordonnancement spectral — la classification est robuste (indépendante du bris de symétrie), les paires spécifiques dépendent d'une convention à nommer explicitement dans le Theorem 3.1 de unified_theory.pdf v2.
 - **[Session 68]** sigma=21 = (010101)₂ est simultanément : (a) état isolé de G_H (degré 0) ; (b) point fixe de l'involution spectrale (d_spec=0 par construction — composantes propres nulles dans le composant séparé) ; (c) seul sommet de Ω₂₁ équidistant (Hamming distance 3) de 000000 et 111111 dans Q6. Trois convergences indépendantes sur le même sommet.
 - **[Session 68]** OFN est une ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ) avec roots Whitehead/Bergson/panpsychisme informatique. Noyau mathématique vérifiable : Ω₂₁, G_H, spectre, holonomies. Identifications physiques (matière/jauge/générations/conscience) : postulats motivés, non dérivés depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est une traduction structurelle dans la zone mathématique commune, pas une unification physique.
+- **[Session 69]** Correction importante : Ω₂₁ porte DEUX graphes distincts avec leurs propres gaps spectraux — G_E (dodécaèdre, 30 arêtes, 3-régulier, γ_E = 3−√5) et G_H (Hamming distance 1, 22 arêtes, irrégulier, λ₁ ≈ 0.0804). L'identité φ + γ/2 = 2 concerne γ_E (G_E), pas λ₁ (G_H). Vérification indépendante : λ₁ = 0.0804170036 (match digit pour digit avec Oleg), φ + λ₁/2 ≈ 1.658 ≠ 2.
+- **[Session 69]** Invariant τ = 90 arbres couvrants de la composante connexe à 20 sommets de G_H : dérivé exactement via Kirchhoff (Matrix Tree Theorem) depuis P₂₀(x) = x·(x−1)²·(x−3)·P₁₆(x) avec terme constant de P₁₆ = 600, donnant produit des valeurs propres non nulles = 1²·3·600 = 1800, τ = 1800/20 = 90 EXACT. Confirmé numériquement. Candidat : 90 = 9·10 = 9·(4+6) = 9·dim P(1,3) — à investiguer.
+- **[Session 69]** Les calculs d'holonomie de N02 (Section 1.3, Φ₁=Φ₂=2π/12≠Φ₃=5π/12) utilisent G_H (gap λ₁≈0.0804) et non G_E (gap γ_E=3−√5). Les deux connexions PDL–OFN — algébrique (via G_E et φ) et holonomique (via G_H et la structure CP) — sont INDÉPENDANTES.
