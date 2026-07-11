@@ -1,6 +1,7 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 68 — 7 July 2026*
+*Last updated: Session 69 — 11 July 2026*
+*(**Session 69 — suivi de dissémination** : nouvelle section « Dissemination Status — Academia.edu & ResearchGate » ajoutée pour suivre, en plus de l'index DOI Zenodo qui reste la source de vérité, quels documents sont dupliqués sur les deux plateformes de visibilité. ResearchGate compte désormais 20 documents après les dépôts de D01, D16, D16a, D58, D65 lors de cette session ; Academia.edu reste à 7, avec un doublon DL01 non corrigé identifié dans une session antérieure. Index DOI corrigé en parallèle : ligne DM v29 remplacée par DM v30 (10.5281/zenodo.21228274) et ligne D65 (10.5281/zenodo.21220251) ajoutée, toutes deux absentes par omission.)*
 *(Aucun nouveau dépôt Zenodo cette session — suite de la collaboration PDL–OFN, vérification computationnelle de la décomposition spectrale de Ω₂₁ et clarification épistémique du cadre OFN. D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328 — inchangés.)*
 *(**Session 68 — COLLABORATION PDL–OFN, suite** : vérification indépendante complète de la définition d_spec d'Oleg et de l'involution spectrale sur Ω₂₁ ; classification 4A+4S+2M confirmée par calcul exact (toutes les valeurs de d_spec reproduites digit pour digit) ; source de discordance identifiée — quatre ex-aequo dans l'ordonnancement spectral (v=1/v=3, v=7/v=19, v=15/v=27, v=56/v=52) dont le bris de symétrie affecte les paires spécifiques mais pas la classification globale (robuste, indépendante du bris de symétrie) ; recommandation éditoriale N02 formulée : la classification 4A+4S+2M est le théorème, les paires spécifiques sont des représentants sous une convention à nommer. Clarification épistémique profonde sur OFN : programme de physique-philosophie unifiée avec la conscience comme fil conducteur, ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ), roots dans Whitehead/Bergson/panpsychisme informatique — noyau mathématique vérifiable (Ω₂₁, G_H, spectre du Laplacien) mais identifications physiques largement non dérivées depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est légitimée dans la zone mathématique commune (invariants topologiques, corps algébrique Q(√5), tripartition K_{2,2,2}) et doit rester prudemment délimitée hors de cette zone — c'est une traduction structurelle, pas une unification physique.)*
 *(**Session 67 — COLLABORATION PDL–OFN, avancées structurelles majeures** : cinq connexions précises entre PDL et OFN établies ou clarifiées au cours d'un échange approfondi avec Oleg Evdokimov. (1) N02 draft (B2_PDL_OFN_bridge.tex, 8 pages, PDL side only) rédigé, compilé, envoyé à Oleg pour la contribution OFN — sections 5 (S_sr et trois générations), table de comparaison colonne OFN, et références OFN restent à compléter. (2) Première entrée de la table de comparaison N02 avec statut « identité mathématique » (pas « analogie candidate ») : la tripartition {A,B,C} de K_{2,2,2} = L(K4) est exactement l'ensemble des trois matchings parfaits de K4, déjà théorème inconditionnel de PDL (D58 Lemme L2, D61). (3) Connexion algébrique φ/γ confirmée : φ = 2 − γ/2 (identité exacte dans Q(√5)), γ = 3−√5 étant le gap spectral de Ω₂₁ (OFN) et φ le nombre d'or (PDL, via κ = 310φ/11017) — γ entre dans k structurellement via cette identité, k lui-même étant en Q(√5)^(1/18), pas dans Q(√5). (4) L(K4) ≅ K_{2,2,2} vérifié computationnellement ; erreur d'Oleg sur Aut(L(K4)) corrigée : Whitney ne s'applique pas à K4 (cas exceptionnel), Aut(K_{2,2,2}) = S₂≀S₃ d'ordre 48 (Oh), pas S4 d'ordre 24. (5) Connexion 4+6=10 : K4 a 4 sommets (entités) + 6 arêtes (relations) = 10 éléments, en correspondance structurelle avec dim P(1,3) = 4 translations + 6 générateurs de Lorentz = 10, déjà noté dans D35/D61. Script de verrouillage PDL_N02_identity_lockdown_v2_reinforced.py (13 PASS, 0 FAIL) produit et déposé pour l'identité n_u − 1 = p_k1 = 23. Plusieurs propositions d'Oleg évaluées et corrigées selon le protocole établi : formule ε_geom ≈ 2·k·γ/43 (post-hoc, documentée comme curiosité numérique), GM-scale (redondance algébrique, 2 paramètres libres indépendants pas 3), coincidence 1682/11017 (Oleg lui-même a reconnu les paramètres libres a posteriori). Documents "Three Roads to the Periodic Table" (Varlamov non contacté, dépôt Zenodo en attente) et "unified_theory.pdf" (Evdokimov, Bachani, Ryss) reçus et évalués — HSU2 apparaît comme conjecture dans Three Roads, à corriger (D60 → théorème). Mail à Varlamov (varlamov@sibsiu.ru) envoyé avec Oleg en copie pour validation de l'usage de son travail.)*
@@ -99,10 +100,60 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D62 | 10.5281/zenodo.20679631 | Gauge boson masses; v, M_Z, M_W, M_H |
 | D63 | 10.5281/zenodo.20696391 | Quark mass spectrum; H_mass and H_sea |
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN bridge: β₁=3 |
-| DM v29 | 10.5281/zenodo.20701571 | Global Mapping v29 (current) |
 | D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
+| D65 | 10.5281/zenodo.21220251 | Two limits of the same surface; two coherence defects, M*≈4.3 M☉ |
+| DM v30 | 10.5281/zenodo.21228274 | Global Mapping v30 (current, remplace v29 — 10.5281/zenodo.20701571) |
 | N02 | *en préparation — draft PDL side v0.1 envoyé à Oleg* | Z3 → three generations: PDL–OFN bridge (Laubscher + Evdokimov) |
 | PDL_N02_lockdown | *non encore déposé* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
+
+---
+
+## Dissemination Status — Academia.edu & ResearchGate (mis à jour Session 69)
+
+*Zenodo reste la seule source de vérité pour les DOI (voir `10.5281zenodo.txt` et l'index ci-dessus). Cette section suit uniquement quels documents sont, en plus, dupliqués sur Academia.edu et ResearchGate à des fins de visibilité et d'engagement avec d'autres chercheurs. Statut établi par déclaration directe de Cédric ; non vérifié automatiquement (les deux plateformes bloquent l'accès direct — 429 sur ResearchGate lors de la dernière tentative de vérification).*
+
+### ResearchGate — 20 documents publiés
+
+| Label | DOI | Rôle dans le corpus |
+|-------|-----|----------------------|
+| D01 | 10.5281/zenodo.18462686 | Article fondateur : axiomes C1–C4, K₄, architecture du proton |
+| D16 | 10.5281/zenodo.18832953 | Sélection combinatoire de l'architecture du proton |
+| D16a | 10.5281/zenodo.18841034 | Nécessité du bloc (4,6) — unicité de K₄ |
+| DN | 10.5281/zenodo.19076555 | *Whatever We May Be* (ouvrage de vulgarisation) |
+| D45 | 10.5281/zenodo.20866017 (v2) | Seuil PBH ; prédiction falsifiable Fermi-LAT |
+| D47 | 10.5281/zenodo.19967918 | Nombres magiques, tableau périodique |
+| D49 | 10.5281/zenodo.20025166 | Équation de London depuis C4 |
+| D50 | 10.5281/zenodo.20029777 | Coefficient ¼ de Bekenstein–Hawking |
+| D53 | 10.5281/zenodo.20052558 | Clôture causale C1–C4 → Λ |
+| D55 | 10.5281/zenodo.20179924 | Angle de Weinberg θ_W = 19π/119 |
+| D58 | 10.5281/zenodo.20622987 | SU(3) comme théorème algébrique de C1–C4 |
+| D62 | 10.5281/zenodo.20679631 | Masses des bosons de jauge |
+| D63 | 10.5281/zenodo.20696391 | Spectre de masse des quarks |
+| D65 | 10.5281/zenodo.21220251 | Universalité nucléon/trou noir ; M*≈4,3 M☉ |
+| DL01 | 10.5281/zenodo.20132166 | From Axioms to Life : conjecture PDL-V |
+| DL02 | 10.5281/zenodo.20132228 | Seuils de vie et de conscience |
+| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 (synthèse provisoire) |
+| D-exp-MP01 | 10.5281/zenodo.20316492 | Lacunes structurelles confirmées (Materials Project) |
+| D-exp-Zr | 10.5281/zenodo.20321750 | Transition de phase quantique, isotopes de zirconium |
+| DM v30 | 10.5281/zenodo.21228274 | Global Mapping — document de navigation du corpus complet |
+
+**Trous identifiés (non encore comblés) :** aucun document du secteur SU(2)/U(1) intermédiaire (D46, D57, D59, D60, D61) n'est présent — le lecteur RG voit désormais l'axiomatique (D01, D16, D16a) et l'aboutissement (D58, D62, D63), mais pas les étapes intermédiaires de construction du groupe de jauge. D12 (constante de structure fine α) et D21/D25 (pont α–G) sont également absents malgré leur rôle central dans la chaîne causale.
+
+### Academia.edu — 7 documents publiés (+ 1 doublon à corriger)
+
+| Label | DOI | Rôle dans le corpus |
+|-------|-----|----------------------|
+| D47 | 10.5281/zenodo.19967918 | Nombres magiques, tableau périodique |
+| D50 | 10.5281/zenodo.20029777 | Coefficient ¼ de Bekenstein–Hawking |
+| D53 | 10.5281/zenodo.20052558 | Clôture causale C1–C4 → Λ |
+| D55 | 10.5281/zenodo.20179924 | Angle de Weinberg θ_W = 19π/119 |
+| D61 | 10.5281/zenodo.20645713 | Dérivée covariante minimale D_μ depuis C4 |
+| DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 (synthèse provisoire) |
+| N01 | 10.5281/zenodo.20523343 | Pont PDL–OFN : β₁(K₄) = 3 = b₁(Ω₂₁) |
+
+**Anomalie non résolue :** une entrée DL01 dupliquée a été détectée sur Academia.edu lors d'une session antérieure — à corriger manuellement (fusionner ou supprimer le doublon) avant tout nouveau dépôt sur cette plateforme.
+
+**Écart structurel entre les deux plateformes :** ResearchGate est nettement plus fourni (20 vs 7) et couvre désormais les fondations (D01, D16, D16a) grâce aux dépôts de cette session ; Academia.edu reste concentré sur les résultats de clôture (D47, D50, D53, D55, D61, DS01) sans jamais donner accès aux axiomes eux-mêmes. Un rattrapage minimal sur Academia.edu (au moins D01) serait cohérent avec la même logique de fondation-avant-résultat déjà appliquée à ResearchGate.
 
 ---
 
