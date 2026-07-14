@@ -1,6 +1,6 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 70 — 11-12 July 2026*
+*Last updated: Session 71 — 14 July 2026* *(D66 déposé sur Zenodo : « A Search for the C5 Metric Candidate: Logical Geometry, the (A)∧(B) Standard, and the Parity Obstruction of K4 » — 10.5281/zenodo.21351177. Premier théorème complet issu d'une recherche indépendante de Session 70 sur la même question (OP-D64-3/OP-D70-1, métrique relationnelle manquante) : obstruction de parité de (A)∧(B) sur les 6 arêtes de K4, résolue par structure de spin (lien D33), caractérisation indépendante de n=4. Connexion à Session 70 non encore établie — voir OP-D71-5. Voir Session 71 complète ci-dessous.)*
 *(**Session 70 — mécanique de l'effondrement, tentatives K_nuc↔K_nuc, candidat C5** : session longue explorant la formation d'un trou noir depuis les axiomes PDL. Vingt-et-un scripts testant la règle de couplage K_nuc↔K_nuc manquante (proximité, fenêtre active, pression périphérique, décroissance de phase) — famille complète de résultats négatifs cohérents contre la cible D65. Séquence complète de montage du nucléon reconstruite, seuil de rupture de r_val calculé (Δ*≈0,517%, forcé par C3+C4 sous conservation de R_tot(p)). Anomalie de parité proton-proton découverte et reliée à la nécessité structurelle de la capture électronique. Généralisation de (A)∧(B) à K_n quelconque vérifiée (n=4 à 28). Preuve générale que tout morphisme de bord a rang≤1 à toute échelle (ferme une branche d'OP-D66-1). Exclusion de Pauli émergeant automatiquement de la structure de Dirac déjà établie (Λ²(ℂ⁴)=6, coïncidence avec rang(d₀)=6 non confirmée faute de bijection). Piste candidate pour l'axiome manquant C5 identifiée dans un texte déjà existant du corpus (PDL.tex, vitesse limite comme taux de réajustement de cohérence) — convergence qualitative de trois mesures géométriques indépendantes (<1 cycle de pulsation nécessaire à la transition). Aucun document déposé ; voir Session 70 complète ci-dessous. Nouveaux problèmes ouverts : OP-D70-1 (formaliser C5), OP-D70-2 (anomalie p-p / capture électronique), OP-D70-3 (correction gap=25/40, Nuclear Stability skeleton).)*
 *(**Session 69 — suivi de dissémination** : nouvelle section « Dissemination Status — Academia.edu & ResearchGate » ajoutée pour suivre, en plus de l'index DOI Zenodo qui reste la source de vérité, quels documents sont dupliqués sur les deux plateformes de visibilité. ResearchGate compte désormais 20 documents après les dépôts de D01, D16, D16a, D58, D65 lors de cette session ; Academia.edu reste à 7, avec un doublon DL01 non corrigé identifié dans une session antérieure. Index DOI corrigé en parallèle : ligne DM v29 remplacée par DM v30 (10.5281/zenodo.21228274) et ligne D65 (10.5281/zenodo.21220251) ajoutée, toutes deux absentes par omission.)*
 *(Aucun nouveau dépôt Zenodo cette session — suite de la collaboration PDL–OFN, vérification computationnelle de la décomposition spectrale de Ω₂₁ et clarification épistémique du cadre OFN. D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328 — inchangés.)*
@@ -104,6 +104,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
 | D65 | 10.5281/zenodo.21220251 | Two limits of the same surface; two coherence defects, M*≈4.3 M☉ |
 | DM v30 | 10.5281/zenodo.21228274 | Global Mapping v30 (current, remplace v29 — 10.5281/zenodo.20701571) |
+| D66 | 10.5281/zenodo.21351177 | C5 metric search: logical geometry, (A)∧(B), parity obstruction of K4 |
 | N02 | *en préparation — draft PDL side v0.1 envoyé à Oleg* | Z3 → three generations: PDL–OFN bridge (Laubscher + Evdokimov) |
 | PDL_N02_lockdown | *non encore déposé* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
 
@@ -782,7 +783,84 @@ Reconstruction, étape par étape, de la chaîne C1–C4 → proton → neutron,
 
 ---
 
-## State of the Programme (end of Session 66)
+## Session 71 — 13–14 July 2026 — La métrique relationnelle manquante (OP-D64-3 / OP-D70-1) : construction, échecs documentés, et premier théorème (D66)
+
+### Résumé
+
+Session unique, très longue, abordant **la même question que Session 70 (OP-D70-1, candidat C5)**, mais par un chemin totalement indépendant, sans connaissance préalable de cette session antérieure au moment où celle-ci a commencé. Plutôt que de partir de PDL.tex et du taux de réajustement de cohérence (approche de Session 70), cette session construit une **géométrie logique** directement sur K₄, K₂₄, K₂₈. L'arc complet : construction → mauvais signe → diagnostic et correction → étalon thermodynamique indépendant → famille de modèles mécaniques (majoritairement négatifs, tous documentés) → découverte des axes réels de K₄ → **théorème complet** (obstruction de parité de (A)∧(B), résolution par structure de spin, unicité de n=4) → confrontation à la littérature externe → rédaction, correction et dépôt sur Zenodo (D66, 10.5281/zenodo.21351177). Discipline de verrouillage appliquée deux fois avant rédaction (Colab, exécution indépendante par Cédric et par Claude, résultats identiques).
+
+**Un seul théorème inconditionnel produit cette session — mais un très grand nombre de fausses pistes explorées, testées, et rigoureusement fermées, dans l'esprit du protocole négatif-résultats-de-première-classe.**
+
+**Connexion majeure à établir en priorité pour une session future** : cette session et la Session 70 attaquent la même question (OP-D64-3, métrique relationnelle manquante / candidat C5) depuis deux directions indépendantes — Session 70 depuis PDL.tex (taux de réajustement, texte déjà existant du corpus) ; cette session depuis la géométrie combinatoire pure (K₄, K₂₄, K₂₈, symétrie réelle). Ni l'une ni l'autre ne résout complètement le problème ; aucune tentative n'a encore été faite pour vérifier si elles convergent ou si elles sont mutuellement incompatibles. Voir OP-D71-5 ci-dessous.
+
+### Fil 1 — Géométrie logique directe sur K₄, K₂₄, K₂₈ : mauvais signe, puis correction
+
+- Construction initiale : K₄ = tétraèdre unitaire ; K₂₄, K₂₈ = cœurs de valence u/d, polygones réguliers inscrits (diagonale = 1) ; surfaces construites par facettes triangulaires équilatérales (analogie directe avec les 4 faces de K₄).
+- **Résultat négatif** : $R(p)/R(n)$ obtenu par inversion de Gauss-Bonnet donne $1{,}0536$ — signe **faux** (prédit le proton plus grand que le neutron), contredit par toutes les références externes testées ensuite (rayon magnétique, données nucléaires).
+- Vérification d'invariance : les ratios $S_{val}(p)/S_{val}(n)$ et $S_{mer}(p)/S_{mer}(n)$ restent **exactement invariants** (12 chiffres) sous changement d'unité maîtresse (corde vs arc de K₄) — corrigé plus tard par un changement de nature, pas d'unité.
+- **Diagnostic et correction** : le segment logique traité comme une longueur spatiale est la source de l'erreur. Par analogie avec la dualité de Fourier position/impulsion, le segment est réinterprété comme une **fréquence spatiale** (inverse de longueur), cohérent avec un espace-temps uni plutôt qu'un espace pur. Correction : $R(p)/R(n)$ (géométrie inversée) $=0{,}9514$ — signe **corrigé**.
+- Confirmation croisée indépendante (Fil 2 ci-dessous, étalon $(A)\wedge(B)$/$R_{surf}$) : $0{,}9493$ — accord à $0{,}22\%$, la convergence la plus serrée de toute la session entre deux méthodes construites séparément.
+
+### Fil 2 — L'étalon $(A)\wedge(B)$ comme construction thermodynamique
+
+- Fonction de partition à une relation, $z_1(\beta)=4(1+e^{-\beta})^2$, $\langle\Omega_1\rangle(\beta)=1/(1+e^\beta)$ — distribution de Fermi-Dirac exacte, sortant directement de la structure binaire de D29.
+- À $T\to0$ : $Z(\beta)=z_1(\beta)^{R_{surf}}\to4^{R_{surf}}=\Omega_{surf}$, reproduisant l'entropie de surface déjà établie (D38) par une voie complètement indépendante.
+- **Extension justifiée (pas analogique) de $R_{surf}$ au neutron** : $R_{surf}(n)=\varphi\,r_{val}(n)/3=344\varphi$ — le facteur $1/3$ de D05 reflète le nombre de cœurs de valence (3, identique pour uud et udd), pas leur composition. Conséquences : $\kappa(n)=0{,}050637$, $S(n)/S(p)=1{,}1097$.
+- **Résultats négatifs documentés** : trois tentatives de relier $\beta$ à $\Delta m_{iso}$ ou $R_e$ ont échoué au test de robustesse — dont une correspondance à $0{,}08\%$ avec $k_1=9$ (D51) reposant sur une forme non justifiée de $\Delta m_{iso}/m_p$ (sans le facteur 2 de la formule établie D30). Corrigée avec la bonne forme, l'écart remonte à $7{,}6$–$8{,}0\%$. **Piste abandonnée.**
+
+### Fil 3 — Modèles mécaniques (horlogerie à complications) : famille de constructions, majoritairement négatives
+
+- Premier modèle vectoriel (3 branches à 120°, plan, convention arbitraire) : résidu $|A-B|=102$, **identique** pour proton et neutron.
+- Électron comme référence : les 4 sommets du tétraèdre régulier s'annulent **exactement** ($0,0,0$) — vérifié, pas supposé. $K_4$ n'a besoin d'aucun amortisseur.
+- Mer comme amortisseur, deux variantes : pondérée (résidu $n/p=0{,}89912$, **algébriquement identique** à l'inverse de $r_{val}/R_{tot}$ — pas d'information nouvelle) ; volatile (isotrope, $1{,}26\%$). Combinées en quadrature : $0{,}98622$.
+- Filtrage probabiliste via $(A)\wedge(B)$ : $0{,}98102$.
+- **Résultat négatif** : le résidu complet testé contre $\Gamma_n=40{,}102$ (D22) et $(\Delta n+1)^2=25$ — aucune correspondance reconnaissable.
+- **Correction conceptuelle majeure** : séparation du canal vectoriel (spin) et du canal scalaire (énergie/comptage). Le canal scalaire redonne exactement $R_{tot}$ (donc $\mu^*$). Le canal vectoriel, avec la vraie magnitude physique du spin ($1/2$ pour les deux nucléons, fait mesuré, pas dérivé de PDL), **ne peut structurellement porter aucune asymétrie de magnitude p/n**.
+
+### Fil 4 — Les axes réels de K₄, et le théorème (résultat central de la session)
+
+- Découverte géométrique (pas une hypothèse) : K₄ possède exactement 3 axes de symétrie réels, mutuellement perpendiculaires, reliant les milieux des paires d'arêtes opposées (les 3 appariements parfaits, structure $S_4\to S_3$ — D58 L2, D61). Coordonnées tétraédriques standard : axes exactement $(1,0,0)$, $(0,1,0)$, $(0,0,1)$.
+- Vecteurs nucléoniques sur ces axes réels (magnitude = comptage seul, direction = géométrie réelle de K₄, aucun paramètre libre) : $|\vec v_p|=\sqrt{2r_u^2+r_d^2}=543{,}356$, $|\vec v_n|=\sqrt{2r_d^2+r_u^2}=601{,}618$, rapport $1{,}10722$ ($10{,}72\%$, non arbitraire).
+- **Résultat négatif intermédiaire** : l'angle direct entre $\vec v_p$ et $\vec v_n$ dépend d'une correspondance d'axes non justifiée (deux valeurs possibles, $16{,}774°$ ou $8{,}398°$).
+- **Résolution propre** : comparaison de chaque nucléon, séparément, à la seule direction symétrique de K₄ ($(1,1,1)/\sqrt3$), invariante par permutation : $\theta_p=8{,}8167°$, $\theta_n=7{,}9571°$. Rigoureuse, mais sans interprétation physique établie.
+- **THÉORÈME (obstruction de parité)** : exiger $(A)\wedge(B)$ simultanément sur les 6 arêtes de K₄, avec des signes croisés classiques ($\pm1$) pour les deux demi-cycles, est **impossible sans exception** — 0 solution jointe, vérifié exhaustivement pour $n=3,4$.
+- **THÉORÈME (résolution par spin)** : assigner au second demi-cycle une structure de type spin (carré $=-1$) résout l'obstruction — exactement 4 solutions jointes, indépendamment de $n$, fraction $4^{1-n}$, vérifiée exactement pour $n=3,\ldots,7$.
+- **Corollaire** : $\tau_3^2=+I_2$ et $T^2=(i\tau_2)^2=-I_2$ sont exactement les opérateurs déjà construits dans D33 pour $\gamma^0$ et $\gamma^i$.
+- **THÉORÈME (unicité de n=4)** : $n=4$ est l'unique valeur $>1$ pour laquelle l'exposant résolu $2n-2$ égale le nombre d'arêtes $\binom{n}{2}$, via $(n-1)(n-4)=0$. Vérifié computationnellement pour $n=2,\ldots,11$. **Seconde caractérisation de K₄, indépendante du théorème fondateur D16a.**
+- Bug de vectorisation détecté et corrigé en cours de session (une première version numpy donnait 16 solutions au lieu de 4).
+
+### Fil 5 — Confrontation à la littérature externe
+
+- Mécanisme du diquark scalaire/axial-vecteur : ne distingue pas structurellement proton et neutron — cohérent avec la conclusion du Fil 3 (canal vectoriel pur symétrique).
+- **Erreur méthodologique identifiée et corrigée en session** : une première extraction d'une probabilité d'admixture scalaire depuis les coefficients de Maji & Chakrabarti (2016) était fausse (normalisation de comptage de quarks mal lue comme partition de probabilité). Corrigée : $P(\text{scalaire}|u\text{-secteur})=0{,}6936$, en désaccord de $32\%$ avec $1-\varphi/3=0{,}4607$.
+- Granados & Sargsian (2009) : $\rho=-0{,}3\pm0{,}2$ extrait de données réelles de diffusion $pn$. Interprété (proposition de cette session) comme $\tan\phi=16{,}699°$, comparé à $\theta_p+\theta_n=16{,}774°$ — accord $0{,}447\%$, **avec trois réserves méthodologiques explicites** (interprétation non établie, incertitude large, sélection post-hoc).
+- Angle de Weinberg testé contre $\theta_p$, $\theta_n$ (8 combinaisons) : aucun accord — piste fermée.
+
+### Fil 6 — Rédaction, corrections, dépôt Zenodo
+
+- Document complet rédigé en LaTeX, incluant historique complet, section « Notation and prerequisites » autonome, vocabulaire diquark introduit, carte de lecture explicite.
+- Plusieurs cycles de correction documentés : citations recroisées contre le registre DOI (trois erreurs trouvées : D50→D38, D01/D02→D16a, référence D51 introuvable signalée explicitement) ; `\citet`→`\citep` (auto-citations superflues) ; tableaux `tabularx` (débordement A4) ; symboles de degré corrigés (`°` invalide en mode math LaTeX) ; scripts retirés du corps du texte, déposés séparément sur Zenodo sous le même DOI.
+- **Audit complet de la stratification épistémique** : quatre boîtes « Theorem »/« Corollary » mal classées reclassées en catégorie neutre « Verified Construction (not a C1–C4 theorem) ». Deux boîtes ajoutées aux équations vectorielles de la Partie V pour signaler explicitement les constructions qui « marchent ».
+- **Publié** : 10.5281/zenodo.21351177. Fichiers déposés sous le même DOI : PDF, `.tex`, `.bib`, 4 scripts Python (`cell_1_coherent_configs.py`, `cell_2_parity_obstruction.py`, `cell_3_spin_resolution.py`, `cell_4_D33_link.py`).
+
+### Problèmes ouverts nouveaux issus de Session 71
+
+**Note de désambiguïsation** : les problèmes ci-dessous sont nommés `OP-D66pub-1` à `4` (« pub » = publication), et non `OP-D66-1` (déjà pris, Session 66, exposant 18, sans rapport). Le document D66 conserve sa propre numérotation interne.
+
+**OP-D66pub-1** : prouver ou infirmer la bijection entre l'exposant $n-1=3$ de la résolution de parité de K₄ (D66, §7.4) et le dénominateur 3 de $R_{surf}=\varphi\,r_{val}/3$ (D05). Entrée : D05, D66.
+
+**OP-D66pub-2** : déterminer si $\theta_p$, $\theta_n$ (D66, §7.2–7.3) correspondent à une grandeur de structure nucléonique établie et mesurée. Candidat actuel (angle diquark, Granados & Sargsian 2009) porte trois réserves explicites. Entrée : D66, arXiv:0907.2269.
+
+**OP-D66pub-3** : une observable vectorielle (orientation, pas magnitude) du nucléon peut-elle être construite depuis C1–C4 seules, sans modèle de quarks externe ? Entrée : D66.
+
+**OP-D66pub-4** : tester $\varepsilon_{geom}(n)$ (D43) comme poids probabiliste dans une combinaison correctement séparée avec le canal vectoriel/comptage, corrigeant le défaut de conception identifié en Session 71 (combinaison naïve de $\kappa$ et d'un facteur de comptage produisant deux signaux opposés). Entrée : D43, D66.
+
+**OP-D71-5 [NOUVEAU, priorité haute — reconnecte Session 70 et Session 71]** : déterminer si le candidat C5 de Session 70 (taux de réajustement de cohérence borné par c, ancré sur PDL.tex) et les résultats géométriques de Session 71 (théorème d'obstruction de parité, vecteurs sur axes réels de K₄) décrivent le même phénomène sous deux formalismes différents, ou s'ils sont indépendants et potentiellement en tension. Aucune tentative de rapprochement n'a encore été faite. Entrée : Session 70 (Fils 1, 2, 5, 6), Session 71, D66, PDL.tex, Proper Time as Coherence-Cycle Counting.
+
+
+---
+
+## State of the Programme (end of Session 71)
 
 ### Collaboration PDL–OFN — état Session 67
 
@@ -890,6 +968,16 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-D70-1 [NOUVEAU — Session 70, priorité haute]** : formaliser le candidat d'axiome C5 (métrique relationnelle / compatibilité causale manquante, OP-D64-3). Forme candidate : deux régimes sont compatibles à leur interface ssi le nombre d'unités de cohérence à réajuster ne dépasse pas (taux maximal de réajustement par cycle de pulsation) × (nombre de cycles disponibles), le taux maximal étant borné par c. Ancré sur un texte déjà existant du corpus (PDL.tex ; « Proper Time as Coherence-Cycle Counting »), jamais formalisé. Premier résultat numérique (convergence qualitative de trois mesures géométriques indépendantes donnant <1 cycle pour la transition de rupture de r_val) cohérent avec onze résultats négatifs indépendants sur le comportement en saut net (jamais progressif) du couplage K_nuc↔K_nuc. Reste à démontrer : que « vitesse de transition = tension géométrique dense/épars » est la bonne loi. Entrée : PDL.tex, Proper Time as Coherence-Cycle Counting, Session 70 Fils 1, 2, 5, 6.
 - **OP-D70-2 [NOUVEAU — Session 70, priorité haute]** : approfondir l'anomalie de parité proton-proton et son lien avec la capture électronique. Résultat mathématique propre (p→p non-entier sous le calcul agrégé K_nuc↔K_nuc, origine tracée exactement à la composition uud vs udd) ; interprétation physique (capture électronique comme porte d'entrée obligatoire de l'effondrement) cohérente qualitativement avec la neutronisation stellaire standard, mais non prouvée comme mécanisme PDL. Entrée : D29 (A)∧(B), D40, D47, Session 70 Fil 3.
 - **OP-D70-3 [Session 70, correction de corpus, priorité haute mais non physique]** : incohérence entre la formule de N_crit,max=126,1 (« Pdl nuclear stability skeleton.tex ») qui énonce 2T au dénominateur mais substitue numériquement 2×gap=80 (gap=40, distinct du gap=25 structurel utilisé partout ailleurs). Action requise : clarifier ou corriger dans le document source. Entrée : « Pdl nuclear stability skeleton.tex ».
+
+### Ouverts — Session 71 (D66, géométrie logique, obstruction de parité)
+
+**Note de désambiguïsation** : `OP-D66pub-1` à `4` (« pub » = publication) sont distincts de `OP-D66-1` (Session 66, exposant 18, déjà listé ci-dessus, sans rapport). Le document D66 conserve sa propre numérotation interne.
+
+- **OP-D71-5 [NOUVEAU — Session 71, priorité haute — reconnecte Session 70 et Session 71]** : déterminer si le candidat C5 de Session 70 (taux de réajustement de cohérence borné par c, ancré sur PDL.tex) et les résultats géométriques de Session 71 (obstruction de parité, vecteurs sur axes réels de K₄, D66) décrivent le même phénomène sous deux formalismes indépendants, ou s'ils sont en tension. Aucun rapprochement tenté à ce jour. Entrée : Session 70 (Fils 1, 2, 5, 6), Session 71, D66, PDL.tex.
+- **OP-D66pub-1 [NOUVEAU — Session 71]** : prouver ou infirmer la bijection entre l'exposant $n-1=3$ de la résolution de parité de K₄ (D66, §7.4) et le dénominateur 3 de $R_{surf}=\varphi\,r_{val}/3$ (D05). Entrée : D05, D66.
+- **OP-D66pub-2 [NOUVEAU — Session 71]** : déterminer si $\theta_p$, $\theta_n$ (D66, §7.2–7.3) correspondent à une grandeur de structure nucléonique établie et mesurée. Candidat actuel (angle diquark, Granados & Sargsian 2009) porte trois réserves méthodologiques explicites. Entrée : D66, arXiv:0907.2269.
+- **OP-D66pub-3 [NOUVEAU — Session 71]** : une observable vectorielle (orientation, pas magnitude) du nucléon peut-elle être construite depuis C1–C4 seules, sans modèle de quarks externe ? Entrée : D66.
+- **OP-D66pub-4 [NOUVEAU — Session 71]** : tester $\varepsilon_{geom}(n)$ (D43) comme poids probabiliste dans une combinaison correctement séparée avec le canal vectoriel/comptage. Entrée : D43, D66.
 
 ### Ouverts — Session 67 (collaboration N02)
 
