@@ -1,0 +1,394 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage[most]{tcolorbox}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\pdfstringdefDisableCommands{%
+  \def\texorpdfstring#1#2{#2}%
+}
+
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjred}{RGB}{160,30,30}
+\definecolor{opengreen}{RGB}{30,110,30}
+\definecolor{failgrey}{RGB}{90,90,90}
+
+\newtcolorbox{theorembox}{colback=blue!5,colframe=proofblue,fonttitle=\bfseries,title=Theorem}
+\newtcolorbox{lemmabox}{colback=blue!5,colframe=proofblue,fonttitle=\bfseries,title=Lemma}
+\newtcolorbox{corollarybox}{colback=blue!5,colframe=proofblue,fonttitle=\bfseries,title=Corollary}
+\newtcolorbox{conjecturebox}{colback=red!5,colframe=conjred,fonttitle=\bfseries,title=Conjecture}
+\newtcolorbox{openproblembox}{colback=green!5,colframe=opengreen,fonttitle=\bfseries,title=Open Problem}
+\newtcolorbox{negativebox}{colback=gray!8,colframe=failgrey,fonttitle=\bfseries,title=Negative Result}
+\definecolor{resultpurple}{RGB}{110,60,140}
+\newtcolorbox{resultbox}{colback=purple!5,colframe=resultpurple,fonttitle=\bfseries,title=Verified Construction (not a C1--C4 theorem)}
+
+\title{\texorpdfstring{A Search for the C5 Metric Candidate: Logical Geometry, the $(A)\wedge(B)$ Standard, and the Parity Obstruction of $K_4$}{A Search for the C5 Metric Candidate: Logical Geometry, the (A) AND (B) Standard, and the Parity Obstruction of K4}}
+\author{C\'edric Laubscher}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document records, in full, a single extended research session devoted to the question of whether a logical metric -- a candidate for the missing axiom C5 -- can be constructed from the combinatorial architecture of PDL. The session begins with a purely geometric construction on $K_4$, $K_{24}$ and $K_{28}$ (Section~\ref{sec:geom}), tests it against external references, finds it produces the wrong qualitative sign for proton--neutron comparisons, and diagnoses the fix (inversion of length, Section~\ref{sec:inverted}). It then explores an independent thermodynamic construction based on the $(A)\wedge(B)$ standard \citep{D29} (Section~\ref{sec:etalon}), a family of mechanical (gyroscope/clockwork) models (Section~\ref{sec:mechanical}), and a rigorous vectorial construction anchored on the real symmetry axes of $K_4$ (Section~\ref{sec:axes}), which yields the only unconditionally-established new theorem of the session: an exact parity obstruction of $(A)\wedge(B)$ joint stability across all six edges of $K_4$, and its resolution via the spin structure already present \citep{D33} (Section~\ref{sec:obstruction}). Throughout, every tested correspondence with external, measured, or previously-established quantities is reported -- successes and failures alike -- in the spirit of the programme's negative-results-as-first-class convention. \textbf{Reader's map: Parts I--IV (Sections~\ref{sec:geom}--\ref{sec:mechanical}) are diagnostic and largely negative by design -- each documents a construction that was tried and found wanting, and the negative results are reported with the same rigour as positive ones, per the discipline of this programme. Part V (Section~\ref{sec:axes}) is where the session's rigorous, positive content is concentrated: two non-arbitrary vector equations and three proven theorems. Neither resolves the original question (a C5 metric candidate remains open, Section~\ref{sec:open}), but both are unconditionally established.} The document closes with a full catalogue of open threads (Section~\ref{sec:open}) and a literature confrontation (Section~\ref{sec:literature}).
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Motivation}
+\label{sec:motivation}
+
+Prior work (Session 65) established that PDL, as derived from C1--C4, produces global counting quantities (mass via $R_{tot}$, entropy via $R_{surf}$) but no notion of point-to-point distance. Four independent attempts to construct such a distance (internal $K_4$ rigidity, multi-block combinatorial distance, $K_4\cong S^2$ topology, Compton-wavelength import) were tried and abandoned. The present session re-opens this question from a different angle: rather than searching directly for a two-point distance function, it asks whether a \emph{logical geometry} built on the existing combinatorial objects ($K_4$, $K_{24}$, $K_{28}$, the quintuplet) can be made to reproduce known proton--neutron asymmetries, in the hope that the successful construction would reveal the missing ingredient by its structure.
+
+% ============================================================
+\section{Notation and prerequisites}
+\label{sec:prereq}
+
+This section defines, self-contained and without external reference, every quantity used in the remainder of this document. A reader already fluent in the PDL corpus may skip to Section~\ref{sec:geom}.
+
+\subsection{The axioms C1--C4 and the closure \texorpdfstring{$K_4$}{K4}}
+PDL constructs physical structure from four axioms on finite signed graphs: C1 (minimal binary pulsation -- existence instantiates as a non-trivial alternation between two discrete states, independent of any pre-existing temporal metric); C2 (coherence under relational tension -- the graph must be Harary-balanced, every triangle carrying a positive sign product); C3 (completeness of relational coverage -- the graph must be connected); C4 (optimisation of coherence cost -- among configurations satisfying C1--C3, the realised one minimises the fraction of violated triangles). The founding theorem of the programme is that no signed graph on fewer than four vertices satisfies all four axioms simultaneously, and that the complete graph on four vertices, $K_4$ (the ``$(4,6)$ block'': four vertices, six edges), is the minimal admissible closure, unique up to the global symmetry $\mathrm{Aut}(K_4)=S_4$. $K_4$ is identified with the electron.
+
+\subsection{The proton and neutron quintuplets}
+The proton is a hierarchical composite characterised by an integer quintuplet $(n_u,n_d,r_{val},R_{sea},R_{tot})=(24,28,930,10087,11017)$, where $n_u$, $n_d$ count the multiplicity of $u$-type and $d$-type valence cores (each core itself a complete graph, $K_{24}$ or $K_{28}$), $r_u=\binom{n_u}{2}=276$ and $r_d=\binom{n_d}{2}=378$ count the internal relations of one such core, $r_{val}=2r_u+r_d=930$ (proton, $uud$) is the total valence relation count, $R_{sea}=10087$ is the dynamical-sea relation count, and $R_{tot}=r_{val}+R_{sea}=11017$ is the total relational budget. The neutron ($udd$) shares the same $n_u,n_d$ but inverts the valence weighting, $r_{val}(n)=r_u+2r_d=1032$, with $R_{sea}(n)=9960$ and $R_{tot}(n)=10992$.
+
+\subsection{\texorpdfstring{$\kappa$}{kappa} and the golden ratio}
+$\varphi=(1+\sqrt5)/2$ is the golden ratio, arising as the fixed point of a self-similarity condition on the proton's active surface. $R_{surf}(p)=\varphi\,r_{val}(p)/3=310\varphi$ is the count of ``actively engaged'' relations (the factor $1/3$ reflecting the three quasi-stationary valence cores), and $\kappa=R_{surf}/R_{tot}$ is the surface-to-total engagement ratio, $\kappa(p)=0.045529$.
+
+\subsection{The \texorpdfstring{$(A)\wedge(B)$}{(A) AND (B)} stability standard}
+\label{subsec:AB}
+A relation $p_k$ of the proton is judged for stability not in isolation, but as probed by an external $K_4$ closure. For a fixed edge $(e_i,e_j)$ of $K_4$ and each pulsation half-cycle $c\in\{1,2\}$, define cross-signs $s_c(e_i,p_k),s_c(e_j,p_k)\in\{\pm1\}$ linking the two $K_4$-vertices to $p_k$, and write $P_c=s_c(e_i,p_k)\,s_c(e_j,p_k)$. The relation $p_k$ is $(A)\wedge(B)$-stable at this edge if
+\begin{align}
+\text{(A)}&: \quad P_1 = \sigma(e_i,e_j), \\
+\text{(B)}&: \quad P_2 = -P_1,
+\end{align}
+where $\sigma(e_i,e_j)$ is the (fixed) sign of that edge in the coherent $K_4$ configuration. Exhaustive enumeration over the $16$ possible $(s_1(e_i),s_1(e_j),s_2(e_i),s_2(e_j))$ combinations gives exactly $4$ stable, $8$ with one condition violated, $4$ with both violated -- independent of which edge is chosen, by the $S_4$-symmetry of $K_4$. The resulting stable fraction, $1/4$, is a theorem, not an assumption.
+
+% ============================================================
+\section{Part I --- Logical geometry on \texorpdfstring{$K_4$}{K4}, \texorpdfstring{$K_{24}$}{K24}, \texorpdfstring{$K_{28}$}{K28}}
+\label{sec:geom}
+
+\subsection{Basic construction}
+$K_4$ (the electron closure) is treated as a regular tetrahedron with unit edge. $K_{24}$ and $K_{28}$ represent the $u$- and $d$-type valence cores, with $r_u=\binom{24}{2}=276$ and $r_d=\binom{28}{2}=378$ relations respectively, drawn as regular $n$-gons inscribed in a circle whose largest diagonal is normalised to $1$.
+
+For a regular $n$-gon, the chord subtending $k$ steps is $\ell_k=2R\sin(k\pi/n)$; the smallest peripheral segment ($k=1$) relative to the diameter ($k=n/2$, $=1$) is
+\begin{equation}
+\ell_1(n) = \sin(\pi/n), \qquad \ell_1(24)=0.130526\ldots,\quad \ell_1(28)=0.111964\ldots
+\end{equation}
+
+\subsection{Triangular surfaces (chord-based)}
+Each relation is treated as contributing an elementary equilateral-triangle facet, $\mathrm{tri}(\ell)=(\sqrt3/4)\ell^2$, by analogy with the four equilateral faces of the $K_4$ tetrahedron. With $r_u$, $r_d$ relations respectively:
+\begin{align}
+S_{K_{24}} &= r_u\cdot\mathrm{tri}(\ell_1(24)) = 2.036128, & S_{K_{28}} &= r_d\cdot\mathrm{tri}(\ell_1(28)) = 2.051885,\\
+S_{val}(p) &= 2S_{K_{24}}+S_{K_{28}} = 6.124140, & S_{val}(n) &= S_{K_{24}}+2S_{K_{28}} = 6.139897.
+\end{align}
+The sea (mer) segment is taken as the composition-weighted average, $\ell_{mer}(p)=(2\ell_1(24)+\ell_1(28))/3$ (uud) and $\ell_{mer}(n)=(\ell_1(24)+2\ell_1(28))/3$ (udd):
+\begin{align}
+S_{mer}(p) &= R_{sea}(p)\cdot\mathrm{tri}(\ell_{mer}(p)) = 67.52694, & S_{mer}(n) &= R_{sea}(n)\cdot\mathrm{tri}(\ell_{mer}(n)) = 60.20604,\\
+S_{tot}(p) &= S_{val}(p)+S_{mer}(p) = 73.65108, & S_{tot}(n) &= S_{val}(n)+S_{mer}(n) = 66.34593.
+\end{align}
+
+\begin{negativebox}
+$R(p)/R(n)$ obtained via Gauss--Bonnet inversion ($S=4\pi R^2$) from this construction gives $1.0536$ -- the \emph{wrong sign}: it predicts the proton larger than the neutron, contrary to every external reference tested in Section~\ref{sec:external}.
+\end{negativebox}
+
+\subsection{Unit invariance check}
+Rescaling the master unit (K4 edge $=1$ versus arc$(K_4)=1$, via the tetrahedral central angle $\theta_4=\arccos(-1/3)$, $R_4=1/\theta_4$, giving $\mathrm{chord}_{K_4}=0.854687$) leaves the ratios $S_{val}(p)/S_{val}(n)=0.997434$ and $S_{mer}(p)/S_{mer}(n)=1.121598$ \emph{exactly} invariant (12-digit agreement). Switching instead from chord to arc for the internal segments of $K_{24}/K_{28}$ themselves introduces a small, genuine shift ($0.997434\to0.997938$; $1.121598\to1.122162$), because the arc/chord correction factor differs between $n=24$ ($0.286\%$) and $n=28$ ($0.210\%$).
+
+% ============================================================
+\section{Part II --- The inverted-length correction}
+\label{sec:inverted}
+
+\subsection{Physical motivation}
+The wrong sign of Section~\ref{sec:geom} was traced to treating the logical segment as a spatial length. Reasoning by analogy with the Fourier-dual relationship between position and momentum ($p=\hbar k$), the segment is instead treated as an inverse length (a spatial frequency), consistent with a unified spacetime rather than a pure-space quantity.
+
+\begin{equation}
+S'_{K_{24}} = r_u\cdot\mathrm{tri}(1/\ell_1(24)), \qquad S'_{K_{28}} = r_d\cdot\mathrm{tri}(1/\ell_1(28)),
+\end{equation}
+with the sea weighted by the composition-weighted \emph{average of the inverses} (or, equivalently within $0.02\%$, the inverse of the average -- the two variants agree at $0.4454\%$ and $0.4356\%$ from the standard below).
+
+\begin{align}
+S'_{tot}(p) &= 312573.58, & S'_{tot}(n) &= 345317.78,\\
+R(p)/R(n) \text{ (inverted)} &= \sqrt{S'_{tot}(p)/S'_{tot}(n)} = 0.9514.
+\end{align}
+
+\begin{resultbox}
+Sign corrected. Numerically consistent with a completely independent construction (the $(A)\wedge(B)$ standard, Section~\ref{sec:etalon}) at $0.22$--$0.45\%$ agreement -- the tightest cross-method numerical consistency of the session, but \emph{not} an external validation: neither construction has itself been confirmed against measured data at this precision.
+\end{resultbox}
+
+\subsection{Full logical-geometry table (proton and neutron), dimensionless}
+\begin{center}
+\begin{tabularx}{0.7\textwidth}{Yrr}
+\toprule
+Quantity & Proton & Neutron \\
+\midrule
+Valence surface & $27086.23$ & $33128.10$ \\
+Sea surface & $285487.35$ & $312189.68$ \\
+Total surface & $312573.58$ & $345317.78$ \\
+Radius (Gauss--Bonnet) & $157.714$ & $165.769$ \\
+Valence/sea ratio & $0.09488$ & $0.10612$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The valence/sea ratio agrees with the raw counting ratio $r_{val}/R_{sea}$ ($0.09220$, $0.10361$) to within $2.4$--$2.9\%$, itself consistent with the corpus's own ``stationary $\sim9\%$ / dynamic $\sim91\%$'' description.
+
+\subsection{External confrontation}
+\label{sec:external}
+\begin{center}
+\begin{tabularx}{\textwidth}{Yrl}
+\toprule
+Source & $R(p)/R(n)$ & Status \\
+\midrule
+Direct logical geometry (\S\ref{sec:geom}) & $1.0536$ & wrong sign \\
+Inverted logical geometry (\S\ref{sec:inverted}) & $0.9514$ & correct sign \\
+$(A)\wedge(B)$ standard, $R_{surf}$ (\S\ref{sec:etalon}) & $0.9493$ & correct, $0.22\%$ from above \\
+External reference (nuclear matter radii, $0.84/0.87$~fm) & $0.9655$ & correct sign \\
+Magnetic radius (literature, positive for both nucleons) & $0.9826$ & best external anchor \\
+\bottomrule
+\end{tabularx}
+\end{center}
+All constructions agree on the qualitative amplitude order (roughly $3$--$10\%$) but the inverted-geometry and $(A)\wedge(B)$ constructions systematically over-predict the asymmetry relative to the magnetic-radius reference by a factor of $\sim6$.
+
+\begin{negativebox}
+Neither the direct nor the inverted logical-geometry construction reproduces $m_n/m_p$ ($1.0014$) or $\mu^*$ ($1836.15$): $S'_{tot}(n)/S'_{tot}(p)=1.1048$ vs.\ real $1.0014$ ($75\times$ too large); $S_{tot}(p)/S(K_4)=120310$ vs.\ $\mu^*=1836.15$ ($65.5\times$ too large). By contrast $R_{tot}(n)/R_{tot}(p)=0.99773$ agrees with $m_n/m_p$ to $0.36\%$. \textbf{Conclusion: mass is carried exclusively by $R_{tot}$ (a pure count), never by any geometric surface construction tried in this session.}
+\end{negativebox}
+
+% ============================================================
+\section{Part III --- The \texorpdfstring{$(A)\wedge(B)$}{(A) AND (B)} standard as thermodynamic construction}
+\label{sec:etalon}
+
+\subsection{Single-relation partition function}
+For one relation probed against a fixed edge of a coherent $K_4$ configuration, exhaustive enumeration over the $16$ cross-sign combinations gives cost $0$ (stable, D29) in $4$ cases, cost $1$ in $8$, cost $2$ in $4$. The single-relation partition function is
+\begin{equation}
+z_1(\beta) = 4+8e^{-\beta}+4e^{-2\beta} = 4(1+e^{-\beta})^2, \qquad \langle\Omega_1\rangle(\beta)=\frac{1}{1+e^{\beta}}
+\end{equation}
+an exact Fermi--Dirac distribution.
+
+\begin{resultbox}
+At $T\to0$ ($\beta\to\infty$), $Z(\beta)=z_1(\beta)^{R_{surf}}\to4^{R_{surf}}=\Omega_{surf}$, reproducing the surface entropy \citep{D38} by an independent route (statistical-mechanical rather than direct counting). This limit is a mathematical consequence of the candidate partition function $z_1(\beta)$ proposed in this session, not itself a theorem of C1--C4; $\Omega_{surf}=4^{R_{surf}}$ is the established theorem \citep{D38}, reproduced here, not derived independently.
+\end{resultbox}
+
+\subsection{The \texorpdfstring{$R_{surf}(n)$}{Rsurf(n)} extension}
+The relation $R_{surf}(p)=\varphi\,r_{val}(p)/3=310\varphi$ is derived \citep{D05}, with the factor $1/3$ justified as ``three quasi-stationary valence cores.'' Since the neutron ($udd$) also has exactly three valence cores, the same mechanism gives, not by analogy but by direct application of the same argument,
+\begin{equation}
+R_{surf}(n) = \varphi\,r_{val}(n)/3 = 344\varphi = 556.604.
+\end{equation}
+Consequences: $\kappa(n)=R_{surf}(n)/R_{tot}(n)=0.050637$ (vs.\ $\kappa(p)=0.045529$, D39); entropy $S(n)/S(p)=1.1097$; the ratio $R_{surf}(p)/R_{surf}(n)=310/344$ is exactly rational (the $\varphi$ cancels).
+
+\subsection{Failed bridge attempts}
+\begin{negativebox}
+Three attempts to link $\beta$ (or the $(A)\wedge(B)$ machinery) to $\Delta m_{iso}$ or $R_e$ were tested and failed the robustness test:
+\begin{itemize}
+\item $\beta$ solving $\langle\Omega_1\rangle(\beta)=\Delta m_{iso}/m_p$ gives $\beta=5.91$, $0.88$--$1.46\%$ from $R_e=6$ depending on the value of $\Delta m_{iso}$ used -- inconclusive, no mechanism identified.
+\item The same target multiplied by $\varepsilon_{geom}(n)=468/9960$ gives $\beta=9.007$, matching $k_1=n_d-n_u+R_e-1=9$ (D51 -- NOT FOUND in the current DOI registry; to verify or renumber before deposit) to $0.08\%$ -- \emph{but this uses $\Delta m_{iso}/m_p$ without the factor of $2$ that the only established formula (D30) actually contains}. Using the correct form $2\Delta m_{iso}/m_p$, the match degrades to $7.6$--$8.0\%$. \textbf{Discarded}: the good match depended on an unjustified, ad hoc modification of an established formula.
+\end{itemize}
+\end{negativebox}
+
+% ============================================================
+\section{Part IV --- Mechanical (clockwork) models}
+\label{sec:mechanical}
+
+\textit{Reading guide:} Sections~\ref{sec:mechanical}.1--\ref{sec:mechanical}.4 develop a mechanical model in which vector magnitude is set equal to the relation-counting weight ($r_u$, $r_d$). Section~\ref{sec:mechanical}.5 shows this assumption to be physically incorrect (real quark spin magnitude is universally $1/2$, independent of flavour) and separates the construction into two channels accordingly. Sections~\ref{sec:mechanical}.1--\ref{sec:mechanical}.4 are retained because the diagnostic route -- not the final answer -- is the useful part of this thread; a reader interested only in the corrected conclusion may proceed directly to Section~\ref{sec:mechanical}.5.
+
+
+\subsection{First vector model: three branches at \texorpdfstring{$120^\circ$}{120 degrees}}
+Three valence cores are represented as vectors of magnitude $r_u,r_u,r_d$ (proton) or $r_d,r_d,r_u$ (neutron), spaced at $120^\circ$ in a plane (an unjustified, arbitrary convenience). The residual (unbalanced) vector has magnitude $|A-B|=|r_u-r_d|=102$, identical for proton and neutron (symbolic proof via \texttt{sympy}, confirmed in 3D with explicit tetrahedral coordinates).
+
+\begin{negativebox}
+This model produces \emph{zero} magnitude asymmetry between proton and neutron; the two residual vectors are exactly antiparallel but equal in magnitude. Any $p/n$ asymmetry must come from an additional ingredient, not from this base construction.
+\end{negativebox}
+
+\subsection{The electron as reference: zero residual by symmetry}
+The four vertices of the regular tetrahedron ($K_4$), standard coordinates $(\pm1,\pm1,\pm1)$ with an even number of minus signs, sum to exactly $(0,0,0)$ -- verified by direct computation, not assumed. $K_4$ requires no damping mechanism: its symmetry alone cancels the residual.
+
+\subsection{Sea as damper: weighted and volatile components}
+Two models for the sea's contribution were tested:
+\begin{itemize}
+\item \emph{Weighted (co-directional)}: each branch's magnitude is scaled by the sea's proportional contribution, $w_i\to w_i\cdot R_{tot}/r_{val}$. Result: residual$(p)=1208.32$, residual$(n)=1086.42$, ratio $n/p=0.89912$ -- \emph{algebraically identical} to the inverse of $(r_{val}/R_{tot})_n/(r_{val}/R_{tot})_p$, i.e.\ not independent new information.
+\item \emph{Volatile (isotropic random direction)}: contributes zero to the mean (by symmetry) and a fluctuation scale $\propto R_{sea}$. Ratio of standard deviations $n/p = R_{sea}(n)/R_{sea}(p) = 0.98741$ ($1.26\%$).
+\end{itemize}
+Combined in quadrature ($\mathrm{Total}=\sqrt{M^2+\sigma^2}$): ratio $n/p=0.98622$, dominated by the volatile term since $R_{sea}\gg M$.
+
+\subsection{Probability-filtered sea, via \texorpdfstring{$(A)\wedge(B)$}{(A) AND (B)}}
+Splitting $R_{sea}$ into a stable fraction ($R_{surf}$, contributing to the mean) and an unstable fraction ($R_{sea}-R_{surf}$, contributing to the volatility) gives $M_p=M_n=157.013$ exactly (since $R_{surf}/r_{val}=\varphi/3$ is constant across nucleons), and $\sigma_p=9585.41$, $\sigma_n=9403.40$. Combined: ratio $n/p=0.98102$.
+
+\begin{negativebox}
+The full sea-inclusive residual difference ($181.99$) was tested against $\Gamma_n=40.102$ \citep{D22} and $(\Delta n+1)^2=25$: ratios $4.538$, $7.280$, $45.50$ -- none recognisable. No algebraic link found between the mechanical residual and the established neutron mass-gap structure, despite the latter being an obvious, well-motivated candidate.
+\end{negativebox}
+
+\subsection{Two-channel separation: spin versus energy}
+\begin{resultbox}
+Separating the mechanical model into a scalar (energy $=$ counting) channel and a vector (angular momentum $=$ spin) channel: the scalar channel sums exactly to $E_{total}=2r_u+r_d+R_{sea}=r_{val}+R_{sea}=R_{tot}$ for the proton (analogously for the neutron) -- a trivial algebraic identity, immediately recovering the already-precise $\mu^*$ relation. The vector channel, if magnitudes are set equal to the physical spin-$1/2$ of each quark (not to the counting weight, correcting an error carried through the earlier sections), gives $|L(p)|=|L(n)|=1/2$ identically -- \emph{not} a PDL result, but an external, measured fact imported here. \textbf{The vector channel cannot, in principle, carry a $p/n$ magnitude asymmetry}; all such asymmetry resides in the scalar channel, i.e.\ in $R_{tot}$. This conclusion mixes a PDL-internal identity with an external empirical input; it is a diagnostic argument, not a theorem of C1--C4.
+\end{resultbox}
+
+% ============================================================
+\section{Part V --- The rigorous core: real axes of \texorpdfstring{$K_4$}{K4} and the parity obstruction}
+\label{sec:axes}
+
+\subsection{The three real symmetry axes}
+\label{sec:realaxes}
+$K_4$ possesses exactly three mutually perpendicular axes, each connecting the midpoints of a pair of opposite edges (a perfect matching of the six edges into three pairs, the $S_4\to S_3$ structure already used elsewhere in the corpus). For the standard tetrahedral coordinates, these axes are exactly the three coordinate axes $(1,0,0)$, $(0,1,0)$, $(0,0,1)$ -- a geometric fact, not a modelling choice.
+
+\subsection{Nucleon vectors on the real axes}
+Assigning each valence core to one axis, magnitude $=$ relation count: $\vec v_p=(r_u,r_u,r_d)=(276,276,378)$, $\vec v_n=(r_d,r_d,r_u)=(378,378,276)$.
+\begin{align}
+|\vec v_p| &= \sqrt{2r_u^2+r_d^2} = 543.356, & |\vec v_n| &= \sqrt{2r_d^2+r_u^2} = 601.618,\\
+|\vec v_n|/|\vec v_p| &= 1.10722 \quad (10.72\%\text{ asymmetry, non-arbitrary}).
+\end{align}
+
+\begin{resultbox}
+This is the working vector construction of the session: magnitudes are fixed by counting alone ($r_u,r_d$), directions are fixed by the real, unforced geometry of $K_4$ (Section~\ref{sec:realaxes}) rather than by an arbitrary convention (contrast the $120^\circ$ model of Section~\ref{sec:mechanical}.1). No free parameter remains at this stage.
+\end{resultbox}
+
+\begin{negativebox}
+The direct angle between $\vec v_p$ and $\vec v_n$ depends on an unstated correspondence between which axis of $K_4$ ``plays the same role'' for each nucleon: two values are obtained, $16.774^\circ$ or $8.398^\circ$, depending on this (unjustified) choice. This ambiguity invalidates any claim that the direct proton--neutron angle is forced.
+\end{negativebox}
+
+\subsection{Resolution: comparison to \texorpdfstring{$K_4$}{K4} alone}
+Using the symmetric vertex direction $(1,1,1)/\sqrt3$ as a single, unambiguous reference (invariant under any permutation of which axis carries which valence core -- verified explicitly), each nucleon is compared to $K_4$ independently:
+\begin{equation}
+\cos\theta = \frac{r_{val}}{|\vec v|\sqrt3}, \qquad \theta_p = 8.8167^\circ, \qquad \theta_n = 7.9571^\circ.
+\end{equation}
+
+\begin{resultbox}
+This resolves the ambiguity above: $\theta_p$ and $\theta_n$ are each individually well-defined and permutation-invariant (verified over all $3!$ orderings of which axis carries which valence core). This is the second working equation of the session, structurally independent of the parity obstruction of Section~\ref{sec:obstruction}. \textbf{What it lacks is not rigour but interpretation}: no established physical quantity has yet been identified that $\theta_p$, $\theta_n$ should equal (see Section~\ref{sec:literature} for the closest candidate, itself carrying three caveats).
+\end{resultbox}
+
+\subsection{The parity obstruction}
+\label{sec:obstruction}
+This is the one fully-proved, unconditional result of the session (independently verified by both parties via Colab, see accompanying scripts).
+
+\begin{theorembox}[Parity obstruction]
+Requiring $(A)\wedge(B)$ simultaneously across all edges of $K_n$, with classical ($\pm1$-valued) cross-signs for both pulsation half-cycles, is unconditionally impossible: exactly $0$ joint solutions, for every coherent configuration, verified exhaustively for $n=3,4$.
+\end{theorembox}
+\begin{proof}[Mechanism]
+Any vertex-induced sign configuration is automatically Harary-balanced. Condition (A) requires matching a balanced target (achievable). Condition (B) requires matching its negation, which -- since each triangle acquires exactly three sign flips -- is never balanced. The two conditions are jointly unsatisfiable.
+\end{proof}
+
+\begin{theorembox}[Spin resolution]
+Assigning the second half-cycle a spin-type algebraic structure (square $=-1$, realised by inserting a sign $-1$ into the vertex-induced product) resolves the obstruction: exactly $4$ joint solutions, independent of $n$, giving joint-stability fraction $4^{1-n}$, verified exactly for $n=3,\ldots,7$.
+\end{theorembox}
+
+\begin{corollarybox}
+This is not an ad hoc fix: $\tau_3^2=+I_2$ and $T^2=(i\tau_2)^2=-I_2$ are exactly the operators already constructed \citep{D33} for $\gamma^0$ and $\gamma^i$ respectively (verified symbolically). The same $+1/-1$ dichotomy resolves both constructions.
+\end{corollarybox}
+
+\begin{theorembox}[Uniqueness of $n=4$]
+$n=4$ is the unique value $>1$ for which the spin-resolved exponent $2n-2$ equals the edge count $\binom{n}{2}$, via $(n-1)(n-4)=0$. Verified computationally for $n=2,\ldots,11$.
+\end{theorembox}
+
+\begin{openproblembox}
+The exponent $n-1=3$ (vertex degree of $K_4$) and the denominator $3$ of $R_{surf}=\varphi\,r_{val}/3$ (number of valence cores, D05) are numerically identical but structurally independent derivations. No bijection between them is established.
+\end{openproblembox}
+
+% ============================================================
+\section{Literature confrontation}
+\label{sec:literature}
+
+\subsection{Vocabulary}
+A \emph{diquark} is a bound pair of the two ``spectator'' quarks in a baryon, treated as a single effective object while a third quark is struck. \emph{Isospin} $I$ labels the $SU(2)$ flavour symmetry between $u$ and $d$ quarks ($I=0$: antisymmetric, ``isosinglet''; $I=1$: symmetric, ``isotriplet''). A \emph{scalar diquark} has quantum numbers $(I,J)=(0,0)$ (isosinglet, spin-singlet) and is spatially compact; an \emph{axial-vector diquark} has $(I,J)=(1,1)$ (isotriplet, spin-triplet) and is spatially more extended. Pauli exclusion forbids two identical-flavour quarks ($uu$ or $dd$) from forming the compact scalar channel in their ground state; only an unlike-flavour pair ($ud$) can.
+
+\subsection{Diquark structure: scalar versus axial-vector}
+The dominant, well-established mechanism for valence-quark clustering is the \emph{scalar diquark}: a quark pair in an isospin-$0$, spin-$0$ state is spatially compact (pion-exchange enhanced), while identical-flavour pairs ($uu$ or $dd$) are Pauli-forbidden from this channel and forced into the more extended spin-$1$ (axial-vector) configuration. This holds identically for proton and neutron (the compact channel is always the unlike-flavour pair) -- i.e.\ the mechanism itself carries no $p/n$ asymmetry, consistent with Section~\ref{sec:mechanical}'s finding that pure vector-coupling constructions give a symmetric result.
+
+\begin{negativebox}
+An initial attempt to extract a scalar-diquark admixture probability from the light-front quark-diquark coefficients of \citep{Maji2016} ($C_S^2=1.3872$, $C_V^2=0.6128$, $C_{VV}^2=1$) via naive normalisation ($C_S^2/(C_S^2+C_V^2+C_{VV}^2)=0.4624$) was \textbf{methodologically wrong}: these coefficients are quark-counting normalisations ($C_S^2+C_V^2=n_u=2$, $C_{VV}^2=n_d=1$), not a three-way probability partition. The corrected quantity, $P(\text{scalar}\mid u\text{-sector})=C_S^2/(C_S^2+C_V^2)=0.6936$, disagrees with $1-\varphi/3=0.4607$ by $32\%$ -- a clean failure, superseding the earlier (invalid) $0.377\%$ ``agreement.''
+\end{negativebox}
+
+\subsection{Angular asymmetry of hard elastic \texorpdfstring{$pn$}{pn} scattering}
+From a fit to real $pn$ elastic-scattering data \citep{Granados2009}, a vector/scalar diquark mixing parameter $\rho=-0.3\pm0.2$ is extracted (their Eq.~16), independently consistent with the $\sim10\%$ ``bad diquark'' fraction \citep{Selem2006} and with a one-gluon-exchange calculation \citep{Jaffe2005}.
+
+\begin{conjecturebox}
+Interpreting $\rho$ as $\tan\phi$ for a mixing angle $\phi$ (an interpretation proposed in this session, \emph{not} present in the source): $\phi=\arctan(0.3)=16.699^\circ$, compared to $\theta_p+\theta_n=16.774^\circ$ (Section~\ref{sec:axes}), agreement $0.447\%$.
+\end{conjecturebox}
+
+\begin{negativebox}
+Three methodological weaknesses attach to the above conjecture and must accompany any citation of it: (1) the $\tan\phi=\rho$ interpretation is not established in the source literature; (2) the uncertainty on $\rho$ ($\pm0.2$ on $-0.3$) propagates to an angle range of $5.7^\circ$--$26.6^\circ$, so the central-value match is weak evidence; (3) the specific value $\theta_p+\theta_n$ (rather than $16.774^\circ$ or $8.398^\circ$ from Section~\ref{sec:axes}'s direct-angle ambiguity) was selected \emph{because} it matches, a post-hoc choice this programme's own discipline warns against.
+\end{negativebox}
+
+\subsection{Other tested, rejected correspondences}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+Target & Deviation & Note \\
+\midrule
+$\mu_n/\mu_p$ (SU(6), $=-2/3$) & vs.\ real $-0.6849$: $2.6\%$ & known physics, not PDL \\
+Same, with $r_u,r_d$ substituted for charges & $349\%$, wrong sign & sign structure lost \\
+Electric polarizability ratio ($1.050$) & $7.0\%$ from cluster & isoscalar-dominated \\
+Magnetic polarizability ratio ($1.368$) & $17.9\%$ from cluster & isovector-sensitive \\
+Spin polarizability ($\gamma_\pi$) & sign flip between $p,n$ & cannot reproduce sign changes \\
+Scalar/axial-vector mass splitting, $(m_d/m_u)^2=4.674$ & $76\%$ off & clean, decisive failure \\
+Weinberg angle $\theta_W=28.74^\circ$ vs.\ combinations of $\theta_p,\theta_n$ & best $16.7\%$ & no link found \\
+$\rho$ vs.\ $\theta_W$ or $\sin^2\theta_W$, eight combinations & best $16.2\%$ & no link found \\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+
+% ============================================================
+\section{Open problems and future directions}
+\label{sec:open}
+
+\begin{openproblembox}[OP-D66-1]
+Prove or disprove the bijection between the exponent $n-1=3$ of the $K_4$ parity resolution (Section~\ref{sec:obstruction}) and the denominator $3$ of $R_{surf}=\varphi\,r_{val}/3$ (D05).
+\end{openproblembox}
+
+\begin{openproblembox}[OP-D66-2]
+Determine whether $\theta_p$, $\theta_n$ (Section~\ref{sec:axes}) correspond to any established, precisely-measured nucleon structure quantity. The scalar/vector diquark mixing angle of Section~\ref{sec:literature} is the best current candidate but carries three explicit methodological weaknesses.
+\end{openproblembox}
+
+\begin{openproblembox}[OP-D66-3]
+The two-channel separation (Section~\ref{sec:mechanical}) establishes that mass-type asymmetry lives exclusively in the scalar/counting channel. Determine whether \emph{any} vector-type (orientation-dependent, not magnitude-dependent) observable of the nucleon can be constructed from C1--C4 without reference to external quark-model input.
+\end{openproblembox}
+
+\begin{openproblembox}[OP-D66-4]
+Test $\varepsilon_{geom}(n)$ (established, D43) as the probability weight in a properly-separated (non-competing) combination with the vector/counting channel, correcting the design flaw identified in this session (Section~\ref{sec:mechanical}, where a naive combination of $\kappa$ and a counting factor produced two signals in opposing directions that partly cancelled).
+\end{openproblembox}
+
+% ============================================================
+\section{Computational verification}
+All numerical results in this document were produced using Python (\texttt{mpmath} at $20$--$30$ decimal digits for exact-rational and irrational quantities, \texttt{sympy} for symbolic verification, \texttt{numpy} for vector geometry). The four scripts underlying Section~\ref{sec:obstruction} were executed independently by both parties (in-session, and separately in Google Colab) with identical results, following the programme's verrouillage protocol. All other numerical results in this document are exploratory and have not received independent second-party verification; they are reported with their full derivation so that they may be re-run and checked.
+
+\clearpage
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D66_references}
+
+\clearpage
+
+% ============================================================
+\appendix
+\section{Verification scripts}
+\label{app:scripts}
+
+The four scripts constituting the complete, self-contained computational verification of the theorems of Section~\ref{sec:obstruction} (parity obstruction, spin resolution, uniqueness of $n=4$) and its link to \citep{D33} are not reproduced in this document. They are deposited on Zenodo under the same DOI as this paper, as separate files grouped with it, following the standard practice of this programme. Each script is self-contained (all imports and definitions repeated, no dependency on another cell) and was run independently by both parties, with identical output, prior to drafting Section~\ref{sec:obstruction}.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{lY}
+\toprule
+File & Purpose \\
+\midrule
+\texttt{cell\_1\_coherent\_configs.py} & Verifies $|\mathrm{Coh}(K_n)|=2^{n-1}$ for $n=3,\ldots,6$. \\
+\texttt{cell\_2\_parity\_obstruction.py} & Exhaustive proof of the classical parity obstruction (zero joint solutions) for $n=3,4$. \\
+\texttt{cell\_3\_spin\_resolution.py} & Vectorised verification of the spin-type resolution (exactly $4$ solutions, fraction $4^{1-n}$) for $n=3,\ldots,7$, and of the algebraic uniqueness of $n=4$ for $n=2,\ldots,11$. \\
+\texttt{cell\_4\_D33\_link.py} & Symbolic (\texttt{sympy}) verification that $\tau_3^2=+I_2$ and $T^2=(i\tau_2)^2=-I_2$, linking the resolution of Section~\ref{sec:obstruction} to the operators of \citep{D33}. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}
