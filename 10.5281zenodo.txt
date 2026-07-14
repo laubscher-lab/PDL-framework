@@ -419,3 +419,13 @@ D66
 https://doi.org/10.5281/zenodo.21351177 
 A Search for the C5 Metric Candidate: Logical Geometry, the (A) ∧ (B) Standard, and the Parity Obstruction of K4 
 D66_parity_obstruction.pdf 
+
+N01 
+https://doi.org/10.5281/zenodo.20523343 
+β₁ = 3 as a Topological Invariant of Minimal Relational Closures: Numerical Evidence from the PDL and OFN Frameworks 
+B1_PDL_OFN.pdf 
+
+N02 
+https://doi.org/10.5281/zenodo.21333913 
+From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families 
+B2_PDL_OFN.pdf 
