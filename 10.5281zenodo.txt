@@ -414,3 +414,8 @@ D65
 https://doi.org/10.5281/zenodo.21220251 
 Two Limits of the Same Surface: Behavioural Correspondences Between Nucleon and Black Hole Closures in PDL 
 D65_two_limits.pdf 
+
+D66 
+https://doi.org/10.5281/zenodo.21351177 
+A Search for the C5 Metric Candidate: Logical Geometry, the (A) ∧ (B) Standard, and the Parity Obstruction of K4 
+D66_parity_obstruction.pdf 
