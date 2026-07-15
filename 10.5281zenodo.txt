@@ -1,7 +1,7 @@
 D01
-https://doi.org/10.5281/zenodo.18462686
-The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL)
-PDL.pdf
+10.5281/zenodo.21383189 
+The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL) 
+The_Emergence_of_Physical_Reality_within_the_Framework_of_the_PDL_v2.pdf 
 
 D02
 https://doi.org/10.5281/zenodo.18463130
