@@ -1,0 +1,334 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+
+\pdfstringdefDisableCommands{%
+  \let\ensuremath\relax
+}
+
+\newcommand{\Kfour}{K_4}
+\newcommand{\VC}{V_C}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rval}{R_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Reb}{R_e}
+\newcommand{\kap}{\kappa}
+\newcommand{\etaL}{\eta_L}
+\newcommand{\lamC}{\lambda_C}
+\newcommand{\rhocoh}{\rho_{\mathrm{coh}}}
+\newcommand{\Ccoh}{C_{\mu\nu}}
+\newcommand{\Cmass}{C^{(\mathrm{mass})}}
+\newcommand{\Cspin}{C^{(\mathrm{spin})}}
+\newcommand{\Corb}{C^{(\mathrm{orb})}}
+\newcommand{\Cleak}{C^{(\mathrm{leak})}}
+\newcommand{\GPDL}{G_{\mathrm{PDL}}}
+\newcommand{\LambdaPDL}{\Lambda_{\mathrm{PDL}}}
+\newcommand{\geff}{g_{\mu\nu}^{\mathrm{eff}}}
+
+\newtcolorbox{theorembox}[1][]{colback=blue!5,colframe=blue!60!black,fonttitle=\bfseries,title=Theorem #1}
+\newtcolorbox{conjecturebox}[1][]{colback=yellow!8,colframe=orange!70!black,fonttitle=\bfseries,title=Conjecture #1}
+\newtcolorbox{openprobbox}[1][]{colback=red!5,colframe=red!60!black,fonttitle=\bfseries,title=Open Problem #1}
+\newtcolorbox{explorbox}[1][]{colback=gray!8,colframe=gray!50!black,fonttitle=\bfseries,title=Exploratory Result (this document) #1}
+
+\title{\textbf{The Emergent Metric and the Coherence Stress-Energy Tensor in PDL}\texorpdfstring{\\[4pt]\large A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon}{: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon}\\[6pt]
+{\large PDL Document D67}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document has two purposes. Part~I is a self-contained synthesis, for a reader with no prior exposure to the PDL corpus, of everything the programme currently establishes as unconditional theorem regarding the emergent metric and the coherence stress-energy tensor $\Ccoh$: how time and space arise from axioms C1--C4, why $c$ and $\hbar$ enter as translation factors rather than derived quantities, the explicit form of the four components of $\Ccoh$ (mass, spin, orbital, leakage), and the resulting PDL Einstein equation, complete and dimensionally verified in the homogeneous ground state. Part~II documents, honestly and without inflating their status, a set of exploratory results obtained while probing whether the spin and orbital components --- both proved to vanish only in the idealised homogeneous ground state --- might behave differently for a single, bound, isolated nucleon. These results include a coplanarity theorem, a documented sequence of negative constructions for a nucleon-level spin observable, a re-derivation of a wave-closure relation from the foundational document, and a numerically striking but not yet robust connection to the free-neutron lifetime. None of Part~II is claimed as an unconditional result of C1--C4; all of it is flagged at the epistemic level it has actually earned.
+\end{abstract}
+
+\clearpage
+ 
+\tableofcontents
+
+\clearpage
+
+% ============================================================
+\part{Established Results}
+% ============================================================
+
+\section{\texorpdfstring{The Purpose of This Part}{The Purpose of This Part}}
+
+A reader who has not followed the PDL programme in detail can use this part alone to understand, correctly, what the framework currently says about the emergence of spacetime and about the object that sources its curvature. Every claim in this part carries a citation to the primary document where it is proved. Nothing here is new: it is a synthesis, cross-checked against primary sources in July 2026, of results that are scattered across roughly fifteen documents.
+
+\section{Foundational Objects}
+\label{sec:foundations}
+
+\subsection{The Four Axioms, Stated in Full}
+\label{sec:axioms}
+
+A reader cannot check a single derivation in this document against axioms they have not seen. This section states C1--C4 in full, exactly as given in the foundational document~\citep{D01}, so that every ``theorem of C1--C4'' claim below can, in principle, be traced back to these four statements.
+
+A logical configuration is a finite signed graph $\sigma=(G,s)$, $G=(V,E)$, with each edge $\{i,j\}\in E$ carrying a sign $s_{ij}\in\{+1,-1\}$. A triangle $\{i,j,k\}\subset V$ (all three edges present) is \emph{coherent} if $s_{ij}s_{jk}s_{ik}=+1$ and \emph{violated} otherwise. The violation fraction is $\nu(\sigma)=\#\{\text{violated triangles}\}/\binom{|V|}{3}$.
+
+\begin{description}
+\item[C1 (Minimal binary pulsation).] There exists a discrete dynamical system $F:\{+1,-1\}^E\to\{+1,-1\}^E$ and a configuration $s^\star$ such that $F(s^\star)=-s^\star$ and $F(-s^\star)=s^\star$: a repeatable two-state alternation, defined without presupposing any metric.
+\item[C2 (Triangular coherence).] Stable structures minimise $\nu(\sigma)$: closure violations (open triangles, uncompensated sign breaking) reduce stability.
+\item[C3 (Minimal completeness).] An elementary stationary structure is a configuration $\sigma=(G,s)$ such that $G$ is connected and complete; some sign assignment gives $\nu(\sigma)=0$; the coherent triangles form a single connected block sharing edges; all vertices are structurally equivalent; and the pulsation of C1 preserves coherence. It is \emph{minimal} if no proper substructure satisfies these conditions.
+\item[C4 (Logical optimisation).] Among all admissible configurations, only those maximising an optimisation functional $\Omega(\sigma)$ persist, where $\Omega$ decreases strictly with $\nu(\sigma)$, increases with relative connectivity, and increases when minimal-closure status is reached.
+\end{description}
+
+\begin{theorembox}
+The unique minimal structure satisfying C1--C4 is the complete graph on four vertices, $(4,6)$, i.e.\ $\Kfour$~\citep{D01}.
+\end{theorembox}
+
+$\Kfour$ is interpreted as the electron. All heavier structures (nucleons, nuclei) are hierarchical assemblies of $\Kfour$-type closures, built and constrained by the same four axioms applied recursively.
+
+\subsection{Two Structural Facts About \texorpdfstring{$K_4$}{K4}}
+
+First, $\Kfour$ is topologically homeomorphic to the two-sphere $S^2$: its four triangular faces form a closed, genus-zero surface. This is a theorem, not a modelling choice, and it is the origin of three spatial dimensions in the framework (Section~\ref{sec:space}). Second, the set of C4-admissible sign transports on $\Kfour$ forms a group $\mathrm{Coh}(\Kfour)\cong\mathbb{Z}_2^3$ of order eight, with a distinguished subgroup $F\cong V_4$ labelled by the three perfect matchings of $\Kfour$~\citep{D61}. These three matchings later serve as the three privileged spatial axes referenced throughout the corpus.
+
+\subsection{The Proton Quintuplet}
+\label{sec:quintuplet}
+
+The nucleon-scale results of Sections~\ref{sec:leak} and~\ref{sec:coplanarity}--\ref{sec:wave} repeatedly use five integers, $(n_u,n_d,\Rval,\Rsea,\Rtot)=(24,28,930,10087,11017)$ for the proton and $(24,28,1032,9960,10992)$ for the neutron, referred to throughout the corpus as the quintuplet. Their origin, briefly: $n_u$ and $n_d$ are the sizes of the two valence-core closure types, forced by a uniqueness theorem on the quasi-completeness discriminant $3n_u^2+(2\Delta n-3)n_u+\Delta n(\Delta n-1)-1860=0$, whose discriminant is a perfect square, $149^2$, only for $\Delta n=4$ among all admissible values, giving $n_u=24$, $n_d=28$ as unconditional theorems of C1--C4~\citep{D47}. $\Rval=2\left[\dfrac{n_u(n_u-1)}{2}\right]+\dfrac{n_d(n_d-1)}{2}$ (proton) counts the relations within the three valence cores; $\Rtot=\Rval+\Rsea$ includes the dynamical sea. The reader who needs the full derivation of $\Rsea$ is referred to~\citep{D47}; it is not reproduced here, as it is not required to follow the metric and tensor derivations of Part~I.
+
+\section{The Emergent Metric}
+\label{sec:metric}
+
+\subsection{Time as Coherence-Cycle Counting}
+
+PDL does not presuppose a time coordinate. Proper time is instead identified with a discrete count of coherence-restoration cycles: each pulsation of a closure, verified against C1--C4, advances an internal counter by one unit~\citep{D10a}. The continuous notion of duration used in physics is recovered only after a translation factor is introduced (Section~\ref{sec:ch}); internally, time is combinatorial and discrete.
+
+\subsection{Space as the Topology of Closure}
+\label{sec:space}
+
+Three-dimensional space is not assumed either. It follows from the theorem that $\Kfour\cong S^2$ (Section~\ref{sec:foundations}): the first Betti number of the one-skeleton of $\Kfour$ is $\beta_1(\Kfour)=3$~\citep{D23v2}, giving exactly three independent topological cycles. This same fact is the origin of the exponent decomposition $18=6+5+4+3$ used in the derivation of the cosmological leakage constant (Section~\ref{sec:leak}) and of the three privileged axes used to orient vector quantities associated with a closure.
+
+\subsection{The Effective Metric \texorpdfstring{$g_{\mu\nu}^{\mathrm{eff}}$}{g\_mu\_nu\^{}eff}}
+
+\begin{theorembox}[label=thm:VC]
+The coherence volume associated with a single pulsating closure is
+\begin{equation}
+\VC = \frac{4}{3}\pi\left[\frac{\hbar}{m_p c}\right]^3,
+\label{eq:VC}
+\end{equation}
+an unconditional theorem of C1--C4, doubly forced by the temporal chain (D10a, cycle counting) and cross-checked, though not independently re-derived, by the geometric chain (D23, closure volume)~\citep{D48v3}.
+\end{theorembox}
+
+From $\VC$, PDL constructs an effective, coarse-grained pseudometric $\geff$ over the set of simultaneously existing closures, built from relations of compatibility between them rather than from any presupposed background space~\citep{D10a}. This construction is explicitly not yet a complete, first-principles derivation of every component of $g_{\mu\nu}$ from C1--C4 alone; it is the object that the coherence tensor of Section~\ref{sec:tensor} sources, in exact analogy with the role of the stress-energy tensor in general relativity.
+
+\subsection{\texorpdfstring{$c$ and $\hbar$: Translation Factors, Not Derived Quantities}{c and hbar: Translation Factors, Not Derived Quantities}}
+\label{sec:ch}
+
+A point of discipline established definitively within the programme, and restated here because it is frequently a source of confusion for new readers: $c$ and $\hbar$ are never derived from C1--C4. They are the two constants that translate between the discrete combinatorial register of PDL (cycle counts, relation counts) and the continuous register of physical measurement (seconds, metres, joules). Seeking to derive their numerical values from the axioms is a category error, closed as a matter of programme discipline. Their precise role is nonetheless fixed and non-arbitrary: $\hbar$ is the quantum of action per pulsation cycle ($E=\hbar\omega$ for a closure of energy $E$ pulsating at rate $\omega$), and $c$ enters through the Compton translation $\lamC=\hbar/(m_p c)$, which converts a combinatorial mass count into a spatial length. Every occurrence of $c$ and $\hbar$ elsewhere in this document is an application of this single translation, never a new assumption.
+
+\section{The Coherence Stress-Energy Tensor}
+\label{sec:tensor}
+
+PDL constructs an analogue of the Einstein field equation,
+\begin{equation}
+R_{\mu\nu}^{\mathrm{eff}} - \tfrac{1}{2}\geff R^{\mathrm{eff}} = \frac{8\pi\sigma(N)\GPDL}{c^4}\,\Ccoh,
+\label{eq:einstein}
+\end{equation}
+where $\sigma(N)$ is a known structural factor depending on the assembly size $N$ and $\Ccoh$ is the coherence tensor, decomposed exactly as
+\begin{equation}
+\Ccoh = \Cmass + \Cspin + \Corb + \Cleak.
+\label{eq:decomposition}
+\end{equation}
+Each of the four terms is treated in turn below. All four are unconditional theorems of C1--C4 in one specific regime, called the \emph{homogeneous ground state}: uniform phase over the coherence volume $\VC$, forced by C4 via the London-gauge theorem of Section~\ref{sec:orb}. This qualifier matters throughout and is never dropped silently.
+
+\subsection{Mass Component}
+
+\begin{theorembox}
+\begin{equation}
+\Cmass_{\mu\nu} = \rhocoh(N)\,c^2\,u_\mu u_\nu, \qquad \rhocoh(N) = \frac{\sigma(N)\,\Rsurf\,m_p}{\VC\,\Rtot},
+\label{eq:Cmass}
+\end{equation}
+an unconditional theorem, verified numerically to a deviation below $0.013\%$~\citep{D48v3}. The associated equation-of-state parameter is $w_{\mathrm{mass}}=0$ (pressureless dust)~\citep{D54}.
+\end{theorembox}
+
+\subsection{Spin Component}
+\label{sec:spin}
+
+\begin{theorembox}
+In the homogeneous ground state,
+\begin{equation}
+\Cspin_{\mu\nu} = 0.
+\label{eq:Cspin}
+\end{equation}
+\end{theorembox}
+
+The proof proceeds through the Weyssenhoff--Raabe spin-fluid formalism~\citep{Weyssenhoff1947}. Direct computation over all eight coherent configurations of $\Kfour$ gives $\langle S^i\rangle_8=0$ and an isotropic correlation tensor $\langle S^iS^j\rangle_8=\tfrac14\delta^{ij}$~\citep{D48v3}. The traceless (shear) part of the spin stress accordingly vanishes exactly, by the $S_4$ symmetry of $\Kfour$ acting transitively on its six edges; the remaining isotropic (pressure) part vanishes because C4 forces a uniform phase over $\VC$ (the London-gauge theorem of D49, restated in Section~\ref{sec:orb}), eliminating all spin gradients within the coherence volume. This gives $w_{\mathrm{spin}}=0$~\citep{D54}.
+
+A remark attached to this theorem in its primary source is of particular importance for Part~II of this document: \emph{``When the spin orientation varies between coherence cells on a scale $L\gg\lamC$, the spin contribution is suppressed by $(\lamC/L)^2\to0$ relative to $\Cmass$. The homogeneous ground state ($L\to\infty$) is recovered in the cosmological limit.''}~\citep{D48v3} The vanishing of $\Cspin$ is thus explicitly a large-$L$ statement, not a claim that holds at every scale.
+
+\subsection{Orbital Component}
+\label{sec:orb}
+
+\begin{theorembox}
+In the homogeneous ground state, without an external electromagnetic field,
+\begin{equation}
+\Corb_{\mu\nu} = \frac{m_p^2\langle j_\mu j_\nu\rangle}{\rhocoh} = 0.
+\label{eq:Corb}
+\end{equation}
+\end{theorembox}
+
+This follows from the London-gauge theorem (resolution of OP-London): C4, combined with the connectivity imposed by C3, forces the internal phase $\phi$ to be constant over $\VC$, so that the PDL probability current $j^i=(\hbar/m_p)\,\mathrm{Im}(\psi^*\partial^i\psi)$ vanishes identically~\citep{D49}. This gives $w_{\mathrm{orb}}=0$~\citep{D54}. As with the spin component, this is a ground-state statement: in an inhomogeneous configuration, or in the presence of an external vector potential, $j^i$ need not vanish.
+
+\subsection{Leakage Component}
+\label{sec:leak}
+
+\begin{theorembox}
+\begin{equation}
+\Cleak_{\mu\nu} = -\mathcal{C}\,\etaL^{18}\left(\frac{m_p c}{\hbar}\right)^2\geff,
+\label{eq:Cleak}
+\end{equation}
+with $\etaL^{18}$ derived from the exponent theorem of Section~\ref{sec:space} and the prefactor $\mathcal{C}$ given by
+\begin{equation}
+\mathcal{C} = (1-\kap)^{997}\times\left(\frac{\Rval}{\Rtot}\right)^{23}\times(1-\etaL)^{67}.
+\label{eq:Cprefactor}
+\end{equation}
+\end{theorembox}
+
+This is the most recently completed part of the programme. The exponents $997$, $23$, $67$ are the primes at positions $k_3=168$, $k_1=9$, $k_2=19$ respectively, where
+\begin{equation}
+k_1 = n_d - n_u + \Reb - 1 = 9,\qquad k_2 = n_u - \Reb + 1 = 19,\qquad k_3 = \Reb\cdot n_d = 168,
+\label{eq:kindices}
+\end{equation}
+exact integer identities on the quintuplet $(n_u,n_d,\Reb)=(24,28,6)$. The three cycle lengths themselves are forced to be prime by the conjunction of C1 (binary pulsation) and C3 (non-decomposability); their count of exactly three is the topological fact $\beta_1(\Kfour)=3$ of Section~\ref{sec:space}~\citep{D51}. The three base quantities $(1-\kap)$, $\Rval/\Rtot$, $(1-\etaL)$ are proved to be the unique natural representatives of these three cycles, in the surface, valence, and coupling sectors respectively, closing the one step left open by the initial derivation~\citep{D52}. Formula~\eqref{eq:Cprefactor} reproduces the observational value of the cosmological constant to $0.17\,\mathrm{ppm}$, independently re-verified to $0.41\,\mathrm{ppm}$ at fifty-decimal precision~\citep{D53}, with no free parameter. The associated equation-of-state parameter is $w_{\mathrm{leak}}=-1$ intrinsically~\citep{D54}.
+
+\subsection{Synthesis: The Complete PDL Einstein Equation}
+
+\begin{theorembox}
+\begin{equation}
+R_{\mu\nu}^{\mathrm{eff}} - \tfrac12\geff R^{\mathrm{eff}} = \frac{8\pi\sigma(N)\GPDL}{c^4}\left[\rhocoh c^2 u_\mu u_\nu + \frac{m_p^2\langle j_\mu j_\nu\rangle}{\rhocoh} - \frac{\LambdaPDL c^4}{8\pi\GPDL\sigma(N)}\geff\right],
+\label{eq:full}
+\end{equation}
+dimensionally consistent and numerically verified term by term, complete in the homogeneous ground state~\citep{D48v3,D54}.
+\end{theorembox}
+
+Table~\ref{tab:status} summarises the status of every term for a reader who needs a single reference point.
+
+\begin{table}[h]
+\centering
+\caption{Status of the four components of $\Ccoh$ in the homogeneous ground state.}
+\label{tab:status}
+\begin{tabular}{lll}
+\toprule
+Component & Value & Equation of state \\
+\midrule
+$\Cmass$ & $\rhocoh c^2 u_\mu u_\nu$, theorem & $w_{\mathrm{mass}}=0$ \\
+$\Cspin$ & $0$, theorem & $w_{\mathrm{spin}}=0$ \\
+$\Corb$ & $0$, theorem & $w_{\mathrm{orb}}=0$ \\
+$\Cleak$ & $-\mathcal{C}\,\etaL^{18}(m_pc/\hbar)^2\geff$, theorem & $w_{\mathrm{leak}}=-1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The Remaining Open Problem}
+\label{sec:openproblem}
+
+\begin{openprobbox}[label=op:inhomog]
+\textbf{OP-inhomogeneous.} The theorems of Sections~\ref{sec:spin} and~\ref{sec:orb} hold in the homogeneous ground state ($\nabla\phi=0$ over $\VC$, $j^i=0$). In the inhomogeneous regime --- spin orientation varying on a scale $L\gtrsim\lamC$, or in the presence of an external vector potential --- $\Cspin$ and $\Corb$ are non-zero. Deriving the full equation of state in that regime from C1--C4 requires specifying the inter-cell distribution of the quantum state $\psi$. Priority: medium; entry points D48v3, D49, D54.
+\end{openprobbox}
+
+This is, at the time of writing, the only structurally open piece of the entire tensor. Everything else in Part~I is complete. Part~II documents an attempt to make progress on exactly this problem, restricted to the specific and physically important case of a single, bound, isolated nucleon.
+
+\clearpage
+
+% ============================================================
+\part{Exploratory Extensions to the Isolated Nucleon}
+% ============================================================
+
+\section{Scope and Epistemic Discipline}
+
+Nothing in this part is an unconditional theorem of C1--C4. Every result below is reported at the epistemic level it has actually earned: theorem, motivated conjecture, numerically suggestive but not robust, or cleanly negative. The purpose of documenting negative results with the same care as positive ones is a standing methodological commitment of this programme, and it is followed here.
+
+The motivating question is precise: OP-inhomogeneous is stated for a general inhomogeneous regime. A single nucleon, proton or neutron, is a natural and physically important special case, since its coherence scale $L$ is plausibly of order $\lamC$ rather than $L\to\infty$, placing it exactly in the regime where the ground-state theorems of Sections~\ref{sec:spin}--\ref{sec:orb} are not expected to apply, per the explicit remark quoted in Section~\ref{sec:spin}: the suppression factor $(\lamC/L)^2$ is not small when $L\sim\lamC$.
+
+\section{A Physical Reading of the Suppression Law}
+\label{sec:reading}
+
+\begin{explorbox}
+The remark of Section~\ref{sec:spin} gives $\Cspin\propto(\lamC/L)^2$ relative to $\Cmass$, without yet a full derivation of the proportionality away from $L\to\infty$. Read literally, this law admits a simple physical interpretation, proposed in this document and not yet established as more than an interpretive hypothesis: in the homogeneous ground state ($L\to\infty$), the spin and orbital channels are inert. As $L$ decreases towards $\lamC$ --- as would be expected for a bound, structured nucleon rather than a cosmological fluid element --- the two channels activate, in proportion to $(\lamC/L)^2$. On this reading, $\Cspin$ and $\Corb$ behave as a shock absorber and an energy accumulator respectively: dormant at equilibrium, activated under structural strain. This is stated here as a physically motivated hypothesis consistent with the one quantitative law already present in the primary source, not as a new theorem.
+\end{explorbox}
+
+\section{A Coplanarity Theorem for the D66 Vector Construction}
+\label{sec:coplanarity}
+
+An independent construction, associated with the parity-obstruction work of D66~\citep{D66}, represents each nucleon by three vectors on the real axes of $\Kfour$, of magnitude equal to the relation count of each valence core, and compares the resulting configuration to the fully symmetric electron reference direction $(1,1,1)/\sqrt3$.
+
+\begin{theorembox}
+For any pair of valence-core weights $(x,x,y)$ and $(y,y,x)$ with $x\neq y$, representing the mirror-symmetric up/down patron common to every nucleon built this way, the three points $\{$electron reference, proton-type vector, neutron-type vector$\}$ are coplanar, identically, for all $x,y$. Consequently, any closed geodesic loop through the three points has vanishing signed circulation and a trivial $SU(2)$ holonomy ($+I$).
+\end{theorembox}
+
+This is a general structural fact about the D66 construction, established here by direct symbolic computation, not a numerical coincidence of the specific PDL quintuplet. It rules out, as a matter of theorem rather than trial and error, any attempt to extract spin-carrying curvature directly from this particular vector construction.
+
+\section{Six Negative Constructions for a Nucleon-Level Spin Observable}
+\label{sec:negative}
+
+Motivated by the open problem stated informally in D66 itself --- whether any orientation-dependent (not magnitude-dependent) observable of the nucleon can be constructed from C1--C4 without external quark-model input --- six independent constructions were attempted and found, each for a distinct and identified structural reason, unable to distinguish the proton from the neutron. They are recorded in Table~\ref{tab:negative} for completeness; a reader uninterested in the details may proceed directly to Section~\ref{sec:wave}.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Six negative constructions for a proton/neutron-distinguishing spin observable.}
+\label{tab:negative}
+\begin{tabular}{p{4.3cm}p{8.7cm}}
+\toprule
+Construction & Reason for failure \\
+\midrule
+Uniform spin-$\tfrac12$ needles on the real $\Kfour$ axes & Magnitude fixed and flavour-independent; direction fixed by theorem; no remaining degree of freedom to carry a $p/n$ distinction. Consistent with the ground-state theorem of Section~\ref{sec:spin}. \\
+Internal sign from the fixed subgroup $F\subset\mathrm{Coh}(\Kfour)$ & The product of edge signs within any matching is uniform across all eight coherent configurations; proved by exhaustive enumeration. \\
+Sea contribution colinear with the electron axis & Reduces algebraically to a restatement of the already-known ratio $\kap(n)/\kap(p)$; no independent information. \\
+Sea spin combined in quadrature & Numerically negligible ($0.033\%$), swamped by the dominant valence term. \\
+Canonical-ensemble thermodynamic temperature & $1/T=\mathrm{d}S/\mathrm{d}E=\beta$ by construction of the Legendre transform, for any single-parameter partition function; a mathematical tautology of the method, not a physical result. \\
+Multiplicity-weighted $SU(2)$ leakage period $k_1$ & Breaks the physical positivity of $k_1$ as a period count (negative value obtained); the formula compares fixed block sizes, not multiplicities, and does not admit this weighting. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The Wave-Closure Relation and a Candidate Link to Free-Neutron Decay}
+\label{sec:wave}
+
+The foundational document proposes, for the proton, a stationary-wave closure condition relating the Compton wavelength $\lamC$ to the charge radius $R_p$ via two counter-circulating half-turn waves~\citep{D01}. The displayed equation in that document contains a transcription error (a spurious factor of two); the internally consistent relation, verified against the document's own quoted percentage deviations, is
+\begin{equation}
+\pi R \approx 2\lamC.
+\label{eq:closure}
+\end{equation}
+Applied separately to the proton and the (bound-state-inferred) neutron radius, this relation closes to $0.040\%$ for the proton and $3.44\%$ for the neutron, a asymmetry of roughly a factor of eighty-six.
+
+\begin{explorbox}
+Reading the two counter-circulating half-turn waves as the geometric expression of the $SU(2)$ double cover already established for the pulsation of $\Kfour$ ($T^2=-\mathbb{1}$, period four)~\citep{D33}, and combining this with the independently-established leakage period $k_1=9$ (Section~\ref{sec:leak}, and separately identified as \emph{``the primary $SU(2)$ leakage period''} in the gauge-boson document~\citep{D62}), gives $18=2\times9$: the topological exponent of Section~\ref{sec:space} read as two waves of nine leakage-periods each, rather than as a sum of four independent chain ranks. This reading is internally consistent with the primary decomposition but is not, at this stage, established as more than a numerically compatible reinterpretation.
+\end{explorbox}
+
+A test of this reading was attempted: interpreting the closure mismatch of Equation~\eqref{eq:closure} as a per-cycle phase drift and asking what exponent, applied to that drift, reproduces the measured free-neutron lifetime ($\tau_n=879.4\,\mathrm{s}$) via the Compton pulsation period, gives an exponent of $17.97$, within $0.16\%$ of the exponent $18$ established independently in Section~\ref{sec:leak}.
+
+\begin{explorbox}
+This numerical agreement does not survive a proper uncertainty analysis. The neutron matter radius is substantially less well constrained than the proton charge radius; propagating a realistic experimental range ($0.80$--$0.95\,\mathrm{fm}$) through the same calculation gives exponents ranging from roughly $13.7$ to $29.8$, of which $18$ is one plausible value among many, not a robust prediction. A first attempt to cross-check the same mechanism against the proton, using the exponent $18$ literally with no prefactor, predicts a proton lifetime some four orders of magnitude shorter than the experimental lower bound; this test, however, assumed a specific and likely oversimplified functional form (a bare power law with no structural prefactor, unlike every other use of the exponent~$18$ in this programme, which always carries a prefactor analogous to $\mathcal{C}$ of Section~\ref{sec:leak}) and should not be read as a refutation of the underlying threshold hypothesis, only of this particular minimal form of it.
+\end{explorbox}
+
+This result is recorded as a serious, motivated lead --- not as a proof, and not as a refuted hypothesis. Two directions are identified for closing the gap: tightening the experimental constraint on the neutron matter radius, and constructing the correct structural prefactor for a threshold mechanism, in place of the bare power law tested here.
+
+\section{Summary of Part II and Recommended Next Steps}
+
+The isolated-nucleon regime, precisely the content of OP-inhomogeneous restricted to a physically important special case, remains open. This document contributes: a general coplanarity theorem closing one family of candidate constructions; six independently diagnosed negative results, consistent with, though not a proof of, the extension of the ground-state vanishing theorems to the isolated nucleon; a corrected and verified wave-closure relation; and a motivated but not yet robust numerical connection between the topological exponent $18$ and the free-neutron lifetime. The recommended next steps are, in order of tractability: (i) obtain a tighter observational bound on the neutron matter radius and repeat the exponent test of Section~\ref{sec:wave}; (ii) attempt a first-principles derivation of the suppression law $(\lamC/L)^2$ proposed in Section~\ref{sec:reading} beyond the large-$L$ regime; (iii) revisit OP-D71-5, the reconciliation of the C5 metric candidate of Session~70 with the geometric parity-obstruction results of D66, in light of the coplanarity theorem of Section~\ref{sec:coplanarity}.
+
+% ============================================================
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{D67_references}
+
+\end{document}
