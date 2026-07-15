@@ -429,3 +429,8 @@ N02
 https://doi.org/10.5281/zenodo.21333913 
 From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families 
 B2_PDL_OFN.pdf 
+
+D67 
+https://doi.org/10.5281/zenodo.21382362 
+The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon
+D67_metric_and_coherence_tensor.pdf
