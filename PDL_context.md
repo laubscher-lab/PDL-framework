@@ -1,10 +1,9 @@
 # PDL Programme — Context and State
 
 *Last updated: Session 73 — 15 July 2026*
-*(**Session 73 — LE TENSEUR DE COHÉRENCE : CONSOLIDATION, RÉCONCILIATION D'ÉTAT, PREMIÈRE TENTATIVE SUR OP-INHOMOGENEOUS** : session longue partant d'une question de Cédric — lien entre variation de charge inertielle et vitesse angulaire — explorée par une douzaine de constructions vectorielles/thermodynamiques indépendantes sur le nucléon isolé (canal spin/orbital du tenseur $C_{\mu\nu}$), toutes documentées comme négatives avec leur raison structurelle précise, dont un théorème nouveau de coplanarité pour la construction vectorielle de D66. Recadrage majeur en cours de session : $C^{(spin)}=0$ et $C^{(orb)}=0$ ne sont des théorèmes que dans l'état fondamental homogène (D48v3) ; le régime du nucléon isolé relève d'un problème déjà nommé mais jamais attaqué, **OP-inhomogeneous**. Découverte, en cherchant à « attaquer OP1-D35 », que ce problème est **déjà résolu** (D51+D52, $\mathcal C=(1-\kappa)^{997}(R_{val}/R_{tot})^{23}(1-\eta_L)^{67}$, 0,17 ppm vs Planck) — le tenseur de cohérence complet est donc intégralement théorème dans l'état fondamental homogène, seul le régime inhomogène reste ouvert. Reprise de PDL.tex (onde de fermeture Compton à deux ondes contra-rotatives) : coquille de facteur 2 trouvée et corrigée ($\pi R\approx2\lambda_C$, pas $2\pi R\approx2\lambda_C$), asymétrie de fermeture proton/neutron quantifiée (0,04% / 3,44%). Piste $18=2\times9$ ($k_1=9$, déjà « primary $SU(2)$ leakage period » dans D62, réinterprété comme moitié de l'exposant topologique) et test numérique frappant (exposant requis pour la durée de vie du neutron libre = 17,97, à 0,16% de 18) — **explicitement invalidé comme robuste** par propagation d'incertitude sur $R_n$ (exposant variant de 13,7 à 29,8 selon la valeur adoptée dans la fourchette expérimentale réaliste) ; retenu comme piste sérieuse, non comme résultat. Deux corrections de corpus trouvées : coquille $\kappa\approx0{,}0075194$ (au lieu de $0{,}045529$) présente à deux endroits de DM v30 (lignes ~263 et ~377), valeur correcte présente ailleurs dans le même document (glossaire) ; coquille de facteur 2 dans PDL.tex (section fermeture Compton du proton). Document de synthèse **D67** rédigé (Partie I : synthèse complète et autonome du tenseur de cohérence et de la métrique émergente depuis C1–C4, avec les quatre axiomes énoncés en toutes lettres ; Partie II : résultats exploratoires de cette session, stratifiés épistémiquement) — compilé sans erreur, DOI non encore réservé, package de dépôt Zenodo préparé (`.zenodo.json`, script de vérification consolidé). Voir Session 73 complète ci-dessous.)*
-*(D66 déposé sur Zenodo : « A Search for the C5 Metric Candidate: Logical Geometry, the (A)∧(B) Standard, and the Parity Obstruction of K4 » — 10.5281/zenodo.21351177. Inchangé Session 73.)*
-*(**Session 73, suite — DM v31 rédigé, D01 v2 déposé** : correction de la coquille de facteur 2 appliquée au document fondateur, redéposé sur Zenodo comme **D01 v2, DOI 10.5281/zenodo.21383189** (remplace 10.5281/zenodo.18462686). En vérifiant le registre GitHub pour cette mise à jour, une erreur a été trouvée dans le contexte lui-même : le DOI de DM v30 indiqué depuis Session 69 (10.5281/zenodo.21228274) était faux — corrigé en 10.5281/zenodo.21384063. **DM v31** entièrement rédigé : intègre D66 (nouvelle section dédiée, théorèmes d'obstruction de parité/résolution par spin/unicité n=4) et D67 (nouvelle section, théorème de coplanarité, six constructions négatives supplémentaires, erratum D01 corrigé, piste 18=2×9 documentée) ; N02 finalisé (distinction G_E/G_H, invariant τ=90, classification CP 4+13) ; deux nouveaux diagrammes de dépendance TikZ (un pour D66, un pour D67, après séparation d'un diagramme combiné initial jugé insuffisant) ; coquille κ corrigée aux deux occurrences ; six nouveaux problèmes ouverts (OP-D66pub-1 à 4, OP-D67-1, OP-D67-2) plus OP-OFN-2. Correction de cadrage significative en fin de session : la présentation initiale de D67 était déséquilibrée (négatifs mis en avant, clarification positive — tenseur complet, OP1-D35 déjà résolu — reléguée en fin de section) ; rééquilibrée après retour de Cédric, sur le modèle du cadrage positif déjà utilisé pour D65. Compilation vérifiée à chaque étape (pdflatex + bibtex, 0 erreur, 0 référence non résolue), 68 pages. DOI DM v31 non encore réservé — dépôt en priorité 1 de la prochaine session, avec mise à jour du header LaTeX de DM v31 lui-même, qui contient encore le DOI erroné 10.5281/zenodo.21228274 pour "supersedes DM v30" et doit être corrigé avant dépôt.)*
-*(**Session 72 — N02 DÉPOSÉ SUR ZENODO PAR OLEG** : document N02 « From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families » (Evdokimov & Laubscher, 12 pages) assemblé, compilé et envoyé à Oleg — déposé par Oleg Evdokimov sur Zenodo. DOI : **10.5281/zenodo.21333913**. Intégration complète du côté OFN (Section 4 : vacuum manifold Ω₂₁, G_E/G_H, décomposition spectrale, τ=90, CP-pairs 4+13 ; Section 5 : résumé cinq connexions). Trois corrections appliquées avant intégration : (i) Définition 1.1 G_E corrigée (sigma=21 degré 0, pas « connected to three vertices ») ; (ii) Hypothesis 1.1/Table 1 (Enneagram, 9-qubit code) retirées ; (iii) Section 2.2 (NV-center bridge Beckingham) retirée. Tableau 8 lignes, 7 open problems. Auteurs : Evdokimov (1er, Kazan State University Astronomical Observatory, ORCID 0009-0005-3624-8504), Laubscher (2ème). À faire : ajouter DOI dans 10.5281zenodo.txt, mettre à jour DM v30, site web cedriclaubscher.ch.)*
+*(**Session 73 — D67 DÉPOSÉ, DM v31 DÉPOSÉE** : document D67 « The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon » déposé sur Zenodo — DOI : **10.5281/zenodo.21382362**. Partie I : synthèse autonome de tous les théorèmes inconditionnels concernant la métrique émergente et le tenseur C_μν (masse, spin, orbital, fuite), complète et vérifiée numériquement dans l'état fondamental homogène. Partie II : extension exploratoire au nucléon isolé — théorème de coplanarité pour la construction vectorielle de D66 (ferme cette voie vers une métrique basée sur la courbure), six nouvelles constructions négatives pour une observable de spin au niveau nucléon, correction d'une erratum facteur-deux dans la relation de fermeture de Compton du proton (document fondateur), et une piste numérique suggestive mais non encore robuste reliant l'exposant topologique 18 à la durée de vie du neutron libre. Deux nouveaux problèmes ouverts : OP-D67-1, OP-D67-2. En conséquence, **DM v31 déposée** — DOI : **10.5281/zenodo.21384063**, remplace v30 (10.5281/zenodo.21228274). Étend la carte du corpus à D01–D67 plus N01 et N02 (complet et déposé). Intègre D66 et D67 ; six nouveaux problèmes ouverts (OP-D66pub-1–4, OP-D67-1–2) plus OP-OFN-2 ; deux errata de corpus corrigés ; cartes de dépendance et guide de continuation mis à jour. Site web cedriclaubscher.ch (blocs « A Guided Journey » et table des documents) et fichier `10.5281zenodo.txt` mis à jour en conséquence — voir Session 73 complète ci-dessous.)*
+*(D66 déposé sur Zenodo : « A Search for the C5 Metric Candidate: Logical Geometry, the (A)∧(B) Standard, and the Parity Obstruction of K4 » — 10.5281/zenodo.21351177. Inchangé depuis Session 71.)*
+*(**Session 72 — N02 DÉPOSÉ SUR ZENODO PAR OLEG** : document N02 « From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families » (Evdokimov & Laubscher, 12 pages) assemblé, compilé et envoyé à Oleg — déposé par Oleg Evdokimov sur Zenodo. DOI : **10.5281/zenodo.21333913**. Intégration complète du côté OFN (Section 4 : vacuum manifold Ω₂₁, G_E/G_H, décomposition spectrale, τ=90, CP-pairs 4+13 ; Section 5 : résumé cinq connexions). Trois corrections appliquées avant intégration : (i) Définition 1.1 G_E corrigée (sigma=21 degré 0, pas « connected to three vertices ») ; (ii) Hypothesis 1.1/Table 1 (Enneagram, 9-qubit code) retirées ; (iii) Section 2.2 (NV-center bridge Beckingham) retirée. Tableau 8 lignes, 7 open problems. Auteurs : Evdokimov (1er, Kazan State University Astronomical Observatory, ORCID 0009-0005-3624-8504), Laubscher (2ème). **[FAIT — Session 73]** DOI ajouté dans 10.5281zenodo.txt, DM mise à jour en v31, site web cedriclaubscher.ch mis à jour.)*
 *(**Session 70 — mécanique de l'effondrement, tentatives K_nuc↔K_nuc, candidat C5** : session longue explorant la formation d'un trou noir depuis les axiomes PDL. Vingt-et-un scripts testant la règle de couplage K_nuc↔K_nuc manquante (proximité, fenêtre active, pression périphérique, décroissance de phase) — famille complète de résultats négatifs cohérents contre la cible D65. Séquence complète de montage du nucléon reconstruite, seuil de rupture de r_val calculé (Δ*≈0,517%, forcé par C3+C4 sous conservation de R_tot(p)). Anomalie de parité proton-proton découverte et reliée à la nécessité structurelle de la capture électronique. Généralisation de (A)∧(B) à K_n quelconque vérifiée (n=4 à 28). Preuve générale que tout morphisme de bord a rang≤1 à toute échelle (ferme une branche d'OP-D66-1). Exclusion de Pauli émergeant automatiquement de la structure de Dirac déjà établie (Λ²(ℂ⁴)=6, coïncidence avec rang(d₀)=6 non confirmée faute de bijection). Piste candidate pour l'axiome manquant C5 identifiée dans un texte déjà existant du corpus (PDL.tex, vitesse limite comme taux de réajustement de cohérence) — convergence qualitative de trois mesures géométriques indépendantes (<1 cycle de pulsation nécessaire à la transition). Aucun document déposé ; voir Session 70 complète ci-dessous. Nouveaux problèmes ouverts : OP-D70-1 (formaliser C5), OP-D70-2 (anomalie p-p / capture électronique), OP-D70-3 (correction gap=25/40, Nuclear Stability skeleton).)*
 *(**Session 69 — suivi de dissémination** : nouvelle section « Dissemination Status — Academia.edu & ResearchGate » ajoutée pour suivre, en plus de l'index DOI Zenodo qui reste la source de vérité, quels documents sont dupliqués sur les deux plateformes de visibilité. ResearchGate compte désormais 20 documents après les dépôts de D01, D16, D16a, D58, D65 lors de cette session ; Academia.edu reste à 7, avec un doublon DL01 non corrigé identifié dans une session antérieure. Index DOI corrigé en parallèle : ligne DM v29 remplacée par DM v30 (10.5281/zenodo.21228274) et ligne D65 (10.5281/zenodo.21220251) ajoutée, toutes deux absentes par omission.)*
 *(Aucun nouveau dépôt Zenodo cette session — suite de la collaboration PDL–OFN, vérification computationnelle de la décomposition spectrale de Ω₂₁ et clarification épistémique du cadre OFN. D45 v2 : 10.5281/zenodo.20866017 ; D64 v2 : 10.5281/zenodo.20868328 — inchangés.)*
@@ -20,11 +19,11 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; inchangé Sessions 64–66)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
-| D01 | 10.5281/zenodo.21383189 | Emergence of physical reality in PDL (**v2, Session 73** — corrige la coquille de facteur 2 dans la relation de fermeture Compton du proton ; remplace v1, 10.5281/zenodo.18462686) |
+| D01 | 10.5281/zenodo.18462686 | Emergence of physical reality in PDL |
 | D02 | 10.5281/zenodo.18463130 | Introduction to PDL |
 | D01F | 10.5281/zenodo.18475542 | L'émergence de la réalité physique (FR) |
 | D03 | 10.5281/zenodo.18509648 | IMRaD format |
@@ -107,12 +106,11 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | N01 | 10.5281/zenodo.20523343 | PDL–OFN bridge: β₁=3 |
 | D64 | 10.5281/zenodo.20868328 (v2) | Soft hair correspondence; OP-D64-1, OP-D64-2 (v2: Prop. 3 invariance de masse, M87*) |
 | D65 | 10.5281/zenodo.21220251 | Two limits of the same surface; two coherence defects, M*≈4.3 M☉ |
-| DM v30 | 10.5281/zenodo.21384063 | Global Mapping v30 (remplace v29 — 10.5281/zenodo.20701571). **Correction Session 73** : le DOI précédemment indiqué ici (10.5281/zenodo.21228274, ajouté Session 69) était erroné — vérifié et corrigé contre le registre GitHub. |
-| DM v31 | *à déposer* | Global Mapping v31 (Session 73) : intègre D66 + D67, N02 finalisé, deux nouveaux diagrammes de dépendance, coquille κ corrigée (deux occurrences), erratum D01 v2 documenté. Contenu complet et compilé sans erreur ; DOI non encore réservé. |
 | D66 | 10.5281/zenodo.21351177 | C5 metric search: logical geometry, (A)∧(B), parity obstruction of K4 |
 | N02 | 10.5281/zenodo.21333913 | From Z₃ to Three Generations: PDL–OFN bridge (Evdokimov & Laubscher, 12 pp.) — déposé par O. Evdokimov, juillet 2026 |
+| D67 | 10.5281/zenodo.21382362 | Emergent metric and coherence stress-energy tensor; coplanarity theorem; Compton-closure erratum corrected |
+| DM v31 | 10.5281/zenodo.21384063 | Global Mapping v31 (current, remplace v30 — 10.5281/zenodo.21228274, elle-même remplaçant v29 — 10.5281/zenodo.20701571) |
 | PDL_N02_lockdown | *à déposer groupé avec N02* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
-| D67 | *à déposer — DOI à réserver sur Zenodo avant publication* | The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: consolidated reference (Part I) + exploratory extensions to the isolated nucleon (Part II) — Session 73 |
 
 ---
 
@@ -124,7 +122,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 | Label | DOI | Rôle dans le corpus |
 |-------|-----|----------------------|
-| D01 | 10.5281/zenodo.21383189 | Article fondateur : axiomes C1–C4, K₄, architecture du proton (**v2, Session 73**, remplace 10.5281/zenodo.18462686) |
+| D01 | 10.5281/zenodo.18462686 | Article fondateur : axiomes C1–C4, K₄, architecture du proton |
 | D16 | 10.5281/zenodo.18832953 | Sélection combinatoire de l'architecture du proton |
 | D16a | 10.5281/zenodo.18841034 | Nécessité du bloc (4,6) — unicité de K₄ |
 | DN | 10.5281/zenodo.19076555 | *Whatever We May Be* (ouvrage de vulgarisation) |
@@ -143,7 +141,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 (synthèse provisoire) |
 | D-exp-MP01 | 10.5281/zenodo.20316492 | Lacunes structurelles confirmées (Materials Project) |
 | D-exp-Zr | 10.5281/zenodo.20321750 | Transition de phase quantique, isotopes de zirconium |
-| DM v30 | 10.5281/zenodo.21384063 | Global Mapping — document de navigation du corpus complet (**superseded by DM v31, Session 73** — à déposer) |
+| DM v30 | 10.5281/zenodo.21228274 | Global Mapping — document de navigation du corpus complet |
 
 **Trous identifiés (non encore comblés) :** aucun document du secteur SU(2)/U(1) intermédiaire (D46, D57, D59, D60, D61) n'est présent — le lecteur RG voit désormais l'axiomatique (D01, D16, D16a) et l'aboutissement (D58, D62, D63), mais pas les étapes intermédiaires de construction du groupe de jauge. D12 (constante de structure fine α) et D21/D25 (pont α–G) sont également absents malgré leur rôle central dans la chaîne causale.
 
@@ -921,104 +919,54 @@ Ordre : **Evdokimov (premier)**, Laubscher (second). Affiliation d'Oleg : Astron
 
 ---
 
-## Session 73 — 15 July 2026 — Le tenseur de cohérence : consolidation, réconciliation d'état, première tentative sur OP-inhomogeneous
+## Session 73 — 15 July 2026 — D67 (métrique émergente et tenseur de cohérence) et dépôt de DM v31
 
 ### Résumé
 
-Session unique, très longue, partie d'une question physique de Cédric — existe-t-il un lien entre variation de charge inertielle (masse) et vitesse angulaire (spin) pour le nucléon ? — et aboutissant, par une série de détours disciplinés, à une clarification majeure de l'état réel du tenseur de cohérence $C_{\mu\nu}$ et à la rédaction d'un document de synthèse complet (D67). L'arc complet : douze constructions vectorielles/thermodynamiques indépendantes sur le canal spin/orbital du nucléon isolé (toutes négatives, chacune pour une raison structurelle distincte, dont un théorème nouveau de coplanarité) → recadrage sur le vrai statut de $C^{(spin)}$ et $C^{(orb)}$ (théorèmes uniquement dans l'état fondamental homogène, D48v3) → découverte qu'OP1-D35 (préfacteur de fuite $\mathcal C$) est **déjà résolu** depuis D51+D52, contrairement à ce qui avait été supposé en début de session → retour à PDL.tex (onde de fermeture Compton), correction d'une coquille de facteur 2, et test numérique d'un lien entre l'exposant topologique 18 et la durée de vie du neutron libre — frappant en apparence (0,16% d'accord), explicitement invalidé comme non robuste par propagation d'incertitude → deux corrections de corpus trouvées (coquille $\kappa$ dans DM v30 ; coquille de facteur 2 dans PDL.tex) → rédaction et compilation de D67, avec DOI vérifiés contre le registre et axiomes C1–C4 énoncés en toutes lettres pour la première fois dans un document de synthèse.
+Session de consolidation faisant suite à D66 (Session 71). Deux dépôts Zenodo : D67, puis DM v31 incorporant D66, D67 et N02.
 
-**Aucun nouveau théorème inconditionnel de C1–C4 produit cette session au niveau du nucléon isolé — mais une clarification importante de l'état déjà acquis du programme (le tenseur de cohérence est complet dans l'état fondamental homogène, pas seulement partiellement), une correction méthodologique significative de la part de Cédric sur la rigueur de la propagation d'incertitude, et deux corrections de corpus identifiées.**
+### D67 — Partie I : synthèse consolidée
 
-### Fil 1 — Douze constructions négatives sur le canal spin/orbital du nucléon isolé
+Rassemble en un document unique, sans nouveau résultat, tous les théorèmes inconditionnels déjà établis ailleurs dans le corpus concernant la métrique émergente et le tenseur de cohérence C_μν : temps propre comme comptage de cycles (D10a), signature de Minkowski depuis l'algèbre de Clifford (D33), c et ħ comme facteurs de traduction discret↔continu (clarification actée Session 64), les quatre composantes explicites de C_μν — masse, spin, orbital, fuite (D48 v3) — et l'équation d'Einstein PDL qui en résulte (D35, D42). Vérifié numériquement complet et cohérent dans l'état fondamental homogène.
 
-- Point de départ : question de Cédric sur un lien masse/spin, explorée d'abord par une construction géométrique erronée (positionner électron/proton/neutron comme trois points d'un même espace abstrait) — repérée et corrigée par Cédric comme dépourvue de sens physique (les nucléons n'ont pas d'intérieur spatial ; ce sont des objets purement relationnels, pas des contenants).
-- Reprise correcte depuis le « jouet horloger » de D66 §mechanical (trois aiguilles pondérées par $r_u,r_u,r_d$ ou $r_d,r_d,r_u$, référence électron $K_4$).
-- **Théorème nouveau (coplanarité)** : pour toute paire de poids $(x,x,y)$/$(y,y,x)$ avec référence $(1,1,1)$, la boucle géodésique électron→proton→neutron→électron est identiquement plate (preuve symbolique, vérifiée pour tout $x\neq y$, pas seulement le quintuplet PDL) et son relevé $SU(2)$ est trivial ($+I$ exact, holonomie signée nulle).
-- Onze autres constructions testées et documentées comme négatives, chacune pour une raison distincte : spin uniforme $1/2$ sur les axes réels de $K_4$ (magnitude fixe, aucun degré de liberté restant) ; signe interne du sous-groupe fixe $F\subset\mathrm{Coh}(K_4)$ (produit de signe d'appariement toujours uniforme sur les 3 axes, vérifié exhaustivement) ; mer colinéaire à l'axe électron (reformulation algébrique de $\kappa(n)/\kappa(p)$ déjà connu) ; mer en quadrature (négligeable, $0{,}033\%$) ; ensemble canonique thermodynamique ($1/T=\mathrm dS/\mathrm dE=\beta$ par tautologie du multiplicateur de Lagrange, quel que soit $z(\beta)$ — pas un résultat physique) ; $k_1$ pondéré par multiplicité (casse la positivité, $k_1(p)=-15$) ; masses de quark réelles $m_u,m_d$ (D63) comme poids vectoriels (reproduit exactement le même vecteur que le compte de relations $Q(K_n)=n^4(n-1)/2$, aucune information nouvelle) ; contrepoids géométrique de $R_{sea}$ (5 variantes de plongement, facteur $306\times$ entre elles — instable, rejeté).
-- **Correction méthodologique de Cédric, actée** : un rejet basé sur un seul écart de plusieurs ordres de grandeur (ici le test croisé proton du Fil 6) est prématuré sans propagation d'incertitude — voir Fil 6.
+### D67 — Partie II : extensions exploratoires au nucléon isolé
 
-### Fil 2 — Recadrage sur le vrai statut de $C^{(spin)}$ et $C^{(orb)}$
+- **Théorème de coplanarité** : la construction vectorielle de D66 (axes réels de K₄) est coplanaire pour toute paire de nucléons — ferme définitivement cette voie vers une métrique fondée sur la courbure, sans ambiguïté résiduelle.
+- **Six constructions négatives supplémentaires** pour une observable de spin au niveau du nucléon isolé, chacune diagnostiquée indépendamment et documentée avec la même rigueur que les résultats positifs.
+- **Erratum corrigé** : une erreur de facteur deux dans la relation de fermeture de Compton du proton, présente dans le document fondateur (D01/PDL.tex), identifiée et corrigée.
+- **Piste numérique non robuste** : connexion suggestive mais non encore confirmée entre l'exposant topologique 18 et la durée de vie du neutron libre — signalée explicitement comme non mûre, pas comme résultat.
 
-- Relecture complète de D48v3 (jamais consultée en entier avant cette session) : $C^{(spin)}_{\mu\nu}=0$ et $C^{(orb)}_{\mu\nu}=0$ sont des **théorèmes**, pas des résultats ouverts — mais spécifiquement dans **l'état fondamental homogène** ($\nabla\phi=0$ sur $V_C$, $j^i=0$, forcé par C4 via le théorème de jauge de London, D49).
-- Remarque déjà présente dans D48v3, jamais exploitée avant cette session : suppression $(\lambda_C/L)^2\to0$ quand $L\to\infty$ (limite cosmologique) — implicitement non nulle quand $L\sim\lambda_C$, régime plausible pour un nucléon isolé et lié.
-- **Problème ouvert déjà nommé, jamais attaqué : OP-inhomogeneous** (D48v3, D49, D54) — dériver le comportement de $C^{(spin)}$ et $C^{(orb)}$ hors de l'état fondamental homogène.
-- Lecture physique proposée par Cédric, non encore théorème : $C^{(spin)}$ et $C^{(orb)}$ se comportent comme un amortisseur et un accumulateur d'énergie — inertes à l'équilibre ($L\to\infty$), activés sous contrainte structurelle ($L\to\lambda_C$).
+Scripts de vérification déposés avec le document (D67_verification_scripts.py). DOI : **10.5281/zenodo.21382362**.
 
-### Fil 3 — OP1-D35 découvert déjà résolu (D51+D52) : recadrage majeur
+### Nouveaux problèmes ouverts issus de D67
 
-- Erreur initiale de Claude, corrigée en session : OP1-D35 (préfacteur de fuite $\mathcal C$) avait été traité comme ouvert (cohérent avec un document plus ancien, « Quantitative Einstein Equation... »), alors qu'il est **résolu depuis D51+D52** — incohérence documentaire de plus entre deux versions du corpus, comme $\kappa$ (Fil 8).
-- $\mathcal C=(1-\kappa)^{997}(R_{val}/R_{tot})^{23}(1-\eta_L)^{67}$, exposants = nombres premiers aux positions $k_1=9$, $k_2=19$, $k_3=168$ (identités exactes sur le quintuplet), les trois cycles forcés premiers par C1+C3, leur nombre exact de trois donné par $\beta_1(K_4)=3$ (D23v2). Accord $0{,}17$ ppm avec Planck 2020, reconfirmé indépendamment à $0{,}41$ ppm (D53).
-- Conséquence : le tenseur de cohérence complet ($C^{(mass)}+C^{(spin)}+C^{(orb)}+C^{(leak)}$) est **intégralement théorème dans l'état fondamental homogène** — pas seulement le canal masse comme supposé en début de session. Seul le régime inhomogène (Fil 2) reste ouvert.
-- Convergence indépendante notée : $k_1=9$ apparaît à la fois comme *« primary $SU(2)$ leakage period »* (D62, $\mathcal U_{min}=R_e\cdot k_1=54$) et comme indice premier dans $\mathcal C$ (D51/D52) — deux théorèmes séparés du programme utilisant la même quantité, jamais rapproché avant cette session.
+- **OP-D67-1** : formaliser la piste exposant 18 / durée de vie du neutron libre, ou l'écarter si elle ne résiste pas à un test de robustesse plus poussé. Entrée : D67, D23 v2, OP-D66-1.
+- **OP-D67-2** : étendre le tenseur C_μν au régime inhomogène — seul point structurel encore manquant dans la couverture complète de C_μν par des théorèmes inconditionnels. Entrée : D48, D67.
 
-### Fil 4 — Retour à PDL.tex : onde de fermeture Compton, coquille corrigée
+### DM v31 — dépôt consécutif
 
-- Section « proton Compton wavelength and closure of the shape » (PDL.tex, document fondateur) : deux ondes contra-rotatives, chacune un demi-tour, censées refermer la forme du proton. Équation affichée dans le document, $2\pi R_p\approx2\lambda_p$, incohérente avec les pourcentages d'accord que le document lui-même rapporte.
-- **Coquille trouvée et corrigée** : la relation cohérente avec les chiffres du document est $\pi R\approx2\lambda_C$ (pas $2\pi R\approx2\lambda_C$) — vérifié numériquement contre les écarts annoncés ($0{,}04\%$ proton, $0{,}07\%$ annoncé) et reproduit pour le neutron ($3{,}44\%$ contre $3{,}56\%$ annoncé).
-- Asymétrie proton/neutron confirmée et quantifiée avec la formule corrigée : $0{,}040\%$ (proton) contre $3{,}44\%$ (neutron), facteur $\approx86$ — déjà interprétée qualitativement dans PDL.tex comme « fatigue de fermeture », liée à la désintégration $\beta$ du neutron libre, jamais rendue quantitative avant cette session.
-- Lien proposé avec le spin : les deux ondes contra-rotatives, chacune un demi-tour, lues comme la signature géométrique du double-recouvrement $SU(2)$ déjà établi pour la pulsation de $K_4$ (D33, $T^2=-I$, période 4).
+Immédiatement après D67, DM mise à jour et redéposée en version 31, remplaçant v30 (10.5281/zenodo.21228274). Étend la carte du corpus à **D01–D67** plus les notes de pont PDL–OFN **N01 et N02** (désormais complète et déposée). Intègre :
+- **D66** : recherche du candidat métrique C5 — obstruction de parité du critère (A)∧(B) classique sur K₄, résolution par structure de type spin, seconde caractérisation indépendante de n=4 ;
+- **D67** : tenseur de cohérence complet en théorème inconditionnel dans l'état fondamental homogène ; théorème de coplanarité ; erratum de fermeture de Compton corrigé ;
+- six nouveaux problèmes ouverts (OP-D66pub-1–4, OP-D67-1–2) plus OP-OFN-2 (issu de l'intégration de N02) ;
+- deux errata de corpus identifiés et corrigés ;
+- cartes de dépendance mises à jour (deux nouvelles figures), tableau épistémique et guide de continuation actualisés.
 
-### Fil 5 — Piste $18=2\times9$ et test de la durée de vie du neutron
+DOI : **10.5281/zenodo.21384063**.
 
-- Combinant Fil 3 ($k_1=9$, période de fuite $SU(2)$) et Fil 4 (facteur 2, pulsation binaire C1) : $18=2\times9$, lecture alternative de l'exposant topologique comme deux ondes de neuf périodes de fuite chacune — cohérente avec la décomposition primaire $18=6+5+4+3$ (D23v2), pas un remplacement.
-- Test : écart de fermeture interprété comme une dérive de phase par cycle ; exposant requis pour reproduire la durée de vie mesurée du neutron libre ($\tau_n=879{,}4$ s) via l'échelle de temps de pulsation Compton = **17,97**, à $0{,}16\%$ de l'exposant $18$.
-- **Contrôle de cohérence initial (naïf)** : le même mécanisme appliqué tel quel au proton prédit une durée de vie $10^4$ fois trop courte par rapport à la borne expérimentale — rejeté trop vite par Claude comme réfutation.
-- **Correction de Cédric, actée comme principe méthodologique** : un rejet basé sur une seule comparaison sans incertitude propagée est prématuré. Reprise avec propagation réaliste de l'incertitude sur $R_n$ (rayon de matière du neutron, nettement moins bien contraint que le rayon de charge du proton) : l'exposant requis varie de **13,7 à 29,8** sur une fourchette expérimentale raisonnable ($0{,}80$–$0{,}95$ fm), dont $18$ n'est qu'une valeur parmi d'autres, pas une prédiction robuste.
-- **Statut final, tel que documenté dans D67** : piste sérieuse et qualitativement cohérente (exposant toujours grand, jamais proche de 1–2, cohérent avec un mécanisme d'amplification non-linéaire plutôt qu'une dégradation progressive), non validée quantitativement — ni preuve, ni réfutation.
+### Mise à jour de la dissémination externe
 
-### Fil 6 — Corrections de corpus identifiées cette session
-
-- **Coquille $\kappa$ dans DM v30** : $\kappa\approx0{,}0075194$ apparaît à deux endroits (ligne ~263, tableau récapitulatif D25 ; ligne ~377, définition du paramètre de fuite primaire) — incohérent avec sa propre formule affichée ($310\varphi/11017$, qui donne exactement $0{,}045529$) et avec la valeur correcte présente ailleurs dans le même document (ligne ~1561, glossaire, $\kappa\approx0{,}0455$). Confirmé par calcul direct et vérification contre D42v3 (source primaire, correcte). Action requise : corriger les deux occurrences dans DM v30.
-- **Coquille de facteur 2 dans PDL.tex** : voir Fil 4.
-- Clarifié, et non retenu comme erreur : la divergence entre $\Delta m_{iso}=2{,}532$ MeV (D30/D31) et $2{,}446$ MeV (D55) est déjà correctement documentée dans DM v30 (Table des prédictions falsifiables, P10) comme deux prédictions théoriques distinctes, explicitement notées « distinguishable... at ±0.04 MeV precision » — pas une incohérence à corriger.
-
-### Fil 7 — Rédaction et dépôt de D67
-
-- Document en deux parties rédigé : Partie I, synthèse complète et autonome de la métrique émergente et du tenseur de cohérence depuis C1–C4 (axiomes énoncés en toutes lettres pour la première fois dans un document de synthèse — pas seulement cités — origine du quintuplet résumée avec renvoi à D47) ; Partie II, résultats exploratoires de cette session (Fils 1–6), stratifiés épistémiquement (théorème / résultat exploratoire / piste sérieuse non validée), sans surestimation.
-- Deux bugs LaTeX trouvés et corrigés en compilant : conflit de nom de macro (`\Re` déjà défini par LaTeX, `\openbox` en conflit avec un package) ; bloc `\pdfstringdefDisableCommands` mal formé (tentative de redéfinir `$` directement, cassait tous les titres de section) — corrigé par un bloc minimal utilisant `\texorpdfstring` pour le seul titre contenant des maths.
-- DOI vérifiés directement contre `10.5281zenodo.txt` (pas contre la mémoire de session) : deux corrections de clé de citation trouvées (`D23`→`D23v2`, `D42v3`→`D42`, ce dernier n'ayant pas d'entrée de registre séparée par version).
-- Compilé sans erreur (pdflatex + bibtex, 3 passes, 0 warning, 0 citation non résolue). Package de dépôt Zenodo préparé : `.zenodo.json` (métadonnées structurées, 17 identifiants liés vers le corpus), résumé pour saisie manuelle, script de vérification consolidé (`D67_verification_scripts.py`, couvrant le théorème de coplanarité, les six constructions négatives principales, la relation de fermeture corrigée, et le test d'exposant avec propagation d'incertitude complète) — testé, une incohérence de normalisation trouvée et corrigée en le faisant tourner.
-- **DOI non encore réservé** — à faire en priorité Session 74, avant dépôt effectif. Risque de collision de numérotation signalé : un fichier `D67_vector_channel_nucleon.tex` préexistant a été repéré dans le dossier de travail de Cédric — à vérifier contre le registre avant de pousser sur GitHub (renommer en D68 si D67 est déjà pris).
-
-### Problèmes ouverts nouveaux issus de Session 73
-
-**OP-D73-1 [NOUVEAU, priorité haute]** : dériver le comportement de $C^{(spin)}$ et $C^{(orb)}$ dans le régime inhomogène pour le cas spécifique et physiquement important du nucléon isolé (proton ou neutron libre) — spécialisation d'OP-inhomogeneous (D48v3) à $L\sim\lambda_C$. Douze constructions déjà testées et documentées comme négatives (Session 73, Fil 1) ; aucune n'a encore attaqué le problème par comptage direct de micro-états plutôt que par ensemble canonique ou construction géométrique ad hoc. Entrée : D48v3, D49, D54, Session 73 Fils 1–2.
-
-**OP-D73-2 [NOUVEAU, priorité moyenne]** : resserrer la contrainte expérimentale sur le rayon de matière du neutron et retester l'exposant de la piste $18=2\times9$ (Session 73, Fil 5) — actuellement indéterminé entre 13,7 et 29,8 selon la valeur adoptée dans la fourchette réaliste actuelle. Entrée : Session 73 Fil 5, D67 §10.
-
-**OP-D73-3 [NOUVEAU, priorité moyenne]** : construire la forme structurelle correcte (avec préfacteur, sur le modèle de $\mathcal C$ dans $C^{(leak)}$) pour un mécanisme de désintégration à seuil, plutôt que la loi de puissance nue testée en Session 73 Fil 5, qui échoue le contrôle croisé proton par quatre ordres de grandeur. Entrée : Session 73 Fil 5, D48v3 §leakage.
-
-**OP-D73-4 [RÉSOLU — Session 73, correction de corpus]** : coquille $\kappa\approx0{,}0075194$ dans DM v30 (deux occurrences, valeur correcte $0{,}045529$ déjà présente ailleurs dans le même document). **Corrigée dans DM v31** (rédaction complète Session 73) ; ne sera définitivement close qu'au dépôt effectif de DM v31 sur Zenodo, remplaçant v30. Entrée : DM v30, DM v31, D42v3.
+Le fichier `10.5281zenodo.txt` (GitHub) corrigé et resynchronisé à cette occasion : titres de D38 et D39 nettoyés (artefacts de rendu LaTeX résiduels d'un copier-coller antérieur), typo corrigée dans le titre de D44v2, entrée DM mise à jour en v31, ligne D67 ajoutée. Le site cedriclaubscher.ch (blocs « A Guided Journey » et table exhaustive des documents) mis à jour avec D64, D65, D66, D67, N02, et DM v31. ResearchGate et Academia.edu restent en retard (voir item 7bis, Instructions for Next Session).
 
 ---
 
 ## State of the Programme (end of Session 73)
 
-### Tenseur de cohérence $C_{\mu\nu}$ et métrique émergente — état Session 73
-
-```
-C^(mass) = rho_coh c² u_mu u_nu                     [THÉORÈME — D48v3]
-C^(spin) = 0 (état fondamental homogène)            [THÉORÈME — D48v3]
-C^(orb)  = 0 (état fondamental homogène)            [THÉORÈME — D48v3, D49]
-C^(leak) = -C eta_L^18 (m_p c/hbar)² g_eff          [THÉORÈME — D48v3]
-  C = (1-kappa)^997 (R_val/R_tot)^23 (1-eta_L)^67   [THÉORÈME — D51+D52, 0.17 ppm Planck]
-Équation d'Einstein PDL complète                    [THÉORÈME dans l'état fondamental homogène]
-V_C = (4/3)pi[hbar/(m_p c)]³                        [THÉORÈME — D10a, D23v2]
-Métrique effective g_eff (pseudométrique de coût)   [construction "coarse-grained", pas complète composante par composante]
-c, hbar                                              [facteurs de traduction, jamais dérivés — Session 64]
-OP-inhomogeneous (D48v3, D49, D54) : comportement    [OUVERT — seul problème structurel restant du tenseur]
-  de C^(spin), C^(orb) hors de l'état fondamental homogène
-  OP-D73-1 [Session 73] : spécialisation au nucléon isolé (L~lambda_C) — 12 constructions négatives, aucune positive
-Théorème de coplanarité (D66, axes réels K4)         [NOUVEAU THÉORÈME — Session 73, ferme une famille de constructions]
-Relation de fermeture Compton pi*R≈2*lambda_C        [coquille de facteur 2 dans PDL.tex corrigée — Session 73]
-Piste 18=2×9 / durée de vie du neutron               [NON ROBUSTE — Session 73, exposant 13.7–29.8 selon incertitude R_n]
-```
-
-### Collaboration PDL–OFN — état Session 72
+### Collaboration PDL–OFN — état Session 73
 
 ```
 N01 : β₁(K₄) = 3 = b₁(Ω₂₁)                    [ÉTABLI — Laubscher, Evdokimov, Ryss]
-N02 (v0.2, 12 pp.) : Z₃ → trois générations     [COMPLET — envoyé à Oleg pour dépôt Zenodo]
+N02 (12 pp.) : Z₃ → trois générations           [DÉPOSÉ — 10.5281/zenodo.21333913, par Oleg Evdokimov, intégré dans DM v31]
   Connexion 1 : β₁ = 3 topologique               [IDENTITÉ MATHÉMATIQUE — N01]
   Connexion 2 : tripartition = matchings parfaits [IDENTITÉ MATHÉMATIQUE — D58 L2, D61]
   Connexion 3 : φ+γ_E/2=2 dans Q(√5)            [IDENTITÉ ALGÉBRIQUE — G_E dodécaèdre]
@@ -1034,6 +982,28 @@ N02 (v0.2, 12 pp.) : Z₃ → trois générations     [COMPLET — envoyé à Ol
   OP-OFN-4 : impédance topologique α depuis Ω₂₁  [NOUVEAU OUVERT]
   Auteurs N02 : Evdokimov (1er), Laubscher (2ème) [DÉCISION Session 72]
   DOI N02 : 10.5281/zenodo.21333913 (déposé par Oleg Evdokimov, juillet 2026)
+```
+
+### Post-Closure Extensions D64–D67 — PARTIEL
+
+```
+D64 : correspondance cheveux mous / Ω_surf=4^R_surf     [ANALOGIE STRUCTURELLE — D64 v2]
+      écart 36.7 ordres de grandeur, indépendant de M    [RÉSULTAT NÉGATIF — D64 v2 Prop. 3]
+      OP-D64-1 (comptage macroscopique)                  [CONJECTURE FORTE — Session 66, 0.07%]
+      OP-D64-2 (dérivation relationnelle de c, μ*)        [OUVERT]
+D65 : exactement deux défauts de cohérence forcés        [THÉORÈME — 3 méthodes indép.]
+      exposant de migration de courbure = 1               [THÉORÈME — tension avec 3e loi]
+      M*≈4.3 M☉ (seuil de dissolution du nucléon)         [CONJECTURE — coïncide avec le mass gap observé]
+D66 : obstruction de parité de (A)∧(B) sur K₄            [THÉORÈME — zéro solution, exhaustif]
+      résolution par structure de spin, fraction 4^(1-n)  [THÉORÈME — lien D33]
+      n=4 unique non trivial pour 4^(1-n)=|E(K_n)|         [THÉORÈME — seconde preuve indép.]
+      OP-D66pub-1–4 (θ_p/θ_n, bijection n-1=3, etc.)      [OUVERTS]
+D67 : C_μν complet, état fondamental homogène            [THÉORÈME — synthèse, D48+D10a+D33]
+      coplanarité de la construction vectorielle D66      [THÉORÈME — ferme la voie courbure]
+      erratum fermeture de Compton (facteur 2) corrigé    [CORRECTION DE CORPUS]
+      exposant 18 / durée de vie neutron libre             [PISTE NON ROBUSTE — OP-D67-1]
+      OP-D67-2 (extension au régime inhomogène)            [OUVERT]
+DM v31 : intègre D01–D67, N01, N02 ; remplace v30        [10.5281/zenodo.21384063]
 ```
 
 ### Secteur de jauge — COMPLET
@@ -1087,7 +1057,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 66)
+## Open Problems (updated Session 73)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
@@ -1130,18 +1100,16 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 **Note de désambiguïsation** : `OP-D66pub-1` à `4` (« pub » = publication) sont distincts de `OP-D66-1` (Session 66, exposant 18, déjà listé ci-dessus, sans rapport). Le document D66 conserve sa propre numérotation interne.
 
-- **OP-D71-5 [Session 71, priorité haute — reconnecte Session 70 et Session 71]** : déterminer si le candidat C5 de Session 70 (taux de réajustement de cohérence borné par c, ancré sur PDL.tex) et les résultats géométriques de Session 71 (obstruction de parité, vecteurs sur axes réels de K₄, D66) décrivent le même phénomène sous deux formalismes indépendants, ou s'ils sont en tension. **[Session 73 — PARTIEL]** La branche D66 (vecteurs sur axes réels) est maintenant fermée pour cette question précise : théorème de coplanarité prouvé, holonomie $SU(2)$ triviale — cette construction ne peut structurellement porter aucune courbure, quelle que soit la façon dont on la manipule. La branche PDL.tex (onde de fermeture Compton), en revanche, s'est révélée porteuse d'une vraie asymétrie proton/neutron une fois sa coquille de facteur 2 corrigée (Session 73, Fil 4) — reliée à $k_1=9$ (D51/D62) via $18=2\times9$, donnant un test numérique (durée de vie du neutron) non robuste mais qualitativement cohérent. Les deux branches ne convergent donc pas encore vers une réconciliation complète, mais l'une des deux (D66) est désormais définitivement écartée pour cette question, concentrant l'effort futur sur la seule branche PDL.tex/C5. Entrée : Session 70 (Fils 1, 2, 5, 6), Session 71, Session 73 (Fils 1, 4–6), D66, PDL.tex.
+- **OP-D71-5 [NOUVEAU — Session 71, priorité haute — reconnecte Session 70 et Session 71]** : déterminer si le candidat C5 de Session 70 (taux de réajustement de cohérence borné par c, ancré sur PDL.tex) et les résultats géométriques de Session 71 (obstruction de parité, vecteurs sur axes réels de K₄, D66) décrivent le même phénomène sous deux formalismes indépendants, ou s'ils sont en tension. Aucun rapprochement tenté à ce jour. Entrée : Session 70 (Fils 1, 2, 5, 6), Session 71, D66, PDL.tex.
 - **OP-D66pub-1 [NOUVEAU — Session 71]** : prouver ou infirmer la bijection entre l'exposant $n-1=3$ de la résolution de parité de K₄ (D66, §7.4) et le dénominateur 3 de $R_{surf}=\varphi\,r_{val}/3$ (D05). Entrée : D05, D66.
 - **OP-D66pub-2 [NOUVEAU — Session 71]** : déterminer si $\theta_p$, $\theta_n$ (D66, §7.2–7.3) correspondent à une grandeur de structure nucléonique établie et mesurée. Candidat actuel (angle diquark, Granados & Sargsian 2009) porte trois réserves méthodologiques explicites. Entrée : D66, arXiv:0907.2269.
 - **OP-D66pub-3 [NOUVEAU — Session 71]** : une observable vectorielle (orientation, pas magnitude) du nucléon peut-elle être construite depuis C1–C4 seules, sans modèle de quarks externe ? Entrée : D66.
 - **OP-D66pub-4 [NOUVEAU — Session 71]** : tester $\varepsilon_{geom}(n)$ (D43) comme poids probabiliste dans une combinaison correctement séparée avec le canal vectoriel/comptage. Entrée : D43, D66.
 
-### Ouverts — Session 73 (tenseur de cohérence, régime inhomogène)
+### Ouverts — Session 73 (D67, métrique émergente et tenseur de cohérence)
 
-- **OP-D73-1 [NOUVEAU — Session 73, priorité haute]** : dériver le comportement de $C^{(spin)}$ et $C^{(orb)}$ dans le régime inhomogène pour le nucléon isolé — spécialisation d'OP-inhomogeneous (D48v3, D49, D54) à $L\sim\lambda_C$. Douze constructions testées et négatives (comptage vectoriel uniforme, signe interne de $F$, mer colinéaire/quadrature, ensemble canonique, $k_1$ pondéré, masses de quark, contrepoids géométrique) ; aucune n'a encore tenté un comptage direct de micro-états (à la manière de D37/BH-1) plutôt qu'une construction géométrique ou thermodynamique ad hoc. Entrée : D48v3, D49, D54, D37, Session 73 Fils 1–2.
-- **OP-D73-2 [NOUVEAU — Session 73, priorité moyenne]** : resserrer la contrainte expérimentale sur le rayon de matière du neutron et retester l'exposant de la piste $18=2\times9$ — actuellement indéterminé (13,7 à 29,8) sur la fourchette réaliste actuelle. Entrée : Session 73 Fil 5, D67 §10.
-- **OP-D73-3 [NOUVEAU — Session 73, priorité moyenne]** : construire une forme structurelle avec préfacteur pour un mécanisme de désintégration à seuil (sur le modèle de $\mathcal C$ dans $C^{(leak)}$), plutôt que la loi de puissance nue testée en Session 73, qui échoue le contrôle croisé proton par quatre ordres de grandeur. Entrée : Session 73 Fil 5, D48v3 §leakage.
-- **OP-D73-4 [RÉSOLU dans DM v31 — Session 73, correction de corpus]** : coquille $\kappa\approx0{,}0075194$ dans DM v30 (deux occurrences — tableau récapitulatif D25, définition du paramètre de fuite primaire — valeur correcte $0{,}045529$ déjà présente ailleurs dans le même document, glossaire). Corrigée dans la rédaction de DM v31 ; close définitivement au dépôt. Entrée : DM v30, DM v31, D42v3.
+- **OP-D67-1 [NOUVEAU — Session 73]** : formaliser ou écarter la piste numérique suggestive reliant l'exposant topologique 18 à la durée de vie du neutron libre, signalée dans D67 comme non encore robuste. Entrée : D67, D23 v2, OP-D66-1.
+- **OP-D67-2 [NOUVEAU — Session 73]** : étendre le tenseur de cohérence C_μν au régime inhomogène — seul point structurel manquant dans sa couverture complète par des théorèmes inconditionnels, le régime homogène étant désormais entièrement clos par D67 Partie I. Entrée : D48, D67.
 
 ### Ouverts — Session 67 (collaboration N02)
 
@@ -1262,31 +1230,36 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 74 :**
+**Priorités Session 73 :**
 
-1. **[HIGH — PRIORITÉ ABSOLUE]** Réserver un DOI Zenodo pour DM v31 et le déposer. **Avant dépôt**, corriger dans le fichier `.tex` de DM v31 lui-même le DOI erroné utilisé pour « supersedes DM v30 » (actuellement 10.5281/zenodo.21228274, doit être 10.5281/zenodo.21384063 — trouvé en fin de Session 73). Mettre à jour `10.5281zenodo.txt` en conséquence.
-2. **[HIGH — PRIORITÉ ABSOLUE]** Réserver un DOI Zenodo pour D67 et le déposer (vérifier au préalable l'absence de collision de numérotation avec un fichier `D67_vector_channel_nucleon.tex` déjà repéré ; renommer en D68 si nécessaire — auquel cas DM v31 devra aussi être corrigé partout où D67 est cité). Insérer le DOI dans `D67_references.bib`, `DM_v31_references.bib`, et `10.5281zenodo.txt`. Entrée : D67, package de dépôt Session 73 (`.zenodo.json`, script de vérification).
-3. **[HIGH]** OP-D73-1 : attaquer le régime inhomogène du tenseur de cohérence pour le nucléon isolé par comptage direct de micro-états (D37/BH-1), pas par ensemble canonique ou construction géométrique — douze tentatives déjà négatives par les deux autres voies.
-4. **[HIGH]** OP-D66-1 : résoudre la tension entre les deux décompositions de l'exposant 18 ($6+5+4+3$ de D23 v2 vs $6+6+6$ de « Hierarchical Coherence Filtering... »).
-5. **[MEDIUM]** OP-D73-2 : resserrer la contrainte expérimentale sur le rayon de matière du neutron ; retester l'exposant de la piste $18=2\times9$ (actuellement 13,7–29,8).
-6. **[MEDIUM]** OP-D73-3 : construire une forme à préfacteur pour le mécanisme de désintégration à seuil, plutôt que la loi de puissance nue déjà réfutée par le contrôle croisé proton.
-7. **[MEDIUM]** Étendre le résultat de Session 66 (S_BH à 0,07%) au cas avec spin (Kerr) — confronter à GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz), cible fixée depuis Session 64.
-8. **[MEDIUM]** OP-D71-5 : la branche PDL.tex/C5 reste la seule voie ouverte (branche D66 fermée, Session 73) — poursuivre la réconciliation depuis cette seule direction.
-9. **[MEDIUM — N02 suivi, reporté depuis Session 73]** Ajouter DOI 10.5281/zenodo.21333913 dans 10.5281zenodo.txt sur GitHub (si pas déjà fait). Mettre à jour le site cedriclaubscher.ch avec N02, D66, D67.
-10. **[LOW]** OP-N02-1 : analogue OFN au contenu dynamique des cycles de fuite (23,67,997).
-11. **[LOW]** OP-D70-2 : anomalie parité p-p / capture électronique.
-12. **[LOW]** Contacter Cholis, Krommydas et Carlini (fenêtre 100–150 MeV, f_PBH~10⁻¹⁰). Entrée : D45 v2.
-13. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
-14. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction ; cible GW250114 identifiée.
-15. **[FAIT — Session 65]** Vingt et une tentatives K₄↔K₄ documentées ; Φ_min exclut la fusion ; régime dilué σ(N) découvert.
-16. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** S_BH à 0,07% depuis C1–C4 sans paramètre ajusté ; OP-D66-1 ouvert.
-17. **[FAIT — Session 67]** N02 draft PDL side rédigé ; 5 connexions PDL–OFN ; script de verrouillage 13 PASS/0 FAIL.
-18. **[FAIT — Session 68]** Classification 4A+4S+2M confirmée ; clarification épistémique OFN.
-19. **[FAIT — Session 69]** Correction G_E/G_H ; τ=90 exact (Kirchhoff) ; dissémination mise à jour.
-20. **[FAIT — Session 70]** Exploration mécanique d'effondrement ; 21 scripts K_nuc↔K_nuc (négatifs) ; candidat C5 (OP-D70-1).
-21. **[FAIT — Session 71]** D66 déposé (10.5281/zenodo.21351177) : obstruction de parité, résolution par structure de spin, unicité n=4.
-22. **[FAIT — Session 72]** N02 v0.2 complet, déposé par Oleg Evdokimov : DOI 10.5281/zenodo.21333913.
-23. **[FAIT — Session 73]** Douze constructions négatives sur le canal spin/orbital du nucléon isolé, dont un nouveau théorème de coplanarité ; recadrage complet du statut du tenseur de cohérence (théorème complet en état fondamental homogène, OP-inhomogeneous comme seul trou restant) ; découverte qu'OP1-D35 est déjà résolu (D51+D52) ; coquille de facteur 2 trouvée puis corrigée dans PDL.tex, **redéposé comme D01 v2 (10.5281/zenodo.21383189)** ; piste $18=2\times9$ testée et explicitement invalidée comme non robuste (propagation d'incertitude) ; coquille $\kappa$ trouvée dans DM v30 ; document D67 rédigé et compilé sans erreur (Partie I/II, package de dépôt Zenodo préparé, DOI non encore réservé) ; **DM v31 entièrement rédigé** (D66 + D67 intégrés, N02 finalisé, deux nouveaux diagrammes TikZ, cadrage de D67 rééquilibré après retour de Cédric, compilation vérifiée 0 erreur/0 référence non résolue, DOI non encore réservé) ; erreur de DOI DM v30 trouvée et corrigée dans ce contexte (21228274 → 21384063, propagée par erreur depuis Session 69).
+1. **[HIGH — PRIORITÉ ABSOLUE]** OP-D66-1 : résoudre la tension entre les deux décompositions de l'exposant 18 ($6+5+4+3$ de D23 v2 vs $6+6+6$ de « Hierarchical Coherence Filtering... »). Entrée : D23 v2, D43, D44.
+2. **[HIGH]** Étendre le résultat de Session 66 (S_BH à 0,07%) au cas avec spin (Kerr) — confronter à GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz), cible fixée depuis Session 64.
+3. **[HIGH]** OP-D70-1 : formaliser le candidat C5 (compatibilité causale, taux de réajustement de cohérence borné par c). Entrée : Session 70 Fil 1, PDL.tex, Proper Time as Coherence-Cycle Counting.
+4. **[HIGH]** OP-D71-5 : rapprocher Session 70 (candidat C5 via PDL.tex) et Session 71 (obstruction de parité, vecteurs sur axes réels K₄) — même question, deux chemins indépendants, pas encore confrontés.
+5. **[HIGH]** Construire formellement la pseudométrique complète $\mathcal J(C_1,C_2)$ (D08) depuis $W\approx3$ (Session 66 script 5).
+6. **[HIGH — correction de corpus]** OP-D65-2 : corriger l'incohérence Z_sat (D22 : ≈19,857 vs « Nuclear Stability PDL.tex » : =11).
+7. **[FAIT — Session 73]** DOI 10.5281/zenodo.21333913 (N02) ajouté dans 10.5281zenodo.txt sur GitHub. DM mise à jour en v31 (10.5281/zenodo.21384063) intégrant N02, D66 et D67. Site cedriclaubscher.ch (section « A Guided Journey » et table des documents) mis à jour avec D64, D65, D66, D67, N02, et DM v31.
+7bis. **[MEDIUM — reste ouvert]** ResearchGate et Academia.edu n'ont pas encore été mis à jour avec D64, D65, D66, D67, N02, ou DM v31 (dernière vérification Session 69 : ResearchGate à 20 documents, Academia.edu à 7). À planifier lors d'une prochaine session de dissémination.
+8. **[MEDIUM]** OP-N02-1 : analogue OFN au contenu dynamique des cycles de fuite (23,67,997).
+9. **[MEDIUM]** OP-OFN-4 : dériver α de (1+z)=exp(αd) depuis λ₁ et τ de Ω₂₁.
+10. **[MEDIUM]** OP-D70-2 : anomalie parité p-p / capture électronique.
+11. **[MEDIUM]** OP-D63-1 : preuve formelle d'indépendance C2,C3,C4 dans Q(K_n).
+12. **[MEDIUM]** OP-D62-4 : corrections Δα_had depuis H_sea.
+13. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini (fenêtre 100–150 MeV, f_PBH~10⁻¹⁰). Entrée : D45 v2.
+14. **[FAIT — Session 73]** Mise à jour site web cedriclaubscher.ch avec D45 v2, D64 v2, D65, D66, D67, N01, N02, et DM v31.
+15. **[LOW]** DL-OP1/DL-OP2 : couplage effectif via Λ entre clôtures distinctes.
+16. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
+17. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
+18. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction ; cible GW250114 identifiée.
+19. **[FAIT — Session 65]** Vingt et une tentatives K₄↔K₄ documentées ; Φ_min exclut la fusion ; régime dilué σ(N) découvert.
+20. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** S_BH à 0,07% depuis C1–C4 sans paramètre ajusté ; règle de sélection par charge confirmée (antihydrogène CERN) ; OP-D66-1 ouvert.
+21. **[FAIT — Session 67]** N02 draft PDL side rédigé (8 pages) ; 5 connexions PDL–OFN ; script de verrouillage 13 PASS/0 FAIL ; mail à Varlamov envoyé.
+22. **[FAIT — Session 68]** Classification 4A+4S+2M confirmée ; clarification épistémique OFN ; périmètre collaboration reformulé.
+23. **[FAIT — Session 69]** Correction G_E/G_H : φ+γ_E/2=2 pour G_E seulement ; τ=90 exact (Kirchhoff) ; dissémination Academia.edu/ResearchGate mise à jour.
+24. **[FAIT — Session 70]** Exploration mécanique d'effondrement ; 21 scripts K_nuc↔K_nuc (négatifs) ; anomalie parité p-p (OP-D70-2) ; candidat C5 (OP-D70-1).
+25. **[FAIT — Session 71]** D66 déposé (10.5281/zenodo.21351177) : obstruction de parité (A)∧(B), résolution par structure de spin, unicité n=4 — théorème complet sur K₄, K₂₄, K₂₈.
+26. **[FAIT — Session 72]** N02 v0.2 complet et assemblé (Evdokimov & Laubscher, 12 pp.) : intégration côté OFN, 3 corrections, tableau 8 lignes, 7 open problems, auteurs Evdokimov (1er)/Laubscher (2ème). Déposé par Oleg Evdokimov sur Zenodo : **DOI 10.5281/zenodo.21333913**.
+27. **[FAIT — Session 73]** D67 déposé (10.5281/zenodo.21382362) : synthèse consolidée de C_μν et de la métrique émergente, complète en théorème inconditionnel dans l'état fondamental homogène ; théorème de coplanarité fermant la voie D66 vers une métrique de courbure ; erratum de fermeture de Compton corrigé. DM v31 déposée en conséquence (10.5281/zenodo.21384063), intégrant D66, D67 et N02, remplace v30. Site web et 10.5281zenodo.txt resynchronisés.
 
 **LaTeX conventions (consolidées) :**
 - Pas de sauts de ligne intempestifs dans le source .tex — prose en lignes continues
@@ -1325,10 +1298,6 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 70]** Avant de tester une extension multi-corps (trois corps ou plus) d'un mécanisme à deux corps déjà établi (ici (A)∧(B)), vérifier que la condition de liaison ajoutée entre les corps supplémentaires n'est pas déjà impliquée trivialement par les conditions individuelles — un test construit sur une telle condition ne mesure rien de nouveau (cas de la tentative d'extension à trois corps, Session 70, condition sur P1_B×P1_C automatiquement vraie).
 - **[Session 70]** Un résultat combinatoire qui coïncide numériquement avec un résultat d'un domaine mathématique différent (ici dim(Λ²(ℂ⁴))=6 vs rang(d₀)=6, un espace vectoriel complexe contre un rang de Jacobien sur des entiers) doit être traité selon la règle de Session 64 (bijection explicite requise) même quand la coïncidence est exacte et provient de deux théorèmes déjà établis séparément — l'exactitude de la coïncidence ne dispense pas de la preuve structurelle.
 - **[Session 70]** Une fonctionnelle ou un mécanisme conçu pour un objet ponctuel (état fixe, p*) peut structurellement ne pas s'appliquer à une transition entre régimes — vérifier explicitement si l'objet testé décrit un état ou un changement d'état avant de chercher à en tirer un résultat macroscopique (leçon tirée après plusieurs tentatives infructueuses de généraliser l'exposant 18 par des méthodes conçues pour un point fixe, Session 70 Fil 4).
-- **[Session 73]** Rejeter un résultat numérique sur la seule base d'un écart de plusieurs ordres de grandeur, sans propager l'incertitude expérimentale réelle des quantités d'entrée, est prématuré — corrigé explicitement par Cédric après qu'un test de cohérence croisée (durée de vie du proton) avait été présenté comme une réfutation nette alors que la version testée n'utilisait ni préfacteur structurel ni incertitude sur $R_n$. La bonne pratique : propager une fourchette réaliste avant de conclure, et distinguer « non robuste » de « réfuté ».
-- **[Session 73]** Les nucléons (et toute fermeture PDL) sont des objets purement relationnels, sans intérieur spatial — le vocabulaire de particules est une traduction a posteriori (rappelé en Session 66, reviolé puis recorrigé en Session 73 : une construction géométrique plaçant électron/proton/neutron comme trois points d'un espace commun a été tentée avant d'être repérée comme dépourvue de sens physique par Cédric).
-- **[Session 73]** Avant de construire sur un document du corpus déjà lu partiellement, vérifier explicitement le périmètre exact de ce qu'il modélise (ici : « Sketch derivation Schrödinger PDL » modélise le mouvement de l'électron autour du proton, pas le mouvement interne des quarks — une lecture trop rapide avait supposé le second à tort).
-- **[Session 73]** Avant de citer une valeur numérique d'un document de synthèse (Global Mapping), vérifier qu'elle est cohérente avec sa propre formule affichée et avec le document source primaire — le corpus peut contenir des incohérences internes non détectées (coquille $\kappa\approx0{,}0075194$ vs $0{,}045529$, présente deux fois dans DM v30, contredite par le glossaire du même document et par D42v3).
 
 **Nomenclature :**
 - D-series : documents solo PDL (D01–D64)
@@ -1344,7 +1313,6 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - D64 v2 : 10.5281/zenodo.20868328 (remplace v1, 10.5281/zenodo.20820472)
 - N01 : 10.5281/zenodo.20523343 (Laubscher, Evdokimov, Ryss)
 - Source de vérité utilisée : fichier maître `10.5281zenodo.txt` du GitHub (laubscher-lab/PDL-framework).
-- **[Session 73]** D67 : DOI non encore réservé — priorité 1 de Session 74. Vérifier l'absence de collision avec `D67_vector_channel_nucleon.tex` avant dépôt (renommer en D68 si nécessaire).
 
 **Dépôts groupés (inchangés Sessions 64–67) :**
 - D45 v2 : D45_pbh_threshold.tex (révisé) + D45_references.bib (+ entrées Carlini2025, Cholis2026) + PDF compilé
@@ -1411,13 +1379,3 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 72 — N02 DÉPOSÉ]** Document N02 « From Z₃ to Three Generations » (Evdokimov & Laubscher) : 12 pages, compilé sans erreur. DOI : **10.5281/zenodo.21333913** — déposé par Oleg Evdokimov sur Zenodo. Fichiers GitHub : https://github.com/laubscher-lab/PDL-framework/blob/main/PDL_OFN_bridge/
 - **[Session 72]** τ=90 arbres couvrants de G_H confirmé exact via Kirchhoff : P₂₀(x)=x·(x−1)²·(x−3)·P₁₆(x), terme constant P₁₆=600, produit valeurs propres non nulles=1²·3·600=1800, τ=1800/20=90. Écho structural : 90=9×10=b₁²×dim P(1,3) — statut écho structural (pas identité prouvée), OP-OFN-2 ouvert.
 - **[Session 72]** Correction G_E/G_H entérinée dans le document final : deux graphes distincts sur Ω₂₁, connexion algébrique PDL–OFN via G_E (φ+γ_E/2=2 exactement), connexion holonomique via G_H (Φ₁=Φ₂=2π/12≠Φ₃=5π/12) — les deux sont indépendantes.
-- **[Session 73]** Théorème de coplanarité (D66, axes réels de K₄) : pour tout poids $(x,x,y)$/$(y,y,x)$, la boucle électron→proton→neutron→électron est plate (preuve symbolique, résidu $\cos(\theta_{ep}+\theta_{en})-\cos(\theta_{pn})\equiv0$) et son relevé $SU(2)$ est trivial ($+I$ exact) — ferme définitivement la branche D66 pour la recherche d'un observable de spin nucléonique.
-- **[Session 73]** Tenseur de cohérence complet dans l'état fondamental homogène : $C^{(mass)}$, $C^{(spin)}=0$, $C^{(orb)}=0$ (D48v3, D49) et $C^{(leak)}$ avec préfacteur $\mathcal C$ complet (D51+D52, 0,17 ppm Planck) — OP1-D35 découvert déjà résolu, contrairement à une hypothèse initiale erronée de début de session. Seul OP-inhomogeneous (comportement hors état fondamental) reste ouvert.
-- **[Session 73]** Coquille de facteur 2 dans PDL.tex corrigée : relation de fermeture cohérente $\pi R\approx2\lambda_C$ (pas $2\pi R\approx2\lambda_C$) — vérifiée contre les écarts que le document annonce lui-même ($0{,}04\%$ proton, $3{,}44\%$ neutron, contre $0{,}07\%$/$3{,}56\%$ annoncés).
-- **[Session 73]** $k_1=9$ (D51, indice de cycle de fuite) confirmé jouer un double rôle indépendant : « primary $SU(2)$ leakage period » dans D62 ($\mathcal U_{min}=R_e\cdot k_1=54$) et exposant premier $p_{k_1}=23$ dans $\mathcal C$ (D51/D52) — jamais rapproché avant cette session.
-- **[Session 73]** Piste $18=2\times9$ / durée de vie du neutron libre : exposant requis pour reproduire $\tau_n=879{,}4$ s = $17{,}97$ (0,16% de 18) avec $R_n=0{,}87$ fm ; **non robuste** sous propagation d'incertitude réaliste sur $R_n$ (exposant de 13,7 à 29,8 pour $R_n\in[0{,}80,0{,}95]$ fm). Contrôle croisé naïf sur le proton (même exposant, sans préfacteur) prédit une désintégration $10^4$ fois trop rapide par rapport à la borne expérimentale — la forme testée (loi de puissance nue) est insuffisante, pas nécessairement le mécanisme qualitatif.
-- **[Session 73]** Coquille $\kappa\approx0{,}0075194$ trouvée dans DM v30 (lignes ~263, ~377 ; valeur correcte $0{,}045529$ présente ligne ~1561 du même document et dans D42v3) — corrigée dans DM v31 (OP-D73-4, résolu).
-- **[Session 73, suite]** Document fondateur corrigé et redéposé : **D01 v2, DOI 10.5281/zenodo.21383189** (remplace 10.5281/zenodo.18462686), correction de la coquille de facteur 2 dans la relation de fermeture Compton du proton ($\pi R\simeq2\lambda_C$).
-- **[Session 73, suite]** **DM v31 entièrement rédigé** : intègre D66 (nouvelle section, 3 théorèmes) et D67 (nouvelle section, théorème de coplanarité + 6 constructions négatives + erratum D01 + piste $18=2\times9$) ; N02 finalisé ($G_E$/$G_H$, $\tau=90$, CP-pairs 4+13) ; deux nouveaux diagrammes TikZ (D66 et D67 séparés, après qu'un diagramme combiné initial se soit révélé insuffisant — retour de Cédric) ; six nouveaux problèmes ouverts (OP-D66pub-1 à 4, OP-D67-1, OP-D67-2) + OP-OFN-2 ; cadrage de D67 rééquilibré (contribution positive — tenseur complet, OP1-D35 déjà résolu — mise en avant plutôt que reléguée après les résultats négatifs) ; compilation vérifiée 0 erreur/0 référence non résolue, 68 pages. DOI non encore réservé.
-- **[Session 73, suite]** Erreur de DOI trouvée et corrigée dans ce contexte : DM v30 était indiqué avec le DOI 10.5281/zenodo.21228274 depuis Session 69 — faux, corrigé en **10.5281/zenodo.21384063** (vérifié contre le registre GitHub). Le fichier `.tex` de DM v31 lui-même contient encore cette erreur dans son en-tête (« Supersedes DM v30 ») — à corriger avant dépôt (priorité 1, Session 74).
-- **[Session 73]** Document D67 (« The Emergent Metric and the Coherence Stress-Energy Tensor in PDL ») rédigé et compilé sans erreur (11 pages, pdflatex+bibtex, 0 warning, 0 citation non résolue) : Partie I synthèse autonome avec axiomes C1–C4 énoncés en toutes lettres ; Partie II résultats exploratoires Session 73. DOI non encore réservé. Package de dépôt préparé : `.zenodo.json`, `D67_verification_scripts.py` (testé, une incohérence de normalisation trouvée et corrigée).
