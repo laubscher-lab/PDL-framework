@@ -1,7 +1,7 @@
 D01
-10.5281/zenodo.21383189 
-The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL) 
-The_Emergence_of_Physical_Reality_within_the_Framework_of_the_PDL_v2.pdf 
+https://doi.org/10.5281/zenodo.18462686
+The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL)
+PDL.pdf
 
 D02
 https://doi.org/10.5281/zenodo.18463130
@@ -139,9 +139,9 @@ Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in
 Pdl_nuclear_stability_skeleton.pdf
 
 DM
-https://doi.org/10.5281/zenodo.21384063 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 30) 
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v30.pdf 
+https://doi.org/10.5281/zenodo.21384063
+Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 31)
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v31.pdf
 
 D23v2
 https://doi.org/10.5281/zenodo.19197268
@@ -220,14 +220,12 @@ Surface_Locality_of_Relational_Entropy_and_the_PDL_Area_Law.pdf
 
 D38
 https://doi.org/10.5281/zenodo.19354682
-Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling: the 4π4\pi
-4π Identity, Surface Counting, and Primordial Black Hole Predictions
+Bekenstein–Hawking Entropy from the PDL Effective Gravitational Coupling: the 4π Identity, Surface Counting, and Primordial Black Hole Predictions
 Bekenstein__Hawking_Entropy_from_the_PDL_Effective_Gravitational_Coupling.pdf
 
 D39
 https://doi.org/10.5281/zenodo.19354989
-Derivation of κ=Rsurf/Rtot\kappa = R_{\mathrm{surf}}/R_{\mathrm{tot}}
-κ=Rsurf​/Rtot​ from the PDL Axioms: the Indifference Lemma and Partial Resolution of Open Problem OP1 (D36)
+Derivation of κ=R_surf/R_tot from the PDL Axioms: the Indifference Lemma and Partial Resolution of Open Problem OP1 (D36)
 Derivation_of_kappa___R_surf___R_tot_from_the_PDL_Axioms.pdf
 
 D40
@@ -252,7 +250,7 @@ D43_causal_chain.pdf
 
 D44v2
 https://doi.org/10.5281/zenodo.21221113
-OP-B Reopened: Two Filter-Product Constructions for the Hierarchical Factor kk k, and Why Neither Reproduces the Target Value
+OP-B Reopened: Two Filter-Product Constructions for the Hierarchical Factor k, and Why Neither Reproduces the Target Value
 D44___OP_B_Reopened.pdf 
 
 D45
@@ -420,6 +418,11 @@ https://doi.org/10.5281/zenodo.21351177
 A Search for the C5 Metric Candidate: Logical Geometry, the (A) ∧ (B) Standard, and the Parity Obstruction of K4 
 D66_parity_obstruction.pdf 
 
+D67
+https://doi.org/10.5281/zenodo.21382362
+The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon
+D67_metric_and_coherence_tensor.pdf
+
 N01 
 https://doi.org/10.5281/zenodo.20523343 
 β₁ = 3 as a Topological Invariant of Minimal Relational Closures: Numerical Evidence from the PDL and OFN Frameworks 
@@ -428,9 +431,4 @@ B1_PDL_OFN.pdf
 N02 
 https://doi.org/10.5281/zenodo.21333913 
 From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families 
-B2_PDL_OFN.pdf 
-
-D67 
-https://doi.org/10.5281/zenodo.21382362 
-The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon
-D67_metric_and_coherence_tensor.pdf
+B2_PDL_OFN.pdf
