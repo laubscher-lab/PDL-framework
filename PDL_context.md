@@ -1,6 +1,7 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 73 — 15 July 2026*
+*Last updated: Session 74 — 17 July 2026*
+*(**Session 74 — AUDIT D'INTÉGRITÉ D47, OP14 ROUVERT** : audit complet mené sur D47 (OP13, lemme miroir, nombres magiques, OP14) à la demande de Cédric, avec quatre scripts de vérification indépendants. OP13 et les sept nombres magiques re-vérifiés, inchangés. La table de remplissage de D40 (colonnes r et E) d'abord suspectée corrompue (première reconstruction naïve : 6,2% de correspondance avec les données IAEA) puis disculpée après vérification exhaustive — cohérence interne parfaite (ΔE = 2(r−1), 31/31 sans exception). Cause racine identifiée : l'équation N_min(Z) = 20 + Σr_exc(Z'), présente dans D40 et recopiée dans D47, omet un facteur 2 ; la relation correcte est N_min(Z) = 20 + 2·Σr_exc(Z'). Une fois ce facteur restauré, la table originale de D40 reproduit 74 à 88% de la vallée de stabilité expérimentale (résidu réduit à 12,5% sous une définition élargie de « stable » incluant les isotopes quasi-stables à très longue durée de vie comme ⁵⁰Cr) — la règle simplifiée de D47v1 (r_exc=0 aux fermetures, 1 sinon) ne reproduit en revanche aucune des 31 frontières testées (0%). Le remark de D47v1 affirmant l'absence de valeurs 2/3 dans la table de D40 pour Z=22–82 est également factuellement erroné (19/31 contre-exemples). Conjecture exploratoire H_d/2 (r_exc = degénérescence active/2) testée et éliminée (16,1%). **D47v2 publié** — OP14 rouvert, D47v1 retiré sur ce seul point (OP13 et nombres magiques inchangés). Fait notable : D44v2, pourtant postérieur à D47v1, listait déjà OP14 comme ouvert en citant D22/D40 (pas D47) — l'incohérence n'avait donc pas complètement infusé dans le suivi interne du corpus, même avant cet audit. DOI D47v2 : **10.5281/zenodo.21410146**. Quatre scripts de vérification déposés avec le document.)*
 *(**Session 73 — D67 DÉPOSÉ, DM v31 DÉPOSÉE** : document D67 « The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon » déposé sur Zenodo — DOI : **10.5281/zenodo.21382362**. Partie I : synthèse autonome de tous les théorèmes inconditionnels concernant la métrique émergente et le tenseur C_μν (masse, spin, orbital, fuite), complète et vérifiée numériquement dans l'état fondamental homogène. Partie II : extension exploratoire au nucléon isolé — théorème de coplanarité pour la construction vectorielle de D66 (ferme cette voie vers une métrique basée sur la courbure), six nouvelles constructions négatives pour une observable de spin au niveau nucléon, correction d'une erratum facteur-deux dans la relation de fermeture de Compton du proton (document fondateur), et une piste numérique suggestive mais non encore robuste reliant l'exposant topologique 18 à la durée de vie du neutron libre. Deux nouveaux problèmes ouverts : OP-D67-1, OP-D67-2. En conséquence, **DM v31 déposée** — DOI : **10.5281/zenodo.21384063**, remplace v30 (10.5281/zenodo.21228274). Étend la carte du corpus à D01–D67 plus N01 et N02 (complet et déposé). Intègre D66 et D67 ; six nouveaux problèmes ouverts (OP-D66pub-1–4, OP-D67-1–2) plus OP-OFN-2 ; deux errata de corpus corrigés ; cartes de dépendance et guide de continuation mis à jour. Site web cedriclaubscher.ch (blocs « A Guided Journey » et table des documents) et fichier `10.5281zenodo.txt` mis à jour en conséquence — voir Session 73 complète ci-dessous.)*
 *(D66 déposé sur Zenodo : « A Search for the C5 Metric Candidate: Logical Geometry, the (A)∧(B) Standard, and the Parity Obstruction of K4 » — 10.5281/zenodo.21351177. Inchangé depuis Session 71.)*
 *(**Session 72 — N02 DÉPOSÉ SUR ZENODO PAR OLEG** : document N02 « From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families » (Evdokimov & Laubscher, 12 pages) assemblé, compilé et envoyé à Oleg — déposé par Oleg Evdokimov sur Zenodo. DOI : **10.5281/zenodo.21333913**. Intégration complète du côté OFN (Section 4 : vacuum manifold Ω₂₁, G_E/G_H, décomposition spectrale, τ=90, CP-pairs 4+13 ; Section 5 : résumé cinq connexions). Trois corrections appliquées avant intégration : (i) Définition 1.1 G_E corrigée (sigma=21 degré 0, pas « connected to three vertices ») ; (ii) Hypothesis 1.1/Table 1 (Enneagram, 9-qubit code) retirées ; (iii) Section 2.2 (NV-center bridge Beckingham) retirée. Tableau 8 lignes, 7 open problems. Auteurs : Evdokimov (1er, Kazan State University Astronomical Observatory, ORCID 0009-0005-3624-8504), Laubscher (2ème). **[FAIT — Session 73]** DOI ajouté dans 10.5281zenodo.txt, DM mise à jour en v31, site web cedriclaubscher.ch mis à jour.)*
@@ -19,7 +20,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, Session 74)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -76,7 +77,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D45 | 10.5281/zenodo.20866017 (v2) | PBH threshold; Fermi-LAT (v2: spectre complet GammaPBHPlotter/BlackHawk) |
 | DN-fr | 10.5281/zenodo.19924230 | Quoi que nous soyons (FR) |
 | D46 | 10.5281/zenodo.19956932 | Born Level 2: U(1) from K₄ |
-| D47 | 10.5281/zenodo.19967918 | Sub-shell filling rates; periodic table |
+| D47 | 10.5281/zenodo.19967918 (v1, OP14 partiellement retiré) ; 10.5281/zenodo.21410146 (v2) | Sub-shell filling rates (v1) ; periodic table theorem unaffected, OP14 reopened (v2) — see Open Problems |
 | D48 | 10.5281/zenodo.20151380 | Coherence stress-energy tensor (v3) |
 | D49 | 10.5281/zenodo.20025166 | London equation from C4 |
 | D50 | 10.5281/zenodo.20029777 | Bekenstein–Hawking ¼ coefficient |
@@ -1111,6 +1112,10 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-D67-1 [NOUVEAU — Session 73]** : formaliser ou écarter la piste numérique suggestive reliant l'exposant topologique 18 à la durée de vie du neutron libre, signalée dans D67 comme non encore robuste. Entrée : D67, D23 v2, OP-D66-1.
 - **OP-D67-2 [NOUVEAU — Session 73]** : étendre le tenseur de cohérence C_μν au régime inhomogène — seul point structurel manquant dans sa couverture complète par des théorèmes inconditionnels, le régime homogène étant désormais entièrement clos par D67 Partie I. Entrée : D48, D67.
 
+### Ouverts — Session 74 (D47v2, OP14 rouvert)
+
+- **OP14 [ROUVERT — Session 74, correction de corpus majeure]** : dérivation analytique des taux de remplissage de sous-couches r_exc(Z)∈{0,1,2,3} depuis C1–C4 seuls, sans lecture depuis les données expérimentales. D47v1 prétendait résoudre OP14 par une règle à deux valeurs (r_exc=0 aux fermetures {28,50,82}, 1 sinon) ; cette règle ne reproduit 0 des 31 frontières expérimentales une fois l'équation de reconstruction corrigée (facteur 2 manquant, voir D47v2 §3). La table originale de D40, elle, est disculpée et reproduit 74–88% de la vallée de stabilité selon la définition de « stable » retenue. Conjecture H_d/2 (r_exc = degénérescence active/2) testée et éliminée — à ne pas retenter. Entrée : D22, D40, D47v2.
+
 ### Ouverts — Session 67 (collaboration N02)
 
 - **OP-N02-1 [NOUVEAU — Session 67]** : le contenu dynamique des trois cycles de fuite (exposants 23, 67, 997 ; D51–D52) admet-il un pendant OFN distinguant les trois générations de fermions dynamiquement (hiérarchie de masse), au-delà de la symétrie de permutation Z₃ ? Entrée : D51, D52, Section 5 N02 (contribution Oleg en cours).
@@ -1175,7 +1180,7 @@ LAYER 5   G_PDL, α, μ*                               [✓] D21, D12, D25
 LAYER 6   QCD interface Δm_iso = 2.532 MeV           EXTERNAL PARAMETER
 LAYER 7   Dynamiques — COMPLET                        [✓] D32–D35, D42, D46, D49
 LAYER 8   Cosmologie                                  [✓] D27, D35, D42
-LAYER 9   Stabilité nucléaire — COMPLET               [✓] D40, D47
+LAYER 9   Stabilité nucléaire — PARTIEL                [✓] D40 (vindiqué, formule corrigée) ; [✓] D47 OP13 + nombres magiques ; [ROUVERT] OP14 (D47v2, Session 74)
 LAYER 10  Trous noirs — COMPLET                       [✓] D37, D38, D42, D45 v2, D50
            Correspondance cheveux mous (Hawking-Perry-Strominger) [D64 v2, analogie structurale]
            OP-D64-1 (comptage macroscopique N corps)    [**Session 66 : RÉSOLU EN CONJECTURE FORTE** — S_BH reproduit à 0,07% via R~N + surface 2D + 4π·ε_G^18/site ; statut conjecture, pas théorème (voir OP-D66-1)]
