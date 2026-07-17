@@ -1,0 +1,337 @@
+% ============================================================
+% D47v2 --- OP14 Reopened: The Filling-Rate Table of D40 Vindicated,
+%           an Equation Error Corrected, and the Simplified Rule of
+%           D47v1 Refuted
+% Projective Dynamic Logo (PDL) Framework
+% Author: Cedric Laubscher
+% Zenodo open-access, CC BY 4.0
+% Version 2 --- supersedes D47v1, which incorrectly claimed OP14 resolved
+% LaTeX conventions: British English; no spurious line breaks;
+% prose as continuous paragraphs; \bibliographystyle{unsrt} with natbib [numbers]
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{lmodern}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage[numbers]{natbib}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds,calc}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+\geometry{top=2.5cm,bottom=2.5cm,left=2.8cm,right=2.8cm}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue!70!black,
+citecolor=blue!60!black,
+urlcolor=blue!70!black,
+pdftitle={OP14 Reopened: The Filling-Rate Table of D40 Vindicated, an Equation Error Corrected, and the Simplified Rule of D47v1 Refuted},
+pdfauthor={Cédric Laubscher}}
+
+% ---- Colour palette (identical to D44v2) ----
+\definecolor{proofblue}{RGB}{0,70,140}
+\definecolor{conjecturegreen}{RGB}{0,120,60}
+\definecolor{openproblemred}{RGB}{160,20,20}
+\definecolor{chaincolor}{RGB}{30,100,180}
+\definecolor{epscolor}{RGB}{160,60,0}
+\definecolor{resolvedgreen}{RGB}{0,130,70}
+\definecolor{negativered}{RGB}{160,20,20}
+\definecolor{darkgray}{RGB}{80,80,80}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Custom tcolorbox environments (identical style to D44v2) ----
+\tcbset{
+resolvedstyle/.style={
+colframe=resolvedgreen,colback=green!4,
+fonttitle=\bfseries\color{resolvedgreen},breakable,enhanced},
+openproblemstyle/.style={
+colframe=openproblemred,colback=red!3,
+fonttitle=\bfseries\color{openproblemred},breakable,enhanced},
+negativestyle/.style={
+colframe=negativered,colback=red!5,
+fonttitle=\bfseries\color{negativered},breakable,enhanced},
+correctionstyle/.style={
+colframe=epscolor,colback=epscolor!5,
+fonttitle=\bfseries\color{epscolor},breakable,enhanced}}
+
+\newenvironment{resolvedproblem}[1][]{%
+\begin{tcolorbox}[resolvedstyle,title={Vindicated\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{openproblem}[1][]{%
+\begin{tcolorbox}[openproblemstyle,title={Open Problem\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{negativebox}[1][]{%
+\begin{tcolorbox}[negativestyle,title={Negative Result\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+\newenvironment{correctionbox}[1][]{%
+\begin{tcolorbox}[correctionstyle,title={Correction\ifx\relax#1\relax\else: #1\fi}]}{\end{tcolorbox}}
+
+% ---- PDL macros (identical to D47) ----
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\Kfour}{K_4}
+\newcommand{\quintuplet}{(24,28,930,10087,11017)}
+\newcommand{\nquintuplet}{(24,28,1032,9960,10992)}
+\newcommand{\nuu}{n_u}
+\newcommand{\ndd}{n_d}
+\newcommand{\Dn}{\Delta n}
+\newcommand{\rval}{r_{\mathrm{val}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\vp}{\varphi}
+\newcommand{\Tpdl}{T}
+\newcommand{\Tpp}{T_{pp}}
+\newcommand{\Csat}{C_{\mathrm{sat}}}
+\newcommand{\Nmin}{N_{\min}}
+\newcommand{\Nmax}{N_{\max}}
+\newcommand{\rexc}{r_{\mathrm{exc}}}
+\newcommand{\Zsat}{Z_{\mathrm{sat}}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\begin{titlepage}
+\begin{center}
+\vspace*{1.2cm}
+{\LARGE\bfseries OP14 Reopened}\\[0.6em]
+{\Large The Filling-Rate Table of D40 Vindicated, an Equation Error\\[0.2em]
+Corrected, and the Simplified Rule of D47v1 Refuted}\\[2em]
+{\large\textsc{PDL Framework} --- Document D47, Version~2}\\[1.5em]
+{\large Cédric Laubscher}\\[0.5em]
+{\normalsize Independent researcher, Switzerland}\\[0.3em]
+{\normalsize \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}\\[1.5em]
+{\normalsize \today}\\[2.5em]
+
+\begin{abstract}
+\noindent Version~1 of this document claimed to resolve Open Problem OP14 --- the derivation, from axioms C1--C4 alone, of the nuclear sub-shell filling rates $\rexc(Z)$ governing the valley of stability --- via a two-valued rule, $\rexc(Z)=0$ at the three magic closures $Z\in\{28,50,82\}$ and $\rexc(Z)=1$ otherwise. Independent re-verification, reported here in full together with four self-contained numerical scripts, shows that this rule does not reproduce the experimental valley of stability: confronted with data from the IAEA Live Chart of Nuclides using the reconstruction formula consistent with D40's own filling-rate table, the D47v1 rule matches \textbf{0 of 31} sub-shell boundaries. A first line of investigation had suggested that D40's own table might itself be internally inconsistent; exhaustive re-verification (Script~1 of this document's companion scripts) shows this is \emph{not} the case: D40's rate column $r$ and excess column $E$ satisfy $\Delta E=2(r-1)$ exactly, without exception, across all 31 entries. The true source of the discrepancy is an equation error, present in D40 and copied into D47v1, which omits a factor of~2: the correct reconstruction is $\Nmin(Z)=20+2\sum r_{\rm exc}(Z')$, not $\Nmin(Z)=20+\sum r_{\rm exc}(Z')$. Once this factor is restored, D40's original table reproduces $74$--$88\%$ of the experimental valley of stability (the residual gap narrowing to $12.5\%$ under a broadened, and arguably more appropriate, definition of nuclear stability that includes very-long-lived quasi-stable isotopes), while the simplified two-valued rule of D47v1 reproduces none of it. Separately, the textual remark in D47v1 asserting that D40's table contains no entries with $r\in\{2,3\}$ in the range $22\le Z\le82$ is shown to be factually incorrect: 19 of the 31 entries take these values. OP14 is accordingly reopened. The results of D47v1 unaffected by this correction --- OP13 (uniqueness of $\Dn=4$) and the derivation of the seven magic numbers --- are independently re-verified here and stand unchanged.
+\end{abstract}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Background}
+\label{sec:background}
+% ============================================================
+
+Document D40~\citep{PDL_D40_2026} established the valley of nuclear stability $\Nmin(Z)$ as an empirical reconstruction, $\Nmin(Z)=Z$ for $Z\le\Zsat=20$ and, for $Z>20$, a rule stated as
+\begin{equation}
+\Nmin(Z) = 20 + \sum_{Z'=22,24,\ldots}^{Z} \rexc(Z'),
+\label{eq:d40-original}
+\end{equation}
+with the filling rates $\rexc(Z')\in\{0,1,2,3\}$ read from experimental data and tabulated in D40's Table~2 (reproduced without alteration in Table~\ref{tab:d40-table} below). D40 explicitly flagged the analytic derivation of $\rexc(Z)$ from axioms C1--C4 as an open problem (OP1 of D40, subsequently renamed OP14 in the global mapping document).
+
+Version~1 of the present document (D47v1) claimed to resolve OP14 with a two-valued rule,
+\begin{equation}
+\rexc(Z) = \begin{cases} 0 & Z\in\{28,50,82\},\\ 1 & \text{otherwise,}\end{cases}
+\label{eq:d47v1-rule}
+\end{equation}
+derived from the Mirror Lemma and the magic-number theorem, and reported this as an unconditional theorem verified exhaustively over 31 entries with zero exceptions. This claim rested in part on a remark asserting that D40's own table contains no values $\{2,3\}$ in the range $22\le Z\le82$ once boundary entries are excluded.
+
+This document reports an independent re-audit of both OP13 and OP14, conducted in four stages (Scripts~1--4, deposited with this document), and shows that the D47v1 claim regarding OP14 does not survive confrontation with (i) D40's own table, read correctly, and (ii) experimental data from the IAEA Live Chart of Nuclides.
+
+% ============================================================
+\section{OP13 and the magic numbers: independently re-verified, unaffected}
+\label{sec:op13}
+% ============================================================
+
+\begin{resolvedproblem}[OP13, unaffected]
+Script~1 re-derives the discriminant $\Delta(\Dn)=(2\Dn-3)^2-12[\Dn(\Dn-1)-1860]$ of the quasi-completeness equation for every $\Dn\in\{0,4,8,\ldots,32\}$ and finds a perfect square, $149^2=22201$, at $\Dn=4$ and at no other value. This reproduces D47v1's Theorem~OP13 exactly and is unaffected by the corrections reported below.
+\end{resolvedproblem}
+
+\begin{resolvedproblem}[Magic numbers, unaffected]
+Script~2 generates the HO-\PDL\ level table from the spin--orbit splitting $s=\Dn/(2\nuu)=1/12$ and reproduces all seven magic numbers $\{2,8,20,28,50,82,126\}$, in order, with no spurious closure. This reproduces D47v1's magic-number theorem exactly and is unaffected by the corrections reported below.
+\end{resolvedproblem}
+
+% ============================================================
+\section{The equation error: a missing factor of two}
+\label{sec:factor2}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{D40's filling-rate table, reproduced without alteration from D40's Table~2 (Zenodo 10.5281/zenodo.19371523). Columns: transition $Z\to Z+2$, rate $r$, excess $E(Z+2)=\Nmin(Z+2)-(Z+2)$.}
+\label{tab:d40-table}
+\small
+\begin{tabular}{ccc|ccc|ccc}
+\toprule
+$Z\to Z{+}2$ & $r$ & $E(Z{+}2)$ & $Z\to Z{+}2$ & $r$ & $E(Z{+}2)$ & $Z\to Z{+}2$ & $r$ & $E(Z{+}2)$ \\
+\midrule
+20$\to$22 & 2 & 2  & 36$\to$38 & 2 & 8  & 60$\to$62 & 0 & 20 \\
+22$\to$24 & 1 & 2  & 38$\to$40 & 2 & 10 & 62$\to$64 & 3 & 24 \\
+24$\to$26 & 1 & 2  & 40$\to$42 & 0 & 8  & 64$\to$66 & 1 & 24 \\
+26$\to$28 & 1 & 2  & 42$\to$44 & 1 & 8  & 66$\to$68 & 2 & 26 \\
+28$\to$30 & 2 & 4  & 44$\to$46 & 2 & 10 & 68$\to$70 & 2 & 28 \\
+30$\to$32 & 2 & 6  & 46$\to$48 & 1 & 10 & 70$\to$72 & 2 & 30 \\
+32$\to$34 & 1 & 6  & 48$\to$50 & 2 & 12 & 72$\to$74 & 2 & 32 \\
+34$\to$36 & 1 & 6  & 50$\to$52 & 3 & 16 & 74$\to$76 & 1 & 32 \\
+          &   &    & 52$\to$54 & 1 & 16 & 76$\to$78 & 2 & 34 \\
+          &   &    & 54$\to$56 & 2 & 18 & 78$\to$80 & 2 & 36 \\
+          &   &    & 56$\to$58 & 2 & 20 & 80$\to$82 & 3 & 40 \\
+          &   &    & 58$\to$60 & 2 & 22 &           &   &    \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{lemma}[Internal consistency of D40's table]
+\label{lem:consistent}
+Define $E(20)=0$. Then, for every one of the 31 transitions in Table~\ref{tab:d40-table}, $\Delta E = E(Z{+}2)-E(Z) = 2(r-1)$ exactly.
+\end{lemma}
+
+\begin{proof}
+Direct verification, Script~3, Part~A: zero exceptions over 31 entries.
+\end{proof}
+
+\begin{correctionbox}[Missing factor of two]
+Lemma~\ref{lem:consistent} shows that D40's rate column $r$ and excess column $E$ are mutually consistent under $\Delta E=2(r-1)$, equivalently $\Delta\Nmin=2r$ per two-unit step in $Z$. Equation~\eqref{eq:d40-original}, as written in D40 and reproduced without alteration in D47v1, does not reflect this: applying it literally sums $r$ directly rather than $2r$, and consequently fails to reconstruct $\Nmin(Z)$ correctly from D40's own table. The correct reconstruction is
+\begin{equation}
+\Nmin(Z) = 20 + 2\sum_{Z'=22,24,\ldots}^{Z} \rexc(Z').
+\label{eq:corrected}
+\end{equation}
+Script~3, Part~B confirms that Equation~\eqref{eq:corrected} applied to D40's $r$-column reproduces D40's $E$-column exactly, for every $Z$. \emph{This is an equation error, not a data error}: D40's table is internally sound; only the summation formula presented in the surrounding text (D40 and, by direct transcription, D47v1) requires correction.
+\end{correctionbox}
+
+% ============================================================
+\section{Confrontation with experimental data}
+\label{sec:confrontation}
+% ============================================================
+
+Applying Equation~\eqref{eq:corrected} to (a) D40's own rate table and to (b) the two-valued rule of Equation~\eqref{eq:d47v1-rule}, and confronting both against $\Nmin(Z)$ extracted from the IAEA Live Chart of Nuclides~\citep{IAEA_LiveChart_2026} (ground-state, half-life field \texttt{STABLE}), Script~3, Part~C gives:
+
+\begin{table}[H]
+\centering
+\caption{Accuracy of the two reconstructions against experimental $\Nmin(Z)$, $22\le Z\le82$ (31 boundaries), using the corrected formula, Equation~\eqref{eq:corrected}, throughout.}
+\label{tab:accuracy}
+\begin{tabular}{lcc}
+\toprule
+Reconstruction & Matches & Accuracy \\
+\midrule
+D40 (original rate table, Table~\ref{tab:d40-table}) & 23/31 & 74.2\% \\
+D40, broadened stability definition ($T_{1/2}>10^{15}$\,yr included) & 28/32 & 87.5\% \\
+D47v1 (two-valued rule, Equation~\eqref{eq:d47v1-rule}) & 0/31 & 0.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{negativebox}[D47v1's Theorem OP14]
+\label{neg:op14}
+The two-valued rule of Equation~\eqref{eq:d47v1-rule}, presented in D47v1 as an unconditional theorem verified exhaustively with zero exceptions, in fact reproduces \textbf{0 of 31} experimental sub-shell boundaries once the correct reconstruction formula, Equation~\eqref{eq:corrected}, is applied consistently. This is not a marginal disagreement attributable to the choice of stability definition (contrast the $74$--$88\%$ accuracy retained by D40's original table under the same formula): the rule is structurally unable to reproduce the target sequence, generically under-predicting $\Nmin(Z)$ by growing amounts as $Z$ increases, because it discards the genuine variation ($r\in\{0,1,2,3\}$) present in D40's empirical table in favour of a constant generic rate.
+\end{negativebox}
+
+\begin{negativebox}[Factual content of the D47v1 remark on D40's table]
+\label{neg:remark}
+D47v1 states: \emph{``The table of D40 gives $\rexc(Z)\in\{0,1,2,3\}$ as a general range. For all even $Z$ in $22\le Z\le82$, the empirical values are: $\rexc=0$ at $Z\in\{28,50,82\}$ and $\rexc=1$ at all other even $Z$ in this range. The values $\{2,3\}$ do not appear in this range.''} Direct inspection of Table~\ref{tab:d40-table} (Script~3, Part~D) shows 19 of the 31 entries with $Z$ (endpoint) in $[22,82]$ take $r\in\{2,3\}$. The remark is factually incorrect, and the theorem built upon it (Proposition ``Mirror filling implies $\rexc=1$'', D47v1) cannot be regarded as established.
+\end{negativebox}
+
+% ============================================================
+\section{The residual gap, and one eliminated conjecture}
+\label{sec:residual}
+% ============================================================
+
+Two secondary questions were investigated (Script~4) to inform the scope of the reopened OP14, rather than to resolve it.
+
+\begin{remark}[Nature of the residual 12--26\% gap]
+D40's original table, under the corrected formula, leaves $8$ of $31$ boundaries ($25.8\%$) unmatched against the strict IAEA \texttt{STABLE} flag. Broadening the comparison set to include isotopes with measured half-life exceeding $10^{15}$ years (a threshold encompassing well-known quasi-stable primordial radionuclides such as $^{50}$Cr, $T_{1/2}\approx1.3\times10^{18}$\,yr, conventionally counted as ``stable'' in classical valley-of-stability charts but excluded by IAEA's strict flag) reduces the mismatch to $12.5\%$. This indicates that a meaningful share of the residual gap is attributable to the choice of reference dataset rather than to a defect in D40's table, though it does not close the gap entirely; D40's claim of exact reproduction for all 51 elements, $Z=1$ to $82$, should accordingly be softened rather than retracted outright, pending a full re-comparison against a single, explicitly stated stability criterion.
+\end{remark}
+
+\begin{negativebox}[Conjecture $H_{d/2}$ eliminated]
+\label{neg:hd2}
+The simplest natural refinement of Equation~\eqref{eq:d47v1-rule} --- that $\rexc(Z)$ equals half the degeneracy $d$ of the HO-\PDL\ sub-shell active at $Z$ --- was tested directly against the real filling rate implied by D40's table, $\rexc^{\mathrm{real}}(Z)=[\Nmin(Z)-\Nmin(Z-2)]/2$. Agreement is found for only 5 of 31 boundaries ($16.1\%$). This conjecture is eliminated and should not be pursued further as a route to resolving OP14; it is recorded here so that future attempts do not retrace it.
+\end{negativebox}
+
+% ============================================================
+\section{Scope: what is, and is not, affected elsewhere in the corpus}
+\label{sec:scope}
+% ============================================================
+
+\begin{openproblem}[OP14, reopened]
+Analytic derivation of the sub-shell filling rates $\rexc(Z)\in\{0,1,2,3\}$ from axioms C1--C4 alone, without reading rates from experimental data, such that the resulting $\Nmin(Z)$ (via the corrected Equation~\eqref{eq:corrected}) reproduces the empirical valley of stability to an accuracy comparable to D40's original table ($\gtrsim74\%$, and ideally the full $\gtrsim87.5\%$ available under a consistently stated stability criterion). Conjecture~$H_{d/2}$ (Negative Result~\ref{neg:hd2}) is eliminated as a candidate. Documents: D22~\citep{PDL_D22_2026}, D40~\citep{PDL_D40_2026}, this document.
+\end{openproblem}
+
+\begin{remark}[Corroborating note]
+Document D44v2~\citep{PDL_D44v2_2026}, itself dated after D47v1, lists OP14 in its own summary of unaffected open problems as: \emph{``Analytic derivation of $\rexc(Z)\in\{0,1,2,3\}$ from C1--C4. Documents: D22, D40.''} --- citing D40 and D22 but not D47v1 as the resolving document, and giving no indication that OP14 had been closed. This is consistent with the present finding and suggests the inconsistency reported here had not fully propagated through the corpus's own internal bookkeeping even before this audit.
+\end{remark}
+
+\emph{Affected:} every statement in the corpus asserting that OP14 is resolved, that the sub-shell filling rates $\rexc(Z)$ have been derived from C1--C4 without reading them from experimental data, or that ``the periodic table is a corollary of the four PDL axioms'' in the strong sense of a from-first-principles derivation of $\Nmin(Z)$ for $Z>20$, must be revised to reflect that OP14 is open. This includes the corresponding entries of the Global Mapping document (all versions listing OP14 as resolved) and the Valley-of-Stability Corollary of D47v1.
+
+\emph{Unaffected:} OP13 (uniqueness of $\Dn=4$, Section~\ref{sec:op13}), the seven magic numbers (Section~\ref{sec:op13}), the Mirror Lemma as a statement about proton--neutron level isomorphism (independent of the filling-rate rule), $\Nmin(Z)=Z$ for $Z\le20$ (D40, unaffected), and D40's original empirical table (Table~\ref{tab:d40-table}), which is vindicated rather than retracted by this document, subject to the equation correction of Section~\ref{sec:factor2}.
+
+% ============================================================
+\section{Epistemic status summary}
+\label{sec:epistemic}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Epistemic status of the results discussed in this document, corrected from D47v1.}
+\label{tab:epistemic}
+\medskip
+\begin{tabular}{>{\raggedright}p{6.8cm} p{2.6cm} p{4.3cm}}
+\toprule
+Result & Status & Primary reference \\
+\midrule
+OP13 ($\Dn=4$ unique, discriminant $149^2$) & \textcolor{proofblue}{\textbf{Theorem}} & D47v1, re-verified here (Script~1) \\[2pt]
+Seven magic numbers from $s=1/12$ & \textcolor{proofblue}{\textbf{Theorem}} & D47v1, re-verified here (Script~2) \\[2pt]
+D40's table (Table~\ref{tab:d40-table}), internal consistency & \textcolor{proofblue}{\textbf{Theorem}} & Lemma~\ref{lem:consistent} \\[2pt]
+$\Nmin(Z)=20+\sum\rexc(Z')$ (D40 eq., D47v1 eq.) & \textcolor{negativered}{\textbf{Erroneous}} & Corrected, Eq.~\eqref{eq:corrected} \\[2pt]
+D47v1 two-valued rule reproduces experimental $\Nmin(Z)$ & \textcolor{negativered}{\textbf{Negative}} & Neg.\ Result~\ref{neg:op14} \\[2pt]
+D47v1 remark on absence of $\{2,3\}$ in D40's table & \textcolor{negativered}{\textbf{Negative}} & Neg.\ Result~\ref{neg:remark} \\[2pt]
+Conjecture $H_{d/2}$ & \textcolor{negativered}{\textbf{Negative}} & Neg.\ Result~\ref{neg:hd2} \\[2pt]
+OP14 & \textcolor{openproblemred}{\textbf{Open (reopened)}} & Section~\ref{sec:scope} \\[2pt]
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\appendix
+\section{Companion verification scripts}
+\label{app:scripts}
+% ============================================================
+Four self-contained Python scripts accompany this document, deposited in the same Zenodo record:
+\begin{description}[nosep]
+\item[Script~1] \texttt{D47\_script1\_OP13\_verification.py} --- independent re-derivation of OP13.
+\item[Script~2] \texttt{D47\_script2\_mirror\_magic\_verification.py} --- independent re-derivation of the seven magic numbers.
+\item[Script~3] \texttt{D47\_script3\_OP14\_filling\_rate\_audit.py} --- internal consistency of D40's table (Lemma~\ref{lem:consistent}), the corrected reconstruction formula (Eq.~\eqref{eq:corrected}), and the confrontation with IAEA data (Table~\ref{tab:accuracy}, Negative Results~\ref{neg:op14}--\ref{neg:remark}).
+\item[Script~4] \texttt{D47\_script4\_residual\_exploration.py} --- the broadened-stability check and Conjecture~$H_{d/2}$ (Negative Result~\ref{neg:hd2}).
+\end{description}
+
+\section{Version history}
+\label{app:versions}
+\begin{description}[nosep]
+\item[Version~1] Claimed a complete derivation of $\rexc(Z)$ from C1--C4 and closure of OP14. \textbf{Retracted}, superseded by Version~2.
+\item[Version~2] Independent re-verification shows the D47v1 rule fails to reproduce any of the 31 experimental sub-shell boundaries once the equation error of Section~\ref{sec:factor2} is corrected. D40's original table is vindicated, not retracted. OP13 and the magic-number theorem are unaffected and re-verified. OP14 is reopened.
+\end{description}
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{D47_references}
+% ============================================================
+
+\end{document}
