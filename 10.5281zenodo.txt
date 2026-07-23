@@ -432,3 +432,13 @@ N02
 https://doi.org/10.5281/zenodo.21333913 
 From Z₃ to Three Generations: A Structural Bridge between PDL Leakage Cycles and OFN Fermion Families 
 B2_PDL_OFN.pdf
+
+D19ad 
+https://doi.org/10.5281/zenodo.21518530 
+On the Necessity of the Binary Distinction and the Dissolution of the Bearer Problem: An Addendum to Existence as Pulsating Closure (D19) 
+D19ad_addendum_D19_binary_distinction_and_bearer_problem.pdf 
+
+DL03 
+https://doi.org/10.5281/zenodo.21518902 
+The Electron Alphabet, the Cayley–Hypercube Family, and a Threefold Characterisation of n=4: Towards a Combinatorial Language Layer for the PDL-V Programme 
+DL03_electron_alphabet_cayley_family_fourfold_n4.pdf 
