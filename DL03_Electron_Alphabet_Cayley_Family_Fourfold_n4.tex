@@ -1,0 +1,225 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+
+\pdfstringdefDisableCommands{%
+\let\ensuremath\relax
+}
+
+\newcommand{\Kfour}{K_4}
+\newcommand{\Coh}{\mathrm{Coh}}
+\newcommand{\Vfour}{V_4}
+\newcommand{\Zsub}{\mathbb{Z}_2}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{theorembox}{Theorem}%
+  {colback=blue!5,colframe=blue!60!black,fonttitle=\bfseries}{thm}
+\newtcbtheorem[number within=section]{verifbox}{Computational Verification}%
+  {colback=gray!8,colframe=gray!50!black,fonttitle=\bfseries}{ver}
+\newtcbtheorem[number within=section]{openprobbox}{Open Problem}%
+  {colback=red!5,colframe=red!60!black,fonttitle=\bfseries}{op}
+\newtcbtheorem[number within=section]{negbox}{Negative Result}%
+  {colback=orange!5,colframe=orange!70!black,fonttitle=\bfseries}{neg}
+
+\title{\textbf{The Electron Alphabet, the Cayley--Hypercube Family, and a Threefold Characterisation of \texorpdfstring{$n=4$}{n=4}}\texorpdfstring{\\[4pt]\large Towards a Combinatorial Language Layer for the PDL-V Programme}{: Towards a Combinatorial Language Layer for the PDL-V Programme}\\[6pt]
+{\large PDL Document DL03}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+DL01 and DL02 establish that thresholds $n_{\mathrm{vie}}$, $n_{\mathrm{cons}}$ for the emergence of life and consciousness in the PDL framework exist and are necessarily distinct, without fixing their numerical value~\citep{DL01,DL02}. This document reports three unconditional, computationally verified results obtained while probing what a combinatorial \emph{alphabet} carried by admissible closures would need to look like, as a candidate route towards giving that threshold operational content. First, the set of $V_4$-orbits of $\Coh(\Kfour)$ --- already known to number five, by the theorem of D60~\citep{D60} --- is shown here to form a linear code of minimum Hamming distance three, with the striking additional property that every minimal-distance pair changes orbit: the electron's admissible configurations are not merely five in number, they are maximally non-redundant. Second, $\Kfour$ and $C_4$ are shown to be, respectively, the dense and sparse Cayley graphs on the same group $\Zsub\times\Zsub$, embedding the electron in an infinite family (the hypercubes $Q_k$) whose richness under the analogous $\Zsub^k$ construction grows super-exponentially ($5\to30\to2288$ for $k=2,3,4$). Third, we exhibit a threefold, independently-derived characterisation of $n=4$ --- the triangle-count theorem of DL01/DL02, the spin-resolution theorem of D66~\citep{D66}, and a new orbit-regularity criterion proved here --- and show by exact polynomial division that all three share the linear factor $(n-4)$. None of these results establishes a numerical value for $n_{\mathrm{vie}}$ or $n_{\mathrm{cons}}$; they are reported as a first, verified layer of combinatorial structure on which such a determination might eventually be built.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{Scope and Relation to DL01/DL02}
+\label{sec:scope}
+
+DL01 proves that $n_{\mathrm{vie}}$ and $n_{\mathrm{cons}}$ exist as finite thresholds and are necessarily distinct; DL02 refines this with the fraction $f(n)$ of coherent configurations among all configurations of $K_n$, showing it decreases double-exponentially, and identifies $\mathcal{R}^1_{\mathrm{active}}$ as true for all but the homogeneous configuration~\citep{DL01,DL02}. Neither document fixes a numerical value for either threshold.
+
+This document does not attempt to fix that value either. It reports a different kind of progress: an exploration of what a combinatorial \emph{alphabet} --- a discrete, non-redundant, generatively rich set of distinguishable configurations carried by admissible closures --- would look like if one existed, undertaken independently of, but directly relevant to, the DL01/DL02 programme. The results below are unconditional theorems or exhaustively verified computations; none is speculative. Where an interpretive link to the language-of-life question is drawn, it is explicitly marked as such and separated from the underlying mathematics.
+
+\section{The Electron Alphabet as a Linear Code}
+\label{sec:code}
+
+\subsection{The Five \texorpdfstring{$V_4$}{V4}-Orbits (Restated from D60)}
+
+D60 proves that C1-admissibility on $\Coh(\Kfour)$ is equivalent to invariance under $\Vfour$, that $\Vfour$ acts regularly on the generic orbit of $\Coh(\Kfour)$, and fixes the remaining four configurations pointwise~\citep{D60}. The resulting orbit structure is
+\begin{equation}
+\Coh(\Kfour)/\Vfour \;=\; \{1,1,1,1,4\},
+\label{eq:orbits}
+\end{equation}
+five orbits in total: the identity configuration and the three perfect matchings $M_1,M_2,M_3$ of $\Kfour$ (later identified with the three $SU(3)_c$ colour axes~\citep{D59}) as singleton orbits, and one generic orbit of size four. This result is not re-derived here; it is the starting point for the new results of this section.
+
+\subsection{\texorpdfstring{$\Coh(\Kfour)$}{Coh(K4)} is a Linear Code}
+
+\begin{theorembox}{}{linear}
+Identify $\Coh(\Kfour)\subset\{\pm1\}^6$ (six edges of $\Kfour$) with a binary code via $\pm1\leftrightarrow\{0,1\}$. Then $\Coh(\Kfour)$ is closed under coordinatewise multiplication: for all $c_1,c_2\in\Coh(\Kfour)$, $c_1\cdot c_2\in\Coh(\Kfour)$, where $(c_1\cdot c_2)_e=(c_1)_e(c_2)_e$ for each edge $e$.
+\end{theorembox}
+
+\begin{verifbox}{}{v1}
+Verified by exhaustive check over all $\binom{8}{2}$ ordered pairs of the eight elements of $\Coh(\Kfour)$: every product lies in $\Coh(\Kfour)$. Equivalently, $\Coh(\Kfour)$ is a subgroup of $\{\pm1\}^6$ under the pointwise product, with identity element the all-plus configuration.
+\end{verifbox}
+
+\begin{theorembox}{}{distance}
+The Hamming weight distribution of $\Coh(\Kfour)$ (number of $-1$ entries per configuration) is $\{0,3,3,3,3,4,4,4\}$. Consequently, by the standard identity for linear codes (minimum distance equals minimum non-zero weight), the minimum Hamming distance of $\Coh(\Kfour)$ is
+\begin{equation}
+d_{\min}\bigl(\Coh(\Kfour)\bigr) = 3.
+\end{equation}
+\end{theorembox}
+
+A code of length six, eight codewords, and minimum distance three saturates the single-error-correcting regime: by the Hamming bound, any single-bit corruption of a codeword is guaranteed to leave $\Coh(\Kfour)$, and hence be detectable; the code additionally identifies the corrupted bit uniquely, since $d_{\min}=3\ge 2t+1$ for $t=1$.
+
+\subsection{Minimal Pairs are Maximally Informative}
+
+\begin{theorembox}{}{phonemic}
+Let a \emph{minimal pair} be two elements of $\Coh(\Kfour)$ at Hamming distance $d_{\min}=3$. There are sixteen such pairs (of $\binom82=28$ total pairs; the remaining twelve are at distance four). Every one of the sixteen minimal pairs lies in \emph{different} $\Vfour$-orbits.
+\end{theorembox}
+
+\begin{verifbox}{}{v2}
+Verified exhaustively: for all sixteen pairs $(c_1,c_2)$ with $d(c_1,c_2)=3$, the canonical $\Vfour$-orbit representatives (computed as $\min_{g\in\Vfour} g\cdot c$ under a fixed total order) differ. Zero of the sixteen pairs share an orbit.
+\end{verifbox}
+
+Theorem~\ref{thm:phonemic} is a stronger and independent statement from Theorem~\ref{thm:distance}: it says that the code's closest pairs, without exception, are also orbit-distinct under the very group ($\Vfour$) that C1-admissibility forces. There is no redundancy at the finest resolution the code offers: every minimal perturbation of an admissible configuration changes which of the five distinguishable classes it belongs to.
+
+\subsection{Generalisation to the Hypercube Family}
+\label{sec:generalisation}
+
+\begin{theorembox}{}{Q3}
+The same two properties (linearity, and 100\% orbit-change at minimal Hamming distance $d_{\min}=3$) hold for $\Coh(Q_3)$ under the translation group $\Zsub^3$ (128 codewords, verified exhaustively over all 512 minimal pairs).
+\end{theorembox}
+
+This shows Theorems~\ref{thm:linear}--\ref{thm:phonemic} are not an artefact of $\Kfour$'s small size, but a property of (at least the first two members of) the family constructed in Section~\ref{sec:cayley}.
+
+\section{The Cayley--Hypercube Family}
+\label{sec:cayley}
+
+\subsection{\texorpdfstring{$K_4$}{K4} and \texorpdfstring{$C_4$}{C4} are Cayley Graphs on the Same Group}
+
+\begin{theorembox}{}{cayley}
+Let $\Zsub\times\Zsub=\{(0,0),(1,0),(0,1),(1,1)\}$. Then:
+\begin{align}
+\Kfour &\;\cong\; \mathrm{Cay}\bigl(\Zsub\times\Zsub,\; S_{\mathrm{dense}}\bigr), && S_{\mathrm{dense}}=\{(1,0),(0,1),(1,1)\} \text{ (all non-zero elements)},\\
+C_4 &\;\cong\; \mathrm{Cay}\bigl(\Zsub\times\Zsub,\; S_{\mathrm{sparse}}\bigr), && S_{\mathrm{sparse}}=\{(1,0),(0,1)\} \text{ (unit-weight generators)}.
+\end{align}
+\end{theorembox}
+
+\begin{verifbox}{}{v3}
+Verified by direct graph isomorphism check ($\mathrm{Cay}(\Zsub\times\Zsub,S_{\mathrm{dense}})\cong\Kfour$ and $\mathrm{Cay}(\Zsub\times\Zsub,S_{\mathrm{sparse}})\cong C_4$, both confirmed).
+\end{verifbox}
+
+Theorem~\ref{thm:cayley} identifies $\Kfour$ and $C_4$ as two densities of the same underlying algebraic object, not as unrelated small graphs. This motivates the natural generalisation to higher $k$.
+
+\subsection{The Hypercube Growth Law}
+
+For $Q_k=\mathrm{Cay}(\Zsub^k,S_{\mathrm{sparse}})$ (the standard $k$-cube), define $L_k$ as the number of orbits of $\Coh(Q_k)$ under the coordinate-flip group $\Zsub^k$ (translation by each generator).
+
+\begin{table}[h]
+\centering
+\caption{Growth of $L_k$ for the first three non-trivial hypercubes.}
+\begin{tabular}{lccc}
+\toprule
+$k$ & $|\Coh(Q_k)|=2^{2^k-1}$ & $L_k$ & Ratio $L_k/L_{k-1}$ \\
+\midrule
+2 ($=C_4$) & 8 & 5 & --- \\
+3 & 128 & 30 & 6.0 \\
+4 & 32768 & 2288 & 76.3 \\
+\bottomrule
+\end{tabular}
+\label{tab:growth}
+\end{table}
+
+\begin{verifbox}{}{v4}
+$L_2=5$ and $L_3=30$ verified by exhaustive orbit enumeration; $L_4=2288$ verified by exhaustive orbit enumeration over all $32768$ coherent configurations under the sixteen-element group $\Zsub^4$, with orbit-size distribution $\{1{:}16,\,4{:}140,\,8{:}240,\,16{:}1892\}$.
+\end{verifbox}
+
+The ratio in Table~\ref{tab:growth} is itself accelerating ($6.0\to76.3$), not merely growing: $L_k$ diverges super-exponentially in $k$. Combined with Section~\ref{sec:generalisation}, this identifies a family --- the Cayley graphs on $\Zsub^k$ at hypercube density --- in which every tested member is simultaneously combinatorially rich (Table~\ref{tab:growth}) and, for the two smallest members, a maximally non-redundant linear code (Theorems~\ref{thm:linear}--\ref{thm:phonemic}, \ref{thm:Q3}).
+
+\begin{openprobbox}{}{op1}
+Prove or refute Theorems~\ref{thm:linear}--\ref{thm:phonemic} for $Q_4$ and, if a pattern is confirmed, for general $Q_k$. The exhaustive method used for $Q_2,Q_3$ is computationally intractable at $k=4$ without exploiting the algebraic (linear-code) structure directly; a proof exploiting Theorem~\ref{thm:linear}'s group structure, rather than brute-force enumeration, is the natural next step.
+\end{openprobbox}
+
+\section{A Threefold Characterisation of \texorpdfstring{$n=4$}{n=4}}
+\label{sec:threefold}
+
+\subsection{Three Independent Derivations}
+
+Three separate constructions, from three separate parts of the corpus and this document, single out $n=4$ as the unique solution to an equation on $K_n$.
+
+\begin{theorembox}{}{dl}
+(DL01/DL02.) $\Kfour$ is the unique fixed point, among complete graphs, of an operator $S$ whose fixed-point condition reduces to $C(n,3)=n(n-1)(n-2)/6=4$~\citep{DL01,DL02}.
+\end{theorembox}
+
+\begin{theorembox}{}{d66}
+(D66.) $n=4$ is the unique value $n>1$ for which the resolved spin exponent $2n-2$ equals the edge count $\binom{n}{2}$, i.e.\ $2n-2=\binom{n}{2}$, verified computationally for $n=2,\dots,11$~\citep{D66}.
+\end{theorembox}
+
+\begin{theorembox}{}{orbit}
+(This document.) $n=4$ is the unique value, among $n=2,\dots,28$, for which $\Coh(K_n)$ possesses a non-trivial orbit (under the full symmetric group $S_n$, via the bipartition parametrisation of Harary's theorem) of size exactly four --- the order required for a Klein four-group to act regularly upon it.
+\end{theorembox}
+
+\begin{verifbox}{}{v5}
+Orbit sizes under $S_n$ (bipartition classes $k=0,\dots,\lfloor n/2\rfloor$, size $\binom nk$ for $k\ne n-k$, $\binom nk/2$ otherwise) were enumerated exhaustively for $n=2,\dots,28$. Exactly one non-trivial match to size four was found: $n=4$, $k=1$ ($\binom41=4$). No other $(n,k)$ pair in this range yields size four.
+\end{verifbox}
+
+\subsection{Exact Algebraic Convergence}
+
+\begin{theorembox}{}{factorisation}
+The polynomials underlying Theorems~\ref{thm:dl} and~\ref{thm:d66} share the linear factor $(n-4)$ exactly:
+\begin{align}
+n(n-1)(n-2)-24 &= (n-4)(n^2+n+6), \label{eq:factor1}\\
+n(n-1) - 2(2n-2) &= (n-4)(n-1). \label{eq:factor2}
+\end{align}
+Verified by exact polynomial division (zero remainder in both cases). The two remaining factors are of different character: $n^2+n+6$ has no real root (discriminant $-23$), while $n-1$ has the real root $n=1$, excluded from D66's domain by the stated condition $n>1$. Theorem~\ref{thm:orbit} is not a polynomial identity of this type: it is a statement about which $(n,k)$ pairs realise a given binomial coefficient exactly, and it likewise resolves uniquely to $n=4$, with no residual factor at all.
+\end{theorembox}
+
+\subsection{Robustness of the Orbit-Regularity Criterion}
+
+The construction underlying Theorem~\ref{thm:orbit} additionally distinguishes between the two groups of order four.
+
+\begin{theorembox}{}{z4vsv4}
+At $n=4$, the Klein four-group $\Vfour$ acts regularly on the size-four orbit and fixes the remaining four configurations pointwise (this is D60's theorem, Section~\ref{sec:code}). The cyclic group $\mathbb{Z}_4\le S_4$ acts regularly on the same orbit but does \emph{not} fix the remaining four configurations pointwise.
+\end{theorembox}
+
+\begin{verifbox}{}{v6}
+Verified directly: the four-cycle generator of $\mathbb{Z}_4\le S_4$, applied to each of the four singleton-orbit configurations under $\Vfour$, does not return each to itself.
+\end{verifbox}
+
+Theorem~\ref{thm:z4vsv4} shows that the regularity half of Theorem~\ref{thm:orbit}'s criterion (an order-four group can act transitively on a four-element set) is a fact about group order alone, by Lagrange's theorem, and holds for any order-four group; but the fixing half is specific to the Klein structure of $\Vfour$ and fails for the cyclic alternative. This is consistent with, and gives a partial structural reason for, why D60's theorem selects $\Vfour$ rather than an arbitrary order-four subgroup of $S_4$.
+
+\begin{openprobbox}{}{op2}
+Construct an explicit bijection between the three mechanisms of Theorems~\ref{thm:dl}--\ref{thm:orbit}, establishing that they are three readings of a single underlying constraint rather than three independent coincidences sharing a common factor. The shared factor $(n-4)$ (Theorem~\ref{thm:factorisation}) is verified exactly but not yet explained from a common first principle.
+\end{openprobbox}
+
+\section{Relation to the PDL-V Programme}
+\label{sec:relation}
+
+The results of this document do not determine $n_{\mathrm{vie}}$ or $n_{\mathrm{cons}}$. What they establish is a verified layer of structure directly upstream of that question: the electron's alphabet is not an arbitrary five-element set but a maximally efficient error-correcting code (Section~\ref{sec:code}); this code sits inside an infinite, super-exponentially growing family (Section~\ref{sec:cayley}); and the base case of that family, $n=4$, is forced with unusual redundancy --- by three structurally unrelated arguments converging on the same algebraic root (Section~\ref{sec:threefold}). A threshold-search programme building on DL01/DL02 could take the growth law of Table~\ref{tab:growth}, together with a signal-transmission fidelity criterion of the kind investigated separately, as a candidate operational definition of when a closure hierarchy has become ``rich enough''; this document supplies the alphabet and growth law half of such a definition, not the threshold itself.
+
+\clearpage
+
+\bibliographystyle{unsrt}
+\bibliography{DL03_references}
+
+\end{document}
