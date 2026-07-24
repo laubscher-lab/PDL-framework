@@ -1,6 +1,7 @@
 # PDL Programme — Context and State
 
-*Last updated: Session 74 — 17 July 2026*
+*Last updated: Session 74 (suite) — 24 July 2026*
+*(**Session 74 (suite) — EXPLORATION DU LANGAGE COMBINATOIRE, EXTENSION PHILOSOPHIQUE DE D19, D19ad ET DL03 DÉPOSÉS, DM v33** : prolongement de la Session 74 (audit D47v2 ci-dessous), même journée de travail élargie. Trois volets. **(1) Exploration exploratoire du langage combinatoire** (non déposée en tant que telle) : alphabet de l'électron comme code correcteur d'erreur linéaire vérifié (distance minimale 3, borne de Hamming saturée, zéro redondance aux paires de distance minimale, y compris sur Q₃) ; famille de Cayley K₄/C₄ sur Z₂×Z₂ et croissance de l'hypercube Q_k (L_k=5,30,2288) ; convergence à trois voies sur n=4 (DL02, D66, nouveau critère de régularité d'orbite) partageant le facteur algébrique exact (n−4) ; recherche de points fixes de Von Neumann parmi les 16 instructions (2/16 fixent, mais artefacts de jauge — pas un vrai mouvement) ; carte du tableau périodique à 36 éléments avec colonne « entités pulsantes » ; résultat négatif honnête sur l'affinité combinatoire (modèle 5^v trop plat). **(2) Extension philosophique de D19/DN, publiée comme D19ad** : dialogue socratique avec Cédric (reprenant une réduction philosophique menée par Cédric en amont, indépendamment de toute présupposition physique) aboutissant à deux résultats — dérivation du caractère binaire de la distinction minimale de C1 depuis un acte unique de distinction (pas une simple affirmation comme dans D19/DN), et dissolution du « problème du porteur » (ce qui doit rester identique entre l'inscription d'une trace et sa lecture) par la négation de l'instant discret avant la première distinction ; un problème ouvert résiduel consigné (comment un acte a lieu sans instant préalable). Comparaison ligne à ligne contre D19 et DN (texte source récupéré directement en .tex) confirmant que ces deux résultats sont un apport réel, pas une redite. Correction en cours de route : le document long initialement confondu avec « D20 » est en réalité **DN** (DOI distinct, 10.5281/zenodo.19076555), erreur détectée en consultant le registre plutôt que la mémoire de session. **DOI D19ad : à réserver (non encore déposé).** **(3) DL03 déposé**, document technique consolidant les résultats vérifiés du volet (1) : code linéaire de l'alphabet électronique, famille de Cayley/hypercube, convergence triple sur n=4. **DOI DL03 : à réserver (non encore déposé).** Décision éditoriale : trois registres distincts (philosophie, résultat technique vérifié, exploration ouverte) gardés séparés plutôt que fusionnés en un seul document, sur le modèle D64/D65 et D66/D67 déjà appliqué dans le corpus ; le volet (1) reste non formalisé (exploratoire) tant qu'il n'est pas mûr. Discussion sur l'âme et la noétique classique explicitement exclue de tout document technique (accord des deux parties). **En conséquence, DM v33 déposée** — intègre D19ad (entrée table + description seulement, hors chaîne technique C1–C4, comme D19/D20/DN) et DL03 (nouvelle Section 26, théorèmes complets, nouvelle figure de dépendance, Layer L-DL mis à jour, nouveau problème ouvert DL-OP4 : bijection entre les trois mécanismes de n=4). **DOI DM v33 : à réserver (non encore déposé) — remplacera v32, 10.5281/zenodo.21411025.** Deux incidents de compilation réels rencontrés et corrigés lors de la production de D19ad et DL03 (collision de commande `\openbox`/`tcolorbox`, absence de vrai compteur de théorème malgré compilation « propre ») — voir note méthodologique ci-dessous. Fichier `10.5281zenodo.txt` vérifié : le registre GitHub s'arrête à D45 ; DOI D46–D67 confirmés uniquement via mémoire de session déjà croisée à une date antérieure — écart à signaler à Cédric pour mise à jour du registre lui-même.)*
 *(**Session 74 — AUDIT D'INTÉGRITÉ D47, OP14 ROUVERT, DM v32 DÉPOSÉE** : audit complet mené sur D47 (OP13, lemme miroir, nombres magiques, OP14) à la demande de Cédric, avec quatre scripts de vérification indépendants. OP13 et les sept nombres magiques re-vérifiés, inchangés. La table de remplissage de D40 (colonnes r et E) d'abord suspectée corrompue (première reconstruction naïve : 6,2% de correspondance avec les données IAEA) puis disculpée après vérification exhaustive — cohérence interne parfaite (ΔE = 2(r−1), 31/31 sans exception). Cause racine identifiée : l'équation N_min(Z) = 20 + Σr_exc(Z'), présente dans D40 et recopiée dans D47, omet un facteur 2 ; la relation correcte est N_min(Z) = 20 + 2·Σr_exc(Z'). Une fois ce facteur restauré, la table originale de D40 reproduit 74 à 88% de la vallée de stabilité expérimentale (résidu réduit à 12,5% sous une définition élargie de « stable » incluant les isotopes quasi-stables à très longue durée de vie comme ⁵⁰Cr) — la règle simplifiée de D47v1 (r_exc=0 aux fermetures, 1 sinon) ne reproduit en revanche aucune des 31 frontières testées (0%). Le remark de D47v1 affirmant l'absence de valeurs 2/3 dans la table de D40 pour Z=22–82 est également factuellement erroné (19/31 contre-exemples). Conjecture exploratoire H_d/2 (r_exc = degénérescence active/2) testée et éliminée (16,1%). **D47v2 publié** — OP14 rouvert, D47v1 retiré sur ce seul point (OP13 et nombres magiques inchangés). Fait notable : D44v2, pourtant postérieur à D47v1, listait déjà OP14 comme ouvert en citant D22/D40 (pas D47) — l'incohérence n'avait donc pas complètement infusé dans le suivi interne du corpus, même avant cet audit. DOI D47v2 : **10.5281/zenodo.21410146**. Quatre scripts de vérification déposés avec le document. En conséquence, **DM v32 déposée** — DOI : **10.5281/zenodo.21411025**, remplace v31 (10.5281/zenodo.21384063). Ne modifie aucun autre document du corpus (D01–D67, N01, N02 inchangés) : Théorème 12.5 (D47v1) remplacé par un énoncé de problème ouvert, Corollaire 12.6 (vallée de stabilité) réécrit (74–88%, plus « théorème inconditionnel à 100% »), Open Problem 18.15 (OP14) repassé de « résolu » à « ouvert, priorité haute », entrée D47/D47v2 et Layer L6 (table épistémique) mis à jour, nœud D47 de la carte de dépendance (Figure 1) relabellisé. Historique complet v1–v32 conservé dans le document. Fichier `10.5281zenodo.txt` et présent fichier à resynchroniser en conséquence.)*
 *(**Session 73 — D67 DÉPOSÉ, DM v31 DÉPOSÉE** : document D67 « The Emergent Metric and the Coherence Stress-Energy Tensor in PDL: A Consolidated Reference, with Exploratory Extensions to the Isolated Nucleon » déposé sur Zenodo — DOI : **10.5281/zenodo.21382362**. Partie I : synthèse autonome de tous les théorèmes inconditionnels concernant la métrique émergente et le tenseur C_μν (masse, spin, orbital, fuite), complète et vérifiée numériquement dans l'état fondamental homogène. Partie II : extension exploratoire au nucléon isolé — théorème de coplanarité pour la construction vectorielle de D66 (ferme cette voie vers une métrique basée sur la courbure), six nouvelles constructions négatives pour une observable de spin au niveau nucléon, correction d'une erratum facteur-deux dans la relation de fermeture de Compton du proton (document fondateur), et une piste numérique suggestive mais non encore robuste reliant l'exposant topologique 18 à la durée de vie du neutron libre. Deux nouveaux problèmes ouverts : OP-D67-1, OP-D67-2. En conséquence, **DM v31 déposée** — DOI : **10.5281/zenodo.21384063**, remplace v30 (10.5281/zenodo.21228274). Étend la carte du corpus à D01–D67 plus N01 et N02 (complet et déposé). Intègre D66 et D67 ; six nouveaux problèmes ouverts (OP-D66pub-1–4, OP-D67-1–2) plus OP-OFN-2 ; deux errata de corpus corrigés ; cartes de dépendance et guide de continuation mis à jour. Site web cedriclaubscher.ch (blocs « A Guided Journey » et table des documents) et fichier `10.5281zenodo.txt` mis à jour en conséquence — voir Session 73 complète ci-dessous.)*
 *(D66 déposé sur Zenodo : « A Search for the C5 Metric Candidate: Logical Geometry, the (A)∧(B) Standard, and the Parity Obstruction of K4 » — 10.5281/zenodo.21351177. Inchangé depuis Session 71.)*
@@ -20,7 +21,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -110,7 +111,10 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D66 | 10.5281/zenodo.21351177 | C5 metric search: logical geometry, (A)∧(B), parity obstruction of K4 |
 | N02 | 10.5281/zenodo.21333913 | From Z₃ to Three Generations: PDL–OFN bridge (Evdokimov & Laubscher, 12 pp.) — déposé par O. Evdokimov, juillet 2026 |
 | D67 | 10.5281/zenodo.21382362 | Emergent metric and coherence stress-energy tensor; coplanarity theorem; Compton-closure erratum corrected |
-| DM v32 | 10.5281/zenodo.21411025 | Global Mapping v32 (current — OP14 rouvert, D47v2 intégré, aucun autre document affecté ; remplace v31 — 10.5281/zenodo.21384063, elle-même remplaçant v30 — 10.5281/zenodo.21228274, elle-même remplaçant v29 — 10.5281/zenodo.20701571) |
+| DM v32 | 10.5281/zenodo.21411025 | Global Mapping v32 (superseded by v33 below — OP14 rouvert, D47v2 intégré ; remplace v31 — 10.5281/zenodo.21384063, elle-même remplaçant v30 — 10.5281/zenodo.21228274, elle-même remplaçant v29 — 10.5281/zenodo.20701571) |
+| D19ad | *à déposer* | On the Necessity of the Binary Distinction and the Dissolution of the Bearer Problem: An Addendum to D19 (Session 74 suite) |
+| DL03 | *à déposer* | The Electron Alphabet, the Cayley–Hypercube Family, and a Threefold Characterisation of n=4 (Session 74 suite) |
+| DM v33 | *à déposer* | Global Mapping v33 (current — intègre D19ad et DL03 ; remplace v32 — 10.5281/zenodo.21411025) |
 | PDL_N02_lockdown | *à déposer groupé avec N02* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
 
 ---
@@ -961,7 +965,68 @@ Le fichier `10.5281zenodo.txt` (GitHub) corrigé et resynchronisé à cette occa
 
 ---
 
-## State of the Programme (end of Session 73)
+## Session 74 (suite) — 24 July 2026 — Exploration du langage combinatoire, extension philosophique de D19 (D19ad), DL03, DM v33
+
+### Résumé
+
+Prolongement, le même jour, de la Session 74 (audit D47v2 ci-dessus). Trois volets distincts, gardés délibérément séparés plutôt que fusionnés en un seul document : une exploration exploratoire non déposée sur le langage combinatoire porté par les clôtures PDL ; une extension philosophique de D19/DN déposée comme D19ad ; un document technique DL03 étendant DL01/DL02. Décision éditoriale explicite : suivre le précédent D64/D65 et D66/D67 (documents séparés par registre épistémique, jamais fusionnés), plutôt que produire un document unique bundlant philosophie, résultat vérifié et exploration ouverte.
+
+### Volet 1 — Exploration du langage combinatoire (non déposée)
+
+- **Alphabet de l'électron comme code correcteur d'erreur** : Coh(K₄) fermé sous multiplication (code linéaire), distribution des poids de Hamming {0,3,3,3,3,4,4,4}, distance minimale d_min=3 (borne de Hamming saturée à longueur 6, huit mots de code). Résultat plus fort : les 16 paires à distance minimale changent **toutes** d'orbite V₄, sans exception — zéro redondance à la résolution la plus fine du code. Propriété vérifiée identique sur Q₃ (128 mots de code, 512 paires minimales).
+- **Famille de Cayley K₄/C₄** : K₄ et C₄ identifiés comme les graphes de Cayley dense et épars sur le même groupe Z₂×Z₂ (pas des petits graphes non reliés). Généralisation à la famille d'hypercubes Q_k : L_k (nombre d'orbites sous Z₂^k) = 5, 30, 2288 pour k=2,3,4 — croissance super-exponentielle, le ratio lui-même s'accélérant (6,0 → 76,3).
+- **Convergence à trois voies sur n=4** : le théorème du triangle de DL02 (C(n,3)=4), le théorème de résolution de spin de D66 (2n−2=C(n,2)), et un nouveau critère de régularité d'orbite (recherche exhaustive n=2..28) partagent exactement le facteur algébrique (n−4), vérifié par division polynomiale exacte. Distinction V₄ vs Z₄ : les deux agissent régulièrement sur l'orbite de taille 4 (Lagrange), mais seul V₄ fixe le reste ponctuellement.
+- **Recherche de points fixes de Von Neumann** : parmi les 16 instructions possibles (configurations de signes de pont), exactement 2 fixent une lettre — mais vérification approfondie montrant que ces deux instructions ne sont que deux descriptions de jauge de l'absence totale de changement, pas un vrai mouvement. Conséquence : dans ce modèle minimal, auto-réplication et mouvement réel semblent structurellement incompatibles (les 14 autres instructions détruisent systématiquement toute lettre, sans exception).
+- **Carte du tableau périodique** : formule d'identité (comptage 76Z+80N−1, orbite L^(3A)×5^Z) étendue à une table complète des 36 premiers éléments, avec colonne supplémentaire « entités pulsantes » (4× le nombre d'électrons de la dernière couche). Découverte structurelle poussée par Cédric : le comptage seul ne peut **jamais** identifier un atome, pour une raison générale (tout comptage additif à deux poids fixes a une périodicité forcée par Bézout), pas une coïncidence des poids 76/80 spécifiquement.
+- **Résultat négatif documenté** : le modèle de valence 5^v est trop plat pour capturer un gradient d'électronégativité réel (gain/perte identique log₂(5) pour tout élément testé) — rapporté honnêtement comme échec, pas dissimulé.
+
+### Volet 2 — Extension philosophique de D19/DN, déposée comme D19ad
+
+Dialogue socratique avec Cédric, reprenant une réduction philosophique qu'il avait menée en amont et indépendamment de toute présupposition physique ou humaine (partant de la seule opposition rien/quelque chose). Deux résultats philosophiques obtenus, ni l'un ni l'autre présents dans D19 ou DN sous cette forme :
+
+1. **Pourquoi deux états, pas trois** : dérivé de la nature d'un acte unique de distinction (à la Spencer-Brown — une frontière a par nature exactement deux côtés), plutôt qu'affirmé directement comme le font D19 et DN.
+2. **Dissolution du « problème du porteur »** : nommé et résolu — ce qui doit rester identique entre l'inscription d'une trace et sa lecture (présupposition jamais examinée par D19/DN) est dissous en niant la réalité d'un instant discret avant la première distinction, plutôt que postulé comme substrat persistant. Un problème ouvert résiduel consigné : comment un acte de distinction a-t-il lieu sans instant préalable ?
+
+Comparaison vérifiée ligne à ligne contre les textes sources réels de D19 et DN (récupérés en .tex complet, pas résumés) : les deux conclusions de fond de D19/DN sont confirmées présentes sous forme compacte, mais ni l'argument du « pourquoi deux » ni la résolution du porteur n'y figurent — apport réel, pas redécouverte.
+
+**Correction de corpus découverte au passage** : le document long initialement cité comme « D20 » (chapitres « Nothing, then Something », etc.) est en réalité **DN** (DOI `10.5281/zenodo.19076555`), distinct de D20 (DOI `10.5281/zenodo.18940047`, la synthèse philosophique courte). Erreur détectée en consultant directement le registre `10.5281zenodo.txt` plutôt qu'en se fiant à la mémoire de session — confirme la règle déjà en vigueur.
+
+Discussion adjacente sur l'âme et la noétique classique (le *nous* aristotélicien) : conclusion que ni l'une ni l'autre ne relève de ce que la sophistication combinatoire peut trancher, et que les deux restent explicitement hors du registre technique du corpus — accord des deux parties, rien consigné dans D19ad sur ce point.
+
+**Titre complet** : *On the Necessity of the Binary Distinction and the Dissolution of the Bearer Problem: An Addendum to Existence as Pulsating Closure (D19)*. **DOI : à réserver, non encore déposé.**
+
+### Volet 3 — DL03, extension technique de DL01/DL02
+
+Document technique consolidant les résultats vérifiés du Volet 1 sous forme de théorèmes complets avec preuves computationnelles : le code linéaire de l'alphabet électronique (d_min=3, zéro redondance), la famille de Cayley/hypercube (K₄≅Cay(Z₂×Z₂,S_dense), croissance L_k), et la convergence triple sur n=4 avec factorisation algébrique exacte. Aucune valeur numérique de seuil (n*_vie, n*_conscience) établie — le document renforce le contexte structurel du Théorème 1 de DL02 sans le remplacer.
+
+**Titre complet** : *The Electron Alphabet, the Cayley–Hypercube Family, and a Threefold Characterisation of n=4: Towards a Combinatorial Language Layer for the PDL-V Programme*. **DOI : à réserver, non encore déposé.**
+
+### Production des documents — deux incidents de compilation réels
+
+Contrairement à la pratique habituelle du corpus (verrouillage computationnel avant rédaction), la production des deux documents a révélé deux défauts de compilation, corrigés en cours de route, pas supposés absents :
+
+1. **D19ad** : collision de commande (`\openbox` déjà défini par la bibliothèque `tcbtheorems` de `tcolorbox`) et une virgule à l'intérieur d'un titre de boîte cassant le parseur de clés — corrigés, document reconstruit dans le format exact de D67 après refus initial de Cédric d'une première version non conforme.
+2. **DL03** : labels passés en option de crochet (`[label=thm:dl]`) ne créaient jamais de vraie commande `\label{}` — toutes les références `\ref{}` silencieusement non définies. Une fois corrigé naïvement, découverte d'un second défaut plus subtil : les boîtes n'avaient aucun vrai compteur de théorème, les renvois résolvant silencieusement vers des numéros de sous-section plutôt qu'un numéro de théorème unique — corrigé avec le mécanisme natif `\newtcbtheorem` de `tcolorbox`.
+
+**Leçon méthodologique retenue** : une compilation « propre » (zéro erreur, zéro avertissement) ne suffit pas à garantir la correction — il faut extraire et relire le texte réellement rendu du PDF compilé, pas seulement vérifier l'absence d'erreurs de compilation.
+
+### DM v33 — dépôt consécutif
+
+DM mise à jour et redéposée en version 33, remplaçant v32 (`10.5281/zenodo.21411025`). N'ajoute aucune nouvelle section technique pour D19ad (traité comme D19/D20/DN — entrée de table uniquement, hors chaîne C1–C4), mais ajoute une nouvelle Section 26 complète pour DL03 (cinq théorèmes, nouvelle figure de dépendance TikZ dans le style de D66, Layer L-DL de la table épistémique mis à jour, nouveau problème ouvert DL-OP4 — bijection entre les trois mécanismes de n=4). Bibliographie complète reconstruite (90 entrées), la majorité vérifiée directement contre le registre `10.5281zenodo.txt` (D01–D45) ou contre la mémoire de session déjà croisée à une date antérieure (D46–D67) ; sept DOI (D46, D47, D49–D53) et deux références externes (Pigliapoco2026, Escudeiro2026) restent explicitement marqués comme non vérifiés, à compléter par Cédric avant tout dépôt réel.
+
+**DOI : à réserver, non encore déposé.**
+
+### Écart de registre découvert
+
+Le fichier `10.5281zenodo.txt` sur GitHub s'arrête à **D45** (261 lignes) — les DOI de D46 à D67 utilisés dans ce fichier de contexte et dans DM v33 proviennent exclusivement de la mémoire de session (elle-même explicitement croisée contre ce même registre à une date antérieure, selon les notes de session précédentes), jamais du fichier GitHub actuel. **À signaler à Cédric : le registre lui-même a besoin d'être complété jusqu'à D67 au minimum**, indépendamment de la mise à jour liée à cette session.
+
+### Nouveau problème ouvert issu de DL03
+
+- **DL-OP4** : construire une bijection explicite entre les trois mécanismes indépendants qui isolent n=4 (DL02, D66, DL03), établissant qu'ils sont trois lectures d'une seule contrainte plutôt que trois constructions indépendantes partageant le facteur (n−4) par coïncidence. Entrée : DL02, D66, DL03.
+
+---
+
+## State of the Programme (end of Session 74 suite)
 
 ### Collaboration PDL–OFN — état Session 73
 
@@ -1058,7 +1123,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 73)
+## Open Problems (updated Session 74 suite)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
@@ -1139,6 +1204,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP15** : noyaux Z > 82. Entrée : D40, D47.
 - **DL-OP1** : valeur numérique de n*_vie. Entrée : DL01, DL02. **[Session 61 : 5 formalisations testées (statique, templating, reproduction différentielle, itération S) — toutes négatives ou falsifiées par contrôle ; voir consolidation. Piste retenue : couplage effectif via Λ entre clôtures distinctes, pas propriété intrinsèque à une clôture isolée.]**
 - **DL-OP2** : valeur numérique de n*_conscience. Entrée : DL01, DL02. **[Session 61 : même statut que DL-OP1 ; test de convergence S^k entre clôtures distinctes négatif (invariant de partition préservé, jamais de fusion de classes).]**
+- **DL-OP4** : bijection explicite entre les trois mécanismes indépendants qui isolent n=4 — le théorème du triangle de DL02, le théorème de résolution de spin de D66, et le nouveau critère de régularité d'orbite de DL03 — partageant tous le facteur algébrique exact (n−4). **[Nouveau, Session 74 suite, DL03.]** Entrée : DL02, D66, DL03.
 - **DL-OP-bugs** : corriger avant réutilisation — Script 6 (recherche gloutonne de Γ' masque des témoins valides), Script 8 (synthèse texte incohérente avec Δε calculé), Script 13 (double comptage de f_eff(N) dans le gain ; troncature artificielle à L=1). Entrée : DL01, DL02 notebooks.
 
 ---
@@ -1235,33 +1301,40 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 73 :**
+**Priorités Session 75 :**
 
-1. **[HIGH — PRIORITÉ ABSOLUE]** OP-D66-1 : résoudre la tension entre les deux décompositions de l'exposant 18 ($6+5+4+3$ de D23 v2 vs $6+6+6$ de « Hierarchical Coherence Filtering... »). Entrée : D23 v2, D43, D44.
-2. **[HIGH]** Étendre le résultat de Session 66 (S_BH à 0,07%) au cas avec spin (Kerr) — confronter à GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz), cible fixée depuis Session 64.
-3. **[HIGH]** OP-D70-1 : formaliser le candidat C5 (compatibilité causale, taux de réajustement de cohérence borné par c). Entrée : Session 70 Fil 1, PDL.tex, Proper Time as Coherence-Cycle Counting.
-4. **[HIGH]** OP-D71-5 : rapprocher Session 70 (candidat C5 via PDL.tex) et Session 71 (obstruction de parité, vecteurs sur axes réels K₄) — même question, deux chemins indépendants, pas encore confrontés.
-5. **[HIGH]** Construire formellement la pseudométrique complète $\mathcal J(C_1,C_2)$ (D08) depuis $W\approx3$ (Session 66 script 5).
-6. **[HIGH — correction de corpus]** OP-D65-2 : corriger l'incohérence Z_sat (D22 : ≈19,857 vs « Nuclear Stability PDL.tex » : =11).
-7. **[FAIT — Session 73]** DOI 10.5281/zenodo.21333913 (N02) ajouté dans 10.5281zenodo.txt sur GitHub. DM mise à jour en v31 (10.5281/zenodo.21384063) intégrant N02, D66 et D67. Site cedriclaubscher.ch (section « A Guided Journey » et table des documents) mis à jour avec D64, D65, D66, D67, N02, et DM v31.
-7bis. **[MEDIUM — reste ouvert]** ResearchGate et Academia.edu n'ont pas encore été mis à jour avec D64, D65, D66, D67, N02, D47v2, ou DM v31/v32 (dernière vérification Session 69 : ResearchGate à 20 documents, Academia.edu à 7). À planifier lors d'une prochaine session de dissémination.
-8. **[MEDIUM]** OP-N02-1 : analogue OFN au contenu dynamique des cycles de fuite (23,67,997).
-9. **[MEDIUM]** OP-OFN-4 : dériver α de (1+z)=exp(αd) depuis λ₁ et τ de Ω₂₁.
-10. **[MEDIUM]** OP-D70-2 : anomalie parité p-p / capture électronique.
-11. **[MEDIUM]** OP-D63-1 : preuve formelle d'indépendance C2,C3,C4 dans Q(K_n).
-12. **[MEDIUM]** OP-D62-4 : corrections Δα_had depuis H_sea.
-13. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini (fenêtre 100–150 MeV, f_PBH~10⁻¹⁰). Entrée : D45 v2.
-14. **[FAIT — Session 73]** Mise à jour site web cedriclaubscher.ch avec D45 v2, D64 v2, D65, D66, D67, N01, N02, et DM v31.
-15. **[LOW]** DL-OP1/DL-OP2 : couplage effectif via Λ entre clôtures distinctes.
-16. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
-17. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
-18. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction ; cible GW250114 identifiée.
-19. **[FAIT — Session 65]** Vingt et une tentatives K₄↔K₄ documentées ; Φ_min exclut la fusion ; régime dilué σ(N) découvert.
-20. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** S_BH à 0,07% depuis C1–C4 sans paramètre ajusté ; règle de sélection par charge confirmée (antihydrogène CERN) ; OP-D66-1 ouvert.
-21. **[FAIT — Session 67]** N02 draft PDL side rédigé (8 pages) ; 5 connexions PDL–OFN ; script de verrouillage 13 PASS/0 FAIL ; mail à Varlamov envoyé.
-22. **[FAIT — Session 68]** Classification 4A+4S+2M confirmée ; clarification épistémique OFN ; périmètre collaboration reformulé.
-23. **[FAIT — Session 69]** Correction G_E/G_H : φ+γ_E/2=2 pour G_E seulement ; τ=90 exact (Kirchhoff) ; dissémination Academia.edu/ResearchGate mise à jour.
-24. **[FAIT — Session 70]** Exploration mécanique d'effondrement ; 21 scripts K_nuc↔K_nuc (négatifs) ; anomalie parité p-p (OP-D70-2) ; candidat C5 (OP-D70-1).
+1. **[HIGH — nouveau, Session 74 suite]** Déposer réellement D19ad, DL03 et DM v33 sur Zenodo (préparés et compilés, DOI non encore réservés). Une fois les DOI obtenus, mettre à jour `10.5281zenodo.txt`, le présent fichier, et le site cedriclaubscher.ch.
+2. **[HIGH — nouveau, Session 74 suite]** Compléter le registre `10.5281zenodo.txt` sur GitHub au-delà de D45 (il s'arrête net à ce document) — écart découvert en le consultant directement pour vérifier les DOI de DM v33. Le compléter jusqu'à D67 au minimum, idéalement jusqu'à DM v33.
+3. **[HIGH — nouveau, Session 74 suite]** Vérifier et compléter les sept DOI manquants dans la bibliographie de DM v33 (D46, D47, D49, D50, D51, D52, D53) et les deux références externes incomplètes (Pigliapoco2026, Escudeiro2026) avant tout dépôt réel du document.
+4. **[MEDIUM — nouveau, Session 74 suite]** DL-OP4 : bijection entre les trois mécanismes de n=4 (DL02, D66, DL03). Entrée : DL03 Section 26.
+5. **[EXPLORATOIRE — nouveau, Session 74 suite]** Problème ouvert philosophique de D19ad : comment un acte de distinction a-t-il lieu sans instant discret préalable ? Registre conceptuel, pas calculable — voir D19ad, note finale.
+6. **[HIGH]** OP-D66-1 : résoudre la tension entre les deux décompositions de l'exposant 18 ($6+5+4+3$ de D23 v2 vs $6+6+6$ de « Hierarchical Coherence Filtering... »). Entrée : D23 v2, D43, D44.
+7. **[HIGH]** Étendre le résultat de Session 66 (S_BH à 0,07%) au cas avec spin (Kerr) — confronter à GW250114 (M_f=62,7 M_☉, χ_f=0,68, f₂₂₀=247 Hz), cible fixée depuis Session 64.
+8. **[HIGH]** OP-D70-1 : formaliser le candidat C5 (compatibilité causale, taux de réajustement de cohérence borné par c). Entrée : Session 70 Fil 1, PDL.tex, Proper Time as Coherence-Cycle Counting.
+9. **[HIGH]** OP-D71-5 : rapprocher Session 70 (candidat C5 via PDL.tex) et Session 71 (obstruction de parité, vecteurs sur axes réels K₄) — même question, deux chemins indépendants, pas encore confrontés.
+10. **[HIGH]** Construire formellement la pseudométrique complète $\mathcal J(C_1,C_2)$ (D08) depuis $W\approx3$ (Session 66 script 5).
+11. **[HIGH — correction de corpus]** OP-D65-2 : corriger l'incohérence Z_sat (D22 : ≈19,857 vs « Nuclear Stability PDL.tex » : =11).
+12. **[FAIT — Session 73]** DOI 10.5281/zenodo.21333913 (N02) ajouté dans 10.5281zenodo.txt sur GitHub. DM mise à jour en v31 (10.5281/zenodo.21384063) intégrant N02, D66 et D67. Site cedriclaubscher.ch (section « A Guided Journey » et table des documents) mis à jour avec D64, D65, D66, D67, N02, et DM v31.
+13. **[FAIT — Session 74]** Audit d'intégrité D47 mené ; D47v2 déposé (10.5281/zenodo.21410146), OP14 rouvert ; DM v32 déposée (10.5281/zenodo.21411025).
+14. **[FAIT — Session 74 suite]** Extension philosophique de D19/DN rédigée et vérifiée (D19ad) ; document technique DL03 rédigé et vérifié ; DM v33 préparée et compilée intégrant les deux. Aucun des trois encore déposé sur Zenodo (voir item 1 ci-dessus).
+15bis. **[MEDIUM — reste ouvert]** ResearchGate et Academia.edu n'ont pas encore été mis à jour avec D64, D65, D66, D67, N02, D47v2, D19ad, DL03, ou DM v31/v32/v33 (dernière vérification Session 69 : ResearchGate à 20 documents, Academia.edu à 7). À planifier lors d'une prochaine session de dissémination.
+16. **[MEDIUM]** OP-N02-1 : analogue OFN au contenu dynamique des cycles de fuite (23,67,997).
+17. **[MEDIUM]** OP-OFN-4 : dériver α de (1+z)=exp(αd) depuis λ₁ et τ de Ω₂₁.
+18. **[MEDIUM]** OP-D70-2 : anomalie parité p-p / capture électronique.
+19. **[MEDIUM]** OP-D63-1 : preuve formelle d'indépendance C2,C3,C4 dans Q(K_n).
+20. **[MEDIUM]** OP-D62-4 : corrections Δα_had depuis H_sea.
+21. **[MEDIUM]** Contacter Cholis, Krommydas et Carlini (fenêtre 100–150 MeV, f_PBH~10⁻¹⁰). Entrée : D45 v2.
+22. **[FAIT — Session 73]** Mise à jour site web cedriclaubscher.ch avec D45 v2, D64 v2, D65, D66, D67, N01, N02, et DM v31.
+23. **[LOW]** DL-OP1/DL-OP2 : couplage effectif via Λ entre clôtures distinctes.
+24. **[LOW]** Corriger les 6 bugs identifiés Session 61 dans les notebooks DL01/DL02.
+25. **[FAIT — Session 63]** D45 et D64 révisés en v2 et redéposés sur Zenodo.
+26. **[FAIT — Session 64]** Clarification c/ħ comme facteurs de traduction ; cible GW250114 identifiée.
+27. **[FAIT — Session 65]** Vingt et une tentatives K₄↔K₄ documentées ; Φ_min exclut la fusion ; régime dilué σ(N) découvert.
+28. **[FAIT — Session 66 — RÉSULTAT MAJEUR]** S_BH à 0,07% depuis C1–C4 sans paramètre ajusté ; règle de sélection par charge confirmée (antihydrogène CERN) ; OP-D66-1 ouvert.
+29. **[FAIT — Session 67]** N02 draft PDL side rédigé (8 pages) ; 5 connexions PDL–OFN ; script de verrouillage 13 PASS/0 FAIL ; mail à Varlamov envoyé.
+30. **[FAIT — Session 68]** Classification 4A+4S+2M confirmée ; clarification épistémique OFN ; périmètre collaboration reformulé.
+31. **[FAIT — Session 69]** Correction G_E/G_H : φ+γ_E/2=2 pour G_E seulement ; τ=90 exact (Kirchhoff) ; dissémination Academia.edu/ResearchGate mise à jour.
+32. **[FAIT — Session 70]** Exploration mécanique d'effondrement ; 21 scripts K_nuc↔K_nuc (négatifs) ; anomalie parité p-p (OP-D70-2) ; candidat C5 (OP-D70-1).
 25. **[FAIT — Session 71]** D66 déposé (10.5281/zenodo.21351177) : obstruction de parité (A)∧(B), résolution par structure de spin, unicité n=4 — théorème complet sur K₄, K₂₄, K₂₈.
 26. **[FAIT — Session 72]** N02 v0.2 complet et assemblé (Evdokimov & Laubscher, 12 pp.) : intégration côté OFN, 3 corrections, tableau 8 lignes, 7 open problems, auteurs Evdokimov (1er)/Laubscher (2ème). Déposé par Oleg Evdokimov sur Zenodo : **DOI 10.5281/zenodo.21333913**.
 27. **[FAIT — Session 73]** D67 déposé (10.5281/zenodo.21382362) : synthèse consolidée de C_μν et de la métrique émergente, complète en théorème inconditionnel dans l'état fondamental homogène ; théorème de coplanarité fermant la voie D66 vers une métrique de courbure ; erratum de fermeture de Compton corrigé. DM v31 déposée en conséquence (10.5281/zenodo.21384063), intégrant D66, D67 et N02, remplace v30. Site web et 10.5281zenodo.txt resynchronisés.
