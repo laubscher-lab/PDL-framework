@@ -140,8 +140,8 @@ Pdl_nuclear_stability_skeleton.pdf
 
 DM
 https://doi.org/10.5281/zenodo.21520303 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems (Version 32)
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v32.pdf
+Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems — Version 33 — A Guide for Continuation of the Programme 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v33_TEST-COMPILE.pdf 
 
 D23v2
 https://doi.org/10.5281/zenodo.19197268
@@ -239,14 +239,14 @@ Structural Closure Multiplicity and the Isospin-Symmetric Island of Inversion: a
 D41_pdl_island_of_inversion.pdf
 
 D42
-https://doi.org/10.5281/zenodo.20041348
+https://doi.org/10.5281/zenodo.20041348 
 Derivation of H3 from Axioms C1–C4: The Equiparticipation Lemma and the Closure of Causality
 D42_Derivation_of_H3_from_C1_C4.pdf
 
 D43
-https://doi.org/10.5281/zenodo.19678389
-The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43v3)
-D43_causal_chain.pdf
+https://doi.org/10.5281/zenodo.19678389 
+The Causal Chain of Physical Reality: From Four Axioms to Newton's Constant via the Geometric Leakage Parameter (PDL Framework — D43) 
+D43_causal_chain.pdf 
 
 D44v2
 https://doi.org/10.5281/zenodo.21221113
@@ -442,3 +442,8 @@ DL03
 https://doi.org/10.5281/zenodo.21518902 
 The Electron Alphabet, the Cayley–Hypercube Family, and a Threefold Characterisation of n=4: Towards a Combinatorial Language Layer for the PDL-V Programme 
 DL03_electron_alphabet_cayley_family_fourfold_n4.pdf 
+
+D68 
+https://doi.org/10.5281/zenodo.21997433 
+The Pulsation as a Bipartition: Complete Classification of C1-Admissible Dynamical Laws, and a Singleton Obstruction Theorem for Frustration-Based Selection (Projective Dynamic Logo Framework — Document D68) 
+D68_pulsation_bipartition.pdf 
