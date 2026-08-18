@@ -447,3 +447,8 @@ D68
 https://doi.org/10.5281/zenodo.21997433 
 The Pulsation as a Bipartition: Complete Classification of C1-Admissible Dynamical Laws, and a Singleton Obstruction Theorem for Frustration-Based Selection (Projective Dynamic Logo Framework — Document D68) 
 D68_pulsation_bipartition.pdf 
+
+D69 
+https://doi.org/10.5281/zenodo.21999711 
+The Proximity Rule P: A Minimax Selection Principle on Signed Graphs, with Closed Enumeration on Cycles and a Dichotomy between Complete Graphs and Sparse Meshes (Projective Dynamic Logo Framework — Document D69) 
+D69_rule_P.pdf 
