@@ -21,7 +21,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 rédigé, compilé et vérifié Session 75 — NON ENCORE DÉPOSÉ, DOI à réserver**)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 déposé Session 75 suite — 10.5281/zenodo.21997433 ; D69 rédigé, compilé et vérifié, DOI à réserver**)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -111,7 +111,8 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D66 | 10.5281/zenodo.21351177 | C5 metric search: logical geometry, (A)∧(B), parity obstruction of K4 |
 | N02 | 10.5281/zenodo.21333913 | From Z₃ to Three Generations: PDL–OFN bridge (Evdokimov & Laubscher, 12 pp.) — déposé par O. Evdokimov, juillet 2026 |
 | D67 | 10.5281/zenodo.21382362 | Emergent metric and coherence stress-energy tensor; coplanarity theorem; Compton-closure erratum corrected |
-| D68 | *(à réserver)* | The pulsation as a bipartition; singleton obstruction theorem — **rédigé et compilé Session 75, non déposé** |
+| D68 | 10.5281/zenodo.21997433 | The pulsation as a bipartition; complete classification of C1-admissible laws; singleton obstruction theorem; errata D46 (×2) et D43 — **déposé Session 75 suite** |
+| D69 | *(à réserver)* | The proximity rule P: minimax selection on signed graphs; closed enumeration on cycles; Lucas identity; complete/sparse dichotomy — **rédigé, compilé, prêt au dépôt** |
 | DM v32 | 10.5281/zenodo.21411025 | Global Mapping v32 (superseded by v33 below — OP14 rouvert, D47v2 intégré ; remplace v31 — 10.5281/zenodo.21384063, elle-même remplaçant v30 — 10.5281/zenodo.21228274, elle-même remplaçant v29 — 10.5281/zenodo.20701571) |
 | D19ad | *à déposer* | On the Necessity of the Binary Distinction and the Dissolution of the Bearer Problem: An Addendum to D19 (Session 74 suite) |
 | DL03 | *à déposer* | The Electron Alphabet, the Cayley–Hypercube Family, and a Threefold Characterisation of n=4 (Session 74 suite) |
@@ -1150,11 +1151,140 @@ Trois erreurs de ma part rattrapées par le protocole, et une quatrième par Cé
 - **OP-D68-5** [MEDIUM] — Toute quantité examinée est instantanée et la structure se referme après deux pas. Un critère de stabilité sur la durée n'a aucune prise. Un objet qui **accumule** à travers les cycles est-il constructible dans C1–C4 ?
 - **OP-D68-6** [LOW, intérêt fondationnel] — Remplacer C2 par le postulat interprétatif « une relation n'a pas d'état propre, son signe est le produit des états de ses relata ». C2 devient alors un théorème (Harary). Pas une économie d'axiomes, mais un point de départ plus transparent. Compatibilité avec tous les usages de C2 depuis D01 non vérifiée.
 - **OP-D68-7** [HIGH] — Divergence D46/D68 sur la définition de la pulsation ($\Phi$ vs $\sigma_S$). Voir plus haut. Prérequis à tout usage de D50/D64 reposant sur $P_2/P_1=-1$ uniforme.
-- **OP-D75-1** [MEDIUM, corpus] — La justification de $c=3$ dans D43 invoque la 3-régularité de blocs $K_4$ dans les cœurs de valence, structure que Cédric confirme absente ($K_{24}$, $K_{28}$ sont des graphes complets sur des entités). Vérifier D43 et réécrire l'argument si nécessaire ; les valeurs numériques (329, 468) sont vérifiées indépendamment.
+- **OP-D75-1** ✅ **RÉSOLU (Session 75 suite)** — La justification de $c=3$ dans D43 est légitime sous **lecture hiérarchique** : $n_K=76$ compte des blocs, et chaque entité d'un cœur **EST** une fermeture $K_4$ au niveau inférieur plutôt que d'en contenir. Pas de blocs $K_4$ *dans* $K_{24}$ au sens d'une décomposition d'arêtes (impossible : $24
+ot\equiv1,4mod12$), mais chaque sommet *est* un $K_4$. Confirmé par Cédric. Consigné en Remarque dans D68 §11.2.
 - **OP-D75-2** [MEDIUM, corpus] — $R_{\mathrm{sea}}=10087$ est impair et la règle $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ ne peut le produire. Trancher : soit la règle est exacte et $R_{\mathrm{sea}}\ne10087$, soit $R_{\mathrm{sea}}$ est exact et la règle ne tient pas.
 - **OP-D75-3** [MEDIUM, règle P] — Balayage exhaustif de la règle P sur tous les graphes connexes : (H-par) explique-t-elle la multiplicité d'orbites hors des cycles ? Exige un vrai test d'isomorphisme (nauty ou raffinement de partition), pas une forme canonique sur $n!$ permutations.
 - **OP-D75-4** [MEDIUM, règle P] — Identifier le groupe agissant sur les minimiseurs et le stabilisateur de $M$ sous basculement (2 à 20 sous-ensembles préservant $M$ selon le graphe — structure de groupe probable, non identifiée).
 - **OP-D75-5** [LOW, règle P] — Trancher entre le minimax P et la variante en comptage total (MaxCut), qui diffèrent à partir de $C_7$. Le choix doit être argumenté structurellement (P est locale, MaxCut est globale), pas supposé.
+
+---
+
+## Session 75 (suite) — 18 August 2026 — D68 déposé, D69 rédigé, théorème de parité des trous, et l'erratum D43 qui résout l'écart de 101
+
+### Résumé
+
+Suite directe de la Session 75. Trois livrables : **D68 déposé (10.5281/zenodo.21997433)**, **D69 rédigé et compilé** (règle P comme combinatoire autonome), et un **erratum D43 intégré à D68** qui résout un écart traîné depuis plusieurs sessions. Sept scripts supplémentaires (10 à 15). Un renversement inattendu sur la mer, un théorème de parité neuf, et un fil « onde stationnaire » qui a produit deux échecs de test propres avant de déboucher sur une architecture cohérente mais non calculable en l'état.
+
+### D68 — versions 3 et 4, puis dépôt
+
+**v3** : errata D46 vérifiés directement contre le fichier source, et **renforcés**. L'erratum 1 gagne une seconde moitié non relevée auparavant — D46 ne liste que **quatre des huit** configurations cohérentes de $K_4$, les quatre listées étant les coupes $\emptyset,\{3\},\{2\},\{2,3\}$, qui forment un **groupe de Klein**, donc un sous-groupe propre ; les quatre absentes sont $\{0\},\{1\},\{1,2\},\{1,3\}$. L'erratum 2 est **adouci** : D46 fait suivre son lemme fautif d'une Remarque « Resolution of the apparent contradiction » qui identifie le problème — seuls le titre et l'énoncé sont faux, non la lucidité de l'auteur. Ma formulation initiale était injuste et a été corrigée.
+
+**Affirmation retirée en v3** : « aucun des deux errata ne se propage » était trop optimiste. D46 définit la pulsation comme $\Phi:s\mapsto-s$ (toutes les arêtes), D68 la dérive comme $\sigma_S$ (arêtes de coupe seulement). Le rapport $P_2/P_1$ vaut $-1$ uniformément sous $\Phi$, mais seulement sur les arêtes de coupe sous $\sigma_S$ — et ce rapport alimente $(A)\wedge(B)$ de D29, donc D50 et D64. C'est **OP-D68-7**, priorité haute.
+
+**v4** : ajout de l'erratum D43 (ci-dessous). 27 pages, compilation propre en quatre passes, zéro référence non résolue, zéro marqueur.
+
+**Dépôt** : `D68_pulsation_bipartition.pdf/.tex`, `D68_references.bib`, plus les cinq scripts `PDL_pulsation_regimes_script1..5.py`. Sommes MD5 consignées dans la fiche de dépôt.
+
+### Erratum D43 — et la résolution de l'écart de 101
+
+**L'erratum.** D43 écrit que le compte brut $E_{\mathrm{bord}}^{\mathrm{raw}}=204$ devient $329$ « après ajout des $n_K\times c=76\times3=228$ arêtes d'interface ». Or $204+228=432$. **La phrase est un pont narratif, non la démonstration** : le théorème de D43 donne
+$$E_{\mathrm{bord}} = n_K(1+c) + (\Delta n+1)^2 = 76\times4 + 25 = 304+25 = 329$$
+qui ferme exactement. Le terme d'interface est $n_K(1+c)=304$, non $n_Kc=228$ — trois arêtes vers la mer **plus une arête structurelle par bloc**, comme D43 le dit lui-même en décomposant ses trois termes. Le résultat est intact ; seule la passerelle était fausse.
+
+**La résolution du 101, résultat neuf.** Deux écarts consignés séparément dans le corpus sont le même nombre :
+$$329-228 = 101 \qquad\text{et}\qquad E_{\mathrm{sea}}-R_{\mathrm{sea}} = 10188-10087 = 101$$
+et il se décompose :
+$$\boxed{101 = n_K + (\Delta n+1)^2 = 76 + 25}$$
+**Une arête structurelle par bloc, plus le terme d'isospin.** Ce que le corpus enregistrait comme anomalie est une décomposition. Réserve consignée dans D68 : cela n'établit pas encore que simulation et quintuplet comptent le même objet dans deux conventions — cela identifie exactement ce qu'il faudrait vérifier.
+
+**OP-D75-1 RÉSOLU par lecture hiérarchique.** D43 justifie $c=3$ par la 3-régularité de $K_4$. Lu comme portant sur l'intérieur d'un cœur, c'est intenable ($K_{24}$ est 23-régulier, et $24\not\equiv1,4\bmod12$ interdit toute décomposition de Steiner). La lecture correcte est hiérarchique et c'est celle que le comptage de D43 exige : $n_K=2n_u+n_d=76$ compte des **blocs**, et **chaque entité d'un cœur EST une fermeture $K_4$ au niveau inférieur** plutôt que d'en contenir. Il n'y a donc pas de blocs $K_4$ *dans* $K_{24}$ au sens d'une décomposition d'arêtes, tandis que chaque sommet de $K_{24}$ *est* un $K_4$ — les deux énoncés sont compatibles et tous deux nécessaires. **Confirmé par Cédric.** $c=3$ est légitime.
+
+**Conséquence pour la parité.** Le théorème de parité des trous porte sur **204** (bordure topologique, somme des périmètres), non sur 329 qui inclut les arêtes d'interface.
+
+### D69 — la règle P comme combinatoire autonome
+
+**Décision** (déjà prise en Session 75, confirmée) : ne pas intégrer la règle P dans D68. Trois raisons — objet défini par la propriété opposée (non-invariance vs invariance par basculement) ; statut épistémique incompatible avec un document ne contenant que des théorèmes ; « terminer la recherche » n'a pas de terme défini.
+
+**Contenu de D69** (12 pages) : six théorèmes, deux résultats négatifs, quatre problèmes ouverts.
+- **Thm 4.1** — Pour $G$ connexe : $\min M=0 \iff G$ biparti, et le minimiseur est alors **unique à inversion près**. Vérifié exhaustivement sur les **27 474 graphes connexes étiquetés** à $n\le6$.
+- **Thm 4.2** — Sur $K_n$ : $\min M=\lceil n/2\rceil-1$ à la partition équilibrée, $\binom{n}{n/2}/2$ minimiseurs en **une seule orbite**. $K_{24}$ : 1 352 078. $K_{28}$ : 20 058 300. Écart same/opposite $=1$, irréductible car le degré $n-1$ est impair.
+- **Cor 4.3** — **Frustration et dégénérescence arrivent ensemble.**
+- **Thm 5.1** — Sur $C_n$ : minimiseurs = états à plages maximales de longueur 1 ou 2 = **couplages de taille impaire** (la parité autour d'un cycle impair force un nombre impair d'arêtes monochromes).
+- **Thm 5.2** — Deux formules closes (F1) et (F2), vérifiées $n\le15$, étendues à $n=31$.
+- **Thm 5.3** — **Identité de Lucas** $T(n)=L(n)+2$ si $3\mid n$, $L(n)-1$ sinon. **Démonstration propre** : le polynôme caractéristique de la matrice de transfert se factorise en $(\lambda^2-\lambda-1)(\lambda^2+\lambda+1)$, d'où le spectre $\{\varphi,-1/\varphi,\omega,\bar\omega\}$ et la correction $\omega^n+\bar\omega^n$.
+- **Neg 6.1** — **(H-aut) réfutée** dans la famille des cycles. Mécanisme : les couplages de taille 3 n'existent qu'à partir de $\lfloor L/2\rfloor\ge3$, soit $L\ge7$ — ce qui **explique** l'apparition de $C_7$ au lieu de la constater.
+- **Thm 7.1** — $M$ **non invariant par basculement**. Propriété structurelle décisive : la règle voit ce que toute quantité invariante ignore.
+- **Prop 8.1** — Couche des relations : le désaccord $\delta_{ij}=y_{ij}\sigma_{ij}$ est **pure jauge sur graphes complets** (admissibles $=2^{n-1}=$ nombre de jauges, égalité exacte) et porte **$c-t$ bits** ailleurs ($c$ cyclomatique, $t$ triangles indépendants). Sur $K_n$, $t=c$ : couche vide. Sur maillage sans triangle : $c$ bits pleins.
+- **Neg 8.2** — **Pas de battement** : deux involutions sur variables disjointes commutent, leur composée est involutive, période $\le2$. **Théorème, non constat** — j'aurais dû le voir avant de calculer.
+
+**Statut épistémique tenu partout** : la Section 2 est encadrée comme hypothèse exploratoire, avec la phrase « viser une lacune identifiée indépendamment ne rend pas la règle correcte, cela la rend testable — propriété différente et moindre ».
+
+### Le renversement sur la mer, et le théorème de parité des trous
+
+**Renversement.** Sous la règle P, une mer quadrangulaire bipartie a **un seul** état fondamental (rigide) tandis que $K_{24}$ et $K_{28}$ en ont des millions. **La dégénérescence est dans les cœurs, pas dans la mer** — l'inverse de l'image portée toute la session.
+
+**Euler.** Une mer 4-régulière quadrangulaire exige $\chi=0$ : impossible sur $S^2$, possible sur le tore. Le degré moyen 3,961 de la simulation D43 ($V=5144$, $E=10188$) est cohérent avec bords et trous, non avec une 4-régularité stricte.
+
+**Théorème de parité des trous (neuf).** Dans une mer quadrangulaire, la somme des périmètres de faces vaut $2E$ (pair) et les quadrilatères contribuent pair, donc
+$$\text{le nombre de trous à périmètre IMPAIR est PAIR — zéro ou deux, jamais un ni trois.}$$
+L'argument ne dépend pas du nombre de trous. Vérifié sur les nombres réels : $E_{\mathrm{bord}}^{\mathrm{raw}}=2E-4F=204$, pair.
+
+**Conséquence dérivée (neuf).** Les deux cœurs jumeaux ont même périmètre $p_t$, donc $2p_t+p_s=204$ et
+$$\boxed{p_s = 204-2p_t \text{ est TOUJOURS PAIR}}$$
+**Le trou du quark solitaire est nécessairement pair, donc rigide.** Les deux jumeaux partagent leur parité. Dichotomie totale : soit les trois trous sont pairs et la mer est entièrement figée, soit **exactement les deux trous jumeaux sont impairs**. Comme la mer bouge, la seconde branche s'impose.
+
+**Le solitaire, pas le type.** Pour le neutron ($1u$, $2d$), les jumeaux sont les down et $p_u$ est le pair. **Ce qui est figé n'est pas un type de quark mais le quark sans jumeau.**
+
+### Géométrie des trous et interface
+
+- **Coût d'interface toujours exactement 1**, jamais plus, et **indépendant de la taille du cœur** (identique pour $n=4$ et $n=28$, jusqu'à $n=100$). Réfute la réserve « artefact de petite taille ».
+- **Critère de non-frustration** : $s_{\min}=0$, où $s_{\min}$ = classe minoritaire de couleurs parmi les trois points d'attache.
+- $L$ **pair** : libre $\iff$ les trois écarts sont pairs. Exige $L\ge6$. Fraction libre $\to1/4$ (partitions de $L/2$ en trois parts).
+- $L$ **impair** : frustré $\iff$ les trois points sont **consécutifs**, motifs $(1,1,L-2)$ uniquement. Fraction libre $\to1$.
+- **Un trou impair est doublement favorable** : mer mobile ET interface presque toujours gratuite.
+- **Indépendance de l'épaisseur** : $h=2$ et $h=3$ donnent des comptes identiques. Tout est déterminé par le bord seul — le modèle réduit est le bon objet.
+- **Structure des états fondamentaux du prisme** : couplages de taille impaire par anneau, anneaux **alignés** (décalage 0), d'où la **bijection avec les minimiseurs de $C_L$ seul** — même compte, même identité de Lucas. Unifie scripts 9b et 13.
+- **Partage d'un trou par deux cœurs** : possible **à coût nul** (excès 0 pour tout $L\ge6$), mais plus rare — rapport 0,80–0,87 sur bord impair contre 0,19–0,30 sur bord pair. **La pénalité n'existe que sur bords pairs.** Trois cœurs sur un trou : possible à $L=9$, **impossible** à $L=10$ (classes de 5, au plus un triple monochrome par classe).
+- **Un trou unique ne peut jamais rendre la mer mobile** : avec un seul trou la parité force zéro trou impair. **Il faut au moins deux trous.** Premier énoncé de la session qui exclut une topologie.
+
+### Le fil « onde stationnaire » — deux échecs propres et une architecture
+
+**Ce que le corpus contient déjà** (D01, corrigé par D67) : deux ondes contra-circulantes, chacune un demi-tour par période, et la relation de fermeture $\pi R\approx2\lambda_C$. Ferme à **0,040 %** (proton) et **3,44 %** (neutron), facteur ~86. D67 la lit comme l'expression géométrique du recouvrement double $SU(2)$, $T^2=-\mathbb{1}$.
+
+**Connexion structurelle** : les deux ondes contra-circulantes **sont** les deux classes de phase de D68. Et deux ondes contra-propagatives **interfèrent** — c'est le couplage qui manquait au script 15, dont les deux couches commutaient.
+
+**Test 1 — ÉCHEC.** L'identification « le circuit de l'onde est le bord d'un trou » est réfutée : la mobilité exige un périmètre impair, la fermeture d'onde exige la divisibilité par 4, donc pair. Incompatibles sur le même trou.
+
+**Test 2 — ÉCHEC.** Les déviations ne correspondent à aucun comptage du corpus. $1/\text{dev}$ vaut 2564 (proton) et 29 (neutron) ; balayage des neuf quantités disponibles en simple, produit et rapport, à 3 % près : **aucune correspondance**. Le critère de succès fixé d'avance — prédire le facteur 86 — n'est pas atteint.
+
+**L'architecture qui subsiste** (qualitative, non calculable en l'état). L'onde parcourt le nucléon d'un pôle à l'autre par un méridien ; les cœurs naviguent à la surface. Deux ondes contra-circulantes produisent un nombre **pair** de nœuds. Or il y a **trois** cœurs, dont deux indiscernables. **Aucun arrangement de repos n'existe** — chaises musicales à chaise manquante. Ce n'est pas un minimum, c'est une frustration géométrique.
+
+**Convergence de deux fils indépendants** : l'onde dit *qu'il faut* bouger, la parité des trous dit *où* c'est possible (autour des jumeaux, jamais du solitaire). Ni l'un ni l'autre n'a été construit en vue de l'autre.
+
+**Ce qui manque** : le nombre de nœuds n'est pas dérivé de C1–C4. Sans lui, « pair contre impair » est une architecture d'argument, pas un calcul.
+
+**Noether**, discuté : ne fournira pas le moteur. Une symétrie est une affirmation d'indifférence ; les lois de conservation **empêchent** de sélectionner. Sa lecture correcte ici est inverse — trois cœurs sur un nombre pair de nœuds **brisent** la symétrie de rotation, donc rien n'est conservé, donc rien n'arrête la dérive.
+
+### Sept scripts supplémentaires (10 à 15)
+
+| Script | Objet | Temps |
+|--------|-------|-------|
+| `PDL_rule_P_script10.py` | Dichotomie bipartie, exhaustif sur 27 474 graphes connexes étiquetés ; $K_n$ jusqu'à $n=8$ ; dimensionnement honnête d'OP-D69-1 | 1,4 s |
+| `PDL_rule_P_script11.py` | $K_{24}$/$K_{28}$ réels ; Euler contre la sphère ; grilles toriques ; interface | 6,0 s |
+| `PDL_rule_P_script12.py` | Géométrie des trous ; coût d'interface indépendant de $n$ ; critère $s_{\min}=0$ | 0,9 s |
+| `PDL_rule_P_script13.py` | Cas impair caractérisé ; structure des défauts ; bijection avec $C_L$ | 1,5 s |
+| `PDL_rule_P_script14.py` | Partage d'un trou par deux cœurs (**non déposé avec D69** — relève du régime nucléonique) | 3 s |
+| `PDL_two_layer_script15.py` | Couche des relations ; jauge vs information ; absence de battement | 122 s |
+
+**`PDL_rule_P_script9.py` (première version) était intraitable** et a été remplacé par `script9b`. **`PDL_rule_P_script10.py` (première version) ne parvenait pas au bout** — forme canonique sur $n!$ permutations — et a été **réécrit** pour faire exactement ce que D69 lui attribue, avec le défaut de conception **consigné dans son en-tête** plutôt que réparé en silence. Sa Partie 3 chiffre pourquoi la méthode naïve échoue (à $n=7$ : $2^{21}\times5040$ opérations pour 853 graphes réellement distincts).
+
+### Erreurs commises dans cette suite de session
+
+1. **Identification onde/bord de trou** proposée puis réfutée par mon propre test. Troisième « convergence apparente » de la session à ne pas tenir.
+2. **Reformulation successive de l'objet** après chaque échec de test (bord de trou → circuit complet → méridien) — exactement le schéma des variantes d'une même famille que le protocole interdit. Signalé et arrêté.
+3. **Script 15 conçu pour chercher ce que l'algèbre interdit** : deux involutions sur variables disjointes ne peuvent pas dépasser la période 2. À voir avant de calculer.
+4. **Script 10 livré sans exécution complète** — le défaut n'a été trouvé qu'au moment du dépôt. Corrigé, et tous les scripts de D69 exécutés jusqu'au bout avant livraison.
+5. **Nommage `_FINAL`** pour des fichiers destinés à être téléchargés par des pairs. Corrigé sur remarque de Cédric : convention du registre (`D68_pulsation_bipartition.pdf`), recompilation sous les noms définitifs puisque le `.tex` appelle `\bibliography{D68_references}`.
+6. **« Runtimes are seconds throughout »** dans D69 alors que script15 prend 122 s. Corrigé.
+
+### Vérifications de verrouillage (suite)
+
+- **Théorème 9.5 de D68 relu à froid**, ligne par ligne, couverture des cas ajoutée (elle manquait). **Vérification numérique indépendante des deux inégalités clés** : 2 314 150 couples $(\Delta,S)$ à $n=6,7$, zéro violation, marge minimale 6. Coefficient $3(n-3)/(n-5)$ : 9 à $n=6$, 3,0006 à $n=10^4$ — strictement $>3$ pour tout $n$ fini.
+- **Errata D46 confrontés au fichier source** ; deux assertions ont d'abord échoué au contrôle, dû à mon script utilisant un représentant de coupe différent de celui du Tableau 2 — non au document. Les deux passages ont néanmoins été reformulés ($\sigma_{\{0,1\}}=\sigma_{\{2,3\}}$ signalé explicitement).
+- **Erratum D43 : dix-neuf assertions arithmétiques recalculées**, toutes vérifiées.
+- **D69 : quinze assertions numériques recalculées**, toutes vérifiées.
+- **DOI croisés contre le registre** : onze sur onze concordent pour D68. DM v32/v33 : le registre associe `21520303` à **DM v33**, non v32 — mon `.bib` n'était pas fautif. D42 confirmé sous `20041348`.
 
 ---
 
@@ -1333,11 +1463,21 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 - **OP-D68-4** [MEDIUM] — Généralité de D68 : Thm 3.1 devrait s'étendre aux graphes connexes quelconques ; Thm 9.5 probablement pas (parité des two-graphs = propriété des graphes complets). Période arbitraire non traitée.
 - **OP-D68-5** [MEDIUM] — Un objet qui **accumule** à travers les cycles est-il constructible dans C1–C4 ? Toute quantité examinée est instantanée ; la structure se referme après deux pas, donc aucun critère de stabilité sur la durée n'a de prise. Direction structurellement distincte des trois familles réfutées.
 - **OP-D68-6** [LOW, fondationnel] — Remplacer C2 par le postulat « le signe d'une relation est le produit des états de ses relata » ; C2 devient un théorème (Harary). Compatibilité avec tous les usages de C2 depuis D01 non vérifiée.
-- **OP-D75-1** [MEDIUM, corpus] — La justification de $c=3$ dans D43 invoque des blocs $K_4$ 3-réguliers dans les cœurs, structure absente ($K_{24}$, $K_{28}$ sont complets sur des entités — confirmé par Cédric). Réécrire l'argument ; les valeurs 329 et 468 sont vérifiées indépendamment. **Touche la chaîne C1–C4 → $G$.**
+- **OP-D75-1** ✅ **RÉSOLU (Session 75 suite)** — lecture hiérarchique : chaque entité d'un cœur **est** un $K_4$ au niveau inférieur. $c=3$ légitime, chaîne C1–C4 → $G$ non menacée. Voir D68 §11.2.
 - **OP-D75-2** [MEDIUM, corpus] — $R_{\mathrm{sea}}=10087$ impair vs règle $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ (pair par construction) : incompatibles. Explique pourquoi $n_{\mathrm{sea}}$ n'a jamais reçu de valeur.
 - **OP-D75-3** [MEDIUM, règle P] — Balayage exhaustif de P sur tous les graphes connexes : (H-par) explique-t-elle la multiplicité d'orbites hors des cycles ? Exige un vrai test d'isomorphisme.
 - **OP-D75-4** [MEDIUM, règle P] — Identifier le groupe agissant sur les minimiseurs et le stabilisateur de $M$ sous basculement.
 - **OP-D75-5** [LOW, règle P] — Départager minimax P et MaxCut, qui diffèrent à partir de $C_7$ (14 minimiseurs vs 7, non emboîtés).
+
+### Ouverts — Session 75 (suite) : parité des trous, onde, régime nucléonique
+
+- **OP-D75-6** [HIGH] — **Le nombre de nœuds de l'onde stationnaire n'est pas dérivé de C1–C4.** Sans lui, l'argument « nombre pair de nœuds contre trois cœurs » est une architecture d'argument, pas un calcul. C'est le verrou du fil « onde », et tout le reste en dépend.
+- **OP-D75-7** [HIGH] — **Répartition des 204 unités de bord entre les trois trous.** Le théorème donne $p_s$ pair et $p_t$ de parité commune, mais pas les valeurs. Les mesurer sur la construction Session 21 de D43 trancherait si les deux trous jumeaux sont effectivement impairs — donc si la mer est mobile.
+- **OP-D75-8** [MEDIUM] — **Le circuit de l'onde et les bords de trous ne sont PAS le même objet** (test 1, réfuté). Quelle est alors la relation entre le méridien de D01 et la topologie des trous ? Sans réponse, l'onde et la parité restent deux fils solides qui ne se parlent pas.
+- **OP-D75-9** [MEDIUM] — **Les déviations de fermeture (0,040 % / 3,44 %, facteur ~86) ne correspondent à aucun comptage du corpus** (test 2, balayage négatif sur neuf quantités en simple, produit et rapport). Sont-elles dérivables, ou faut-il les traiter comme des données d'entrée ?
+- **OP-D75-10** [MEDIUM] — **Deux trous ou trois ?** La parité autorise les deux (zéro ou deux trous impairs dans les deux cas) ; seule une préférence de fréquence les sépare (partage plus rare d'un facteur 1,2 à 5, et cette pénalité n'existe que sur bords pairs). Rien ne sélectionne. À trancher, ou à consigner comme indéterminé.
+- **OP-D75-11** [LOW] — **La simulation et le quintuplet comptent-ils le même objet dans deux conventions ?** L'identité $101=n_K+(\Delta n+1)^2$ le suggère fortement mais ne l'établit pas ; vérification à faire contre la construction Session 21.
+- **OP-D69-1 à OP-D69-4** — voir D69 : balayage d'isomorphisme, complexité de $\min M$, groupe agissant sur les minimiseurs, couplage entre couches. OP-D69-4 est la seule direction du document qui ne soit pas fermée par une obstruction algébrique.
 
 ### Ouverts — MEDIUM priority
 - **OP-D63-2** : dérivation formelle de w(n) = R_sea/(R_sea+r(n)) depuis C1–C4 en mode transitoire. Entrée : D61, D63.
@@ -1450,6 +1590,24 @@ LAYER 19  PDL–OFN Bridge
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
 **Priorités Session 76 :**
+
+1. **[HIGH — Session 75 suite]** **Déposer D69** (12 pages, compilé, prêt ; DOI à réserver). Joindre les sept scripts `PDL_rule_P_script8, 9b, 10, 11, 12, 13` et `PDL_two_layer_script15`. **`script14` n'en fait pas partie** — il relève du régime nucléonique. Fiche de dépôt prête avec sommes MD5.
+2. **[HIGH — Session 75 suite]** Mettre à jour `10.5281zenodo.txt` avec D69, pousser sur GitHub (`.tex`, `.bib`, scripts de D68 et D69), mettre à jour cedriclaubscher.ch.
+3. **[HIGH]** **OP-D68-7** — Trancher la divergence D46/D68 sur la définition de la pulsation ($\Phi$ vs $\sigma_S$) avant tout usage de D50/D64 reposant sur $P_2/P_1=-1$ uniforme. Trois issues énoncées dans D68 §11.1, non départagées.
+4. **[HIGH — Session 75 suite]** **OP-D75-7** — Mesurer la répartition des 204 unités de bord entre les trois trous sur la construction Session 21 de D43. C'est un fait de la structure, pas une déduction, et il tranche si la mer est mobile. **Prérequis à tout D70.**
+5. **[HIGH]** **OP-D68-3** — Départager « axiome manquant portant sur la phase » et « contingence irréductible » avant toute nouvelle recherche C5.
+6. **[MEDIUM — Session 75 suite]** **Envisager un D70** sur le régime nucléonique : théorème de parité des trous, conséquence sur le quark solitaire, géométrie d'interface, `script14`. **Ne pas l'écrire avant OP-D75-7**, dont il dépend entièrement.
+7. **[MEDIUM]** **OP-D64-1 via la règle P** — Le critère $(A)\wedge(B)$ **est** une règle de voisinage sur les états ; la règle P en est la généralisation à la multiplicité. Direction quantitative correcte (corréler les voisins réduit $4^{R_{\mathrm{surf}}}$, et D64 échoue **par excès** de 36,7 ordres). Obstacle : rapport à l'indépendance de D42 ($\delta=0$) — couches distinctes (arêtes croisées vs états internes) mais liées par $s_{ij}=x_ix_j$. **Protocole imposé par D64 : deux masses de trous noirs séparées de plusieurs ordres, critère de succès fixé AVANT calcul.**
+8. **[MEDIUM]** **OP-D75-2** — Trancher $R_{\mathrm{sea}}=10087$ (impair) contre la règle $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ (pair). Possiblement éclairé par l'identité $101=n_K+(\Delta n+1)^2$.
+9. **[LOW]** Vérifier si D42v3 a été déposé (le registre porte `20041348` avec le titre v1).
+
+**Priorités héritées (Session 75, traitées ou reportées) :**
+
+- ✅ **Déposer D68** — fait, 10.5281/zenodo.21997433.
+- ✅ **OP-D75-1** — résolu par lecture hiérarchique.
+- ✅ **Rédiger D69** — fait, prêt au dépôt.
+
+**Anciennes priorités Session 75 :**
 
 1. **[HIGH — Session 75]** **Déposer D68 sur Zenodo** (v3 compilée, 26 pages, vérifiée : Thm 9.5 relu à froid + 2 314 150 couples vérifiés numériquement ; errata D46 confirmés contre le source). Réserver le DOI, mettre à jour `10.5281zenodo.txt`, ce fichier, et cedriclaubscher.ch. Déposer les cinq scripts `PDL_pulsation_regimes_script1..5.py` en matériel supplémentaire sous le même DOI.
 2. **[HIGH — Session 75]** **OP-D68-7** — Trancher la divergence D46/D68 sur la définition de la pulsation avant tout usage de D50/D64 reposant sur $P_2/P_1=-1$ uniforme. Trois issues énoncées dans D68 §11.1, non départagées.
