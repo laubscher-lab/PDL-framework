@@ -1,0 +1,503 @@
+% ============================================================
+% D69 — The Proximity Rule P: A Minimax Selection Principle on
+%       Signed Graphs, with Closed Enumeration on Cycles and a
+%       Dichotomy between Complete Graphs and Sparse Meshes
+%
+% Author  : Cédric Laubscher
+% Corpus  : PDL Document Series, D69
+%
+% STATUS OF THIS DOCUMENT
+%   D69 is a COMBINATORICS paper. Every theorem below is a
+%   statement about finite graphs and admits no physical reading.
+%   The rule P studied here is NOT derived from C1-C4 and has
+%   resolved no open problem of the corpus. Its motivation is
+%   recorded in Section 2 and its epistemic status as an
+%   EXPLORATORY HYPOTHESIS is stated in Table 1 and never
+%   softened. A reader who rejects the motivation entirely loses
+%   nothing of Sections 3 to 8.
+%
+% Depends : D46 (10.5281/zenodo.19956932)
+%           D60 (10.5281/zenodo.20639684)
+%           D68 (DOI to be filled once deposited)
+%
+% Scripts : PDL_rule_P_script8.py, script9b, script10, script11,
+%           script12, script13, script14 (deposited with this
+%           document under the same DOI)
+% ============================================================
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+
+\pdfstringdefDisableCommands{%
+  \def\ensuremath{}%
+  \def\mathrm#1{#1}%
+  \def\mathcal#1{#1}%
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{negresult}[theorem]{Negative Result}
+\newtheorem{openproblem}{Open Problem}
+
+\newcommand{\PDL}{\textsc{pdl}}
+\newcommand{\same}{\mathrm{same}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Coh}{\mathrm{Coh}}
+\newcommand{\Kn}{K_n}
+
+\newtcolorbox{theorembox}[1][]{colback=blue!5,colframe=blue!60!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{negbox}[1][]{colback=red!5,colframe=red!60!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{openprobbox}[1][]{colback=orange!8,colframe=orange!70!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{hypbox}[1][]{colback=gray!8,colframe=gray!60!black,fonttitle=\bfseries,title=#1}
+
+\title{\textbf{The Proximity Rule P}\texorpdfstring{\\[4pt]\large A Minimax Selection Principle on Signed Graphs, with Closed Enumeration on Cycles and a Dichotomy between Complete Graphs and Sparse Meshes}{: A Minimax Selection Principle on Signed Graphs}\\[6pt]
+{\large PDL Document D69}}
+
+\author{C\'edric Laubscher\\[4pt]
+\small Independent Researcher, Switzerland\\
+\small \href{https://cedriclaubscher.ch}{cedriclaubscher.ch}}
+
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document studies a single combinatorial object. Given a finite simple graph $G$ and an assignment of states $x:V\to\{\pm1\}$, write $\same(v)$ for the number of neighbours of $v$ sharing its state, and $M(x)=\max_v\same(v)$. The \emph{proximity rule} P selects the assignments minimising $M$. The rule is invariant under the global inversion $x\mapsto-x$, it is local in the sense that it constrains each vertex separately, and it is minimax rather than aggregate.
+
+Four groups of results are established. First, a dichotomy: for connected $G$, $\min M=0$ if and only if $G$ is bipartite, and the minimiser is then unique up to inversion; on complete graphs $\min M=\lceil n/2\rceil-1$, attained at the balanced bipartition, with $\binom{n}{n/2}/2$ minimisers forming a single orbit. Frustration and degeneracy therefore arrive together, and the imbalance between same-state and opposite-state neighbours is exactly $1$ and irreducible whenever the degree is odd.
+
+Second, a complete enumeration on cycles. The minimisers of $C_n$ are exactly the states all of whose maximal runs have length one or two; equivalently, the odd-size matchings of $C_n$. Two closed formulas count them and their $\Aut$-orbits, verified by exhaustive search to $n=15$ and extended to $n=31$. The total count satisfies $T(n)=L(n)+2$ when $3\mid n$ and $L(n)-1$ otherwise, with $L$ the Lucas numbers; the period-three correction is $\omega^n+\bar\omega^n$ for $\omega$ a primitive cube root of unity, so the transfer matrix carries the spectrum $\{\varphi,-1/\varphi,\omega,\bar\omega\}$.
+
+Third, a separation of hypotheses. Within the cycle family, orbit multiplicity does not track automorphism strength: $|\Aut(C_n)|=2n$ grows linearly while the orbit count jumps $1,2,4,7,14,30$. Every odd cycle from $C_7$ onward has several orbits and every even cycle exactly one, so $C_7$ is the first member of a family rather than an accident.
+
+Fourth, and structurally the most consequential: $M$ is not invariant under switching. Rule P therefore separates configurations that every switching-invariant functional identifies. A companion computation shows that a second layer of states carried by the edges is a pure gauge on complete graphs and carries exactly $c-t$ independent bits on sparse meshes, where $c$ is the cyclomatic number and $t$ the number of independent triangles --- so the relation layer is empty on complete graphs and non-empty precisely where triangles are scarce.
+
+The rule is not derived from any axiom and resolves no open problem of the \PDL\ corpus. Its status is that of an exploratory hypothesis throughout, and the document is written so that its combinatorial content stands independently of that status. Seven verification scripts are deposited under the same \textsc{doi}.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% ============================================================
+
+\subsection{What this document is, and is not}
+
+This is a combinatorics document. It studies one rule on finite graphs, establishes what that rule does, and stops there. No physical interpretation is offered for any theorem below, and none is required to read them.
+
+The rule arose in the course of \PDL\ work, and Section~\ref{sec:motivation} records why. That record is included because a rule invented for no reason and a rule invented for a reason that failed are different objects, and the difference belongs in the archive. But the motivation carries no weight in what follows: a reader who rejects it entirely loses nothing of Sections~\ref{sec:definition} to~\ref{sec:twolayer}.
+
+\subsection{Epistemic status of every claim}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{llp{6.6cm}}
+\toprule
+\textbf{Claim} & \textbf{Status} & \textbf{Basis} \\
+\midrule
+Theorem~\ref{thm:bipartite} & Unconditional theorem & Two-line proof; exhaustive to $n=7$ \\
+Theorem~\ref{thm:complete} & Unconditional theorem & Direct count; verified $n=3$--$8$ \\
+Theorem~\ref{thm:runs} & Unconditional theorem & Proved; exhaustive to $n=15$ \\
+Theorem~\ref{thm:formulas} & Unconditional theorem & Proved; verified to $n=15$, extended to $31$ \\
+Theorem~\ref{thm:lucas} & Unconditional theorem & Transfer matrix; verified to $n=39$ \\
+Theorem~\ref{thm:switching} & Unconditional theorem & Exhibited counterexamples \\
+Proposition~\ref{prop:layers} & Unconditional theorem & Cyclomatic identity; verified \\
+Negative Result~\ref{neg:haut} & Established negative result & Exhaustive on the cycle family \\
+Negative Result~\ref{neg:beat} & Established negative result & Two-line proof (commuting involutions) \\
+Section~\ref{sec:motivation} & \textbf{Exploratory hypothesis} & Not derived; no result depends on it \\
+OP-D69-1 to OP-D69-4 & Open problems & Stated, not resolved \\
+\bottomrule
+\end{tabular}
+\caption{Complete epistemic inventory of D69. No claim in this document holds a status not listed here. In particular, nothing below is claimed to follow from C1--C4.}
+\label{tab:status}
+\end{table}
+
+% ============================================================
+\section{Motivation, and its limits}
+\label{sec:motivation}
+% ============================================================
+
+\begin{hypbox}[Status of this section]
+What follows is the reason the rule was written down. It is an exploratory hypothesis. It has produced no number it was not designed to produce, and it has resolved no open problem of the \PDL\ corpus. It is recorded, not asserted.
+\end{hypbox}
+
+D68~\citep{D68} establishes that the four \PDL\ axioms~\citep{D01} do not determine the phase bipartition of the pulsation: the frustration count is identical across every candidate, so no minimisation of leakage can discriminate, and the one admissible refinement that does discriminate always designates a single entity, which a relational theory cannot use. The document localises what a further constraint would have to look like: it must bear on the phase, which the axioms do not see, and it cannot be any quantity invariant under switching.
+
+That is a narrow target, and it admits an obvious candidate. A constraint on the states of entities and their neighbourhoods is not switching-invariant, and it does bear on the phase. The only form such a constraint can take without violating the relational commitment is one that never refers to \emph{which} state a vertex holds, but only to how many of its neighbours agree with it. Rule P is that constraint, in its minimax form.
+
+Two things should be said plainly. The rule is an addition to the axioms, not a consequence of them; presenting it otherwise would be the failure mode the corpus guards against. And the fact that it aims at a gap identified independently does not make it correct --- it makes it testable, which is a different and lesser property. What the rule does, as a matter of combinatorics, is the subject of the rest of this document.
+
+% ============================================================
+\section{Definition and elementary properties}
+\label{sec:definition}
+% ============================================================
+
+\begin{definition}[Rule P]
+\label{def:P}
+Let $G=(V,E)$ be a finite simple graph and $x:V\to\{+1,-1\}$ an assignment of states. For $v\in V$ put
+\[
+\same(v) \;=\; \#\{\,w\sim v \;:\; x_w=x_v\,\},\qquad
+M(x) \;=\; \max_{v\in V}\same(v).
+\]
+Rule P selects the assignments minimising $M$; the induced edge signs make $G$ a signed graph in the sense of~\citet{Zaslavsky1982}. Write $\min M(G)$ for that minimum and $\mathcal{P}(G)$ for the set of minimisers.
+\end{definition}
+
+Three properties follow at once and are used throughout.
+
+\begin{proposition}
+\label{prop:elementary}
+\begin{enumerate}
+\item[(i)] $M(-x)=M(x)$: rule P is invariant under the global inversion.
+\item[(ii)] $\mathcal{P}(G)$ is closed under inversion, so its elements come in pairs $\{x,-x\}$ and are counted below modulo that pairing.
+\item[(iii)] Writing $\sigma_{ij}=x_ix_j$ for the induced edge signs, $\same(v)$ counts the positive edges at $v$. Rule P therefore minimises the largest number of positive edges at any vertex.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Inversion preserves the relation $x_w=x_v$ for every pair, hence every $\same(v)$. (ii) Immediate from (i). (iii) $x_w=x_v$ if and only if $x_vx_w=+1$.
+\end{proof}
+
+\begin{remark}[Minimax, not aggregate]
+\label{rem:minimax}
+The aggregate variant, minimising $\sum_v\same(v)$ --- equivalently, minimising the number of positive edges --- is the MaxCut problem~\citep{Karp1972}. It is not the same rule. The two agree on every structure tested here except $C_7$, where P has $14$ minimisers modulo inversion and MaxCut has $7$, and the former is not contained in the latter (\texttt{script8}, final part). The two are therefore genuinely inequivalent, and a choice between them must be argued rather than assumed. Rule P is the local one: it constrains every vertex, whereas the aggregate constrains only the total.
+\end{remark}
+
+\begin{remark}[Rule P opposes agreement]
+\label{rem:opposes}
+Under $\sigma_{ij}=x_ix_j$, every assignment induces a balanced signing: the product around any cycle is a product of squares, hence $+1$. Coherence in the Harary sense~\citep{Harary1953} therefore cannot distinguish assignments at all, and the all-same state is perfectly coherent while maximising $M$. Rule P pushes away from it: on the Petersen graph the minimiser has $3$ positive edges against $15$ for the all-same state (\texttt{script8}). Any principle maximising agreement and rule P pull in opposite directions, and one must say which dominates.
+\end{remark}
+
+% ============================================================
+\section{The dichotomy: bipartite rigidity, complete degeneracy}
+\label{sec:dichotomy}
+% ============================================================
+
+\begin{theorembox}[Theorem~\ref{thm:bipartite}]
+Let $G$ be connected. Then $\min M(G)=0$ if and only if $G$ is bipartite, and in that case $|\mathcal{P}(G)|=2$: the minimiser is unique up to inversion.
+\end{theorembox}
+
+\begin{theorem}
+\label{thm:bipartite}
+As stated.
+\end{theorem}
+
+\begin{proof}
+$M(x)=0$ means no vertex has a neighbour in its own state, that is, every edge joins vertices of opposite state. This is exactly a proper $2$-colouring, which exists precisely when $G$ is bipartite. For $G$ connected the proper $2$-colouring is determined by the colour of one vertex, hence unique up to inversion.
+\end{proof}
+
+Verified exhaustively over every connected labelled graph on at most $6$ vertices, $27\,474$ graphs, with no violation (\texttt{script10}, Part~1).
+
+\begin{theorembox}[Theorem~\ref{thm:complete}]
+On the complete graph $\Kn$, $\min M=\lceil n/2\rceil-1$, attained exactly at the balanced bipartitions. For $n$ even there are $\binom{n}{n/2}/2$ minimisers modulo inversion, and they form a single orbit under $\Aut(\Kn)=S_n$. Every vertex then has $n/2-1$ same-state and $n/2$ opposite-state neighbours, an imbalance of exactly $1$, which cannot vanish because the degree $n-1$ is odd.
+\end{theorembox}
+
+\begin{theorem}
+\label{thm:complete}
+As stated.
+\end{theorem}
+
+\begin{proof}
+At a split of sizes $k$ and $n-k$, a vertex on the $k$-side has $k-1$ same-state neighbours and one on the other side has $n-k-1$. Hence $M=\max(k,n-k)-1$, minimised when $\max(k,n-k)$ is least, that is at $k=\lfloor n/2\rfloor$, giving $\lceil n/2\rceil-1$. All balanced splits are related by a permutation of vertices, so they form one $S_n$-orbit. For $n$ even the imbalance is $|(n/2-1)-n/2|=1$.
+\end{proof}
+
+Verified for $n=3,\dots,8$ against exhaustive enumeration, with the predicted counts $3,10,35$ for $n=4,6,8$ (\texttt{script11}, Part~1).
+
+\begin{corollary}[Frustration and degeneracy arrive together]
+\label{cor:together}
+A connected graph has a unique minimiser up to inversion whenever it is bipartite, and complete graphs --- the extreme non-bipartite case --- have $\binom{n}{n/2}/2$ of them, a single orbit but an enormous one. Rule P therefore fixes the \emph{shape} of the optimal state on $\Kn$ and leaves its labelling entirely free.
+\end{corollary}
+
+\begin{remark}[Scale]
+\label{rem:scale}
+The counts grow quickly: $\binom{24}{12}/2=1\,352\,078$ and $\binom{28}{14}/2=20\,058\,300$. A bipartite graph on comparable numbers of vertices has one. The contrast is not a small-size artefact and is the sharpest form of Corollary~\ref{cor:together}.
+\end{remark}
+
+% ============================================================
+\section{Cycles: complete enumeration}
+\label{sec:cycles}
+% ============================================================
+
+\subsection{Structure of the minimisers}
+
+\begin{theorembox}[Theorem~\ref{thm:runs}]
+On $C_n$, $\min M=0$ for $n$ even and $\min M=1$ for $n$ odd. For $n$ odd the minimisers are exactly the states all of whose maximal cyclic runs have length one or two; equivalently, the states whose monochromatic edges form a matching; equivalently, since the number of monochromatic edges around an odd cycle is necessarily odd, the odd-size matchings of $C_n$.
+\end{theorembox}
+
+\begin{theorem}
+\label{thm:runs}
+As stated.
+\end{theorem}
+
+\begin{proof}
+Every vertex of $C_n$ has exactly two neighbours, so $\same(v)\in\{0,1,2\}$, and $\same(v)=2$ exactly when $v$ lies in the interior of a maximal run of length at least three. Hence $M(x)\le1$ if and only if every maximal run has length one or two. For $n$ even the strictly alternating state gives $M=0$; for $n$ odd no proper $2$-colouring exists, so $\min M\ge1$, and a state with all runs of length at most two attains $1$.
+
+A run of length two contributes exactly one monochromatic edge and a run of length one contributes none, so the monochromatic edges are pairwise non-adjacent: they form a matching. Traversing an odd cycle, the state must return to its starting value after an odd number of steps, so the number of sign changes is even and the number of monochromatic edges is odd.
+\end{proof}
+
+Verified exhaustively for $n\le15$ (\texttt{script9b}, Part~1).
+
+\subsection{Two closed formulas}
+
+\begin{theorembox}[Theorem~\ref{thm:formulas}]
+For $n$ odd, the number of minimisers of $C_n$ modulo inversion is
+\[
+N(n)\;=\;\sum_{\substack{k \text{ even}\\ \lceil n/2\rceil\le k\le n}}\frac{n}{k}\binom{k}{\,n-k\,},
+\tag{F1}
+\]
+and the number of orbits under $\Aut(C_n)=D_n$ together with inversion is
+\[
+O(n)\;=\;\sum_{\substack{k \text{ even}}} B\!\left(k,\;n-k\right),
+\tag{F2}
+\]
+where $B(k,j)$ is the number of binary bracelets of length $k$ with $j$ beads of one colour. For $n$ even, $N(n)=O(n)=1$.
+\end{theorembox}
+
+\begin{theorem}
+\label{thm:formulas}
+As stated.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:runs} a minimiser is a cyclic sequence of $k$ maximal runs of sizes in $\{1,2\}$ summing to $n$. Signs alternate from run to run, so $k$ must be even. If $j$ runs have size two then $2j+(k-j)=n$, giving $j=n-k$; the runs may be arranged in $\binom{k}{n-k}$ ways in a linear order, and the number of ways to place them around a labelled cycle of $n$ positions is $(n/k)\binom{k}{n-k}$. Summing over even $k$ and quotienting by the global inversion gives (F1). Quotienting further by the dihedral action identifies run patterns up to rotation and reflection, which is the definition of a bracelet, giving (F2).
+\end{proof}
+
+Both formulas were verified against exhaustive search for $3\le n\le15$ and then extended to $n=31$ (\texttt{script9b}, Parts~1 and~3). Table~\ref{tab:counts} lists the values.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{rrrrrrrrrrrr}
+\toprule
+$n$ & 5 & 7 & 9 & 11 & 13 & 15 & 17 & 19 & 21 & 23 & 25 \\
+\midrule
+$N(n)$ & 5 & 14 & 39 & 99 & 260 & 683 & 1785 & 4674 & 12239 & 32039 & 83880 \\
+$O(n)$ & 1 & 2 & 4 & 7 & 14 & 30 & 63 & 140 & 320 & 741 & 1750 \\
+\bottomrule
+\end{tabular}
+\caption{Minimisers modulo inversion and $\Aut$-orbits on odd cycles. Values for $n=27,29,31$ are $219\,603$, $574\,925$, $1\,505\,174$ and $4185$, $10\,101$, $24\,582$ respectively.}
+\label{tab:counts}
+\end{table}
+
+\subsection{A Lucas identity with a period-three correction}
+
+\begin{theorembox}[Theorem~\ref{thm:lucas}]
+Let $T(n)$ be the number of states of $C_n$ all of whose maximal runs have length one or two, counted without quotienting by inversion. Then for every $n\ge3$,
+\[
+T(n)\;=\;L(n)\;+\;\begin{cases} 2 & \text{if } 3\mid n,\\ -1 & \text{otherwise,}\end{cases}
+\]
+where $L$ denotes the Lucas numbers. For $n$ odd, $T(n)=2N(n)$ counts the minimisers.
+\end{theorembox}
+
+\begin{theorem}
+\label{thm:lucas}
+As stated.
+\end{theorem}
+
+\begin{proof}
+The states in question are the closed walks of length $n$ in the transfer graph whose states record the current symbol together with the current run length, restricted to run lengths one and two. Their number is $\operatorname{tr}A^n$ for the corresponding $4\times4$ transfer matrix~\citep[ch.~4]{Stanley2011}. The characteristic polynomial of $A$ factors as $(\lambda^2-\lambda-1)(\lambda^2+\lambda+1)$, whose roots are $\varphi$, $-1/\varphi$, and the two primitive cube roots of unity $\omega,\bar\omega$. Hence
+\[
+T(n)=\varphi^{\,n}+(-1/\varphi)^{\,n}+\omega^{\,n}+\bar\omega^{\,n}=L(n)+\omega^{\,n}+\bar\omega^{\,n},
+\]
+and $\omega^n+\bar\omega^n$ equals $2$ when $3\mid n$ and $-1$ otherwise.
+\end{proof}
+
+Verified for every odd $n$ up to $39$ and for both parities up to $18$ by direct enumeration.
+
+\begin{remark}
+\label{rem:phi}
+The golden ratio enters here through the transfer matrix of a run-length constraint and has no relation to any occurrence of $\varphi$ elsewhere in the corpus. The identity is stated because it closes the enumeration, not because the constant is significant.
+\end{remark}
+
+% ============================================================
+\section{Orbit multiplicity: separating two hypotheses}
+\label{sec:orbits}
+% ============================================================
+
+Table~\ref{tab:counts} shows that $O(n)=1$ for $n=5$ but $O(7)=2$, and that the count then grows irregularly. Two explanations present themselves and must be separated rather than confirmed: multiplicity might track the parity of the cycle, or it might track the strength of the automorphism group, since $|\Aut(C_7)|=14$ against $5040$ for $K_7$.
+
+\begin{negbox}[Negative Result~\ref{neg:haut}]
+Within the cycle family, orbit multiplicity does not track automorphism strength. $|\Aut(C_n)|=2n$ grows strictly and linearly from $10$ to $30$ over $n=5,\dots,15$ while the orbit count jumps $1,1,2,1,4,1,7,1,14,1,30$. Every even cycle has exactly one orbit and every odd cycle from $C_7$ onward has several. $C_7$ is the first member of a family, not an accident.
+\end{negbox}
+
+\begin{negresult}
+\label{neg:haut}
+As stated.
+\end{negresult}
+
+\begin{proof}
+The counts are those of Theorem~\ref{thm:formulas}, verified exhaustively to $n=15$ (\texttt{script9b}, Parts~1--2). Even cycles have a unique minimiser by Theorem~\ref{thm:bipartite}, hence one orbit. For odd $n$, Theorem~\ref{thm:runs} permits monochromatic matchings of any odd size up to $\lfloor n/2\rfloor$; a matching of size three exists precisely when $\lfloor n/2\rfloor\ge3$, that is $n\ge7$, which is where the second family appears and where $O(n)$ first exceeds one.
+\end{proof}
+
+\begin{remark}[Frustration produces degeneracy]
+\label{rem:frustdeg}
+The mechanism is the same as Corollary~\ref{cor:together} in a sharper form. An odd cycle is not bipartite, so $M=0$ is unreachable; the minimum at $M=1$ is then attained by many inequivalent run structures, and the number of them grows with the room available for larger matchings. Where the graph cannot be satisfied exactly, it can be satisfied in many ways.
+\end{remark}
+
+\begin{remark}[What is not established]
+\label{rem:notgeneral}
+The separation above is carried out \emph{within} the cycle family, where $|\Aut(C_n)|=2n$ is constrained to grow linearly. It does not extend across families. Complete graphs and the Petersen graph are non-bipartite with large automorphism groups and have one orbit each; whether multiplicity tracks automorphism strength across all graphs is not settled here and is recorded as OP-D69-1.
+\end{remark}
+
+% ============================================================
+\section{Rule P is not switching-invariant}
+\label{sec:switching}
+% ============================================================
+
+\begin{theorembox}[Theorem~\ref{thm:switching}]
+$M$ is not invariant under switching. Consequently rule P separates configurations that every switching-invariant functional identifies.
+\end{theorembox}
+
+\begin{theorem}
+\label{thm:switching}
+As stated.
+\end{theorem}
+
+\begin{proof}
+Switching by a vertex subset $S$ acts on states by negating $x_i$ for $i\in S$, which changes $\same(v)$ at every vertex incident to the cut. On $K_4$, $M$ takes the three values $\{1,2,3\}$ over the $16$ subsets; on $K_5$ the values $\{2,3,4\}$; on $C_6$ the values $\{0,1,2\}$; on the $2\times3$ grid the four values $\{0,1,2,3\}$ (\texttt{script8}, Q4). A single instance suffices.
+\end{proof}
+
+\begin{remark}[Why this is the structurally important property]
+\label{rem:whyswitching}
+D68 establishes that the set of frustrated triangles is pointwise invariant under every switching, and derives from this that no functional built from the frustration can select among the candidate pulsation bipartitions. Rule P is not of that kind. Whether it is the right additional constraint is not settled by this document and is not claimed; what is settled is that it is not excluded by the obstruction that excludes the alternatives.
+\end{remark}
+
+% ============================================================
+\section{Two layers: entity states and relation states}
+\label{sec:twolayer}
+% ============================================================
+
+Rule P constrains vertex states, and edges enter only through the induced product $\sigma_{ij}=x_ix_j$. This section asks what happens if edges are given states of their own.
+
+\begin{definition}[Disagreement]
+\label{def:delta}
+Let $y:E\to\{\pm1\}$ be an assignment of states to edges, independent of $x$, and set
+\[
+\delta_{ij}\;=\;y_{ij}\,\sigma_{ij},\qquad \sigma_{ij}=x_ix_j .
+\]
+Then $\delta_{ij}=+1$ when the edge agrees with its endpoints and $-1$ when it does not. $\delta$ is invariant under $x\mapsto-x$.
+\end{definition}
+
+The construction is empty if $\delta$ always factorises as $\delta_{ij}=z_iz_j$, since then $x'_i=x_iz_i$ removes the disagreement identically: it would be a pure gauge. By Harary's criterion~\citep{Harary1953} $\delta$ factorises exactly when its product around every cycle is $+1$.
+
+\begin{theorembox}[Proposition~\ref{prop:layers}]
+Let $G$ be connected with $n$ vertices, $m$ edges, cyclomatic number $c=m-n+1$, and $t$ independent triangles. Then the space of disagreements has dimension $m$, of which $n-1$ are gauge. If the edge layer is unconstrained, $\delta$ carries $c$ independent bits; if the edge layer is required to be coherent on triangles, it carries $c-t$. On a complete graph $c=t$ and the disagreement is a pure gauge; on a triangle-free mesh it carries the full $c$ bits.
+\end{theorembox}
+
+\begin{proposition}
+\label{prop:layers}
+As stated.
+\end{proposition}
+
+\begin{proof}
+The factorising assignments are the vertex-induced ones, of which there are $2^{n-1}$ by the two-to-one correspondence $z\mapsto(z_iz_j)$. The full space has $2^m$ elements, and $m=(n-1)+c$ is the cyclomatic identity, so the quotient has $2^c$ elements. Requiring coherence on triangles imposes one independent linear condition per independent triangle over $\mathbb{F}_2$, reducing the quotient to $2^{c-t}$. On $\Kn$ the triangles generate the cycle space, so $t=c$ and the quotient is trivial.
+\end{proof}
+
+Verified exhaustively: on $K_4$, $K_5$, $K_6$ the admissible disagreements number $8$, $16$, $32$, exactly the gauge counts $2^{n-1}$; on $C_5$, $C_6$, and the annuli of boundary lengths $4$ and $5$ they number $2^m$ with gauge subspace $2^{n-1}$; on the $3\times3$ torus, with $c=10$ and six independent triangles, the admissible space has dimension $12$ against a gauge dimension of $8$, so $12-8=4=10-6$ (\texttt{script15}, Q1--Q2).
+
+\begin{negbox}[Negative Result~\ref{neg:beat}]
+If the two layers pulse independently --- the vertex layer by switching a fixed vertex subset, the edge layer by flipping a fixed edge subset --- then the disagreement has period at most $2$, on every graph and for every choice of subsets. Two independent layers produce no dynamics beyond a two-cycle.
+\end{negbox}
+
+\begin{negresult}
+\label{neg:beat}
+As stated.
+\end{negresult}
+
+\begin{proof}
+The two operations act on disjoint sets of variables, so they commute; each is an involution, so their composite is an involution, whose period divides $2$.
+\end{proof}
+
+Confirmed by exhaustive search over all subset pairs on $K_4$, $K_5$, $K_6$, $C_5$, $C_6$: no period exceeds $2$ anywhere (\texttt{script15}, Q3b).
+
+\begin{remark}[What would be required instead]
+\label{rem:coupling}
+Negative Result~\ref{neg:beat} is not a fact about the graphs tested but an algebraic identity, and it identifies precisely what a two-layer construction would need: the update of one layer must depend on the state of the other. Any such coupling is an additional postulate, and choosing one among the many available would be an unmotivated construction. The point is recorded as OP-D69-4 rather than resolved.
+\end{remark}
+
+% ============================================================
+\section{Open problems}
+\label{sec:open}
+% ============================================================
+
+\begin{openprobbox}[Open Problem OP-D69-1]
+Characterise, among non-bipartite connected graphs, those for which $\mathcal{P}(G)$ forms a single $\Aut(G)$-orbit. Negative Result~\ref{neg:haut} settles the cycle family; the general case is open. The natural sweep --- all connected graphs up to isomorphism --- requires a genuine isomorphism test rather than a canonical form computed over all $n!$ permutations, which is what made an earlier attempt intractable. \textbf{Priority:} medium. \textbf{Entry point:} \texttt{script10}.
+\end{openprobbox}
+
+\begin{openprobbox}[Open Problem OP-D69-2]
+Determine the computational complexity of computing $\min M(G)$. The aggregate variant is MaxCut and is NP-hard~\citep{Karp1972}; the minimax variant is presumably no easier, but this is not established. If it is hard, no large structure can be said to compute its own minimiser, which would be a substantive constraint on any physical reading of the rule. \textbf{Priority:} medium. \textbf{Entry point:} Remark~\ref{rem:minimax}.
+\end{openprobbox}
+
+\begin{openprobbox}[Open Problem OP-D69-3]
+Identify the group acting on $\mathcal{P}(G)$ and the stabiliser of $M$ under switching. The number of vertex subsets preserving $M$ varied from $2$ to $20$ across the structures tested, which suggests a group structure that has not been identified. \textbf{Priority:} low. \textbf{Entry point:} \texttt{script8}, Q4.
+\end{openprobbox}
+
+\begin{openprobbox}[Open Problem OP-D69-4]
+Negative Result~\ref{neg:beat} shows that two independent layers cannot exceed period $2$. A coupled construction, in which one layer's update depends on the other's state, is not excluded by that argument. Any such coupling is a postulate, and the problem is to say what would motivate one particular coupling rather than to exhibit one that works. \textbf{Priority:} low, but it is the only direction in this document that is not closed by an algebraic obstruction. \textbf{Entry point:} Remark~\ref{rem:coupling}.
+\end{openprobbox}
+
+% ============================================================
+\section{Verification scripts}
+\label{sec:scripts}
+% ============================================================
+
+Seven scripts are deposited with this document under the same \textsc{doi}. All use the Python standard library only and exact integer arithmetic throughout. Each was executed independently and its full output retained. Table~\ref{tab:scripts} gives the expected values, so that a reproduction attempt has something to check against.
+
+\begin{longtable}{p{2.3cm}p{11.6cm}}
+\toprule
+\textbf{Script} & \textbf{Expected output} \\
+\midrule
+\endhead
+\texttt{script8} & $\min M$ and minimiser counts on $15$ structures; uniqueness exactly on the bipartite ones; $M$ takes $3$--$4$ distinct values under switching; P and MaxCut coincide except on $C_7$ ($14$ against $7$, not nested). \\
+\texttt{script9b} & Formulas (F1),(F2) verified $n\le15$, extended to $31$; counts as in Table~\ref{tab:counts}; $|\Aut(C_n)|=2n$ against orbit counts $1,2,4,7,14,30$. \\
+\texttt{script10} & $\min M=0\iff$ bipartite over all connected labelled graphs to $n=6$ ($27\,474$ graphs), zero violations. \\
+\texttt{script11} & $\min M=\lceil n/2\rceil-1$ on $\Kn$ for $n=3$--$8$; minimiser counts $3,10,35$; Euler's obstruction to a $4$-regular quadrangulation of $S^2$; torus grids bipartite iff both factors even. \\
+\texttt{script12} & Interface cost depends on the core only through the count of same-state attachments; the excess is exactly $1$ and identical for $n=4$ and $n=28$. \\
+\texttt{script13} & Ground states of the prism over $C_L$: counts $3,1,5,1,14,1,39$ for $L=3,\dots,9$; monochromatic edges always a matching; counts independent of mesh thickness. \\
+\texttt{script15} & Admissible disagreements $8,16,32$ on $K_4,K_5,K_6$ (equal to the gauge counts); full $2^m$ on triangle-free sparse meshes; dimension $12$ against gauge $8$ on the $3\times3$ torus; no period exceeds $2$ anywhere. \\
+\bottomrule
+\caption{Expected outputs. All scripts run in a few seconds except \texttt{script15}, whose exhaustive subset sweep takes about two minutes.}
+\label{tab:scripts}
+\end{longtable}
+
+% ============================================================
+\section{Summary}
+\label{sec:summary}
+% ============================================================
+
+Rule P is a local, minimax, inversion-invariant selection principle on signed graphs. Its behaviour is governed by a single dichotomy: bipartite graphs admit a unique ground state, and non-bipartite graphs admit many. Frustration and degeneracy arrive together, and where the constraint cannot be satisfied exactly it can be satisfied in many inequivalent ways.
+
+On cycles the object is completely enumerated. The minimisers are the states whose maximal runs have length one or two, equivalently the odd-size matchings; two closed formulas count them and their orbits; and the total obeys a Lucas identity with a period-three correction whose origin is the spectrum $\{\varphi,-1/\varphi,\omega,\bar\omega\}$ of the transfer matrix. Within this family, orbit multiplicity is governed by parity and not by automorphism strength.
+
+The property that distinguishes rule P from the functionals studied in D68 is that $M$ is not switching-invariant. A second layer of states on the edges is a pure gauge on complete graphs and carries $c-t$ independent bits elsewhere, so the relation layer is empty exactly where triangles generate the cycle space. Two such layers pulsing independently cannot exceed period two, for the algebraic reason that commuting involutions compose to an involution.
+
+None of this establishes that rule P belongs in the \PDL\ axiom system. It is not derived from C1--C4, it has produced no number it was not designed to produce, and it has resolved no open problem of the corpus. What it has is a determinate combinatorial content, stated above, and the negative property of not being excluded by the obstruction that excludes its alternatives. Those are different things, and the distinction is the point of this document.
+
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{D69_references}
+
+\end{document}
