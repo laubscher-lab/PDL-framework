@@ -21,7 +21,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 déposé Session 75 suite — 10.5281/zenodo.21997433 ; D69 rédigé, compilé et vérifié, DOI à réserver** ; **D05 mis à jour en v2, Session 76 — 10.5281/zenodo.22066454**)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 déposé Session 75 suite — 10.5281/zenodo.21997433 ; D69 rédigé, compilé et vérifié, DOI à réserver** ; **D05 mis à jour en v2, Session 76 — 10.5281/zenodo.22066454 ; D69 déposé — 10.5281/zenodo.21999711 ; DM v34 déposée — 10.5281/zenodo.22067627**. **Anomalies du registre relevées Session 76 (suite), à corriger** : D23, D44 v1 et D47v2 sont absents de `10.5281zenodo.txt` ; le `.bib` de DM v33 portait pour D42 et D45 des DOI de versions antérieures à celles du registre, désormais alignés dans le `.bib` v34.)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -112,11 +112,12 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | N02 | 10.5281/zenodo.21333913 | From Z₃ to Three Generations: PDL–OFN bridge (Evdokimov & Laubscher, 12 pp.) — déposé par O. Evdokimov, juillet 2026 |
 | D67 | 10.5281/zenodo.21382362 | Emergent metric and coherence stress-energy tensor; coplanarity theorem; Compton-closure erratum corrected |
 | D68 | 10.5281/zenodo.21997433 | The pulsation as a bipartition; complete classification of C1-admissible laws; singleton obstruction theorem; errata D46 (×2) et D43 — **déposé Session 75 suite** |
-| D69 | *(à réserver)* | The proximity rule P: minimax selection on signed graphs; closed enumeration on cycles; Lucas identity; complete/sparse dichotomy — **rédigé, compilé, prêt au dépôt** |
+| D69 | 10.5281/zenodo.21999711 | The proximity rule P: minimax selection on signed graphs; closed enumeration on cycles; Lucas identity; complete/sparse dichotomy — **déposé** |
 | DM v32 | 10.5281/zenodo.21411025 | Global Mapping v32 (superseded by v33 below — OP14 rouvert, D47v2 intégré ; remplace v31 — 10.5281/zenodo.21384063, elle-même remplaçant v30 — 10.5281/zenodo.21228274, elle-même remplaçant v29 — 10.5281/zenodo.20701571) |
 | D19ad | *à déposer* | On the Necessity of the Binary Distinction and the Dissolution of the Bearer Problem: An Addendum to D19 (Session 74 suite) |
 | DL03 | *à déposer* | The Electron Alphabet, the Cayley–Hypercube Family, and a Threefold Characterisation of n=4 (Session 74 suite) |
-| DM v33 | *à déposer* | Global Mapping v33 (current — intègre D19ad et DL03 ; remplace v32 — 10.5281/zenodo.21411025) |
+| DM v33 | 10.5281/zenodo.21520303 | Global Mapping v33 (**supersédée par v34** — contenait I3, I4, I10 et la revendication de fermeture inconditionnelle ; remplaçait v32 — 10.5281/zenodo.21411025) |
+| **DM v34** | **10.5281/zenodo.22067627** | **Global Mapping v34 (COURANTE)** — premier retrait public d'une revendication de fermeture inconditionnelle. H$\varphi$ nommée, OP-B rouvert, D68/D69 intégrés, sections H$\varphi$ / règle de la mer / D68-D69 nouvelles, neuf problèmes ouverts, prédiction P20. Remplace v33 |
 | PDL_N02_lockdown | *à déposer groupé avec N02* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
 
 ---
@@ -1393,9 +1394,82 @@ Deux erreurs commises par Claude en séance, toutes deux rattrapées sur demande
 - **Une réparation peut casser ailleurs.** La correction E3+E4, validée sur les §3–§4, rendait le §1 faux (E2). Vérifier la cohérence **du document entier** après toute correction locale.
 
 
+
+## Session 76 (suite) — 23 August 2026 — DM v34 déposée : le premier retrait public d'une revendication de fermeture inconditionnelle
+
+### Résumé
+
+Prolongement direct de la Session 76. Après le dépôt de D05 v2, quatre décisions éditoriales prises avec Cédric, puis production et dépôt de **DM v34 — 10.5281/zenodo.22067627** (remplace v33, 10.5281/zenodo.21520303). C'est la première version du document de navigation à **retirer** une revendication tenue depuis seize versions. Un audit du `.bib` v33 contre le registre autoritaire a par ailleurs révélé cinq anomalies de DOI, dont deux qui affectaient DM v33 déjà publiée.
+
+### Décisions éditoriales prises en séance
+
+- **§1 de D05 v2** se limite à $R_{\mathrm{tot}} = r_{\mathrm{val}} + R_{\mathrm{sea}}$ ; la partition fine (et donc le résidu non interprété $R_{\mathrm{res}}$) est renvoyée au §5. Décision de Cédric, après que la réparation E3+E4 se soit révélée casser le §1 de v1.
+- **Ordre des tâches inversé en cours de session** : DM v34 avait été placée en priorité 2 et le statut de $R_{\mathrm{surf}}$ en priorité 4. Cédric a fait observer que les corrections de DM v33 étaient éditoriales, et que le statut de $R_{\mathrm{surf}}$ était le seul point substantiel. **Il avait raison, et l'ordre a été inversé** : on aurait corrigé un glossaire sans savoir ce qu'il devait dire.
+- **Note conservatoire** ajoutée aux métadonnées Zenodo de DM v33 dans l'intervalle, pour que la contradiction entre deux dépôts publics ne reste pas silencieuse. À retirer ou rediriger vers v34 maintenant que v34 existe.
+- **Séquence retenue** : note Zenodo → `PDL_context.md` → DM v34. Le contexte d'abord, parce que DM v34 doit s'écrire depuis une base à jour — c'est exactement le mode de défaillance qui a laissé « Theorem (D05) » survivre seize versions.
+
+### Audit DOI — cinq anomalies, dont deux dans un document publié
+
+Le `.bib` v33 (90 entrées) a été confronté entrée par entrée au registre `10.5281zenodo.txt`.
+
+- **D42** : le `.bib` v33 portait `19397315`, le registre porte `20041348`. Titres identiques : deux versions du même document. **DM v33, publiée, citait donc une version antérieure.**
+- **D45** : le `.bib` v33 portait `19810259`, le registre porte `20866017` (v2). Même situation, et **D45 porte une prédiction falsifiable** (seuil PBH, Fermi-LAT) — la version compte.
+- **D23, D44 v1, D47v2 absents du registre.** Ils figurent dans le `.bib`, donc la bibliographie de v34 est complète, mais le registre censé faire foi est incomplet. **D44 v1 est le document que D44v2 rétracte, et D47v2 celui qui rouvre OP14** : deux pièces d'errata qui ne devraient pas manquer d'un registre autoritaire.
+- Aucune divergence sur les 72 autres clés communes.
+
+Les deux DOI divergents ont été alignés sur le registre dans le `.bib` v34, avec mention explicite en en-tête du fichier.
+
+### Contenu de DM v34
+
+**Retraits, énoncés en clair.** Le résumé retire la phrase « il n'y a plus aucun problème ouvert fondamental au niveau axiomatique » et la remplace par un encadré nommant les deux brèches. Le théorème Gate 3 passe de « holds without any named hypothesis » à « holds under H$\varphi$ ». Le mot *withdrawn* apparaît huit fois dans le document — délibérément : un recul doit se voir.
+
+**Deux brèches distinctes sur la chaîne vers $G$**, d'origines sans rapport :
+- **H$\varphi$** — hypothèse structurelle non déclarée (Session 76) ;
+- **OP-B rouvert** — rétractation arithmétique (D44v2).
+
+Aucune n'introduit de paramètre ajustable.
+
+**Trois sections nouvelles** : §H$\varphi$ (les quatre errata de D05, la condition corrigée, et l'inventaire des voies fermées pour $\varphi$) ; §règle de la mer (théorème de quadrangulation, identité $b=2(n_K+25+1)=204$, le $+1$ porté par l'isospin) ; §D68/D69, absents de toute version antérieure du mapping.
+
+**Trois couches épistémiques nouvelles** : L-H$\varphi$, L19 (D68/D69), L-sea. Les couches L0 et L3 sont requalifiées.
+
+**Neuf problèmes ouverts** introduits ou rouverts : OP-B (rouvert), OP-H$\varphi$-1 à 4, OP-D75-2v3, OP-D75-13, OP-D76-1, OP-D68-7. **OP-B et OP-H$\varphi$-1 sont placés en tête du guide de continuation**, avec mention qu'ils sont sur la chaîne causale vers $G$.
+
+**Prédiction falsifiable P20** : $P_1 \to \varphi/3$ sur des analogues de proton de taille croissante. Rédigée pour qu'un résultat négatif soit publiable et réfute H$\varphi$.
+
+**Méthode de production** : v34 a été construite par transformations ciblées de v33, chacune sous assertion, jamais par réécriture. 91 pages, zéro erreur LaTeX, zéro citation ou référence non résolue, 93 entrées bibliographiques toutes réelles.
+
+### Limitation connue et assumée de DM v34
+
+**Les figures TikZ de la carte de dépendances montrent toujours la chaîne comme inconditionnelle.** Un avertissement en tête de section indique que le texte fait foi contre les figures, et que tout arc passant par $\varepsilon_G$ ou $\kappa$ porte les deux conditions. C'est honnête mais provisoire : redessiner demande de reprendre chaque nœud, et cela mérite sa propre passe. **Consigné dans la description Zenodo de v34.**
+
+### Incident technique — à généraliser au corpus
+
+Lors de la compilation de D05 v2, deux défauts silencieux ont été trouvés dans la chaîne bibliographique :
+
+- **`unsrt.bst` n'est pas compatible `\citet`** (huit avertissements « Author undefined », citations rendues en numéro nu). Corrigé par `unsrtnat`, qui conserve l'ordre d'apparition.
+- **`unsrt.bst` ignore purement et simplement le champ `doi`.** La bibliographie sortait sans aucun DOI. Corrigé en portant les DOI dans le champ `note` sous `\url{}`.
+
+**Le `.bib` de DM contourne déjà le problème** (les DOI y sont dans `note`), donc DM était sain. Mais rien ne garantit que les autres documents du corpus le soient : **un DOI absent d'une bibliographie ne se remarque pas.** Vérification à mener sur l'ensemble du corpus (incohérence I13 du dictionnaire).
+
+### État de la chaîne causale en fin de Session 76
+
+| Maillon | Statut |
+|---|---|
+| C1–C4 → $K_4$ | théorème |
+| $K_4$ → quintuplet | théorème |
+| quintuplet → $\varepsilon_{\mathrm{geom}}$ | théorème (D43, OP-A) |
+| $\varepsilon_{\mathrm{geom}} \to \varepsilon_G$ via $k^{18}$ | **OP-B ouvert** (D44v2) |
+| $R_{\mathrm{surf}} \to \kappa \to G_{\mathrm{eff}}$ | **conditionnel sous H$\varphi$** |
+| chaîne de jauge D57–D61 | théorème, ne passe ni par $R_{\mathrm{surf}}$ ni par $k$ |
+| quintuplets, $\Delta n=4$, $E_{\mathrm{bord}}$, $\varepsilon_{\mathrm{geom}}$ | théorèmes, intacts |
+
+**« Aucun paramètre libre hors $\Delta m_{\mathrm{iso}}$ » survit littéralement.** $\varphi$ est un nombre algébrique fixe et le $1/3$ compte les trois cœurs. Ce que le programme porte est une hypothèse structurelle non démontrée, qui se répare par une preuve et non par un ajustement.
+
+
 ## State of the Programme (end of Session 74 suite)
 
-> **Avertissement Session 76.** Toute affirmation de fermeture causale inconditionnelle C1–C4 → $G$ dans cette section est **supersédée**. La chaîne porte l'hypothèse nommée **H$\varphi$** ($R_{\mathrm{surf}} = \varphi\,r_{\mathrm{val}}/3$, D05 v2, 10.5281/zenodo.22066454), et OP-B reste rouvert par D44v2. Voir Session 76, Fil 3.
+> **Avertissement Session 76.** Toute affirmation de fermeture causale inconditionnelle C1–C4 → $G$ dans cette section est **supersédée**. La chaîne porte l'hypothèse nommée **H$\varphi$** ($R_{\mathrm{surf}} = \varphi\,r_{\mathrm{val}}/3$, D05 v2, 10.5281/zenodo.22066454), et OP-B reste rouvert par D44v2. Voir Session 76, Fil 3. **Cette correction est désormais portée par DM v34 (10.5281/zenodo.22067627), qui fait référence** ; la présente section n'a pas été réécrite et sera refondue lors du prochain audit couche par couche.
 
 ### Collaboration PDL–OFN — état Session 73
 
@@ -1696,17 +1770,32 @@ LAYER 19  PDL–OFN Bridge
 
 Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 
-**Priorités Session 76 :**
+**Priorités Session 77 :**
 
-1. **[HIGH — Session 75 suite]** **Déposer D69** (12 pages, compilé, prêt ; DOI à réserver). Joindre les sept scripts `PDL_rule_P_script8, 9b, 10, 11, 12, 13` et `PDL_two_layer_script15`. **`script14` n'en fait pas partie** — il relève du régime nucléonique. Fiche de dépôt prête avec sommes MD5.
-2. **[HIGH — Session 75 suite]** Mettre à jour `10.5281zenodo.txt` avec D69, pousser sur GitHub (`.tex`, `.bib`, scripts de D68 et D69), mettre à jour cedriclaubscher.ch.
-3. **[HIGH]** **OP-D68-7** — Trancher la divergence D46/D68 sur la définition de la pulsation ($\Phi$ vs $\sigma_S$) avant tout usage de D50/D64 reposant sur $P_2/P_1=-1$ uniforme. Trois issues énoncées dans D68 §11.1, non départagées.
-4. **[HIGH — Session 75 suite]** **OP-D75-7** — Mesurer la répartition des 204 unités de bord entre les trois trous sur la construction Session 21 de D43. C'est un fait de la structure, pas une déduction, et il tranche si la mer est mobile. **Prérequis à tout D70.**
-5. **[HIGH]** **OP-D68-3** — Départager « axiome manquant portant sur la phase » et « contingence irréductible » avant toute nouvelle recherche C5.
-6. **[MEDIUM — Session 75 suite]** **Envisager un D70** sur le régime nucléonique : théorème de parité des trous, conséquence sur le quark solitaire, géométrie d'interface, `script14`. **Ne pas l'écrire avant OP-D75-7**, dont il dépend entièrement.
-7. **[MEDIUM]** **OP-D64-1 via la règle P** — Le critère $(A)\wedge(B)$ **est** une règle de voisinage sur les états ; la règle P en est la généralisation à la multiplicité. Direction quantitative correcte (corréler les voisins réduit $4^{R_{\mathrm{surf}}}$, et D64 échoue **par excès** de 36,7 ordres). Obstacle : rapport à l'indépendance de D42 ($\delta=0$) — couches distinctes (arêtes croisées vs états internes) mais liées par $s_{ij}=x_ix_j$. **Protocole imposé par D64 : deux masses de trous noirs séparées de plusieurs ordres, critère de succès fixé AVANT calcul.**
-8. **[MEDIUM]** **OP-D75-2** — Trancher $R_{\mathrm{sea}}=10087$ (impair) contre la règle $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ (pair). Possiblement éclairé par l'identité $101=n_K+(\Delta n+1)^2$.
-9. **[LOW]** Vérifier si D42v3 a été déposé (le registre porte `20041348` avec le titre v1).
+1. **[HIGHEST]** **OP-B (rouvert par D44v2)** — Dériver le facteur de filtrage $k$ de C1–C4, ou établir qu'il ne peut l'être. **Sur la chaîne causale vers $G$.** Partir de D44v2, qui localise l'erreur arithmétique et montre que les *deux* constructions de D44 v1 échouent. Les contraintes de $S_4$-équivariance de D42 restent disponibles. **Identifier les erreurs compensatoires avant d'appliquer toute correction** (leçon D44v2).
+2. **[HIGHEST]** **OP-H$\varphi$-1** — Dériver la condition d'auto-similarité de C1–C4. **Sur la chaîne causale vers $G$.** Contrainte forte déjà établie, à utiliser pour élaguer : **aucune règle de comptage ne peut convenir** (un dénombrement fini donne un rationnel, $\varphi/3$ est irrationnel). Il faut un **point fixe** où le taux d'engagement dépend de l'engagement déjà réalisé. C3 est un axiome de clôture auto-référentielle. **Ne pas chercher de symétrie d'ordre 5** : DM v34 §H$\varphi$ montre qu'il n'y en a pas dans la chaîne.
+3. **[HIGH]** **OP-H$\varphi$-4** — Immédiatement actionnable. Calculer la fraction engagée sur des analogues de proton de taille croissante sous le critère $(A)\wedge(B)$ de D29, tester la convergence vers $\varphi/3$. $R_{\mathrm{surf}}$ étant une espérance, la cible est une **limite**, pas une égalité exacte. **Un résultat négatif réfute H$\varphi$ et doit être publié comme tel.**
+4. **[HIGH]** **OP-D68-7** — Bloquant. Trancher la divergence D46/D68 sur la définition de la pulsation ($\Phi$ vs $\sigma_S$) avant tout usage de D50/D64 reposant sur $P_2/P_1=-1$ uniforme. Trois issues énoncées dans D68 §11.1, non départagées.
+5. **[HIGH]** **OP-D75-7** — Mesurer la répartition des 204 unités de bord entre les trois trous sur la construction Session 21 de D43. Fait de structure, pas déduction ; tranche si la mer est mobile. **Prérequis à tout D70.** Noter que $b=204$ s'exprime désormais dans les entiers du quintuplet, $b = 2(n_K+(\Delta n+1)^2+1)$ (conjecture, Session 76).
+6. **[MEDIUM]** **Corriger le registre `10.5281zenodo.txt`** : ajouter D23, D44 v1, D47v2 (absents) ; ajouter DM v34. Ce sont deux pièces d'errata majeures qui manquent à un registre censé faire foi.
+7. **[MEDIUM]** **Vérifier l'incohérence I13 sur tout le corpus** : `unsrt.bst` ignore silencieusement le champ `doi`, et n'est pas compatible `\citet`. Un DOI absent d'une bibliographie ne se remarque pas. DM est saine (DOI dans `note`) ; les autres documents restent à contrôler.
+8. **[MEDIUM]** **Redessiner les figures TikZ de la carte de dépendances de DM.** Elles montrent encore la chaîne comme inconditionnelle ; seul un avertissement textuel les corrige en v34. Reprendre chaque nœud passant par $\varepsilon_G$ ou $\kappa$. Mérite sa propre passe.
+9. **[MEDIUM]** **OP-D75-2v3** — Montrer que $R_{\mathrm{sea}} \equiv E_{\mathrm{bord}} \pmod 2$ est un théorème de C1–C4 et non une coïncidence sur deux cas. Prérequis à toute promotion de la conjecture du maillage : une seconde closure quadrangulée (le neutron).
+10. **[MEDIUM]** **OP-D64-1 via la règle P** — Le critère $(A)\wedge(B)$ **est** une règle de voisinage sur les états ; la règle P (D69) en est la généralisation à la multiplicité. Direction quantitative correcte (corréler les voisins réduit $4^{R_{\mathrm{surf}}}$, et D64 échoue **par excès** de 36,7 ordres). Obstacle : rapport à l'indépendance de D42 ($\delta=0$). **Protocole imposé par D64 : deux masses de trous noirs séparées de plusieurs ordres, critère de succès fixé AVANT calcul.**
+11. **[MEDIUM]** **OP-D76-1** — La règle de substitution $S\to S{+}D$, $D\to S$ gouverne-t-elle la partition engagé/verrouillé *au sein* de la valence ? Elle ne gouverne pas valence/mer (vérifié négatif). Noter l'apparition indépendante de $\varphi$ dans le spectre de la matrice de transfert de D69.
+12. **[MEDIUM]** **OP-D68-3** — Départager « axiome manquant portant sur la phase » et « contingence irréductible » avant toute nouvelle recherche C5.
+13. **[MEDIUM]** **Envisager un D70** sur le régime nucléonique : théorème de parité des trous, conséquence sur le quark solitaire, géométrie d'interface, `script14`. **Ne pas l'écrire avant OP-D75-7.**
+14. **[LOW]** Retirer ou rediriger la note conservatoire posée sur les métadonnées Zenodo de DM v33 : v34 existe désormais et porte la correction.
+15. **[LOW]** Refondre les sections datées de ce fichier — *State of the Programme*, *Open Problems*, *Falsifiable Predictions*, *Dependency Map* — qui portent encore les dates des Sessions 66 et 74. Le même audit sert à DM ; ne pas le faire deux fois.
+16. **[LOW]** Mettre à jour cedriclaubscher.ch (D05 v2, D68, D69, DM v34) ; ResearchGate et Academia.edu restent en retard.
+
+**Priorités héritées (Session 76, traitées) :**
+
+- ✅ **Déposer D69** — fait, 10.5281/zenodo.21999711.
+- ✅ **OP-D75-2** — résolu quant à la nature du conflit : la règle est le cas fermé de l'identité de quadrangulation, l'imparité est la signature du bord. Reformulé en OP-D75-2v3.
+- ✅ **Statut de $R_{\mathrm{surf}}$** — tranché : hypothèse nommée H$\varphi$. D05 v2 déposé.
+- ✅ **DM v34** — déposée, 10.5281/zenodo.22067627.
+- ✅ **Dictionnaire des grandeurs PDL** — construit, versé au dépôt comme instrument de travail (pas de DOI).
 
 **Priorités héritées (Session 75, traitées ou reportées) :**
 
