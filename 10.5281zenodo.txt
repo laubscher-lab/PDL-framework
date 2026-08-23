@@ -24,9 +24,9 @@ A Modal Dialogue between the Projective Dynamic Logo (PDL) and the Theory of Obj
 TO___PDL___Dialogue_article.pdf
 
 D05
-https://doi.org/10.5281/zenodo.18581453
-A Minimal Relational Sketch for the Emergence of the Golden Ratio in PDL
-Emergence_of_the_Golden_Ratio_in_the_PDL_Proton_Surface.pdf
+https://doi.org/10.5281/zenodo.22066454 
+A Minimal Relational Sketch for the Emergence of the Golden Ratio in PDL (Version 2 — corrected) 
+D05_golden_ratio_PDL_v2.pdf 
 
 D06
 https://doi.org/10.5281/zenodo.18581807
