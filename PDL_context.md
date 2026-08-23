@@ -21,7 +21,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 
 ---
 
-## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 déposé Session 75 suite — 10.5281/zenodo.21997433 ; D69 rédigé, compilé et vérifié, DOI à réserver**)
+## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 déposé Session 75 suite — 10.5281/zenodo.21997433 ; D69 rédigé, compilé et vérifié, DOI à réserver** ; **D05 mis à jour en v2, Session 76 — 10.5281/zenodo.22066454**)
 
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
@@ -30,7 +30,7 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D01F | 10.5281/zenodo.18475542 | L'émergence de la réalité physique (FR) |
 | D03 | 10.5281/zenodo.18509648 | IMRaD format |
 | D04 | 10.5281/zenodo.18580925 | Dialogue PDL–Theory of Objectivity |
-| D05 | 10.5281/zenodo.18581453 | Golden ratio in PDL |
+| D05 | 10.5281/zenodo.22066454 | Golden ratio in PDL — **v2, Session 76** (v1 : 10.5281/zenodo.18581453, supersédée ; quatre errata) |
 | D06 | 10.5281/zenodo.18581807 | Hierarchical filtering; exponent 18 |
 | D07 | 10.5281/zenodo.18663156 | Gleason uniqueness for Born's rule |
 | D08 | 10.5281/zenodo.18664995 | Logical leakage as self-maintained probability |
@@ -1288,7 +1288,114 @@ $$\boxed{p_s = 204-2p_t \text{ est TOUJOURS PAIR}}$$
 
 ---
 
+## Session 76 — 23 August 2026 — Dictionnaire des grandeurs, résolution d'OP-D75-2, audit de D05 et dépôt de D05 v2 (H$\varphi$)
+
+### Résumé
+
+Session ouverte sur la construction du dictionnaire des grandeurs PDL (relevé de chaque définition à sa source, quatre questions par grandeur : ce qu'elle compte, à quel niveau, quel statut, extensive ou structurelle). Le dictionnaire a fonctionné au-delà de sa commande : il a fait apparaître dix incohérences, dont **trois vivantes dans DM v33**, et conduit à un audit de D05 qui a révélé **quatre erreurs**, deux d'entre elles rendant la conclusion de D05 numériquement incompatible avec la formule que ce document est cité pour justifier. **D05 v2 déposé — 10.5281/zenodo.22066454.** Conséquence principale : $R_{\mathrm{surf}}=\varphi\,r_{\mathrm{val}}/3$ est requalifié en **hypothèse nommée H$\varphi$**, et la chaîne vers $G$ est **conditionnelle**, non inconditionnelle.
+
+Deux erreurs commises par Claude en séance, toutes deux rattrapées sur demande de relecture de Cédric, à consigner comme rappel méthodologique : (a) la règle $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ déclarée « non localisée » alors qu'elle figure verbatim dans deux documents ; (b) un script affichant « unique solution » sur un test d'isolement qui en avait trouvé deux (ligne de conclusion rédigée avant l'exécution).
+
+### Fil 1 — Dictionnaire des grandeurs et règles de passage
+
+- **RP1 (descendante), seule règle de passage vérifiée** : « une entité d'un cœur *est* une fermeture $K_4$ au niveau inférieur » (D68, rem. sur $c=3$). Vérifications exactes : $n_K = n_u+n_u+n_d = 24+24+28 = 76$ est **simultanément** un compte d'entités en valence et un compte de blocs au niveau électronique — seul doublet de niveau avéré du corpus ; et $c = R_e/2 = 3$ (les 6 arêtes de $K_4$ se partagent $3+3$).
+- **RP2 (montante)**, présente dans D42 (les $p_k\in R_{\mathrm{tot}}$ sont des sommets des triangles croisés) : **non testable numériquement**, le corpus n'assignant aucun compte d'entités au niveau nucléonique.
+- **RN1 — résultat négatif** : RP1 et RP2 **ne sont pas mutuellement inverses**. Si elles l'étaient, le nombre d'entités au niveau $L{+}1$ égalerait le nombre de relations au niveau $L$. Or $R_e=6\neq 24,28$ ; et $76\times 6 = 456 \neq r_{\mathrm{val}} = 930$. Les deux passages vont dans deux sens, mais ce ne sont pas deux sens de la même flèche.
+- **RN2 — la piste orbitale du $25$ se ferme proprement (OP-D75-12)**. $\mathrm{Coh}(K_4)$ possède bien exactement **5 orbites sous $V_4$**, de tailles $(1,1,1,1,4)$, et $5^2=25$. Mais : test d'isolement sur 31 cardinaux orbitaux pré-enregistrés (D57, D58, D60, D61, DL03) — 5 n'est pas isolé ; et surtout **aucun dénombrement ne produit 25**, alors que dans D57 le rapport $1/4$ est le *résultat* de deux dénombrements explicites ($192/768$ ; $\dim(\mathbf 1)/\dim\mathcal O_4$). $\Delta n=4$ vient d'une condition de discriminant (D47), pas d'une orbite. OP-D62-5 possède déjà un $5^2$ d'origine algébrique, sans rapport. **La partie structurelle de $E_{\mathrm{bord}}$ n'admet pas de lecture orbitale.** L'écueil connu reste intact : $E_{\mathrm{bord}}=329$ est un théorème, $\varepsilon_{\mathrm{geom}}$ ne dépend que du total, **l'indétermination de bordure ne touche pas $G$**.
+- **Motif confirmé trois fois** : « un cardinal fixe le total et ignore l'organisation » — phase/C4, périmètres/bordure, et interface/$c$ (I7 ci-dessous). Ce n'est pas encore un mécanisme de jauge, mais ce n'est plus une observation isolée.
+
+**Incohérences relevées** (numérotation du dictionnaire) :
+
+- **I1** — $R_{\mathrm{surf}}$ déclaré cardinalité mais irrationnel. Aucun entier voisin ne reproduit $\alpha$ ($501\to136{,}699$ ; $502\to137{,}246$ ; CODATA $137{,}036$). Le corpus le sait à moitié : `Derivation_alpha` écrit « effective number », et `Combinatorial Proton Architecture` introduit $\delta_{\mathrm{surf}}$ pour l'arrondi. **Résolu dans D05 v2, Remarque 1** : $R_{\mathrm{surf}}$ est une **espérance** sous la mesure uniforme de D42, pas un cardinal.
+- **I2** — statut contradictoire de $R_{\mathrm{surf}}$ (hypothèse dans D-alpha, théorème dans les tables de D39 et D43). **Tranché : hypothèse.**
+- **I3 — DM v33, vivante** : « $\sigma=930$ **the active surface** ». La surface active vaut $310\varphi\approx 501{,}59$ ; écart 428,41. $\sigma$ désigne trois objets distincts dans le corpus ($r_{\mathrm{val}}$, la surface active, la fraction d'engagement $\sigma(N)$).
+- **I4 — DM v33, vivante** : « $n_u=24$ = number of u-valence cores ». $n_u$ compte les **entités d'un cœur** ; le proton a $n_{u\text{-cores}}=2$ et $n_{d\text{-cores}}=1$. Fausse deux fois dans la même phrase, et rend $n_K=76$ inintelligible.
+- **I5** — $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ : **localisée**, voir Fil 2.
+- **I6** — $n_{\mathrm{sea}}$ jamais assigné ; le niveau nucléonique n'a aucun compte d'entités.
+- **I7 — OP-D75-13** : $c=3$ théorème uniforme contre réalisation hétérogène (S21 : valeurs $0,2,3$, moyenne exacte $228/76=3$). Sans conséquence sur $E_{\mathrm{bord}}$, qui n'utilise que $n_K c$.
+- **I8** — $E_{\mathrm{sea}}=10188$ contre $R_{\mathrm{sea}}=10087$ : expliqué par D68 ($101 = n_K + 25$), **pas fermé** — D68 précise lui-même que ceci ne prouve pas que les deux comptent le même objet.
+- **I9** — erratum arithmétique D43 ($204+228=432\neq 329$), déjà consigné en D68 ; les deux nombres sont des déterminations indépendantes d'objets différents. **Réglé, à propager.**
+- **I10 — DM v33, vivante** : « $\kappa=3/\sigma$ » et « H1 : $\kappa=\sigma/R_{\mathrm{tot}}$ ». Recalculé : $3/930=0{,}0032258$ ; $930/11017=0{,}0844150$ ; $\kappa=310\varphi/11017=0{,}0455288$. **Aucune des deux écritures ne donne $\kappa$.** La décomposition correcte (D39/D42) est $\kappa=(\varphi/3)(r_{\mathrm{val}}/R_{\mathrm{tot}})$. Note favorable : la *valeur* de $\kappa$ a été corrigée entre DM v22 ($0{,}0075194$, qui est $\varepsilon_G$) et DM v33 ; la formule ne l'a pas été.
+
+### Fil 2 — OP-D75-2 résolu quant à la nature du conflit (v2)
+
+**La règle existe, localisée à la source** : PDL.tex §« Quantification of the relational sea » — « characterized by the following counting rule: $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ », suivi de « $R_{\mathrm{sea}}\simeq 10\,087$ » ; et Schodinger_PDL_v2.tex, même règle suivie de « $R_{\mathrm{sea}}=10\,087$ » avec un **égal**. Le conflit est interne au corpus.
+
+- **Théorème (vérifié sur 11 complexes construits explicitement — disques, disques à trous, tores fermés, tores à trous ; jamais supposé)** : $E = 2F + b/2$ et $V = F + b/2 + \chi$ sont des identités exactes de toute quadrangulation, indépendantes de la topologie, issues de $4F = 2E - b$.
+- **Conséquence** : $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ est exactement le cas $b=0$ avec $n_{\mathrm{sea}}=F$ — l'identité d'une mer **fermée**. La mer du proton a **trois trous**. **La parité impaire de $R_{\mathrm{sea}}$ n'est pas une faute de la règle : c'est la signature du bord.** $E$ impair exige $b\equiv 2\pmod 4$, réalisable (cinq quadrangulations à trous construites avec $E$ impair).
+- **Conjecture (une seule closure, protocole des deux dénombrements NON satisfait)** : sous (A) $R_{\mathrm{sea}}=2F+1$ et (B) $b/2 = n_K+(\Delta n+1)^2+1$, le maillage S21 se reconstruit **intégralement** depuis les seuls théorèmes $(R_{\mathrm{sea}}, n_K, \Delta n, h)$ : $F=5043$, $b=204$, $E=10188$, $V=5144$, $\chi=-1$. Le maillage a 4 nombres liés par 2 identités ; (A) et (B) fixent les deux restants. **Il ne reste aucun paramètre propre au maillage.**
+- **Identité nouvelle** : les deux décompositions de 101 sont équivalentes — $101 = n_K+(\Delta n+1)^2$ (D68) et $101 = b/2-1$ — d'où $b = 2(n_K+(\Delta n+1)^2+1) = 204$. **$b=204$ était une sortie de simulation ($2E-4F$) ; elle s'exprime maintenant dans les entiers du quintuplet.**
+- **Observation neuve — le $+1$ n'est pas aléatoire** : $R_{\mathrm{sea}}(n)=9960$ est **pair**, donc la règle est **exacte pour le neutron** ($n_{\mathrm{sea}}=4980$) et fautive d'une unité pour le proton seul. $R_{\mathrm{sea}}$ et $E_{\mathrm{bord}}$ ont la **même parité dans les deux closures**, suivant celle de $n_{u\text{-cores}}+1$ (règle S75). **Le $+1$ apparaît sur la closure dont la bordure est impaire : c'est l'asymétrie d'isospin.** Non expliqué, non ajusté.
+- **Point mineur** : $\varepsilon_{\mathrm{geom}}(p)=329/10087$ n'est pas réduit — $329=7\times47$, $10087=7\times1441$, donc $=47/1441$. De même $468/9960=39/830$. Sans conséquence numérique ; à signaler dans l'erratum D43.
+
+### Fil 3 — Audit de D05, quatre errata, et dépôt de D05 v2
+
+**D05 se qualifie lui-même**, quatre fois : « a **sketch** » ; sur la fonctionnelle $Q$, « the optimum […] **does not yet single out any particular numerical value** » ($a$ et $b$ libres) ; « an **informed hypothesis rather than a fully derived theorem** » ; « **not intended as a final derivation** […] the **provisional trace** ». Les tables épistémiques de D39 (« $P_1=\varphi/3$ — Theorem (D05) ») et de D43 (« $R_{\mathrm{surf}}=310\varphi$ — Theorem ») sont **fautives** et sont supersédées par D05 v2.
+
+**Les quatre erreurs, vérifiées par script (20/20 et 11/11 PASS)** :
+
+- **E1 — dérivée.** D05 v1 pose $Q = a\,x + b/x$ avec $x = R_{\mathrm{core}}/R_{\mathrm{surf}}$, puis écrit $dQ/dx = -a/x^2 + b$ et conclut $x^2=a/b$. C'est la dérivée de $a/x+bx$, avec $a$ et $b$ **échangés** ; la bonne est $a-b/x^2$, donc $x^2=b/a$. De plus $Q''=2b/x^3>0$ : le point stationnaire est un **minimum**, alors que le texte décrit $a$ et $b$ comme des *rewards* à optimiser — or $ax+b/x$ diverge aux deux bords et n'a **pas de maximum**. Le fonctionnel est un **coût**.
+- **E2 — décomposition prématurée.** §1 de v1 pose $R_{\mathrm{tot}}=R_{\mathrm{core}}+R_{\mathrm{surf}}+R_{\mathrm{sea}}$, ce qui exige $R_{\mathrm{core}}+R_{\mathrm{surf}}=r_{\mathrm{val}}=930$ ; or sous la correction, $310+310\varphi=811{,}591$. **Manque $118{,}409 = 310/\varphi^2$.** Décision de Cédric : le §1 de v2 se contente de $R_{\mathrm{tot}}=r_{\mathrm{val}}+R_{\mathrm{sea}}$ et renvoie la partition fine au §5.
+- **E3 — sens de la section dorée.** v1 impose $R_{\mathrm{core}}/R'_{\mathrm{tot}}=R_{\mathrm{surf}}/R_{\mathrm{core}}$ et conclut $R_{\mathrm{surf}}=R_{\mathrm{core}}/\varphi$ (surface = **petite** part) ; le corpus emploie $R_{\mathrm{surf}}=\varphi R_{\mathrm{core}}$ (**grande** part).
+- **E4 — identification de $R_{\mathrm{core}}$.** §Connection de v1 écrit « $R_{\mathrm{core}}\sim r_{\mathrm{valence}}$ » $=930$, en conflit avec $r_{\mathrm{core}}=r_{\mathrm{val}}/3=310$ utilisé dans `Derivation_alpha`, `Schodinger_PDL` et la phrase suivante de v1 lui-même.
+
+**L'algèbre de v1 est correcte** ($\lambda^2=\lambda+1$, corollaires $1/\varphi$ et $1/\varphi^2$ exacts) : l'erreur est dans le **raccord**, pas dans le calcul.
+
+**Balayage des quatre combinaisons** : $930/\varphi=574{,}772$ (v1) ; $930\varphi=1504{,}772$ ; $310/\varphi=191{,}591$ ; **$310\varphi=501{,}591$ (les deux corrections)**. **Une seule combinaison atteint la cible, et elle exige les deux.** Prise à la lettre, v1 donne $\alpha^{-1}=179{,}921$ contre $137{,}036$ mesuré.
+
+**Condition corrigée (D05 v2, éq. 4)**, vérifiée à 25 décimales : $R_{\mathrm{surf}}/R'_{\mathrm{tot}} = R_{\mathrm{core}}/R_{\mathrm{surf}} = 0{,}6180339887498948482045868 = 1/\varphi$, avec $R_{\mathrm{core}}=310$, $R_{\mathrm{surf}}=310\varphi$, $R'_{\mathrm{tot}}=310\varphi^2=811{,}591$. Même équation quadratique ; **seul le sens change**. Donne $\alpha^{-1}=137{,}0219$ ($-0{,}0103\%$) et $\kappa=0{,}0455288$.
+
+**Décomposition à trois termes de la valence** : $r_{\mathrm{val}}=310(\varphi+1+\varphi^{-2})=310\times 3=930$, exacte car $\varphi^{-2}=2-\varphi$. Le résidu $R_{\mathrm{res}}=310/\varphi^2=118{,}409$ est défini **par soustraction** et **n'a aucune interprétation relationnelle dans le corpus** — OP-H$\varphi$-3.
+
+**Critère de régularité, post hoc, sans valeur probante.** Sous le sens adopté, les trois parts sont des puissances **entières** de $\varphi$, exposants $(1,0,-2)$ ; sous le sens opposé, $3-\varphi$ n'en est pas une. Imposer $x+1+x^{-2}=3$ donne $(x-1)(x^2-x-1)=0$, dont $\varphi$ est la seule racine $>1$. Test d'isolement $-12\le c<b<a\le 12$ : **deux** triplets, $(1,0,-2)$ et $(2,-3,-4)$ ; le second est exclu parce qu'aucune de ses parts ($811{,}59$ ; $73{,}18$ ; $45{,}23$) ne vaut le cœur moyen 310. **Formulé après connaissance de la cible ; enregistré comme piste, pas comme preuve.**
+
+### Fil 4 — L'origine de $\sqrt 5$ : voie topologique fermée, voie spectrale ouverte
+
+- **Un invariant topologique est entier** ($\chi$, Betti, rangs d'homologie) : $\sqrt 5$ ne peut en être un. La lecture « $\sqrt 5$ est topologique » est écartée.
+- **$\varphi = 2\cos(\pi/5)$ est la signature spectrale de la symétrie d'ordre 5** ; spectre de $C_5$ : $\{2, 1/\varphi, 1/\varphi, -\varphi, -\varphi\}$.
+- **Mais PDL n'a pas cette symétrie.** Les spectres de $K_n$ sont $\{n-1,-1,\dots,-1\}$, **entièrement entiers** — $K_4$, $K_{24}$, $K_{28}$ ne peuvent produire $\sqrt 5$. Aucun ordre de groupe du corpus n'est divisible par 5 ($|V_4|=4$, $|S_4|=24$, $|\mathrm{Coh}(K_4)|=8$, $|\mathbb Z_2^3\rtimes V_4|=32$, $|A_4|=12$, $|S_3|=6$) : par Lagrange, **aucun élément d'ordre 5**. Les cinq $V_4$-orbites n'ont pas d'ordre cyclique naturel, donc pas de $C_5$. Les 5 du corpus ($\Delta n+1$, le 5 de $18=6{+}5{+}4{+}3$) sont des **nombres de comptage**, pas des ordres de symétrie.
+- **Argument décisif sur la nature de $\varphi$** : une probabilité obtenue par dénombrement sur un ensemble **fini** est un rapport d'entiers (le corpus en est plein : $192/768$, $1/4$, $329/10087$, $228/76$). $\varphi/3$ est irrationnel. **Aucun tirage indépendant sur un ensemble fini ne peut le produire.** Ce qui produit un irrationnel quadratique est l'**auto-référence** : si le taux d'engagement dépend de ce qui est déjà engagé, il est défini par un point fixe, non par un comptage.
+- **Voie restante, testable** : matrice de substitution à deux régimes. Seule la règle $S\to S{+}D$, $D\to S$ (matrice $\begin{smallmatrix}1&1\\1&0\end{smallmatrix}$) a pour discriminant **5** et pour valeur propre $\varphi$ ; les variantes voisines donnent 8, 9, 13. **Test contre le corpus : négatif pour la partition globale** — $r_{\mathrm{val}}/R_{\mathrm{tot}}=930/11017=0{,}0844$ contre $1/\varphi^2=0{,}382$ attendu, exposant $5{,}137$ non entier. Si la règle existe, elle porte sur **engagé/verrouillé au sein de la valence**, pas sur valence/mer.
+- **Répartition des rôles dans $R_{\mathrm{surf}}=\varphi\,(r_{\mathrm{val}}/3)$** : $310$ est **combinatoire** (entier, théorème, trois cœurs) ; $\varphi$ est **dynamique** (point fixe d'une auto-référence, irrationnel quadratique). Les deux natures ne se mélangent pas — c'est ce qui fait de $R_{\mathrm{surf}}$ une grandeur **mixte** au dictionnaire.
+
+### Corrections de corpus identifiées cette session
+
+1. **D05 v2 déposé** — 10.5281/zenodo.22066454, avec `.tex`, `.bib`, `D05v2_script1_errata.py` (20/20 PASS) et `D05v2_script2_regularity.py` (11/11 PASS). Style bibliographique : `unsrtnat` (et non `unsrt`, incompatible `\citet`), DOI portés dans le champ `note` car `unsrt.bst` **ignore silencieusement le champ `doi`** — **à vérifier sur les autres documents du corpus**.
+2. **D39 et D43** — tables épistémiques : remplacer « Theorem (D05) » par **H$\varphi$** pour $P_1=\varphi/3$ et $R_{\mathrm{surf}}=310\varphi$.
+3. **DM v33 → v34** — trois corrections vivantes (I3, I4, I10) plus la requalification de Gate 3 : « holds without any named hypothesis » devient « **holds under H$\varphi$** ». Note conservatoire ajoutée aux métadonnées Zenodo de DM v33 en attendant v34.
+4. **D25** (« Parameter-Free Structural Bridge ») — retirer la phrase affirmant que l'optimisation de cohérence PDL *sélectionne* $\varphi$ comme facteur d'auto-similarité unique : la condition citée est celle d'avant correction et donne 574,77.
+5. **D43** — signaler que $\varepsilon_{\mathrm{geom}}$ n'est pas sous forme réduite ($47/1441$ et $39/830$).
+
+### Portée de la requalification — à ne pas surinterpréter dans un sens ni dans l'autre
+
+**Ce qui devient conditionnel sous H$\varphi$** : $\kappa$, $\alpha$, $\sigma(N)=1-(1-\kappa)^N$, $G_{\mathrm{eff}}$ (Gate 3), la prédiction de Hubble, $\Lambda$.
+
+**Ce qui ne change pas** : $\varphi$ est un nombre algébrique **fixe** et le $1/3$ compte les trois cœurs de valence — **aucun paramètre ajustable n'est introduit**, et l'énoncé « aucun paramètre libre hors $\Delta m_{\mathrm{iso}}$ » **survit littéralement**. Ce que le programme gagne est une **hypothèse structurelle non démontrée**, qui se répare par une preuve et non par un ajustement.
+
+**Ce qui est intact** : les quintuplets proton et neutron, $\Delta n=4$, $E_{\mathrm{bord}}=329/468$, $\varepsilon_{\mathrm{geom}}$, D43, D44, et toute la chaîne de jauge D57–D61. Aucun de ces résultats ne passe par $R_{\mathrm{surf}}$.
+
+**Rappel** : DM v33 affirme la fermeture causale sur **deux** fondements dont aucun ne tient tel quel — H$\varphi$ (cette session) et la réouverture d'OP-B par D44v2. DM v34 doit auditer le tableau épistémique **entrée par entrée**, pas appliquer deux correctifs.
+
+### Problèmes ouverts nouveaux issus de Session 76
+
+- **OP-H$\varphi$-1** — Dériver la condition d'auto-similarité (D05 v2, éq. 4), ou une condition d'auto-cohérence équivalente, depuis C1–C4. Contrainte forte établie cette session : la condition cherchée **ne peut pas être une règle de comptage** (un dénombrement fini donne un rationnel) ; ce doit être un **point fixe** où le taux d'engagement dépend de l'engagement déjà réalisé. C3 étant un axiome de clôture auto-référentielle, c'est là qu'il faut chercher.
+- **OP-H$\varphi$-2** — Établir le **sens** de la section dorée par un argument indépendant de la valeur de $\alpha$, remplaçant ou réfutant le critère de régularité post hoc.
+- **OP-H$\varphi$-3** — Identifier $R_{\mathrm{res}}=310/\varphi^2=118{,}409$, et par là l'objet $R'_{\mathrm{tot}}=310\varphi^2$ sur lequel la condition est imposée. Tant que ce n'est pas fait, **la condition contraint une grandeur sans nom**.
+- **OP-H$\varphi$-4 (falsifiable)** — La limite de la fraction engagée, calculée sur des analogues de proton de taille croissante sous le critère de couplage de D14, tend-elle vers $\varphi/3$ ? **Une issue négative est un résultat publiable et réfuterait H$\varphi$.**
+- **OP-D75-2 (v3)** — Montrer que $R_{\mathrm{sea}}\equiv E_{\mathrm{bord}}\pmod 2$ est un théorème de C1–C4 et non une coïncidence sur deux cas. Prérequis à toute promotion de la conjecture du Fil 2 : une seconde closure quadrangulée (le neutron), simulée ou dénombrée analytiquement.
+- **OP-D76-1** — La règle de substitution $S\to S{+}D$, $D\to S$ gouverne-t-elle la partition **engagé/verrouillé** au sein de la valence ? (Elle ne gouverne pas valence/mer : vérifié négatif.)
+
+### Rappels méthodologiques renforcés cette session
+
+- **Relever à la source, littéralement.** Deux des dix incohérences étaient invisibles dans les résumés et n'ont été trouvées qu'en lisant le `.tex` complet de D05 depuis GitHub. Et l'erreur « règle non localisée » vient d'avoir cherché $n_{\mathrm{sea}}$ au lieu de la section qui introduit la règle.
+- **Ne jamais rédiger la conclusion d'un script avant de l'exécuter.** Le test d'isolement affichait « unique solution » alors qu'il en avait trouvé deux.
+- **Un tableau épistémique en prose se lit past.** D05 v1 énonçait son statut correctement, mais au fil du texte des §4–§5 ; il a été lu comme un théorème pendant seize versions de DM. D05 v2 place son tableau de statut **en section 1**, avant tout le reste. **À généraliser au corpus.**
+- **Une réparation peut casser ailleurs.** La correction E3+E4, validée sur les §3–§4, rendait le §1 faux (E2). Vérifier la cohérence **du document entier** après toute correction locale.
+
+
 ## State of the Programme (end of Session 74 suite)
+
+> **Avertissement Session 76.** Toute affirmation de fermeture causale inconditionnelle C1–C4 → $G$ dans cette section est **supersédée**. La chaîne porte l'hypothèse nommée **H$\varphi$** ($R_{\mathrm{surf}} = \varphi\,r_{\mathrm{val}}/3$, D05 v2, 10.5281/zenodo.22066454), et OP-B reste rouvert par D44v2. Voir Session 76, Fil 3.
 
 ### Collaboration PDL–OFN — état Session 73
 
@@ -1385,7 +1492,7 @@ G               [THÉORÈME — D21, D25, D43, D44 — 27 ppm CODATA]
 
 ---
 
-## Open Problems (updated Session 74 suite)
+## Open Problems (updated Session 74 suite ; **complétée Session 76** — voir OP-H$\varphi$-1 à 4, OP-D75-2 v3 et OP-D76-1 dans la section Session 76)
 
 ### Résolus dans les sessions récentes
 - **[RÉSOLU D42]** OP1 : Lemme H3 (Indifférence)
