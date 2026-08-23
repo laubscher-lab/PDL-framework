@@ -1,0 +1,258 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage[numbers]{natbib}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\pdfstringdefDisableCommands{%
+  \def\varphi{phi}%
+  \def\mathrm#1{#1}%
+  \def\kappa{kappa}%
+  \def\Omega{Omega}%
+  \def\({}\def\){}%
+}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{hypothesis}{Hypothesis}
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Rcore}{R_{\mathrm{core}}}
+\newcommand{\Rsurf}{R_{\mathrm{surf}}}
+\newcommand{\Rres}{R_{\mathrm{res}}}
+\newcommand{\Rsea}{R_{\mathrm{sea}}}
+\newcommand{\Rtot}{R_{\mathrm{tot}}}
+\newcommand{\rval}{r_{\mathrm{val}}}
+
+\title{A Minimal Relational Sketch for the Emergence of the Golden Ratio in PDL\\
+\large Version 2 --- corrected}
+\author{C\'edric Laubscher\\
+\small Independent researcher in theoretical and mathematical physics\\
+\small ORCID 0009-0004-5415-1098}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note examines the origin of the golden ratio $\varphi$ in the PDL expression for the proton's active surface, $\Rsurf = \varphi\,\rval/3$. Version~1 of this document contained four errors, two of which produced a conclusion numerically incompatible with the formula the note was cited to justify; they are listed and corrected in Section~6. The corrected self-similarity condition reproduces $\Rsurf = 310\varphi$ exactly. The central claim of this note is negative and is stated plainly: \textbf{the relation $\Rsurf = \varphi\,\rval/3$ is not derived from axioms C1--C4.} The self-similarity condition is imposed rather than derived, and the orientation of the golden section is fixed here by a regularity criterion formulated after the target value was known. Accordingly, $\Rsurf$ is designated a \textbf{named hypothesis}, H$\varphi$, and every result depending on it --- including $\alpha$, $\kappa$, $\sigma(N)$, $G_{\mathrm{eff}}$ and $\Lambda$ --- is conditional upon it. This note supersedes the epistemic labels attributed to it in \citet{PDL_D39} and \citet{PDL_D43}.
+\end{abstract}
+
+\section{Epistemic status}
+\label{sec:status}
+
+This section is placed first because its omission in version~1 is what allowed downstream documents to record the content of this note as a theorem.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Statement & Status & Basis \\
+\midrule
+$\rval = 930$, three valence cores & Theorem & \citet{PDL_D16,PDL_D16a} \\
+$\Rtot = \rval + \Rsea = 11\,017$ & Theorem & \citet{PDL_D16a} \\
+Self-similarity $\Rightarrow$ $\varphi$ (Prop.~\ref{prop:phi}) & Theorem & Section~\ref{sec:selfsim}, conditional on Eq.~\eqref{eq:self-similar} \\
+Eq.~\eqref{eq:self-similar} itself & \textbf{Imposed} & Not derived from C1--C4 \\
+Orientation of the golden section & \textbf{Post hoc} & Remark~\ref{rem:orientation} \\
+$\Rsurf = \varphi\,\rval/3$ & \textbf{Hypothesis H$\varphi$} & This note \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{hypothesis}[H$\varphi$, relational optimisation factor]
+\label{hyp:phi}
+The active surface of the PDL proton satisfies
+\[
+\Rsurf = \varphi\,\frac{\rval}{3} = 310\,\varphi \approx 501.5905,
+\qquad \varphi = \frac{1+\sqrt 5}{2}.
+\]
+\end{hypothesis}
+
+\begin{remark}[$\Rsurf$ is not a cardinality]
+\label{rem:cardinality}
+$310\varphi$ is irrational and therefore cannot be the cardinality of a set of relations. $\Rsurf$ is an \emph{expectation}: the mean number of valence relations engaged in coherent external coupling, taken under the uniform measure established in \citet{PDL_D42}. This is already the operative reading in \citet{PDL_D39}, where $P_1 = \Rsurf/\rval$ is defined as a probability, and in \citet{PDL_D12}, which speaks of the effective number of active surface relations. Earlier wording in the corpus describing $\Rsurf$ as a cardinality should be read accordingly. Note that no integer reproduces the observed fine-structure constant: $\Rsurf = 501$ gives $\alpha^{-1} = 136.699$ and $\Rsurf = 502$ gives $137.246$, against a measured $137.036$.
+\end{remark}
+
+\section{Setting}
+\label{sec:setting}
+
+In the PDL framework a composite closure such as the proton is described by a hierarchy comprising an internal quasi-stationary valence content, a predominantly dynamical background or sea, and an active surface through which coherent coupling to external closures --- for instance an electron-type $(4,6)$ closure --- is established.
+
+The total internal relational content of the proton is partitioned as
+\begin{equation}
+\Rtot = \rval + \Rsea,
+\qquad \rval = 930,\quad \Rsea = 10\,087,\quad \Rtot = 11\,017,
+\label{eq:global}
+\end{equation}
+these values being theorems of C1--C4 \citep{PDL_D16,PDL_D16a}. The valence content is distributed over three quasi-stationary cores: two of up type, each carrying $\binom{24}{2} = 276$ internal relations, and one of down type carrying $\binom{28}{2} = 378$, so that $\rval = 2 \times 276 + 378 = 930$. The mean coherence core per valence quark is therefore
+\begin{equation}
+r_{\mathrm{core}} = \frac{\rval}{3} = 310 .
+\label{eq:rcore}
+\end{equation}
+
+The finer partition of $\rval$ between engaged and locked relations is the subject of Sections~\ref{sec:selfsim} and~\ref{sec:connection}; it is deliberately not introduced here. Version~1 of this note posited $\Rtot = \Rcore + \Rsurf + \Rsea$ at this stage, which is incompatible with Eq.~\eqref{eq:global} unless $\Rcore + \Rsurf = \rval$ exactly. That constraint does not hold under the corrected identification, and the premature three-term decomposition is one of the four errors listed in Section~\ref{sec:errata}.
+
+The purpose of this note is to examine how a golden-ratio factor can arise from a minimal optimisation principle relating internal closure to active surface, and --- equally --- to establish precisely how far that examination falls short of a derivation.
+
+\section{Core--surface trade-off}
+\label{sec:tradeoff}
+
+Restrict attention to the portion of the relational content directly involved in the stationary core and its active surface,
+\[
+R'_{\mathrm{tot}} = \Rcore + \Rsurf ,
+\]
+and set aside the sea. Two antagonistic tendencies act on the partition. Internal closure penalises too small a core, since the stability of the hierarchical structure degrades. External coupling penalises too small a surface, since the number of coherent interaction channels is restricted. Writing
+\[
+x = \frac{\Rcore}{\Rsurf},
+\]
+a minimal way to encode both penalties is the cost functional
+\begin{equation}
+Q(x) = a\,x + \frac{b}{x}, \qquad a,b > 0,
+\label{eq:Q}
+\end{equation}
+in which the first term charges an excessively large core relative to the surface and the second charges an excessively small one. Then
+\[
+\frac{dQ}{dx} = a - \frac{b}{x^2} = 0
+\quad\Longrightarrow\quad
+x^2 = \frac{b}{a},
+\qquad
+\frac{d^2Q}{dx^2} = \frac{2b}{x^3} > 0 ,
+\]
+so the stationary point is a minimum, as a cost functional requires.
+
+\begin{remark}
+Version~1 wrote $dQ/dx = -a/x^2 + b$ and concluded $x^2 = a/b$. That is the derivative of $a/x + bx$, with $a$ and $b$ interchanged. Version~1 also described the two terms as rewards to be optimised; $ax + b/x$ diverges at both ends of its range and possesses no maximum, so the functional can only be read as a cost.
+\end{remark}
+
+At this level the optimum is $x = \sqrt{b/a}$ and no particular numerical value is singled out: $a$ and $b$ remain free. \textbf{Equation~\eqref{eq:Q} therefore contributes nothing to the determination of $\varphi$.} It fixes only that an interior optimum exists. Everything numerical in what follows comes from the additional condition of Section~\ref{sec:selfsim}, which is imposed, not derived.
+
+\section{Self-similar partition}
+\label{sec:selfsim}
+
+Since the proton is not an isolated object but a member of a hierarchy of closures, it is natural to require a form of self-similarity between the way the budget $R'_{\mathrm{tot}}$ is partitioned and the way core and surface relate to one another. We impose
+\begin{equation}
+\frac{\Rsurf}{R'_{\mathrm{tot}}} = \frac{\Rcore}{\Rsurf},
+\qquad R'_{\mathrm{tot}} = \Rcore + \Rsurf .
+\label{eq:self-similar}
+\end{equation}
+The reading is that the role of the active surface with respect to the whole mirrors the role of the core with respect to the surface: the surface is the larger part of the section, the core the smaller. This is a discrete counterpart of the classical part--whole characterisation of the golden ratio.
+
+\begin{proposition}
+\label{prop:phi}
+Equation~\eqref{eq:self-similar} admits, among positive solutions, exactly one with $\Rsurf \neq \Rcore$, namely
+\[
+\mu := \frac{\Rsurf}{\Rcore} = \varphi = \frac{1+\sqrt 5}{2},
+\]
+and consequently
+\[
+\frac{\Rsurf}{\Rcore} = \varphi, \qquad
+\frac{\Rsurf}{R'_{\mathrm{tot}}} = \frac{1}{\varphi}, \qquad
+\frac{\Rcore}{R'_{\mathrm{tot}}} = \frac{1}{\varphi^{2}} .
+\]
+\end{proposition}
+
+\begin{proof}
+Write $\Rsurf = \mu\,\Rcore$ with $\mu > 0$. Then $R'_{\mathrm{tot}} = \Rcore(1+\mu)$ and Eq.~\eqref{eq:self-similar} reads
+\[
+\frac{\mu\,\Rcore}{\Rcore(1+\mu)} = \frac{\Rcore}{\mu\,\Rcore},
+\qquad\text{that is}\qquad
+\frac{\mu}{1+\mu} = \frac{1}{\mu},
+\]
+whence $\mu^2 = \mu + 1$. The positive root is $\mu = \varphi$. Since $\varphi^2 = \varphi + 1$, we have $R'_{\mathrm{tot}} = \Rcore(1+\varphi) = \Rcore\varphi^2$, giving $\Rsurf/R'_{\mathrm{tot}} = \varphi\Rcore/(\varphi^2\Rcore) = 1/\varphi$ and $\Rcore/R'_{\mathrm{tot}} = 1/\varphi^2$.
+\end{proof}
+
+\begin{remark}[The orientation is not derived]
+\label{rem:orientation}
+Exchanging the two sides of Eq.~\eqref{eq:self-similar} gives $\Rcore/R'_{\mathrm{tot}} = \Rsurf/\Rcore$, which yields the same quadratic with $\Rcore/\Rsurf = \varphi$ --- the surface then being the \emph{smaller} part. Both orientations are equally self-similar, and nothing in Section~\ref{sec:tradeoff} distinguishes them, since Eq.~\eqref{eq:Q} is symmetric under $x \leftrightarrow 1/x$ together with $a \leftrightarrow b$. Version~1 adopted the second orientation. The first is adopted here because it reproduces the corpus value; that is an argument from the target, not from the axioms, and it is recorded as such in Section~\ref{sec:status}. A candidate structural criterion is offered in Remark~\ref{rem:regularity}, but it was formulated after the answer was known and carries no evidential weight until derived independently.
+\end{remark}
+
+\section{Connection with the PDL proton architecture}
+\label{sec:connection}
+
+Identifying $\Rcore$ with the mean coherence core of Eq.~\eqref{eq:rcore}, that is $\Rcore = \rval/3 = 310$, Proposition~\ref{prop:phi} gives
+\begin{equation}
+\Rsurf = \varphi\,\frac{\rval}{3} = 310\,\varphi = 501.5905365\ldots,
+\label{eq:target}
+\end{equation}
+which is Hypothesis~\ref{hyp:phi}, and
+\[
+R'_{\mathrm{tot}} = \Rcore + \Rsurf = 310\,\varphi^{2} = 811.5905365\ldots
+\]
+
+Only this identification reproduces Eq.~\eqref{eq:target}. Taking $\Rcore \sim \rval = 930$, as version~1 did, gives $930/\varphi = 574.772$ under the version~1 orientation and $930\varphi = 1504.772$ under the corrected one; taking $\Rcore = 310$ with the version~1 orientation gives $310/\varphi = 191.591$. All three are numerically incompatible with the corpus. \textbf{Both the orientation and the identification of $\Rcore$ had to be corrected; neither correction suffices alone.}
+
+Since $R'_{\mathrm{tot}} = 811.591 < \rval = 930$, a residual part of the valence content lies outside the core--surface partition:
+\begin{equation}
+\Rres := \rval - \Rcore - \Rsurf = 930 - 310 - 310\varphi = \frac{310}{\varphi^{2}} = 118.4094635\ldots
+\label{eq:residual}
+\end{equation}
+so that the valence content decomposes as
+\begin{equation}
+\rval = 310\left(\varphi + 1 + \varphi^{-2}\right) = 310 \times 3 = 930 ,
+\label{eq:threeway}
+\end{equation}
+an exact identity, since $\varphi^{-2} = 2 - \varphi$ and hence $\varphi + 1 + (2-\varphi) = 3$.
+
+\begin{remark}[$\Rres$ is unidentified]
+\label{rem:residual}
+Equation~\eqref{eq:residual} defines $\Rres$ by subtraction. \textbf{No relational interpretation of $\Rres$ exists in the corpus}, and none is proposed here. Until one is given, Eq.~\eqref{eq:threeway} is an arithmetical decomposition and not a structural statement, and the object $R'_{\mathrm{tot}} = 310\varphi^2$ on which Eq.~\eqref{eq:self-similar} is imposed remains without referent. This is recorded as an open problem in Section~\ref{sec:open}.
+\end{remark}
+
+\begin{remark}[A candidate regularity criterion, post hoc]
+\label{rem:regularity}
+Under the orientation adopted here, the three parts of Eq.~\eqref{eq:threeway} are integer powers of $\varphi$ times the mean core, with exponents $(1,0,-2)$. Under the opposite orientation the parts are $310/\varphi$, $310$ and $310(3-\varphi)$, and $3-\varphi$ is not an integer power of $\varphi$. Requiring all three parts to be integer powers of $\varphi$ therefore selects the orientation adopted here. Furthermore, imposing the form $x + 1 + x^{-2} = 3$ gives $x^3 - 2x^2 + 1 = (x-1)(x^2-x-1) = 0$, whose only root exceeding unity is $\varphi$; and among integer triples $(a,b,c)$ with $-12 \le c < b < a \le 12$ satisfying $\varphi^a + \varphi^b + \varphi^c = 3$, exactly two occur, namely $(1,0,-2)$ and $(2,-3,-4)$, the second being excluded because none of its parts equals the mean core $310$. \emph{This criterion was formulated after the target value was known and is not derived from C1--C4. It is recorded as a lead, not as evidence.}
+\end{remark}
+
+\section{Errata to version 1}
+\label{sec:errata}
+
+Version~1 \citep{PDL_D05v1} contained four errors. Errors E3 and E4 are jointly responsible for a stated conclusion numerically incompatible with Eq.~\eqref{eq:target}; taken at face value, version~1 yields $\Rsurf = 574.772$, hence $\alpha^{-1} = 179.921$ against a measured $137.036$.
+
+\begin{description}
+\item[E1 --- derivative.] Section~2 of version~1 wrote $dQ/dx = -a/x^2 + b$ and concluded $x^2 = a/b$ for $Q = ax + b/x$. The correct derivative is $a - b/x^2$, giving $x^2 = b/a$. Corrected in Section~\ref{sec:tradeoff}.
+\item[E2 --- premature decomposition.] Section~1 of version~1 posited $\Rtot = \Rcore + \Rsurf + \Rsea$, which requires $\Rcore + \Rsurf = \rval = 930$; under the corrected identification $\Rcore + \Rsurf = 811.591$. Section~\ref{sec:setting} now states only Eq.~\eqref{eq:global}, and the finer partition, including the residual of Eq.~\eqref{eq:residual}, is deferred to Section~\ref{sec:connection}.
+\item[E3 --- orientation of the golden section.] Version~1 imposed $\Rcore/R'_{\mathrm{tot}} = \Rsurf/\Rcore$ and concluded $\Rsurf = \Rcore/\varphi$, whereas the corpus uses $\Rsurf = \varphi\,\Rcore$. Corrected in Eq.~\eqref{eq:self-similar}; see Remark~\ref{rem:orientation} for the status of the correction.
+\item[E4 --- identification of $\Rcore$.] Section~4 of version~1 set $\Rcore \sim r_{\mathrm{valence}} = 930$, in conflict with the mean coherence core $\rval/3 = 310$ used in \citet{PDL_D12} and elsewhere in the corpus, and with the sentence immediately following in version~1 itself. Corrected in Eq.~\eqref{eq:rcore}.
+\end{description}
+
+Version~1 stated its own status correctly, describing its content as an informed hypothesis rather than a fully derived theorem, and describing itself as a sketch. That statement was made in running prose in its Sections~4 and~5. It was nevertheless recorded as a theorem attributed to this document in the epistemic tables of \citet{PDL_D39} and \citet{PDL_D43}. Those entries are hereby superseded: the correct label is H$\varphi$, a named hypothesis. Section~\ref{sec:status} of the present version states this in tabular form so that it cannot again be read past.
+
+\section{Consequences for the corpus}
+\label{sec:consequences}
+
+Since $\kappa = \Rsurf/\Rtot$ \citep{PDL_D39,PDL_D42}, the designation of $\Rsurf$ as H$\varphi$ propagates:
+\[
+\kappa = \frac{310\varphi}{11\,017} = 0.04552878\ldots
+\]
+is a theorem \emph{under} H$\varphi$, not an unconditional theorem of C1--C4. The same conditioning applies to $\alpha$, to the engagement fraction $\sigma(N) = 1-(1-\kappa)^N$, to $G_{\mathrm{eff}}$, to the Hubble prediction and to $\Lambda$. In particular, the statement in \citet{PDL_DM} that Gate~3 holds without any named hypothesis requires correction: Gate~3 holds under H$\varphi$.
+
+Two points should not be overstated in the other direction. First, $\varphi$ is a fixed algebraic number and the factor $1/3$ counts the three valence cores; \textbf{no adjustable parameter is introduced}, and the statement that the framework carries no free parameter beyond $\Delta m_{\mathrm{iso}}$ survives unchanged. What the framework carries is an undemonstrated structural hypothesis, which is repaired by a proof and not by a fit. Second, the results that do not pass through $\Rsurf$ are unaffected: the proton and neutron quintuplets, $\Delta n = 4$, the boundary theorem $E_{\mathrm{bord}} = 329$ and the geometric leakage $\varepsilon_{\mathrm{geom}}$ of \citet{PDL_D43}, and the gauge chain, are untouched by anything in this note.
+
+\section{Open problems}
+\label{sec:open}
+
+\begin{description}
+\item[OP-H$\varphi$-1.] Derive Eq.~\eqref{eq:self-similar}, or an equivalent self-consistency condition, from axioms C1--C4. Since a probability obtained by counting over a finite ensemble is rational, and $\varphi/3$ is not, the condition sought cannot be a counting rule: it must be a fixed-point condition in which the engagement rate depends on the engagement already realised.
+\item[OP-H$\varphi$-2.] Establish the orientation of the golden section by an argument independent of the value of $\alpha$, thereby replacing Remark~\ref{rem:regularity} or refuting it.
+\item[OP-H$\varphi$-3.] Identify $\Rres = 310/\varphi^{2}$ of Eq.~\eqref{eq:residual}, and thereby the object $R'_{\mathrm{tot}} = 310\varphi^2$ on which Eq.~\eqref{eq:self-similar} is imposed. Until this is done, the self-similarity condition constrains an unnamed quantity.
+\item[OP-H$\varphi$-4.] Determine whether the limit of the engaged fraction, computed on proton analogues of increasing size under the coupling criterion of \citet{PDL_D14}, tends to $\varphi/3$. A negative outcome is a publishable result and would refute H$\varphi$.
+\end{description}
+
+\section{Outlook}
+
+This note is not a derivation. It shows that a golden-ratio factor is compatible with a minimal self-similarity condition on the core--surface partition, that the condition reproduces the corpus value exactly once the core is identified with the mean coherence core, and that neither the condition nor the orientation of the section follows from the axioms as they stand. The appearance of $\varphi$ in $\Rsurf = \varphi\,\rval/3$ is accordingly to be read as a named hypothesis with a plausible structural motivation, and not as a theorem, nor as a numerological insertion. Whether it becomes the former or the latter depends on OP-H$\varphi$-1 and OP-H$\varphi$-4.
+
+\bibliographystyle{unsrtnat}
+\bibliography{D05_golden_ratio_PDL_v2}
+
+\end{document}
