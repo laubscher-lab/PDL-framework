@@ -1,3 +1,8 @@
+DM
+https://doi.org/10.5281/zenodo.22067627 
+Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems — Version 34  
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v34.pdf 
+
 D01
 https://doi.org/10.5281/zenodo.18462686
 The Emergence of Physical Reality within the Framework of the Projective Dynamic Logo (PDL)
@@ -137,11 +142,6 @@ D22
 https://doi.org/10.5281/zenodo.19164084
 Nuclear Stability and the Periodic Table as Combinatorial Closure Hierarchies in the Projective Dynamic Logo Framework
 Pdl_nuclear_stability_skeleton.pdf
-
-DM
-https://doi.org/10.5281/zenodo.21520303 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems — Version 33 — A Guide for Continuation of the Programme 
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v33_TEST-COMPILE.pdf 
 
 D23v2
 https://doi.org/10.5281/zenodo.19197268
