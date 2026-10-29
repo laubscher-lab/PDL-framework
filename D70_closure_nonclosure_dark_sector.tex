@@ -1,0 +1,322 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{lmodern}   % present on Overleaf; commented out for the local build only
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\newcommand{\docid}{D70}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{openproblem}{Open Problem}
+\renewcommand{\theopenproblem}{OP-\docid-\arabic{openproblem}}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\statT}{\textbf{[T]}}
+\newcommand{\statE}{\textbf{[E]}}
+\newcommand{\statN}{\textbf{[N]}}
+\newcommand{\statI}{\textbf{[I]}}
+\newcommand{\statO}{\textbf{[O]}}
+
+\title{Closure, Non-Closure, and the Dark Sector in PDL:\\ Exact Combinatorial Results, Documented Negative Results,\\ and an Interpretive Account of the Emergence of Matter\\[0.5em] \large Projective Dynamic Logo Framework --- Document \docid}
+\author{C\'edric Laubscher\\ \small Independent researcher, Switzerland\\ \small ORCID 0009-0004-5415-1098 \quad \url{https://cedriclaubscher.ch}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The PDL corpus derives the equation of state of its coherence fluid, including a leakage component with $w=-1$ that reproduces the cosmological constant, but it identifies no mechanism for the abundance of dark matter (open problem OP-DM). This document records a systematic investigation of that gap. It is organised, following the precedent of D67, into two parts of explicitly different epistemic standing. Part~I contains results that are either theorems of C1--C4 already in the corpus, or exact results established here by proof or exhaustive enumeration: a compatibility law $2^{1-k}$ for the joint admissibility of two pulsations sharing $k$ entities; a decomposition theorem for the minimal cost of coupling a closure to an external entity, as the number of missing-edge triples plus the frustration index of the touched subgraph; a cost profile $\Delta(k)=k(n-1-k)$ for budget-conserving transfer between two complete blocks, confirmed exhaustively at $n=4$ and $n=5$; an exact collapse barrier of one violated triple for a two-block assembly; and a structural argument showing why the geometric route that yields $\Lambda$ cannot yield a pressureless population. Part~I also documents twenty-two negative results, each with its quantitative reason, covering every mechanism tested for the ratio $\Omega_c/\Omega_b$. Part~II gives an interpretive account in which dark matter is relational content that pulsates without closing: it carries relations and therefore gravitates, has no boundary and therefore no active surface and no electromagnetic coupling, and is a regime of the single relational network rather than a particle species. The account rests on corpus statements that low relational density prevents durable closure and that the majority of configurations remain unstable, and on the phase-locking mechanism quantified in Part~I. It explains without added parameters why the dark sector is invisible, why no collider produces it, and why its ratio to baryonic matter has been constant since recombination. It does not explain the value of that ratio: no mechanism tested produces $\Omega_c/\Omega_b=5.36$, and this is stated as the central open problem. No claim of Part~II is presented as a theorem of C1--C4.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Status and Structure of this Document}
+\label{sec:status}
+
+\subsection{What this document is}
+
+This is a mixed document of the kind introduced by D67~\citep{D67}: a first part stating results at the level they have actually earned, and a second part documenting an interpretive construction without inflating its status. The subject is the dark sector. The corpus establishes that the coherence fluid has three pressureless components and one leakage component with $w=-1$~\citep{D48,D54,D67}, and it derives $\Lambda$ from C1--C4~\citep{D51,D52,D53}; but the identification of the pressureless components with the dark matter observed in cosmology, and the value of its abundance, are open~\citep{DMv34}. The investigation reported here set out to close that gap. It did not. What it produced is a set of exact combinatorial results, a delimitation of the space of admissible mechanisms by documented negative results, and a coherent interpretive account whose single unexplained quantity is the ratio itself.
+
+\subsection{Epistemic markers}
+
+Every claim in this document carries one of the following markers. \statT: theorem of C1--C4 already established in the cited corpus document. \statE: exact result established here, by proof or by exhaustive enumeration, verified by the lockdown script of Appendix~\ref{app:instruments}. \statN: negative result, i.e.\ a mechanism shown not to produce the target, with its quantitative reason. \statI: interpretation, coherent with the corpus but not derived from C1--C4. \statO: open. Where a result depends on a named hypothesis of the corpus, in particular H$\varphi$~\citep{D05v2,DMv34}, the dependence is stated.
+
+\subsection{Terminology}
+
+In accordance with the corpus terminology rule, $K_4$ denotes the minimal closure in the group-theoretic sense of D61, identified with the electron, and nothing else. Nucleon-level hierarchical closures are written $K_{\mathrm{nuc}}$. The exact results of Section~\ref{sec:exact} concern complete signed graphs $K_n$ as combinatorial objects; they are not models of $K_{\mathrm{nuc}}$, and no statement of this document identifies a nucleon with a complete graph.
+
+\part{Established Results}
+
+\section{Corpus Results Used}
+\label{sec:corpus}
+
+\subsection{Axioms and admissibility}
+
+A configuration is a finite signed graph $\sigma=(G,s)$, $G=(V,E)$, $s_{ij}\in\{+1,-1\}$~\citep{D01,D67}. A triangle is coherent if $s_{ij}s_{jk}s_{ik}=+1$. Under the convention of D08, a triple of vertices is violated if at least one of its three edges is absent, or if all three are present and the sign product is $-1$; the coherence cost is the fraction of violated triples over all $\binom{|V|}{3}$ triples~\citep{D08}. C1 requires a minimal binary pulsation, C2 coherence, C3 connectedness, and C4 the minimisation of the coherence cost among configurations satisfying C1--C3~\citep{D01,D67}.
+
+\subsection{The minimal closure and the origin of three dimensions}
+
+\statT\ The complete signed graph on four vertices and six edges is the unique minimal admissible closure of C1--C4, identified with the electron, with relational budget $R_e=6$~\citep{D16a}. Its one-skeleton has first Betti number $\beta_1(K_4)=3$, the closure is topologically $S^2$, and this fact is the origin both of the three spatial dimensions and of the exponent decomposition $18=6+5+4+3$~\citep{D23v2,D67}. A closure is therefore a closed surface in the topological sense: it has no interior carrying relations of its own, and all its exchanges pass through its boundary.
+
+\subsection{Time, the coherence volume, and translation factors}
+
+\statT\ Proper time is a count of coherence-restoration cycles: each pulsation of a closure advances an internal counter by one unit~\citep{D10a,D67}. The pulsation frequency $\omega_p=m_pc^2/\hbar$ forces the length $\lambda_C=\hbar/(m_pc)$ and the coherence volume $V_C=\tfrac{4}{3}\pi\lambda_C^3\approx3.896\times10^{-47}\,\mathrm{m}^3$ associated with a single pulsating closure~\citep{D48,D67}. The constants $c$ and $\hbar$ are translation factors between the discrete combinatorial register and continuous measurement; they are not derived and must not be used as inputs to combinatorial derivations~\citep{D67}.
+
+\subsection{The pulsation as a bipartition}
+
+\statT\ A configuration satisfying C2 is generated by vertices: $s_{ij}=x_ix_j$ with $x:V\to\{+1,-1\}$, so the relational state is a bipartition of the entities~\citep{D68}. The switching operation $\sigma_S$ preserves C2 and is involutive for every subset $S$, hence C1 is satisfied by construction on every admissible configuration, complete or not; on a connected graph $\sigma_S=\mathrm{id}$ only for $S\in\{\emptyset,V\}$~\citep{D68}. The set of violated triangles is invariant under every switching, so the frustration count is identical for all $2^{n-1}-1$ candidate bipartitions and C4 cannot select among them~\citep{D68}. This last statement is used repeatedly below: it means that every admissible configuration pulsates, and that pulsation alone does not distinguish closed from non-closed content.
+
+\subsection{The nucleon as the minimal hierarchical closure}
+
+\statT\ The proton is the minimal hierarchical composite closure admissible under C1--C4, characterised by the quintuplet $(n_u,n_d,r_{\mathrm{val}},R_{\mathrm{sea}},R_{\mathrm{tot}})=(24,28,930,10087,11017)$; the neutron quintuplet is $(24,28,1032,9960,10992)$~\citep{D16a,D47v2,DMv34}. The valence core sizes follow from the quasi-completeness discriminant, a perfect square $149^2$ only for $\Delta n=n_d-n_u=4$~\citep{D47v2}. Global uniqueness of the quintuplet remains open (OP2)~\citep{DMv34}. The foundational document gives the structural reason for the hierarchy: if all substructures were saturated in the manner of the minimal block, the resulting global relational density would inhibit any propagation of coherence among them; a minimal hierarchy is required, with local closure at the cores and only partial closure at the global scale, the sea acting as the mediating domain~\citep{D01}. \statT\ The hadronisation boundary is $n_{\max}=140$, the largest effective size (multiple of four) with $r(n)\le R_{\mathrm{sea}}$; the top quark, at effective size $332$, lies beyond it and cannot hadronise~\citep{D63}.
+
+\subsection{The coherence tensor and the equation of state}
+
+\statT\ The coherence stress-energy tensor has mass, spin, orbital and leakage components; the first three have $w=0$ in the homogeneous ground state and the leakage component has $w=-1$, being proportional to $g_{\mu\nu}$~\citep{D48,D54,D67}. The equation of state of the fluid is $w(N)=-\rho_\Lambda/\rho_{\mathrm{coh}}(N)$, with $|w|\sim10^{-44}$ at coherence densities~\citep{D54}. The prefactor of the leakage term is $C=(1-\kappa)^{997}(930/11017)^{23}(1-\eta_L)^{67}$, whose three bases are retained fractions and whose prime exponents come from indices derived from the quintuplet~\citep{D51,D52}; it yields $\Lambda_{\mathrm{PDL}}=1.0893\times10^{-52}\,\mathrm{m}^{-2}$~\citep{D51,D53}. The numerical value passes through $\kappa=310\varphi/11017$ and is therefore conditional on H$\varphi$~\citep{D05v2,DMv34}.
+
+\subsection{Orientation of matter against antimatter}
+
+\statT\ The canonical ordering $k_1<k_2<k_3$ of the leakage indices, forced by $\Delta n=4>0$, induces a cyclic orientation on $V_4\setminus\{e\}$ that selects the representation $\mathbf{3}$ against $\bar{\mathbf{3}}$~\citep{D59}. The corpus thus identifies which orientation is matter. It does not produce an asymmetry of abundance.
+
+\subsection{Energy per relation}
+
+\statE\ Dividing the measured masses by the corpus relational budgets gives $m_pc^2/R_{\mathrm{tot}}=85.16584\,\mathrm{keV}$ for the proton and $m_ec^2/R_e=85.16649\,\mathrm{keV}$ for the electron, equal to $7.6\,\mathrm{ppm}$. This is the corpus mass-ratio result $\mu\simeq11017/6$ read as a statement that energy is proportional to relational content with a single quantum $\varepsilon_0$; the residual is the correction $\delta\mu$ of D29~\citep{D29}. The quantum $\varepsilon_0$ itself is not derived: it carries the unit and is fixed externally through $\Delta m_{\mathrm{iso}}$. Consequently any ratio of energy densities between two sectors whose relations carry the same quantum is a ratio of relation counts, and $\varepsilon_0$ cancels from it.
+
+\section{New Exact Results}
+\label{sec:exact}
+
+\subsection{Compatibility of two pulsations on shared entities}
+
+\begin{proposition}[Compatibility law]\label{prop:compat}
+\statE\ Let two admissible configurations share exactly $k\ge1$ entities, and let their bipartitions be drawn independently and uniformly. The probability that a single bipartition of the union restricts to both, i.e.\ that the joint configuration is admissible, is exactly $2^{1-k}$.
+\end{proposition}
+
+\begin{proof}
+By D68 each configuration is a bipartition $x$, defined up to the global sign $x\to-x$. On the $k$ shared entities each configuration induces one of $2^k$ assignments. Joint admissibility requires the two assignments to coincide up to one global sign, which happens for $2\cdot2^k$ of the $2^{2k}$ ordered pairs. The probability is $2^{k+1}/2^{2k}=2^{1-k}$.
+\end{proof}
+
+The lockdown script confirms the count by enumeration for $k=1,\dots,8$. Sharing one entity is always compatible; each additional shared entity halves the probability. Joint admissibility is a condition, not a cost: an incompatible pair does not form a costly configuration, it forms none.
+
+\subsection{Decomposition of the coupling cost}
+
+\begin{theorem}[Coupling decomposition]\label{thm:coupling}
+\statE\ Let $A$ be a complete signed graph on $n$ vertices and $b$ an external vertex joined by cross edges to a subset $N\subseteq A$. Minimising over the signs of the cross edges, the minimal number of violated mixed triples $\{x,y,b\}$ with $x,y\in A$ is
+\[
+\left[\binom{n}{2}-\binom{|N|}{2}\right]+L(A[N]),
+\]
+where $L(A[N])$ is the frustration index of the subgraph of $A$ induced on $N$, i.e.\ the minimal number of its edges whose sign disagrees with some switching.
+\end{theorem}
+
+\begin{proof}
+A mixed triple with $x\notin N$ or $y\notin N$ has a missing cross edge and is violated by the D08 convention, whatever the signs; there are $\binom{n}{2}-\binom{|N|}{2}$ of them. For $x,y\in N$, write $\sigma_v$ for the sign of the cross edge $\{v,b\}$. The triple is coherent if and only if $s_{xy}\sigma_x\sigma_y=+1$, i.e.\ if and only if edge $\{x,y\}$ agrees with the switching $\sigma$ restricted to $N$. The number of violated triples among these is therefore the number of edges of $A[N]$ disagreeing with $\sigma$, whose minimum over $\sigma$ is $L(A[N])$ by definition.
+\end{proof}
+
+The lockdown script verifies the formula against direct minimisation on 100 random signings and neighbourhoods for each of $n=4,5,6$. The two terms have distinct origins: the first is geometric, counting what $b$ does not touch; the second is logical, counting the frustration $b$ inherits from what it touches. Neither term requires the partner to be complete. When $A$ is balanced the logical term vanishes and coupling costs only the geometric term.
+
+\subsection{Minimal frustration of an unbalanced complete graph}
+
+\statE\ Over all signings of $K_n$ that are not balanced, the minimal number of violated triangles is $n-2$ for $n=4,5,6$, confirmed by exhaustive enumeration of all $2^{\binom{n}{2}}$ signings; equivalently the minimal non-zero violated fraction is $3/\binom{n}{2}$. The minimum is attained by a single negative edge after switching. \statO\ The general statement for all $n$ is not proved here (Conjecture~\ref{conj:minfrust}). The enumeration also shows that at equal frustration index the number of violated triangles is not determined: at $n=6$ and index~4 it takes the values 8, 10, 12 and 14. The frustration density therefore does not determine the coupling cost; the disposition of the frustrated edges does.
+
+\begin{conjecture}\label{conj:minfrust}
+For every $n\ge4$, every unbalanced signing of $K_n$ has at least $n-2$ violated triangles.
+\end{conjecture}
+
+\subsection{The closure barrier}
+
+\begin{proposition}[Barrier profile]\label{prop:barrier}
+\statE\ Consider two disjoint complete blocks $K_n$, all signs positive, and transfer $k\le n-1$ relations from the blocks to cross edges, the total number of relations being conserved. The construction that removes $k$ internal edges incident to a single vertex and adds $k$ cross edges from a single vertex changes the number of violated triples by
+\[
+\Delta(k)=k(n-1-k).
+\]
+The profile has maximum $\lfloor(n-1)^2/4\rfloor$ at $k=\lfloor(n-1)/2\rfloor$ and returns to zero at $k=n-1$.
+\end{proposition}
+
+\begin{proof}
+Removing $k$ edges incident to one vertex destroys $k(n-2)-\binom{k}{2}$ triangles, since each edge lies in $n-2$ triangles and each pair of removed edges shares exactly one. Adding $k$ cross edges from one external vertex to $k$ vertices of the other block creates $\binom{k}{2}$ triangles, the edges between those $k$ vertices being present. With all signs positive every triangle is coherent, so the change in violated triples is the net loss of triangles, $k(n-2)-2\binom{k}{2}=k(n-1-k)$.
+\end{proof}
+
+\statE\ Exhaustive enumeration over all choices of removed and added edges confirms that this construction is optimal at $n=4$ for $k=0,\dots,3$ and at $n=5$ for $k=0,\dots,3$: the minimal change of violated triples equals $k(n-1-k)$ at every such $k$. All-positive signs are optimal here because the blocks are balanced, so that every triangle can be made coherent simultaneously. At $n=4$ the enumeration continued beyond the crossing gives the global minimum $45/56$ at $k=5$, against $48/56$ at $k=0$. \statO\ Optimality of the construction for general $n$ is not proved. Relative to the internal budget $\binom{n}{2}$ the barrier tends to $1/2$, while the fraction of the budget that must be transferred to cross it is exactly $2/n$.
+
+\begin{remark}
+The configuration at $k=0$, two disjoint blocks, is disconnected and therefore inadmissible under C3. The profile of Proposition~\ref{prop:barrier} is a cost landscape between configurations; it is not a binding energy, and no statement of this document interprets it as one.
+\end{remark}
+
+\subsection{The collapse barrier of a block assembly}
+
+\statE\ On seven vertices with exactly twelve edges there are $290\,745$ connected configurations. The assembly of two complete blocks on four vertices sharing one vertex carries 8 triangles, cost 27 violated triples out of 35; the global C4 optimum carries 10 triangles, cost 25, and is a dense centralised configuration. The assembly is a strict local minimum: no single move (remove one edge, add one edge, preserving connectedness) lowers its cost. The minimax path from the assembly to the optimum peaks at cost 28, so the collapse barrier is exactly one violated triple. \statN\ For chains of $b=3,4,5$ blocks a bounded best-first search returns an upper bound of one on the barrier at every size, while the cost reduction obtained grows as 4, 7, 15; assemblies are therefore not durably protected. These upper bounds are valid irrespective of the truncation of the search, since a path of peak one to a strictly better state was exhibited in each case.
+
+\subsection{Simultaneity capacity}
+
+\statE\ For a complete signed graph with a single negative edge after switching, the largest subset of vertices inducing a balanced subgraph has $n-1$ elements, for $n=4,\dots,10$: exactly one endpoint of the frustrated edge must be excluded. By Theorem~\ref{thm:coupling}, an external vertex can therefore engage $n-1$ vertices at zero logical cost and no more. The deficit is one vertex, independent of $n$.
+
+\subsection{Pooling of minimal closures}
+
+\statE\ A chain of $m$ blocks on four vertices, consecutive blocks sharing $s$ vertices, admits a single common bipartition with probability exactly $2^{V-1}/2^{3m}$, where $V$ is the number of vertices of the union. For $s=1$ the probability is one for every $m$; for $s=2$, the smallest chain carrying at least 27 relations ($m=6$) has probability $3.1\times10^{-2}$; for $s=3$ ($m=8$) it is $6.1\times10^{-5}$. Accumulating relations by pooling is free when motifs touch at a single vertex and exponentially improbable when they overlap; organising them into a dense structure is the costly step.
+
+\section{A Structural Obstruction}
+\label{sec:obstruction}
+
+\statE\ The leakage component of the coherence tensor is proportional to $g_{\mu\nu}$. A term proportional to $g_{\mu\nu}$ has $P=-\rho c^2$ and therefore $w=-1$ necessarily. A pressureless component requires a term proportional to $u_\mu u_\nu$, which requires a rest frame, which requires a population carrying it. The geometric route by which the corpus crosses the $44$ orders of magnitude between nuclear coherence densities and $\rho_\Lambda$, with no population and no counting, is therefore structurally unavailable to any component with $w=0$. This explains why every attempt reported in Section~\ref{sec:negative} reduces, in the end, to a counting of configurations or relations: no other route exists within the tensor structure of the corpus.
+
+\statE\ The corpus density $\rho_{\mathrm{coh}}(N)=\sigma(N)\kappa m_p/V_C$ is an intra-cell density. For every admissible $N\ge1$ it satisfies $\rho_{\mathrm{coh}}\ge8.90\times10^{16}\,\mathrm{kg\,m^{-3}}$, so $|w|\le6.6\times10^{-44}$; the equation of state never approaches $-1$ inside a cell, and $w=0$ is preserved under dilution of a population of cells. The form $w=-\rho_\Lambda/\rho_{\mathrm{coh}}$ is the leading term of the mixture value $-\rho_\Lambda/(\rho_m+\rho_\Lambda)$ and coincides with it in the regime $\rho_m\gg\rho_\Lambda$ where the corpus applies it; the corpus quotes $w\approx-0.62$ at cosmological scales and never produces an unphysical value.
+
+\section{Negative Results}
+\label{sec:negative}
+
+Table~\ref{tab:negative} lists every mechanism tested for the dark sector, with the quantitative reason for its failure. The observational target is $\Omega_c h^2/\Omega_b h^2=0.1200/0.02237=5.3643\pm0.0645$ from Planck 2018~\citep{Planck2018}, equivalently a closed fraction $\Omega_b/(\Omega_b+\Omega_c)=0.157126$; the combination of ACT DR6 with DESI BAO gives $5.2212\pm0.0499$~\citep{ACTDR6}, and the difference between the two data sets, $2.74\,\%$, exceeds either quoted uncertainty. Every test was run with its outcome declared before execution.
+
+\begin{small}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.05\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.53\linewidth}}
+\caption{Negative results. Each entry is \statN.}\label{tab:negative}\\
+\toprule
+& Mechanism & Reason for failure \\
+\midrule
+\endfirsthead
+\toprule
+& Mechanism & Reason for failure \\
+\midrule
+\endhead
+N1 & Orbital component $C^{(\mathrm{orb})}$ as a galactic source & $C^{(\mathrm{orb})}_{00}/C^{(\mathrm{mass})}_{00}=(v/c)^2$ exactly, with no density dependence; $5.385\times10^{-7}$ at $220\,\mathrm{km\,s^{-1}}$, a shortfall of $6.97$ orders for an order-unity requirement. \\
+N2 & Environment-dependent coupling $G_{\mathrm{eff}}=\sigma(N)G_{\mathrm{PDL}}$ & $\sigma\le1$ for every $N$ and $\kappa$; since $G$ is measured at saturation, $\max G_{\mathrm{eff}}/G_{\mathrm{lab}}=1.0000$ exactly; the route can only weaken gravity. At galactic scale $\sigma=0.5$ would require $\kappa=9.7\times10^{-69}$, $66.7$ orders below the corpus value. \\
+N3 & Gravitational leakage hierarchy for the MOND scale $a_0$ & Solving $\varepsilon_G^n=a_0/(c^2/\bar\lambda_C)$ gives $n=20.0354$ against the topological exponent 18; the 20\,\% systematic on $a_0$ shifts $n$ by $\pm0.037$. Control: $G_{\mathrm{PDL}}$ reproduced to $16\,\mathrm{ppm}$. \\
+N4 & Structural scan for $a_0$ & $36\,125$ expressions; 5 hits at $10^{-3}$ against a decoy 95th percentile of 5; no discrimination. \\
+N5 & Intensive coherence cost as selector of a link budget & The cost is a weighted average of two constants, hence monotone in the transferred budget: no interior optimum for any cross frustration. \\
+N6 & Extensive cost with a complete-graph proxy & A genuine interior optimum exists, but with equal intra and cross frustration it lies at the whole internal budget, 22 times the surface budget. The proxy of a complete graph with $\binom{n}{2}\approx R_{\mathrm{tot}}$ is not a model of $K_{\mathrm{nuc}}$ and is recorded only as a negative instrument. \\
+N7 & Counting of configurations & Uniform measure gives a non-closed to closed content ratio from $10^{1.78}$ at $n=4$ to $10^{39}$ at $n=14$; strict C4 gives zero. No selection rule between the two exists in C1--C4. \\
+N8 & Coherence fluid with one cell per nucleon & $\rho_{\mathrm{DM}}/\rho_b=\sigma\kappa=0.04536$ against $5.3643$: a factor $118.3$, in the wrong direction. \\
+N9 & Cosmological volume per cell as a dilation of corpus lengths & Required length $0.324\,\mathrm{m}$; best monomial in $\bar\lambda_C$ and the cosmological lengths is $94\,\%$ off; decoy control $0.00$. \\
+N10 & Rarity law of DL01 crossed with the barrier & Closed fractions between $3.9\times10^{-5}$ and $3.5\times10^{-4}$; $81\,\%$ of the closed content comes from $n=4$. The rarity law counts closure on complete graphs only and is silent on incomplete ones. \\
+N11 & Junction deficit between neighbouring closures & The linear form in the number of neighbours contradicts the saturation of the active surface; the saturating form gives $n^2/(2R_{\mathrm{tot}})=1.0076$, a factor $5.32$ short. \\
+N12 & External degree through the active surface & $R_{\mathrm{surf}}$ gives $3.37$ external relations per entity against $148$ internal: ratio $0.0227$, a factor $236$ short. Any mechanism routed through $R_{\mathrm{surf}}$ inherits this. \\
+N13 & C4 as the origin of the non-closed excess & At $|V|=8$ and 12 relations the exhaustive C4 optimum has $9/12$ relations in triangles: C4 minimises non-closure and selects the opposite of the target. \\
+N14 & Phase locking limited by the size of a minimal closure & A closure on four vertices locks at most four; fixed points between $0.95$ and $1.00$, a factor six above the target. A strictly sequential cascade stops at the first stage, which consumes $0.998$. \\
+N15 & Metastable block assemblies & Collapse barrier of one at every size tested (Section~\ref{sec:exact}); the gain from collapse grows while the price does not. \\
+N16 & Ratios of corpus invariants & $1190$ ratios of 35 declared invariants; 2 within $1.2\,\%$ against $2.36$ expected by chance. \\
+N17 & Combinatorial ratios of finite graphs & Cross-to-within triangles $3m/(m-2)$ gives 9, 6, 5, 4.5, \ldots; constraints-to-freedoms $(n-2)/2$ gives 5 at $n=12$ and 5.5 at $n=13$; every such ladder straddles the target without reaching it. \\
+N18 & $\Omega_c/\Omega_\Lambda=1/\varphi^2$ & Compatible at $-1.09\sigma$ in $h$-independent densities, but without mechanism; a random target falls within $2.2\,\%$ of a power of $\varphi$ with probability $9\,\%$; conditional on H$\varphi$. Recorded as a numerical coincidence. \\
+N19 & $\Omega_c/\Omega_b=R_{\mathrm{res}}\kappa=310^2/(\varphi\cdot11017)=5.391038$ & $+0.41\sigma$ against Planck 2018 but $+3.40\sigma$ against ACT DR6 with DESI, inside the failure band fixed before comparison; no mechanism; conditional on H$\varphi$. \\
+N20 & Calibration of the asymptotic locking overlap $k_0$ & Every monotone interpolation of the overlap reaches the target for some $k_0$; the required value ranges from $25.7$ to $473.7$ across five forms, a factor $18.4$. The calibration tests nothing. \\
+N21 & Latency windows for the baryon asymmetry & Windows of $23$, $67$ and $997$ Compton periods lie before hadronisation, but no ratio of durations reaches $\eta_B\approx6\times10^{-10}$ within $10\,\%$; the asymmetry is a population ratio, not a duration ratio. \\
+N22 & Dilution as a direct brake on closure & If dilution lowers the overlap, the compatibility $2^{1-k}$ rises: the feedback has the wrong sign. \\
+\bottomrule
+\end{longtable}
+\end{small}
+
+\begin{remark}
+Twelve of the twenty-two entries fail for the same reason: the corpus produces structures and ratios, not rates or populations, while the target is an abundance. The negative results are therefore not scattered; they delimit a single missing ingredient. Two further observations, $C(344,2)$ within $0.17\,\%$ of $5.3643R_{\mathrm{tot}}$ and $1/6$ as a closed fraction, were examined and are not recorded as leads: the first uses a surface coefficient of the neutron as a vertex count, a change of category; the second is $6.1\,\%$ from the observed value, about five standard deviations.
+\end{remark}
+
+\part{An Interpretive Account}
+
+Nothing in this part is a theorem of C1--C4. Its statements are marked \statI\ unless they restate a result of Part~I or a statement of the corpus, in which case the marker of the source applies.
+
+\section{Three Regimes of One Network}
+\label{sec:regimes}
+
+\statI\ Relational content admits three regimes. Content that closes forms a closed surface: it has a boundary, hence an active surface through which it exchanges, radiates and binds; it has a rest frame and completes cycles, hence a mass; this is ordinary matter, the electron being the case with no residual frustration. Content that transits has no rest frame and completes no cycle, hence no mass; no other regime is open to it, which reads its motion as inescapable rather than merely fast; this is the photon. Content that pulsates without closing has a rest frame, hence a mass, and carries relations, hence gravitates, but has no boundary, hence no active surface and no electromagnetic coupling; this is the proposed reading of dark matter. The equations of state of closed content ($w=0$), of transiting content ($w=+1/3$) and of non-closed content ($w=0$), together with the leakage component ($w=-1$) carried by the loosest non-closed content, are read as regimes of a single network rather than as distinct substances.
+
+\statT\ That every admissible configuration pulsates, closed or not, is D68. That the gravitating content is relational content, and that energy is proportional to relation count, is Section~\ref{sec:corpus}. \statI\ That the absence of a boundary suppresses electromagnetic coupling rests on the corpus definition of the active surface as the locus of mixed coherent triangles with an external structure; that definition presupposes a closure, and Theorem~\ref{thm:coupling} does not by itself forbid coupling to non-closed content. The reading that the coupling vanishes is therefore an interpretation, compatible with the absence of any detection.
+
+\statI\ Dark matter on this reading is not a particle species. It is a regime of the same network. This excludes hidden sectors, dark particles with their own quantum numbers, and the production of dark matter in accelerators: concentrating energy raises relational density, and raising density favours closure, hence produces ordinary matter or radiation.
+
+\section{Why Most Content Does Not Close}
+\label{sec:mechanism}
+
+\subsection{Density}
+
+The foundational document states that as long as the relational density remains low, configurations are essentially transient and do not generate durable closures; that only regions subjected to sufficiently intense collective constraints produce more articulated compositions; and that the majority remain unstable while some attain minimal closure and persist~\citep{D01}. The account below adds no principle to this statement. It supplies the quantitative ingredient that makes closure rare.
+
+\subsection{Phase locking}
+
+\statE\ Two motifs close together only if their bipartitions agree on every shared entity, with probability $2^{1-k}$ (Proposition~\ref{prop:compat}). \statI\ A closure fixes the bipartition of its entities. Any later attempt that meets them must agree with what is already fixed. The overlap faced by a new attempt therefore grows with the closed fraction, and the probability of success falls exponentially with it. Closure produces the rigidity that stops it. This is a covering process: early closures fix fresh entities, later ones fall increasingly on entities already fixed, so the overlap saturates; the saturating form of the overlap is the structurally motivated one, of the same form as $\sigma(N)$ in the corpus.
+
+\statN\ Taken alone, and with the overlap capped at the size of a minimal closure, phase locking halts too late by a factor six (N14). With the cap removed, every monotone form reaches the observed fraction for some value of the asymptotic overlap, and the value is form-dependent (N20). Phase locking gives the direction and the structure of the halt; it does not give its value.
+
+\subsection{Extension of the relational network}
+
+\statI\ Space is not a sum of coherence volumes: $V_C$ multiplied by the number of baryons falls short of the observable volume by some forty orders, and $V_C$ is the proper scale of a closure, not a brick of space. Space is read instead as the network of relations between closures, distance being the number of relations to traverse. As the network extends, two motifs become separated by more relations, cease to share entities, and cease to be able to close together. Closure therefore produces twice what stops it: rigidity by phase locking, and separation by extension of the network. The agent of the halt is the fall of relational density, not the causal horizon, which grows and never limits nearest neighbours.
+
+\subsection{Two thresholds and the order of extinction}
+
+\statT\ Closure is possible only in a window: the minimal closure on four vertices, the minimal hierarchical closure at nucleon scale, and the upper bound $n_{\max}=140$ beyond which a sea cannot sustain the structure. \statI\ The two thresholds differ by their requirement, not by their date of opening. The minimal closure needs six relations and nothing beyond itself. The hierarchical closure needs $11\,017$ relations gathered and phase-agreed at once. When density falls, the hierarchical threshold closes first, since the concentration it requires no longer exists anywhere; no new nucleon forms thereafter. This agrees with the observed history, in which quarks confine into hadrons at a definite epoch and nothing new hadronises afterwards.
+
+\subsection{The freeze}
+
+\statI\ A point is reached at which no attempt succeeds. What has closed remains closed, since no fixed bipartition is reopened; what has not closed will not, since the network does not contract. The ratio of closed to non-closed content is frozen, which accounts for its constancy since recombination without any adjustment. Everything that follows, nuclear binding, recombination, the formation of stars and galaxies, rearranges content that had already closed and leaves the ratio unchanged; the non-closed content, having no boundary, takes no part.
+
+\section{Two Eras of Expansion}
+\label{sec:eras}
+
+\statI\ Closed content dilutes as the cube of the extension of the network and its attraction decelerates the expansion. The loosest non-closed content, engaged in no structure, carries the leakage component, which has $w=-1$ exactly (\statT, D67) and does not dilute. A transition from deceleration to acceleration therefore follows when the diluting content falls below the non-diluting one. This transition is observed at a redshift of about $0.7$. It is not constructed here: it follows from the corpus results that one component dilutes and the other does not. The reading adds no predictive content beyond $\Lambda$CDM; its gain is economy, a single network in place of two independent dark components.
+
+\section{Confrontation with Observation}
+\label{sec:confrontation}
+
+\statI\ The account is compatible with the following facts, none of which it was constructed to reproduce: the dark sector does not radiate; no accelerator has produced it; its ratio to baryonic matter has been constant since recombination; protons and neutrons are those formed at hadronisation; the top quark does not hadronise (the last being \statT). A dimensional estimate of a self-interaction cross-section at the proton Compton scale, carried by one coherence cell, gives $\sigma/m\approx0.018\,\mathrm{cm^2\,g^{-1}}$, below the bound $0.47\,\mathrm{cm^2\,g^{-1}}$ from 72 cluster collisions~\citep{Harvey2015} and $1.25\,\mathrm{cm^2\,g^{-1}}$ from the Bullet Cluster~\citep{Randall2008}; this estimate uses a posed geometric cross-section and is an order-of-magnitude compatibility, not a prediction.
+
+\statI\ The account differs from asymmetric dark matter~\citep{Petraki2013,Zurek2014} in suppressing the hidden sector, and it pays for that economy: asymmetric dark matter obtains the ratio from a dark mass scale set by confining dynamics, whereas non-closed content in the present reading has no characteristic size and no mass scale. The account also differs from the corpus reading of OP-DM, in which the pressureless components of the coherence fluid would be the dark matter: that reading, with one coherence cell per nucleon, is excluded by N8.
+
+\section{What Is Not Established}
+\label{sec:notestablished}
+
+\statO\ The value of the ratio. No mechanism tested produces $\Omega_c/\Omega_b=5.36$, and the twenty-two negative results indicate why: the target is an abundance, and the corpus produces structures and ratios. The reading of Part~II is a constrained interpretive framework: constrained because it rests on the exact results of Part~I and excludes hidden sectors, dark particles and laboratory production; interpretive because the link between those results and the account is not derived. It is falsifiable in principle, through the ratio, and not yet in practice.
+
+\statO\ The link between closure and the emergence of space. The corpus derives the dimensionality of space from $\beta_1(K_4)=3$ and a coherence volume per closure; it does not state that the extension of the relational network is driven by closure. The halt by extension of Section~\ref{sec:mechanism} depends on this link.
+
+\statO\ The baryon asymmetry. The corpus identifies the orientation of matter (D59). A latency in the propagation of that orientation across leakage cycles would produce an asymmetry without preferring either side a priori, and windows of $23$, $67$ and $997$ Compton periods fall at an appropriate epoch; but converting a window into a population asymmetry requires a rate that the framework does not provide (N21). This is related to the object sought in OP-D68-5, one that accumulates across cycles~\citep{D68}.
+
+\section{Open Problems}
+\label{sec:ops}
+
+\begin{openproblem}[The overlap law]\label{op:overlap}
+Derive from C1--C4 the law by which the overlap faced by a closure attempt grows with the closed fraction, and its asymptotic value. The investigation shows that the value alone is meaningless without the law (N20); a derivation of the law would convert the phase-locking account into a prediction of the closed fraction, to be compared with $0.157126$ within the observational spread between data sets.
+\end{openproblem}
+
+\begin{openproblem}[General barrier and frustration statements]\label{op:general}
+Prove Conjecture~\ref{conj:minfrust} and the optimality of the construction of Proposition~\ref{prop:barrier} for all $n$.
+\end{openproblem}
+
+\begin{openproblem}[Coupling to non-closed content]\label{op:coupling}
+Decide whether the coupling of non-closed content to a closure's active surface vanishes identically, as the account assumes, or is non-zero as Theorem~\ref{thm:coupling} permits. A non-zero value would be a falsifiable prediction against direct-detection limits; an identically zero value would remove that test.
+\end{openproblem}
+
+\begin{openproblem}[Closure and the extension of the network]\label{op:space}
+Establish or refute that the extension of the relational network is driven by closure, and give its law in the combinatorial register.
+\end{openproblem}
+
+\begin{openproblem}[Orientation latency]\label{op:latency}
+Determine the number of cycles over which the orientation of D59 propagates, and whether the resulting window, with a rate derived from C1--C4, yields $\eta_B$. Relation to OP-D68-5.
+\end{openproblem}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The investigation reported here did not derive the abundance of dark matter. It established exact combinatorial results that any future derivation will use: the compatibility law $2^{1-k}$, the decomposition of the coupling cost, the barrier profile $k(n-1-k)$, and the exact collapse barrier of a minimal assembly. It closed twenty-two routes with their reasons, showed that twelve of them fail for one reason, and showed by a structural argument why the route that yields $\Lambda$ cannot yield a pressureless population. It proposed a reading in which dark matter is relational content that pulsates without closing, which explains without parameters why that content is invisible, why no accelerator produces it, and why its ratio to ordinary matter is frozen, and which rests at both ends on statements of the corpus. The ratio itself remains unexplained. The single missing ingredient is named: the law by which closure attempts come to overlap with what is already fixed.
+
+\appendix
+
+\section{Instruments and Verification Status}
+\label{app:instruments}
+
+The lockdown script \texttt{PDL\_D70\_lockdown.py} (standard library only) recomputes every result marked \statE\ in Part~I and prints PASS or FAIL for each: the compatibility law for $k=1,\dots,8$; the coupling decomposition on 100 random cases for each of $n=4,5,6$; the minimal frustration of unbalanced $K_n$ for $n=4,5,6$; the barrier profile at $n=4$ and $n=5$ and the global minimum $45/56$; the exact collapse barrier at seven vertices and twelve edges; the simultaneity capacity for $n=4,\dots,10$; the pooling probabilities; the energy per relation; the orbital ratio $(v/c)^2$ and its density independence; the ceiling of $\sigma$; and the exponent $20.0354$ with its control on $G_{\mathrm{PDL}}$. The negative results N5, N7, N10, N13, N14, N15 and N20 were obtained with the session instruments \texttt{PDL\_Hbudget\_vanishing\_test.py}, \texttt{PDL\_closed\_vs\_nonclosed.py}, \texttt{PDL\_rarity\_barrier.py}, \texttt{PDL\_C4\_selection\_8v12e.py}, \texttt{PDL\_competing\_populations.py}, \texttt{PDL\_barrier\_growth\_colab.py} and \texttt{PDL\_k0\_five\_forms.py}; N1, N2, N5, N6, N7 and N15 were verified by independent execution. No instrument carries a DOI.
+
+\bibliographystyle{unsrtnat}
+\bibliography{D70_references}
+
+\end{document}

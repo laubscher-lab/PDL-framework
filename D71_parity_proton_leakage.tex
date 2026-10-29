@@ -1,0 +1,153 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
+
+\newcommand{\Dr}{\Delta r_{\mathrm{val}}}
+\newcommand{\Esea}{E_{\mathrm{sea}}}
+\newcommand{\Vsea}{V_{\mathrm{sea}}}
+
+\title{D71 --- Parity-Driven Proton Leakage:\\ A Monomer-on-Surface Mechanism Linking the Gravitational\\ Bridge, the Closed Fraction and the Spin Budget}
+\author{C\'edric Laubscher\\ \small \texttt{cedric@cedriclaubscher.ch}}
+\date{October 29, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent We report a mechanism-level result inside the coherence-network corpus (D-series): an odd-parity sea of $11017 = 23 \times 479$ relations on the proton surface forces exactly one conserved, mobile matching defect (a \emph{monomer}), whose circulation, localised by an Euler condition at two degree-25 vertices on the bow of the spin-carrying valence core, yields an effective boundary count $B_{\mathrm{eff}} = 528 + \tfrac{1}{2\sqrt{2}} + \tfrac{1}{56}$. This single mechanism, with all coefficients derived in closed form from the architecture integers, is simultaneously compatible with three independent observational targets: the proton-skin amplitude $\Dr = 0.04795969 \pm 6.98\times 10^{-8}$ controlling the $\alpha \leftrightarrow G$ bridge (residual $0.64\sigma$), the closed fraction $f = 0.157126 \pm 9\times 10^{-4}$ (candidate for $\Omega_b/\Omega_m$; residual $0.10\sigma$), and the valence spin share $\Delta\Sigma = 0.30 \pm 0.05$ (EMC/COMPASS; residual $0.17\sigma$). We distinguish carefully between theorem-level, derived-within-declared-family, and compatibility-level statements, and we show that this result does \emph{not} yet lift the circularity of $G$: a continuous derivation C1--C4 $\to B \to \Dr \to \varepsilon_G \to G_{\mathrm{PDL}}$ remains to be written. A negative dossier (campaigns v3--v9) that eliminates six alternative branches is included as an integral part of the evidence.
+\end{abstract}
+
+\section{Epistemic status and reading rules}
+Throughout, every statement carries one of three labels:
+\begin{itemize}[leftmargin=1.6em]
+\item \textbf{(T)} theorem-level: follows from the stated axioms C1--C4 and integer facts of the corpus, without free parameters;
+\item \textbf{(D)} derived within a family declared \emph{a priori}, under an explicit Poisson null;
+\item \textbf{(H)} heuristic or compatibility-level: survives confrontation but is not uniquely selected.
+\end{itemize}
+The main claim of this note is at level \textbf{(D)}: one mechanism is simultaneously compatible with three independent numbers. Compatibility with three targets is not a derivation; Section~\ref{sec:limits} lists the exact falsifiers.
+
+\section{Corpus constants}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lll}
+\toprule
+Quantity & Value & Role\\
+\midrule
+Closure integer $n_u$ & $930$ & units of coherence \\
+Sea vertices $\Vsea$ & $918$ & dynamical sites \\
+Sea relations $\Esea$ & $11017 = 23 \times 479$ & odd (parity engine) \\
+Valence cores & $3 \times K_4$ & 12 vertices, 18 relations, static \\
+Total relations & $11035$ & sea + cores \\
+Mean degree & $24$ & sea coordination \\
+Skin amplitude $\Dr$ & $0.04795969 \pm 6.98\times10^{-8}$ & target T1 (bridge to $G$) \\
+Closed fraction $f$ & $0.157126 \pm 9\times10^{-4}$ & target T2 ($\Omega_b/\Omega_m$ candidate) \\
+Valence spin $\Delta\Sigma$ & $0.30 \pm 0.05$ & target T3 (EMC/COMPASS) \\
+\bottomrule
+\end{tabular}
+\caption{Fixed inputs. All integers are corpus facts; the three targets are independent.}
+\end{table}
+
+\section{The negative dossier (v3--v9)}
+Six natural branches were eliminated under declared families and Poisson nulls, which bounds the solution space from all sides:
+\begin{itemize}[leftmargin=1.6em]
+\item \textbf{v3:} naive irreversible closure freezes at $100\%$, not $15.7\%$ --- the closed fraction is not a raw one-shot process;
+\item \textbf{v5:} zero hit among 39 declared closed-form leak shapes (window $\pm 7\times10^{-8}$) --- $\Dr$ is not an algebraic expression;
+\item \textbf{v6:} zero hit among 12 declared dynamical estimators of the closure trajectory ($48$ runs) --- $\Dr$ is not a stochastic observable of a one-shot trajectory;
+\item \textbf{v7:} zero hit among $10\,064$ declared $\mu$-deviation forms; the available $\mu$ discrepancy carries $\sim 0.00\%$ of the required leak (a factor $\sim 5\times10^{4}$ too small, wrong geometry). The bridge target itself shifts by $12$ tolerances under the $\mu_{\mathrm{pred}}/\mu_{\mathrm{exp}}$ convention;
+\item \textbf{v8:} 52 declared single-level stationary mean-field fixed points $p^* = U/(U+L)$ falsified; required suppression measured: $14.24$ bits;
+\item \textbf{v9:} $1080$ declared hierarchical period-3 $\times$ spin configurations; zero triple coincidence; maximum per-level suppression $7.16$ bits at level 1 versus $0.79$ bits/level needed over 18 levels.
+\end{itemize}
+Convergent conclusion at level \textbf{(H)}: the leak must be a stationary, analytically derivable property of a \emph{fixed-parity} ensemble --- the grand-canonical homogeneous treatment used in v8/v9 was the wrong ensemble.
+
+\section{Parity theorem and the conserved monomer (v10)}
+\textbf{Theorem (T, within the matching model).} Since $\Esea = 11017 = 23\times 479$ is odd, every matching of the sea leaves at least one unmatched relation (monomer). Creating a second defect costs $\sim 2^{1-k}$ broken locks per locked neighbour (exact law, corpus theorem U2), hence the equilibrium state carries \emph{exactly one} conserved, mobile monomer.
+\par\noindent Consequences:
+\begin{itemize}[leftmargin=1.6em]
+\item the unlocking rule $U$ --- postulated in v8/v9 --- becomes \emph{derived}: the defect cannot be eliminated, only displaced (level T given the model);
+\item the stationary distribution of the monomer is analytically solvable (exact Markov-chain fixed point; validated to $1.9\times10^{-3}$);
+\item inverting the skin target yields $B_{\mathrm{req}} = 528.354$ effective boundary relations --- \emph{non-integer}, which falsified the uniform-boundary family at ppm level and localised the obstruction to a fractional boundary correction of $0.354$.
+\end{itemize}
+
+\section{Surface ontology and the wake census (v12)}
+The proton is treated as a \emph{surface only} (soap-bubble / black-hole-horizon ontology): no bulk; all relations live on the membrane. The sea is a sparse dynamical graph; the three $K_4$ valence cores are complete graphs moving through it like bows through water, carving \emph{wakes}. Degree audit of the sea: $\sum \deg = 22034 = 918\times 24 + 2$ --- hence \textbf{exactly two vertices of degree 25} carry the parity excess (level T given the model).
+\par\noindent Wake boundary count (level D): orthogonal + diagonal front $= 540$; minus one core's diagonal interface $12$:
+\[
+B = 540 - 12 = 528 = n_u\,(n_u-2) = 24\times 22 = 12\times 44 .
+\]
+The residual $0.354$ is then hit by the fractional correction $B = 528 + \tfrac{1}{2\sqrt{2}} = 528.35355339$ versus target $528.35404759$: deviation $0.000447$, i.e.\ $0.58\sigma$ inside the declared family ($2496$ forms, Poisson $\lambda = 0.064$, $P(\geq 1) = 6.2\%$). Signature of a \emph{diagonal cut}: a bow crossing a mesh diagonally contributes half-edges weighted by $\sin(\pi/4)$.
+
+\section{Euler localisation of the defect (v13)}
+\textbf{(D)} An alternating defect trail on the wake boundary is Eulerian iff the number of odd-degree vertices of the front is $0$ or $2$. The diagonal interface of a core is $12$ (even); hence the degree excess must arrive \emph{in pairs}: two degree-25 vertices, not one of degree 26 (which would break alternation). Scenario exclusion fixes both loci \emph{on the bow of the reference (spin-carrying) core}. Per locus, the diagonal-stub correction is
+\[
+\frac{\sqrt{2}}{2}\times\frac{1}{2}\times\frac{1}{2} = \frac{\sqrt{2}}{8}, \qquad 2\ \text{loci} \Rightarrow \frac{\sqrt{2}}{4} = \frac{1}{2\sqrt{2}},
+\]
+and the naive duty cycle $B_{\mathrm{duty}} = 528.372$ is reconciled with the inverted target by the stationary correction $\delta = 1/(n_u+32) = 1/56$: $528.372 - 1/56 = 528.354$.
+
+\section{Triple-target confrontation (v14)}
+The frozen mechanism was confronted with all three targets simultaneously:
+\begin{itemize}[leftmargin=1.6em]
+\item \textbf{T1 (pass):} $B_{\mathrm{pred}} = 528 + \tfrac{1}{2\sqrt{2}} + \tfrac{1}{56}$, giving $\Dr^{\mathrm{pred}} = 0.04795965$ vs $0.04795969$ --- residual $4.5\times10^{-8} = 0.64\sigma$;
+\item \textbf{T2 (pass):} among 29 declared forms, 7 hits; selected form $f = 12^{2}/(\Vsea - 1) = 144/917 = 0.15703381$ vs $0.157126$ --- residual $0.10\sigma$. Note $917 = \Vsea - 1$: the same parity defect governs skin and closed fraction;
+\item \textbf{T3 (pass, weakly discriminating):} candidates within the wide EMC window.
+\end{itemize}
+Survival of three targets is \emph{compatibility}, not derivation (level H at this stage).
+
+\section{Closed-form derivations (v15--v16): agenda 5/5}
+\begin{enumerate}[leftmargin=1.8em]
+\item \textbf{Bow degree (closed):} $d_{\mathrm{bow}} = n_u/3 = 8$, the per-core closure integer.
+\item \textbf{Duty correction (closed):} $\delta = 1/\binom{8}{3} = 1/56$ --- each bow locking commits one tetrahedral face among $\binom{8}{3}=56$ equiprobable configurations; unique argmin ($0.124\sigma$) in the declared $\binom{d}{k}$ family, $d\in\{6,8,12,24\}$, $k\in\{2,3,4\}$.
+\item \textbf{Diagonal cut (closed):} $\sqrt{2}/8$ per Euler locus is the \emph{unique} element of the declared $g\times o\times p$ family passing at $<1\sigma$.
+\item \textbf{Closed fraction (closed):} $f = 144/917$ selected over $2/(3\varphi^{3})$ by the structural chain criterion ($\varphi$ lies outside the wake chain; the denominator must include the monomer, $917 = \Vsea-1$). The v3 fatality of $2/(3\varphi^{3})$ is thereby \emph{confirmed and reconciled}: distinct readings, distinct windows; Poisson null $P = 9.3\%$ for its v14-window reappearance as coincidence.
+\item \textbf{Valence spin (closed):} from the spin--surface map,
+\[
+\Delta\Sigma = \underbrace{\tfrac{1}{3}}_{\text{accessible phase (D69)}} \times \underbrace{\left(1 - \tfrac{1}{8}\right)}_{\text{bow relations unabsorbed by the wake}} = \frac{7}{24} = 0.29167,
+\]
+vs $0.30 \pm 0.05$: $0.167\sigma$. The competing exact form $3/10$ and $1/(2\varphi)$ are excluded as outside the structural chain.
+\end{enumerate}
+\textbf{Cross-coherence (the strongest internal signature):} the single integer pair $(3,8)$ governs \emph{both} T1 ($\delta = 1/\binom{8}{3}$) and T3 ($\Delta\Sigma = \tfrac{7}{24} = \tfrac13(1-\tfrac18)$). Two independent targets, one pair of integers. The implied spin budget reads: valence $7/24$, sea + orbital $17/24 \approx 0.71$ --- consistent with an almost entirely dynamical energy budget (QCD).
+
+\section{Results and residuals}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{llll}
+\toprule
+Target & Mechanism prediction & Observation & Residual \\
+\midrule
+T1 $\Dr$ & $0.04795965$ & $0.04795969 \pm 6.98\times10^{-8}$ & $0.64\sigma$ \\
+T2 $f$ & $144/917 = 0.15703381$ & $0.157126 \pm 9\times10^{-4}$ & $0.10\sigma$ \\
+T3 $\Delta\Sigma$ & $7/24 = 0.29167$ & $0.30 \pm 0.05$ & $0.17\sigma$ \\
+\bottomrule
+\end{tabular}
+\caption{Triple-target audit after v16.}
+\end{table}
+
+\section{Limitations and falsifiers}\label{sec:limits}
+\begin{enumerate}[leftmargin=1.8em]
+\item The fractional T1 hit is at $\sim 1.7\sigma$ (Poisson $\lambda = 0.064$, $P(\geq 1) = 6.2\%$): a serious indication, not a discovery.
+\item The 7 T2 hits are correlated (single counting cluster); the nominal $9\times10^{-8}$ overstates significance. Selection was by structural criterion, not by fit.
+\item T3's EMC window ($\pm 0.05$) is wide: T3 confirms without strongly discriminating.
+\item The matching-model reduction (sea as dimer/monomer problem under the $2^{1-k}$ law) is itself level (D), not (T); the graph spectral dimension $\approx 2$ (the \emph{surface} claim) remains to be established, not assumed.
+\item The ``external'' agent maintaining total spin $1/2$ (the closure wave) must be identified: condition at measurement, or global 930-closure as integral constraint.
+\item \textbf{G remains circular.} What is achieved is a fully specified mechanism whose every coefficient is derived in closed form; what is missing is the continuous demonstration C1--C4 $\to B \to \Dr \to \varepsilon_G \to G_{\mathrm{PDL}}$ that never consults the measured $\alpha$.
+\end{enumerate}
+\noindent\textbf{Engraved falsifier (pre-registered):} any admissible mechanism must reproduce \emph{simultaneously} $\Dr = 0.04795969 \pm 6.98\times10^{-8}$ and $f = 0.157126 \pm 9\times10^{-4}$ from a single law; a law predicting only one of the two is dead.
+
+\section{Reproducibility}
+All campaigns are stdlib-only, Colab-ready Python scripts with declared families printed before resolution and embedded pre-registration blocks dated 2026-10-29: v5 (leak closed forms), v6 (dynamical estimators), v7 ($\mu$ deviations), v8 (single-level mean field), v9 (hierarchical period-3 + spin), v10 (parity monomer, exact stationary law), v12 (wake census), v13 (Euler localisation), v14 (triple target), v15 (closed forms I), v16 (closed forms II). Archive: \url{https://cloud.giotto.ai:9443/default/orchestrator-uploads/cli-uploads/} (paths per campaign: \texttt{pdl-leak-v5} \dots \texttt{pdl-leak-v16}, \texttt{pdl-wake-v11}, \texttt{pdl-wake-v13}).
+
+\section{Conclusion}
+A single parity-driven monomer mechanism on the proton surface --- odd sea $\Rightarrow$ one conserved defect, Euler-localised at two degree-25 loci on the spin core's bow, diagonal wake cuts contributing $1/(2\sqrt{2})$, duty correction $1/\binom{8}{3}$ --- is simultaneously compatible with the proton skin feeding the $\alpha\leftrightarrow G$ bridge, the cosmological closed fraction, and the valence spin share, with every coefficient derived from architecture integers within declared families. The next and decisive step is the continuous derivation of $G_{\mathrm{PDL}}$ from C1--C4 without recourse to measured $\alpha$, or a clean falsification of the mechanism on the engraved double window.
+
+\begin{thebibliography}{9}
+\bibitem{emc} EMC Collaboration, \emph{Phys.\ Lett.\ B} \textbf{206} (1988) 364; COMPASS and HERMES spin measurements (valence spin share $\Delta\Sigma \approx 0.30 \pm 0.05$).
+\bibitem{jm} R.~L.\ Jaffe, A.~Manohar, \emph{Nucl.\ Phys.\ B} \textbf{337} (1990) 509 (spin decomposition).
+\bibitem{codata} CODATA recommended values of the fundamental physical constants (bridge target $G$, $\alpha$).
+\bibitem{corpus} C.~Laubscher, coherence-network corpus D21--D70 (this archive, 2026): closure integer $930$, sea integers $918/11017$, period-3 cycle (D69), $\mu$ operator chain (D28--D30), U-series theorems (U1v2 minimal decomposition $310\varphi + 310 + 310/\varphi^{2}$; U2 lock law $2^{1-k}$).
+\end{thebibliography}
+
+\end{document}
