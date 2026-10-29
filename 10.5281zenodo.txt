@@ -1,7 +1,7 @@
 DM
-https://doi.org/10.5281/zenodo.22067627 
-Projective Dynamic Logo (PDL) — Global Mapping of Structures, Results, and Open Problems — Version 34  
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v34.pdf 
+https://doi.org/10.5281/zenodo.23779575 
+PDL Global Mapping of Structures, Results, and Open Problems — Version 35 (DM35) 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v35.pdf 
 
 D01
 https://doi.org/10.5281/zenodo.18462686
