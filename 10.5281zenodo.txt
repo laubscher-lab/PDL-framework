@@ -452,3 +452,13 @@ D69
 https://doi.org/10.5281/zenodo.21999711 
 The Proximity Rule P: A Minimax Selection Principle on Signed Graphs, with Closed Enumeration on Cycles and a Dichotomy between Complete Graphs and Sparse Meshes (Projective Dynamic Logo Framework — Document D69) 
 D69_rule_P.pdf 
+
+D70 
+https://doi.org/10.5281/zenodo.23775498 
+D70 — The Composite κ = 310φ/11017 and the Dark-to-Baryonic Matter Ratio: Status, Tests, and Limits
+D70_closure_nonclosure_dark_sector.pdf 
+
+D71 
+https://doi.org/10.5281/zenodo.23776625 
+D71 — Parity-Driven Proton Leakage: A Surface Ontology Mechanism for the Proton Skin, the Closed Fraction, and the Valence Spin Budget 
+D71_parity_proton_leakage.pdf 
