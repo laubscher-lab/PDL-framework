@@ -1243,7 +1243,7 @@ Trois erreurs de ma part rattrapées par le protocole, et une quatrième par Cé
 - **OP-D68-6** [LOW, intérêt fondationnel] — Remplacer C2 par le postulat interprétatif « une relation n'a pas d'état propre, son signe est le produit des états de ses relata ». C2 devient alors un théorème (Harary). Pas une économie d'axiomes, mais un point de départ plus transparent. Compatibilité avec tous les usages de C2 depuis D01 non vérifiée.
 - **OP-D68-7** [HIGH] — Divergence D46/D68 sur la définition de la pulsation ($\Phi$ vs $\sigma_S$). Voir plus haut. Prérequis à tout usage de D50/D64 reposant sur $P_2/P_1=-1$ uniforme.
 - **OP-D75-1** ✅ **RÉSOLU (Session 75 suite)** — La justification de $c=3$ dans D43 est légitime sous **lecture hiérarchique** : $n_K=76$ compte des blocs, et chaque entité d'un cœur **EST** une fermeture $K_4$ au niveau inférieur plutôt que d'en contenir. Pas de blocs $K_4$ *dans* $K_{24}$ au sens d'une décomposition d'arêtes (impossible : $24
-ot\equiv1,4mod12$), mais chaque sommet *est* un $K_4$. Confirmé par Cédric. Consigné en Remarque dans D68 §11.2.
+ot\equiv1,4 mod12$), mais chaque sommet *est* un $K_4$. Confirmé par Cédric. Consigné en Remarque dans D68 §11.2.
 - **OP-D75-2** [MEDIUM, corpus] — $R_{\mathrm{sea}}=10087$ est impair et la règle $R_{\mathrm{sea}}=2n_{\mathrm{sea}}$ ne peut le produire. Trancher : soit la règle est exacte et $R_{\mathrm{sea}}\ne10087$, soit $R_{\mathrm{sea}}$ est exact et la règle ne tient pas.
 - **OP-D75-3** [MEDIUM, règle P] — Balayage exhaustif de la règle P sur tous les graphes connexes : (H-par) explique-t-elle la multiplicité d'orbites hors des cycles ? Exige un vrai test d'isomorphisme (nauty ou raffinement de partition), pas une forme canonique sur $n!$ permutations.
 - **OP-D75-4** [MEDIUM, règle P] — Identifier le groupe agissant sur les minimiseurs et le stabilisateur de $M$ sous basculement (2 à 20 sous-ensembles préservant $M$ selon le graphe — structure de groupe probable, non identifiée).
@@ -2077,3 +2077,25 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 75 — règle P]** **(H-aut) réfutée, (H-par) confirmée** : $|\mathrm{Aut}(C_n)|=2n$ croît de 10 à 30 pendant que les orbites sautent 1,2,4,7,14,30. Tout cycle impair $\ge7$ donne plusieurs orbites, tout cycle pair exactement une. **La frustration engendre la dégénérescence.**
 - **[Session 75 — règle P]** P et MaxCut inéquivalents à partir de $C_7$ (14 minimiseurs P contre 7 MaxCut, non emboîtés). P et la maximisation d'accord antagonistes (Petersen : minimiseur à 3 arêtes positives contre 15 pour l'état tout-identique).
 - **[Session 75 — interface]** Modèle local cœur/mer, degré balayé sur $\{3,4,5,6\}$ : signatures admissibles en **deux** orbites sous $S_3\times\mathbb{Z}_2$, jamais une — une singleton (fixée par tout $S_3$) et une large de 3 ou 6. Issue (c) : une configuration privilégiée existe.
+
+## Session 78 — 30 October 2026 — Asymétrie d'interface réhabilitée ; D72 & DM36 publiés
+
+### Résumé
+- Correction structurelle de l'asymétrie du proton (campagnes v17–v18) : les nombres 28/28/24 ne sont PAS les liens internes des cœurs (H_A falsifiée) mais la structure de l'interface cœur/mer (H_B dérivée, familles déclarées a priori), I_tot = 80, partage 2+1 avec le quark d distingué.
+- Le partage (28,28,24) est FORCÉ : deux critères indépendants (déficit = sites/cœur = 4 ; cœur court divisible par d_bow = 8) sélectionnent chacun uniquement (28,28,24).
+- Recensement des sillages préservé : poids {u: 7/20, u: 7/20, d: 3/10} → parts 184.8 / 184.8 / 158.4, somme exacte B = 528 ; le partage symétrique 80/3 est non entier — l'asymétrie est REQUISE pour des parts entières. Relecture du sillage sur l'interface distinguée : 24×22 = 528 (unique hit de la famille x(x−2)).
+- Localisation d'Euler structurelle : degrés de locus {29, 29, 25} → les deux loci de degré 25 (v13) sont sur la proue du cœur d — ce n'est plus un choix de jauge.
+- Budget de spin de valence EXACT : ΔΣ = I_d/I_tot = 24/80 = 3/10, résidu 0.000 (fenêtre EMC) — supersedant 7/24 (résidu 0.167) ; note de supersession gravée sur D71/L71.
+- Invariants confirmés : d_bow = 8 = n_u/3 ; δ = 1/C(8,3) = 1/56 ; coupure diagonale 1/(2√2) (V18-E) ; f = 144/917 (V18-F, immunisé — compte des sites).
+- Audit unifié : T1 (peau du proton) 0.64σ ; T2 (fraction close) 0.10σ ; T3 (spin) 0.00σ — premier audit triple cible avec une valeur exacte.
+- Limites gravées : statut (D) dans des familles déclarées ; signature fractionnaire de T1 ~1.7σ ; circularité de G NON levée (OP-D71-1 : chaîne continue C1–C4 → B → Δr_val → ε_G → G_PDL reste à écrire).
+
+### Publications (DOI du registre 10.5281zenodo.txt, resynchronisé 2026-10-30)
+- D72 — Interface Asymmetry of the Proton: The 28/28/24 Core–Sea Interface and the Exact Valence Spin Budget : https://doi.org/10.5281/zenodo.23783579 (D72.zip : .tex + PDF 4 pp. + scripts v17/v18 + résumés JSON)
+- DM36 — PDL Global Mapping of Structures, Results, and Open Problems — Version 36 : https://doi.org/10.5281/zenodo.23784141 (.tex + PDF 90 pp., 0 citation non résolue + .bib v36 ; corpus D01–D72)
+- Rappels : D70 https://doi.org/10.5281/zenodo.23775498 ; D71 https://doi.org/10.5281/zenodo.23776625
+
+### Problèmes ouverts (reportés)
+- OP-D71-1 — Chaîne de preuve continue C1–C4 → B → Δr_val → ε_G → G_PDL (seule vraie porte restante).
+- Registre GitHub : D44 v1 toujours absent de 10.5281zenodo.txt (anomalie signalée en Session 77) — à corriger côté dépôt.
+
