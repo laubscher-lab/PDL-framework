@@ -1,7 +1,7 @@
 DM
-https://doi.org/10.5281/zenodo.23779575 
-PDL Global Mapping of Structures, Results, and Open Problems — Version 35 (DM35) 
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v35.pdf 
+https://doi.org/10.5281/zenodo.23784141 
+PDL Global Mapping of Structures, Results, and Open Problems — Version 36 (DM36) 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v36.pdf 
 
 D01
 https://doi.org/10.5281/zenodo.18462686
@@ -462,3 +462,8 @@ D71
 https://doi.org/10.5281/zenodo.23776625 
 D71 — Parity-Driven Proton Leakage: A Surface Ontology Mechanism for the Proton Skin, the Closed Fraction, and the Valence Spin Budget 
 D71_parity_proton_leakage.pdf 
+
+D72 
+https://doi.org/10.5281/zenodo.23783579 
+D72 — Interface Asymmetry of the Proton: The 28/28/24 Core–Sea Interface and the Exact Valence Spin Budget 
+D72_interface_asymmetry.pdf
