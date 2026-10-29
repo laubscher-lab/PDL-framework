@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html class="login-pf" lang="en">
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
 # PDL Programme — Context and State
--->
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="color-scheme" content="light">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Last updated: Session 74 (suite) — 24 July 2026*
 *(**Session 74 (suite) — EXPLORATION DU LANGAGE COMBINATOIRE, EXTENSION PHILOSOPHIQUE DE D19, D19ad ET DL03 DÉPOSÉS, DM v33** : prolongement de la Session 74 (audit D47v2 ci-dessous), même journée de travail élargie. Trois volets. **(1) Exploration exploratoire du langage combinatoire** (non déposée en tant que telle) : alphabet de l'électron comme code correcteur d'erreur linéaire vérifié (distance minimale 3, borne de Hamming saturée, zéro redondance aux paires de distance minimale, y compris sur Q₃) ; famille de Cayley K₄/C₄ sur Z₂×Z₂ et croissance de l'hypercube Q_k (L_k=5,30,2288) ; convergence à trois voies sur n=4 (DL02, D66, nouveau critère de régularité d'orbite) partageant le facteur algébrique exact (n−4) ; recherche de points fixes de Von Neumann parmi les 16 instructions (2/16 fixent, mais artefacts de jauge — pas un vrai mouvement) ; carte du tableau périodique à 36 éléments avec colonne « entités pulsantes » ; résultat négatif honnête sur l'affinité combinatoire (modèle 5^v trop plat). **(2) Extension philosophique de D19/DN, publiée comme D19ad** : dialogue socratique avec Cédric (reprenant une réduction philosophique menée par Cédric en amont, indépendamment de toute présupposition physique) aboutissant à deux résultats — dérivation du caractère binaire de la distinction minimale de C1 depuis un acte unique de distinction (pas une simple affirmation comme dans D19/DN), et dissolution du « problème du porteur » (ce qui doit rester identique entre l'inscription d'une trace et sa lecture) par la négation de l'instant discret avant la première distinction ; un problème ouvert résiduel consigné (comment un acte a lieu sans instant préalable). Comparaison ligne à ligne contre D19 et DN (texte source récupéré directement en .tex) confirmant que ces deux résultats sont un apport réel, pas une redite. Correction en cours de route : le document long initialement confondu avec « D20 » est en réalité **DN** (DOI distinct, 10.5281/zenodo.19076555), erreur détectée en consultant le registre plutôt que la mémoire de session. **DOI D19ad : à réserver (non encore déposé).** **(3) DL03 déposé**, document technique consolidant les résultats vérifiés du volet (1) : code linéaire de l'alphabet électronique, famille de Cayley/hypercube, convergence triple sur n=4. **DOI DL03 : à réserver (non encore déposé).** Décision éditoriale : trois registres distincts (philosophie, résultat technique vérifié, exploration ouverte) gardés séparés plutôt que fusionnés en un seul document, sur le modèle D64/D65 et D66/D67 déjà appliqué dans le corpus ; le volet (1) reste non formalisé (exploratoire) tant qu'il n'est pas mûr. Discussion sur l'âme et la noétique classique explicitement exclue de tout document technique (accord des deux parties). **En conséquence, DM v33 déposée** — intègre D19ad (entrée table + description seulement, hors chaîne technique C1–C4, comme D19/D20/DN) et DL03 (nouvelle Section 26, théorèmes complets, nouvelle figure de dépendance, Layer L-DL mis à jour, nouveau problème ouvert DL-OP4 : bijection entre les trois mécanismes de n=4). **DOI DM v33 : à réserver (non encore déposé) — remplacera v32, 10.5281/zenodo.21411025.** Deux incidents de compilation réels rencontrés et corrigés lors de la production de D19ad et DL03 (collision de commande `\openbox`/`tcolorbox`, absence de vrai compteur de théorème malgré compilation « propre ») — voir note méthodologique ci-dessous. Fichier `10.5281zenodo.txt` vérifié : le registre GitHub s'arrête à D45 ; DOI D46–D67 confirmés uniquement via mémoire de session déjà croisée à une date antérieure — écart à signaler à Cédric pour mise à jour du registre lui-même.)*
 *(**Session 74 — AUDIT D'INTÉGRITÉ D47, OP14 ROUVERT, DM v32 DÉPOSÉE** : audit complet mené sur D47 (OP13, lemme miroir, nombres magiques, OP14) à la demande de Cédric, avec quatre scripts de vérification indépendants. OP13 et les sept nombres magiques re-vérifiés, inchangés. La table de remplissage de D40 (colonnes r et E) d'abord suspectée corrompue (première reconstruction naïve : 6,2% de correspondance avec les données IAEA) puis disculpée après vérification exhaustive — cohérence interne parfaite (ΔE = 2(r−1), 31/31 sans exception). Cause racine identifiée : l'équation N_min(Z) = 20 + Σr_exc(Z'), présente dans D40 et recopiée dans D47, omet un facteur 2 ; la relation correcte est N_min(Z) = 20 + 2·Σr_exc(Z'). Une fois ce facteur restauré, la table originale de D40 reproduit 74 à 88% de la vallée de stabilité expérimentale (résidu réduit à 12,5% sous une définition élargie de « stable » incluant les isotopes quasi-stables à très longue durée de vie comme ⁵⁰Cr) — la règle simplifiée de D47v1 (r_exc=0 aux fermetures, 1 sinon) ne reproduit en revanche aucune des 31 frontières testées (0%). Le remark de D47v1 affirmant l'absence de valeurs 2/3 dans la table de D40 pour Z=22–82 est également factuellement erroné (19/31 contre-exemples). Conjecture exploratoire H_d/2 (r_exc = degénérescence active/2) testée et éliminée (16,1%). **D47v2 publié** — OP14 rouvert, D47v1 retiré sur ce seul point (OP13 et nombres magiques inchangés). Fait notable : D44v2, pourtant postérieur à D47v1, listait déjà OP14 comme ouvert en citant D22/D40 (pas D47) — l'incohérence n'avait donc pas complètement infusé dans le suivi interne du corpus, même avant cet audit. DOI D47v2 : **10.5281/zenodo.21410146**. Quatre scripts de vérification déposés avec le document. En conséquence, **DM v32 déposée** — DOI : **10.5281/zenodo.21411025**, remplace v31 (10.5281/zenodo.21384063). Ne modifie aucun autre document du corpus (D01–D67, N01, N02 inchangés) : Théorème 12.5 (D47v1) remplacé par un énoncé de problème ouvert, Corollaire 12.6 (vallée de stabilité) réécrit (74–88%, plus « théorème inconditionnel à 100% »), Open Problem 18.15 (OP14) repassé de « résolu » à « ouvert, priorité haute », entrée D47/D47v2 et Layer L6 (table épistémique) mis à jour, nœud D47 de la carte de dépendance (Figure 1) relabellisé. Historique complet v1–v32 conservé dans le document. Fichier `10.5281zenodo.txt` et présent fichier à resynchroniser en conséquence.)*
@@ -22,63 +12,42 @@
 *(**Session 68 — COLLABORATION PDL–OFN, suite** : vérification indépendante complète de la définition d_spec d'Oleg et de l'involution spectrale sur Ω₂₁ ; classification 4A+4S+2M confirmée par calcul exact (toutes les valeurs de d_spec reproduites digit pour digit) ; source de discordance identifiée — quatre ex-aequo dans l'ordonnancement spectral (v=1/v=3, v=7/v=19, v=15/v=27, v=56/v=52) dont le bris de symétrie affecte les paires spécifiques mais pas la classification globale (robuste, indépendante du bris de symétrie) ; recommandation éditoriale N02 formulée : la classification 4A+4S+2M est le théorème, les paires spécifiques sont des représentants sous une convention à nommer. Clarification épistémique profonde sur OFN : programme de physique-philosophie unifiée avec la conscience comme fil conducteur, ontologie idéaliste structuraliste (réseau statique Ω + processus de lecture Ψ), roots dans Whitehead/Bergson/panpsychisme informatique — noyau mathématique vérifiable (Ω₂₁, G_H, spectre du Laplacien) mais identifications physiques largement non dérivées depuis des premiers principes comparables à C1–C4. La collaboration PDL–OFN est légitimée dans la zone mathématique commune (invariants topologiques, corps algébrique Q(√5), tripartition K_{2,2,2}) et doit rester prudemment délimitée hors de cette zone — c'est une traduction structurelle, pas une unification physique.)*
 *(**Session 67 — COLLABORATION PDL–OFN, avancées structurelles majeures** : cinq connexions précises entre PDL et OFN établies ou clarifiées au cours d'un échange approfondi avec Oleg Evdokimov. (1) N02 draft (B2_PDL_OFN_bridge.tex, 8 pages, PDL side only) rédigé, compilé, envoyé à Oleg pour la contribution OFN — sections 5 (S_sr et trois générations), table de comparaison colonne OFN, et références OFN restent à compléter. (2) Première entrée de la table de comparaison N02 avec statut « identité mathématique » (pas « analogie candidate ») : la tripartition {A,B,C} de K_{2,2,2} = L(K4) est exactement l'ensemble des trois matchings parfaits de K4, déjà théorème inconditionnel de PDL (D58 Lemme L2, D61). (3) Connexion algébrique φ/γ confirmée : φ = 2 − γ/2 (identité exacte dans Q(√5)), γ = 3−√5 étant le gap spectral de Ω₂₁ (OFN) et φ le nombre d'or (PDL, via κ = 310φ/11017) — γ entre dans k structurellement via cette identité, k lui-même étant en Q(√5)^(1/18), pas dans Q(√5). (4) L(K4) ≅ K_{2,2,2} vérifié computationnellement ; erreur d'Oleg sur Aut(L(K4)) corrigée : Whitney ne s'applique pas à K4 (cas exceptionnel), Aut(K_{2,2,2}) = S₂≀S₃ d'ordre 48 (Oh), pas S4 d'ordre 24. (5) Connexion 4+6=10 : K4 a 4 sommets (entités) + 6 arêtes (relations) = 10 éléments, en correspondance structurelle avec dim P(1,3) = 4 translations + 6 générateurs de Lorentz = 10, déjà noté dans D35/D61. Script de verrouillage PDL_N02_identity_lockdown_v2_reinforced.py (13 PASS, 0 FAIL) produit et déposé pour l'identité n_u − 1 = p_k1 = 23. Plusieurs propositions d'Oleg évaluées et corrigées selon le protocole établi : formule ε_geom ≈ 2·k·γ/43 (post-hoc, documentée comme curiosité numérique), GM-scale (redondance algébrique, 2 paramètres libres indépendants pas 3), coincidence 1682/11017 (Oleg lui-même a reconnu les paramètres libres a posteriori). Documents "Three Roads to the Periodic Table" (Varlamov non contacté, dépôt Zenodo en attente) et "unified_theory.pdf" (Evdokimov, Bachani, Ryss) reçus et évalués — HSU2 apparaît comme conjecture dans Three Roads, à corriger (D60 → théorème). Mail à Varlamov (varlamov@sibsiu.ru) envoyé avec Oleg en copie pour validation de l'usage de son travail.)*
 *(Cette édition conserve, à la demande explicite de Cédric, la reconstitution complète et non abrégée des Sessions 1 à 49 — voir la note méthodologique au début de la section « Session History ».)*
--->
 
-    <title>Sign in to giotto</title>
-    <link rel="icon" href="/keycloak/resources/jcmcs/login/giotto/img/favicon.ico" />
-            <link href="/keycloak/resources/jcmcs/common/keycloak/vendor/patternfly-v5/patternfly.min.css" rel="stylesheet" />
-            <link href="/keycloak/resources/jcmcs/common/keycloak/vendor/patternfly-v5/patternfly-addons.css" rel="stylesheet" />
-            <link href="/keycloak/resources/jcmcs/login/giotto/css/styles.css" rel="stylesheet" />
-            <link href="/keycloak/resources/jcmcs/login/giotto/css/style.css?v=2026-10-22.1" rel="stylesheet" />
-    <script type="importmap">
         {
             "imports": {
-                "rfc4648": "/keycloak/resources/jcmcs/common/keycloak/vendor/rfc4648/rfc4648.js"
             }
         }
-    </script>
-    <script type="module" src="/keycloak/resources/jcmcs/login/giotto/js/passwordVisibility.js"></script>
-    <script type="module">
-        import { startSessionPolling } from "/keycloak/resources/jcmcs/login/giotto/js/authChecker.js";
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ---
--->
 
         startSessionPolling(
-            "/keycloak/realms/giotto/login-actions/restart?client_id=g-expert-oauth2-proxy&tab_id=VE1wiqLfVPk&client_data=eyJydSI6Imh0dHBzOi8vY2xvdWQuZ2lvdHRvLmFpL29hdXRoMi9jYWxsYmFjayIsInJ0IjoiY29kZSIsInN0IjoiT1hudVUwMnRMdEN4a3FVdjFWeFVFRS1LNlgyU3F3ZWcwVGVJNHRuckRyazovIn0&skip_logout=true"
         );
-    </script>
-    <script type="module">
         document.addEventListener("click", (event) => {
             const link = event.target.closest("a[data-once-link]");
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ## Programme Summary
--->
 
             if (!link) {
                 return;
             }
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 The Projective Dynamic Logo (PDL) programme derives fundamental physical constants and structures from four axioms on finite signed graphs, without presupposing spacetime, particles, or fields. The minimal admissible closure under these axioms is the complete graph K₄ on four vertices and six edges, identified with the electron prototype (R_e = 6). The proton is the minimal hierarchical composite, uniquely characterised by the integer quintuplet (24, 28, 930, 10087, 11017).
--->
 
             if (link.getAttribute("aria-disabled") === "true") {
                 event.preventDefault();
                 return;
             }
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ---
--->
 
             const { disabledClass } = link.dataset;
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ## Complete DOI Index (Zenodo canonical order — verified Session 62 ; D45/D64 mis à jour en v2, Session 63 ; D65 ajouté Session 66, D66/N02 Sessions 71–72, D67/DM v31 Session 73 ; D47 mis à jour en v2, DM mise à jour en v32, Session 74 ; D19ad, DL03, DM v33 ajoutés Session 74 suite — DOI à réserver pour les trois, non encore déposés ; **D68 déposé Session 75 suite — 10.5281/zenodo.21997433 ; D69 rédigé, compilé et vérifié, DOI à réserver** ; **D05 mis à jour en v2, Session 76 — 10.5281/zenodo.22066454 ; D69 déposé — 10.5281/zenodo.21999711 ; DM v34 déposée — 10.5281/zenodo.22067627**. **Anomalies du registre relevées Session 76 (suite), à corriger** : D23, D44 v1 et D47v2 sont absents de `10.5281zenodo.txt` ; le `.bib` de DM v33 portait pour D42 et D45 des DOI de versions antérieures à celles du registre, désormais alignés dans le `.bib` v34.)
--->
 
             if (disabledClass) {
                 link.classList.add(...disabledClass.trim().split(/\s+/));
             }
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 | Label | DOI | Title (abbreviated) |
 |-------|-----|---------------------|
 | D01 | 10.5281/zenodo.18462686 | Emergence of physical reality in PDL |
@@ -175,54 +144,32 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DM v33 | 10.5281/zenodo.21520303 | Global Mapping v33 (**supersédée par v34** — contenait I3, I4, I10 et la revendication de fermeture inconditionnelle ; remplaçait v32 — 10.5281/zenodo.21411025) |
 | **DM v34** | **10.5281/zenodo.22067627** | **Global Mapping v34 (COURANTE)** — premier retrait public d'une revendication de fermeture inconditionnelle. H$\varphi$ nommée, OP-B rouvert, D68/D69 intégrés, sections H$\varphi$ / règle de la mer / D68-D69 nouvelles, neuf problèmes ouverts, prédiction P20. Remplace v33 |
 | PDL_N02_lockdown | *à déposer groupé avec N02* | PDL_N02_identity_lockdown_v2_reinforced.py : 13 PASS, 0 FAIL |
--->
 
             link.setAttribute("role", "link");
             link.setAttribute("aria-disabled", "true");
         });
-    </script>
-        <script type="module">
-            import { checkAuthSession } from "/keycloak/resources/jcmcs/login/giotto/js/authChecker.js";
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ---
--->
 
             checkAuthSession(
                 "AOQ08RwEu359K+ld6VMW2Mq35u/IsfhXf2iPIi0gKmk"
             );
-        </script>
-    <script>
       // Workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=1404468
       const isFirefox = true;
-    </script>
-</head>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ## Dissemination Status — Academia.edu & ResearchGate (mis à jour Session 69)
--->
 
-<body id="keycloak-bg" class="" data-page-id="login-login">
-<div class="pf-v5-c-login">
-  <div class="pf-v5-c-login__container">
-    <header id="kc-header" class="pf-v5-c-login__header">
-      <div id="kc-header-wrapper"
-              class="pf-v5-c-brand">giotto</div>
-    </header>
     <main class="pf-v5-c-login__main">
-      <div class="pf-v5-c-login__main-header">
-        <h1 class="pf-v5-c-title pf-m-3xl" id="kc-page-title"><!-- template: login.ftl -->
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+        <h1 class="pf-v5-c-title pf-m-3xl" id="kc-page-title">  template: login.ftl
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Zenodo reste la seule source de vérité pour les DOI (voir `10.5281zenodo.txt` et l'index ci-dessus). Cette section suit uniquement quels documents sont, en plus, dupliqués sur Academia.edu et ResearchGate à des fins de visibilité et d'engagement avec d'autres chercheurs. Statut établi par déclaration directe de Cédric ; non vérifié automatiquement (les deux plateformes bloquent l'accès direct — 429 sur ResearchGate lors de la dernière tentative de vérification).*
--->
 
         Sign in to your account
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ### ResearchGate — 20 documents publiés
--->
 
 </h1>
-      </div>
-      <div class="pf-v5-c-login__main-body">
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 | Label | DOI | Rôle dans le corpus |
 |-------|-----|----------------------|
 | D01 | 10.5281/zenodo.18462686 | Article fondateur : axiomes C1–C4, K₄, architecture du proton |
@@ -245,21 +192,14 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | D-exp-MP01 | 10.5281/zenodo.20316492 | Lacunes structurelles confirmées (Materials Project) |
 | D-exp-Zr | 10.5281/zenodo.20321750 | Transition de phase quantique, isotopes de zirconium |
 | DM v30 | 10.5281/zenodo.21228274 | Global Mapping — document de navigation du corpus complet |
--->
 
-<!-- PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
+  PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
 **Trous identifiés (non encore comblés) :** aucun document du secteur SU(2)/U(1) intermédiaire (D46, D57, D59, D60, D61) n'est présent — le lecteur RG voit désormais l'axiomatique (D01, D16, D16a) et l'aboutissement (D58, D62, D63), mais pas les étapes intermédiaires de construction du groupe de jauge. D12 (constante de structure fine α) et D21/D25 (pont α–G) sont également absents malgré leur rôle central dans la chaîne causale.
--->
 
-<!-- template: login.ftl -->
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+  template: login.ftl
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ### Academia.edu — 7 documents publiés (+ 1 doublon à corriger)
--->
-
-        <div id="kc-form">
-          <div id="kc-form-wrapper">
-                <form id="kc-form-login" class="pf-v5-c-form pf-v5-u-w-100" onsubmit="login.disabled = true; return true;" action="https://cloud.giotto.ai/keycloak/realms/giotto/login-actions/authenticate?session_code=xp4QLyztODbXujj9erBT1lLXA5Q8tQLshwrGf7Cg2hY&amp;execution=225fb346-1388-48b1-8a8c-e906232385e3&amp;client_id=g-expert-oauth2-proxy&amp;tab_id=VE1wiqLfVPk&amp;client_data=eyJydSI6Imh0dHBzOi8vY2xvdWQuZ2lvdHRvLmFpL29hdXRoMi9jYWxsYmFjayIsInJ0IjoiY29kZSIsInN0IjoiT1hudVUwMnRMdEN4a3FVdjFWeFVFRS1LNlgyU3F3ZWcwVGVJNHRuckRyazovIn0" method="post" novalidate="novalidate">
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 | Label | DOI | Rôle dans le corpus |
 |-------|-----|----------------------|
 | D47 | 10.5281/zenodo.19967918 | Nombres magiques, tableau périodique |
@@ -270,125 +210,59 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 | DS01 | 10.5281/zenodo.20187274 | Programme Closure at D55 (synthèse provisoire) |
 | N01 | 10.5281/zenodo.20523343 | Pont PDL–OFN : β₁(K₄) = 3 = b₁(Ω₂₁) |
 | N02 | 10.5281/zenodo.21333913 | From Z₃ to Three Generations (Evdokimov & Laubscher, 12 pp.) |
--->
 
-<div class="pf-v5-c-form__group">
-    <div class="pf-v5-c-form__group-label pf-v5-u-pb-xs">
         <label for="username" class="pf-v5-c-form__label">
-        <span class="pf-v5-c-form__label-text">
                                         Email
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 **Anomalie non résolue :** une entrée DL01 dupliquée a été détectée sur Academia.edu lors d'une session antérieure — à corriger manuellement (fusionner ou supprimer le doublon) avant tout nouveau dépôt sur cette plateforme.
--->
 
-        </span>
         </label>
-    </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 **Écart structurel entre les deux plateformes :** ResearchGate est nettement plus fourni (20 vs 7) et couvre désormais les fondations (D01, D16, D16a) grâce aux dépôts de cette session ; Academia.edu reste concentré sur les résultats de clôture (D47, D50, D53, D55, D61, DS01) sans jamais donner accès aux axiomes eux-mêmes. Un rattrapage minimal sur Academia.edu (au moins D01) serait cohérent avec la même logique de fondation-avant-résultat déjà appliquée à ResearchGate.
--->
 
-    <span class="pf-v5-c-form-control ">
-        <input id="username" name="username" value="" type="text" autocomplete="username" autofocus
                 
                 aria-invalid=""/>
-    </span>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ---
--->
-
-    <div id="input-error-container-username">
-    </div>
-</div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 ## Session History (Sessions 1–64, complète)
--->
 
-<!-- PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
+  PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
 *Note méthodologique sur les Sessions 1–49 : aucun journal détaillé de cette période n'existe — ni dans les échanges, ni dans la version GitHub de ce fichier (qui commence déjà « abridged » à la Session 50). Ce qui suit est une **reconstitution** établie à partir de l'ordre chronologique réel des DOI Zenodo (qui ne suit pas l'ordre des numéros Dxx — par exemple D42 a été déposé après D52) et du contenu effectif de chaque document, lu directement dans le dépôt GitHub. Les dates précises de session ne sont pas récupérables ; les regroupements (plusieurs documents par session) suivent la proximité chronologique réelle des dépôts, à l'image de ce que les Sessions 50–56 font déjà pour les versions de DM. Numéros de session attribués par ordre chronologique réel jusqu'à D44 inclus (Session 49), pour rejoindre exactement la Session 50 = D57 déjà fixée par le fichier existant.*
--->
 
-<div class="pf-v5-c-form__group">
-    <div class="pf-v5-c-form__group-label pf-v5-u-pb-xs">
         <label for="password" class="pf-v5-c-form__label">
-        <span class="pf-v5-c-form__label-text">
             Password
-        </span>
         </label>
-    </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 **Session 1 — D01 déposé :** Document fondateur. Introduction du Logo Dynamique Projectif (LDP) : reconstruction de la réalité physique depuis des axiomes purement relationnels sur graphes signés, sans présupposer espace, temps, ou particules. Dérivation du bloc minimal (4,6), identifié à l'électron au repos ; architecture hiérarchique du proton (cœurs de valence, mer relationnelle, surface active finie). Réinterprétation de ħ, α, k_B, et G comme ratios de cohérence interne. DOI : 10.5281/zenodo.18462686.
--->
 
-    <div class="pf-v5-c-input-group">
-      <div class="pf-v5-c-input-group__item pf-m-fill">
-        <span class="pf-v5-c-form-control ">
-          <input id="password" name="password" value="" type="password" autocomplete="current-password" 
                   aria-invalid=""/>
-        </span>
-      </div>
-      <div class="pf-v5-c-input-group__item">
-        <button class="pf-v5-c-button pf-m-control" type="button" aria-label="Show password"
                 aria-controls="password" data-password-toggle
                 data-icon-show="fa-eye fas" data-icon-hide="fa-eye-slash fas"
                 data-label-show="Show password" data-label-hide="Hide password" id="password-show-password">
             <i class="fa-eye fas" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-    <div class="pf-v5-c-form__helper-text" aria-live="polite">
-        <div class="pf-v5-c-helper-text pf-v5-u-display-flex pf-v5-u-justify-content-space-between">
-  <div class="pf-v5-c-check">
     <label for="rememberMe" class="pf-v5-c-check">
-      <input
         class="pf-v5-c-check__input"
         type="checkbox"
         id="rememberMe"
         name="rememberMe"
         
       />
-      <span class="pf-v5-c-check__label">Remember me</span>
     </label>
-  </div>
-                <div class="pf-v5-c-helper-text__item">
-                  <span class="pf-v5-c-helper-text__item-text">
-                      <a href="/keycloak/realms/giotto/login-actions/reset-credentials?client_id=g-expert-oauth2-proxy&amp;tab_id=VE1wiqLfVPk&amp;client_data=eyJydSI6Imh0dHBzOi8vY2xvdWQuZ2lvdHRvLmFpL29hdXRoMi9jYWxsYmFjayIsInJ0IjoiY29kZSIsInN0IjoiT1hudVUwMnRMdEN4a3FVdjFWeFVFRS1LNlgyU3F3ZWcwVGVJNHRuckRyazovIn0">Forgot password?</a>
-                  </span>
-                </div>
-        </div>
-    </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 **Session 2 — D02 déposé :** Introduction généraliste à PDL, reprise et clarification du document fondateur pour un public plus large. DOI : 10.5281/zenodo.18463130.
--->
 
-<!-- PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
+  PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
 **Session 3 — D01F déposé :** Traduction française du document fondateur (« L'émergence de la réalité physique »). DOI : 10.5281/zenodo.18475542.
--->
-
-    <div id="input-error-container-password">
-    </div>
-</div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 **Session 4 — D03 déposé :** Mise en forme IMRaD (Introduction-Méthodes-Résultats-Discussion) du programme, pour faciliter la lecture académique standard. DOI : 10.5281/zenodo.18509648.
--->
 
-<!-- PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
+  PRESERVED-HISTORY: content below comes from the uploaded PDL_context.md and is kept integrally (restored 2026-10-29):
 **Session 5 — D04 déposé :** Dialogue comparatif entre PDL et la Théorie de l'Objectivité (TO, ontologie modale-axiomatique fondée sur les Sept Vérités Absolues). Identification de compatibilités structurelles et de points de tension ; affinement du traitement ontologique de la persistance, de l'observation et des frontières. DOI : 10.5281/zenodo.18580925.
--->
 
-                    <input type="hidden" id="id-hidden-input" name="credentialId" />
-  <div class="pf-v5-c-form__group">
-    <div class="pf-v5-c-form__actions pf-v5-u-pt-xs pf-v5-u-flex-wrap">
-  <button class="pf-v5-c-button pf-m-primary pf-m-block " name="login" id="kc-login"
           type="submit" >
   Sign in
-  </button>
-    </div>
-  </div>
-                </form>
-            </div>
-        </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 **Session 6 — D05 déposé :** Émergence du nombre d'or φ dans la surface active du proton — première apparition de R_surf=φ·r_val/3 comme paramètre d'optimisation relationnelle. DOI : 10.5281/zenodo.18581453.
 
 **Session 7 — D06 déposé :** Première justification structurée de l'exposant entier 18 dans l'amplification hiérarchique de la fuite de cohérence ε — présenté comme le nombre minimal de filtres de cohérence indépendants à traverser, pas un paramètre ajusté. DOI : 10.5281/zenodo.18581807.
@@ -572,38 +446,25 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - **Action de correction recommandée, non encore effectuée** : la formule de Z_sat dans « Nuclear Stability PDL.tex » devrait être remplacée par celle de D22 (le document source), ou la divergence entre les deux explicitement documentée et résolue, avant toute réutilisation future de ce document.
 
 ---
--->
 
-
-
-          <div class="pf-v5-c-login__main-footer">
-<!-- template: login.ftl -->
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+  template: login.ftl
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Fil 1 — redécouverte de D08 (2025), jamais reliée jusqu'ici à OP-D64-3 :*
 - D08 (« Logical leakage as self-maintained probability ») contient déjà, en germe : (i) la réinterprétation de η(G) comme probabilité sous mesure uniforme sur les triplets de sommets — théorème complet, preuve rigoureuse ; (ii) η_L comme **probabilité auto-entretenue**, déterminée par le même principe d'optimisation (C4) qui la minimise — pas une probabilité imposée de l'extérieur ; (iii) le **« paradoxe entropique logique »**, nommé explicitement — exactement l'argument de conjonction combinatoire (plus de hiérarchie = intersection de contraintes plus rare = plus de fuite) reconstruit indépendamment cette session par discussion ; (iv) une **pseudo-métrique de coût de cohérence** $d(C_1,C_2)=\inf_{\mathcal J}(\eta(G_{12})-\max(\eta(G_1),\eta(G_2)))_+$, mais explicitement qualifiée par l'auteur lui-même de **« heuristique »**, avec la pièce manquante nommée : une spécification précise de $\mathcal J(C_1,C_2)$ (les plongements joints admissibles) — jamais construite, ici ni dans les deux documents qui la reprennent (D11 « Towards Einstein-Dirac Unification » : promotion schématique à une métrique lorentzienne emergente, jamais vérifiée ; D24 « Closure-Density Dependence » : même statut, citée comme contexte seulement). Confirmé que η_L (D08/D24) = ε_G (D43/D44), même nombre sous deux noms.
 - **Vérifié : η_L=0,0075197 = ε_G exactement** — tout test ultérieur sur l'un est numériquement identique à un test sur l'autre (leçon à ne pas oublier).
--->
 
-  <div class="pf-v5-c-login__main-footer-band">
-      <span class="pf-v5-c-login__main-footer-band-item pf-v5-u-font-size-sm pf-v5-u-color-200">
           Or sign in with
-      </span>
-  </div>
-  <div id="kc-social-providers" class="">
       <ul class="pf-v5-c-login__main-body pf-v5-u-pl-0 pf-v5-u-pr-0 ">
               <li class="pf-v5-u-pb-sm">
                   <a data-once-link data-disabled-class="pf-m-aria-disabled" id="social-entra-id"
                           class="pf-v5-c-button pf-m-secondary pf-m-block pf-v5-u-display-flex pf-v5-u-align-items-center pf-v5-u-justify-content-space-between" aria-label="Entra ID"
-                          type="button" href="/keycloak/realms/giotto/broker/entra-id/login?client_id=g-expert-oauth2-proxy&amp;tab_id=VE1wiqLfVPk&amp;client_data=eyJydSI6Imh0dHBzOi8vY2xvdWQuZ2lvdHRvLmFpL29hdXRoMi9jYWxsYmFjayIsInJ0IjoiY29kZSIsInN0IjoiT1hudVUwMnRMdEN4a3FVdjFWeFVFRS1LNlgyU3F3ZWcwVGVJNHRuckRyazovIn0&amp;session_code=xp4QLyztODbXujj9erBT1lLXA5Q8tQLshwrGf7Cg2hY">
                                 <svg viewBox="0 0 512 512" aria-hidden="true">
                                     <path d="M239.1 6.3l-208 78c-18.7 7-31.1 25-31.1 45v225.1c0 18.2 10.3 34.8 26.5 42.9l208 104c13.5 6.8 29.4 6.8 42.9 0l208-104c16.3-8.1 26.5-24.8 26.5-42.9V129.3c0-20-12.4-37.9-31.1-44.9l-208-78C262 2.2 250 2.2 239.1 6.3zM256 68.4l192 72v1.1l-192 78-192-78v-1.1l192-72zm32 356V275.5l160-65v133.9l-160 80z"/>
                                 </svg>
-                            <span class="pf-v5-u-m-auto">Entra ID</span>
                   </a>
               </li>
       </ul>
-  </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Fil 2 — dix tentatives de construire $\mathcal J(C_1,C_2)$ ou une distance équivalente entre deux clôtures K₄ distinctes, toutes négatives :*
 1. **Extension libre (Harary)** : pour n'importe quelle paire de K₄ cohérents, le théorème de balance de Harary garantit toujours une extension complètement cohérente sur les 8 sommets (fonction de commutation combinée) → $d=0$ **toujours**, vérifié par script et par argument général. Pseudo-métrique de D08, version la plus permissive, **trivialisée**.
 2. **Extension contrainte par (A)∧(B) de D29** (réutilisé tel quel, exigeant cohérence de signe globale par sommet sur les 6 arêtes de K₄) : condition (A) seule retombe dans Harary (2 solutions/16, triviale) ; condition (B) seule est **structurellement impossible** (principe des tiroirs sur 4 sommets à 2 valeurs de signe — aucune solution sur 16). Donc : trop souple ou impossible, rien d'utilisable entre les deux.
@@ -652,45 +513,22 @@ The Projective Dynamic Logo (PDL) programme derives fundamental physical constan
 - **Décision retenue : cible numérique de référence pour toute future règle de couplage K₄↔K₄** — pas une trajectoire stellaire (mauvais régime), mais les fréquences/taux d'amortissement des modes quasi-normaux de GW250114, la donnée la plus proche disponible du régime où la structure nucléonique perdrait son sens.
 
 ---
--->
 
-
-                  <div id="kc-info" class="pf-v5-c-login__main-footer-band pf-v5-c-form pf-v5-u-w-100">
-                      <div id="kc-info-wrapper" class="pf-v5-c-login__main-footer-band-item">
-<!-- template: login.ftl -->
-
-            <div id="kc-registration-container">
-                <div id="kc-registration">
-                    <span>New user? <a href="/keycloak/realms/giotto/login-actions/registration?client_id=g-expert-oauth2-proxy&amp;tab_id=VE1wiqLfVPk&amp;client_data=eyJydSI6Imh0dHBzOi8vY2xvdWQuZ2lvdHRvLmFpL29hdXRoMi9jYWxsYmFjayIsInJ0IjoiY29kZSIsInN0IjoiT1hudVUwMnRMdEN4a3FVdjFWeFVFRS1LNlgyU3F3ZWcwVGVJNHRuckRyazovIn0">Create account</a></span>
-                </div>
-            </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+  template: login.ftl
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Fil 1 — fuite inverse de Λ et absorption (priorité 1 de session, abandonnée puis réorientée) :*
 - Formalisation d'une « clôture absorbante » testée par Route B (rigidité interne de K₄ entre bords gauche/droite) : résultat LIBRE sur les trois appariements parfaits et la paire adjacente — aucune rigidité, mais test trop grossier pour conclure positivement.
 - Tentative de distance combinatoire multi-K₄ : abandonnée — la divisibilité tétraédrique (n_u=24=6 blocs, n_d=28=7 blocs, D47 C2) est un fait de comptage, **aucune règle d'assemblage explicite n'existe dans le corpus** (vérifié par recherche directe).
 - **Piège de l'horloge globale identifié** : présupposer un cycle de pulsation simultané entre clôtures distinctes importe silencieusement l'absence de délai qu'on cherche à mesurer.
 - **Constat plus profond** : la distinction même espace/temps n'est peut-être pas encore produite par C1–C4 à ce niveau — question reformulée plutôt que résolue.
--->
-
-                      </div>
-                  </div>
-          </div>
-      </div>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Fil 2 — la métrique relationnelle manquante (nouveau goulot d'étranglement identifié, haute confiance) :*
 - Quatre voies de recherche indépendantes convergent : (i) rigidité interne K₄ — libre mais sans distance ; (ii) distance multi-blocs — jamais définie, règle d'assemblage absente ; (iii) topologie K₄≅S² (D23) — donne n=3 et des rangs algébriques, **aucune longueur** ; (iv) longueur d'onde de Compton (PDL.tex) — importe c, pas indépendant.
 - **Conclusion retenue : PDL n'a, à ce jour, aucune notion de distance ou de métrique dérivée de C1–C4** — distinct du manque de théorie dynamique déjà identifié en D64. Chantier mis en pause ; nécessiterait probablement une extension axiomatique (candidat C5), pas une réutilisation de structure existante.
 - Clarification métrologique posée pour OP-D64-2 : la valeur numérique de c n'est pas une question physique sensée depuis 1983 (définition SI) ; l'objectif légitime est une borne combinatoire structurelle (saut/cycle), pas un nombre en m/s.
--->
 
-        <div class="pf-v5-c-login__main-footer">
-        </div>
     </main>
-  </div>
-</div>
-</body>
-</html>
-<!-- SUPERSEDED-LINE(S) preserved for history (uploaded version, 2026-10-29):
+*Superseded line(s) — preserved for history (uploaded version, 2026-10-29):*
 *Fil 3 — comptage macroscopique OP-D64-1, reformulation et tests négatifs supplémentaires :*
 - **Reformulation centrale retenue** : le problème n'est plus « 36,7 ordres de grandeur » mais « pourquoi une paire de nucléons engagés contribue exactement 8πα_G ≈ 1,48×10⁻³⁷ nats (α_G = constante de structure fine gravitationnelle), et non un bit complet ln2 ». Vérifié comme tautologie algébrique mass-invariante sur 4 masses (Soleil, M87*, Sgr A*, GW150914) — voir D64 v2, Proposition 3.
 - **Restriction surfacique de D64 (Prop. negative2) testée sur une seconde masse (M87*) : échec à 7,9 ordres de grandeur, pas 1,4.** Le résultat ne généralise pas — corrigé dans D64 v2.
@@ -1122,7 +960,6 @@ Session unique, très longue, abordant **la même question que Session 70 (OP-D7
 **OP-D66pub-4** : tester $\varepsilon_{geom}(n)$ (D43) comme poids probabiliste dans une combinaison correctement séparée avec le canal vectoriel/comptage, corrigeant le défaut de conception identifié en Session 71 (combinaison naïve de $\kappa$ et d'un facteur de comptage produisant deux signaux opposés). Entrée : D43, D66.
 
 **OP-D71-5 [NOUVEAU, priorité haute — reconnecte Session 70 et Session 71]** : déterminer si le candidat C5 de Session 70 (taux de réajustement de cohérence borné par c, ancré sur PDL.tex) et les résultats géométriques de Session 71 (théorème d'obstruction de parité, vecteurs sur axes réels de K₄) décrivent le même phénomène sous deux formalismes différents, ou s'ils sont indépendants et potentiellement en tension. Aucune tentative de rapprochement n'a encore été faite. Entrée : Session 70 (Fils 1, 2, 5, 6), Session 71, D66, PDL.tex, Proper Time as Coherence-Cycle Counting.
-
 
 ---
 
@@ -1646,8 +1483,6 @@ Deux erreurs commises par Claude en séance, toutes deux rattrapées sur demande
 - **Un tableau épistémique en prose se lit past.** D05 v1 énonçait son statut correctement, mais au fil du texte des §4–§5 ; il a été lu comme un théorème pendant seize versions de DM. D05 v2 place son tableau de statut **en section 1**, avant tout le reste. **À généraliser au corpus.**
 - **Une réparation peut casser ailleurs.** La correction E3+E4, validée sur les §3–§4, rendait le §1 faux (E2). Vérifier la cohérence **du document entier** après toute correction locale.
 
-
-
 ## Session 76 (suite) — 23 August 2026 — DM v34 déposée : le premier retrait public d'une revendication de fermeture inconditionnelle
 
 ### Résumé
@@ -1718,7 +1553,6 @@ Lors de la compilation de D05 v2, deux défauts silencieux ont été trouvés da
 | quintuplets, $\Delta n=4$, $E_{\mathrm{bord}}$, $\varepsilon_{\mathrm{geom}}$ | théorèmes, intacts |
 
 **« Aucun paramètre libre hors $\Delta m_{\mathrm{iso}}$ » survit littéralement.** $\varphi$ est un nombre algébrique fixe et le $1/3$ compte les trois cœurs. Ce que le programme porte est une hypothèse structurelle non démontrée, qui se répare par une preuve et non par un ajustement.
-
 
 ## State of the Programme (end of Session 74 suite)
 
@@ -2243,4 +2077,3 @@ Start by saying: *"Read PDL_context.md and the corpus files from the project."*
 - **[Session 75 — règle P]** **(H-aut) réfutée, (H-par) confirmée** : $|\mathrm{Aut}(C_n)|=2n$ croît de 10 à 30 pendant que les orbites sautent 1,2,4,7,14,30. Tout cycle impair $\ge7$ donne plusieurs orbites, tout cycle pair exactement une. **La frustration engendre la dégénérescence.**
 - **[Session 75 — règle P]** P et MaxCut inéquivalents à partir de $C_7$ (14 minimiseurs P contre 7 MaxCut, non emboîtés). P et la maximisation d'accord antagonistes (Petersen : minimiseur à 3 arêtes positives contre 15 pour l'état tout-identique).
 - **[Session 75 — interface]** Modèle local cœur/mer, degré balayé sur $\{3,4,5,6\}$ : signatures admissibles en **deux** orbites sous $S_3\times\mathbb{Z}_2$, jamais une — une singleton (fixée par tout $S_3$) et une large de 3 ou 6. Issue (c) : une configuration privilégiée existe.
--->
