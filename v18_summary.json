@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-29",
+  "campaign": "v18",
+  "interfaces": {
+    "u1": 28,
+    "u2": 28,
+    "d": 24
+  },
+  "I_tot": 80,
+  "B_full": 528.3714105334503,
+  "Dr_pred": 0.04795964514236637,
+  "f_pred": 0.15703380588876772,
+  "deltaSigma": 0.3,
+  "results": {
+    "V18-A": {
+      "pass": true,
+      "candidates": [
+        "(1, (27, 27, 26))",
+        "(4, (28, 28, 24))",
+        "(7, (29, 29, 22))"
+      ],
+      "selected": "(28,28,24)",
+      "status": "D"
+    },
+    "V18-B1": {
+      "pass": true,
+      "shares": {
+        "u1": 184.8,
+        "u2": 184.8,
+        "d": 158.4
+      },
+      "status": "D"
+    },
+    "V18-B2": {
+      "pass": true,
+      "hits": [
+        [
+          24,
+          528
+        ]
+      ],
+      "status": "D"
+    },
+    "V18-C": {
+      "pass": true,
+      "status": "D"
+    },
+    "V18-D": {
+      "pass": true,
+      "selected": "I_d/I_tot",
+      "deltaSigma": 0.3,
+      "res_tol": 0.0,
+      "supersedes": "7/24 (res 0.167 tol)",
+      "status": "D"
+    },
+    "V18-E": {
+      "pass": true,
+      "status": "D"
+    },
+    "V18-F": {
+      "pass": true,
+      "res_tol": 0.10243790136918143,
+      "status": "D"
+    },
+    "V18-G": {
+      "pass": true,
+      "T1_res_tol": 0.6408233375490965,
+      "T2_res_tol": 0.10243790136918143,
+      "T3_res_tol": 0.0,
+      "B_full": 528.3714105334503,
+      "Dr_pred": 0.04795964514236637
+    }
+  },
+  "overall": "PASS"
+}

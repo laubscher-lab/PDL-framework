@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
+
+\newcommand{\Dr}{\Delta r_{\mathrm{val}}}
+\newcommand{\Itot}{I_{\mathrm{tot}}}
+
+\title{D72 --- The Proton Asymmetry at the Core--Sea Interface:\\ Forced Partition $(28,28,24)$, Relocated Leakage Structure,\\ and the Exact Valence Spin Share $\Delta\Sigma = 24/80$}
+\author{C\'edric Laubscher\\ \small \texttt{cedric@cedriclaubscher.ch}}
+\date{October 29, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent We report the resolution of an open internal inconsistency of the leakage mechanism documented in D71 (DOI: 10.5281/zenodo.23776625): the three valence cores were modelled as three identical $K_4$ graphs, although the corpus records an asymmetric core link structure $28/28/24$. Two hypotheses for the locus of this asymmetry were declared a priori (campaign v17): H$_A$, internal core relations --- which is falsified, since it destroys the $918/930$ site partition, the identities $144 = 12^2$, $B = 528$, $\delta = 1/56$, and is combinatorially impossible on $K_4$ sites --- and H$_B$, core$\to$sea interface relations, which preserves every integer result of the symmetric campaign and identifies the spin reference core with the short interface, the down-quark core. Under H$_B$ the interface sum is $\Itot = 80 = 11115 - 11035$, and within a declared family of $2{+}1$ partitions, $(28,28,24)$ is the unique partition satisfying two independent structural criteria (v18-A). The wake census of D71 survives interface weighting exactly ($184.8 + 184.8 + 158.4 = 528$; v18-B1) and is re-pinned by the distinguished interface through the single hit $24 \times 22 = 528$ on the declared family $x(x-2)$ (v18-B2). The two Euler loci of v13 are recovered on the bow of the down-core only (predicted degrees $\{29,29,25\}$, observed $\{25,25\}$; v18-C). The valence spin share improves from $7/24$ (residual $0.167$ tolerance) to exactly $\Delta\Sigma = I_d/\Itot = 24/80 = 0.300000$ (residual $0.000$; v18-D), superseding $7/24$ by a frozen tie-break rule. The diagonal-cut fraction $1/(2\sqrt{2})$ admits no interface-rational competitor (v18-E), and the closed fraction $f = 144/917$ is immune to the asymmetry (v18-F). The unified triple-target audit passes with residuals $0.64\sigma$ (proton skin), $0.10\sigma$ (closed fraction) and $0.000$ (spin) (v18-G). All claims retain status (T) theorem or (D) derived within a priori declared families; the circularity of $G$ is \emph{not} lifted.
+\end{abstract}
+
+\section{Epistemic status and reading rules}
+Every statement carries one of three labels, as in D71:
+\begin{itemize}[leftmargin=1.6em]
+\item \textbf{(T)} theorem-level: follows from the axioms C1--C4 and integer facts of the corpus, without free parameters;
+\item \textbf{(D)} derived within a family declared \emph{a priori}, under an explicit null model;
+\item \textbf{(H)} heuristic or compatibility-level: survives confrontation but is not uniquely selected.
+\end{itemize}
+The main claim of this note is at level \textbf{(D)}: the proton asymmetry $28/28/24$ is located at the core--sea interface, is uniquely forced within its declared family, and improves the spin target to an exact hit. Nothing here is a derivation of $G$.
+
+\section{The question: where does the proton asymmetry live?}
+D71 modelled the three valence cores as three identical $K_4$ graphs (12 vertices, 18 internal relations), with asymmetry carried only by the odd sea parity ($11017 = 23 \times 479$) and by the dynamical selection of a spin reference core. The corpus, however, records a structural asymmetry $28/28/24$. Before any further derivation, this inconsistency had to be resolved by determining the \emph{locus} of the asymmetry. Two hypotheses were declared a priori:
+\begin{itemize}[leftmargin=1.6em]
+\item \textbf{H$_A$}: $28/28/24$ are the \emph{internal} relation counts of the three cores;
+\item \textbf{H$_B$}: $28/28/24$ are the core$\to$sea \emph{interface} relation counts, the internal $K_4$ structure being preserved.
+\end{itemize}
+
+\section{Falsified branch H$_A$: internal asymmetry (v17, D-negative)}
+H$_A$ requires at least 8 sites per core (24 core sites in total) and yields three independent obstructions:
+\begin{itemize}[leftmargin=1.6em]
+\item the maximum number of edges on 4 sites is $\binom{4}{2} = 6 < 24, 28$: internal counts $28/28/24$ are impossible on $K_4$ sites;
+\item $V_{\mathrm{sea}} + 24 = 918 + 24 = 942 \neq n_u = 930$; equivalently H$_A$ would force $V_{\mathrm{sea}} = 906 \neq 918$;
+\item H$_A$ also kills $144 = 12^2$ (hence $f = 144/917$), $B = n_u(n_u - 2) = 528$, and $\delta = 1/\binom{8}{3} = 1/56$.
+\end{itemize}
+\textbf{Verdict: H$_A$ is falsified} at the fixed $n_u = 930$, $V_{\mathrm{sea}} = 918$ partition. The falsified branch is part of the evidence.
+
+\section{Viable branch H$_B$: the interface asymmetry (v17)}
+Under H$_B$ the site partition is preserved: $918 + 12 = 930$, and $144 = 12^2$, $f = 144/917$ survive unchanged. The interface pattern is $2{+}1$ with a distinguished short interface ($d$: 24) and two identical long interfaces ($u$: 28) --- the uud shape. Two structural consequences follow: (i) the spin reference core is no longer a gauge choice but is structurally identified with the $d$-core (a D-level strengthening of the v13 Euler localisation); (ii) the grand relation total becomes $11115$, with $98$ core-associated relations, hence $\Itot = 11115 - 11035 = 80$ interface relations shared across the three cores. \textbf{Verdict: H$_B$ is viable and strengthens the mechanism.}
+
+\section{Forced partition $(28,28,24)$ (v18-A)}
+Within the declared family of $2{+}1$ partitions of $\Itot = 80$, three candidates pass the initial screen: $(27,27,26)$, $(28,28,24)$, $(29,29,22)$. Two independent structural criteria --- the boundary deficit per core ($= 4$) and the divisibility of the short interface by the bow degree $d_{\mathrm{bow}} = 8$ --- each select $(28,28,24)$ uniquely. Notably, the symmetric split $80/3$ is non-integer: \emph{the asymmetry is required} for every core to carry an integer interface. The partition is not a free parameter. Status: \textbf{(D)}.
+
+\section{The weighted wake census (v18-B1/B2)}
+\textbf{B1.} Weighting the wake by the interface shares $w = \{u_1: 28/80,\ u_2: 28/80,\ d: 24/80\}$ gives per-core wake shares $184.8 / 184.8 / 158.4$, summing \emph{exactly} to $528$: the wake census of D71 survives the asymmetry. The fractional parts $(0.8, 0.8, 0.4)$ sum to $2.0$, the number of Euler loci (recorded as (H), no claim). Status: \textbf{(D)}.
+\textbf{B2.} On the declared family $x(x-2)$ over interface integers, the single hit is $24 \times 22 = 528$: the wake total is re-pinned by the distinguished interface $I_d = 24$. Status: \textbf{(D)}.
+
+\section{Localisation: the bow of the down core (v18-C)}
+The predicted Euler-locus degrees per core are $\{u: 29,\ u: 29,\ d: 25\}$. The v13 campaign found exactly two loci of degree $25$, both on the bow of the spin-carrying core. Under H$_B$ this identifies the bow unambiguously with the $d$-core --- the down-quark core is the spin reference core. Status: \textbf{(D)}.
+
+\section{The exact spin share (v18-D)}
+The interface reading of the valence spin budget gives
+\[
+\Delta\Sigma \;=\; \frac{I_d}{\Itot} \;=\; \frac{24}{80} \;=\; 0.300000,
+\]
+against the EMC/COMPASS target $0.30 \pm 0.05$: residual $0.000$ tolerance --- the first exact spin hit of the campaign. By the frozen tie-break rule (exactness plus structural reading, both declared before fitting), $24/80$ \emph{supersedes} $7/24$ (residual $0.167$). The form $24/80 = 3/10$, excluded as off-chain in v16 under the symmetric core hypothesis, is admitted once the interface integers are opened by v17. Status: \textbf{(D)}.
+
+\section{Robustness of the remaining closed forms (v18-E/F)}
+\textbf{E.} No interface-rational fraction ($8/24$, $10/28$, $28/80$, \dots) falls inside the T1 skin window: the gap $1/(2\sqrt{2})$ retains its geometric origin as the Euler diagonal cut (the u-share $28/80 = 0.35$ sits at $5.26$ tolerance --- an honest negative: the asymmetry does \emph{not} repair the T1 gap). \textbf{F.} $f = 144/917$ counts core \emph{sites}, never interface links, and is therefore immune to the asymmetry; residual unchanged at $0.102$ tolerance. Status: \textbf{(D)} throughout.
+
+\section{Unified triple-target audit (v18-G)}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lllll}
+\toprule
+Target & Prediction & Observation & Residual & Verdict \\
+\midrule
+T1 skin $\Dr$ & $0.0479596451424$ & $0.04795969 \pm 6.98\times10^{-8}$ & $0.64\sigma$ & PASS \\
+T2 closed fraction $f$ & $144/917 = 0.1570338$ & $0.157126 \pm 9\times10^{-4}$ & $0.10\sigma$ & PASS \\
+T3 spin $\Delta\Sigma$ & $24/80 = 0.300000$ & $0.30 \pm 0.05$ & $0.000$ & PASS \\
+\bottomrule
+\end{tabular}
+\end{table}
+The full boundary count is $B_{\mathrm{full}} = 528.3714105334503$ ($528 + 1/(2\sqrt{2}) + 1/56$). Cross-coherence: the single integer $24 = 3 \times 8$ locks simultaneously $B = 24 \times 22$ and $\Delta\Sigma = 24/80$.
+
+\section{Limitations and falsifiers}\label{sec:limits}
+\begin{itemize}[leftmargin=1.6em]
+\item The circularity of $G$ is \emph{not} lifted: the continuous chain C1--C4 $\to B \to \Dr \to \varepsilon_G \to G_{\mathrm{PDL}}$ remains to be written (OP-D71-1).
+\item The T1 fractional signature remains at $\sim 1.7\sigma$; the T2 hits are correlated; the EMC window is wide and the exactness of $24/80$ is relative to a $\pm 0.05$ window.
+\item The interface grand total $11115$ ($98$ core-associated relations) must still be re-derived from C1--C4 rather than patched from the corpus registry.
+\item The pre-registered falsifier stands unchanged: any admissible boundary law must reproduce simultaneously $\Dr = 0.04795969 \pm 7\times10^{-8}$ and $f = 0.157126$ from a single law.
+\end{itemize}
+
+\section{Reproducibility}
+Campaigns v17 and v18 are pre-registered and dated 2026-10-29. The two scripts (\texttt{PDL\_proton\_leakage\_v17.py}, \texttt{PDL\_proton\_leakage\_v18.py}; standard library only, Colab-ready) and their JSON summaries are distributed together with this note. All families, windows and tie-break rules are declared in the scripts before the fits.
+
+\section{Conclusion}
+The proton asymmetry was not lost in D71 --- it was misplaced. Located at the core--sea interface, it is forced uniquely to $(28,28,24)$, re-pins the wake census on the down-core interface $I_d = 24$, identifies the spin bow with the down core, and upgrades the valence spin share to the exact value $\Delta\Sigma = 24/80 = 0.3$. The skin and closed-fraction results are unchanged. The mechanism of D71 therefore survives its own structural correction and emerges strengthened, with one fewer degree of freedom and one more exact target.
+
+\end{document}

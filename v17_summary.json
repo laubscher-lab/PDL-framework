@@ -1,0 +1,109 @@
+{
+  "V17-A_parity": {
+    "E_mer": 11017,
+    "odd": true,
+    "factorization": "11017 = 23*479",
+    "verdict": "SURVIVES (T): asymmetry at the cores does not touch the sea count; monomer engine intact."
+  },
+  "V17-B_HA": {
+    "hypothesis": "28/28/24 internal relations per core",
+    "min_sites_per_core": [
+      8,
+      8,
+      8
+    ],
+    "total_core_sites": 24,
+    "consequence_1": "max edges on 4 sites = C(4,2) = 6 < 24,28 -> impossible on K4 sites",
+    "consequence_2": "V_mer + core_sites = 918 + 24 = 942 != n_u = 930, or forces V_mer = 906 != 918",
+    "also_kills": [
+      "144 = 12^2 (f=144/917)",
+      "B = n_u(n_u-2) = 528",
+      "delta = 1/C(8,3) = 1/56"
+    ],
+    "verdict": "H_A FALSIFIED at fixed n_u=930 / V_mer=918 partition."
+  },
+  "V17-C_HB": {
+    "hypothesis": "28/28/24 = core->sea interface relations; internal K4 (6 each) preserved",
+    "sites_preserved": "918 + 12 = 930 ; 144 = 12^2 ; f = 144/917 survive unchanged",
+    "pattern_2plus1": true,
+    "distinguished_core": "d (24) ; two identical u (28) - the uud shape",
+    "spin_reference_core": "no longer a gauge choice: structurally identified with the d-core (D-level strengthening of v13 Euler localization)",
+    "grand_total_relations": 11115,
+    "core_associated": 98
+  },
+  "V17-D_T1_gap": {
+    "family_N": 7,
+    "band": [
+      0.3,
+      0.3888888888888889
+    ],
+    "poisson_lambda": 0.12127499999999997,
+    "target": 0.35404759,
+    "tol": 0.00077,
+    "hits": {
+      "1/(2*sqrt2)": {
+        "value": 0.35355339059327373,
+        "gap": 0.0004941994067262923,
+        "tol": 0.6418174113328471
+      }
+    },
+    "P_at_least_1_given_null": 0.11420966624592421,
+    "verdict": "Only 1/(2*sqrt2) in window; 28/80=0.35 at 5.26 tol -> the u-share does NOT replace the Euler diagonal cut."
+  },
+  "V17-E_T2_f": {
+    "form": "144/917",
+    "value": 0.15703380588876772,
+    "gap": 9.219411123226329e-05,
+    "tol": 0.10243790136918143,
+    "verdict": "UNCHANGED under H_B (sites preserved). PASS."
+  },
+  "V17-F_T3_DeltaSigma": {
+    "family_N": 4,
+    "window": [
+      0.25,
+      0.35
+    ],
+    "hits": {
+      "7/24": {
+        "value": 0.2916666666666667,
+        "gap": 0.008333333333333304,
+        "tol": 0.16666666666666607
+      },
+      "24/80": {
+        "value": 0.3,
+        "gap": 0.0,
+        "tol": 0.0
+      },
+      "1/(2*phi)": {
+        "value": 0.3090169943749474,
+        "gap": 0.009016994374947407,
+        "tol": 0.18033988749894814
+      },
+      "28/80": {
+        "value": 0.35,
+        "gap": 0.04999999999999999,
+        "tol": 0.9999999999999998
+      }
+    },
+    "chain_status": {
+      "7/24": "IN-chain (v16)",
+      "24/80": "IN-chain (interface counts, H_B)",
+      "1/(2*phi)": "OFF-chain (phi, excluded v16)",
+      "28/80": "IN-chain but 0.35 outside window"
+    },
+    "key_finding": "24/80 = 3/10 EXACTLY (0.000 tol): the form v16 excluded as off-chain is now IN-chain via the interface counts; the asymmetry rehabilitates 3/10 structurally.",
+    "ambiguity": "two in-chain forms coexist: 24/80 (exact) vs 7/24 (0.167 tol); selection deferred (spin-surface map under H_B, v18)."
+  },
+  "V17-G_cross": {
+    "T1_pair": "(3,8) via delta=1/C(8,3) and gap 1/(2*sqrt2): survives (internal K4 + Euler unchanged)",
+    "T3_pair": "(24,80) via 24/(28+28+24): NEW, structurally forced by the asymmetry",
+    "f": "144/917: survives",
+    "note": "asymmetry does NOT extend cross-coherence to T1 (28/80 at 5.26 tol) - honest negative."
+  },
+  "V17-H_verdicts": {
+    "H_A": "FALSIFIED",
+    "H_B": "VIABLE and strengthening: preserves every v10-v16 integer result AND the T3 exact form",
+    "asymmetry_status": "rehabilitated as INTERFACE structure (2+1, d distinguished) - matches Turn-20 optimistic reading for T3, not for the T1 gap",
+    "next": "v18: rebuild the full wake census with interface 28/28/24 shared across cores; test whether B=528 survives weighting by interface shares and whether the diagonal-cut fraction coexists with 28/28/24; select 24/80 vs 7/24 via spin-surface map."
+  }
+}
