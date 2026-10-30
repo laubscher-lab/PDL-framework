@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\title{\textbf{D72 --- Interface Asymmetry of the Proton (Version 2)}\\[4pt]
+\large The $(24,24,28)/76$ core--sea interface, the spin correction,\\
+and the parity-defect reading of the valence spin budget}
+\author{PDL Programme --- laubscher-lab\\ \texttt{https://github.com/laubscher-lab/PDL-framework}}
+\date{30 October 2026}
+\begin{document}
+\maketitle
+
+\textbf{Version note (v2).} This version supersedes D72~v1 (Zenodo DOI 10.5281/zenodo.23783579, 29 October 2026)~\cite{d72v1}. Version~1 modelled the interface pattern $(28,28,24)$ over $I_{\mathrm{tot}}=80$ under the proton label. As recorded in the programme context and DOI registry~\cite{pdlcontext}, that pattern is the \emph{neutron} interface; the proton interface is $(24,24,28)$ over $I_{\mathrm{tot}}=76$, with the distinguished $d$ core the \emph{long} core. Every consequence is propagated below (campaigns v19--v20). The exact result $\Delta\Sigma = 24/80 = 3/10$ of v1 is not lost: it is re-attributed to the neutron motif, where it is arithmetically admissible (V19-H). What changes for the proton is the spin budget and the interface-forcing argument; the leakage derivation itself is untouched.
+
+\textbf{Epistemic labels.} (T) = theorem forced inside the model; (D) = derived within an a priori declared family (forms, denominators and integer shifts declared before comparison); (H) = heuristic/compatibility statement. Nothing in this note claims a derivation of measured quantities from first principles; see Section~\ref{sec:limits}.
+
+\section{Architectural base values (unchanged)}
+The architectural constants of the corpus are unchanged by the v2 correction~\cite{d71,dm36}. The parity of the sea, $11017 = 23 \times 479$ (odd), forces a conserved mobile monomer defect in any relational closure of the sea (T); under the surface ontology of D71 (no core interior, $K_4$ bows, the sea as the unique odd graph), the wake census is a boundary count.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+Quantity & Value & Status \\
+\midrule
+Coherence units & $n_u = 930 = 918 + 12$ & corpus \\
+Sea & 918 sites, $11017 = 23 \times 479$ relations (odd) & corpus \\
+Parity monomer & unique conserved mobile defect & (T) \\
+Valence cores & $3 \times K_4$: 12 core sites, 18 internal relations & corpus (RN1: $R_e = 6 \ne 24, 28$) \\
+Bow degree & $d_{\mathrm{bow}} = 8 = 24/3$ & (D) \\
+Wake census & $B = 528 = 24 \times 22$ & (D) \\
+Diagonal cut & $\sqrt{2}/8$ per locus; $B = 528 + 1/(2\sqrt{2})$ & (D) \\
+Closed fraction & $f = 144/917 = 12^2/(918-1) = 0.157126$ & (D) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The corpus interface counts: proton versus neutron}
+The corpus assigns interface entity counts per valence core. Proton: $n_K = n_u + n_u + n_d = 24 + 24 + 28 = 76$. Neutron: $28 + 28 + 24 = 80$. Registry line: ``76 (proton, $2\times K_{24} + K_{28}$), 80 (neutron, $K_{24} + 2\times K_{28}$)''~\cite{pdlcontext}. In the proton the distinguished $d$ core is therefore the \emph{long} core (28 entities). The isospin shift between the two baryons is $80 - 76 = 4$, exactly one core-site unit (sites/core $= 12/3 = 4$).
+
+Version~1 used $I_{\mathrm{tot}} = 80$ with the split $(28,28,24)$ --- the neutron pattern --- under the proton label. On that (wrong-for-proton) total, two criteria (deficit $=$ sites/core $=4$; short core divisible by $d_{\mathrm{bow}}=8$) selected $(28,28,24)$ uniquely among the declared 2+1 partitions of 80 (V18-A), with weighted wake shares $184.8/184.8/158.4$ summing to 528. On the correct proton total 76 the same criteria do \emph{not} select a unique split: \textbf{(V19-A, FAIL)} the interface-forcing argument must be rebuilt for the proton and is registered as open problem OP-D72-1. This failure does not propagate to the counts themselves, which are corpus data, not fitted parameters.
+
+\section{What the correction leaves intact (campaign v19)}
+\textbf{(V19-B1, PASS)} Interface weights $\omega_c = I_c/I_{\mathrm{tot}} = \{6/19,\, 6/19,\, 7/19\}$; the weighted wake shares sum exactly to $B = 528$, and the symmetric share $76/3$ is non-integer --- an asymmetric split remains required for proportional bookkeeping.
+
+\textbf{(V19-B2, PASS)} On the declared family $x(x-2)$, the unique hit is $24 \times 22 = 528$: the wake census re-reads on a $u$ interface ($I_u = 24$), structurally coherent with $B = n_u(n_u-2)$ where $n_u$ denotes the $u$-core interface count 24.
+
+\textbf{(V19-C, PASS)} Predicted locus degrees $\{I_c + 1\} = \{25, 25, 29\}$; the two degree-25 loci located in v13 therefore sit on \emph{a $u$ core}; the spin reference bow is a $u$ bow.
+
+\textbf{Leakage chain (T1), intact.} Parity (T) $\to$ monomer $\to$ wakes $B = 528$ $\to$ diagonal cut $\sqrt{2}/8$ per locus $\to$ $B = 528 + 1/(2\sqrt{2})$ $\to$ correction $\delta = 1/\binom{8}{3} = 1/56$ $\to$ $\Delta r_{\mathrm{pred}} = 0.04795965$ versus $\Delta r_{\mathrm{val}} = 0.04795969 \pm 7 \times 10^{-8}$, residual $4.5 \times 10^{-8}$ $=$ 0.643 tol (PASS). None of these steps involves the $u/d$ assignment of the interface.
+
+\textbf{(V19-E, PASS)} The diagonal-cut fraction $1/(2\sqrt{2})$ survives the interface audit: no interface rational falls inside its window --- its origin is geometric, not bookkeeping. \textbf{(V19-F, PASS)} $f = 144/917$ counts core sites, never interface links: it is immune to the asymmetry.
+
+\section{The spin budget: an integrality obstruction and its parity reading (campaign v20)}
+\subsection{The exact v1 value migrates to the neutron}
+$\Delta\Sigma = I_{\mathrm{dist}}/I_{\mathrm{tot}} = 24/80 = 3/10$, residual 0.000 against the EMC window~\cite{emc}, is verified-as-neutron (V19-H): it is the reading of the neutron motif $(28,28,24)/80$ with a distinguished core of interface 24. For the proton the naive readings fail twice: $28/76 \approx 0.368$ (outside the window) and $24/76 \approx 0.316$ (residual $\approx 5\%$).
+
+\subsection{Integrality obstruction}
+The proton cannot carry $3/10$: $76 \times 3/10 = 114/5 \notin \mathbb{Z}$. The nearest admissible numerator is 23:
+\[\frac{23}{76} = 0.302632, \qquad \left|\frac{23}{76} - \frac{3}{10}\right| = \frac{1}{380} = \frac{1}{5\, I_{\mathrm{tot}}}.\]
+The gap is closed-form, not noise.
+
+\subsection{The dual identity of the numerator 23}
+(a) $23 = I_u - 1$: the $u$ interface minus the unique conserved monomer forced by the sea's parity (T). (b) $23$ is the prime parity carrier of the sea itself: $11017 = 23 \times 479$. The same integer governs the parity of the sea and the spin budget of the proton.
+
+\subsection{Physical reading}
+\[\Delta\Sigma_{\mathrm{proton}} = \frac{I_u - 1}{I_{\mathrm{tot}}} = \frac{23}{76},\]
+i.e.\ the proton's spin reads the $u$ interface \emph{corrected by the parity defect}. The same monomer that governs the leakage (T1) and the closed fraction (T2) also strikes the spin (T3), shifting $24/76 \to 23/76$ and moving the proton exactly $1/380$ away from the neutron's exact $3/10$. Three targets, one defect. The isospin partner reads are: neutron --- exact form $3/10 = 24/80$ on the distinguished core; proton --- defect-corrected form $23/76$ on the $u$ interface, consistent with the $u$-core localisation of the loci (V19-C).
+
+\subsection{Status and multiplicity control}
+The candidate $23/76$ carries label (D) within the a priori declared family ``structural integer $\pm\, k$, $k \le 2$'' applied to the distinguished interface. Honest control: the EMC window is wide --- 8 fractions $a/76$ fall inside it, against a mean expectation of $\approx 7.6$; window proximity alone is statistically ordinary and proves nothing. The candidate is therefore carried by the \emph{dual structural identity of the numerator} (Section~4.3), not by the window. It improves T3 from $7/24$ (residual 0.167, built on interchangeable cores) to residual 0.0526 --- a factor $\approx 3.2$ --- and $7/24$ remains recorded in the corpus as the superseded symmetric-chain form.
+
+\section{Unified audit}
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+\toprule
+Target & Observable & Value & Residual (tol) & Verdict \\
+\midrule
+T1 & proton skin $\Delta r$ & $0.04795965$ vs $0.04795969 \pm 7\times 10^{-8}$ & 0.643 & PASS \\
+T2 & closed fraction $f$ & $144/917 = 0.157126$ & 0.102 & PASS \\
+T3 & valence spin $\Delta\Sigma$ & $23/76 = 0.302632$ & 0.0526 & PASS \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Triple PASS without any exact target for the proton: exactness ($3/10$) has migrated to the neutron motif $(28,28,24)/80$ (V19-H) --- a proton$\leftrightarrow$neutron symmetry of the mechanism that warrants its own campaign (OP-D72-2, candidate D73).
+
+\section{Limitations, falsifiers, open problems}\label{sec:limits}
+(i) All second-generation claims carry status (D) within a priori declared families --- not theorems. (ii) The T1 fractional signature remains at $\sim 1.7\sigma$. (iii) The T2 hits are correlated. (iv) The EMC spin window is wide; the T3 multiplicity control of Section~4.5 is engraved. (v) The circularity of $G$ is NOT lifted: the continuous chain C1--C4 $\to$ $B$ $\to$ $\Delta r_{\mathrm{val}}$ $\to$ $\varepsilon_G$ $\to$ $G_{\mathrm{PDL}}$ remains to be written (OP-D71-1). (vi) OP-D72-1: the interface-forcing argument for the proton total 76 is open (V19-A). (vii) OP-D72-2: the neutron campaign around the exact $3/10$ is open. The pre-registered falsifier stands unchanged: any admissible boundary law must reproduce simultaneously $\Delta r_{\mathrm{val}} = 0.04795969 \pm 7 \times 10^{-8}$ and $f = 0.157126$ from one law.
+
+\section{Reproducibility}
+Scripts (standard library only): v17 --- interface hypothesis audit; v18 --- analysis on the 80-pattern (as published in v1); v19 --- proton correction (nine checks); v20 --- spin-gap reading. Scripts and JSON summaries ship with the programme archives~\cite{scripts}; corpus documents and DOIs in~\cite{pdlcontext,d70,d71,d72v1,dm34,dm36}.
+
+\begin{thebibliography}{9}
+\bibitem{pdlcontext} PDL Programme, \emph{PDL\_context.md --- programme context and state} and DOI registry \emph{10.5281zenodo.txt}, laubscher-lab/PDL-framework, GitHub (2026). \url{https://github.com/laubscher-lab/PDL-framework}
+\bibitem{d70} PDL Programme, \emph{D70}, Zenodo (2026). DOI: 10.5281/zenodo.23775498.
+\bibitem{d71} PDL Programme, \emph{D71 --- Parity-driven proton leakage}, Zenodo (2026). DOI: 10.5281/zenodo.23776625.
+\bibitem{d72v1} PDL Programme, \emph{D72 v1 --- Interface asymmetry of the proton}, Zenodo (2026). DOI: 10.5281/zenodo.23783579. Superseded by the present version.
+\bibitem{dm34} PDL Programme, \emph{PDL Global Mapping, version 34 (DM v34)}, Zenodo. DOI: 10.5281/zenodo.22067627.
+\bibitem{dm36} PDL Programme, \emph{PDL Global Mapping of Structures, Results, and Open Problems, version 36 (DM36)}, Zenodo (2026). DOI: 10.5281/zenodo.23784141.
+\bibitem{scripts} PDL Programme, \emph{Proton leakage campaign scripts v6--v20} (standard library only, Colab-ready), reproducibility archive, laubscher-lab/PDL-framework (2026).
+\bibitem{emc} J.~Ashman \emph{et al.} (European Muon Collaboration), Phys.\ Lett.\ B \textbf{206} (1988) 364; Nucl.\ Phys.\ B \textbf{328} (1989) 1.
+\end{thebibliography}
+\end{document}
