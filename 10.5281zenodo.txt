@@ -463,7 +463,7 @@ https://doi.org/10.5281/zenodo.23776625
 D71 — Parity-Driven Proton Leakage: A Surface Ontology Mechanism for the Proton Skin, the Closed Fraction, and the Valence Spin Budget 
 D71_parity_proton_leakage.pdf 
 
-D72 
-https://doi.org/10.5281/zenodo.23783579 
-D72 — Interface Asymmetry of the Proton: The 28/28/24 Core–Sea Interface and the Exact Valence Spin Budget 
-D72_interface_asymmetry.pdf
+D72v2 
+https://doi.org/10.5281/zenodo.23793426 
+D72 — Interface Asymmetry of the Proton: The 24/24/28 Core–Sea Interface and the Exact Valence Spin Budget (version v2) 
+D72_interface_asymmetry_v2.pdf
