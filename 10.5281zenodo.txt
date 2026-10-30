@@ -1,7 +1,7 @@
 DM
-https://doi.org/10.5281/zenodo.23784141 
-PDL Global Mapping of Structures, Results, and Open Problems — Version 36 (DM36) 
-PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v36.pdf 
+https://doi.org/10.5281/zenodo.23794773  
+PDL Global Mapping of Structures, Results, and Open Problems — Version 37 (DM37) 
+PDL_Global_Mapping_of_Structures_Results_and_Open_Problems_v37.pdf 
 
 D01
 https://doi.org/10.5281/zenodo.18462686
