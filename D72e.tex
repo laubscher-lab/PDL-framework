@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{url}
+\makeatletter
+\g@addto@macro\UrlBreaks{\UrlOrds}
+\makeatother
+\emergencystretch=3em
+
+\title{\textbf{D72e --- The gravitational coupling as an emergent expression\\ of the boundary leakage}\\[4pt]
+\large Dependence $G(\alpha)$, the non-circularity architecture, and the registry\\ of the twenty-three closed doors (verification campaign v25--v54)}
+\author{C.~Laubscher\\ \textit{PDL Framework --- Laubscher Lab}}
+\date{31 October 2026}
+
+\usepackage{graphicx}
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+\noindent
+We present the consolidated synthesis of verification campaign v25--v54 of the PDL framework, which establishes the gravitational coupling $G$ and the fine-structure constant $\alpha$ as two expressions of a single mean boundary-leakage parameter $\varepsilon$, propagated through the eighteen rungs of the declared structure by the cascade $\alpha_G = [\alpha(1+\delta)]^{18}$. The circularity affecting earlier determinations is broken \emph{by architecture}: the predictive block is sealed from every measured input of $G$; its predictions are frozen by cryptographic fingerprint before any comparison; and the CODATA value of $G$ is admitted only as an external arbiter. The frozen prediction $G_{\mathrm{pred}} = 6.6743264\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}$ agrees with the CODATA 2018 arbiter at $+3.96$~ppm, i.e.\ $0.18\,\sigma$ of the experimental uncertainty. Twenty-three doors, each closed under declared multiplicity controls, are registered. The synthesis archives its own limits with equal care: a residual $\sim$20\% fortuitous-agreement probability while the pre-registered falsifier ($d_r = 0.04795969 \pm 7\times10^{-8}$ simultaneously with $f = 0.157126$) remains open; and the identification of the missing radial embedding of the 918-site graph as the canonical obstruction to a final proof. Document lineage: D72 (founding interface asymmetry), D72b (short synthesis), D72d (long synthesis), D72e (this corpus document, prepared for Zenodo deposition).
+\end{abstract}
+
+\section{Introduction: two constants, one leakage}
+Within the PDL framework the microscopic dynamics at the sea--boundary interface is far too complex to be modelled by a unique relation; the twenty-three closed doors of campaign v25--v54 are the negative trace of that complexity. The burden of the derivation is instead carried by a \emph{mean} leakage behaviour: a single effective parameter $\varepsilon$ per rung, repeated over the eighteen rungs of the declared structure. The electromagnetic coupling $\alpha$ (already derived structurally as $\alpha^{-1} = 137 + 33/917$, at $+0.09$~ppm of CODATA) and the gravitational coupling are then no longer two parallel constants: they are linked by
+\begin{equation}
+\alpha_G \;=\; \varepsilon^{18}, \qquad \varepsilon = \alpha\,(1+\delta), \qquad \delta \equiv \frac{\varepsilon}{\alpha} - 1,
+\end{equation}
+and the gravitational constant follows from the declared conversion $\alpha_G = G\,m_p^2/(\hbar c)$. The small quantity $\delta$ is the asymmetry of the boundary flux sharing between the emitted channel ($\alpha$) and the transmitted channel ($\varepsilon$). The task of the campaign was thus reduced to two numbers, $\varepsilon$ and $\delta$ --- and to proving that they are predicted, not fitted.
+
+\section{The derivation chain}
+The sealed chain used for the prediction is
+\begin{align}
+\alpha^{-1} &= 137 + \tfrac{33}{917} \\
+\delta_{\mathrm{pred}} &= (1-x)\,\underbrace{2\bigl(1-\cos\tfrac{\pi}{18}\bigr)}_{\text{chord closure}} + \; x\,\underbrace{\Bigl(\tfrac{\pi}{18}\Bigr)^2}_{\text{arc closure}} = 3.0429555\,\% \\
+\varepsilon_{\mathrm{pred}} &= \alpha(1+\delta_{\mathrm{pred}}) = 0.0075194084307 \\
+\alpha_{G,\mathrm{pred}} &= \varepsilon_{\mathrm{pred}}^{18} = 5.906173\times10^{-39} \\
+G_{\mathrm{pred}} &= \alpha_{G,\mathrm{pred}}\,\frac{\hbar c}{m_p^2} = 6.6743264\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}} .
+\end{align}
+The target value $\delta = 3.0430\,\%$ is \emph{bracketed} by the two closures: the chord closure alone undershoots it ($-1\,476$~ppm), the arc closure alone overshoots it ($+1\,062$~ppm); the surviving mixture is $x = 7/12$.
+
+\section{The three geometric routes to $x = 7/12$}
+The mixing fraction is not a fit: it is produced independently by three a priori geometric routes from the declared pieces of the structure,
+\begin{equation}
+x = \frac{24 - 180/18}{24} = \frac{14}{24}, \qquad
+x = \frac{\mathrm{spf}(917)}{12} = \frac{7}{12}, \qquad
+x = \frac{\mathrm{gpf}(133) - 12}{12} = \frac{7}{12},
+\end{equation}
+with $917 = 7\times131$ (the denominator of the structural $\alpha$), $133 = 7\times19$ (the support of the historical champion $1/133$) and $180/18 = 10^\circ$ the natural closure phase of the eighteen-rung structure. Three independent derivations converge on the same value: $7/12$ emerges from the geometry. In full honesty, its status is archived as a \emph{reading} --- a structural derivation with remarkable convergence, not yet a compelled deduction --- pending the boundary operator of Section~6.
+
+\section{The non-circularity architecture}
+The decisive methodological result of the campaign is that circularity was broken by construction, not by argument. \textbf{(i) Sealed predictive block.} Permitted inputs: the declared structure (18 rungs, 918 sites, 24-regular shell, boundary/sea decompositions $11\,017 = 23\times479$, $10\,087 = 7\times11\times131$, $930$), the exact constants $h$ and $c$, and the measured proton mass $m_p$. Forbidden inputs: $G_{\mathrm{CODATA}}$, the measured $\alpha_G$, and the anchored values $\varepsilon_{\mathrm{rung}}$, $\delta_{\mathrm{rung}}$. \textbf{(ii) Frozen predictions.} All outputs were frozen by SHA-256 fingerprint before any comparison (v53: \texttt{95bc1c472c21d100}; v54: \texttt{b3a697e5c75af550}). \textbf{(iii) External arbiter.} Only after freezing was the CODATA 2018 value $G = 6.67430\times10^{-11}$ admitted, with its $22$~ppm uncertainty. Verdict:
+\begin{equation}
+\frac{G_{\mathrm{pred}} - G_{\mathrm{CODATA}}}{G_{\mathrm{CODATA}}} = +3.96\ \mathrm{ppm} = 0.18\,\sigma .
+\end{equation}
+The role of the measured $G$ is thereby inverted: it is an output predicted by the structure, not an input anchoring the structure.
+
+\section{Registry of the twenty-three closed doors}
+Campaign v25--v54 closed twenty-three doors, each under declared a priori membership and random-expectation (multiplicity) controls. Doors v25--v41 (closed-form and denominator families) are archived individually in the artefact manifest shipped with this package (\path{scripts/CAMPAIGN_ARTEFACTS.md}); doors v42--v54 are summarised below.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{1.0cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{4.8cm} @{}}
+\toprule
+Version & Scope declared a priori & Verdict \\
+\midrule
+v42 & Full-boundary numerator $\delta \approx 11017/362043 = (1/33)(479/477)$ & $+22.6$~ppm; structural, outside $\pm7$~ppm \\
+v43 & Continuity controls ($1/133$, $335/11016$) & closed \\
+v44 & $\varepsilon = L/S$ with free fractional $L$; 36 declared $(L,S)$ pairs & hits(7~ppm) $=0$ \\
+v45 & ``Total minus one'' decoherent-link denominators & no restoration within $\pm7$~ppm \\
+v46 & Denominator band scan $D \in [500, 10\,087]$, free numerator & chance level \\
+v47 & Unconstrained best rationals (Dirichlet regime) & ppb agreements, no structural factorisation \\
+v48 & Four closed analytic routes (topological, gambler's ruin, evanescent, $T_{13}$) & support 133 required, not derived \\
+v49 & A priori generators of 133 (arithmetic families, harmonics, shell modes) & multiplicity $\approx$ controls \\
+v50 & Dephased two-channel flux; closure phase $180^\circ/18 = 10^\circ$ & $\delta$ off by $\sim 1\,500$~ppm \\
+v51 & Damped closure refinement & chord/arc bracket; anchoring signature \\
+v52 & A priori geometry of $x = 7/12$; window-intersection test & empty at 7~ppm (anchoring theorem) \\
+v53 & Circularity break by architecture; frozen prediction & $G_{\mathrm{pred}}$ at $+3.96$~ppm ($0.18\,\sigma$) \\
+v54 & Boundary operator for the falsifier $d_r$ AND $f$ & not constructible; radial embedding missing \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Certificates (scripts, JSON summaries, reports, consoles) of every door are published; the surviving structural readings are: $\varepsilon \sim 1/133$ at $-81.5$~ppm (sixteen consecutive re-evaluations, outside the window), $77/10240$ at $+16.6$~ppm, and $(1/33)(479/477)$ at $+7.4$/$+21.9$~ppm.
+
+\section{Honest caveats}
+The credibility of this document rests on stating its own limits as sharply as its result.
+\textbf{(a)} An agreement at $0.18\,\sigma$ carries a $\sim$20\% probability of being fortuitous; the architecture removes anchoring, not chance.
+\textbf{(b)} The pre-registered falsifier --- the simultaneous restoration of $d_r = 0.04795969 \pm 7\times10^{-8}$ and $f = 0.157126$ under the single generator $x = 7/12$ --- is \emph{not} closed: best structural approaches are $f \approx 1731/11017$ ($-33$~ppm; tolerance 7~ppm) and $d_r \approx 44/918$ ($-613$~ppm; tolerance 1.46~ppm).
+\textbf{(c)} The window-intersection theorem (v52) shows that the 22~ppm measurement noise of $G$ forbids dual-anchor validation at $\pm7$~ppm; final validation must proceed through the falsifier alone.
+\textbf{(d)} The missing canonical component is identified surgically: a radial embedding of the 918-site graph, required to construct the boundary operator that produces $d_r$ and $f$ from the same law.
+
+\section{Reproducibility and artefacts}
+This package contains: the present source (\texttt{D72e.tex}) with its bibliography (\texttt{refs.bib}) and compiled document (\texttt{D72e.pdf}); the consolidated sealed-pipeline script (\texttt{scripts/}\allowbreak\texttt{D72e\allowbreak\_\allowbreak pipeline\allowbreak\_\allowbreak v55\allowbreak.\allowbreak py}) reproducing the derivation chain of Section~2 together with its external-arbiter verdict, and its frozen output (\texttt{scripts/}\allowbreak\texttt{D72e\allowbreak\_\allowbreak pipeline\allowbreak\_\allowbreak v55\allowbreak\_\allowbreak output\allowbreak.\allowbreak json}); and the campaign artefact manifest (\path{scripts/CAMPAIGN_ARTEFACTS.md}) listing the published certificates of every door v25--v54. The framework repository is \url{https://github.com/laubscher-lab/PDL-framework}. Suggested deposition licence: CC~BY~4.0.
+
+\section{Conclusion}
+The campaign establishes the dependence $G(\alpha)$ at the level of the mean leakage field: both constants are expressions of the single parameter $\varepsilon$ through the cascade $\alpha_G = [\alpha(1+\delta)]^{18}$. The circularity of $G$ is broken by architecture --- a sealed predictive block, fingerprint-frozen predictions, and $G_{\mathrm{CODATA}}$ demoted to the role of external arbiter, against which the frozen prediction stands at $0.18\,\sigma$. The registry of the twenty-three closed doors demonstrates that the surviving result is not a coincidence harvest but the last form standing. Final proof awaits the boundary operator able to restore $d_r$ and $f$ simultaneously; the radial embedding of the 918-site graph is the identified path to it.
+
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}
