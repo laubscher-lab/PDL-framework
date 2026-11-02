@@ -1,0 +1,195 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[british]{babel}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array,longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[round,authoryear]{natbib}
+\emergencystretch=3em
+\setlength{\parskip}{3pt}
+\newcommand{\ppm}{\ensuremath{\,\mathrm{ppm}}}
+\title{The Signed Curvature of the Boundary:\\ A Single-Leg Closure of the PDL Radial Residual in a 38-Gate Campaign\\ \large D72e, Revised and Extended Edition, v2.4 (reproducibility and selector corrigendum)}
+\author{C.~Laubscher}
+\date{1 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}\noindent
+This edition of D72e documents the 38-gate campaign carried out on the frozen PDL chain (passes v25--v70) and supersedes v2.3, whose text it keeps in substance while restoring the gate ledger of v2--v2.2, a fully computational reproduction package, and an explicitly defined selector filter. The frozen prediction $G_{\mathrm{pred}} = 6.6743264\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}$ stands at $+3.96\ppm = +0.18\sigma$ against the CODATA 2022 recommended value and has not been re-fitted since the freeze at pass v53; the inherited $\sim 20\%$ probability of a fortuitous agreement is retained as a central reserve, and $x = 7/12$ is carried as a reading retained between v50 and v52 in view of the $G$-derived target $\delta \approx 3.0430\%$. The $\delta$ dressing series of gate~32 is a post-hoc consistency test: its fourth-order coefficient saturates at $c_4 = 499.73$, and any $c_4$ between 69 and 931 keeps $\varepsilon$ within its own uncertainty. The pre-registered falsifier reduces to a single leg: the radial residual $d_r$ at $+41.547\ppm = 28.55\sigma$, while the tangential leg $f$ was never in tension ($-33.010\ppm$ against $u(f) = 5.73\times10^{3}\ppm$, propagated from Planck via D70/D71). The single tension is closed sub-ppm by the signed curvature of the 918-site boundary, $c = (2\sin(\pi/918))^2 = 46.846018\ppm$, with $k_d = 8/9$: one coefficient for one datum, graded form-hit. Under the axioms A1--A4, formulated after gate~37 and here given a computable definition of description length, an exhaustive filter over 1826 radial candidates leaves six admissible pairs, and twelve radial coefficients fit within $u(d_r)$; no uniqueness is claimed. The rehabilitation of $77/10240$ and the statistical promotion of gate~29 remain retracted ($p_{\mathrm{post}} = 0.9902$ and $0.3370$). Every number quoted is printed by one of fourteen scripts that compute it from the frozen chain and exit with status~0 only if the stated verdict holds.
+\end{abstract}
+
+\section{Introduction and corrigendum}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{\textbf{Corrigendum box (v2.1--v2.4).}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item The probability that a frozen prediction of this kind agrees with $G_{\mathrm{CODATA}}$ fortuitously is about $20\%$ (reserve of edition v1, restored in v2.1).
+\item $x = 7/12$ is a reading, not yet a compelled deduction (reserve of edition v1, restored in v2.1).
+\item Genealogy: $x = 7/12$ was retained between v50 and v52 in view of the target $\delta \approx 3.0430\%$ derived from the measured $G$. Anti-circularity is operational from the freeze at v53 onward; it is not genealogical before that date.
+\item The gate-32 series is a dressing test applied post hoc to the frozen value; it does not derive $\delta$.
+\item v2.2: the rehabilitation of $77/10240$ and the statistical promotion of gate~29 are retracted.
+\item v2.3: the falsifier is single-leg; the selector of gate~38 is admissible, not unique; D1 and $q_{\mathrm{link}}$ carry no independent empirical weight.
+\item v2.4: the gate ledger of v2--v2.2 is restored (the v2.3 ledger, which reassigned several passes, is withdrawn); the description length of axiom A2 is defined and the A1--A4 filter is computed exhaustively (six admissible pairs; the figure of thirty in v2.3 is withdrawn); the reproduction scripts compute every quoted number again; the dressing series is restored in its original form and sign.
+\end{itemize}}}
+
+\medskip\noindent
+$G_{\mathrm{pred}}$ is a dated, falsifiable value (frozen at v53, confirmed bit-identical on 1 November 2026) that future measurements of $G$ may confirm or refute.
+
+\section{The frozen chain and its invariants}
+The chain is $\mathrm{STRUCT} \to \alpha^{-1} = 137 + 33/917 \to x = 7/12 \to \delta = (1-x)\,2\big(1-\cos\tfrac{\pi}{18}\big) + x\big(\tfrac{\pi}{18}\big)^2 \to \varepsilon = \alpha(1+\delta) \to \alpha_G = \varepsilon^{18} \to G_{\mathrm{pred}} = \alpha_G\,\hbar c/m_p^2$. Since the freeze at v53, $G$ enters the chain nowhere as an input; before the freeze, the choice of $x$ was made in view of a $G$-derived target, as stated in the corrigendum box. The external confrontation with CODATA 2022 \citep{codata2022} occurs downstream as an arbitration; the recommended value of $G$ is unchanged from the 2018 adjustment \citep{tiesinga2021}. The fingerprint of the frozen outputs, \texttt{7dafad88dd4797d5}, is recomputed and checked at the head of every script.
+
+\begin{table}[h]\centering\small
+\caption{Frozen invariants of the chain. No parameter was re-fitted after the freeze at v53.}
+\label{tab:invariants}
+\begin{tabular}{@{}p{0.14\textwidth}p{0.38\textwidth}p{0.38\textwidth}@{}}
+\toprule
+Symbol & Value & Status \\
+\midrule
+$\alpha^{-1}$ & $137.0359869138$ ($= 137 + 33/917$) & STRUCT form, frozen \\
+$x$ & $7/12$ & reading retained v50--v52 \\
+$\delta$ & $3.0429555\%$ & frozen at v53; dressed post hoc (Section~\ref{sec:delta}) \\
+$\varepsilon$ & $0.0075194084$; $u(\varepsilon) = \pm 1.22\ppm$ & frozen; $u$ propagated from $u_r(G)/18$ \\
+$G_{\mathrm{pred}}$ & $6.6743264\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}$ & $+3.96\ppm = +0.18\sigma$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Protocol v2}
+The uniform $\pm 7\ppm$ window of the first protocol was internally inconsistent: a bare estimator departs from $\varepsilon = \alpha(1+\delta)$ by about $3\times10^{4}\ppm$ by construction. Protocol v2 uses counting windows $w(\text{rung}) = 1/\sqrt{51}$, $w(\text{rung-set}) = 1/\sqrt{918}$ and $w(\text{cascade}) = 1/\sqrt{16524} = 0.78\%$. The Fano-corrected window $\sqrt{51}/\sqrt{16524} = 1/18$ is an identity of definition, since $16524 = 18\times918 = 51\times18^2$; it records how the counts were chosen and carries no empirical content \citep{fano1947}. All multiplicity probabilities below use the canonical convention $p_1 = 2|r|/w$ and $p_{\mathrm{post}} = 1-(1-p_1)^N$.
+
+\section{Campaign ledger}
+Table~\ref{tab:gates} restores the ledger of editions v2--v2.2 with the verdicts of the present edition. Two passes are not numbered as gates: v59a, which codified Protocol~v2, and v60, the retro-audit. The per-member files of passes v25--v54 predate durable artefact storage and have expired; only the declared carryover champions survived to be re-scored at v60. Gates~24--27 and the arrow measurement of v58 are carried as reported; no script for them is shipped with this edition.
+
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{0.06\textwidth}p{0.08\textwidth}p{0.31\textwidth}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\caption{The 38 gates of the campaign, passes v25--v70.}\label{tab:gates}\\
+\toprule
+Gate & Pass & Target / mechanism & Verdict (v2.4) & Key reading \\
+\midrule
+\endfirsthead
+\toprule
+Gate & Pass & Target / mechanism & Verdict (v2.4) & Key reading \\
+\midrule
+\endhead
+1--23 & v25--v54 & form hits, scans and simple equations under the $\pm7\ppm$ window; chain frozen at v53 & 23 NULL & per-member archives expired \\
+24 & v55 & spin as the source of the leak & NULL & hyperfine channel far below $\varepsilon$ \\
+25 & v56 & spin as amplifier & NULL & --- \\
+26 & v57 & full angular budget; $v = \alpha c$ & NULL & --- \\
+27 & v58 & entropy production & NULL & arrow $0.0138$ nats/epoch (carried, not reproduced) \\
+28 & v59b & non-uniform entropy at symmetry closures & NULL & witnesses score as well as closures \\
+29 & v61 & dressing $k = 1-(v/c)^2/3$ of $77/10240$ & FORM-HIT & $-1.417\ppm$ on $\varepsilon$; $p_{\mathrm{post}} = 0.3370$ \\
+30 & v62 & $(v/c)^4$ term, coefficient 500 & NULL & $918/1.836 = 500$ is arithmetic \\
+31 & v63 & joint falsifier from one operator & DIAGNOSTIC & opposite signs; $f$ within its uncertainty \\
+32 & v64 & $\delta$ dressed as a series & CONSISTENCY & $c_4$ unconstrained within $u(\varepsilon)$ \\
+33 & v65 & border correction of $f$ & NO WEIGHT & $-0.00114\ppm$ against $u(f) = 5.7\times10^3\ppm$ \\
+34 & v66 & signed boundary curvature & FORM-HIT & joint WIN0.5 \\
+35 & v67 & discriminants D1--D4 & SUPERSEDED & D1 is a function of the two residuals \\
+36 & v68 & discrete curvature; $k_d$, $k_f$ & FORM-HIT & $d_r$: $-0.0957\ppm$; $f$: $+0.1142\ppm$ \\
+37 & v69 & absolute uniqueness on $q\le51$ & REFUTED & 16 pairs beat the champion \\
+38 & v70 & A1--A4 selector & ADMISSIBLE & 6 admissible pairs; not unique \\
+\bottomrule
+\end{longtable}}
+
+\section{Gate 29 and the $77/10240$ window}
+The candidate $77/10240$ lies $+16.334\ppm$ from the chain value of $\varepsilon$. Under the canonical convention, with the cascade window and a census of $N = 1100$, its posterior probability is $p_{\mathrm{post}} = 0.9902$: it does not rise above the campaign background. Editions v2 and v2.1 quoted $0.035$, a figure obtained without dividing by the window; it is withdrawn. The dressing $k = 1-(v/c)^2/3$, with $v = \alpha c$, brings the candidate to $-1.417\ppm$, that is $-1.16\,u(\varepsilon)$, with $p_{\mathrm{post}} = 0.3370$ at $N = 1128$ (the withdrawn figure was $0.0032$). The residual is kept on record as a measured value; gate~29 is a form-hit.
+
+\section{The dressing series of the frozen $\delta$}\label{sec:delta}
+Gate~32 dresses the frozen chain value as
+\begin{equation}
+\varepsilon = \frac{77}{10240}\Big[1 - \tfrac13\Big(\frac{v}{c}\Big)^2 + c_4\Big(\frac{v}{c}\Big)^4\Big], \qquad v = \alpha c .
+\end{equation}
+Saturating the residual of the frozen value fixes $c_4 = 499.73$. The declared members $918000/\mu = 499.958$, $500$, $16524/33$ and $11017/22$ all leave residuals below $0.003\ppm$. Because $(v/c)^4 = 2.8\times10^{-9}$, any $c_4$ between 69 and 931 keeps $\varepsilon$ within $u(\varepsilon) = 1.22\ppm$: the fourth-order coefficient is not constrained by the data, and the reading $918/1.836 = 500$ rests on the identity $1.836 = 918/500$ and a truncated mass ratio. The series therefore tests the arithmetic coherence of the frozen value and derives nothing.
+
+\section{The falsifier reduced to one leg}
+The target uncertainties are $u(\varepsilon) = 1.22\ppm$, propagated from $u_r(G) = 22\ppm$ through the eighteenth power; $u(d_r) = 6.98\times10^{-8}$, that is $1.455\ppm$, from D71; and $u(f) = 9\times10^{-4}$, that is $5.73\times10^{3}\ppm$, from the Planck 2018 baryon fraction via D70 and D71 \citep{planck2018,d70,d71}.
+
+\begin{table}[h]\centering\small
+\caption{Tension budget of the two legs of the pre-registered falsifier.}
+\label{tab:tensions}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Leg & Champion & Deviation & Uncertainty & Tension \\
+\midrule
+radial $d_r$ & $2\pi\varepsilon\,(67/66)$ & $+41.547\ppm$ & $\pm 1.455\ppm$ & $28.55\sigma$ \\
+tangential $f$ & $1731/11017$ & $-33.010\ppm$ & $\pm 5.73\times10^{3}\ppm$ & $0.0058\sigma$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The tangential leg was never in tension, and the border correction of gate~33 ($-0.00114\ppm$, two ten-millionths of $u(f)$) carries no weight. The falsifier reduces to a single real leg, $d_r$, closed by one coefficient drawn from a family of simple fractions. One coefficient for one datum is an agreement of construction, and its evidential weight is modest.
+
+\section{The curvature mechanism and the selector}
+\subsection{Mechanism (form-hit)}
+Treating the boundary as a regular polygon of 918 sites, the discrete signed curvature is $c = (2\sin(\pi/918))^2 = 46.846018\ppm$, differing from the continuum form $(2\pi/918)^2$ by $3.9\times10^{-6}$ in relative value. The mechanism is applied as $d_r \to d_r(1-k_d c)$ and $f \to f(1+k_f c)$; the opposite signs are part of its definition. With $k_d = 8/9$ and $k_f = 1/\sqrt2$ \citep{berry1984} the residuals are $-0.0957\ppm$ and $+0.1142\ppm$ (with the continuum form, $-0.0958\ppm$ and $+0.1143\ppm$).
+
+\subsection{The A1--A4 filter, defined and computed}
+The axioms were formulated after gate~37 had revealed the refuter cloud; the filter below is therefore post hoc and conditional. For a rational $p/q$ in lowest terms: A1 requires every prime factor of $p$ and $q$ to lie in $\{2,3,7,11,17\}$; A2 requires $L(p/q) = \Omega(p)+\Omega(q) \le 6$, where $\Omega$ counts prime factors with multiplicity (v2.3 left $L$ undefined; this definition is introduced here); A3 fixes the signed-curvature mechanism and $0<k_d<1$; A4 admits for $k_f$ the surd $1/\sqrt2$ or a convergent of it satisfying A1--A2. The joint window is the one declared at gate~34, $|r|\le0.5\ppm$ on both legs.
+
+The radial alphabet contains 1826 candidates. The convergents of $1/\sqrt2$ are $1$, $2/3$, $5/7$, $12/17$, $29/41$, $70/99$, and so on; A1--A2 retain $1$, $2/3$ and $12/17$. Six pairs pass: $k_d \in \{68/77,\ 8/9,\ 121/136\}$ crossed with $k_f \in \{1/\sqrt2,\ 12/17\}$, with radial residuals $+0.175$, $-0.096$ and $-0.134\ppm$ and tangential residuals $+0.114$ and $+0.057\ppm$. The pair $(8/9, 12/17)$ is tighter than the champion on $f$. At the actual precision of the radial target, twelve radial coefficients of the alphabet fall within $u(d_r)$, from $6/7$ to $343/374$. The selector is admissible, not unique. A route to a genuine uniqueness statement would be a first-principles proof that the Berry double cover forces $1/\sqrt2$ exactly; it is recorded as an open debt.
+
+\subsection{Two retired instruments}
+\textbf{D1.} The ratio $k_d/k_f$ is compared with the ratio $k_d^{\mathrm{req}}/k_f^{\mathrm{req}} = 1.2585$ of the coefficients that close each leg exactly. Its distance from that target is a fixed function of the two residuals already reported, and the script reconstructs it from them to $10^{-9}$: D1 contains no independent information. \textbf{The link quantum.} $q_{\mathrm{link}} = k_d\,[c(918)-c(919)] = 0.0906\ppm$, that is $0.062\,u(d_r)$. Statements made at this scale are internal coherence observations and carry no empirical weight.
+
+\subsection{The dense grid}
+On the grid of rational pairs with denominators $q\le51$, sixteen pairs beat the champion on the joint residual, the best being $(39/44,\,31/44)$ at $0.0226\ppm$. Editions v2--v2.2 reported seven such pairs with a different selection rule; the count given here is the one the shipped script computes.
+
+\section{Thermodynamics: scope}
+The irreversibility $\ln(P_{\mathrm{fwd}}/P_{\mathrm{rev}}) = 0.0138$ nats per epoch and the coarse-graining entropy $\ln 51$ per rung describe the internal statistics of the frozen cascade after v53. They are carried from pass v58 and not reproduced by a shipped script. They do not ground the pre-freeze genealogy of $x$.
+
+\section{What survives}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+\item $G_{\mathrm{pred}} = 6.6743264\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}$: frozen, dated, $+0.18\sigma$ against CODATA 2022, with the $\sim 20\%$ fortuitous-agreement reserve.
+\item A single-leg closure: $d_r$ at $28.55\sigma$ brought below $0.1\ppm$ by the signed curvature with $k_d = 8/9$ (form-hit, one coefficient for one datum, one of twelve admissible coefficients within $u(d_r)$).
+\item The Berry line $1/\sqrt2$ and its admissible convergent $12/17$ as a selector class.
+\item Protocol v2 and the practice of documented downgrades across v2.1--v2.4.
+\end{itemize}
+
+\section{Limitations and open debts}
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
+\item $x = 7/12$ remains a reading, genealogically tied to the $G$-derived target.
+\item The $\delta$ series is a post-hoc dressing; its fourth-order coefficient is not constrained by the data.
+\item The radial closure has the weight of a single-coefficient form-hit; only an out-of-sample prediction, such as the neutron programme D73, can test $8/9$ independently.
+\item Uniqueness of the tangential coefficient requires a first-principles derivation of $1/\sqrt2$.
+\item Gates~24--27 and the arrow of v58 are carried without shipped scripts.
+\item Community validation is absent; this document asserts internal consistency and reproducibility only.
+\end{enumerate}
+
+\section{Reproducibility}
+The archive \texttt{d72e\_v2\_4\_reproduce.tar.gz} contains a shared module \texttt{pdl\_common.py}, fourteen scripts, a driver \texttt{run\_all.sh}, the recorded output \texttt{run\_all\_output.txt} and a \texttt{SHA256SUMS} file. Every script imports the frozen chain from the shared module, checks the fingerprint, recomputes its quantities from the declared inputs, prints them, and exits with status~0 only if its stated verdict holds. Standard library only; Python $\geq 3.8$.
+
+{\small
+\begin{longtable}{@{}p{0.27\textwidth}p{0.65\textwidth}@{}}
+\caption{Reproduction scripts.}\label{tab:scripts}\\
+\toprule
+Script & Function \\
+\midrule
+\endfirsthead
+\toprule
+Script & Function \\
+\midrule
+\endhead
+\texttt{pdl\_chain\_frozen.py} & frozen chain, fingerprint, arbiter $+3.96\ppm = +0.18\sigma$ \\
+\texttt{pdl\_protocol\_v59.py} & derived windows; $1/18$ as an identity of definition \\
+\texttt{pdl\_v59b\_gate28.py} & gate~28: no joint closure at $\pm5\ppm$ \\
+\texttt{pdl\_retro\_v60.py} & $77/10240$: $p_{\mathrm{post}} = 0.9902$; withdrawn figure recomputed \\
+\texttt{pdl\_dress\_v61.py} & gate~29: $-1.417\ppm$, $p_{\mathrm{post}} = 0.3370$ \\
+\texttt{pdl\_v62.py} & gate~30: the 500 reading \\
+\texttt{pdl\_joint\_v63.py} & tension budget of the two legs \\
+\texttt{pdl\_v64.py} & gate~32: $c_4 = 499.73$; admissible band $[69, 931]$ \\
+\texttt{pdl\_v65.py} & gate~33: border member of $f$ against $u(f)$ \\
+\texttt{pdl\_v66.py} & gate~34: continuum curvature, joint WIN0.5 \\
+\texttt{pdl\_v67.py} & gate~35: D1 reconstructed from the residuals; $q_{\mathrm{link}}$ \\
+\texttt{pdl\_v68.py} & gate~36: discrete curvature; champion and $(8/9, 12/17)$ \\
+\texttt{pdl\_v69.py} & gate~37: dense grid $q\le51$; sixteen pairs \\
+\texttt{pdl\_v70.py} & gate~38: exhaustive A1--A4 filter; six admissible pairs \\
+\bottomrule
+\end{longtable}}
+
+\bibliographystyle{plainnat}
+\bibliography{D72e_v2_4_refs}
+\nocite{d72ev1}
+\end{document}
